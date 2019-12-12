@@ -17,7 +17,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import actions.BrowserActions;
-import actions.FunctionalActions;
+import actions.FunctionalActionsSFDS;
 import actions.FunctionalSteps;
 import execReport.CreateTestReport;
 import execReport.TestReportHeaderStructure;
@@ -183,9 +183,9 @@ private String testName = this.getClass().getName();
 		
 		try
 		{
-			FunctionalActions.addProductToOppie(driver, "mobileVoice");
+			FunctionalActionsSFDS.addProductToOppie(driver, "mobileVoice");
 			
-			FunctionalActions.editProductConfiguration(driver, 1);
+			FunctionalActionsSFDS.editProductConfiguration(driver, 1);
 			
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesForceCompany.companyDetailsHeader)));
 			

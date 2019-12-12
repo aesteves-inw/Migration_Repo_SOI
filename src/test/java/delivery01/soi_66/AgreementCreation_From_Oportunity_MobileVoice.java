@@ -3,7 +3,7 @@ package delivery01.soi_66;
 import org.testng.annotations.Test;
 
 import actions.BrowserActions;
-import actions.FunctionalActions;
+import actions.FunctionalActionsSFDS;
 import actions.FunctionalSteps;
 import execReport.CreateTestReport;
 import execReport.TestReportHeaderStructure;
@@ -32,29 +32,29 @@ import org.testng.annotations.AfterTest;
 
 public class AgreementCreation_From_Oportunity_MobileVoice {
 	
-	private String testName = this.getClass().getName();
+	String testName = this.getClass().getName();
 	
-	private String initialTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
+	String initialTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
 	
-	private long startTime=System.nanoTime();
+	long startTime=System.nanoTime();
 
-	public static WebDriver driver = null;
+	WebDriver driver = null;
 	
-	private WebDriverWait wait;
+	WebDriverWait wait;
 
-	private List<TestStepReportStructure> testExecStructure = new ArrayList<TestStepReportStructure>();
+	List<TestStepReportStructure> testExecStructure = new ArrayList<TestStepReportStructure>();
 	
-	private String finalTestDate=null;
+	String finalTestDate=null;
 	
-	private long finishTime;
+	long finishTime;
 	
-	private int stepsExecuted;
+	int stepsExecuted;
 	
-	private String testExecutionString;
+	String testExecutionString;
 	
-	private String optyName;
+	String optyName;
 	
-	private String linkAgreementName;
+	String linkAgreementName;
 	
  
   @BeforeTest
@@ -185,9 +185,9 @@ public class AgreementCreation_From_Oportunity_MobileVoice {
 		
 		try
 		{
-			FunctionalActions.addProductToOppie(driver, "mobileVoice");
+			FunctionalActionsSFDS.addProductToOppie(driver, "mobileVoice");
 			
-			FunctionalActions.editProductConfiguration(driver, 1);
+			FunctionalActionsSFDS.editProductConfiguration(driver, 1);
 			
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesForceCompany.companyDetailsHeader)));
 			

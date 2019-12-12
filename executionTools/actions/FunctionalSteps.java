@@ -126,9 +126,9 @@ public class FunctionalSteps {
 	{
 		try
 		{
-			FunctionalActions.createNewStandardOpportunity(driver);
+			FunctionalActionsSFDS.createNewStandardOpportunity(driver);
 			
-			FunctionalActions.inputOpportunityValues(driver, testExecutionString);
+			FunctionalActionsSFDS.inputOpportunityValues(driver, testExecutionString);
 			
 			driver.findElement(By.xpath(SalesForceOpportunity.nosSaveButton)).click();
 			

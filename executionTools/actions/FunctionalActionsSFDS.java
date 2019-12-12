@@ -13,7 +13,7 @@ import sfDirectSales.SalesForceCompany;
 import sfDirectSales.SalesForceOpportunity;
 import sfDirectSales.SalesForceProducts;
 
-public class FunctionalActions {
+public class FunctionalActionsSFDS {
 	
 	public static void createNewStandardOpportunity(WebDriver driver) throws Exception
 	{
