@@ -1,6 +1,6 @@
 package actions;
 
-import java.io.IOException;
+//import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -181,8 +181,8 @@ public class FunctionalActionsSFPC {
 	
 	// TO DO
 	
-	public static TestStepReportStructure createNewMACDOrder()
+	/*public static TestStepReportStructure createNewMACDOrder()
 	{
 		return;
-	}
+	}*/
 }
