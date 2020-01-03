@@ -80,9 +80,9 @@ public class AgreementCreation_From_Oportunity_MobileVoice {
 
 		Chrome_Profile.addArguments("download.prompt_for_download", "false");
 
-		Chrome_Profile.addArguments("browser.helperApps.neverAsk.saveToDisk", "application/pdf"); 	
+		Chrome_Profile.addArguments("browser.helperApps.neverAsk.saveToDisk", "application/pdf");
 
-		driver = new ChromeDriver(Chrome_Profile); 
+		driver = new ChromeDriver(); 
 		
 		wait=new WebDriverWait(driver, 15);
 

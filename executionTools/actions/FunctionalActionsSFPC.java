@@ -1,6 +1,6 @@
 package actions;
 
-import java.io.IOException;
+//import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -182,46 +182,4 @@ public class FunctionalActionsSFPC {
 	}
 
 
-	public static TestStepReportStructure createNewMACDOrder(WebDriver driver, WebDriverWait wait, String testName, int stepID, String testExecutionString) throws Exception
-	{
-		TestStepReportStructure newMACDOrder;
-		
-		String orderName="Order_"+testExecutionString;
-
-		String newOrderCreated="//*[contains(.,'"+orderName+"')]";
-
-		try 
-		{
-			driver.findElement(By.xpath(SFPC_Company.buttonNewMACDOrder)).click();
-
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesForceNewMACDOrderScreen.headerNewMACDOrder)));
-
-			driver.findElement(By.xpath(SalesForceNewMACDOrderScreen.inputOrderName)).clear();
-
-			driver.findElement(By.xpath(SalesForceNewMACDOrderScreen.inputOrderName)).sendKeys(orderName);
-
-			driver.findElement(By.xpath(SFPC_NewMACDOrderScreen.nmoSaveButton)).click();
-
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText(orderName)));
-
-			if(BrowserActions.isElementPresent(driver, newOrderCreated))
-			{
-				ExecStructure.screenShotTaking(driver, testName, stepID+"_NewMACDOrder");
-				newMACDOrder = new TestStepReportStructure(stepID, "New MACD Order created with success", "New Order validated with success", "Validated with success. Order: "+orderName, "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_NewMACDOrder");
-				return newMACDOrder;
-			}
-			else
-			{
-				throw new Exception("Not possible to validate New MACD Order on Partners Community");
-			}
-
-		}
-		catch(Exception e)
-		{
-			System.out.println(e);
-			ExecStructure.screenShotTaking(driver, testName, stepID+"_NewMACDOrder");
-			newMACDOrder = new TestStepReportStructure(stepID, "New MACD Order created with success", "New Order validated with success", "Validated with success. Order: "+orderName, "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_NewMACDOrder");
-			return newMACDOrder;
-		}
-	}
 }
