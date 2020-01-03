@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SOI-70">
+  <test thread-count="5" name="">
+    <classes>
+      <class name="delivery01.soi_70.OrderCreation_For_MACD_OrderCreation"/>
+      <class name="delivery01.soi_70.OrderCreation_For_MACD_OrderCreation_SFPC"/>
+    </classes>
+  </test> <!--  -->
+</suite> <!-- SOI-70 -->

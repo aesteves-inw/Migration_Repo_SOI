@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SOI-66">
+  <test thread-count="5" name="">
+    <classes>
+      <class name="delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice"/>
+      <class name="delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice_EditAgreement"/>
+      <class name="delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice_Negative_SFPC"/>
+      <class name="delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice_SFPC"/>
+      <class name="delivery01.soi_66.AgreementCreation_From_Opportunity_MobileVoice_EditAgreement_SFPC"/>
+    </classes>
+  </test> <!--  -->
+</suite> <!-- SOI-66 -->
