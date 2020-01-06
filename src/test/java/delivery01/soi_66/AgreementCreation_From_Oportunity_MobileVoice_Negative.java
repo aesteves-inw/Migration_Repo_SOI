@@ -54,6 +54,7 @@ public class AgreementCreation_From_Oportunity_MobileVoice_Negative {
 	String optyName;
 	
 	String linkAgreementName;
+	
  
   
   @BeforeTest
@@ -81,7 +82,7 @@ public class AgreementCreation_From_Oportunity_MobileVoice_Negative {
 
 		Chrome_Profile.addArguments("browser.helperApps.neverAsk.saveToDisk", "application/pdf");
 
-		driver = new ChromeDriver(); 
+		driver = new ChromeDriver(Chrome_Profile); 
 		
 		wait=new WebDriverWait(driver, 15);
 
@@ -158,6 +159,8 @@ public class AgreementCreation_From_Oportunity_MobileVoice_Negative {
 		
 		stepsExecuted++;
 		
+
+		
 		try
 		{
 			TestStepReportStructure step03 = FunctionalSteps.createStandardOppie(driver, 3, testName, testExecutionString);
@@ -189,8 +192,6 @@ public class AgreementCreation_From_Oportunity_MobileVoice_Negative {
 			
 			FunctionalActionsSFDS.editProductConfiguration(driver, 1);
 			
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesForceCompany.companyDetailsHeader)));
-			
 			driver.findElement(By.linkText(optyName)).click();
 			
 			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
@@ -221,6 +222,9 @@ public class AgreementCreation_From_Oportunity_MobileVoice_Negative {
 	
 		try
 		{
+			
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesForceOpportunity.agreementsContainer)));
+			
 			BrowserActions.verticalscrollByVisibleElement(driver, SalesForceOpportunity.agreementsContainer);
 			
 			String agreementsVal=driver.findElement(By.xpath(SalesForceOpportunity.agreementsContainer)).getText().toString();

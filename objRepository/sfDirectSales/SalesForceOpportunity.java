@@ -9,6 +9,8 @@ public class SalesForceOpportunity {
 	public static String productContainer="//article[contains(.,'Products')]";
 	
 	public static String agreementsContainer="//article[contains(.,'Agreements')]";
+	
+	public static String ordersContainer="//article[contains(.,'Orders')]";
 
 	// New Opportunity Screen
 
@@ -21,6 +23,8 @@ public class SalesForceOpportunity {
 	public static String selectStage="/html/body/div[5]/div[2]/div[1]/div[2]/div/div[2]/div/div/div[1]/div/article/div[3]/div/div[1]/div/div/div[2]/div[2]/div/div/div/div/div[1]/div/div/a";
 
 	public static String listState="/html/body/div[10]/div/ul";
+	
+	public static String closeWonOptyStage="//*/div/ul/li[8]/a";
 
 	public static String selectForecastCategory="/html/body/div[5]/div[2]/div[1]/div[2]/div/div[2]/div/div/div[1]/div/article/div[3]/div/div[1]/div/div/div[5]/div[2]/div/div/div/div/div[1]/div/div/a";
 
@@ -29,6 +33,13 @@ public class SalesForceOpportunity {
 	public static String nosCancelButton="//button[@title='Cancel']";
 
 	public static String nosSaveButton="//button[@title='Save']";
+	
+	
+	//Edit Opportunity Screen
+	
+	public static String editHeader="//h2[contains(.,'Edit')]";
+	
+	
 
 
 	//OPTY Details
@@ -52,6 +63,8 @@ public class SalesForceOpportunity {
 	public static String pBShowMoreButton = "(//a[@class='slds-button slds-button--icon-x-small slds-button--icon-border-filled'])[3]";
 
 	public static String pbSMBNewOption = "//a[@title='New']";
+	
+	public static String stageClosedWonDetails="//*/div/div[2]/div[2]/div/div[2]/span/span[.='Closed Won']";
 	
 	
 	//OPTY Pool Screen

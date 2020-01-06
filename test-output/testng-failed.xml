@@ -1,77 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [SOI-66]">
-  <test thread-count="5" name="Salesforce Direct Sales(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice">
+      <class name="delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice">
         <methods>
           <include name="step01"/>
-          <include name="step06"/>
-          <include name="afterTest"/>
-          <include name="step04"/>
-          <include name="beforeTest"/>
-          <include name="step05"/>
-          <include name="step02"/>
           <include name="step03"/>
-        </methods>
-      </class> <!-- delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice -->
-      <class name="delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice_EditAgreement">
-        <methods>
-          <include name="step03"/>
-          <include name="step02"/>
-          <include name="step01"/>
-          <include name="step07"/>
           <include name="afterTest"/>
           <include name="step06"/>
+          <include name="beforeTest"/>
+          <include name="step02"/>
           <include name="step05"/>
           <include name="step04"/>
-          <include name="beforeTest"/>
         </methods>
-      </class> <!-- delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice_EditAgreement -->
+      </class> <!-- delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice -->
     </classes>
-  </test> <!-- Salesforce Direct Sales(failed) -->
-  <test thread-count="5" name="Salesforce Partners Community(failed)">
-    <classes>
-      <class name="delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice_SFPC">
-        <methods>
-          <include name="step03"/>
-          <include name="step02"/>
-          <include name="step01"/>
-          <include name="step04"/>
-          <include name="beforeTest"/>
-          <include name="step07"/>
-          <include name="afterTest"/>
-          <include name="step06"/>
-          <include name="step05"/>
-        </methods>
-      </class> <!-- delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice_SFPC -->
-      <class name="delivery01.soi_66.AgreementCreation_From_Opportunity_MobileVoice_EditAgreement_SFPC">
-        <methods>
-          <include name="step03"/>
-          <include name="step07"/>
-          <include name="step01"/>
-          <include name="step02"/>
-          <include name="afterTest"/>
-          <include name="step04"/>
-          <include name="step05"/>
-          <include name="step06"/>
-          <include name="step08"/>
-          <include name="beforeTest"/>
-          <include name="step09"/>
-        </methods>
-      </class> <!-- delivery01.soi_66.AgreementCreation_From_Opportunity_MobileVoice_EditAgreement_SFPC -->
-      <class name="delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice_Negative_SFPC">
-        <methods>
-          <include name="step01"/>
-          <include name="step02"/>
-          <include name="step03"/>
-          <include name="step05"/>
-          <include name="step06"/>
-          <include name="afterTest"/>
-          <include name="step04"/>
-          <include name="beforeTest"/>
-        </methods>
-      </class> <!-- delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice_Negative_SFPC -->
-    </classes>
-  </test> <!-- Salesforce Partners Community(failed) -->
-</suite> <!-- Failed suite [SOI-66] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

@@ -21,9 +21,9 @@ public class FunctionalActionsSFDS {
 		
 		try
 		{			
-			driver.findElement(By.xpath(SalesForceCompany.showActionsButton)).click();
+			driver.findElement(By.xpath(SalesForceCompany.rmOpportunitieslink)).click();
 			
-			waitNSOS.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("New"))).click();
+			waitNSOS.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesForceCompany.newOpportunityButton))).click();
 			
 			waitNSOS.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesForceOpportunity.newOpportunityHeader)));
 		}
