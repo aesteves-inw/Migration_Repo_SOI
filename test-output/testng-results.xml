@@ -1,40 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="1" failed="1" ignored="0" total="6" passed="4">
+<testng-results skipped="2" failed="1" ignored="0" total="6" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="89619" started-at="2020-01-06T15:32:58Z" finished-at="2020-01-06T15:34:28Z">
+  <suite name="Default suite" duration-ms="66130" started-at="2020-01-06T15:57:01Z" finished-at="2020-01-06T15:58:07Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="89619" started-at="2020-01-06T15:32:58Z" finished-at="2020-01-06T15:34:28Z">
+    <test name="Default test" duration-ms="66130" started-at="2020-01-06T15:57:01Z" finished-at="2020-01-06T15:58:07Z">
       <class name="delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice@5e3a8624]" name="beforeTest" is-config="true" duration-ms="8155" started-at="2020-01-06T15:32:58Z" finished-at="2020-01-06T15:33:06Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice@5e3a8624]" name="beforeTest" is-config="true" duration-ms="8082" started-at="2020-01-06T15:57:01Z" finished-at="2020-01-06T15:57:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="step01()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice@5e3a8624]" name="step01" duration-ms="12840" started-at="2020-01-06T15:33:06Z" finished-at="2020-01-06T15:33:19Z">
+        <test-method status="PASS" signature="step01()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice@5e3a8624]" name="step01" duration-ms="11859" started-at="2020-01-06T15:57:09Z" finished-at="2020-01-06T15:57:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step01 -->
-        <test-method status="PASS" signature="step02()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice@5e3a8624]" name="step02" duration-ms="11797" started-at="2020-01-06T15:33:19Z" depends-on-methods="delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice.step01" finished-at="2020-01-06T15:33:31Z">
+        <test-method status="PASS" signature="step02()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice@5e3a8624]" name="step02" duration-ms="12567" started-at="2020-01-06T15:57:21Z" depends-on-methods="delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice.step01" finished-at="2020-01-06T15:57:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step02 -->
-        <test-method status="PASS" signature="step03()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice@5e3a8624]" name="step03" duration-ms="14593" started-at="2020-01-06T15:33:31Z" depends-on-methods="delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice.step02" finished-at="2020-01-06T15:33:46Z">
+        <test-method status="PASS" signature="step03()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice@5e3a8624]" name="step03" duration-ms="29603" started-at="2020-01-06T15:57:34Z" depends-on-methods="delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice.step02" finished-at="2020-01-06T15:58:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step03 -->
-        <test-method status="PASS" signature="step04()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice@5e3a8624]" name="step04" duration-ms="16489" started-at="2020-01-06T15:33:46Z" depends-on-methods="delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice.step03" finished-at="2020-01-06T15:34:02Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- step04 -->
-        <test-method status="FAIL" signature="step05()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice@5e3a8624]" name="step05" duration-ms="20719" started-at="2020-01-06T15:34:02Z" depends-on-methods="delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice.step04" finished-at="2020-01-06T15:34:23Z">
+        <test-method status="FAIL" signature="step04()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice@5e3a8624]" name="step04" duration-ms="3055" started-at="2020-01-06T15:58:04Z" depends-on-methods="delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice.step03" finished-at="2020-01-06T15:58:07Z">
           <exception class="java.lang.Exception">
             <message>
-              <![CDATA[Test Failed on Step 5]]>
+              <![CDATA[Test Failed on Step 4]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.Exception: Test Failed on Step 5
-at delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice.step05(OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice.java:257)
+              <![CDATA[java.lang.Exception: Test Failed on Step 4
+at delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice.step04(OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice.java:215)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -60,13 +56,17 @@ at org.testng.TestNG.run(TestNG.java:1017)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.ElementNotInteractableException: element not interactable
+Caused by: java.lang.Exception: Add Product To Opportunity Failed
+at actions.FunctionalActionsSFDS.addProductToOppie(FunctionalActionsSFDS.java:96)
+at delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice.step04(OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice.java:188)
+... 25 more
+Caused by: org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <div class="primaryLabel slds-truncate slds-lookup__result-text" title="Fix Voice Value Added Services" data-aura-rendered-by="10:4352;a">...</div> is not clickable at point (980, 187). Other element would receive the click: <div class="slds-truncate" title="..." data-aura-rendered-by="3162:0">OPTY_20200106_TC8_Ex10</div>
   (Session info: chrome=79.0.3945.88)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'INNOWAVE-383', ip: '192.168.100.249', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_212'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.88, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\luis.achas\AppData...}, goog:chromeOptions: {debuggerAddress: localhost:64371}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: d3c9c36ec352e65306200852339b444c
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.88, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\luis.achas\AppData...}, goog:chromeOptions: {debuggerAddress: localhost:57348}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 39b06782c0977e69db7632dfb35895c1
 at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -79,15 +79,46 @@ at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverComman
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
 at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
 at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-at delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice.step05(OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice.java:223)
-... 25 more
+at actions.FunctionalActionsSFDS.addProductToOppie(FunctionalActionsSFDS.java:87)
+... 26 more
 ]]>
             </full-stacktrace>
           </exception> <!-- java.lang.Exception -->
           <reporter-output>
           </reporter-output>
+        </test-method> <!-- step04 -->
+        <test-method status="SKIP" signature="step05()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice@5e3a8624]" name="step05" duration-ms="0" started-at="2020-01-06T15:58:07Z" depends-on-methods="delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice.step04" finished-at="2020-01-06T15:58:07Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice.step05()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice@5e3a8624] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice.step05()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice@5e3a8624] depends on not successfully finished methods
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
         </test-method> <!-- step05 -->
-        <test-method status="SKIP" signature="step06()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice@5e3a8624]" name="step06" duration-ms="0" started-at="2020-01-06T15:34:23Z" depends-on-methods="delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice.step05" finished-at="2020-01-06T15:34:23Z">
+        <test-method status="SKIP" signature="step06()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice@5e3a8624]" name="step06" duration-ms="0" started-at="2020-01-06T15:58:07Z" depends-on-methods="delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice.step05" finished-at="2020-01-06T15:58:07Z">
           <exception class="java.lang.Throwable">
             <message>
               <![CDATA[Method OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice.step06()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice@5e3a8624] depends on not successfully finished methods]]>
@@ -118,7 +149,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step06 -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice@5e3a8624]" name="afterTest" is-config="true" duration-ms="4949" started-at="2020-01-06T15:34:23Z" finished-at="2020-01-06T15:34:28Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice@5e3a8624]" name="afterTest" is-config="true" duration-ms="875" started-at="2020-01-06T15:58:07Z" finished-at="2020-01-06T15:58:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
