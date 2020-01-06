@@ -1,21 +1,5 @@
 package delivery01.soi_68;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.Cookie;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import actions.BrowserActions;
@@ -33,8 +17,27 @@ import sfPartnersCommunity.SFPC_LoginPage;
 import sfPartnersCommunity.SFPC_Opportunity;
 import sfPartnersCommunity.SFPC_Products;
 
-public class OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_MobileVoice_SFPC {
-	
+import org.testng.annotations.BeforeTest;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Cookie;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterTest;
+
+public class OrderCreationForNewContract_EditCreatedOrder_SFPC {
+
+
 	private String testName = this.getClass().getName();
 
 	private String initialTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
@@ -96,7 +99,7 @@ public class OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_Mobi
 
 		}
 
-		testExecutionString = ExecStructure.formattedDate("yyyyMMdd")+"_TC10PC_Ex"+ExecStructure.numberOfSubFolders(ExecStructure.testFolder(testName));
+		testExecutionString = ExecStructure.formattedDate("yyyyMMdd")+"_TC12PC_Ex"+ExecStructure.numberOfSubFolders(ExecStructure.testFolder(testName));
 	}
 	
 	@Test
@@ -549,6 +552,53 @@ public class OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_Mobi
 	}
 	
 	
+	@Test(dependsOnMethods = "step09")
+	public void step10() throws Exception {
+		
+		stepsExecuted++;
+		
+		String editOrderNameString = "EditOrder_"+testExecutionString;
+		
+		try
+		{
+			driver.findElement(By.xpath(SalesForceOrders.editOrderNameBtn)).click();
+			
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesForceOrders.inputOrderName)));
+			
+			driver.findElement(By.xpath(SalesForceOrders.inputOrderName)).clear();
+			
+			driver.findElement(By.xpath(SalesForceOrders.inputOrderName)).sendKeys(editOrderNameString);
+			
+			driver.findElement(By.xpath(SalesForceOrders.saveButton)).click();
+			
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(SalesForceOrders.inputOrderName)));
+			
+			String orderVal = driver.findElement(By.xpath(SalesForceOrders.orderDetails)).getText().toString();
+			
+			if (orderVal.contains(editOrderNameString))
+			{
+				ExecStructure.screenShotTaking(driver, testName, "11_EditOrderValidation");
+				TestStepReportStructure step011 = new TestStepReportStructure(11, "Order Edition (Order Name)", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "11_EditOrderValidation");
+				testExecStructure.add(step011);
+			}
+			else
+			{
+				throw new Exception("Validation Failed on Step 11");
+			}
+			
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			ExecStructure.screenShotTaking(driver, testName, "11_EditOrderValidation");
+			TestStepReportStructure step011 = new TestStepReportStructure(11, "Order Edition (Order Name)", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "11_EditOrderValidation");
+			testExecStructure.add(step011);
+			throw new Exception("Test Failed on Step 11",e);
+		}
+	}
+	
+	
 	@AfterTest
 	public void afterTest() {
 		
@@ -565,4 +615,5 @@ public class OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_Mobi
 		BrowserActions.endSession(driver);
 		
 	}
+
 }

@@ -404,7 +404,7 @@ public class OrderCreationForNewContract_EditCreatedOrder {
 			ExecStructure.screenShotTaking(driver, testName, "9_EditOrderValidation");
 			TestStepReportStructure step09 = new TestStepReportStructure(9, "Order Edition (Order Name)", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "9_EditOrderValidation");
 			testExecStructure.add(step09);
-			throw new Exception("Test Failed on Step 8",e);
+			throw new Exception("Test Failed on Step 9",e);
 		}
 	}
 

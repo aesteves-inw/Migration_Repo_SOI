@@ -1,21 +1,5 @@
 package delivery01.soi_68;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.Cookie;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import actions.BrowserActions;
@@ -33,8 +17,26 @@ import sfPartnersCommunity.SFPC_LoginPage;
 import sfPartnersCommunity.SFPC_Opportunity;
 import sfPartnersCommunity.SFPC_Products;
 
-public class OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_MobileVoice_SFPC {
-	
+import org.testng.annotations.BeforeTest;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Cookie;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterTest;
+
+public class OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice_SFPC {
+
 	private String testName = this.getClass().getName();
 
 	private String initialTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
@@ -96,7 +98,7 @@ public class OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_Mobi
 
 		}
 
-		testExecutionString = ExecStructure.formattedDate("yyyyMMdd")+"_TC10PC_Ex"+ExecStructure.numberOfSubFolders(ExecStructure.testFolder(testName));
+		testExecutionString = ExecStructure.formattedDate("yyyyMMdd")+"_TC11PC_Ex"+ExecStructure.numberOfSubFolders(ExecStructure.testFolder(testName));
 	}
 	
 	@Test
@@ -491,14 +493,14 @@ public class OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_Mobi
 			
 			if (orderValidation.contains(oppiename))
 			{
-				ExecStructure.screenShotTaking(driver, testName, "9_OrderValidation");
-				TestStepReportStructure step09 = new TestStepReportStructure(9, "Order Validation", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "9_OrderValidation");
-				testExecStructure.add(step09);
+				throw new Exception("Validation Failed on Step 09");
 				
 			}
 			else
 			{
-				throw new Exception("Validation Failed on Step 09");
+				ExecStructure.screenShotTaking(driver, testName, "9_OrderValidation");
+				TestStepReportStructure step09 = new TestStepReportStructure(9, "Order Validation", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "9_OrderValidation");
+				testExecStructure.add(step09);
 			}
 		}
 		catch(Exception e)
@@ -513,40 +515,7 @@ public class OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_Mobi
 		
 	}
 	
-	@Test(dependsOnMethods = "step09")
-	public void step10() throws Exception {
-		
-		stepsExecuted++;
-		
-		try
-		{
-			driver.findElement(By.xpath(SalesForceOpportunity.ordersContainer.concat("//a[contains(.,"+oppiename+")]"))).click();
-			
-			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
-			
-			if (BrowserActions.isElementPresent(driver, SalesForceOrders.addServiceButton) && BrowserActions.isElementPresent(driver, SalesForceOrders.submitOrderButton) && BrowserActions.isElementPresent(driver, SalesForceOrders.servicesContainer) && BrowserActions.isElementPresent(driver, SalesForceOrders.orderDetails) && BrowserActions.isElementPresent(driver, SalesForceOrders.orderHeader))
-			{
-				ExecStructure.screenShotTaking(driver, testName, "10_OrderScreenValidation");
-				TestStepReportStructure step010 = new TestStepReportStructure(10, "Order Screen Validation", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "10_OrderScreenValidation");
-				testExecStructure.add(step010);
-			}
-			else
-			{
-				throw new Exception("Validation Failed on Step 010");
-			}
-			
-			
-		}
-		catch(Exception e)
-		{
-			System.out.println(e);
-			ExecStructure.screenShotTaking(driver, testName, "10_OrderScreenValidation");
-			TestStepReportStructure step010 = new TestStepReportStructure(10, "Order Screen Validation", "Validation with success", "N", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "10_OrderScreenValidation");
-			testExecStructure.add(step010);
-			throw new Exception("Test Failed on Step 10",e);
-		}
-		
-	}
+	
 	
 	
 	@AfterTest
@@ -565,4 +534,5 @@ public class OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_Mobi
 		BrowserActions.endSession(driver);
 		
 	}
+
 }
