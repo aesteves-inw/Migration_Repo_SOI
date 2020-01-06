@@ -11,12 +11,15 @@ import execReport.TestStepReportStructure;
 import execStructure.ExecStructure;
 import execStructure.TestData;
 import sfDirectSales.SalesForceOpportunity;
+import sfDirectSales.SalesForceOrders;
 
 import org.testng.annotations.BeforeTest;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
@@ -27,7 +30,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 
-public class OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice {
+public class OrderCreationForNewContract_EditCreatedOrder {
 
 	String testName = this.getClass().getName();
 
@@ -94,7 +97,7 @@ public class OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotM
 
 		}
 
-		testExecutionString = ExecStructure.formattedDate("yyyyMMdd")+"_TC8_Ex"+ExecStructure.numberOfSubFolders(ExecStructure.testFolder(testName));
+		testExecutionString = ExecStructure.formattedDate("yyyyMMdd")+"_TC9_Ex"+ExecStructure.numberOfSubFolders(ExecStructure.testFolder(testName));
 	}
 
 
@@ -185,11 +188,9 @@ public class OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotM
 
 		try
 		{
-			FunctionalActionsSFDS.addProductToOppie(driver, "nonMobileVoice");
+			FunctionalActionsSFDS.addProductToOppie(driver, "mobileVoice");
 
 			FunctionalActionsSFDS.editProductConfiguration(driver, 1);
-
-			//driver.findElement(By.linkText(optyName)).click();
 			
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText(optyName))).click();
 
@@ -218,6 +219,8 @@ public class OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotM
 
 	@Test(dependsOnMethods = "step04")
 	public void step05() throws Exception {
+		
+		stepsExecuted++;
 
 		try
 		{
@@ -263,8 +266,11 @@ public class OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotM
 	@Test(dependsOnMethods = "step05")
 	public void step06() throws Exception {
 		
+		stepsExecuted++;
+		
 		try
 		{
+			BrowserActions.ScrollByPixs(driver, 0, 100);
 			
 			String orderValidation=driver.findElement(By.xpath(SalesForceOpportunity.ordersContainer)).getText().toString();
 			
@@ -272,13 +278,14 @@ public class OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotM
 			
 			if (orderValidation.contains(optyName))
 			{
-				throw new Exception("Validation Failed on Step 06");
-			}
-			else
-			{
 				ExecStructure.screenShotTaking(driver, testName, "6_OrderValidation");
 				TestStepReportStructure step06 = new TestStepReportStructure(6, "Order Validation", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "6_OrderValidation");
 				testExecStructure.add(step06);
+				
+			}
+			else
+			{
+				throw new Exception("Validation Failed on Step 06");
 			}
 		}
 		catch(Exception e)
@@ -288,6 +295,116 @@ public class OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotM
 			TestStepReportStructure step06 = new TestStepReportStructure(6, "Order Validation", "Validation with success", "Validated with success", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "6_OrderValidation");
 			testExecStructure.add(step06);
 			throw new Exception("Test Failed on Step 6",e);
+		}
+	}
+	
+	@Test(dependsOnMethods = "step06")
+	public void step07() throws Exception {
+		
+		stepsExecuted++;
+		
+		try
+		{
+			driver.findElement(By.xpath(SalesForceOpportunity.ordersContainer.concat("//a[contains(.,"+optyName+")]"))).click();
+			
+			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+			
+			if (BrowserActions.isElementPresent(driver, SalesForceOrders.addServiceButton) && BrowserActions.isElementPresent(driver, SalesForceOrders.submitOrderButton) && BrowserActions.isElementPresent(driver, SalesForceOrders.servicesContainer) && BrowserActions.isElementPresent(driver, SalesForceOrders.orderDetails) && BrowserActions.isElementPresent(driver, SalesForceOrders.orderHeader))
+			{
+				ExecStructure.screenShotTaking(driver, testName, "7_OrderScreenValidation");
+				TestStepReportStructure step07 = new TestStepReportStructure(7, "Order Screen Validation", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "7_OrderScreenValidation");
+				testExecStructure.add(step07);
+			}
+			else
+			{
+				throw new Exception("Validation Failed on Step 07");
+			}
+			
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			ExecStructure.screenShotTaking(driver, testName, "7_OrderScreenValidation");
+			TestStepReportStructure step07 = new TestStepReportStructure(7, "Order Screen Validation", "Validation with success", "N", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "7_OrderScreenValidation");
+			testExecStructure.add(step07);
+			throw new Exception("Test Failed on Step 7",e);
+		}
+		
+	}
+	
+	@Test(dependsOnMethods = "step07")
+	public void step08() throws Exception {
+		
+		stepsExecuted++;
+		
+		try
+		{
+			if (BrowserActions.isElementPresent(driver, SalesForceOrders.editOrderTypeBtn) || BrowserActions.isElementPresent(driver, SalesForceOrders.editSubmittedByBtn) || BrowserActions.isElementPresent(driver, SalesForceOrders.editSubmissionDateBtn))
+			{
+				throw new Exception("Validation Failed on Step 08");
+			}
+			else
+			{
+				ExecStructure.screenShotTaking(driver, testName, "8_EditOrderValidation");
+				TestStepReportStructure step08 = new TestStepReportStructure(8, "Order Screen Validation", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "8_EditOrderValidation");
+				testExecStructure.add(step08);
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			ExecStructure.screenShotTaking(driver, testName, "8_EditOrderValidation");
+			TestStepReportStructure step08 = new TestStepReportStructure(8, "Order Screen Validation", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "8_EditOrderValidation");
+			testExecStructure.add(step08);
+			throw new Exception("Test Failed on Step 8",e);
+		}
+		
+	}
+	
+	@Test(dependsOnMethods = "step08")
+	public void step09() throws Exception {
+		
+		stepsExecuted++;
+		
+		String editOrderNameString = "EditOrder_"+testExecutionString;
+		
+		try
+		{
+			driver.findElement(By.xpath(SalesForceOrders.editOrderNameBtn)).click();
+			
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesForceOrders.inputOrderName)));
+			
+			driver.findElement(By.xpath(SalesForceOrders.inputOrderName)).clear();
+			
+			driver.findElement(By.xpath(SalesForceOrders.inputOrderName)).sendKeys(editOrderNameString);
+			
+			driver.findElement(By.xpath(SalesForceOrders.saveButton)).click();
+			
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(SalesForceOrders.inputOrderName)));
+			
+			String orderVal = driver.findElement(By.xpath(SalesForceOrders.orderDetails)).getText().toString();
+			
+			if (orderVal.contains(editOrderNameString))
+			{
+				ExecStructure.screenShotTaking(driver, testName, "9_EditOrderValidation");
+				TestStepReportStructure step09 = new TestStepReportStructure(9, "Order Edition (Order Name)", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "9_EditOrderValidation");
+				testExecStructure.add(step09);
+			}
+			else
+			{
+				throw new Exception("Validation Failed on Step 09");
+			}
+			
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			ExecStructure.screenShotTaking(driver, testName, "9_EditOrderValidation");
+			TestStepReportStructure step09 = new TestStepReportStructure(9, "Order Edition (Order Name)", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "9_EditOrderValidation");
+			testExecStructure.add(step09);
+			throw new Exception("Test Failed on Step 8",e);
 		}
 	}
 

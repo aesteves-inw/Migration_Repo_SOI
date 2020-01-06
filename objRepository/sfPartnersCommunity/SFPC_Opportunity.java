@@ -23,7 +23,24 @@ public class SFPC_Opportunity {
 	
 	
 	
-	//
+	// ..:: Opportunity Status Bar ::..
+	
+	public static String nextBtn="//button[.='Next']";
+	
+	public static String closeOptyBtn="//a[@title='Closed']";
+	
+	public static String selectClosedStageBtn="//button[contains(.,'Select Closed Stage')]";
+	
+
+	// ..:: Close This Opportunity - Screen ::..
+	
+	public static String ctoHeader ="//h2[contains(.,'Close This Opportunity')]";
+	
+	public static String ctoSelectStage="//select";
+	
+	public static String ctoCloseWon="//option[@value='Closed Won']";
+	
+	public static String ctoCloseLost="//option[@value='Closed Lost']";
 	
 	
 	

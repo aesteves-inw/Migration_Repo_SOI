@@ -46,7 +46,7 @@ public class SalesForceOpportunity {
 
 	public static String followButton = "//button[.='Follow']";
 
-	public static String editButton = "//a[@title='Edit']";
+	public static String editButton = "//div[@title='Edit']";
 
 	public static String deleteButton = "//a[@title='Delete']";
 
@@ -65,6 +65,21 @@ public class SalesForceOpportunity {
 	public static String pbSMBNewOption = "//a[@title='New']";
 	
 	public static String stageClosedWonDetails="//*/div/div[2]/div[2]/div/div[2]/span/span[.='Closed Won']";
+	
+	public static String closeOPTYHeaderButton = "//a[@title='Closed']";
+	
+	public static String selectCloseMenu="//span[.='Select Closed Stage']";
+	
+	
+	//Close This Opportunity Menu
+	
+	public static String ctomHeader="//h2[contains(.,'Close This Opportunity')]";
+	
+	public static String ctomStageSelect="//select";
+	
+	public static String ctomCloseWon="//option[@value='Closed Won']";
+	
+	public static String ctomCloseLost="//option[@value='Closed Lost']";
 	
 	
 	//OPTY Pool Screen

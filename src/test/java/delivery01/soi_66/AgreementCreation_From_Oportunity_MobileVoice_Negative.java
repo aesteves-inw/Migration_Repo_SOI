@@ -159,7 +159,7 @@ public class AgreementCreation_From_Oportunity_MobileVoice_Negative {
 		
 		stepsExecuted++;
 		
-
+		
 		
 		try
 		{
@@ -219,6 +219,8 @@ public class AgreementCreation_From_Oportunity_MobileVoice_Negative {
 	
 	@Test(dependsOnMethods = "step04")
 	public void step05() throws Exception {
+		
+		stepsExecuted++;
 	
 		try
 		{
