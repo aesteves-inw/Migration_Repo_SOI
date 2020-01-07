@@ -268,8 +268,6 @@ public class OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotM
 			
 			String orderValidation=driver.findElement(By.xpath(SalesForceOpportunity.ordersContainer)).getText().toString();
 			
-			System.out.println("S06 - orderValidation :"+orderValidation);
-			
 			if (orderValidation.contains(optyName))
 			{
 				throw new Exception("Validation Failed on Step 06");

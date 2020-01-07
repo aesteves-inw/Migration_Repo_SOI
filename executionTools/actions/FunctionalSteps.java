@@ -201,6 +201,45 @@ public class FunctionalSteps {
 		}
 	}
 	
+	public static TestStepReportStructure createCloseStandardMobileVoiceOppie(WebDriver driver, int stepID, String testName, String testExecutionString) throws Exception
+	{
+		try
+		{
+			FunctionalActionsSFDS.createNewStandardOpportunity(driver);
+			
+			FunctionalActionsSFDS.inputOpportunityValues(driver, testExecutionString);
+			
+			driver.findElement(By.xpath(SalesForceOpportunity.nosSaveButton)).click();
+			
+			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+			
+			FunctionalActionsSFDS.addProductToOppie(driver, "mobileVoice");
+			
+			FunctionalActionsSFDS.editProductConfiguration(driver, 1);
+			
+			FunctionalActionsSFDS.closeWonOppie(driver);
+			
+			if (BrowserActions.isElementPresent(driver, SalesForceOpportunity.stageClosedWonDetails))
+			{
+				ExecStructure.screenShotTaking(driver, testName, stepID+"_ClosedWonOppieValidation");
+				TestStepReportStructure createCloseStandardMobileVoiceOppie = new TestStepReportStructure(stepID, "Close Won Opportunity Validation", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_ClosedWonOppieValidation");
+				return createCloseStandardMobileVoiceOppie;
+			}
+			else
+			{
+				throw new Exception("Validation Failed on Step 05");
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			ExecStructure.screenShotTaking(driver, testName, stepID+"_ClosedWonOppieValidation");
+			TestStepReportStructure createCloseStandardMobileVoiceOppie = new TestStepReportStructure(stepID, "Close Won Opportunity Validation", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_ClosedWonOppieValidation");
+			return createCloseStandardMobileVoiceOppie;
+		}
+	}
+	
 	// Salesforce Partners Community
 
 }

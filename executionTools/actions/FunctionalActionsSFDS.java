@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import execStructure.ExecStructure;
@@ -14,6 +15,8 @@ import sfDirectSales.SalesForceOpportunity;
 import sfDirectSales.SalesForceProducts;
 
 public class FunctionalActionsSFDS {
+	
+	
 	
 	public static void createNewStandardOpportunity(WebDriver driver) throws Exception
 	{
@@ -135,8 +138,42 @@ public class FunctionalActionsSFDS {
 		}
 	}
 
+	public static void closeWonOppie(WebDriver driver) throws Exception
+	{
+		WebDriverWait waitCWO = new WebDriverWait(driver, 10);
+		
+		try
+		{
+			
+			driver.findElement(By.xpath(SalesForceOpportunity.closeOPTYHeaderButton)).click();
+			
+			driver.findElement(By.xpath(SalesForceOpportunity.selectCloseMenu)).click();
+			
+			waitCWO.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesForceOpportunity.ctomHeader)));
+			
+			Select closedStage = new Select(driver.findElement(By.xpath("//select")));
+			
+			closedStage.selectByVisibleText("Closed Won");
+			
+			driver.findElement(By.xpath(SalesForceOpportunity.nosSaveButton)).click();
+			
+			waitCWO.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(SalesForceOpportunity.ctomHeader)));
+			
+			driver.navigate().refresh();
+			
+			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+			
+		}
+		catch(Exception e)
+		{
+			throw new Exception ("Closing Won Opportunity - Failed",e);
+		}
+	}
 	
-
+	public static void addFile2Agreement(WebDriver driver, String testExecutionString)
+	{
+		
+	}
 
 }
 

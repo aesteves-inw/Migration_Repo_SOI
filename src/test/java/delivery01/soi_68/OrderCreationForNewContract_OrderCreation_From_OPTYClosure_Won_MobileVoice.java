@@ -52,7 +52,7 @@ public class OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_Mobi
 
 	String testExecutionString;
 
-	String optyName;
+	public String optyName;
 
 	String linkAgreementName;
 
@@ -240,6 +240,7 @@ public class OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_Mobi
 			
 			driver.navigate().refresh();
 			
+			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 			
 			if (BrowserActions.isElementPresent(driver, SalesForceOpportunity.stageClosedWonDetails))
 			{
@@ -274,8 +275,6 @@ public class OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_Mobi
 			
 			String orderValidation=driver.findElement(By.xpath(SalesForceOpportunity.ordersContainer)).getText().toString();
 			
-			System.out.println("S06 - orderValidation :"+orderValidation);
-			
 			if (orderValidation.contains(optyName))
 			{
 				ExecStructure.screenShotTaking(driver, testName, "6_OrderValidation");
@@ -303,9 +302,13 @@ public class OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_Mobi
 		
 		stepsExecuted++;
 		
+		String orderLink = SalesForceOpportunity.ordersContainer.concat("//a[contains(.,'"+optyName+"')]");
+		
+		System.out.println("S07: "+orderLink);
+		
 		try
 		{
-			driver.findElement(By.xpath(SalesForceOpportunity.ordersContainer.concat("//a[contains(.,"+optyName+")]"))).click();
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(orderLink))).click();
 			
 			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 			

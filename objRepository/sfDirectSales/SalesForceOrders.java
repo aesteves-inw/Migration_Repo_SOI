@@ -26,7 +26,7 @@ public class SalesForceOrders {
 	
 	
 	//In Edit Mode
-	public static String inputOrderName="/html/body/div[6]/div[1]/section/div/div/div[1]/div[2]/div/div[1]/div/div[2]/div[1]/div/div/section/div/div/article/div[3]/div/div[1]/div/div/div/div/div[1]/div[1]/div/div/div/input";
+	public static String inputOrderName="//input[@maxlength='80']";
 	
 	public static String saveButton="//button[@title='Save']";
 	

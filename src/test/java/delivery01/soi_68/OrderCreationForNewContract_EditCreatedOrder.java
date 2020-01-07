@@ -240,6 +240,8 @@ public class OrderCreationForNewContract_EditCreatedOrder {
 			
 			driver.navigate().refresh();
 			
+			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+			
 			
 			if (BrowserActions.isElementPresent(driver, SalesForceOpportunity.stageClosedWonDetails))
 			{
@@ -274,8 +276,6 @@ public class OrderCreationForNewContract_EditCreatedOrder {
 			
 			String orderValidation=driver.findElement(By.xpath(SalesForceOpportunity.ordersContainer)).getText().toString();
 			
-			System.out.println("S06 - orderValidation :"+orderValidation);
-			
 			if (orderValidation.contains(optyName))
 			{
 				ExecStructure.screenShotTaking(driver, testName, "6_OrderValidation");
@@ -305,7 +305,7 @@ public class OrderCreationForNewContract_EditCreatedOrder {
 		
 		try
 		{
-			driver.findElement(By.xpath(SalesForceOpportunity.ordersContainer.concat("//a[contains(.,"+optyName+")]"))).click();
+			driver.findElement(By.xpath(SalesForceOpportunity.ordersContainer.concat("//a[contains(.,'"+optyName+"')]"))).click();
 			
 			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 			
@@ -373,17 +373,17 @@ public class OrderCreationForNewContract_EditCreatedOrder {
 		{
 			driver.findElement(By.xpath(SalesForceOrders.editOrderNameBtn)).click();
 			
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesForceOrders.inputOrderName)));
-			
 			driver.findElement(By.xpath(SalesForceOrders.inputOrderName)).clear();
 			
 			driver.findElement(By.xpath(SalesForceOrders.inputOrderName)).sendKeys(editOrderNameString);
 			
 			driver.findElement(By.xpath(SalesForceOrders.saveButton)).click();
 			
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(SalesForceOrders.inputOrderName)));
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(SalesForceOrders.saveButton)));
 			
-			String orderVal = driver.findElement(By.xpath(SalesForceOrders.orderDetails)).getText().toString();
+			String orderVal = driver.findElement(By.xpath(SalesForceOrders.orderHeader)).getText().toString();
+			
+			System.out.println("S09 - OrderVal: "+orderVal);
 			
 			if (orderVal.contains(editOrderNameString))
 			{

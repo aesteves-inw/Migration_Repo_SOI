@@ -13,7 +13,7 @@ public class SFPC_Orders {
 	
 	public static String changeOwnerButton="//li/a/div[@title='Change Owner']";
 	
-	public static String headerOrder="/html/body/div[4]/div[2]/div/div[2]/div[1]/div/div[1]/header/div[2]/div/div[1]/div[2]";
+	public static String headerOrder="//h1";
 	
 	public static String headerOrderDetail="//h3[contains(.,'Order')]";
 	
