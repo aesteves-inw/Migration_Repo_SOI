@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [SOI-68]">
+  <test thread-count="5" name="Salesforce Direct Sales(failed)">
+    <classes>
+      <class name="delivery01.soi_68.OrderCreationForNewContract_EditCreatedOrder">
+        <methods>
+          <include name="step03"/>
+          <include name="step02"/>
+          <include name="step09"/>
+          <include name="step08"/>
+          <include name="step05"/>
+          <include name="step04"/>
+          <include name="beforeTest"/>
+          <include name="step07"/>
+          <include name="afterTest"/>
+          <include name="step06"/>
+          <include name="step01"/>
+        </methods>
+      </class> <!-- delivery01.soi_68.OrderCreationForNewContract_EditCreatedOrder -->
+      <class name="delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_MobileVoice">
+        <methods>
+          <include name="step07"/>
+          <include name="step02"/>
+          <include name="step01"/>
+          <include name="step03"/>
+          <include name="beforeTest"/>
+          <include name="step04"/>
+          <include name="afterTest"/>
+          <include name="step06"/>
+          <include name="step05"/>
+        </methods>
+      </class> <!-- delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_MobileVoice -->
+      <class name="delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice">
+        <methods>
+          <include name="step01"/>
+          <include name="step03"/>
+          <include name="afterTest"/>
+          <include name="step06"/>
+          <include name="beforeTest"/>
+          <include name="step02"/>
+          <include name="step05"/>
+          <include name="step04"/>
+        </methods>
+      </class> <!-- delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice -->
+    </classes>
+  </test> <!-- Salesforce Direct Sales(failed) -->
+  <test thread-count="5" name="Salesforce Partners Community(failed)">
+    <classes>
+      <class name="delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice_SFPC">
+        <methods>
+          <include name="step04"/>
+          <include name="afterTest"/>
+          <include name="step06"/>
+          <include name="step05"/>
+          <include name="step08"/>
+          <include name="beforeTest"/>
+          <include name="step09"/>
+          <include name="step03"/>
+          <include name="step07"/>
+          <include name="step02"/>
+          <include name="step01"/>
+        </methods>
+      </class> <!-- delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_NotMobileVoice_SFPC -->
+      <class name="delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_MobileVoice_SFPC">
+        <methods>
+          <include name="step10"/>
+          <include name="step01"/>
+          <include name="step03"/>
+          <include name="afterTest"/>
+          <include name="step02"/>
+          <include name="step05"/>
+          <include name="step04"/>
+          <include name="step07"/>
+          <include name="step06"/>
+          <include name="step09"/>
+          <include name="step08"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_MobileVoice_SFPC -->
+      <class name="delivery01.soi_68.OrderCreationForNewContract_EditCreatedOrder_SFPC">
+        <methods>
+          <include name="afterTest"/>
+          <include name="step11"/>
+          <include name="step10"/>
+          <include name="step08"/>
+          <include name="step01"/>
+          <include name="step02"/>
+          <include name="step03"/>
+          <include name="step05"/>
+          <include name="step06"/>
+          <include name="step07"/>
+          <include name="step09"/>
+          <include name="step04"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- delivery01.soi_68.OrderCreationForNewContract_EditCreatedOrder_SFPC -->
+    </classes>
+  </test> <!-- Salesforce Partners Community(failed) -->
+</suite> <!-- Failed suite [SOI-68] -->

@@ -1,53 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="8" passed="8">
+<testng-results skipped="0" failed="0" ignored="0" total="10" passed="10">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="80572" started-at="2020-01-06T17:53:37Z" finished-at="2020-01-06T17:54:58Z">
+  <suite name="Default suite" duration-ms="106751" started-at="2020-01-07T17:07:19Z" finished-at="2020-01-07T17:09:06Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="80572" started-at="2020-01-06T17:53:37Z" finished-at="2020-01-06T17:54:58Z">
-      <class name="delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_MobileVoice_SFPC">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_MobileVoice_SFPC@5c3bd550]" name="beforeTest" is-config="true" duration-ms="8865" started-at="2020-01-06T17:53:37Z" finished-at="2020-01-06T17:53:46Z">
+    <test name="Default test" duration-ms="106751" started-at="2020-01-07T17:07:19Z" finished-at="2020-01-07T17:09:06Z">
+      <class name="delivery01.soi_68.OrderCreationForNewContract_EditCreatedOrder_SFPC">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_EditCreatedOrder_SFPC@5c3bd550]" name="beforeTest" is-config="true" duration-ms="5248" started-at="2020-01-07T17:07:19Z" finished-at="2020-01-07T17:07:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="step01()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_MobileVoice_SFPC@5c3bd550]" name="step01" duration-ms="10572" started-at="2020-01-06T17:53:46Z" finished-at="2020-01-06T17:53:57Z">
+        <test-method status="PASS" signature="step01()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_EditCreatedOrder_SFPC@5c3bd550]" name="step01" duration-ms="10265" started-at="2020-01-07T17:07:24Z" finished-at="2020-01-07T17:07:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step01 -->
-        <test-method status="PASS" signature="step02()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_MobileVoice_SFPC@5c3bd550]" name="step02" duration-ms="8817" started-at="2020-01-06T17:53:57Z" depends-on-methods="delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_MobileVoice_SFPC.step01" finished-at="2020-01-06T17:54:06Z">
+        <test-method status="PASS" signature="step02()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_EditCreatedOrder_SFPC@5c3bd550]" name="step02" duration-ms="5975" started-at="2020-01-07T17:07:35Z" depends-on-methods="delivery01.soi_68.OrderCreationForNewContract_EditCreatedOrder_SFPC.step01" finished-at="2020-01-07T17:07:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step02 -->
-        <test-method status="PASS" signature="step03()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_MobileVoice_SFPC@5c3bd550]" name="step03" duration-ms="15890" started-at="2020-01-06T17:54:06Z" depends-on-methods="delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_MobileVoice_SFPC.step02" finished-at="2020-01-06T17:54:21Z">
+        <test-method status="PASS" signature="step03()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_EditCreatedOrder_SFPC@5c3bd550]" name="step03" duration-ms="10675" started-at="2020-01-07T17:07:41Z" depends-on-methods="delivery01.soi_68.OrderCreationForNewContract_EditCreatedOrder_SFPC.step02" finished-at="2020-01-07T17:07:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step03 -->
-        <test-method status="PASS" signature="step04()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_MobileVoice_SFPC@5c3bd550]" name="step04" duration-ms="9793" started-at="2020-01-06T17:54:21Z" depends-on-methods="delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_MobileVoice_SFPC.step03" finished-at="2020-01-06T17:54:31Z">
+        <test-method status="PASS" signature="step04()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_EditCreatedOrder_SFPC@5c3bd550]" name="step04" duration-ms="7929" started-at="2020-01-07T17:07:51Z" depends-on-methods="delivery01.soi_68.OrderCreationForNewContract_EditCreatedOrder_SFPC.step03" finished-at="2020-01-07T17:07:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step04 -->
-        <test-method status="PASS" signature="step05()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_MobileVoice_SFPC@5c3bd550]" name="step05" duration-ms="2604" started-at="2020-01-06T17:54:31Z" depends-on-methods="delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_MobileVoice_SFPC.step04" finished-at="2020-01-06T17:54:34Z">
+        <test-method status="PASS" signature="step05()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_EditCreatedOrder_SFPC@5c3bd550]" name="step05" duration-ms="2532" started-at="2020-01-07T17:07:59Z" depends-on-methods="delivery01.soi_68.OrderCreationForNewContract_EditCreatedOrder_SFPC.step04" finished-at="2020-01-07T17:08:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step05 -->
-        <test-method status="PASS" signature="step06()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_MobileVoice_SFPC@5c3bd550]" name="step06" duration-ms="18206" started-at="2020-01-06T17:54:34Z" depends-on-methods="delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_MobileVoice_SFPC.step05" finished-at="2020-01-06T17:54:52Z">
+        <test-method status="PASS" signature="step06()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_EditCreatedOrder_SFPC@5c3bd550]" name="step06" duration-ms="27383" started-at="2020-01-07T17:08:02Z" depends-on-methods="delivery01.soi_68.OrderCreationForNewContract_EditCreatedOrder_SFPC.step05" finished-at="2020-01-07T17:08:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step06 -->
-        <test-method status="PASS" signature="step07()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_MobileVoice_SFPC@5c3bd550]" name="step07" duration-ms="980" started-at="2020-01-06T17:54:52Z" depends-on-methods="delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_MobileVoice_SFPC.step06" finished-at="2020-01-06T17:54:53Z">
+        <test-method status="PASS" signature="step07()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_EditCreatedOrder_SFPC@5c3bd550]" name="step07" duration-ms="28725" started-at="2020-01-07T17:08:29Z" depends-on-methods="delivery01.soi_68.OrderCreationForNewContract_EditCreatedOrder_SFPC.step06" finished-at="2020-01-07T17:08:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step07 -->
-        <test-method status="PASS" signature="step08()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_MobileVoice_SFPC@5c3bd550]" name="step08" duration-ms="13" started-at="2020-01-06T17:54:53Z" depends-on-methods="delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_MobileVoice_SFPC.step07" finished-at="2020-01-06T17:54:53Z">
+        <test-method status="PASS" signature="step08()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_EditCreatedOrder_SFPC@5c3bd550]" name="step08" duration-ms="1376" started-at="2020-01-07T17:08:58Z" depends-on-methods="delivery01.soi_68.OrderCreationForNewContract_EditCreatedOrder_SFPC.step07" finished-at="2020-01-07T17:08:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step08 -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_MobileVoice_SFPC@5c3bd550]" name="afterTest" is-config="true" duration-ms="4774" started-at="2020-01-06T17:54:53Z" finished-at="2020-01-06T17:54:58Z">
+        <test-method status="PASS" signature="step09()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_EditCreatedOrder_SFPC@5c3bd550]" name="step09" duration-ms="2799" started-at="2020-01-07T17:08:59Z" depends-on-methods="delivery01.soi_68.OrderCreationForNewContract_EditCreatedOrder_SFPC.step08" finished-at="2020-01-07T17:09:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- step09 -->
+        <test-method status="PASS" signature="step10()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_EditCreatedOrder_SFPC@5c3bd550]" name="step10" duration-ms="2805" started-at="2020-01-07T17:09:02Z" depends-on-methods="delivery01.soi_68.OrderCreationForNewContract_EditCreatedOrder_SFPC.step09" finished-at="2020-01-07T17:09:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- step10 -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:delivery01.soi_68.OrderCreationForNewContract_EditCreatedOrder_SFPC@5c3bd550]" name="afterTest" is-config="true" duration-ms="934" started-at="2020-01-07T17:09:05Z" finished-at="2020-01-07T17:09:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-      </class> <!-- delivery01.soi_68.OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_MobileVoice_SFPC -->
+      </class> <!-- delivery01.soi_68.OrderCreationForNewContract_EditCreatedOrder_SFPC -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
