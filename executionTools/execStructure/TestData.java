@@ -66,6 +66,10 @@ public class TestData {
 		{
 			tdCompanyName= searchDT(2,"testingCompanySOI68");
 		}
+		else if(testName.contains("69"))
+		{
+			tdCompanyName= searchDT(2,"testingCompanySOI69");
+		}
 		else if(testName.contains("70"))
 		{
 			tdCompanyName= searchDT(2,"testingCompanySOI70");
@@ -90,6 +94,10 @@ public class TestData {
 		else if(testName.contains("68"))
 		{
 			tdCompanyID= searchDT(2,"idTestingCompanySOI68");
+		}
+		else if(testName.contains("69"))
+		{
+			tdCompanyID= searchDT(2,"idTestingCompanySOI69");
 		}
 		else if(testName.contains("70"))
 		{

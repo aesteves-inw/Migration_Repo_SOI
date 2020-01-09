@@ -15,7 +15,7 @@ public class SalesForceAgreement {
 	
 	public static String nameAgreement="/html/body/div[5]/div[1]/section/div/div/div[1]/div[2]/div/div[1]/div/div[2]/div[1]/div/div/section/div/div/article/div[2]/div/div[1]/div/div/div[1]/div[1]/div";
 	
-	
+
 	
 	
 	//   ..:: Edit Agreement Page
@@ -31,5 +31,13 @@ public class SalesForceAgreement {
 	public static String selectDocumentType="//article/div[3]/div/div[1]/div/div/div[3]/div[2]/div/div/div/div/div[1]/div/div/a";
 	
 	public static String saveButton="/html/body/div[5]/div[2]/div/div[2]/div/div[3]/div/button[3]/span";
+	
+	
+	
+	// Upload Files Screen
+	
+	public static String uploadFilesHeader ="//h2[contains(.,'Upload Files')]";
+	
+	public static String doneButton="//button[contains(.,'Done')]";
 
 }

@@ -304,8 +304,6 @@ public class OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_Mobi
 		
 		String orderLink = SalesForceOpportunity.ordersContainer.concat("//a[contains(.,'"+optyName+"')]");
 		
-		System.out.println("S07: "+orderLink);
-		
 		try
 		{
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(orderLink))).click();

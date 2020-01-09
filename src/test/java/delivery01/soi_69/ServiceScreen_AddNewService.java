@@ -10,8 +10,9 @@ import execReport.TestReportHeaderStructure;
 import execReport.TestStepReportStructure;
 import execStructure.ExecStructure;
 import execStructure.TestData;
+import sfDirectSales.SalesForceAgreement;
 import sfDirectSales.SalesForceOpportunity;
-import sfDirectSales.SalesForceOrders;
+import sfSikuli.SalesForceSikuli;
 
 import org.testng.annotations.BeforeTest;
 
@@ -26,42 +27,42 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.sikuli.script.Screen;
 import org.testng.annotations.AfterTest;
+
 
 public class ServiceScreen_AddNewService {
   
-	String testName = this.getClass().getName();
-
+String testName = this.getClass().getName();
+	
 	String initialTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
-
+	
 	long startTime=System.nanoTime();
 
 	WebDriver driver = null;
-
+	
 	WebDriverWait wait;
 
 	List<TestStepReportStructure> testExecStructure = new ArrayList<TestStepReportStructure>();
-
+	
 	String finalTestDate=null;
-
+	
 	long finishTime;
-
+	
 	int stepsExecuted;
-
+	
 	String testExecutionString;
-
-	public String optyName;
-
-	String linkAgreementName;
-
-
-
-	@BeforeTest
-	public void beforeTest() {
-
-		System.out.println("Test Case: "+testName+" initiation");
+	
+	String optyName;
+	
+	public String linkAgreementName;
+	
+ 
+  @BeforeTest
+  public void beforeTest() {
+	  
+	  System.out.println("Test Case: "+testName+" initiation");
 
 		ExecStructure.createReportStructure(testName);
 
@@ -99,26 +100,25 @@ public class ServiceScreen_AddNewService {
 
 		testExecutionString = ExecStructure.formattedDate("yyyyMMdd")+"_TC15_Ex"+ExecStructure.numberOfSubFolders(ExecStructure.testFolder(testName));
 	}
-
-
-	@Test
+  
+  @Test
 	public void step01() throws Exception {
-
-		stepsExecuted++;
-
-		String envURL=TestData.searchDT(0, "environmentITTQA");
-
-		try 
-		{
-
-			driver.get(envURL);
-
-			TestStepReportStructure step01 = FunctionalSteps.loginSalesForce(driver, 1, "DS", testName);
+	  
+	  stepsExecuted++;
+	  
+	  String envURL=TestData.searchDT(0, "environmentITTQA");
+	  
+	  try 
+	  {
+		  
+		  	driver.get(envURL);
+		  
+		  	TestStepReportStructure step01 = FunctionalSteps.loginSalesForce(driver, 1, "DS", testName);
 			testExecStructure.add(step01);
 
 			if (step01.getStepStatus().toLowerCase().contains("failed")) 
 			{
-
+				
 				throw new Exception("Validation Failed on Step 1");
 			}
 
@@ -128,23 +128,23 @@ public class ServiceScreen_AddNewService {
 			System.out.println(e);
 			throw new Exception("Test Failed on Step 1",e);
 		}
-
-	}
-
+	 
+  }
+  
 	@Test(dependsOnMethods = "step01")
 	public void step02() throws Exception {		
-
+		
 		stepsExecuted++;
-
+		
 		try
 		{
-
+			
 			TestStepReportStructure step02 = FunctionalSteps.navigate2CompanyDetails(driver, 2, testName);
 			testExecStructure.add(step02);
-
+			
 			if (step02.getStepStatus().toLowerCase().contains("failed")) 
 			{
-
+			
 				throw new Exception("Validation Failed on Step 2");
 			}
 		}
@@ -154,30 +154,209 @@ public class ServiceScreen_AddNewService {
 			throw new Exception("Test Failed on Step 2",e);
 		}
 	}
-
+	
 	@Test(dependsOnMethods = "step02")
 	public void step03() throws Exception {		
-
 		
+		stepsExecuted++;
+		
+		try
+		{
+			TestStepReportStructure step03 = FunctionalSteps.createStandardOppie(driver, 3, testName, testExecutionString);
+			testExecStructure.add(step03);
+			
+			if (step03.getStepStatus().toLowerCase().contains("failed")) 
+			{
+				
+				throw new Exception("Validation Failed on Step 3");
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception("Test Failed on Step 3",e);
+		}
+	}
+	
+	@Test(dependsOnMethods = "step03")
+	public void step04() throws Exception {	
+		
+		stepsExecuted++;
+			
+		optyName="OPTY_"+testExecutionString;
+		
+		try
+		{
+			FunctionalActionsSFDS.addProductToOppie(driver, "mobileVoice");
+			
+			FunctionalActionsSFDS.editProductConfiguration(driver, 1);
+			
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText(optyName))).click();
+			
+			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+			
+			if(BrowserActions.isElementPresent(driver, SalesForceOpportunity.optyHeader) && BrowserActions.isElementPresent(driver, SalesForceOpportunity.productContainer))
+			{
+				ExecStructure.screenShotTaking(driver, testName, "4_OppieValidation");
+				TestStepReportStructure step04 = new TestStepReportStructure(4, "Opportunity Screen Validation", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "4_OppieValidation");
+				testExecStructure.add(step04);
+			}
+			else
+			{
+				throw new Exception("Validation Failed on Step 04");
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			ExecStructure.screenShotTaking(driver, testName, "4_OppieValidation");
+			TestStepReportStructure step04 = new TestStepReportStructure(4, "Opportunity Screen Validation", "Validation with success", "Validated with success", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "4_OppieValidation");
+			testExecStructure.add(step04);
+			throw new Exception("Test Failed on Step 4",e);
+		}
+	}
+	
+	@Test(dependsOnMethods = "step04")
+	public void step05() throws Exception 
+	{	
+		stepsExecuted++;
+		
+		linkAgreementName=SalesForceOpportunity.agreementsContainer.concat("//a[contains(.,'"+optyName+"')]");
+		
+		try
+		{
+			BrowserActions.verticalscrollByVisibleElement(driver, SalesForceOpportunity.agreementsContainer);
+			
+			if (BrowserActions.isElementPresent(driver, linkAgreementName))
+			{
+				ExecStructure.screenShotTaking(driver, testName, "5_OpportunityValdiation");
+				TestStepReportStructure step05 = new TestStepReportStructure(5, "Generated Opportunity validation", "Validation with success", "Validated with success.", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "5_OpportunityValdiation");
+				testExecStructure.add(step05);
+			}
+			else
+			{
+				throw new Exception("Validation Failed on Step 05");
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			ExecStructure.screenShotTaking(driver, testName, "5_OpportunityValdiation");
+			TestStepReportStructure step05 = new TestStepReportStructure(5, "Generated Opportunity validation", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "5_OpportunityValdiation");
+			testExecStructure.add(step05);
+			throw new Exception("Test Failed on Step 5",e);
+		}
+	}
+	
+	@Test(dependsOnMethods = "step05")
+	public void step06() throws Exception
+	{
+		stepsExecuted++;
+		
+		try
+		{
+			driver.findElement(By.xpath(linkAgreementName)).click();
+			
+			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);		
+		
+					
+			if(BrowserActions.isElementPresent(driver, SalesForceAgreement.filesContainer) && BrowserActions.isElementPresent(driver, SalesForceAgreement.editButton) && BrowserActions.isElementPresent(driver, SalesForceAgreement.headerAgreementPage) && BrowserActions.isElementPresent(driver, SalesForceAgreement.detailsAgreement) && BrowserActions.isElementPresent(driver, SalesForceAgreement.nameAgreement))
+			{
+				ExecStructure.screenShotTaking(driver, testName, "6_AgreementValdiation");
+				TestStepReportStructure step06 = new TestStepReportStructure(6, "Generated Agreement validation", "Validation with success", "Validated with success.", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "6_AgreementValdiation");
+				testExecStructure.add(step06);
+			}
+			else
+			{
+				throw new Exception("Validation Failed on Step 06");
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			ExecStructure.screenShotTaking(driver, testName, "6_AgreementValdiation");
+			TestStepReportStructure step06 = new TestStepReportStructure(6, "Generated Agreement validation", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "6_AgreementValdiation");
+			testExecStructure.add(step06);
+			throw new Exception("Test Failed on Step 6",e);
+		}
+	}
+	
+	@Test(dependsOnMethods = "step06")
+	public void step07() throws Exception
+	{
+		Screen screen = new Screen();
+		
+		stepsExecuted++;
+		
+		String file2Upload="SimpleOrdering_Dummy_File";
+		String agreementFileTestData=ExecStructure.workingDir+"\\testData\\"+file2Upload+".pdf";
+		
+		System.out.println("S07 - Debug: "+agreementFileTestData);
+		
+		try
+		{
+			driver.findElement(By.xpath("(//span[contains(.,'Upload Files')])[2]")).click();
+			
+			screen.wait(SalesForceSikuli.uploadBarFilePathOpenCancel, 20);
+			
+			screen.find(SalesForceSikuli.filePath);
+			
+			screen.paste(agreementFileTestData);
+			
+			screen.click(SalesForceSikuli.openButton);
+			
+			screen.wait(SalesForceSikuli.uploadFilesDoneSalesforce, 20);
+			
+			screen.click(SalesForceSikuli.doneButton);
+			
+			//driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+			
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText(file2Upload)));
+			
+			System.out.println(BrowserActions.isElementPresent(driver, SalesForceAgreement.filesContainer));
+									
+			String fileContainerVal=driver.findElement(By.xpath(SalesForceAgreement.filesContainer)).getText().toString();
+			
+			System.out.println("fileContainerVal: "+fileContainerVal);
+			
+			if (fileContainerVal.contains(file2Upload))
+			{
+				ExecStructure.screenShotTaking(driver, testName, "7_FileUpload");
+				TestStepReportStructure step07 = new TestStepReportStructure(7, "File Upload on Agreements Page validation", "Validation with success", "File Updated with success: "+file2Upload, "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "7_FileUpload");
+				testExecStructure.add(step07);
+			}
+			else
+			{
+				throw new Exception("Validation Failed on Step 07");
+			}
+
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			ExecStructure.screenShotTaking(driver, testName, "7_FileUpload");
+			TestStepReportStructure step07 = new TestStepReportStructure(7, "File Upload on Agreements Page validation", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "7_FileUpload");
+			testExecStructure.add(step07);
+			throw new Exception("Test Failed on Step 7",e);
+		}
 	}
 
-
-	@AfterTest
-	public void afterTest() {
-
-
-		finalTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
-
-		finishTime=System.nanoTime();
-
-		TestReportHeaderStructure testHeader = new TestReportHeaderStructure(testName, initialTestDate, finalTestDate, startTime, finishTime, stepsExecuted);
-
-		new CreateTestReport(testExecStructure, testHeader);
-
-		System.out.println("Test Case: "+testName+" completion");
-
-		BrowserActions.endSession(driver);
-
-	}
+  @AfterTest
+  public void afterTest() {
+	  
+	  finalTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
+	  
+	  finishTime=System.nanoTime();
+	  
+	  TestReportHeaderStructure testHeader = new TestReportHeaderStructure(testName, initialTestDate, finalTestDate, startTime, finishTime, stepsExecuted);
+	  
+	  new CreateTestReport(testExecStructure, testHeader);
+	  
+	  System.out.println("Test Case: "+testName+" completion");
+	  
+	  BrowserActions.endSession(driver);
+	  
+  }
 
 }
