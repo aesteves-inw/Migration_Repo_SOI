@@ -4,16 +4,20 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.sikuli.script.Screen;
 
-
+import execReport.TestStepReportStructure;
 import execStructure.ExecStructure;
 import execStructure.TestData;
+import sfDirectSales.SalesForceAgreement;
 import sfDirectSales.SalesForceCompany;
 import sfDirectSales.SalesForceOpportunity;
 import sfDirectSales.SalesForceProducts;
+import sfSikuli.SalesForceSikuli;
 
 public class FunctionalActionsSFDS {
 	
@@ -170,6 +174,52 @@ public class FunctionalActionsSFDS {
 			throw new Exception ("Closing Won Opportunity - Failed",e);
 		}
 	}
+	
+	public static void addFile2Agreement(WebDriver driver, int stepID, String file2Upload) throws Exception
+	{
+		Screen screen = new Screen();	
+		
+		
+		String agreementFileTestData=ExecStructure.workingDir+"\\testData\\"+file2Upload+".pdf";
+		
+		
+		try
+		{
+			driver.findElement(By.xpath("(//span[contains(.,'Upload Files')])[2]")).click();
+			
+			screen.wait(SalesForceSikuli.uploadBarFilePathOpenCancel, 20);
+			
+			screen.find(SalesForceSikuli.filePath);
+			
+			screen.paste(agreementFileTestData);
+			
+			screen.click(SalesForceSikuli.openButton);
+			
+			screen.wait(SalesForceSikuli.uploadFilesDoneSalesforce, 20);
+			
+			screen.wait(SalesForceSikuli.doneButton, 20);
+			
+			screen.click(SalesForceSikuli.doneButton);
+			
+			
+			Thread.sleep(10000);
+			
+									
+			WebElement file = driver.findElement(By.xpath(SalesForceAgreement.filesContainer.concat("//a[contains(.,'"+file2Upload+"')]")));
+			
+			if (file.isDisplayed() == false)
+			{
+				throw new Exception("Not possible to Add File on Agreement on Step ID: "+stepID);
+			}
+
+			
+		}
+		catch(Exception e)
+		{
+			throw new Exception("Test Procedure to Add File to Agreement. Failed on StepID: "+stepID,e);
+		}
+	}
+	
 	
 	
 

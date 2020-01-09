@@ -59,6 +59,8 @@ String testName = this.getClass().getName();
 	
 	public String linkAgreementName;
 	
+	public String optyURL;
+	
  
   @BeforeTest
   public void beforeTest() {
@@ -222,6 +224,8 @@ String testName = this.getClass().getName();
 	{	
 		stepsExecuted++;
 		
+		optyURL=driver.getCurrentUrl();
+		
 		linkAgreementName=SalesForceOpportunity.agreementsContainer.concat("//a[contains(.,'"+optyName+"')]");
 		
 		try
@@ -285,37 +289,16 @@ String testName = this.getClass().getName();
 	@Test(dependsOnMethods = "step06")
 	public void step07() throws Exception
 	{
-		Screen screen = new Screen();
-		
 		stepsExecuted++;
 		
 		String file2Upload="SimpleOrdering_Dummy_File";
-		String agreementFileTestData=ExecStructure.workingDir+"\\testData\\"+file2Upload+".pdf";
 		
-		System.out.println("S07 - Debug: "+agreementFileTestData);
 		
 		try
 		{
-			driver.findElement(By.xpath("(//span[contains(.,'Upload Files')])[2]")).click();
+		
+			FunctionalActionsSFDS.addFile2Agreement(driver, stepsExecuted, file2Upload);
 			
-			screen.wait(SalesForceSikuli.uploadBarFilePathOpenCancel, 20);
-			
-			screen.find(SalesForceSikuli.filePath);
-			
-			screen.paste(agreementFileTestData);
-			
-			screen.click(SalesForceSikuli.openButton);
-			
-			screen.wait(SalesForceSikuli.uploadFilesDoneSalesforce, 20);
-			
-			screen.wait(SalesForceSikuli.doneButton, 20);
-			
-			screen.click(SalesForceSikuli.doneButton);
-			
-			
-			Thread.sleep(10000);
-			
-									
 			WebElement file = driver.findElement(By.xpath(SalesForceAgreement.filesContainer.concat("//a[contains(.,'"+file2Upload+"')]")));
 			
 			if (file.isDisplayed())
@@ -338,6 +321,19 @@ String testName = this.getClass().getName();
 			TestStepReportStructure step07 = new TestStepReportStructure(7, "File Upload on Agreements Page validation", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "7_FileUpload");
 			testExecStructure.add(step07);
 			throw new Exception("Test Failed on Step 7",e);
+		}
+	}
+	
+	@Test(dependsOnMethods = "step07")
+	public void step08() throws Exception
+	{
+		try
+		{
+			driver.get(optyURL);
+		}
+		catch(Exception e)
+		{
+			
 		}
 	}
 
