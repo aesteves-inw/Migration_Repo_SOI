@@ -24,6 +24,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -307,19 +308,17 @@ String testName = this.getClass().getName();
 			
 			screen.wait(SalesForceSikuli.uploadFilesDoneSalesforce, 20);
 			
+			screen.wait(SalesForceSikuli.doneButton, 20);
+			
 			screen.click(SalesForceSikuli.doneButton);
 			
-			//driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 			
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText(file2Upload)));
+			Thread.sleep(10000);
 			
-			System.out.println(BrowserActions.isElementPresent(driver, SalesForceAgreement.filesContainer));
 									
-			String fileContainerVal=driver.findElement(By.xpath(SalesForceAgreement.filesContainer)).getText().toString();
+			WebElement file = driver.findElement(By.xpath(SalesForceAgreement.filesContainer.concat("//a[contains(.,'"+file2Upload+"')]")));
 			
-			System.out.println("fileContainerVal: "+fileContainerVal);
-			
-			if (fileContainerVal.contains(file2Upload))
+			if (file.isDisplayed())
 			{
 				ExecStructure.screenShotTaking(driver, testName, "7_FileUpload");
 				TestStepReportStructure step07 = new TestStepReportStructure(7, "File Upload on Agreements Page validation", "Validation with success", "File Updated with success: "+file2Upload, "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "7_FileUpload");
