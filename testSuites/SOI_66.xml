@@ -1,18 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="SOI-66">
-  <test thread-count="3" name="Salesforce Direct Sales">
-    <classes>
-      <class name="delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice"/>
-      <class name="delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice_Negative"/>
-      <class name="delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice_EditAgreement"/>
-    </classes>
-  </test> <!--  -->
-   <test thread-count="3" name="Salesforce Partners Community">
-    <classes>
-      <class name="delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice_Negative_SFPC"/>
-      <class name="delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice_SFPC"/>
-      <class name="delivery01.soi_66.AgreementCreation_From_Opportunity_MobileVoice_EditAgreement_SFPC"/>
-    </classes>
-  </test>
-</suite> <!-- SOI-66 -->
+<!--   <suite name="SOI-66 Direct Sales Suite">
+	<test name="AgreementCreation_From_Oportunity_MobileVoice">
+		<classes>
+			<class name ="delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice"/>
+		</classes>
+	</test>
+		<test name="AgreementCreation_From_Oportunity_MobileVoice_Negative">
+		<classes>
+			<class name ="delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice_Negative"/>
+		</classes>
+	</test>
+		<test name="AgreementCreation_From_Oportunity_MobileVoice_EditAgreement">
+		<classes>
+			<class name ="delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice_EditAgreement"/>
+		</classes>
+	</test>
+</suite>
+-->
+  <suite name="SOI-66: Mobile Order Intake: Agreement Creation">
+  <suite-files>
+    <suite-file path="./src/test/java/delivery01/soi_66/SOI66_DirectSales.xml"></suite-file>
+    <suite-file path="./src/test/java/delivery01/soi_66/SOI66_DirectSales.xml"></suite-file>
+  </suite-files>
+ </suite>

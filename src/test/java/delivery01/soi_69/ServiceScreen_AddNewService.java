@@ -12,8 +12,8 @@ import execStructure.ExecStructure;
 import execStructure.TestData;
 import sfDirectSales.SalesForceAgreement;
 import sfDirectSales.SalesForceOpportunity;
-import sfSikuli.SalesForceSikuli;
-
+import sfDirectSales.SalesForceOrders;
+import sfDirectSales.SalesForceService;
 import org.testng.annotations.BeforeTest;
 
 import java.util.ArrayList;
@@ -29,13 +29,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.sikuli.script.Screen;
 import org.testng.annotations.AfterTest;
 
 
 public class ServiceScreen_AddNewService {
   
-String testName = this.getClass().getName();
+	String testName = this.getClass().getName();
 	
 	String initialTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
 	
@@ -60,6 +59,8 @@ String testName = this.getClass().getName();
 	public String linkAgreementName;
 	
 	public String optyURL;
+	
+	public String orderURL;
 	
  
   @BeforeTest
@@ -327,13 +328,103 @@ String testName = this.getClass().getName();
 	@Test(dependsOnMethods = "step07")
 	public void step08() throws Exception
 	{
+		stepsExecuted++;
+		
 		try
 		{
 			driver.get(optyURL);
+			
+			FunctionalActionsSFDS.closeWonOppie(driver);
+			
+			FunctionalActionsSFDS.navigate2Order(driver, stepsExecuted, optyName);
+			
+			if (BrowserActions.isElementPresent(driver, SalesForceOrders.addServiceButton) && BrowserActions.isElementPresent(driver, SalesForceOrders.submitOrderButton) && BrowserActions.isElementPresent(driver, SalesForceOrders.servicesContainer) && BrowserActions.isElementPresent(driver, SalesForceOrders.orderDetails) && BrowserActions.isElementPresent(driver, SalesForceOrders.orderHeader))
+			{
+				ExecStructure.screenShotTaking(driver, testName, "8_OrderScreenValidation");
+				TestStepReportStructure step08 = new TestStepReportStructure(8, "Order Screen Validation", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "8_OrderScreenValidation");
+				testExecStructure.add(step08);
+			}
+			else
+			{
+				throw new Exception("Validation Failed on Step 08");
+			}
+			
+			
 		}
 		catch(Exception e)
 		{
+			System.out.println(e);
+			ExecStructure.screenShotTaking(driver, testName, "8_OrderScreenValidation");
+			TestStepReportStructure step08 = new TestStepReportStructure(8, "Order Screen Validation", "Validation with success", "N", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "8_OrderScreenValidation");
+			testExecStructure.add(step08);
+			throw new Exception("Test Failed on Step 8",e);
+		}
+	}
+	
+	@Test(dependsOnMethods = "step08")
+	public void step09() throws Exception
+	{
+		stepsExecuted++;
+		
+		orderURL=driver.getCurrentUrl();
+		
+		try
+		{
+			FunctionalActionsSFDS.addService2Order(driver, stepsExecuted);
 			
+			if(BrowserActions.isElementPresent(driver, SalesForceService.filesContainer) && BrowserActions.isElementPresent(driver, SalesForceService.headerServicesPage) && BrowserActions.isElementPresent(driver, SalesForceService.detailsServicePage)  &&  BrowserActions.isElementPresent(driver, SalesForceService.fieldServiceName)  && BrowserActions.isElementPresent(driver, SalesForceService.fieldQuote) && BrowserActions.isElementPresent(driver, SalesForceService.fieldCase) && BrowserActions.isElementPresent(driver, SalesForceService.fieldDomain) && BrowserActions.isElementPresent(driver, SalesForceService.fieldType) && BrowserActions.isElementPresent(driver, SalesForceService.fieldDetail) && BrowserActions.isElementPresent(driver, SalesForceService.fieldServiceRequestDate) && BrowserActions.isElementPresent(driver, SalesForceService.fieldEnd2EndRequestOwner) && BrowserActions.isElementPresent(driver, SalesForceService.fieldStatus))
+			{
+				ExecStructure.screenShotTaking(driver, testName, "9_ServiceScreenValidation");
+				TestStepReportStructure step09 = new TestStepReportStructure(9, "Service Screen Validation", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "9_ServiceScreenValidation");
+				testExecStructure.add(step09);
+			}
+			else
+			{
+				throw new Exception("Validation Failed on Step 09");
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			ExecStructure.screenShotTaking(driver, testName, "9_ServiceScreenValidation");
+			TestStepReportStructure step09 = new TestStepReportStructure(9, "Service Screen Validation", "Validation with success", "Not possible to validate.", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "9_ServiceScreenValidation");
+			testExecStructure.add(step09);
+			throw new Exception("Test Failed on Step 9",e);
+		}
+	}
+	
+	@Test(dependsOnMethods = "step09")
+	public void step10() throws Exception
+	{
+		stepsExecuted++;
+		
+		String ordersLinkXpath=SalesForceOrders.serviceContainer.concat("//a[contains(.,'Mobile')]");
+		
+		try
+		{
+			driver.get(orderURL);
+			
+			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);	
+			
+			if(BrowserActions.isElementPresent(driver, ordersLinkXpath))
+			{
+				ExecStructure.screenShotTaking(driver, testName, "10_ServiceinOrderScreenValidation");
+				TestStepReportStructure step10 = new TestStepReportStructure(10, "Service in Order Screen Validation", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "10_ServiceinOrderScreenValidation");
+				testExecStructure.add(step10);
+			}
+			else
+			{
+				throw new Exception("Validation Failed on Step 10");
+			}
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			ExecStructure.screenShotTaking(driver, testName, "10_ServiceinOrderScreenValidation");
+			TestStepReportStructure step10 = new TestStepReportStructure(10, "Service in Order Screen Validation", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "10_ServiceinOrderScreenValidation");
+			testExecStructure.add(step10);
+			throw new Exception("Test Failed on Step 10",e);
 		}
 	}
 

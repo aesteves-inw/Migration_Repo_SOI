@@ -10,6 +10,7 @@ public class SalesForceOrders {
 
 	//public static String orderDetails="/html/body/div[5]/div[1]/section/div/div/div[1]/div[2]/div/div[1]/div/div[2]/div[1]/div/div/section/div/div/article/div[2]/div/div/div/div";
 	
+	public static String serviceContainer="//article[contains(.,'Services')]";
 	
 	
 	//After 06-01-2020
@@ -47,6 +48,29 @@ public class SalesForceOrders {
 	public static String editStatusBtn ="//button[contains(@title, 'Edit Status')]";
 	
 	public static String editSubmissionDateBtn="//button[contains(@title, 'Submission Date')]";
+	
+	
+	
+	// Add Service Screen - Config
+	
+	public static String inputDomain="//input[@name='PRX_SOI_Domain__c']";
+	
+	public static String inputDetail="//input[@name='PRX_SOI_Detail__c']";
+	
+	public static String inputType="//input[@name='PRX_SOI_Type__c']";
+	
+	public static String btnSaveASSC="//lightning-button[2]/button";
+	
+	public static String detailsASSC="//lightning-record-edit-form/form/slot/div/div[1]";
+	
+	public static String domainExtra="//span[@title='Extra Products & Services']";
+	
+	public static String domainRenewal="//span[@title='Renewal']";
+	
+	public static String domainWinback="//span[@title='Winback']";
+	
+	
+	
 	
 	
 
