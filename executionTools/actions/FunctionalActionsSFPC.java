@@ -7,18 +7,25 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.sikuli.script.Screen;
 
 import execReport.TestStepReportStructure;
 import execStructure.ExecStructure;
 import execStructure.TestData;
+import sfDirectSales.SalesForceAgreement;
 import sfDirectSales.SalesForceNewMACDOrderScreen;
+import sfDirectSales.SalesForceOpportunity;
+import sfPartnersCommunity.SFPC_Agreements;
 import sfPartnersCommunity.SFPC_Company;
 import sfPartnersCommunity.SFPC_HomePage;
 import sfPartnersCommunity.SFPC_LoginPage;
 import sfPartnersCommunity.SFPC_NewMACDOrderScreen;
 import sfPartnersCommunity.SFPC_Opportunity;
+import sfPartnersCommunity.SFPC_Orders;
 import sfPartnersCommunity.SFPC_Products;
+import sfSikuli.SalesForceSikuli;
 
 public class FunctionalActionsSFPC {
 
@@ -181,5 +188,174 @@ public class FunctionalActionsSFPC {
 
 	}
 
+	public static void closeWonOPTY(WebDriver driver, int stepID) throws Exception
+	{
+		
+		WebDriverWait waitCWO = new WebDriverWait(driver, 15);
+		
+		try
+		{
+			do {
+				driver.findElement(By.xpath(SFPC_Opportunity.nextBtn)).click();
+			}while(driver.findElement(By.xpath(SFPC_Opportunity.closeOptyBtn)).isDisplayed()==false);
+			
+			driver.findElement(By.xpath(SFPC_Opportunity.closeOptyBtn)).click();
+			
+			waitCWO.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SFPC_Opportunity.selectClosedStageBtn))).click();
+			
+			waitCWO.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SFPC_Opportunity.ctoHeader)));
+			
+			Select closeOpty = new Select(driver.findElement(By.xpath(SFPC_Opportunity.ctoSelectStage)));
+			
+			closeOpty.selectByVisibleText("Closed Won");
+			
+			driver.findElement(By.xpath(SFPC_Opportunity.saveButton)).click();
+			
+			waitCWO.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(SFPC_Opportunity.ctoHeader)));
+			
+			driver.navigate().refresh();
+			
+			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+			
+			if (!(BrowserActions.isElementPresent(driver, SalesForceOpportunity.stageClosedWonDetails)))
+			{
+				throw new Exception("Not possible to Close Won Opportunity. Step: "+stepID);
+			}
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
 
+			throw new Exception("Test Procedure to Close Won Opportunity. Failed on StepID: "+stepID,e);
+	}
 }
+
+	public static void navigate2Agreement(WebDriver driver, int stepID, String linkAgreementName) throws Exception
+	{
+		WebDriverWait waitN2A = new WebDriverWait(driver, 15);
+				
+		try
+		{
+			//BrowserActions.verticalscrollByVisibleElement(driver, SalesForceOpportunity.agreementsContainer);
+			
+			if (BrowserActions.isElementPresent(driver, linkAgreementName))
+			{
+				driver.findElement(By.xpath(linkAgreementName)).click();
+				
+				waitN2A.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(SFPC_Agreements.agreementsDetails)));
+			}
+			else
+			{
+				throw new Exception("Not possible to navigate into Agreement's Page on Step: "+stepID);
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			
+			throw new Exception("Test Procedure to Navigate to Agreement's page. Failed on StepID: "+stepID,e);
+		}
+	}
+	
+	public static void addFile2Agreement(WebDriver driver, int stepID) throws Exception
+	{
+			Screen screen = new Screen();	
+		
+			String file2Upload="SimpleOrdering_Dummy_File";
+			
+			String agreementFileTestData=ExecStructure.workingDir+"\\testData\\"+file2Upload+".pdf";
+		
+		try
+		{
+			driver.findElement(By.xpath("//span[contains(.,'Upload Files')]")).click();
+			
+			screen.wait(SalesForceSikuli.uploadBarFilePathOpenCancel, 20);
+			
+			screen.find(SalesForceSikuli.filePath);
+			
+			screen.paste(agreementFileTestData);
+			
+			screen.click(SalesForceSikuli.openButton);
+			
+			screen.wait(SalesForceSikuli.uploadFilesDoneSalesforce, 20);
+			
+			screen.wait(SalesForceSikuli.doneButton, 20);
+			
+			screen.click(SalesForceSikuli.doneButton);
+			
+			
+			Thread.sleep(10000);
+			
+									
+			WebElement file = driver.findElement(By.xpath(SalesForceAgreement.filesContainer.concat("//a[contains(.,'"+file2Upload+"')]")));
+			
+			if (file.isDisplayed() == false)
+			{
+				throw new Exception("Not possible to Add File on Agreement on Step ID: "+stepID);
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception("Test Procedure to Add File to Agreement. Failed on StepID: "+stepID,e);
+		}
+	}
+		
+	public static void addService2Order(WebDriver driver, int stepID) throws Exception
+	{
+		WebDriverWait waitAS2O= new WebDriverWait(driver, 15);
+		
+		try
+		{
+			driver.findElement(By.xpath(SFPC_Orders.addServiceBtn)).click();
+			
+			waitAS2O.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SFPC_Orders.addServiceConfigScreen)));
+			
+			if (BrowserActions.isElementPresent(driver, SFPC_Orders.addServiceConfigScreen) && BrowserActions.isElementPresent(driver, SFPC_Orders.labelDomain) && BrowserActions.isElementPresent(driver, SFPC_Orders.labelType) && BrowserActions.isElementPresent(driver, SFPC_Orders.labelDetail) && BrowserActions.isElementPresent(driver, SFPC_Orders.saveBtnAS2O))
+			{
+				driver.findElement(By.xpath(SFPC_Orders.inputDetail)).click();
+				
+				driver.findElement(By.xpath(SFPC_Orders.inputDetailWinback)).click();
+				
+				driver.findElement(By.xpath(SFPC_Orders.saveBtnAS2O)).click();
+				
+				waitAS2O.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(SFPC_Orders.addServiceConfigScreen)));
+				
+			}
+			else
+			{
+				throw new Exception("Not possible to Add Service to Order on Step ID: "+stepID);
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception("Test Procedure to Add Service to Order. Failed on StepID: "+stepID,e);
+		}
+	}
+
+	public static void navigate2ServiceScreen(WebDriver driver, int stepID) throws Exception
+	{
+		
+		String serviceLink = SFPC_Orders.servicesContainer.concat("//a[contains(.,'Mobile')]");
+		
+		WebDriverWait waitN2SS = new WebDriverWait(driver, 15);
+		
+		try
+		{
+			driver.findElement(By.xpath(serviceLink)).click();
+			
+			waitN2SS.until(ExpectedConditions.visibilityOfElementLocated(By.xpath()));
+			
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception("Test Procedure to Navigate to Service Screen. Failed on StepID: "+stepID,e);
+		}
+	}
+	
+	}

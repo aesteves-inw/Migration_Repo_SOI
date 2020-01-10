@@ -1,4 +1,25 @@
-package delivery01.soi_68;
+package delivery01.soi_69;
+
+import org.testng.annotations.Test;
+
+import actions.BrowserActions;
+import actions.FunctionalActionsSFPC;
+import execReport.CreateTestReport;
+import execReport.TestReportHeaderStructure;
+import execReport.TestStepReportStructure;
+import execStructure.ExecStructure;
+import execStructure.TestData;
+import sfDirectSales.SalesForceOpportunity;
+import sfDirectSales.SalesForceOrders;
+import sfPartnersCommunity.SFPC_Company;
+import sfPartnersCommunity.SFPC_HomePage;
+import sfPartnersCommunity.SFPC_LoginPage;
+import sfPartnersCommunity.SFPC_Opportunity;
+import sfPartnersCommunity.SFPC_Orders;
+import sfPartnersCommunity.SFPC_Products;
+import sfPartnersCommunity.SFPC_Services;
+
+import org.testng.annotations.BeforeTest;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,30 +33,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
 
-import actions.BrowserActions;
-import execReport.CreateTestReport;
-import execReport.TestReportHeaderStructure;
-import execReport.TestStepReportStructure;
-import execStructure.ExecStructure;
-import execStructure.TestData;
-import sfDirectSales.SalesForceOpportunity;
-import sfDirectSales.SalesForceOrders;
-import sfPartnersCommunity.SFPC_Agreements;
-import sfPartnersCommunity.SFPC_Company;
-import sfPartnersCommunity.SFPC_HomePage;
-import sfPartnersCommunity.SFPC_LoginPage;
-import sfPartnersCommunity.SFPC_Opportunity;
-import sfPartnersCommunity.SFPC_Orders;
-import sfPartnersCommunity.SFPC_Products;
-
-public class OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_MobileVoice_SFPC {
-	
+public class ServiceScreen_AddNewService_CreateMoreThenOneSerivice_SFPC {
 	private String testName = this.getClass().getName();
 
 	private String initialTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
@@ -57,6 +58,8 @@ public class OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_Mobi
 	private WebDriverWait wait;
 	
 	private String oppiename;
+	
+	private String generatedAgreement;
 
 	@BeforeTest
 	public void beforeTest() {
@@ -97,7 +100,7 @@ public class OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_Mobi
 
 		}
 
-		testExecutionString = ExecStructure.formattedDate("yyyyMMdd")+"_TC10PC_Ex"+ExecStructure.numberOfSubFolders(ExecStructure.testFolder(testName));
+		testExecutionString = ExecStructure.formattedDate("yyyyMMdd")+"_TC18PC_Ex"+ExecStructure.numberOfSubFolders(ExecStructure.testFolder(testName));
 	}
 	
 	@Test
@@ -334,7 +337,7 @@ public class OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_Mobi
 		
 		String lineItemOppie=(SFPC_Opportunity.productsArea).concat("//a[contains(.,'"+mobileVoice+"')]");
 		
-		String generatedAgreement=(SFPC_Opportunity.agreementsArea).concat("//a[contains(.,'"+oppiename+"')]");
+		generatedAgreement=(SFPC_Opportunity.agreementsArea).concat("//a[contains(.,'"+oppiename+"')]");
 		
 		try
 		{
@@ -391,8 +394,18 @@ public class OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_Mobi
 		
 		stepsExecuted++;
 		
+		
 		try
 		{
+			FunctionalActionsSFPC.navigate2Agreement(driver, stepsExecuted, generatedAgreement);
+			
+			FunctionalActionsSFPC.addFile2Agreement(driver, stepsExecuted);
+			
+			driver.findElement(By.xpath("//a[contains(.,'"+oppiename+"')]")).click();
+			
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SFPC_Opportunity.optyDetails)));
+			
+			FunctionalActionsSFPC.closeWonOPTY(driver, stepsExecuted);
 			
 			
 			if (BrowserActions.isElementPresent(driver, SalesForceOpportunity.stageClosedWonDetails))
@@ -492,6 +505,72 @@ public class OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_Mobi
 		
 	}
 	
+	@Test(dependsOnMethods = "step09")
+	public void step10() throws Exception {
+		
+		stepsExecuted++;
+		
+		try 
+		{
+			FunctionalActionsSFPC.addService2Order(driver, stepsExecuted);
+			
+			FunctionalActionsSFPC.navigate2ServiceScreen(driver, stepsExecuted);
+			
+			if (BrowserActions.isElementPresent(driver, SFPC_Services.detailsServicePage) && BrowserActions.isElementPresent(driver, SFPC_Services.fieldServiceName) && BrowserActions.isElementPresent(driver, SFPC_Services.fieldQuote) && BrowserActions.isElementPresent(driver, SFPC_Services.fieldCase) && BrowserActions.isElementPresent(driver, SFPC_Services.fieldDomain) && BrowserActions.isElementPresent(driver, SFPC_Services.fieldType) && BrowserActions.isElementPresent(driver, SFPC_Services.fieldDetail) && BrowserActions.isElementPresent(driver, SFPC_Services.fieldServiceRequestDate) && BrowserActions.isElementPresent(driver, SFPC_Services.fieldEnd2EndRequestOwner) && BrowserActions.isElementPresent(driver, SFPC_Services.fieldStatus))
+			{
+				ExecStructure.screenShotTaking(driver, testName, "10_ServiceScreenValidation");
+				TestStepReportStructure step010 = new TestStepReportStructure(10, "Service Screen Validation", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "10_ServiceScreenValidation");
+				testExecStructure.add(step010);
+			}
+			else
+			{
+				throw new Exception("Validation Failed on Step 10");
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			ExecStructure.screenShotTaking(driver, testName, "10_ServiceScreenValidation");
+			TestStepReportStructure step010 = new TestStepReportStructure(10, "Service Screen Validation", "Validation with success", "Not possible to validate.", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "10_ServiceScreenValidation");
+			testExecStructure.add(step010);
+			throw new Exception("Test Failed on Step 10",e);
+		}
+	}
+	
+	@Test(dependsOnMethods = "step10")
+	public void step11() throws Exception {
+		
+		try
+		{
+			driver.findElement(By.xpath("//a[contains(.,'"+oppiename+"')]")).click();
+			
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SFPC_Orders.orderDetails)));
+			
+			FunctionalActionsSFPC.addService2Order(driver, stepsExecuted);
+			
+			List<WebElement> servicesList=driver.findElements(By.xpath(SFPC_Orders.servicesContainer.concat("//a[contains(.,'Mobile')]")));
+			
+			if (servicesList.size()>1)
+			{
+				ExecStructure.screenShotTaking(driver, testName, "11_ServiceinOrderScreenValidation");
+				TestStepReportStructure step11 = new TestStepReportStructure(11, "Services in Order Screen Validation", "Validation with success", "Validated with success. Counted Services: "+servicesList, "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "11_ServiceinOrderScreenValidation");
+				testExecStructure.add(step11);
+			}
+			else
+			{
+				throw new Exception("Validation Failed on Step 011");
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			ExecStructure.screenShotTaking(driver, testName, "11_ServiceinOrderScreenValidation");
+			TestStepReportStructure step11 = new TestStepReportStructure(11, "Services in Order Screen Validation", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "11_ServiceinOrderScreenValidation");
+			testExecStructure.add(step11);
+			throw new Exception("Test Failed on Step 11",e);
+		}
+	}
+	
 	
 	@AfterTest
 	public void afterTest() {
@@ -509,4 +588,5 @@ public class OrderCreationForNewContract_OrderCreation_From_OPTYClosure_Won_Mobi
 		BrowserActions.endSession(driver);
 		
 	}
+
 }
