@@ -25,6 +25,8 @@ public class SalesForceOrders {
 	
 	public static String orderHeader="//h1[contains(.,'Order')]";
 	
+	public static String orderError="/html/body/div[7]/div/div/div";
+	
 	
 	//In Edit Mode
 	public static String inputOrderName="//input[@maxlength='80']";
@@ -63,11 +65,16 @@ public class SalesForceOrders {
 	
 	public static String detailsASSC="//lightning-record-edit-form/form/slot/div/div[1]";
 	
+	public static String domainMobile="//span[@title='Mobile']";
+	
+	public static String typeNewContract="//span[@title='New Contract']";
+	
 	public static String domainExtra="//span[@title='Extra Products & Services']";
 	
 	public static String domainRenewal="//span[@title='Renewal']";
 	
 	public static String domainWinback="//span[@title='Winback']";
+	
 	
 	
 	

@@ -82,7 +82,7 @@ public class AgreementCreation_From_Oportunity_MobileVoice {
 
 		Chrome_Profile.addArguments("browser.helperApps.neverAsk.saveToDisk", "application/pdf");
 
-		driver = new ChromeDriver(); 
+		driver = new ChromeDriver(Chrome_Profile); 
 		
 		wait=new WebDriverWait(driver, 15);
 
@@ -189,9 +189,11 @@ public class AgreementCreation_From_Oportunity_MobileVoice {
 			
 			FunctionalActionsSFDS.editProductConfiguration(driver, 1);
 			
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesForceCompany.companyDetailsHeader)));
+			//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesForceCompany.companyDetailsHeader)));
 			
-			driver.findElement(By.linkText(optyName)).click();
+			//driver.findElement(By.linkText(optyName)).click();
+			
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText(optyName)));
 			
 			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 			

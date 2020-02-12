@@ -74,6 +74,10 @@ public class TestData {
 		{
 			tdCompanyName= searchDT(2,"testingCompanySOI70");
 		}
+		else if(testName.contains("79"))
+		{
+			tdCompanyName= searchDT(2,"testingCompanySOI79");
+		}
 		else
 		{
 			throw new Exception("Not possible to identify Test Case");
@@ -102,6 +106,10 @@ public class TestData {
 		else if(testName.contains("70"))
 		{
 			tdCompanyID= searchDT(2,"idTestingCompanySOI70");
+		}
+		else if(testName.contains("79"))
+		{
+			tdCompanyID= searchDT(2,"idTestingCompanySOI79");
 		}
 		else
 		{

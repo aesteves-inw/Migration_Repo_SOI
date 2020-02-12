@@ -540,6 +540,8 @@ public class ServiceScreen_AddNewService_CreateMoreThenOneSerivice_SFPC {
 	@Test(dependsOnMethods = "step10")
 	public void step11() throws Exception {
 		
+		stepsExecuted++;
+		
 		try
 		{
 			driver.findElement(By.xpath("//a[contains(.,'"+oppiename+"')]")).click();

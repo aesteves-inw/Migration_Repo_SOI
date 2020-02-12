@@ -187,7 +187,6 @@ public class ServiceScreen_AddNewService_SFPC {
 		}
 	}
 	
-	
 	@Test(dependsOnMethods = "step02")
 	public void step03() throws Exception {
 		
@@ -286,7 +285,6 @@ public class ServiceScreen_AddNewService_SFPC {
 			throw new Exception("Test Failed on Step 4",e);
 		}
 	}
-	
 	
 	@Test(dependsOnMethods = "step04")
 	public void step05() throws Exception {
@@ -390,13 +388,10 @@ public class ServiceScreen_AddNewService_SFPC {
 		
 	}
 	
-	
-	
 	@Test(dependsOnMethods = "step06")
 	public void step07() throws Exception {
 		
 		stepsExecuted++;
-		
 		
 		try
 		{
@@ -539,7 +534,6 @@ public class ServiceScreen_AddNewService_SFPC {
 			throw new Exception("Test Failed on Step 10",e);
 		}
 	}
-	
 	
 	@AfterTest
 	public void afterTest() {

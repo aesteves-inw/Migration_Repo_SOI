@@ -25,6 +25,7 @@ import sfPartnersCommunity.SFPC_NewMACDOrderScreen;
 import sfPartnersCommunity.SFPC_Opportunity;
 import sfPartnersCommunity.SFPC_Orders;
 import sfPartnersCommunity.SFPC_Products;
+import sfPartnersCommunity.SFPC_Services;
 import sfSikuli.SalesForceSikuli;
 
 public class FunctionalActionsSFPC {
@@ -347,7 +348,7 @@ public class FunctionalActionsSFPC {
 		{
 			driver.findElement(By.xpath(serviceLink)).click();
 			
-			waitN2SS.until(ExpectedConditions.visibilityOfElementLocated(By.xpath()));
+			waitN2SS.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SFPC_Services.detailsServicePage)));
 			
 			
 		}

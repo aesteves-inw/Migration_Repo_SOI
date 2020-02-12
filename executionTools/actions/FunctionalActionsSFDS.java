@@ -18,6 +18,7 @@ import sfDirectSales.SalesForceCompany;
 import sfDirectSales.SalesForceOpportunity;
 import sfDirectSales.SalesForceOrders;
 import sfDirectSales.SalesForceProducts;
+import sfDirectSales.SalesForceService;
 import sfSikuli.SalesForceSikuli;
 
 public class FunctionalActionsSFDS {
@@ -281,6 +282,28 @@ public class FunctionalActionsSFDS {
 			
 			waitAS2O.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesForceOrders.detailsASSC)));
 			
+			WebElement domainService=driver.findElement(By.xpath(SalesForceOrders.inputDomain));
+					
+			WebElement typeService=driver.findElement(By.xpath(SalesForceOrders.inputType));
+			
+			String domainValue=domainService.getAttribute("value");
+			
+			String typeValue=typeService.getAttribute("value");
+			
+			System.out.println("addService2Order debug 01 - domainValue: "+domainValue);
+			System.out.println("addService2Order debug 02 - typeValue: "+typeValue);
+			
+			if (!(domainValue.contains("Mobile") && typeValue.contains("New Contract")))
+			{
+				domainService.click();
+				
+				driver.findElement(By.xpath(SalesForceOrders.domainMobile)).click();
+				
+				typeService.click();
+				
+				driver.findElement(By.xpath(SalesForceOrders.typeNewContract)).click();
+			}
+			
 			driver.findElement(By.xpath(SalesForceOrders.inputDomain)).click();
 			
 			driver.findElement(By.xpath(SalesForceOrders.domainWinback)).click();
@@ -297,7 +320,52 @@ public class FunctionalActionsSFDS {
 		}
 	}
 	
-
+	public static void enrichService(WebDriver driver, int stepID, String optyName) throws Exception 
+	{
+		WebDriverWait waitES = new WebDriverWait(driver, 10);
+		
+		String companyContactPerson = TestData.searchDT(2, "companyContactPerson");
+		
+		try
+		{
+			driver.findElement(By.xpath(SalesForceService.editServiceRequestDate)).click();
+			
+			driver.findElement(By.xpath(SalesForceService.inputServiceRequestDate)).sendKeys(ExecStructure.formattedDate("dd/MM/yyyy"));
+			
+			driver.findElement(By.xpath(SalesForceService.editCompanyContactPersonBtn)).click();
+			
+			driver.findElement(By.xpath(SalesForceService.inputCompanyContactPerson)).click();
+			
+			driver.findElement(By.xpath(SalesForceService.companyContactPersonList)).click();
+			
+			driver.findElement(By.xpath(SalesForceService.saveBtn)).click();
+			
+			waitES.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(SalesForceService.saveBtn)));
+			
+			String serviceVal = driver.findElement(By.xpath(SalesForceService.fieldfilledServiceRequestDate)).getText().toString();
+			
+			String companyContactPersonVal=driver.findElement(By.xpath(SalesForceService.fieldfilledCompanyContactPerson)).getText().toString();
+			
+			if (serviceVal.contains(ExecStructure.formattedDate("dd/MM/yyyy")) && companyContactPersonVal.contains(companyContactPerson))
+			{
+				driver.findElement(By.linkText(optyName)).click();
+				
+				driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+			}
+			else
+			{
+				throw new Exception("Not possible to enrich Service on Step: "+stepID);
+			}
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception("Test Procedure to Enrich Service Failed on StepID: "+stepID,e);
+		}
+	}
+	
+	
 }
 
 

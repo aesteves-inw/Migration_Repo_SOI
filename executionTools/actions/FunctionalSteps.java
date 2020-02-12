@@ -84,18 +84,18 @@ public class FunctionalSteps {
 	public static TestStepReportStructure navigate2CompanyDetails(WebDriver driver, int stepID, String testName) throws Exception
 	{
 						
-		String companyListURL = TestData.searchDT(0, "environmentITTQA").concat(TestData.searchDT(0, "companyListView"));
-		
-		String companyName=TestData.tdCompanyName(testName);
+		String companyURL = TestData.searchDT(0, "environmentITTQA").concat(TestData.searchDT(0, "accountView")).concat(TestData.tdCompanyID(testName)).concat("/view");
 		
 		try
 		{
 			
-			driver.get(companyListURL);
+			/*driver.get(companyListURL);
 			
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			
-			driver.findElement(By.linkText(companyName)).click();
+			driver.findElement(By.linkText(companyName)).click();*/
+			
+			driver.get(companyURL);
 			
 			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 			

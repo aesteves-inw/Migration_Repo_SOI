@@ -17,21 +17,6 @@
       </class> <!-- delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice -->
     </classes>
   </test> <!-- AgreementCreation_From_Oportunity_MobileVoice(failed) -->
-  <test thread-count="5" name="AgreementCreation_From_Oportunity_MobileVoice_Negative(failed)">
-    <classes>
-      <class name="delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice_Negative">
-        <methods>
-          <include name="step03"/>
-          <include name="step02"/>
-          <include name="step05"/>
-          <include name="step04"/>
-          <include name="beforeTest"/>
-          <include name="afterTest"/>
-          <include name="step01"/>
-        </methods>
-      </class> <!-- delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice_Negative -->
-    </classes>
-  </test> <!-- AgreementCreation_From_Oportunity_MobileVoice_Negative(failed) -->
   <test thread-count="5" name="AgreementCreation_From_Oportunity_MobileVoice_EditAgreement(failed)">
     <classes>
       <class name="delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice_EditAgreement">
