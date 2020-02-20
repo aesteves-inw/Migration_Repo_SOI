@@ -1,9 +1,7 @@
 package execReport;
 
 public class TestStepReportStructure {
-	
 
-	
 	//Report Step Elements
 	int stepID;
 	String stepDescription;
@@ -26,8 +24,6 @@ public class TestStepReportStructure {
 		this.screenshotName = screenshotName;
 		
 	}
-
-	
 	
 	// Test Step elements
 	public int getStepID() {

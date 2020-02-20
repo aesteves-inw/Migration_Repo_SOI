@@ -304,6 +304,45 @@ public class FunctionalActionsSFPC {
 		}
 	}
 		
+	public static void addFile2MACDOrder(WebDriver driver, int stepID) throws Exception
+	{
+			Screen screen = new Screen();	
+		
+			String file2Upload="SimpleOrdering_Dummy_File";
+			
+			String agreementFileTestData=ExecStructure.workingDir+"\\testData\\"+file2Upload+".pdf";
+		
+		try
+		{
+			driver.findElement(By.xpath("//span[contains(.,'Upload Files')]")).click();
+			
+			screen.wait(SalesForceSikuli.uploadBarFilePathOpenCancel, 20);
+			
+			screen.find(SalesForceSikuli.filePath);
+			
+			screen.paste(agreementFileTestData);
+			
+			screen.click(SalesForceSikuli.openButton);
+			
+			screen.wait(SalesForceSikuli.uploadFilesDoneSalesforce, 20);
+			
+			screen.wait(SalesForceSikuli.doneButton, 20);
+			
+			screen.click(SalesForceSikuli.doneButton);
+			
+			
+			Thread.sleep(10000);
+			
+		
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception("Test Procedure to Add File to MACD Order. Failed on StepID: "+stepID,e);
+		}
+	}
+	
 	public static void addService2Order(WebDriver driver, int stepID) throws Exception
 	{
 		WebDriverWait waitAS2O= new WebDriverWait(driver, 15);

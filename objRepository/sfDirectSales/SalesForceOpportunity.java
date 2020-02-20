@@ -13,26 +13,36 @@ public class SalesForceOpportunity {
 	public static String ordersContainer="//article[contains(.,'Orders')]";
 
 	// New Opportunity Screen
+	
+	public static String inputCompanyName="//input[@title='Search Company']";
 
 	public static String newOpportunityHeader="//h2[contains(.,'New Opportunity')]";
 
-	public static String inputCloseDate="/html/body/div[5]/div[2]/div[1]/div[2]/div/div[2]/div/div/div[1]/div/article/div[3]/div/div[1]/div/div/div[1]/div[2]/div/div/div/div/input";
+	public static String inputCloseDate="/html/body/div[4]/div[2]/div[1]/div[2]/div/div[2]/div/div/div[1]/div/article/div[3]/div/div[1]/div/div/div[1]/div[2]/div/div/div/div/input";
 
-	public static String inputOpportunityName="/html/body/div[5]/div[2]/div[1]/div[2]/div/div[2]/div/div/div[1]/div/article/div[3]/div/div[1]/div/div/div[2]/div[1]/div/div/div/input";
+	public static String inputOpportunityName="/html/body/div[4]/div[2]/div[1]/div[2]/div/div[2]/div/div/div[1]/div/article/div[3]/div/div[1]/div/div/div[2]/div[1]/div/div/div/input";
 
-	public static String selectStage="/html/body/div[5]/div[2]/div[1]/div[2]/div/div[2]/div/div/div[1]/div/article/div[3]/div/div[1]/div/div/div[2]/div[2]/div/div/div/div/div[1]/div/div/a";
+	public static String selectStage="/html/body/div[4]/div[2]/div[1]/div[2]/div/div[2]/div/div/div[1]/div/article/div[3]/div/div[1]/div/div/div[2]/div[2]/div/div/div/div/div[1]/div/div/a";
 
 	public static String listState="/html/body/div[10]/div/ul";
 	
 	public static String closeWonOptyStage="//*/div/ul/li[8]/a";
 
-	public static String selectForecastCategory="/html/body/div[5]/div[2]/div[1]/div[2]/div/div[2]/div/div/div[1]/div/article/div[3]/div/div[1]/div/div/div[5]/div[2]/div/div/div/div/div[1]/div/div/a";
+	public static String selectForecastCategory="/html/body/div[4]/div[2]/div[1]/div[2]/div/div[2]/div/div/div[1]/div/article/div[3]/div/div[1]/div/div/div[5]/div[2]/div/div/div/div/div[1]/div/div/a";
 
 	public static String listForecastCategory="/html/body/div[11]/div/ul";
 
 	public static String nosCancelButton="//button[@title='Cancel']";
 
 	public static String nosSaveButton="//button[@title='Save']";
+	
+	public static String additionalInformationTab="//h3[contains(.,'Additional Information')]";
+	
+	public static String termsAndConditionsComboBox="/html/body/div[4]/div[2]/div/div[2]/div/div[2]/div/div/div[1]/div/article/div[3]/div/div[2]/div/div/div[2]/div[2]/div/div/div/div/div[1]/div/div/a";
+	
+	public static String termAndConditionsOption="//a[@title='Proximus standard T&C are applicable']";
+	
+	
 	
 	
 	//Edit Opportunity Screen
@@ -54,9 +64,9 @@ public class SalesForceOpportunity {
 
 	public static String showMoreButton = "//a[contains(@title,'Show one more action')]";
 
-	public static String optyHeader = "//ul[@role='list']";
+	public static String optyHeader = "//h1[contains(.,'Opportunity')]";
 
-	public static String optyDetails = "//div[@class='slds-grid slds-gutters_small full cols-2 forcePageBlockSectionRow']";
+	public static String optyDetails = "//div[@class='slds-tabs_default']";
 
 	public static String productBasketLink = "//div[@data-component-id='flexipage_tabset2']/div//h2/a/span[.='Product Baskets']";
 
@@ -66,7 +76,7 @@ public class SalesForceOpportunity {
 	
 	public static String stageClosedWonDetails="//*/div/div[2]/div[2]/div/div[2]/span/span[.='Closed Won']";
 	
-	public static String closeOPTYHeaderButton = "//a[@title='Closed']";
+	public static String closeOPTYHeaderButton = "(//span[@class='title slds-path__title'][contains(.,'Closed')])[2]";
 	
 	public static String selectCloseMenu="//span[.='Select Closed Stage']";
 	

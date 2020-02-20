@@ -89,18 +89,11 @@ public class FunctionalSteps {
 		try
 		{
 			
-			/*driver.get(companyListURL);
-			
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			
-			driver.findElement(By.linkText(companyName)).click();*/
-			
 			driver.get(companyURL);
 			
 			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 			
 			if (BrowserActions.isElementPresent(driver, SalesForceCompany.followBtn) && BrowserActions.isElementPresent(driver, SalesForceCompany.quickSaleOPTYBtn) && BrowserActions.isElementPresent(driver, SalesForceCompany.companyDetailsHeader) && BrowserActions.isElementPresent(driver, SalesForceCompany.companyDetailsInfo))
-			//if (BrowserActions.isElementPresent(driver, SalesForceCompany.followBtn) && BrowserActions.isElementPresent(driver, SalesForceCompany.quickSaleOPTYBtn) && BrowserActions.isElementPresent(driver, SalesForceCompany.newMACDOrderButton) && BrowserActions.isElementPresent(driver, SalesForceCompany.companyDetailsHeader) && BrowserActions.isElementPresent(driver, SalesForceCompany.companyDetailsInfo))
 			{
 				ExecStructure.screenShotTaking(driver, testName, stepID+"_Navigate2CompDetails");
 				TestStepReportStructure nav2ComDet = new TestStepReportStructure(stepID, "Navigation to Company Details", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_Navigate2CompDetails");
@@ -129,13 +122,13 @@ public class FunctionalSteps {
 		{
 			FunctionalActionsSFDS.createNewStandardOpportunity(driver);
 			
-			FunctionalActionsSFDS.inputOpportunityValues(driver, testExecutionString);
+			FunctionalActionsSFDS.inputOpportunityValues(driver, testExecutionString, testName);
 			
 			driver.findElement(By.xpath(SalesForceOpportunity.nosSaveButton)).click();
 			
 			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 			
-			if(BrowserActions.isElementPresent(driver, SalesForceProducts.addProductHeaderScreen) || BrowserActions.isElementPresent(driver, SalesForceCompany.companyDetailsHeader))
+			if(BrowserActions.isElementPresent(driver, SalesForceProducts.inputSearchProducts) && BrowserActions.isElementPresent(driver, SalesForceProducts.productsTable))
 			{
 				ExecStructure.screenShotTaking(driver, testName, stepID+"_CreateNewOppie");
 				TestStepReportStructure newOppie = new TestStepReportStructure(stepID, "Create new Opportunity", "Opportunity created with success", "Created with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_CreateNewOppie");
@@ -208,7 +201,7 @@ public class FunctionalSteps {
 		{
 			FunctionalActionsSFDS.createNewStandardOpportunity(driver);
 			
-			FunctionalActionsSFDS.inputOpportunityValues(driver, testExecutionString);
+			FunctionalActionsSFDS.inputOpportunityValues(driver, testExecutionString, testName);
 			
 			driver.findElement(By.xpath(SalesForceOpportunity.nosSaveButton)).click();
 			

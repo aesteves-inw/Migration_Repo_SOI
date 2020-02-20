@@ -5,18 +5,21 @@ public class SalesForceAgreement {
 	
 	//   ..:: Agreements Details Page ::..
 	
-	public static String filesContainer="//article[contains(.,'Files')]";
+	public static String editButton="//div[@title='Edit']";
 	
-	public static String editButton="//header/div[2]/div/div[2]/ul/li/a";
-	
-	public static String headerAgreementPage="/html/body/div[5]/div[1]/section/div/div/div[1]/div[2]/div/div[1]/div/div[1]/div/header/div[2]";
+	public static String headerAgreementPage="//h1[contains(.,'Agreement')]";
 	
 	//public static String detailsAgreement="/html/body/div[5]/div[1]/section/div/div/div[1]/div[2]/div/div[1]/div/div[2]/div[1]/div/div";
-	public static String detailsAgreement="/html/body/div[5]/div[1]/section/div/div/div[1]/div[3]/div/div[1]/div/div[2]/div[1]/div/div";
+	public static String detailsAgreement="//div[@class='slds-tabs_default']";
 	
-	public static String nameAgreement="/html/body/div[5]/div[1]/section/div/div/div[1]/div[2]/div/div[1]/div/div[2]/div[1]/div/div/section/div/div/article/div[2]/div/div[1]/div/div/div[1]/div[1]/div";
+	public static String nameAgreement="//span[contains(.,'Agreement Name')]";
 	
-
+	
+	//Agreement Related Menu
+	
+	public static String filesContainer="//article[contains(.,'Files')]";
+	
+	public static String uploadFilesBtn="(//span[contains(.,'Upload Files')])[2]";
 	
 	
 	//   ..:: Edit Agreement Page

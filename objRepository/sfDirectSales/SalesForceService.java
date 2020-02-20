@@ -35,25 +35,35 @@ public class SalesForceService {
 	
 	public static String fieldfilledCompanyContactPerson="//article/div[2]/div/div[1]/div/div/div[4]/div[2]/div";
 	
+	public static String caseLink="//force-hoverable-link/div/a[contains(.,'00')]";
+	
+	public static String serviceStatus="(//force-record-layout-item[1]/div/div/div[2]/span/slot[1]/slot/lightning-formatted-text)[28]";
+	
 	
 	// --- Edit Buttons ---
 	
-	public static String editCompanyContactPersonBtn ="(//button[@title='Edit Company Contact Person'])[2]";
+	public static String editCompanyContactPersonBtn ="(//button[@title='Edit Company Contact Person'])";
 	
-	public static String editServiceRequestDate="(//button[contains(.,'Edit Service Request Date')])[2]";
+	public static String editServiceRequestDate="(//button[contains(.,'Edit Service Request Date')])";
+	
+	public static String serviceReqDateCalendarButton="//a[@class='datePicker-openIcon display']";
+	
+	public static String serviceReqDateTodayButton="//span[contains(.,'Today')]";
 	
 	
 	// --- Service Edition: input boxes ---
 	
 	public static String inputServiceRequestDate = "/html/body/div[5]/div[1]/section/div/div/div[1]/div[5]/div/div[1]/div/div[2]/div[1]/div/div/section/div/div/article/div[3]/div/div[1]/div/div[1]/div/div/div[3]/div[2]/div/div/div/div/input";
 	
-	public static String inputCompanyContactPerson="/html/body/div[5]/div[1]/section/div/div/div[1]/div[5]/div/div[1]/div/div[2]/div[1]/div/div/section/div/div/article/div[3]/div/div[1]/div/div[1]/div/div/div[4]/div[2]/div/div/div/div/div/div[1]/div/input";
+	public static String inputCompanyContactPerson="//input[@title='Search Company contact person']";
 
-	public static String companyContactPersonList="(//div[@class=\"listContent\"]/ul/li)[2]";
+	public static String companyContactPersonList="//div[@class='listContent']/ul/li";
+	
+	public static String inputComments="//textarea";
 	
 	
 	// --- Edit Details Page 
 	
-	public static String saveBtn="(//button[@title=\"Save\"])[2]";
+	public static String saveBtn="//button[@title='Save']";
 	
 }

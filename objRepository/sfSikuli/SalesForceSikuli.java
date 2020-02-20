@@ -26,4 +26,14 @@ public class SalesForceSikuli {
 	
 	public static Pattern doneButton = new Pattern(sikulilocalrepository+"doneButton.png").similar(0.8f);
 	
+	public static Pattern uploadFilesButton= new Pattern(sikulilocalrepository+"uploadFilesButton.png").similar(0.8f);
+	
+	
+	
+	//Close Won OPTY
+	
+	public static Pattern closeOPTYBtn= new Pattern(sikulilocalrepository+"\\opportunity\\closeBtn.png").similar(0.8f);
+	
+	public static Pattern selectClosedStageBtn= new Pattern(sikulilocalrepository+"\\opportunity\\selectClosedStageBtn.png").similar(0.8f);
+	
 }

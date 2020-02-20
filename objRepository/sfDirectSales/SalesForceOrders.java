@@ -7,25 +7,30 @@ public class SalesForceOrders {
 	public static String filesContainer="//article[contains(.,'Files')]";
 	
 	public static String uploadFilesButton="/html/body/div[5]/div[1]/section/div/div/div[1]/div[4]/div/div[1]/div/div[2]/div[2]/div[2]/div/article/div[3]/div/div/div/div/div/div[2]/lightning-input/div/div/lightning-primitive-file-droppable-zone/slot/label/span[1]";
-
-	//public static String orderDetails="/html/body/div[5]/div[1]/section/div/div/div[1]/div[2]/div/div[1]/div/div[2]/div[1]/div/div/section/div/div/article/div[2]/div/div/div/div";
 	
 	public static String serviceContainer="//article[contains(.,'Services')]";
 	
 	
 	//After 06-01-2020
 	
-	public static String addServiceButton="//a[@title='Add Service']";
+	public static String addServiceButton="//button[@name='csord__Order__c.PRX_SOI_NEW_CONTRACT']";
 	
-	public static String submitOrderButton="//a[@title='Submit Order']";
+	public static String submitOrderButton="//button[@name='csord__Order__c.PRX_SOI_SubmitOrder']";
 	
 	public static String servicesContainer="//article[contains(.,'Services')]";
 	
-	public static String orderDetails="//div[@class='tabset slds-tabs_card uiTabset--base uiTabset--default uiTabset--dense uiTabset flexipageTabset']//section[contains(@class,'tabs__content active uiTab')]";
+	public static String orderDetails="//div[@class='slds-tabs_default']";
 	
 	public static String orderHeader="//h1[contains(.,'Order')]";
 	
 	public static String orderError="/html/body/div[7]/div/div/div";
+	
+	
+	//Submission Order Messages
+	
+	public static String orderSubmittedSuccess="//div[contains(.,'Your Order has been successfully submited')]";
+	
+	public static String orderAlreadySubmitted="//div[contains(.,'Order already submited!')]";
 	
 	
 	//In Edit Mode
@@ -57,13 +62,13 @@ public class SalesForceOrders {
 	
 	public static String inputDomain="//input[@name='PRX_SOI_Domain__c']";
 	
-	public static String inputDetail="//input[@name='PRX_SOI_Detail__c']";
-	
 	public static String inputType="//input[@name='PRX_SOI_Type__c']";
+	
+	public static String inputDetail="//input[@name='PRX_SOI_Detail__c']";
 	
 	public static String btnSaveASSC="//lightning-button[2]/button";
 	
-	public static String detailsASSC="//lightning-record-edit-form/form/slot/div/div[1]";
+	public static String detailsASSC="//article[@class='slds-is-relative slds-p-around--medium']";
 	
 	public static String domainMobile="//span[@title='Mobile']";
 	
@@ -75,9 +80,18 @@ public class SalesForceOrders {
 	
 	public static String domainWinback="//span[@title='Winback']";
 	
+	public static String nextButton="//article/div/div[2]/div/div/div[2]/div[2]/button";
 	
 	
 	
+	
+	// Related List
+	
+	public static String firstServiceLink="(//article[contains(.,'Services')]//li//a)[2]";
+	
+	
+	//Orders List View
+	public static String firstOrderLinkListView="//table/tbody/tr[1]/th/span/a";
 	
 	
 

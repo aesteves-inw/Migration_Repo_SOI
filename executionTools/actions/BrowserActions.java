@@ -16,6 +16,12 @@ public class BrowserActions {
 		return driver.findElements(By.xpath(webObject)).size() > 0;
 	}
 	
+	public static WebElement expandRootElement(WebDriver driver, WebElement element) 
+	{
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebElement ele = (WebElement) (js).executeScript("return arguments[0].shadowRoot",element);
+		return ele;
+	}
 
 	public static boolean isElementPresent(WebDriver driver, String value, String webObject) throws Exception
 	{
@@ -30,6 +36,24 @@ public class BrowserActions {
 		default:
 			throw new Exception("Please specify the value of the WebObject you want to validate. Received: "+value); 
 		}
+	}
+	
+	public static boolean isClickable(WebDriver driver, WebElement element)
+	{
+		try
+		{
+			WebDriverWait wait = new WebDriverWait(driver, 10);
+			
+			wait.until(ExpectedConditions.elementToBeClickable(element));
+			
+			return true;
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			return false;
+		}
+	
 	}
 
 	//Elements atributes 
@@ -101,6 +125,11 @@ public class BrowserActions {
 		}
 	}
 
+	public static void scroll2Bottom(WebDriver driver)
+	{
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+	}
 	// Wait for Element
 	public static void explicitWait(WebDriver driver, String elementXpath) {
 		WebDriverWait wait = new WebDriverWait(driver, 20);

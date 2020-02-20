@@ -5,7 +5,7 @@ public class SalesForceCompany {
 	
 	//Company's Pool
 	
-	public static String companyHeader = "//*[@class='slds-page-header--object-home slds-page-header_joined slds-page-header_bleed slds-page-header slds-shrink-none test-headerRegion forceListViewManagerHeader']";
+	public static String companyPoolHeader = "//*[@class='slds-page-header--object-home slds-page-header_joined slds-page-header_bleed slds-page-header slds-shrink-none test-headerRegion forceListViewManagerHeader']";
 	
 	public static String newButton = "//div[.='New']";
 	
@@ -29,20 +29,20 @@ public class SalesForceCompany {
 	
 	public static String showMoreBtn = "//a[@class='slds-grid slds-grid--vertical-align-center slds-grid--align-center sldsButtonHeightFix']";
 	
-	public static String companyDetailsHeader ="//div[@class='row region-header']";
+	public static String companyHeader="//h1[contains(.,'Company')]";
+	
+	public static String companyDetailsHeader ="//div[@class='slds-tabs_default']";
 	
 	//public static String companyName ="//*[contains(@id,'brandBand_')]/div/div[1]/div/div[1]/div/div[1]/div/header/div[2]/div/div[1]/div[2]/h1/div/span";
 	public static String companyName="//h1/div/span";
 	
-	public static String companyDetailsInfo ="//div[@class='test-id__section-content slds-section__content section__content slds-p-top--none']";
+	public static String companyDetailsInfo ="//div[@class='slds-tabs_card']";
 	
 	
 	// Company Related Menu
 	
 	//..:: Opportunities Area :...
-	public static String rmOpportunitieslink="//span[@title='Opportunities']";
-	
-	public static String rmOpportunitiesLink="(//article[contains(.,'Opportunities')]//a[contains(.,'Opportunities')])[1]";
+	public static String rmOpportunitieslink="//article[contains(.,'Opportunities')]//h2/a";
 	
 	public static String showActionsButton="//article[contains(.,'Opportunities')]//a[@role='button'][contains(.,'Show actions for this object')]";
 	
@@ -83,6 +83,13 @@ public class SalesForceCompany {
 	// New Company Form
 	
 	public static String opportunitiesLink = "//span[contains(@title,'Opportunities')]";
+	
+	
+	
+	// Orders Section
+	public static String firstOrderLink="(//article[contains(.,'Orders')]//h3/div/a)[1]";
+	
+	public static String viewAllOrdersLink="//article[contains(.,'Orders')]//span[contains(.,'View All')]";
 
 	// public static String
 	

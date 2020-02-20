@@ -74,9 +74,17 @@ public class TestData {
 		{
 			tdCompanyName= searchDT(2,"testingCompanySOI70");
 		}
+		else if(testName.contains("76"))
+		{
+			tdCompanyName= searchDT(2,"testingCompanySOI76");
+		}
 		else if(testName.contains("79"))
 		{
 			tdCompanyName= searchDT(2,"testingCompanySOI79");
+		}
+		else if(testName.contains("150"))
+		{
+			tdCompanyName= searchDT(2,"testingCompanySOI150");
 		}
 		else
 		{
@@ -107,9 +115,17 @@ public class TestData {
 		{
 			tdCompanyID= searchDT(2,"idTestingCompanySOI70");
 		}
+		else if(testName.contains("76"))
+		{
+			tdCompanyID= searchDT(2,"idTestingCompanySOI76");
+		}
 		else if(testName.contains("79"))
 		{
 			tdCompanyID= searchDT(2,"idTestingCompanySOI79");
+		}
+		else if(testName.contains("150"))
+		{
+			tdCompanyID= searchDT(2,"idTestingCompanySOI150");
 		}
 		else
 		{

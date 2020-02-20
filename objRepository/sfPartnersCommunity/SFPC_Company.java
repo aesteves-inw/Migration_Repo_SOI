@@ -17,7 +17,7 @@ public class SFPC_Company {
 
 	//   ..:: Company's Details Page ::..
 	
-	public static String headerCompany="/html/body/div[4]/div[2]/div/div[2]/div[1]/div/div[1]/header/div[2]/div/div[1]/div[2]/h1";
+	public static String headerCompany="//h1";
 	
 	public static String buttonFollow="//button[contains(.,'Follow')]";
 	
@@ -37,5 +37,6 @@ public class SFPC_Company {
 	
 	public static String newOppieButton="//article[contains(.,'Opportunities')]//ul/li/a";
 	
+	public static String firstOrderLink="(//article[contains(.,'Orders')]//a)[2]";
 
 }

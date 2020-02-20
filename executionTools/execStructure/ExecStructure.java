@@ -5,11 +5,16 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Set;
 
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.io.FileHandler;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ExecStructure {
 		
@@ -33,6 +38,22 @@ public class ExecStructure {
 
 		}
 		
+		public static String todaysformattedDateddMMMyyyy()
+		{
+			String finaldate;
+			
+			String day= formattedDate("dd");
+			String month=formattedDate("MMM");
+			String year=formattedDate("yyyy");
+			
+			String monthOutput= month.substring(0, 1).toUpperCase()+month.substring(1);
+			
+			
+			finaldate=day+"-"+monthOutput+"-"+year;
+			
+			
+			return finaldate;
+		}
 		// Function for Directory creation
 		public static void createDirectoryIfNeeded(String directoryName)
 		{
@@ -107,7 +128,6 @@ public class ExecStructure {
 			
 		}
 		
-		
 		// Function to Take Screen Shots from WebDriver
 		public static void screenShotTaking(WebDriver driver, String TestName, String shotName) throws IOException {
 			
@@ -117,7 +137,11 @@ public class ExecStructure {
 	    	
 		}
 
-	}
+		
+		
+
+
+}
 
 
 

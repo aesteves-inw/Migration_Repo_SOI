@@ -49,5 +49,6 @@ public class SFPC_Orders {
 	public static String inputDetailWinback="//span[@title='Winback']";
 	
 
+	public static String firstServiceLink="(//article[contains(.,'Services')]//a)[2]";
 
 }

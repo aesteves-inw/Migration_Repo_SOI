@@ -10,7 +10,7 @@ public class SFPC_HomePage {
 	
 	public static String inputSearchBar="//input[@title='Search...']";
 	
-	public static String dashboard="/html/body/div[4]/div/div[1]/div/div/div/div[1]";
+	public static String dashboard="//section[@role='tabpanel']";
 	
 	public static String headerLinkCompany="//a[@title='Company']";
 

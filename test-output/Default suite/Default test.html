@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>3/1/2</td>
+<td>Tests passed/Failed/Skipped:</td><td>7/1/5</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Feb 05 15:15:28 CET 2020</td>
+<td>Started on:</td><td>Thu Feb 20 00:19:29 GMT 2020</td>
 </tr>
-<tr><td>Total time:</td><td>61 seconds (61992 ms)</td>
+<tr><td>Total time:</td><td>144 seconds (144569 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,9 +75,9 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice.step04()'><b>step04</b><br>Test class: delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice</td>
-<td><div><pre>java.lang.Exception: Test Failed on Step 4
-	at delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice.step04(AgreementCreation_From_Oportunity_MobileVoice.java:215)
+<td title='delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation.step08()'><b>step08</b><br>Test class: delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation</td>
+<td><div><pre>java.lang.Exception: Test Failed on Step 8
+	at delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation.step08(SOI_76_TC1_MobileOrderIntake_CaseCreation.java:372)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -103,14 +103,19 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
-  (Session info: chrome=79.0.3945.130)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
+Caused by: java.lang.Exception: Closing Won Opportunity - Failed
+	at actions.FunctionalActionsSFDS.closeWonOppie(FunctionalActionsSFDS.java:208)
+	at delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation.step08(SOI_76_TC1_MobileOrderIntake_CaseCreation.java:349)
+	... 25 more
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;flexipage\-aura\-wrapper&quot;}
+  (Session info: chrome=80.0.3987.116)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;INNOWAVE-383&apos;, ip: &apos;10.247.176.151&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_212&apos;
+System info: host: &apos;INNOWAVE-383&apos;, ip: &apos;192.168.0.164&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_212&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.130, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\luis.achas\AppData...}, goog:chromeOptions: {debuggerAddress: localhost:57053}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 369ded8cd530ff56a6d3287cb97ca34c
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.116, chrome: {chromedriverVersion: 80.0.3987.16 (320f6526c1632..., userDataDir: C:\Users\luis.achas\AppData...}, goog:chromeOptions: {debuggerAddress: localhost:61775}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 9e3068a0474848aad6b59f2147cdc6ec
+*** Element info: {Using=tag name, value=flexipage-aura-wrapper}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -121,13 +126,15 @@ Session ID: 369ded8cd530ff56a6d3287cb97ca34c
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice.step04(AgreementCreation_From_Oportunity_MobileVoice.java:194)
-	... 25 more
-</pre></div><a href='#' onClick='toggleBox("stack-trace1296910502", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1296910502'><pre>java.lang.Exception: Test Failed on Step 4
-	at delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice.step04(AgreementCreation_From_Oportunity_MobileVoice.java:215)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByTagName(RemoteWebDriver.java:396)
+	at org.openqa.selenium.By$ByTagName.findElement(By.java:320)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at actions.FunctionalActionsSFDS.closeWonOppie(FunctionalActionsSFDS.java:183)
+	... 26 more
+</pre></div><a href='#' onClick='toggleBox("stack-trace2110785285", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2110785285'><pre>java.lang.Exception: Test Failed on Step 8
+	at delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation.step08(SOI_76_TC1_MobileOrderIntake_CaseCreation.java:372)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -153,14 +160,19 @@ Session ID: 369ded8cd530ff56a6d3287cb97ca34c
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
-  (Session info: chrome=79.0.3945.130)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
+Caused by: java.lang.Exception: Closing Won Opportunity - Failed
+	at actions.FunctionalActionsSFDS.closeWonOppie(FunctionalActionsSFDS.java:208)
+	at delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation.step08(SOI_76_TC1_MobileOrderIntake_CaseCreation.java:349)
+	... 25 more
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;flexipage\-aura\-wrapper&quot;}
+  (Session info: chrome=80.0.3987.116)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;INNOWAVE-383&apos;, ip: &apos;10.247.176.151&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_212&apos;
+System info: host: &apos;INNOWAVE-383&apos;, ip: &apos;192.168.0.164&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_212&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.130, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\Users\luis.achas\AppData...}, goog:chromeOptions: {debuggerAddress: localhost:57053}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 369ded8cd530ff56a6d3287cb97ca34c
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.116, chrome: {chromedriverVersion: 80.0.3987.16 (320f6526c1632..., userDataDir: C:\Users\luis.achas\AppData...}, goog:chromeOptions: {debuggerAddress: localhost:61775}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 9e3068a0474848aad6b59f2147cdc6ec
+*** Element info: {Using=tag name, value=flexipage-aura-wrapper}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -171,13 +183,15 @@ Session ID: 369ded8cd530ff56a6d3287cb97ca34c
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice.step04(AgreementCreation_From_Oportunity_MobileVoice.java:194)
-	... 25 more
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByTagName(RemoteWebDriver.java:396)
+	at org.openqa.selenium.By$ByTagName.findElement(By.java:320)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at actions.FunctionalActionsSFDS.closeWonOppie(FunctionalActionsSFDS.java:183)
+	... 26 more
 </pre></div></td>
-<td>11</td>
-<td>delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice@464bee09</td></tr>
+<td>27</td>
+<td>delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation@6eebc39e</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -187,20 +201,40 @@ Session ID: 369ded8cd530ff56a6d3287cb97ca34c
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice.step01()'><b>step01</b><br>Test class: delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice</td>
+<td title='delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation.step01()'><b>step01</b><br>Test class: delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation</td>
 <td></td>
-<td>11</td>
-<td>delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice@464bee09</td></tr>
+<td>18</td>
+<td>delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation@6eebc39e</td></tr>
 <tr>
-<td title='delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice.step02()'><b>step02</b><br>Test class: delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice</td>
+<td title='delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation.step02()'><b>step02</b><br>Test class: delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation</td>
 <td></td>
 <td>8</td>
-<td>delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice@464bee09</td></tr>
+<td>delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation@6eebc39e</td></tr>
 <tr>
-<td title='delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice.step03()'><b>step03</b><br>Test class: delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice</td>
+<td title='delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation.step03()'><b>step03</b><br>Test class: delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation</td>
 <td></td>
-<td>16</td>
-<td>delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice@464bee09</td></tr>
+<td>19</td>
+<td>delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation@6eebc39e</td></tr>
+<tr>
+<td title='delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation.step04()'><b>step04</b><br>Test class: delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation</td>
+<td></td>
+<td>19</td>
+<td>delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation@6eebc39e</td></tr>
+<tr>
+<td title='delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation.step05()'><b>step05</b><br>Test class: delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation</td>
+<td></td>
+<td>7</td>
+<td>delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation@6eebc39e</td></tr>
+<tr>
+<td title='delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation.step06()'><b>step06</b><br>Test class: delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation</td>
+<td></td>
+<td>5</td>
+<td>delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation@6eebc39e</td></tr>
+<tr>
+<td title='delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation.step07()'><b>step07</b><br>Test class: delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation</td>
+<td></td>
+<td>24</td>
+<td>delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation@6eebc39e</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-skipped'>
 <tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
@@ -210,8 +244,8 @@ Session ID: 369ded8cd530ff56a6d3287cb97ca34c
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice.step05()'><b>step05</b><br>Test class: delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice</td>
-<td><div><pre>java.lang.Throwable: Method AgreementCreation_From_Oportunity_MobileVoice.step05()[pri:0, instance:delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice@464bee09] depends on not successfully finished methods
+<td title='delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation.step09()'><b>step09</b><br>Test class: delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation</td>
+<td><div><pre>java.lang.Throwable: Method SOI_76_TC1_MobileOrderIntake_CaseCreation.step09()[pri:0, instance:delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation@6eebc39e] depends on not successfully finished methods
 	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
@@ -230,8 +264,8 @@ Session ID: 369ded8cd530ff56a6d3287cb97ca34c
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1069584108", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1069584108'><pre>java.lang.Throwable: Method AgreementCreation_From_Oportunity_MobileVoice.step05()[pri:0, instance:delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice@464bee09] depends on not successfully finished methods
+</pre></div><a href='#' onClick='toggleBox("stack-trace219638321", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace219638321'><pre>java.lang.Throwable: Method SOI_76_TC1_MobileOrderIntake_CaseCreation.step09()[pri:0, instance:delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation@6eebc39e] depends on not successfully finished methods
 	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
@@ -254,8 +288,8 @@ Session ID: 369ded8cd530ff56a6d3287cb97ca34c
 <td>0</td>
 <td>null</td></tr>
 <tr>
-<td title='delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice.step06()'><b>step06</b><br>Test class: delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice</td>
-<td><div><pre>java.lang.Throwable: Method AgreementCreation_From_Oportunity_MobileVoice.step06()[pri:0, instance:delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice@464bee09] depends on not successfully finished methods
+<td title='delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation.step10()'><b>step10</b><br>Test class: delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation</td>
+<td><div><pre>java.lang.Throwable: Method SOI_76_TC1_MobileOrderIntake_CaseCreation.step10()[pri:0, instance:delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation@6eebc39e] depends on not successfully finished methods
 	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
@@ -274,8 +308,140 @@ Session ID: 369ded8cd530ff56a6d3287cb97ca34c
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace2063786038", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2063786038'><pre>java.lang.Throwable: Method AgreementCreation_From_Oportunity_MobileVoice.step06()[pri:0, instance:delivery01.soi_66.AgreementCreation_From_Oportunity_MobileVoice@464bee09] depends on not successfully finished methods
+</pre></div><a href='#' onClick='toggleBox("stack-trace1199833406", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1199833406'><pre>java.lang.Throwable: Method SOI_76_TC1_MobileOrderIntake_CaseCreation.step10()[pri:0, instance:delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation@6eebc39e] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation.step11()'><b>step11</b><br>Test class: delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation</td>
+<td><div><pre>java.lang.Throwable: Method SOI_76_TC1_MobileOrderIntake_CaseCreation.step11()[pri:0, instance:delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation@6eebc39e] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1499825229", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1499825229'><pre>java.lang.Throwable: Method SOI_76_TC1_MobileOrderIntake_CaseCreation.step11()[pri:0, instance:delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation@6eebc39e] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation.step12()'><b>step12</b><br>Test class: delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation</td>
+<td><div><pre>java.lang.Throwable: Method SOI_76_TC1_MobileOrderIntake_CaseCreation.step12()[pri:0, instance:delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation@6eebc39e] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div><a href='#' onClick='toggleBox("stack-trace178259104", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace178259104'><pre>java.lang.Throwable: Method SOI_76_TC1_MobileOrderIntake_CaseCreation.step12()[pri:0, instance:delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation@6eebc39e] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation.step13()'><b>step13</b><br>Test class: delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation</td>
+<td><div><pre>java.lang.Throwable: Method SOI_76_TC1_MobileOrderIntake_CaseCreation.step13()[pri:0, instance:delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation@6eebc39e] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div><a href='#' onClick='toggleBox("stack-trace959055079", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace959055079'><pre>java.lang.Throwable: Method SOI_76_TC1_MobileOrderIntake_CaseCreation.step13()[pri:0, instance:delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation@6eebc39e] depends on not successfully finished methods
 	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
 	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
