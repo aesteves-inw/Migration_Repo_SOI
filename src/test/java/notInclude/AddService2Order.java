@@ -34,7 +34,7 @@ import org.sikuli.script.Screen;
 import org.testng.annotations.AfterTest;
 
 public class AddService2Order {
-  
+
 	String testName = this.getClass().getName();
 
 	String initialTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
@@ -46,7 +46,7 @@ public class AddService2Order {
 	WebDriverWait wait;
 
 	List<TestStepReportStructure> testExecStructure = new ArrayList<TestStepReportStructure>();
-	
+
 	List<TestReportTestData> testData = new ArrayList<TestReportTestData>();
 
 	String finalTestDate=null;
@@ -58,9 +58,9 @@ public class AddService2Order {
 	String testExecutionString;
 
 	String companyContactPerson="Simple Ordering SeventySix";
-	
+
 	String oppiename, generatedAgreement, productsLinkView;
-	
+
 	@BeforeTest
 	public void beforeTest() {
 
@@ -87,7 +87,7 @@ public class AddService2Order {
 		Chrome_Profile.addArguments("browser.helperApps.neverAsk.saveToDisk", "application/pdf"); 	
 
 		driver = new ChromeDriver(Chrome_Profile); 
-		
+
 		wait=new WebDriverWait(driver, 15);
 
 		Set<Cookie> allCookies = driver.manage().getCookies(); 
@@ -106,7 +106,7 @@ public class AddService2Order {
 
 	@Test
 	public void step01() throws Exception {
-		
+
 		stepsExecuted++;
 
 		String envURL=TestData.searchDT(1, "environmentITTQA");
@@ -132,7 +132,7 @@ public class AddService2Order {
 				ExecStructure.screenShotTaking(driver, testName, 1+"_LoginScreen");
 				TestStepReportStructure step01 = new TestStepReportStructure(1, "Login into Salesforce", "Login with success", "Login in Salesforce with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), 1+"_LoginScreen");
 				testExecStructure.add(step01);
-				
+
 			}
 			else
 			{
@@ -153,67 +153,62 @@ public class AddService2Order {
 		}
 
 	}
-	
+
 	@Test(dependsOnMethods = "step01")
 	public void step02() throws Exception
 	{
 		String url="https://prxittqa-proximus.cs82.force.com/SalesforceforPartners/s/order/a1b3E000000Ud0PQAS/opty20200220tc14ex32";
 		WebDriverWait waitAS2O= new WebDriverWait(driver, 15);
-		
+
 		try
 		{
 			driver.get(url);
-			
-			
-			
-			
-			
-			
-				driver.findElement(By.xpath(SFPC_Orders.addServiceBtn)).click();
-				
-				waitAS2O.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SFPC_Orders.firstScreenFlow)));
-				
-				if (BrowserActions.isElementPresent(driver, SFPC_Orders.firstScreenFlow) && BrowserActions.isElementPresent(driver, SFPC_Orders.nextBtn))
-				{
-					//First Screen of the Flow
-					
-					driver.findElement(By.xpath(SFPC_Orders.inputDetail)).click();
-					
-					driver.findElement(By.xpath(SFPC_Orders.inputDetailWinback)).click();
-					
-					driver.findElement(By.xpath(SFPC_Orders.nextBtn)).click();
-					
-					//Second Screen of the Flow
-					
-					
-				
-					driver.findElement(By.xpath(SFPC_NewMACDFlow.inputCompanyContactPerson)).click();
-					
-					driver.findElement(By.xpath(SFPC_NewMACDFlow.inputCompanyContactPerson)).sendKeys(companyContactPerson);
-					
-					BrowserActions.updateInnerHTMLSelenium(driver);
-					
-					waitAS2O.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[@class='slds-listbox__item cPRX_SOI_CustomLookupResult']"))).click();				
-									
-					wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesforceNewMACDFlow.inputServiceRequestDate))).click();
-					
-					wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesforceNewMACDFlow.todayCalendarButton))).click();					
-				
-					driver.findElement(By.xpath(SalesforceNewMACDFlow.inputComments)).sendKeys(testName);
-					
-				}
-			
-			
+
+			driver.findElement(By.xpath(SFPC_Orders.addServiceBtn)).click();
+
+			waitAS2O.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SFPC_Orders.firstScreenFlow)));
+
+			if (BrowserActions.isElementPresent(driver, SFPC_Orders.firstScreenFlow) && BrowserActions.isElementPresent(driver, SFPC_Orders.nextBtn))
+			{
+				//First Screen of the Flow
+
+				driver.findElement(By.xpath(SFPC_Orders.inputDetail)).click();
+
+				driver.findElement(By.xpath(SFPC_Orders.inputDetailWinback)).click();
+
+				driver.findElement(By.xpath(SFPC_Orders.nextBtn)).click();
+
+				//Second Screen of the Flow
+
+
+
+				driver.findElement(By.xpath(SFPC_NewMACDFlow.inputCompanyContactPerson)).click();
+
+				driver.findElement(By.xpath(SFPC_NewMACDFlow.inputCompanyContactPerson)).sendKeys(companyContactPerson);
+
+				BrowserActions.updateInnerHTMLSelenium(driver);
+
+				waitAS2O.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[@class='slds-listbox__item cPRX_SOI_CustomLookupResult']"))).click();				
+
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesforceNewMACDFlow.inputServiceRequestDate))).click();
+
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesforceNewMACDFlow.todayCalendarButton))).click();					
+
+				driver.findElement(By.xpath(SalesforceNewMACDFlow.inputComments)).sendKeys(testName);
+
+			}
+
+
 		}
 		catch(Exception e)
 		{
 			System.out.println(e);
-			
+
 			throw new Exception("Test Failed on AddService2Order",e);
 		}
-		
+
 	}
-	
+
 	@AfterTest
 	public void afterTest() {
 

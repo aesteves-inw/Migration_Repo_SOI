@@ -12,31 +12,30 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import execStructure.*;
 
 public class TestData {
-	
+
 	//Chrome Configs
-		public static String ChromeDriverPath = ExecStructure.workingDir+"\\lib\\chromedriver.exe";
-		
-		/*
+	public static String ChromeDriverPath = ExecStructure.workingDir+"\\lib\\chromedriver.exe";
+
+	/*
 		public static String ChromeProfilePath = "C:\\Users\\andre.esteves\\AppData\\Local\\Google\\Chrome\\User Data\\Default";
 		public static String CHROME_EXTENSION2SALESFORCE_PATH = "C:\\Users\\andre.esteves\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\nnlnikmkkbpgioojghgojoejgcheilic\\0.0.1_0";
-		*/
-		
-		public static String ChromeProfilePath = "C:\\Users\\luis.achas\\AppData\\Local\\Google\\Chrome\\User Data\\Default";
-		
-		
-		
+	 */
+
+	public static String ChromeProfilePath = "C:\\Users\\luis.achas\\AppData\\Local\\Google\\Chrome\\User Data\\Default";
+	// End Of Chrome Configs
+
 	public static String searchDT(int indexOftheSheet, String val2Search) throws Exception
 	{
 		String testDataFileID=ExecStructure.workingDir+"\\testData\\testData.xlsx";
-		
+
 		DataFormatter formatter = new DataFormatter();
-			
+
 		String val2Return=null;
-		
+
 		FileInputStream file;
-		
+
 		file = new FileInputStream(new File(testDataFileID));
-		
+
 		XSSFWorkbook wb = new XSSFWorkbook(file);
 		XSSFSheet sheet = wb.getSheetAt(indexOftheSheet);
 		Iterator<Row> rowIterator = sheet.iterator();
@@ -48,16 +47,16 @@ public class TestData {
 				val2Return=row1.getCell(1).getStringCellValue();
 			}
 		}
-		
+
 		file.close();
 		return val2Return;
 	} 
-	
+
 	public static String tdCompanyName(String testName) throws Exception
 	{		
-		
+
 		String tdCompanyName;
-		
+
 		if(testName.contains("66"))
 		{
 			tdCompanyName=searchDT(2,"testingCompanySOI66");
@@ -74,6 +73,10 @@ public class TestData {
 		{
 			tdCompanyName= searchDT(2,"testingCompanySOI70");
 		}
+		else if(testName.contains("72"))
+		{
+			tdCompanyName= searchDT(2,"testingCompanySOI72");
+		}
 		else if(testName.contains("76"))
 		{
 			tdCompanyName= searchDT(2,"testingCompanySOI76");
@@ -82,23 +85,35 @@ public class TestData {
 		{
 			tdCompanyName= searchDT(2,"testingCompanySOI79");
 		}
+		else if(testName.contains("80"))
+		{
+			tdCompanyName= searchDT(2,"testingCompanySOI80");
+		}
+		else if(testName.contains("84"))
+		{
+			tdCompanyName= searchDT(2,"testingCompanySOI84");
+		}
 		else if(testName.contains("150"))
 		{
 			tdCompanyName= searchDT(2,"testingCompanySOI150");
+		}
+		else if(testName.contains("718"))
+		{
+			tdCompanyName= searchDT(2,"testingCompanySOI718");
 		}
 		else
 		{
 			throw new Exception("Not possible to identify Test Case");
 		}
-		
+
 		return tdCompanyName;
-		
+
 	}
-	
+
 	public static String tdCompanyID(String testName) throws Exception
 	{
 		String tdCompanyID;
-		
+
 		if(testName.contains("66"))
 		{
 			tdCompanyID=searchDT(2,"idTestingCompanySOI66");
@@ -127,18 +142,22 @@ public class TestData {
 		{
 			tdCompanyID= searchDT(2,"idTestingCompanySOI150");
 		}
+		else if(testName.contains("718"))
+        {
+            tdCompanyID= searchDT(2,"idTestingCompanySOI718");
+        }
 		else
 		{
 			throw new Exception("Not possible to identify Test Case");
 		}
-		
+
 		return tdCompanyID;
 	}
-	
+
 	public static int tcDataindex(int tcNumber) throws Exception
 	{
 		int tcindex;
-		
+
 		// add more 
 		switch(tcNumber)
 		{
@@ -154,7 +173,7 @@ public class TestData {
 		default:
 			throw new Exception("Not possible to identify Test Case");
 		}
-		
+
 		return tcindex;
 	}
 
@@ -166,5 +185,10 @@ public class TestData {
 
 
 
+	// Orders Related View - SOI-80
+	public static String allOrdersURL="https://proximusitqa--prxittqa.lightning.force.com/lightning/o/csord__Order__c/list?filterName=00B58000004rXxlEAE";
 
+	public static String myOrdersURL="https://proximusitqa--prxittqa.lightning.force.com/lightning/o/csord__Order__c/list?filterName=00B3E000002XCLdUAO";
+
+	
 }
