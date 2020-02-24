@@ -517,11 +517,11 @@ public class SOI_76_TC1_MobileOrderIntake_CaseCreation {
 			driver.get(serviceLink);
 			
 			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);		
-			
+			/*
 			WebElement createdCase= driver.findElement(By.xpath(SalesForceService.caseLink));
 			
 			caseURL=createdCase.getAttribute("href");
-			
+			*/
 			if(BrowserActions.isElementPresent(driver, SalesForceService.filesContainer) && BrowserActions.isElementPresent(driver, SalesForceService.headerServicesPage) && BrowserActions.isElementPresent(driver, SalesForceService.detailsServicePage)  &&  BrowserActions.isElementPresent(driver, SalesForceService.fieldServiceName)  && BrowserActions.isElementPresent(driver, SalesForceService.fieldCase) && BrowserActions.isElementPresent(driver, SalesForceService.fieldDomain) && BrowserActions.isElementPresent(driver, SalesForceService.fieldType) && BrowserActions.isElementPresent(driver, SalesForceService.fieldDetail) && BrowserActions.isElementPresent(driver, SalesForceService.fieldServiceRequestDate) && BrowserActions.isElementPresent(driver, SalesForceService.fieldEnd2EndRequestOwner) && BrowserActions.isElementPresent(driver, SalesForceService.fieldStatus))
 			{
 				ExecStructure.screenShotTaking(driver, testName, stepsExecuted+"_ServiceScreenValidation");
