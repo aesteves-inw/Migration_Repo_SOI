@@ -16,6 +16,7 @@ import sfDirectSales.SalesForceOpportunity;
 import sfDirectSales.SalesForceOrders;
 import sfDirectSales.SalesForceService;
 import sfDirectSales.SalesforceCase;
+import sfPartnersCommunity.SFPC_Services;
 
 import org.testng.annotations.BeforeTest;
 
@@ -58,9 +59,17 @@ public class SOI_76_TC1_MobileOrderIntake_CaseCreation {
 
 	String testExecutionString;
 	
-	String optyName,linkAgreementName;
+	String optyName;
 	
-	String optyURL, agreementURL, orderURL, caseURL;
+	String linkAgreementName;
+	
+	String optyURL; 
+	
+	String agreementURL; 
+	
+	String orderURL; 
+	
+	String caseURL;
 	
 	String companyContactPerson="Simple Ordering SeventySix";
 
@@ -367,7 +376,7 @@ public class SOI_76_TC1_MobileOrderIntake_CaseCreation {
 		{
 			System.out.println(e);
 			ExecStructure.screenShotTaking(driver, testName, "8_OrderScreenValidation");
-			TestStepReportStructure step08 = new TestStepReportStructure(8, "Order Screen Validation", "Validation with success", "N", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "8_OrderScreenValidation");
+			TestStepReportStructure step08 = new TestStepReportStructure(8, "Order Screen Validation", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "8_OrderScreenValidation");
 			testExecStructure.add(step08);
 			throw new Exception("Test Failed on Step 8",e);
 		}
@@ -482,15 +491,15 @@ public class SOI_76_TC1_MobileOrderIntake_CaseCreation {
 		
 		try
 		{
+			/*
 			FunctionalActionsSFDS.navigate2Service(driver, stepsExecuted);
 			
 			WebElement createdCase= driver.findElement(By.xpath(SalesForceService.caseLink));
 			
 			caseURL=createdCase.getAttribute("href");
 			
-			String serviceStatus=driver.findElement(By.xpath("/html/body/div[4]/div[1]/section/div/div/div[1]/div/div/one-record-home-flexipage2/forcegenerated-flexipage_service_record_page_csord__service__c__view_js/flexipage-record-page-decorator/div/slot/flexipage-record-home-template-desktop2/div/div[2]/div[1]/slot/slot/flexipage-component2/force-progressive-renderer/slot/slot/flexipage-tabset2/div/lightning-tabset/div/slot/slot/slot/flexipage-tab2/slot/flexipage-component2/force-progressive-renderer/slot/slot/records-lwc-detail-panel/records-base-record-form/div/div/div/records-record-layout-event-broker/slot/records-lwc-record-layout/forcegenerated-detailpanel_csord__service__c___0123e000000t2jnqai___full___view___recordlayout2/force-record-layout-block/slot/force-record-layout-section[1]/div/div/div/slot/force-record-layout-row[2]/slot/force-record-layout-item[1]/div/div")).getAttribute("value");
-			System.out.println("S012 - Debug - caseURL: "+caseURL);
-			System.out.println("S012 - Debug - serviceStatus: "+serviceStatus);
+			String serviceStatus=driver.findElement(By.xpath("//lightning-formatted-text[text()='New']")).getText();
+
 			if(createdCase.isDisplayed() && serviceStatus.contains("New"))
 			{
 				ExecStructure.screenShotTaking(driver, testName, stepsExecuted+"_ServiceAfterSubmission");
@@ -501,7 +510,29 @@ public class SOI_76_TC1_MobileOrderIntake_CaseCreation {
 			{
 				throw new Exception("Validation Failed on Step "+stepsExecuted);
 			}
+			*/
 			
+			String serviceLink=driver.findElement(By.xpath(SalesForceOrders.firstServiceLink)).getAttribute("href");
+			
+			driver.get(serviceLink);
+			
+			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);		
+			
+			WebElement createdCase= driver.findElement(By.xpath(SalesForceService.caseLink));
+			
+			caseURL=createdCase.getAttribute("href");
+			
+			if(BrowserActions.isElementPresent(driver, SalesForceService.filesContainer) && BrowserActions.isElementPresent(driver, SalesForceService.headerServicesPage) && BrowserActions.isElementPresent(driver, SalesForceService.detailsServicePage)  &&  BrowserActions.isElementPresent(driver, SalesForceService.fieldServiceName)  && BrowserActions.isElementPresent(driver, SalesForceService.fieldCase) && BrowserActions.isElementPresent(driver, SalesForceService.fieldDomain) && BrowserActions.isElementPresent(driver, SalesForceService.fieldType) && BrowserActions.isElementPresent(driver, SalesForceService.fieldDetail) && BrowserActions.isElementPresent(driver, SalesForceService.fieldServiceRequestDate) && BrowserActions.isElementPresent(driver, SalesForceService.fieldEnd2EndRequestOwner) && BrowserActions.isElementPresent(driver, SalesForceService.fieldStatus))
+			{
+				ExecStructure.screenShotTaking(driver, testName, stepsExecuted+"_ServiceScreenValidation");
+				TestStepReportStructure step12 = new TestStepReportStructure(stepsExecuted, "Service Screen Validation", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepsExecuted+"_ServiceScreenValidation");
+				testExecStructure.add(step12);
+				testData.add(new TestReportTestData("Service",driver.findElement(By.xpath("//h1//lightning-formatted-text")).getAttribute("value"),"URL",serviceLink));
+			}
+			else
+			{
+				throw new Exception("Validation Failed on Step "+stepsExecuted);
+			}
 			
 		}
 		catch(Exception e)
@@ -521,9 +552,13 @@ public class SOI_76_TC1_MobileOrderIntake_CaseCreation {
 		
 		try
 		{
-			driver.get(caseURL);
+			WebElement caseLink= driver.findElement(By.xpath(SalesForceService.caseLink));
 			
-			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);	
+			caseLink.click();
+			
+			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+			
+			
 			
 			if (BrowserActions.isElementPresent(driver, SalesforceCase.keyDetailsArticle) && BrowserActions.isElementPresent(driver, SalesforceCase.filesContainer))
 			{
@@ -535,6 +570,28 @@ public class SOI_76_TC1_MobileOrderIntake_CaseCreation {
 			{
 				throw new Exception("Validation Failed on Step "+stepsExecuted);
 			}
+			
+			
+			//String caseLink=driver.findElement(By.xpath(SalesForceService.caseLinkOnDetails)).getAttribute("href");
+			/*
+			String caseLink=driver.findElement(By.xpath(SalesForceService.caseLinkOnDetails)).getAttribute("href");
+			
+			driver.get(caseLink);
+			
+			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+			
+			if (BrowserActions.isElementPresent(driver, SalesforceCase.keyDetailsArticle) && BrowserActions.isElementPresent(driver, SalesforceCase.filesContainer))
+			{
+				ExecStructure.screenShotTaking(driver, testName, stepsExecuted+"_CaseScreenValidation");
+				TestStepReportStructure step13 = new TestStepReportStructure(stepsExecuted, "Case Screen Validation", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepsExecuted+"_CaseScreenValidation");
+				testExecStructure.add(step13);
+				testData.add(new TestReportTestData("Case",driver.findElement(By.xpath("//h1//lightning-formatted-text")).getAttribute("value"),"URL",caseLink));
+			}
+			else
+			{
+				throw new Exception("Validation Failed on Step "+stepsExecuted);
+			}
+			*/
 		}
 		catch(Exception e)
 		{
@@ -547,7 +604,7 @@ public class SOI_76_TC1_MobileOrderIntake_CaseCreation {
 	}
 
   @AfterTest
-  public void afterTest() {
+  public void afterTest(){
 	  
 		finalTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
 

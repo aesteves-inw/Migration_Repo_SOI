@@ -1,9 +1,11 @@
 package actions;
 
+import java.util.List;
 //import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -17,10 +19,12 @@ import execStructure.TestData;
 import sfDirectSales.SalesForceAgreement;
 import sfDirectSales.SalesForceNewMACDOrderScreen;
 import sfDirectSales.SalesForceOpportunity;
+import sfDirectSales.SalesforceNewMACDFlow;
 import sfPartnersCommunity.SFPC_Agreements;
 import sfPartnersCommunity.SFPC_Company;
 import sfPartnersCommunity.SFPC_HomePage;
 import sfPartnersCommunity.SFPC_LoginPage;
+import sfPartnersCommunity.SFPC_NewMACDFlow;
 import sfPartnersCommunity.SFPC_NewMACDOrderScreen;
 import sfPartnersCommunity.SFPC_Opportunity;
 import sfPartnersCommunity.SFPC_Orders;
@@ -191,15 +195,32 @@ public class FunctionalActionsSFPC {
 
 	public static void closeWonOPTY(WebDriver driver, int stepID) throws Exception
 	{
+		Screen screen = new Screen();
 		
 		WebDriverWait waitCWO = new WebDriverWait(driver, 15);
 		
 		try
 		{
-			do {
-				driver.findElement(By.xpath(SFPC_Opportunity.nextBtn)).click();
-			}while(driver.findElement(By.xpath(SFPC_Opportunity.closeOptyBtn)).isDisplayed()==false);
+			/*do {
+				screen.wait(SalesForceSikuli.nextPCButton, 5);
+				
+				screen.click(SalesForceSikuli.nextPCButton);
+				
+			}while(driver.findElement(By.xpath(SFPC_Opportunity.closeOptyBtn)).isDisplayed()==false);*/
 			
+			if(BrowserActions.isElementPresent(driver, SFPC_Opportunity.nextBtn))
+			{
+				do {
+					driver.findElement(By.xpath(SFPC_Opportunity.nextBtn)).click();
+				}while(driver.findElement(By.xpath(SFPC_Opportunity.closeOptyBtn)).isDisplayed()==false);
+			}
+			
+			driver.findElement(By.xpath(SFPC_Opportunity.closeOptyBtn)).click();
+			/*
+			screen.wait(SalesForceSikuli.closePCBtn, 5);
+			
+			screen.click(SalesForceSikuli.closePCBtn);
+			*/
 			driver.findElement(By.xpath(SFPC_Opportunity.closeOptyBtn)).click();
 			
 			waitCWO.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SFPC_Opportunity.selectClosedStageBtn))).click();
@@ -232,24 +253,18 @@ public class FunctionalActionsSFPC {
 	}
 }
 
-	public static void navigate2Agreement(WebDriver driver, int stepID, String linkAgreementName) throws Exception
+	public static void navigate2Agreement(WebDriver driver, int stepID, String generatedAgreement) throws Exception
 	{
-		WebDriverWait waitN2A = new WebDriverWait(driver, 15);
 				
 		try
 		{
-			//BrowserActions.verticalscrollByVisibleElement(driver, SalesForceOpportunity.agreementsContainer);
+			String agreementURL = driver.findElement(By.xpath(generatedAgreement)).getAttribute("href");
 			
-			if (BrowserActions.isElementPresent(driver, linkAgreementName))
-			{
-				driver.findElement(By.xpath(linkAgreementName)).click();
-				
-				waitN2A.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(SFPC_Agreements.agreementsDetails)));
-			}
-			else
-			{
-				throw new Exception("Not possible to navigate into Agreement's Page on Step: "+stepID);
-			}
+			driver.get(agreementURL);
+			
+			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+			
+			
 		}
 		catch(Exception e)
 		{
@@ -269,7 +284,9 @@ public class FunctionalActionsSFPC {
 		
 		try
 		{
-			driver.findElement(By.xpath("//span[contains(.,'Upload Files')]")).click();
+			screen.wait(SalesForceSikuli.uploadFilesPCButton, 20);
+			
+			screen.click(SalesForceSikuli.uploadFilesPCButton);
 			
 			screen.wait(SalesForceSikuli.uploadBarFilePathOpenCancel, 20);
 			
@@ -343,30 +360,93 @@ public class FunctionalActionsSFPC {
 		}
 	}
 	
-	public static void addService2Order(WebDriver driver, int stepID) throws Exception
+	public static void addService2Order(WebDriver driver, int stepID, String testName, String companyContactPerson) throws Exception
 	{
 		WebDriverWait waitAS2O= new WebDriverWait(driver, 15);
 		
+	
+		
 		try
 		{
+			/*
 			driver.findElement(By.xpath(SFPC_Orders.addServiceBtn)).click();
 			
-			waitAS2O.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SFPC_Orders.addServiceConfigScreen)));
+			waitAS2O.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SFPC_Orders.firstScreenFlow)));
 			
-			if (BrowserActions.isElementPresent(driver, SFPC_Orders.addServiceConfigScreen) && BrowserActions.isElementPresent(driver, SFPC_Orders.labelDomain) && BrowserActions.isElementPresent(driver, SFPC_Orders.labelType) && BrowserActions.isElementPresent(driver, SFPC_Orders.labelDetail) && BrowserActions.isElementPresent(driver, SFPC_Orders.saveBtnAS2O))
+			if (BrowserActions.isElementPresent(driver, SFPC_Orders.firstScreenFlow) && BrowserActions.isElementPresent(driver, SFPC_Orders.nextBtn))
 			{
+				//First Screen of the Flow
+				
 				driver.findElement(By.xpath(SFPC_Orders.inputDetail)).click();
 				
 				driver.findElement(By.xpath(SFPC_Orders.inputDetailWinback)).click();
 				
-				driver.findElement(By.xpath(SFPC_Orders.saveBtnAS2O)).click();
+				driver.findElement(By.xpath(SFPC_Orders.nextBtn)).click();
 				
-				waitAS2O.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(SFPC_Orders.addServiceConfigScreen)));
+				//Second Screen of the Flow
 				
-			}
-			else
+				
+			
+				driver.findElement(By.xpath(SFPC_NewMACDFlow.inputCompanyContactPerson)).click();
+				
+				driver.findElement(By.xpath(SFPC_NewMACDFlow.inputCompanyContactPerson)).sendKeys(companyContactPerson);
+				
+				BrowserActions.updateInnerHTMLSelenium(driver);
+				
+				waitAS2O.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[@class='slds-listbox__item cPRX_SOI_CustomLookupResult']"))).click();				
+								
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesforceNewMACDFlow.inputServiceRequestDate))).click();
+				
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesforceNewMACDFlow.todayCalendarButton))).click();					
+			
+				driver.findElement(By.xpath(SalesforceNewMACDFlow.inputComments)).sendKeys(testName);
+				
+				driver.findElement(By.xpath(SFPC_NewMACDFlow.saveButton)).click();
+				
+				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(SFPC_NewMACDFlow.inputCompanyContactPerson)));
+				
+				
+			} */
+			
+			BrowserActions.refreshPage(driver);
+			
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SFPC_Orders.addServiceBtn))).click();
+			//driver.findElement(By.xpath(SFPC_Orders.addServiceBtn)).click();
+			
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SFPC_Orders.firstScreenFlow)));
+			
+			if (BrowserActions.isElementPresent(driver, SFPC_Orders.firstScreenFlow) && BrowserActions.isElementPresent(driver, SFPC_Orders.nextBtn))
 			{
-				throw new Exception("Not possible to Add Service to Order on Step ID: "+stepID);
+				//First Screen of the Flow
+				
+				driver.findElement(By.xpath(SFPC_Orders.inputDetail)).click();
+				
+				driver.findElement(By.xpath(SFPC_Orders.inputDetailWinback)).click();
+				
+				driver.findElement(By.xpath(SFPC_Orders.nextBtn)).click();
+				
+				//Second Screen of the Flow
+				
+				
+			
+				driver.findElement(By.xpath(SFPC_NewMACDFlow.inputCompanyContactPerson)).click();
+				
+				driver.findElement(By.xpath(SFPC_NewMACDFlow.inputCompanyContactPerson)).sendKeys(companyContactPerson);
+				
+				BrowserActions.updateInnerHTMLSelenium(driver);
+				
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[@class='slds-listbox__item cPRX_SOI_CustomLookupResult']"))).click();				
+								
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesforceNewMACDFlow.inputServiceRequestDate))).click();
+				
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesforceNewMACDFlow.todayCalendarButton))).click();					
+			
+				driver.findElement(By.xpath(SalesforceNewMACDFlow.inputComments)).sendKeys(testName);
+				
+				driver.findElement(By.xpath(SFPC_NewMACDFlow.saveButton)).click();
+				
+				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(SFPC_NewMACDFlow.saveButton)));
+				
 			}
 		}
 		catch(Exception e)
@@ -395,6 +475,30 @@ public class FunctionalActionsSFPC {
 		{
 			System.out.println(e);
 			throw new Exception("Test Procedure to Navigate to Service Screen. Failed on StepID: "+stepID,e);
+		}
+	}
+	
+	public static void navigate2CaseScreen(WebDriver driver, int stepID) throws Exception
+	{
+		
+		
+		
+		WebDriverWait wait = new WebDriverWait(driver, 15);
+		
+		try
+		{
+			
+			String caseURL=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SFPC_Services.caseLink))).getAttribute("href");
+			
+			driver.get(caseURL);
+			
+			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);			
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception("Test Procedure to Navigate to Case Screen. Failed on StepID: "+stepID,e);
 		}
 	}
 	

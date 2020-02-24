@@ -475,7 +475,7 @@ public class SOI_150_TC1_MobileOrderIntake_MACD_Flow {
 	}
 
 	@AfterTest
-	public void afterTest() {
+	public void afterTest(){
 
 		finalTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
 

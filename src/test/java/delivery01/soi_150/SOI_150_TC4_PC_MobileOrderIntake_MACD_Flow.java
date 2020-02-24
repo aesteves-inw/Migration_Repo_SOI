@@ -490,7 +490,7 @@ public class SOI_150_TC4_PC_MobileOrderIntake_MACD_Flow {
 	}
 	
 	@AfterTest
-	public void afterTest() {
+	public void afterTest() throws Exception {
 
 		finalTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
 

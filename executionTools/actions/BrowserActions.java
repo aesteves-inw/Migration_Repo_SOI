@@ -1,5 +1,7 @@
 package actions;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Point;
@@ -8,9 +10,23 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import execStructure.TestData;
+
 
 public class BrowserActions {
 	
+	
+	//Browser Actions
+	public static void refreshPage(WebDriver driver)
+	{
+		driver.navigate().refresh();
+
+		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+		
+	}
+	
+	
+	//Elements validation
 	public static boolean isElementPresent(WebDriver driver, String webObject)
 	{
 		return driver.findElements(By.xpath(webObject)).size() > 0;
@@ -56,7 +72,9 @@ public class BrowserActions {
 	
 	}
 
-	//Elements atributes 
+	
+	
+	//Elements attributes 
 	public static int getXOfElement(WebDriver driver, String WebObject) throws Exception
 	{
 		try
@@ -87,6 +105,8 @@ public class BrowserActions {
 		}
 	}
 
+	
+	
 	// Scrolls
 	public static void verticalscrollByVisibleElement(WebDriver driver, String webObject) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -130,15 +150,23 @@ public class BrowserActions {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 	}
+	
+	
+	
 	// Wait for Element
-	public static void explicitWait(WebDriver driver, String elementXpath) {
+	public static void explicitWait(WebDriver driver, String elementXpath) 
+	{
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(elementXpath)));		
 	}
 
 	public static void endSession(WebDriver driver)
 	{
-				
+		/*
+		String logoutURL=TestData.searchDT(0, "environmentITTQA").concat(TestData.searchDT(0, "logout"));
+		
+		driver.get(logoutURL);	
+		*/
 		if (driver != null)
 		{
 			driver.close();
@@ -146,5 +174,26 @@ public class BrowserActions {
 		}
 
 	}
+	
+	public static void updateInnerHTMLSelenium(WebDriver driver)
+	{
+		WebElement ulElement = driver.findElement(By.tagName("ul"));
+		
+		String ulElementInnerHTML=ulElement.getAttribute("innerHTML");
+	}
+	
+	public static void updateInnerHTMLSelenium(WebDriver driver, String element)
+	{
+		WebElement ulElement = driver.findElement(By.tagName(element));
+		
+		String ulElementInnerHTML=ulElement.getAttribute("innerHTML");
+	}
+	
+	public WebElement getElement(WebDriver driver, String attribute, String nameOfSalesforceComponent)
+	{
+		WebElement element = driver.findElement(By.xpath("//*[contains(@"+attribute+", '"+nameOfSalesforceComponent+"')]"));
+		return element;
+	}
 
+	
 }

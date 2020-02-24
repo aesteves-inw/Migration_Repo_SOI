@@ -28,6 +28,12 @@ public class SalesForceSikuli {
 	
 	public static Pattern uploadFilesButton= new Pattern(sikulilocalrepository+"uploadFilesButton.png").similar(0.8f);
 	
+	public static Pattern uploadFilesPCButton= new Pattern(sikulilocalrepository+"uploadFilesPCButton.png").similar(0.8f);
+	
+	//OPTY Partners Community
+	public static Pattern nextPCButton= new Pattern(sikulilocalrepository+"\\opportunity\\nextPCButton.png").similar(0.8f);
+	
+	public static Pattern closePCBtn= new Pattern(sikulilocalrepository+"\\opportunity\\closePCBtn.png").similar(0.8f);
 	
 	
 	//Close Won OPTY
@@ -35,5 +41,10 @@ public class SalesForceSikuli {
 	public static Pattern closeOPTYBtn= new Pattern(sikulilocalrepository+"\\opportunity\\closeBtn.png").similar(0.8f);
 	
 	public static Pattern selectClosedStageBtn= new Pattern(sikulilocalrepository+"\\opportunity\\selectClosedStageBtn.png").similar(0.8f);
+	
+	// Partners Community
+	public static Pattern simpleOrderingPCCompContactPerson= new Pattern(sikulilocalrepository+"simpleOrderingPCCompContactPerson.png").similar(0.8f);
+			
+			
 	
 }

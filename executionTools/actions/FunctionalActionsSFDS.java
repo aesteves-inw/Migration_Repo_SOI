@@ -170,19 +170,13 @@ public class FunctionalActionsSFDS {
 	{
 		WebDriverWait waitCWO = new WebDriverWait(driver, 10);
 		
-		Screen screen = new Screen();	
-		
-		Shadow shadowDOM = new Shadow(driver);
+		Screen screen = new Screen();
 
 		try
 		{
 			screen.wait(SalesForceSikuli.closeOPTYBtn, 20);
 			
-			//screen.click(SalesForceSikuli.closeOPTYBtn);
-			
-			WebElement element = driver.findElement(By.tagName("flexipage-aura-wrapper"));
-					
-			BrowserActions.expandRootElement(driver, element).findElement(By.cssSelector(".slds-is-current > a:nth-child(1)")).click();
+			screen.click(SalesForceSikuli.closeOPTYBtn);
 			
 			screen.wait(SalesForceSikuli.selectClosedStageBtn, 20);
 			

@@ -15,11 +15,18 @@ public class SalesForceAgreement {
 	public static String nameAgreement="//span[contains(.,'Agreement Name')]";
 	
 	
+	
 	//Agreement Related Menu
 	
 	public static String filesContainer="//article[contains(.,'Files')]";
 	
 	public static String uploadFilesBtn="(//span[contains(.,'Upload Files')])[2]";
+	
+	public static String showMoreActionsBtn="//article[contains(.,'Files')]//span[contains(.,'Show more actions')]";
+	
+	public static String selectFilesScreen="//div[@data-aura-class='forceContentFilePicker']";
+	
+	public static String uploadFilesSelectScreen="//button[text()='Upload Files']";
 	
 	
 	//   ..:: Edit Agreement Page
@@ -43,5 +50,13 @@ public class SalesForceAgreement {
 	public static String uploadFilesHeader ="//h2[contains(.,'Upload Files')]";
 	
 	public static String doneButton="//button[contains(.,'Done')]";
+	
+	
+	
+	// Upload Messages
+	
+	public static String successMessage="//div[contains(.,'1 file was added to Agreement.')]";
+	
+	public static String errorMessage="//div[contains(.,'1 file is already in Agreement.')]";
 
 }

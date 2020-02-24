@@ -4,7 +4,7 @@ public class SFPC_Orders {
 	
 	// public static String
 	
-	
+	//Order Page
 	public static String filesContainer ="//article[contains(.,'Files')]";
 	
 	public static String servicesContainer="//article[contains(.,'Services')]";
@@ -48,7 +48,18 @@ public class SFPC_Orders {
 	
 	public static String inputDetailWinback="//span[@title='Winback']";
 	
+	public static String nextBtn="//button[contains(.,'Next')]";
+	
+	public static String firstScreenFlow="//div[@class='cPRX_SOI_MACD_Picklist']";
+	
+	public static String secondScreenFlow="//article[@class='cPRX_SOI_MACD_FORMS']";
+	
+	
+	
 
 	public static String firstServiceLink="(//article[contains(.,'Services')]//a)[2]";
+	
+	//Messages
+	public static String successMessage="//div[contains(.,'Your Order has been successfully submited')]";
 
 }

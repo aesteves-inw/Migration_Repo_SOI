@@ -35,9 +35,11 @@ public class SalesForceService {
 	
 	public static String fieldfilledCompanyContactPerson="//article/div[2]/div/div[1]/div/div/div[4]/div[2]/div";
 	
-	public static String caseLink="//force-hoverable-link/div/a[contains(.,'00')]";
+	public static String caseLink="//force-hoverable-link/div/a[starts-with(.,'00')]";
 	
 	public static String serviceStatus="(//force-record-layout-item[1]/div/div/div[2]/span/slot[1]/slot/lightning-formatted-text)[28]";
+	
+	public static String caseLinkOnDetails="(//force-hoverable-link/div/a[contains(.,'00')])[3]";
 	
 	
 	// --- Edit Buttons ---
