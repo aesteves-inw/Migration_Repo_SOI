@@ -1,6 +1,8 @@
 package actions;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -11,6 +13,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import execReport.TestReportTestData;
 import execReport.TestStepReportStructure;
 import execStructure.ExecStructure;
 import execStructure.TestData;
@@ -23,13 +26,13 @@ import sfDirectSales.SalesForceProducts;
 import actions.BrowserActions;
 
 public class FunctionalSteps {
-	
+
 	// Salesforce Direct Sales
 	public static TestStepReportStructure loginSalesForce(WebDriver driver, int stepID, String sFEnvironment, String testName) throws Exception
 	{
 		String loginUserName;
 		String loginPassWord;
-		
+
 		try
 		{
 			if(sFEnvironment == "DS")
@@ -46,11 +49,11 @@ public class FunctionalSteps {
 			{
 				throw new Exception("Test Failed on Step"+stepID);
 			}
-			
+
 			WebElement usernameBox = driver.findElement(By.xpath(sfDirectSales.SalesForceLoginPage.userName));
 			WebElement passwordBox = driver.findElement(By.xpath(sfDirectSales.SalesForceLoginPage.passWord));
 			WebElement loginBtn = driver.findElement(By.xpath(sfDirectSales.SalesForceLoginPage.loginbtn));
-			
+
 			if (usernameBox.isDisplayed() == true && passwordBox.isDisplayed() == true && loginBtn.isDisplayed() == true) {
 				usernameBox.sendKeys(loginUserName);
 				passwordBox.sendKeys(loginPassWord);
@@ -83,19 +86,19 @@ public class FunctionalSteps {
 			return loginStep;
 		}
 	}
-	
+
 	public static TestStepReportStructure navigate2CompanyDetails(WebDriver driver, int stepID, String testName) throws Exception
 	{
-						
+
 		String companyURL = TestData.searchDT(0, "environmentITTQA").concat(TestData.searchDT(0, "accountView")).concat(TestData.tdCompanyID(testName)).concat("/view");
-		
+
 		try
 		{
-			
+
 			driver.get(companyURL);
-			
+
 			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
-			
+
 			if (BrowserActions.isElementPresent(driver, SalesForceCompany.followBtn) && BrowserActions.isElementPresent(driver, SalesForceCompany.quickSaleOPTYBtn) && BrowserActions.isElementPresent(driver, SalesForceCompany.companyDetailsHeader) && BrowserActions.isElementPresent(driver, SalesForceCompany.companyDetailsInfo))
 			{
 				ExecStructure.screenShotTaking(driver, testName, stepID+"_Navigate2CompDetails");
@@ -106,7 +109,7 @@ public class FunctionalSteps {
 			{
 				throw new Exception("Test Failed on Step: "+stepID+" - Navigation to Company Details");
 			}
-			
+
 		}
 		catch(Exception e)
 		{
@@ -115,22 +118,22 @@ public class FunctionalSteps {
 			TestStepReportStructure nav2ComDet = new TestStepReportStructure(stepID, "Navigation to Company Details", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_Navigate2CompDetails");
 			return nav2ComDet;
 		}
-		
-		
+
+
 	}
-	
+
 	public static TestStepReportStructure createStandardOppie(WebDriver driver, int stepID, String testName, String testExecutionString) throws Exception
 	{
 		try
 		{
 			FunctionalActionsSFDS.createNewStandardOpportunity(driver);
-			
+
 			FunctionalActionsSFDS.inputOpportunityValues(driver, testExecutionString, testName);
-			
+
 			driver.findElement(By.xpath(SalesForceOpportunity.nosSaveButton)).click();
-			
+
 			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
-			
+
 			if(BrowserActions.isElementPresent(driver, SalesForceProducts.inputSearchProducts) && BrowserActions.isElementPresent(driver, SalesForceProducts.productsTable))
 			{
 				ExecStructure.screenShotTaking(driver, testName, stepID+"_CreateNewOppie");
@@ -141,7 +144,7 @@ public class FunctionalSteps {
 			{
 				throw new Exception("Test Failed on Step: "+stepID+" - Create New Opportunity");
 			}
-			
+
 		}
 		catch(Exception e)
 		{
@@ -151,31 +154,31 @@ public class FunctionalSteps {
 			return newOppie;
 		}
 	}
-	
+
 	public static TestStepReportStructure createNewMACDOrder(WebDriver driver, int stepID, String testName, String testExecutionString) throws IOException
 	{
 		WebDriverWait waitNewMACDOrder = new WebDriverWait(driver, 10);
-		
+
 		String orderName="Order_"+testExecutionString;
-		
+
 		String newOrderCreated="//*[contains(.,'"+orderName+"')]";
-		
+
 		try
 		{
 			driver.findElement(By.xpath(SalesForceCompany.newMACDOrderButton)).click();
-			
+
 			waitNewMACDOrder.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesForceNewMACDOrderScreen.headerNewMACDOrder)));
-			
+
 			driver.findElement(By.xpath(SalesForceNewMACDOrderScreen.inputOrderName)).clear();
-			
+
 			driver.findElement(By.xpath(SalesForceNewMACDOrderScreen.inputOrderName)).sendKeys(orderName);
-			
+
 			driver.findElement(By.xpath(SalesForceNewMACDOrderScreen.nmoSaveButton)).click();
-					
+
 			waitNewMACDOrder.until(ExpectedConditions.visibilityOfElementLocated(By.linkText(orderName))).click();
-			
+
 			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
-			
+
 			if (BrowserActions.isElementPresent(driver, newOrderCreated))
 			{
 				ExecStructure.screenShotTaking(driver, testName, stepID+"_NewMACDOrder");
@@ -185,9 +188,9 @@ public class FunctionalSteps {
 			else
 			{
 				throw new Exception("Validation Failed on Step: "+stepID);
-				
+
 			}
-			
+
 		}
 		catch(Exception e)
 		{
@@ -197,25 +200,25 @@ public class FunctionalSteps {
 			return newMACDOrder;
 		}
 	}
-	
+
 	public static TestStepReportStructure createCloseStandardMobileVoiceOppie(WebDriver driver, int stepID, String testName, String testExecutionString) throws Exception
 	{
 		try
 		{
 			FunctionalActionsSFDS.createNewStandardOpportunity(driver);
-			
+
 			FunctionalActionsSFDS.inputOpportunityValues(driver, testExecutionString, testName);
-			
+
 			driver.findElement(By.xpath(SalesForceOpportunity.nosSaveButton)).click();
-			
+
 			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
-			
+
 			FunctionalActionsSFDS.addProductToOppie(driver, "mobileVoice");
-			
+
 			FunctionalActionsSFDS.editProductConfiguration(driver, 1);
-			
+
 			FunctionalActionsSFDS.closeWonOppie(driver);
-			
+
 			if (BrowserActions.isElementPresent(driver, SalesForceOpportunity.stageClosedWonDetails))
 			{
 				ExecStructure.screenShotTaking(driver, testName, stepID+"_ClosedWonOppieValidation");
@@ -236,24 +239,25 @@ public class FunctionalSteps {
 			return createCloseStandardMobileVoiceOppie;
 		}
 	}
-	
+
 	// Salesforce Partners Community
-	
-	
-	
+
+
+
 	// SOI-80
+
 	public static TestStepReportStructure navigate2OrdersList(WebDriver driver, int stepID, String testName) throws Exception
 	{
-						
+
 		String ordersListURL = TestData.searchDT(0, "environmentITTQA").concat(TestData.searchDT(0, "ordersList"));
-		
+
 		try
 		{
-			
+
 			driver.get(ordersListURL);
-			
+
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			
+
 			if(BrowserActions.isElementPresent(driver, SalesForceOrders.ordersSearchBar))
 			{
 				ExecStructure.screenShotTaking(driver, testName, stepID+"_Navigate2OrdersList");
@@ -264,7 +268,7 @@ public class FunctionalSteps {
 			{
 				throw new Exception("Test Failed on Step: "+stepID+" - Navigation to Orders List");
 			}
-			
+
 		}
 		catch(Exception e)
 		{
@@ -273,26 +277,26 @@ public class FunctionalSteps {
 			TestStepReportStructure nav2ComDet = new TestStepReportStructure(stepID, "Navigation to Orders List", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_Navigate2OrdersList");
 			return nav2ComDet;
 		}
-		
-		
+
+
 	}
 
 	public static TestStepReportStructure navigate2MyOrders(WebDriver driver, int stepID, String testName) throws Exception
 	{		
-		
+
 		try
 		{
-			
+
 			/*driver.findElement(By.xpath(SalesForceOrders.ordersListView)).click();
-			
+
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			
+
 			driver.findElement(By.xpath(SalesForceOrders.myOrdersOption)).click();*/
-			
+
 			driver.get(TestData.myOrdersURL);
-			
+
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			
+
 			if(BrowserActions.isElementPresent(driver, SalesForceOrders.validateMyOrders))
 			{
 				ExecStructure.screenShotTaking(driver, testName, stepID+"_Navigate2MyOders");
@@ -303,7 +307,7 @@ public class FunctionalSteps {
 			{
 				throw new Exception("Test Failed on Step: "+stepID+" - Navigation to My Orders");
 			}
-			
+
 		}
 		catch(Exception e)
 		{
@@ -312,35 +316,23 @@ public class FunctionalSteps {
 			TestStepReportStructure nav2ComDet = new TestStepReportStructure(stepID, "Navigation to My Orders", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_Navigate2MyOrders");
 			return nav2ComDet;
 		}
-		
-		
+
+
 	}
-	
+
 	public static TestStepReportStructure navigate2SelectFields(WebDriver driver, int stepID, String testName) throws Exception
 	{
-		
+		WebDriverWait wait = new WebDriverWait(driver, 15);
+
 		try
 		{
-			driver.findElement(By.xpath("(//input[@type='search'])[2]")).click();
-			driver.findElement(By.xpath("(//input[@type='search'])[2]")).sendKeys(Keys.TAB);
-			driver.findElement(By.xpath(SalesForceOrders.listViewControls)).sendKeys(Keys.RETURN);
-			
-			for(int i = 1; i < 6; i++) {
-				String s = String.valueOf(i);
-				driver.findElement(By.xpath("(//a[@role='menuitem'])["+s+"]")).sendKeys(Keys.DOWN);
-				}
-			driver.findElement(By.xpath("(//a[@role='menuitem'])[6]")).sendKeys(Keys.RETURN);
-			//driver.findElement(By.xpath(SalesForceOrders.listViewControls)).click();;
-			
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			
-			//driver.findElement(By.xpath(SalesForceOrders.selectFieldDisplay)).click();;
-			
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			
-			Thread.sleep(2000);
-			
-			if(BrowserActions.isElementPresent(driver, SalesForceOrders.selectFieldDisplay))
+			driver.findElement(By.xpath(SalesForceOrders.listViewControlsBtn)).click();
+
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesForceOrders.listControlsList)));
+
+			driver.findElement(By.xpath(SalesForceOrders.selectFieldsListOption)).click();
+
+			if(BrowserActions.isElementPresent(driver, SalesForceOrders.validateSelectDisplay))
 			{
 				ExecStructure.screenShotTaking(driver, testName, stepID+"_navigate2SelectFields");
 				TestStepReportStructure nav2ComDet = new TestStepReportStructure(stepID, "Navigation to Select Fields to Display", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_navigate2SelectFields");
@@ -350,7 +342,7 @@ public class FunctionalSteps {
 			{
 				throw new Exception("Test Failed on Step: "+stepID+" - Navigation to Select Fields to Display");
 			}
-			
+
 		}
 		catch(Exception e)
 		{
@@ -359,77 +351,78 @@ public class FunctionalSteps {
 			TestStepReportStructure nav2ComDet = new TestStepReportStructure(stepID, "Navigation to Select Fields to Display", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_navigate2SelectFields");
 			return nav2ComDet;
 		}
-		
-		
+
+
 	}
-	
-	public static TestStepReportStructure add3fields(WebDriver driver, int stepID, String testName) throws Exception
+
+	public static TestStepReportStructure add3fields(WebDriver driver, int stepID, String testName, WebDriverWait wait) throws Exception
 	{
-	
-		
+
+		int counter=0;
+		int counterVal;
+
+		List<String> optionsSelected=new ArrayList<String>();	
+
+		List<String> originalOptionsSelected=new ArrayList<String>();
+
+		int initialheaderTableColumnsOrder;
+
 		try
 		{
-			
-			Actions action=new Actions(driver);
-			
-			//ArrayList<String> fields = new ArrayList<String>()
-					
-			String[] fields = {null,null,null};		
-			
-			//fields[0] = driver.findElement(By.xpath("(//span[@class='slds-media__body']//span)[1]")).getText();
-			
-			//driver.findElement(By.xpath("(//span[@class='slds-media__body']//span)[1]")).click();
-			
-			int a = 0;
-			
-			//action.keyDown(Keys.CONTROL).build().perform();
-			//action.keyDown(Keys.SHIFT).build().perform();
-			
-			for(int i = 1; i < 3; i++) {
-				String s = String.valueOf(i);
-				//fields[a] = driver.findElement(By.xpath("(//span[@class='slds-media__body']//span)["+s+"]")).getText();
-				fields[a] = driver.findElement(By.xpath("(//div[@role='option'])["+s+"]")).getText();
-				a++;
-				//driver.findElement(By.xpath("(//span[@class='slds-media__body']//span)["+s+"]")).sendKeys(Keys.DOWN);
-				action.keyDown(Keys.SHIFT).build().perform();
-				driver.findElement(By.xpath("(//div[@role='option'])["+s+"]")).sendKeys(Keys.DOWN);
-				action.keyUp(Keys.SHIFT).build().perform();
-				if(fields[2] != driver.findElement(By.xpath("(//div[@role='option'])[3]")).getText()) {fields[2] = driver.findElement(By.xpath("(//div[@role='option'])[3]")).getText();}
-			}
-			
-			//action.keyUp(Keys.CONTROL).build().perform();
-			//action.keyUp(Keys.SHIFT).build().perform();
-			
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			driver.findElement(By.xpath("(//div[@role='option'])[3]")).sendKeys(Keys.TAB, Keys.RETURN);
-			//driver.findElement(By.xpath(SalesForceOrders.addButtonField)).click();
-			
-			//driver.findElement(By.xpath(SalesForceOrders.cancelSubmitterContactField)).click();
-			for(int b = 0; b < 3; b++) {
-			System.out.println(fields[b]);
-			}
-			
-			driver.findElement(By.xpath("(//div[@role='option'])[3]")).sendKeys(Keys.TAB, Keys.TAB, Keys.TAB, Keys.TAB, Keys.TAB, Keys.TAB, Keys.TAB, Keys.RETURN);
-			//for(int c = 2) {}
-			//String activeFields = driver.findElement(By.xpath("//table[contains(@class,'slds-table forceRecordLayout')]/thead[1]/tr[1]/th[]/div[1]/a[1]")).getText();
-			
-			
-			
-			//driver.findElement(By.xpath("(//span[text()='Save'])[2]")).click();
-			//driver.findElement(By.xpath("(//span[text()='Save'])[2]")).click();
-			
-			//if(BrowserActions.isElementPresent(driver, SalesForceOrders.firstFieldAdded) && BrowserActions.isElementPresent(driver, SalesForceOrders.secondFieldAdded) && BrowserActions.isElementPresent(driver, SalesForceOrders.thirdFieldAdded))
-			if(driver.findElement(By.linkText(fields[0])).isDisplayed() && driver.findElement(By.linkText(fields[1])).isDisplayed()  && driver.findElement(By.linkText(fields[2])).isDisplayed() )
+			//First Validation Part
+			List<WebElement> headerTableColumnsOrder= driver.findElements(By.xpath(SalesForceOrders.headerTableColumnsOrder));
+
+			initialheaderTableColumnsOrder=headerTableColumnsOrder.size();
+
+			for(WebElement hTCO : headerTableColumnsOrder)
 			{
-				ExecStructure.screenShotTaking(driver, testName, stepID+"_add3fields");
-				TestStepReportStructure nav2ComDet = new TestStepReportStructure(stepID, "Add 3 Fields", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_add3fields");
-				return nav2ComDet;
+				String optionVisible=hTCO.getText();
+				originalOptionsSelected.add(optionVisible);
+			}
+
+			//Action on Step
+			List<WebElement> availableFields= driver.findElements(By.xpath(SalesForceOrders.availableFieldsOptions));
+
+			for(WebElement aF: availableFields)
+			{
+
+				String optionSelected=aF.getText();
+				optionsSelected.add(optionSelected);
+				aF.click();
+				driver.findElement(By.xpath(SalesForceOrders.move2VisibleFields)).click();
+				counter++;
+				if (counter == 3)
+				{
+					break;
+				}
+			}
+
+			driver.findElement(By.xpath(SalesForceOrders.selectFieldsSaveBtn)).click();
+
+			//Final Validation
+			if(BrowserActions.isElementPresent(driver, SalesForceOrders.successMessage))
+			{
+				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(SalesForceOrders.successMessage)));
+
+				int headerTableColumnsOrderVal= driver.findElements(By.xpath(SalesForceOrders.headerTableColumnsOrder)).size();
+
+				counterVal=initialheaderTableColumnsOrder+3;
+
+				if(headerTableColumnsOrderVal == counterVal)
+				{
+					ExecStructure.screenShotTaking(driver, testName, stepID+"_add3fields");
+					TestStepReportStructure nav2ComDet = new TestStepReportStructure(stepID, "Add 3 Fields", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_add3fields");
+					return nav2ComDet;
+				}
+				else
+				{
+					throw new Exception("Validation Failed on Step: "+stepID+" - Add 3 Fields");
+				}
 			}
 			else
 			{
 				throw new Exception("Test Failed on Step: "+stepID+" - Add 3 Fields");
 			}
-			
 		}
 		catch(Exception e)
 		{
@@ -438,131 +431,165 @@ public class FunctionalSteps {
 			TestStepReportStructure nav2ComDet = new TestStepReportStructure(stepID, "Add 3 Fields", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_add3fields");
 			return nav2ComDet;
 		}
-		
-		
+
+
 	}
-	
-	public static TestStepReportStructure remove3fields(WebDriver driver, int stepID, String testName) throws Exception
+
+	public static TestStepReportStructure remove3fields(WebDriver driver, int stepID, String testName, WebDriverWait wait) throws Exception
 	{
-						
-		String ordersListURL = TestData.searchDT(0, "environmentITTQA").concat(TestData.searchDT(0, "ordersList"));
-		
-		String companyName=TestData.tdCompanyName(testName);
-		
+		int counter=0;
+		int counterVal;
+
+		List<String> optionsSelected=new ArrayList<String>();	
+
+		List<String> originalOptionsSelected=new ArrayList<String>();
+
+		int initialheaderTableColumnsOrder;
+
+		Actions action = new Actions(driver);
+
 		try
 		{
-			
-			Actions action=new Actions(driver);
-			/*driver.findElement(By.xpath("//span[text()='Visible Fields']/following-sibling::div")).click();
-			action.keyDown(Keys.CONTROL).build().perform();
-			driver.findElement(By.xpath("//span[text()='Visible Fields']/following-sibling::div")).sendKeys(Keys.END);
-			action.keyUp(Keys.CONTROL).build().perform();
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);*/
-			action.keyDown(Keys.CONTROL).build().perform();
-			driver.findElement(By.xpath("(//span[@title='Order Type'])[2]")).click();
-			driver.findElement(By.xpath("(//span[@title='Created By'])[2]")).click();
-			driver.findElement(By.xpath("(//span[@title='Owner Alias'])[2]")).click();
-			action.keyUp(Keys.CONTROL).build().perform();
-			
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			
-			driver.findElement(By.xpath(SalesForceOrders.removeButtonField)).click();
-			
-			driver.findElement(By.xpath("(//span[text()='Save'])[2]")).click();
-			
-			Thread.sleep(2000);
-			
-			if(BrowserActions.isElementPresent(driver, "(//span[@title='Order Type'])[2]") && BrowserActions.isElementPresent(driver, "(//span[@title='Created By'])[2]") && BrowserActions.isElementPresent(driver, "(//span[@title='Owner Alias'])[2]"))
+			//First Validation Part
+			List<WebElement> headerTableColumnsOrder= driver.findElements(By.xpath(SalesForceOrders.headerTableColumnsOrder));
+
+			initialheaderTableColumnsOrder=headerTableColumnsOrder.size();
+
+			for(WebElement hTCO : headerTableColumnsOrder)
 			{
-				//throw new Exception("Test Failed on Step: "+stepID+" - Remove 3 Fields");
-				ExecStructure.screenShotTaking(driver, testName, stepID+"_remove3fields");
-				TestStepReportStructure nav2ComDet = new TestStepReportStructure(stepID, "Remove 3 Fields", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_remove3fields");
-				return nav2ComDet;
+				String optionVisible=hTCO.getText();
+				originalOptionsSelected.add(optionVisible);
 			}
+
 			
+			//Action on Step
+
+			int visiblefieldsOptionsCtr;
+
+			for(int i=0;i<6;i++)
+			{
+				List<WebElement> visiblefieldsOptions= driver.findElements(By.xpath(SalesForceOrders.visiblefieldsOptions));
+
+				visiblefieldsOptionsCtr=visiblefieldsOptions.size();
+
+				int visiblefieldsOptionsIDX=visiblefieldsOptionsCtr-1;
+
+				WebElement lastFTList= driver.findElement(By.xpath("//lightning-dual-listbox/div/div[2]/div/div[5]/div/ul/li/div[@data-index="+visiblefieldsOptionsIDX+"]"));
+
+				action.moveToElement(lastFTList).perform();
+
+				String optionSelected=lastFTList.getText();
+				optionsSelected.add(optionSelected);
+
+				lastFTList.click();
+
+				driver.findElement(By.xpath(SalesForceOrders.move2AvailableFields)).click();
+
+				counter++;
+
+				if (counter == 3)
+				{
+					break;
+				}
+			}
+
+			driver.findElement(By.xpath(SalesForceOrders.selectFieldsSaveBtn)).click();
+
+			//Final Validation
+			if(BrowserActions.isElementPresent(driver, SalesForceOrders.successMessage))
+			{
+				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(SalesForceOrders.successMessage)));
+
+				int headerTableColumnsOrderVal= driver.findElements(By.xpath(SalesForceOrders.headerTableColumnsOrder)).size();
+
+				counterVal=initialheaderTableColumnsOrder-3;
+
+				if(headerTableColumnsOrderVal == counterVal)
+				{
+					ExecStructure.screenShotTaking(driver, testName, stepID+"_Remove3fields");
+					TestStepReportStructure nav2ComDet = new TestStepReportStructure(stepID, "Remove 3 Fields", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_Remove3fields");
+					return nav2ComDet;
+				}
+				else
+				{
+					throw new Exception("Validation Failed on Step: "+stepID+" - Remove 3 Fields");
+				}
+			}
 			else
 			{
-				//throw new Exception("Test Failed on Step: "+stepID+" - Remove 3 Fields");
-				ExecStructure.screenShotTaking(driver, testName, stepID+"_remove3fields");
-				TestStepReportStructure nav2ComDet = new TestStepReportStructure(stepID, "Remove 3 Fields", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_remove3fields");
-				return nav2ComDet;
+				throw new Exception("Test Procedure Failed on Step: "+stepID+" - Remove 3 Fields");
 			}
-			
 		}
 		catch(Exception e)
 		{
 			System.out.println(e);
-			ExecStructure.screenShotTaking(driver, testName, stepID+"_remove3fields");
-			TestStepReportStructure nav2ComDet = new TestStepReportStructure(stepID, "Remove 3 Fields", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_remove3fields");
+			ExecStructure.screenShotTaking(driver, testName, stepID+"_Remove3fields");
+			TestStepReportStructure nav2ComDet = new TestStepReportStructure(stepID, "Remove 3 Fields", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_Remove3fields");
 			return nav2ComDet;
 		}
-		
-		
+
 	}
-	
+
 	public static TestStepReportStructure moveField(WebDriver driver, int stepID, String testName) throws Exception
 	{
-						
-		String ordersListURL = TestData.searchDT(0, "environmentITTQA").concat(TestData.searchDT(0, "ordersList"));
-		
-		String companyName=TestData.tdCompanyName(testName);
-		
+
 		try
 		{
-			
-			driver.findElement(By.xpath("//*[contains(@id,'selected-list-')]/li[3]/div[1]/span[1]/span[1]")).click();
-			
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			
-			
-			for(int i = 0; i < 3; i++) {
-			driver.findElement(By.xpath("//button[@title='Move selection down']")).click();
-			}
-			
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			
-			driver.findElement(By.xpath("(//span[text()='Save'])[2]")).click();
-			
-			Thread.sleep(2000);
-			
-			if(BrowserActions.isElementPresent(driver, SalesForceOrders.validateMyOrders))
+			List<WebElement> headerTableColumnsOrder= driver.findElements(By.xpath(SalesForceOrders.headerTableColumnsOrder));
+
+			driver.findElement(By.xpath(SalesForceOrders.secondVisiblefieldOption)).click();
+
+			driver.findElement(By.xpath(SalesForceOrders.moveSelectionUp)).click();
+
+			driver.findElement(By.xpath(SalesForceOrders.selectFieldsSaveBtn)).click();
+
+			if(BrowserActions.isElementPresent(driver, SalesForceOrders.successMessage))
 			{
-				ExecStructure.screenShotTaking(driver, testName, stepID+"_navigate2SelectFields");
-				TestStepReportStructure nav2ComDet = new TestStepReportStructure(stepID, "Navigation to Select Fields to Display", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_navigate2SelectFields");
-				return nav2ComDet;
+				List<WebElement> headerTableColumnsOrderVal= driver.findElements(By.xpath(SalesForceOrders.headerTableColumnsOrder));
+
+				if(headerTableColumnsOrder != headerTableColumnsOrderVal)
+				{
+					ExecStructure.screenShotTaking(driver, testName, stepID+"_navigate2SelectFields");
+					TestStepReportStructure nav2ComDet = new TestStepReportStructure(stepID, "Navigation to Select Fields to Display", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_navigate2SelectFields");
+					return nav2ComDet;
+				}
+				else
+				{
+					throw new Exception("Validation Failed on Step: "+stepID+" - Navigation to Select Fields to Display");
+				}
 			}
 			else
 			{
-				throw new Exception("Test Failed on Step: "+stepID+" - Navigation to Select Fields to Display");
+				throw new Exception("Test Procedure Failed on Step: "+stepID+" - Navigation to Select Fields to Display");
 			}
-			
+
 		}
 		catch(Exception e)
 		{
 			System.out.println(e);
 			ExecStructure.screenShotTaking(driver, testName, stepID+"_navigate2SelectFields");
-			TestStepReportStructure nav2ComDet = new TestStepReportStructure(stepID, "Navigation to Select Fields to Display", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_navigate2SelectFields");
+			TestStepReportStructure nav2ComDet = new TestStepReportStructure(stepID, "Move Field", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_navigate2SelectFields");
 			return nav2ComDet;
 		}
-		
-		
+
+
 	}
-	
+
 	public static TestStepReportStructure navigate2AllOrders(WebDriver driver, int stepID, String testName) throws Exception
 	{
-		
+
 		try
 		{
-			
+
 			//driver.findElement(By.xpath(SalesForceOrders.ordersListView)).click();
-			
+
 			driver.get(TestData.allOrdersURL);
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			
+
 			//driver.findElement(By.xpath(SalesForceOrders.allOrdersOption)).click();
-			
+
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			
+
 			if(BrowserActions.isElementPresent(driver, SalesForceOrders.validateAllOrders))
 			{
 				ExecStructure.screenShotTaking(driver, testName, stepID+"_Navigate2MyOders");
@@ -573,7 +600,7 @@ public class FunctionalSteps {
 			{
 				throw new Exception("Test Failed on Step: "+stepID+" - Navigation to My Orders");
 			}
-			
+
 		}
 		catch(Exception e)
 		{
@@ -582,22 +609,22 @@ public class FunctionalSteps {
 			TestStepReportStructure nav2ComDet = new TestStepReportStructure(stepID, "Navigation to My Orders", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_Navigate2MyOrders");
 			return nav2ComDet;
 		}
-		
-		
+
+
 	}
 
 	public static TestStepReportStructure navigate2SelectOrder(WebDriver driver, int stepID, String testName, String orderSelect) throws Exception
 	{
-						
-		
-		
+
+
+
 		try
 		{
-			
+
 			driver.findElement(By.xpath("//table[contains(@class,'slds-table forceRecordLayout')]/tbody[1]/tr["+orderSelect+"]/th[1]/span[1]/a[1]")).click();
-			
+
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			
+
 			if(BrowserActions.isElementPresent(driver, SalesForceOrders.addServiceButton) && BrowserActions.isElementPresent(driver, SalesForceOrders.submitOrderButton))
 			{
 				ExecStructure.screenShotTaking(driver, testName, stepID+"_Navigate2SelectOrder");
@@ -608,7 +635,7 @@ public class FunctionalSteps {
 			{
 				throw new Exception("Test Failed on Step: "+stepID+" - Navigation to an order");
 			}
-			
+
 		}
 		catch(Exception e)
 		{
@@ -617,9 +644,9 @@ public class FunctionalSteps {
 			TestStepReportStructure nav2ComDet = new TestStepReportStructure(stepID, "Navigation to an order", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_Navigate2SelectOrder");
 			return nav2ComDet;
 		}
-		
-		
+
+
 	}
-	
+
 
 }

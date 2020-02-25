@@ -7,21 +7,12 @@ import org.testng.annotations.AfterTest;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
-
 import actions.BrowserActions;
-import actions.FunctionalActionsSFDS;
 import actions.FunctionalSteps;
 import execReport.CreateTestReport;
 import execReport.TestReportHeaderStructure;
@@ -29,9 +20,6 @@ import execReport.TestReportTestData;
 import execReport.TestStepReportStructure;
 import execStructure.ExecStructure;
 import execStructure.TestData;
-import sfDirectSales.SalesForceAgreement;
-import sfDirectSales.SalesForceCompany;
-import sfDirectSales.SalesForceOpportunity;
 
 public class SOI_80_TC3_MobileOrderIntake_OrderListView_ConfigureListView_UserOrders_ColumnsConfig {
 
@@ -54,12 +42,6 @@ public class SOI_80_TC3_MobileOrderIntake_OrderListView_ConfigureListView_UserOr
 	private long finishTime;
 
 	private int stepsExecuted;
-
-	private String testExecutionString;
-
-	private String optyName;
-
-	private String linkAgreementName;
 
 	@BeforeTest
 	public void beforeTest() {
@@ -99,7 +81,7 @@ public class SOI_80_TC3_MobileOrderIntake_OrderListView_ConfigureListView_UserOr
 
 		}
 
-		testExecutionString = ExecStructure.formattedDate("yyyyMMdd")+"_TC4_Ex"+ExecStructure.numberOfSubFolders(ExecStructure.testFolder(testName));
+		
 	}
 
 	@Test
@@ -120,14 +102,14 @@ public class SOI_80_TC3_MobileOrderIntake_OrderListView_ConfigureListView_UserOr
 			if (step01.getStepStatus().toLowerCase().contains("failed")) 
 			{
 
-				throw new Exception("Validation Failed on Step 1");
+				throw new Exception("Validation Failed on Step: "+stepsExecuted);
 			}
 
 		}
 		catch(Exception e)
 		{
 			System.out.println(e);
-			throw new Exception("Test Failed on Step 1",e);
+			throw new Exception("Test Failed on Step: "+stepsExecuted,e);
 		}
 
 	}
@@ -146,13 +128,13 @@ public class SOI_80_TC3_MobileOrderIntake_OrderListView_ConfigureListView_UserOr
 			if (step02.getStepStatus().toLowerCase().contains("failed")) 
 			{
 
-				throw new Exception("Validation Failed on Step 2");
+				throw new Exception("Validation Failed on Step: "+stepsExecuted);
 			}
 		}
 		catch(Exception e)
 		{
 			System.out.println(e);
-			throw new Exception("Test Failed on Step 2",e);
+			throw new Exception("Test Failed on Step: "+stepsExecuted,e);
 		}
 	}
 	
@@ -164,19 +146,19 @@ public class SOI_80_TC3_MobileOrderIntake_OrderListView_ConfigureListView_UserOr
 		try
 		{
 
-			TestStepReportStructure step03 = FunctionalSteps.navigate2AllOrders(driver, 3, testName);
+			TestStepReportStructure step03 = FunctionalSteps.navigate2MyOrders(driver, stepsExecuted, testName);
 			testExecStructure.add(step03);
 
 			if (step03.getStepStatus().toLowerCase().contains("failed")) 
 			{
 
-				throw new Exception("Validation Failed on Step 3");
+				throw new Exception("Validation Failed on Step: "+stepsExecuted);
 			}
 		}
 		catch(Exception e)
 		{
 			System.out.println(e);
-			throw new Exception("Test Failed on Step 3",e);
+			throw new Exception("Test Failed on Step: "+stepsExecuted,e);
 		}
 	}
 	
@@ -194,16 +176,16 @@ public class SOI_80_TC3_MobileOrderIntake_OrderListView_ConfigureListView_UserOr
 			if (step04.getStepStatus().toLowerCase().contains("failed")) 
 			{
 
-				throw new Exception("Validation Failed on Step 4");
+				throw new Exception("Validation Failed on Step: "+stepsExecuted);
 			}
 		}
 		catch(Exception e)
 		{
 			System.out.println(e);
-			throw new Exception("Test Failed on Step 4",e);
+			throw new Exception("Test Failed on Step: "+stepsExecuted,e);
 		}
 	}
-	
+
 	@Test(dependsOnMethods = "step04")
 	public void step05() throws Exception {		
 
@@ -212,19 +194,19 @@ public class SOI_80_TC3_MobileOrderIntake_OrderListView_ConfigureListView_UserOr
 		try
 		{
 
-			TestStepReportStructure step05 = FunctionalSteps.add3fields(driver, 5, testName);
+			TestStepReportStructure step05 = FunctionalSteps.add3fields(driver, 5, testName, wait);
 			testExecStructure.add(step05);
 
 			if (step05.getStepStatus().toLowerCase().contains("failed")) 
 			{
 
-				throw new Exception("Validation Failed on Step 5");
+				throw new Exception("Validation Failed on Step: "+stepsExecuted);
 			}
 		}
 		catch(Exception e)
 		{
 			System.out.println(e);
-			throw new Exception("Test Failed on Step 5",e);
+			throw new Exception("Test Failed on Step: "+stepsExecuted,e);
 		}
 	}
 	
@@ -242,13 +224,13 @@ public class SOI_80_TC3_MobileOrderIntake_OrderListView_ConfigureListView_UserOr
 			if (step06.getStepStatus().toLowerCase().contains("failed")) 
 			{
 
-				throw new Exception("Validation Failed on Step 6");
+				throw new Exception("Validation Failed on Step: "+stepsExecuted);
 			}
 		}
 		catch(Exception e)
 		{
 			System.out.println(e);
-			throw new Exception("Test Failed on Step 6",e);
+			throw new Exception("Test Failed on Step: "+stepsExecuted,e);
 		}
 	}
 	
@@ -260,19 +242,19 @@ public class SOI_80_TC3_MobileOrderIntake_OrderListView_ConfigureListView_UserOr
 		try
 		{
 
-			TestStepReportStructure step07 = FunctionalSteps.remove3fields(driver, 7, testName);
+			TestStepReportStructure step07 = FunctionalSteps.remove3fields(driver, 7, testName, wait);
 			testExecStructure.add(step07);
 
 			if (step07.getStepStatus().toLowerCase().contains("failed")) 
 			{
 
-				throw new Exception("Validation Failed on Step 7");
+				throw new Exception("Validation Failed on Step: "+stepsExecuted);
 			}
 		}
 		catch(Exception e)
 		{
 			System.out.println(e);
-			throw new Exception("Test Failed on Step 7",e);
+			throw new Exception("Test Failed on Step: "+stepsExecuted,e);
 		}
 	}
 	
@@ -290,16 +272,16 @@ public class SOI_80_TC3_MobileOrderIntake_OrderListView_ConfigureListView_UserOr
 			if (step08.getStepStatus().toLowerCase().contains("failed")) 
 			{
 
-				throw new Exception("Validation Failed on Step 8");
+				throw new Exception("Validation Failed on Step: "+stepsExecuted);
 			}
 		}
 		catch(Exception e)
 		{
 			System.out.println(e);
-			throw new Exception("Test Failed on Step 8",e);
+			throw new Exception("Test Failed on Step: "+stepsExecuted,e);
 		}
 	}
-	
+
 	@Test(dependsOnMethods = "step08")
 	public void step09() throws Exception {		
 
@@ -314,16 +296,16 @@ public class SOI_80_TC3_MobileOrderIntake_OrderListView_ConfigureListView_UserOr
 			if (step09.getStepStatus().toLowerCase().contains("failed")) 
 			{
 
-				throw new Exception("Validation Failed on Step 9");
+				throw new Exception("Validation Failed on Step: "+stepsExecuted);
 			}
 		}
 		catch(Exception e)
 		{
 			System.out.println(e);
-			throw new Exception("Test Failed on Step 9",e);
+			throw new Exception("Test Failed on Step: "+stepsExecuted,e);
 		}
 	}
-	
+
 	@AfterTest
 	public void afterTest() {
 		

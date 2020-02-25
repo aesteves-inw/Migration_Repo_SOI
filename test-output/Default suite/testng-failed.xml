@@ -3,14 +3,21 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="notInclude.EditAgreement">
+      <class name="delivery01.soi_80.SOI_80_TC3_MobileOrderIntake_OrderListView_ConfigureListView_UserOrders_ColumnsConfig">
         <methods>
-          <include name="afterTest"/>
+          <include name="step08"/>
           <include name="beforeTest"/>
-          <include name="step01"/>
+          <include name="step07"/>
+          <include name="step09"/>
+          <include name="step04"/>
+          <include name="step03"/>
+          <include name="afterTest"/>
+          <include name="step06"/>
+          <include name="step05"/>
           <include name="step02"/>
+          <include name="step01"/>
         </methods>
-      </class> <!-- notInclude.EditAgreement -->
+      </class> <!-- delivery01.soi_80.SOI_80_TC3_MobileOrderIntake_OrderListView_ConfigureListView_UserOrders_ColumnsConfig -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -127,7 +127,49 @@ public class SalesForceOrders {
 	public static String thirdFieldAdded="//span[@title='Cancel Submitter']";
 	
 	
+	//SOI-80 - 24-02-2020
+	
+	public static String listViewControlsBtn="//button[@title='List View Controls']//lightning-primitive-icon";
+	
+	public static String listControlsList="//ul[@class='dropdown__list']";
+	
+	public static String selectFieldsListOption="//li[@role='presentation']/a/span[text()='Select Fields to Display']";
+	
+	public static String successMessage="//div[contains(.,'List view updated')]";
+	
+	//public static String headerTableColumnsOrder="/html/body/div[4]/div[1]/section/div/div/div[1]/div[2]/div/div/div[2]/div/div[1]/div[2]/div[2]/div[1]/div/div/table/thead/tr/th/div/a/span[2]";
+	
+	public static String headerTableColumnsOrder="//table/thead/tr/th/div/a/span[2]";
+	
 
+	
+	
+	//Select Fields to Display - Screen
+	
+	public static String move2VisibleFields="//button[@title='Move selection to Visible Fields']//lightning-primitive-icon";
+	
+	public static String move2AvailableFields="//button[@title='Move selection to Available Fields']//lightning-primitive-icon";
+	
+	public static String moveSelectionUp="//button[@title='Move selection up']//lightning-primitive-icon";
+	
+	//Options - Option
+	public static String administrativeContactOption="//div[@data-value='PRX_Administrative_Contact__c']";
+	public static String billingAccount="//div[@data-value='PRX_Billing_Account__r.Name']";
+	public static String cancelSubmitterOption="//div[@data-value='PRX_Cancel_Submitter__c']";
+	public static String cancelOrderStatusCodeOption="//div[@data-value='PRX_cancel_Order_statusCode__c']";
+	public static String cancellationPONRReachedOption ="//div[@data-value='PRX_Cancellation_PONR_Reached__c']";
+	public static String caseCategory="//div[@data-value='csord__Cease_Category__c']";
+	
+	public static String availableFieldsOptions="//lightning-dual-listbox/div/div[2]/div/div[3]/div/ul/li/div";
+	
+	public static String visiblefieldsOptions="//lightning-dual-listbox/div/div[2]/div/div[5]/div/ul/li/div";
+	
+	public static String secondVisiblefieldOption="//lightning-dual-listbox/div/div[2]/div/div[5]/div/ul/li/div[@data-index='1']";
+	
+	public static String selectFieldsSaveBtn="//button[@class='slds-button slds-button--neutral test-confirmButton uiButton--default uiButton--brand uiButton'][contains(.,'Save')]";
+
+	
+	
 
 
 
