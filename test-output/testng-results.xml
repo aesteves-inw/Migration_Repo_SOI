@@ -2,56 +2,56 @@
 <testng-results skipped="0" failed="0" ignored="0" total="9" passed="9">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="98691" started-at="2020-02-25T01:00:39Z" finished-at="2020-02-25T01:02:17Z">
+  <suite name="Default suite" duration-ms="95728" started-at="2020-02-26T11:57:14Z" finished-at="2020-02-26T11:58:50Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="98691" started-at="2020-02-25T01:00:39Z" finished-at="2020-02-25T01:02:17Z">
-      <class name="delivery01.soi_80.SOI_80_TC4_MobileOrderIntake_OrderListView_ConfigureListView_AllOrders_ColumnsConfig">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:delivery01.soi_80.SOI_80_TC4_MobileOrderIntake_OrderListView_ConfigureListView_AllOrders_ColumnsConfig@6eebc39e]" name="beforeTest" is-config="true" duration-ms="7875" started-at="2020-02-25T01:00:39Z" finished-at="2020-02-25T01:00:47Z">
+    <test name="Default test" duration-ms="95728" started-at="2020-02-26T11:57:14Z" finished-at="2020-02-26T11:58:50Z">
+      <class name="delivery01.soi_80.SOI_80_TC3_MobileOrderIntake_OrderListView_ConfigureListView_UserOrders_ColumnsConfig">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:delivery01.soi_80.SOI_80_TC3_MobileOrderIntake_OrderListView_ConfigureListView_UserOrders_ColumnsConfig@6eebc39e]" name="beforeTest" is-config="true" duration-ms="7383" started-at="2020-02-26T11:57:14Z" finished-at="2020-02-26T11:57:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="step01()[pri:0, instance:delivery01.soi_80.SOI_80_TC4_MobileOrderIntake_OrderListView_ConfigureListView_AllOrders_ColumnsConfig@6eebc39e]" name="step01" duration-ms="12032" started-at="2020-02-25T01:00:47Z" finished-at="2020-02-25T01:00:59Z">
+        <test-method status="PASS" signature="step01()[pri:0, instance:delivery01.soi_80.SOI_80_TC3_MobileOrderIntake_OrderListView_ConfigureListView_UserOrders_ColumnsConfig@6eebc39e]" name="step01" duration-ms="12858" started-at="2020-02-26T11:57:22Z" finished-at="2020-02-26T11:57:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step01 -->
-        <test-method status="PASS" signature="step02()[pri:0, instance:delivery01.soi_80.SOI_80_TC4_MobileOrderIntake_OrderListView_ConfigureListView_AllOrders_ColumnsConfig@6eebc39e]" name="step02" duration-ms="6175" started-at="2020-02-25T01:00:59Z" depends-on-methods="delivery01.soi_80.SOI_80_TC4_MobileOrderIntake_OrderListView_ConfigureListView_AllOrders_ColumnsConfig.step01" finished-at="2020-02-25T01:01:05Z">
+        <test-method status="PASS" signature="step02()[pri:0, instance:delivery01.soi_80.SOI_80_TC3_MobileOrderIntake_OrderListView_ConfigureListView_UserOrders_ColumnsConfig@6eebc39e]" name="step02" duration-ms="5098" started-at="2020-02-26T11:57:35Z" depends-on-methods="delivery01.soi_80.SOI_80_TC3_MobileOrderIntake_OrderListView_ConfigureListView_UserOrders_ColumnsConfig.step01" finished-at="2020-02-26T11:57:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step02 -->
-        <test-method status="PASS" signature="step03()[pri:0, instance:delivery01.soi_80.SOI_80_TC4_MobileOrderIntake_OrderListView_ConfigureListView_AllOrders_ColumnsConfig@6eebc39e]" name="step03" duration-ms="4506" started-at="2020-02-25T01:01:05Z" depends-on-methods="delivery01.soi_80.SOI_80_TC4_MobileOrderIntake_OrderListView_ConfigureListView_AllOrders_ColumnsConfig.step02" finished-at="2020-02-25T01:01:09Z">
+        <test-method status="PASS" signature="step03()[pri:0, instance:delivery01.soi_80.SOI_80_TC3_MobileOrderIntake_OrderListView_ConfigureListView_UserOrders_ColumnsConfig@6eebc39e]" name="step03" duration-ms="3145" started-at="2020-02-26T11:57:40Z" depends-on-methods="delivery01.soi_80.SOI_80_TC3_MobileOrderIntake_OrderListView_ConfigureListView_UserOrders_ColumnsConfig.step02" finished-at="2020-02-26T11:57:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step03 -->
-        <test-method status="PASS" signature="step04()[pri:0, instance:delivery01.soi_80.SOI_80_TC4_MobileOrderIntake_OrderListView_ConfigureListView_AllOrders_ColumnsConfig@6eebc39e]" name="step04" duration-ms="1913" started-at="2020-02-25T01:01:09Z" depends-on-methods="delivery01.soi_80.SOI_80_TC4_MobileOrderIntake_OrderListView_ConfigureListView_AllOrders_ColumnsConfig.step03" finished-at="2020-02-25T01:01:11Z">
+        <test-method status="PASS" signature="step04()[pri:0, instance:delivery01.soi_80.SOI_80_TC3_MobileOrderIntake_OrderListView_ConfigureListView_UserOrders_ColumnsConfig@6eebc39e]" name="step04" duration-ms="1518" started-at="2020-02-26T11:57:43Z" depends-on-methods="delivery01.soi_80.SOI_80_TC3_MobileOrderIntake_OrderListView_ConfigureListView_UserOrders_ColumnsConfig.step03" finished-at="2020-02-26T11:57:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step04 -->
-        <test-method status="PASS" signature="step05()[pri:0, instance:delivery01.soi_80.SOI_80_TC4_MobileOrderIntake_OrderListView_ConfigureListView_AllOrders_ColumnsConfig@6eebc39e]" name="step05" duration-ms="28265" started-at="2020-02-25T01:01:11Z" depends-on-methods="delivery01.soi_80.SOI_80_TC4_MobileOrderIntake_OrderListView_ConfigureListView_AllOrders_ColumnsConfig.step04" finished-at="2020-02-25T01:01:40Z">
+        <test-method status="PASS" signature="step05()[pri:0, instance:delivery01.soi_80.SOI_80_TC3_MobileOrderIntake_OrderListView_ConfigureListView_UserOrders_ColumnsConfig@6eebc39e]" name="step05" duration-ms="27842" started-at="2020-02-26T11:57:44Z" depends-on-methods="delivery01.soi_80.SOI_80_TC3_MobileOrderIntake_OrderListView_ConfigureListView_UserOrders_ColumnsConfig.step04" finished-at="2020-02-26T11:58:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step05 -->
-        <test-method status="PASS" signature="step06()[pri:0, instance:delivery01.soi_80.SOI_80_TC4_MobileOrderIntake_OrderListView_ConfigureListView_AllOrders_ColumnsConfig@6eebc39e]" name="step06" duration-ms="1259" started-at="2020-02-25T01:01:40Z" depends-on-methods="delivery01.soi_80.SOI_80_TC4_MobileOrderIntake_OrderListView_ConfigureListView_AllOrders_ColumnsConfig.step05" finished-at="2020-02-25T01:01:41Z">
+        <test-method status="PASS" signature="step06()[pri:0, instance:delivery01.soi_80.SOI_80_TC3_MobileOrderIntake_OrderListView_ConfigureListView_UserOrders_ColumnsConfig@6eebc39e]" name="step06" duration-ms="1138" started-at="2020-02-26T11:58:12Z" depends-on-methods="delivery01.soi_80.SOI_80_TC3_MobileOrderIntake_OrderListView_ConfigureListView_UserOrders_ColumnsConfig.step05" finished-at="2020-02-26T11:58:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step06 -->
-        <test-method status="PASS" signature="step07()[pri:0, instance:delivery01.soi_80.SOI_80_TC4_MobileOrderIntake_OrderListView_ConfigureListView_AllOrders_ColumnsConfig@6eebc39e]" name="step07" duration-ms="27824" started-at="2020-02-25T01:01:41Z" depends-on-methods="delivery01.soi_80.SOI_80_TC4_MobileOrderIntake_OrderListView_ConfigureListView_AllOrders_ColumnsConfig.step06" finished-at="2020-02-25T01:02:09Z">
+        <test-method status="PASS" signature="step07()[pri:0, instance:delivery01.soi_80.SOI_80_TC3_MobileOrderIntake_OrderListView_ConfigureListView_UserOrders_ColumnsConfig@6eebc39e]" name="step07" duration-ms="27965" started-at="2020-02-26T11:58:13Z" depends-on-methods="delivery01.soi_80.SOI_80_TC3_MobileOrderIntake_OrderListView_ConfigureListView_UserOrders_ColumnsConfig.step06" finished-at="2020-02-26T11:58:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step07 -->
-        <test-method status="PASS" signature="step08()[pri:0, instance:delivery01.soi_80.SOI_80_TC4_MobileOrderIntake_OrderListView_ConfigureListView_AllOrders_ColumnsConfig@6eebc39e]" name="step08" duration-ms="1233" started-at="2020-02-25T01:02:09Z" depends-on-methods="delivery01.soi_80.SOI_80_TC4_MobileOrderIntake_OrderListView_ConfigureListView_AllOrders_ColumnsConfig.step07" finished-at="2020-02-25T01:02:10Z">
+        <test-method status="PASS" signature="step08()[pri:0, instance:delivery01.soi_80.SOI_80_TC3_MobileOrderIntake_OrderListView_ConfigureListView_UserOrders_ColumnsConfig@6eebc39e]" name="step08" duration-ms="1185" started-at="2020-02-26T11:58:41Z" depends-on-methods="delivery01.soi_80.SOI_80_TC3_MobileOrderIntake_OrderListView_ConfigureListView_UserOrders_ColumnsConfig.step07" finished-at="2020-02-26T11:58:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step08 -->
-        <test-method status="PASS" signature="step09()[pri:0, instance:delivery01.soi_80.SOI_80_TC4_MobileOrderIntake_OrderListView_ConfigureListView_AllOrders_ColumnsConfig@6eebc39e]" name="step09" duration-ms="2572" started-at="2020-02-25T01:02:10Z" depends-on-methods="delivery01.soi_80.SOI_80_TC4_MobileOrderIntake_OrderListView_ConfigureListView_AllOrders_ColumnsConfig.step08" finished-at="2020-02-25T01:02:12Z">
+        <test-method status="PASS" signature="step09()[pri:0, instance:delivery01.soi_80.SOI_80_TC3_MobileOrderIntake_OrderListView_ConfigureListView_UserOrders_ColumnsConfig@6eebc39e]" name="step09" duration-ms="2493" started-at="2020-02-26T11:58:43Z" depends-on-methods="delivery01.soi_80.SOI_80_TC3_MobileOrderIntake_OrderListView_ConfigureListView_UserOrders_ColumnsConfig.step08" finished-at="2020-02-26T11:58:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step09 -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:delivery01.soi_80.SOI_80_TC4_MobileOrderIntake_OrderListView_ConfigureListView_AllOrders_ColumnsConfig@6eebc39e]" name="afterTest" is-config="true" duration-ms="4953" started-at="2020-02-25T01:02:12Z" finished-at="2020-02-25T01:02:17Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:delivery01.soi_80.SOI_80_TC3_MobileOrderIntake_OrderListView_ConfigureListView_UserOrders_ColumnsConfig@6eebc39e]" name="afterTest" is-config="true" duration-ms="4985" started-at="2020-02-26T11:58:45Z" finished-at="2020-02-26T11:58:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-      </class> <!-- delivery01.soi_80.SOI_80_TC4_MobileOrderIntake_OrderListView_ConfigureListView_AllOrders_ColumnsConfig -->
+      </class> <!-- delivery01.soi_80.SOI_80_TC3_MobileOrderIntake_OrderListView_ConfigureListView_UserOrders_ColumnsConfig -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

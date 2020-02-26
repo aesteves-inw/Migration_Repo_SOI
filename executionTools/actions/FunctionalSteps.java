@@ -360,12 +360,12 @@ public class FunctionalSteps {
 
 		int counter=0;
 		int counterVal;
+		int initialheaderTableColumnsOrder;
 
 		List<String> optionsSelected=new ArrayList<String>();	
 
 		List<String> originalOptionsSelected=new ArrayList<String>();
 
-		int initialheaderTableColumnsOrder;
 
 		try
 		{
@@ -406,7 +406,7 @@ public class FunctionalSteps {
 
 				int headerTableColumnsOrderVal= driver.findElements(By.xpath(SalesForceOrders.headerTableColumnsOrder)).size();
 
-				counterVal=initialheaderTableColumnsOrder+3;
+				counterVal=initialheaderTableColumnsOrder+counter;
 
 				if(headerTableColumnsOrderVal == counterVal)
 				{
@@ -421,7 +421,7 @@ public class FunctionalSteps {
 			}
 			else
 			{
-				throw new Exception("Test Failed on Step: "+stepID+" - Add 3 Fields");
+				throw new Exception("Test Procedure Failed on Step: "+stepID+" - Add 3 Fields");
 			}
 		}
 		catch(Exception e)
@@ -502,7 +502,7 @@ public class FunctionalSteps {
 
 				int headerTableColumnsOrderVal= driver.findElements(By.xpath(SalesForceOrders.headerTableColumnsOrder)).size();
 
-				counterVal=initialheaderTableColumnsOrder-3;
+				counterVal=initialheaderTableColumnsOrder-counter;
 
 				if(headerTableColumnsOrderVal == counterVal)
 				{
