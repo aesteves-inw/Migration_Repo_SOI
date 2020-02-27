@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SOI-76 Test Suite" parallel="false">
+<test name="SOI_76_TC1_MobileOrderIntake_CaseCreation">
+  	<classes>
+  		<class name ="delivery01.soi_76.SOI_76_TC1_MobileOrderIntake_CaseCreation"/>
+  	</classes>
+  </test>	
+    <test name="SOI_76_TC3_PC_MobileOrderIntake_CaseCreation">
+  	<classes>
+  		<class name ="delivery01.soi_76.SOI_76_TC3_PC_MobileOrderIntake_CaseCreation"/>
+  	</classes>
+  </test> 
+</suite>

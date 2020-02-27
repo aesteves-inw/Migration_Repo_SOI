@@ -33,6 +33,8 @@ public class SalesForceService {
 	
 	public static String fieldStatus="//span[contains(.,'Status')]";
 	
+	public static String fieldQuoteRequestId="//div//span[contains(.,'Quote Request Id')]";
+	
 	public static String fieldfilledCompanyContactPerson="//article/div[2]/div/div[1]/div/div/div[4]/div[2]/div";
 	
 	public static String caseLink="//force-hoverable-link/div/a[starts-with(.,'00')]";

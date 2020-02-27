@@ -57,49 +57,57 @@ public class TestData {
 
 		String tdCompanyName;
 
-		if(testName.contains("66"))
+		if(testName.contains("soi_66"))
 		{
 			tdCompanyName=searchDT(2,"testingCompanySOI66");
 		}
-		else if(testName.contains("68"))
+		else if(testName.contains("soi_68"))
 		{
 			tdCompanyName= searchDT(2,"testingCompanySOI68");
 		}
-		else if(testName.contains("69"))
+		else if(testName.contains("soi_69"))
 		{
 			tdCompanyName= searchDT(2,"testingCompanySOI69");
 		}
-		else if(testName.contains("70"))
+		else if(testName.contains("soi_70"))
 		{
 			tdCompanyName= searchDT(2,"testingCompanySOI70");
 		}
-		else if(testName.contains("72"))
+		else if(testName.contains("soi_72"))
 		{
 			tdCompanyName= searchDT(2,"testingCompanySOI72");
 		}
-		else if(testName.contains("76"))
+		else if(testName.contains("soi_76"))
 		{
 			tdCompanyName= searchDT(2,"testingCompanySOI76");
 		}
-		else if(testName.contains("79"))
+		else if(testName.contains("soi_79"))
 		{
 			tdCompanyName= searchDT(2,"testingCompanySOI79");
 		}
-		else if(testName.contains("80"))
+		else if(testName.contains("soi_80"))
 		{
 			tdCompanyName= searchDT(2,"testingCompanySOI80");
 		}
-		else if(testName.contains("84"))
+		else if(testName.contains("soi_84"))
 		{
 			tdCompanyName= searchDT(2,"testingCompanySOI84");
 		}
-		else if(testName.contains("150"))
+		else if(testName.contains("soi_150"))
 		{
 			tdCompanyName= searchDT(2,"testingCompanySOI150");
 		}
-		else if(testName.contains("718"))
+		else if(testName.contains("soi_718"))
 		{
 			tdCompanyName= searchDT(2,"testingCompanySOI718");
+		}
+		else if(testName.contains("soi_720"))
+		{
+			tdCompanyName= searchDT(2,"testingCompanySOI720");
+		}
+		else if(testName.contains("soi_770"))
+		{
+			tdCompanyName= searchDT(2,"testingCompanySOI770");
 		}
 		else
 		{
@@ -114,37 +122,45 @@ public class TestData {
 	{
 		String tdCompanyID;
 
-		if(testName.contains("66"))
+		if(testName.contains("soi_66"))
 		{
 			tdCompanyID=searchDT(2,"idTestingCompanySOI66");
 		}
-		else if(testName.contains("68"))
+		else if(testName.contains("soi_68"))
 		{
 			tdCompanyID= searchDT(2,"idTestingCompanySOI68");
 		}
-		else if(testName.contains("69"))
+		else if(testName.contains("soi_69"))
 		{
 			tdCompanyID= searchDT(2,"idTestingCompanySOI69");
 		}
-		else if(testName.contains("70"))
+		else if(testName.contains("soi_70"))
 		{
 			tdCompanyID= searchDT(2,"idTestingCompanySOI70");
 		}
-		else if(testName.contains("76"))
+		else if(testName.contains("soi_76"))
 		{
 			tdCompanyID= searchDT(2,"idTestingCompanySOI76");
 		}
-		else if(testName.contains("79"))
+		else if(testName.contains("soi_79"))
 		{
 			tdCompanyID= searchDT(2,"idTestingCompanySOI79");
 		}
-		else if(testName.contains("150"))
+		else if(testName.contains("soi_150"))
 		{
 			tdCompanyID= searchDT(2,"idTestingCompanySOI150");
 		}
-		else if(testName.contains("718"))
+		else if(testName.contains("soi_718"))
         {
             tdCompanyID= searchDT(2,"idTestingCompanySOI718");
+        }
+		else if(testName.contains("soi_720"))
+        {
+            tdCompanyID= searchDT(2,"idTestingCompanySOI720");
+        }
+		else if(testName.contains("soi_770"))
+        {
+            tdCompanyID= searchDT(2,"idTestingCompanySOI770");
         }
 		else
 		{

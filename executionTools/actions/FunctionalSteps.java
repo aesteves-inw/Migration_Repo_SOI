@@ -6,14 +6,12 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import execReport.TestReportTestData;
 import execReport.TestStepReportStructure;
 import execStructure.ExecStructure;
 import execStructure.TestData;
@@ -155,6 +153,7 @@ public class FunctionalSteps {
 		}
 	}
 
+	//27-Fev: Deprecated with the entering of SOI-150 on Simple Ordering Project
 	public static TestStepReportStructure createNewMACDOrder(WebDriver driver, int stepID, String testName, String testExecutionString) throws IOException
 	{
 		WebDriverWait waitNewMACDOrder = new WebDriverWait(driver, 10);
@@ -261,8 +260,8 @@ public class FunctionalSteps {
 			if(BrowserActions.isElementPresent(driver, SalesForceOrders.ordersSearchBar))
 			{
 				ExecStructure.screenShotTaking(driver, testName, stepID+"_Navigate2OrdersList");
-				TestStepReportStructure nav2ComDet = new TestStepReportStructure(stepID, "Navigation to Orders List", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_Navigate2OrdersList");
-				return nav2ComDet;
+				TestStepReportStructure nav2OrderList = new TestStepReportStructure(stepID, "Navigation to Orders List", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_Navigate2OrdersList");
+				return nav2OrderList;
 			}
 			else
 			{
@@ -274,8 +273,8 @@ public class FunctionalSteps {
 		{
 			System.out.println(e);
 			ExecStructure.screenShotTaking(driver, testName, stepID+"_Navigate2OrdersList");
-			TestStepReportStructure nav2ComDet = new TestStepReportStructure(stepID, "Navigation to Orders List", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_Navigate2OrdersList");
-			return nav2ComDet;
+			TestStepReportStructure nav2OrderList = new TestStepReportStructure(stepID, "Navigation to Orders List", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_Navigate2OrdersList");
+			return nav2OrderList;
 		}
 
 
@@ -287,12 +286,6 @@ public class FunctionalSteps {
 		try
 		{
 
-			/*driver.findElement(By.xpath(SalesForceOrders.ordersListView)).click();
-
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-
-			driver.findElement(By.xpath(SalesForceOrders.myOrdersOption)).click();*/
-
 			driver.get(TestData.myOrdersURL);
 
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -300,8 +293,8 @@ public class FunctionalSteps {
 			if(BrowserActions.isElementPresent(driver, SalesForceOrders.validateMyOrders))
 			{
 				ExecStructure.screenShotTaking(driver, testName, stepID+"_Navigate2MyOders");
-				TestStepReportStructure nav2ComDet = new TestStepReportStructure(stepID, "Navigation to My Orders", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_Navigate2MyOders");
-				return nav2ComDet;
+				TestStepReportStructure nav2MyOrders = new TestStepReportStructure(stepID, "Navigation to My Orders", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_Navigate2MyOders");
+				return nav2MyOrders;
 			}
 			else
 			{
@@ -313,8 +306,8 @@ public class FunctionalSteps {
 		{
 			System.out.println(e);
 			ExecStructure.screenShotTaking(driver, testName, stepID+"_Navigate2MyOrders");
-			TestStepReportStructure nav2ComDet = new TestStepReportStructure(stepID, "Navigation to My Orders", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_Navigate2MyOrders");
-			return nav2ComDet;
+			TestStepReportStructure nav2MyOrders = new TestStepReportStructure(stepID, "Navigation to My Orders", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_Navigate2MyOrders");
+			return nav2MyOrders;
 		}
 
 
@@ -335,8 +328,8 @@ public class FunctionalSteps {
 			if(BrowserActions.isElementPresent(driver, SalesForceOrders.validateSelectDisplay))
 			{
 				ExecStructure.screenShotTaking(driver, testName, stepID+"_navigate2SelectFields");
-				TestStepReportStructure nav2ComDet = new TestStepReportStructure(stepID, "Navigation to Select Fields to Display", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_navigate2SelectFields");
-				return nav2ComDet;
+				TestStepReportStructure nav2SelFields = new TestStepReportStructure(stepID, "Navigation to Select Fields to Display", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_navigate2SelectFields");
+				return nav2SelFields;
 			}
 			else
 			{
@@ -348,8 +341,8 @@ public class FunctionalSteps {
 		{
 			System.out.println(e);
 			ExecStructure.screenShotTaking(driver, testName, stepID+"_navigate2SelectFields");
-			TestStepReportStructure nav2ComDet = new TestStepReportStructure(stepID, "Navigation to Select Fields to Display", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_navigate2SelectFields");
-			return nav2ComDet;
+			TestStepReportStructure nav2SelFields = new TestStepReportStructure(stepID, "Navigation to Select Fields to Display", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_navigate2SelectFields");
+			return nav2SelFields;
 		}
 
 
@@ -411,8 +404,8 @@ public class FunctionalSteps {
 				if(headerTableColumnsOrderVal == counterVal)
 				{
 					ExecStructure.screenShotTaking(driver, testName, stepID+"_add3fields");
-					TestStepReportStructure nav2ComDet = new TestStepReportStructure(stepID, "Add 3 Fields", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_add3fields");
-					return nav2ComDet;
+					TestStepReportStructure add3fields = new TestStepReportStructure(stepID, "Add 3 Fields", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_add3fields");
+					return add3fields;
 				}
 				else
 				{
@@ -428,8 +421,8 @@ public class FunctionalSteps {
 		{
 			System.out.println(e);
 			ExecStructure.screenShotTaking(driver, testName, stepID+"_add3fields");
-			TestStepReportStructure nav2ComDet = new TestStepReportStructure(stepID, "Add 3 Fields", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_add3fields");
-			return nav2ComDet;
+			TestStepReportStructure add3fields = new TestStepReportStructure(stepID, "Add 3 Fields", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_add3fields");
+			return add3fields;
 		}
 
 
@@ -507,8 +500,8 @@ public class FunctionalSteps {
 				if(headerTableColumnsOrderVal == counterVal)
 				{
 					ExecStructure.screenShotTaking(driver, testName, stepID+"_Remove3fields");
-					TestStepReportStructure nav2ComDet = new TestStepReportStructure(stepID, "Remove 3 Fields", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_Remove3fields");
-					return nav2ComDet;
+					TestStepReportStructure remove3fields = new TestStepReportStructure(stepID, "Remove 3 Fields", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_Remove3fields");
+					return remove3fields;
 				}
 				else
 				{
@@ -524,8 +517,8 @@ public class FunctionalSteps {
 		{
 			System.out.println(e);
 			ExecStructure.screenShotTaking(driver, testName, stepID+"_Remove3fields");
-			TestStepReportStructure nav2ComDet = new TestStepReportStructure(stepID, "Remove 3 Fields", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_Remove3fields");
-			return nav2ComDet;
+			TestStepReportStructure remove3fields = new TestStepReportStructure(stepID, "Remove 3 Fields", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_Remove3fields");
+			return remove3fields;
 		}
 
 	}
@@ -550,8 +543,8 @@ public class FunctionalSteps {
 				if(headerTableColumnsOrder != headerTableColumnsOrderVal)
 				{
 					ExecStructure.screenShotTaking(driver, testName, stepID+"_navigate2SelectFields");
-					TestStepReportStructure nav2ComDet = new TestStepReportStructure(stepID, "Navigation to Select Fields to Display", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_navigate2SelectFields");
-					return nav2ComDet;
+					TestStepReportStructure moveField = new TestStepReportStructure(stepID, "Navigation to Select Fields to Display", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_navigate2SelectFields");
+					return moveField;
 				}
 				else
 				{
@@ -568,8 +561,8 @@ public class FunctionalSteps {
 		{
 			System.out.println(e);
 			ExecStructure.screenShotTaking(driver, testName, stepID+"_navigate2SelectFields");
-			TestStepReportStructure nav2ComDet = new TestStepReportStructure(stepID, "Move Field", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_navigate2SelectFields");
-			return nav2ComDet;
+			TestStepReportStructure moveField = new TestStepReportStructure(stepID, "Move Field", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_navigate2SelectFields");
+			return moveField;
 		}
 
 
@@ -593,8 +586,8 @@ public class FunctionalSteps {
 			if(BrowserActions.isElementPresent(driver, SalesForceOrders.validateAllOrders))
 			{
 				ExecStructure.screenShotTaking(driver, testName, stepID+"_Navigate2MyOders");
-				TestStepReportStructure nav2ComDet = new TestStepReportStructure(stepID, "Navigation to My Orders", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_Navigate2MyOders");
-				return nav2ComDet;
+				TestStepReportStructure nav2AllOrders = new TestStepReportStructure(stepID, "Navigation to My Orders", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_Navigate2MyOders");
+				return nav2AllOrders;
 			}
 			else
 			{
@@ -606,8 +599,8 @@ public class FunctionalSteps {
 		{
 			System.out.println(e);
 			ExecStructure.screenShotTaking(driver, testName, stepID+"_Navigate2MyOrders");
-			TestStepReportStructure nav2ComDet = new TestStepReportStructure(stepID, "Navigation to My Orders", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_Navigate2MyOrders");
-			return nav2ComDet;
+			TestStepReportStructure nav2AllOrders = new TestStepReportStructure(stepID, "Navigation to My Orders", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_Navigate2MyOrders");
+			return nav2AllOrders;
 		}
 
 
@@ -628,8 +621,8 @@ public class FunctionalSteps {
 			if(BrowserActions.isElementPresent(driver, SalesForceOrders.addServiceButton) && BrowserActions.isElementPresent(driver, SalesForceOrders.submitOrderButton))
 			{
 				ExecStructure.screenShotTaking(driver, testName, stepID+"_Navigate2SelectOrder");
-				TestStepReportStructure nav2ComDet = new TestStepReportStructure(stepID, "Navigation to an order", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_Navigate2SelectOrder");
-				return nav2ComDet;
+				TestStepReportStructure nav2SelOrder = new TestStepReportStructure(stepID, "Navigation to an order", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_Navigate2SelectOrder");
+				return nav2SelOrder;
 			}
 			else
 			{
@@ -641,8 +634,8 @@ public class FunctionalSteps {
 		{
 			System.out.println(e);
 			ExecStructure.screenShotTaking(driver, testName, stepID+"_Navigate2SelectOrder");
-			TestStepReportStructure nav2ComDet = new TestStepReportStructure(stepID, "Navigation to an order", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_Navigate2SelectOrder");
-			return nav2ComDet;
+			TestStepReportStructure nav2SelOrder = new TestStepReportStructure(stepID, "Navigation to an order", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_Navigate2SelectOrder");
+			return nav2SelOrder;
 		}
 
 

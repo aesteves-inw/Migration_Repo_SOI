@@ -59,6 +59,8 @@ public class SalesForceOrders {
 
 
 	// Add Service Screen - Config
+	
+	public static String addServiceHeader="//h2[text()='Add Service']";
 
 	public static String inputDomain="//input[@name='PRX_SOI_Domain__c']";
 
@@ -81,6 +83,10 @@ public class SalesForceOrders {
 	public static String domainWinback="//span[@title='Winback']";
 
 	public static String nextButton="//article/div/div[2]/div/div/div[2]/div[2]/button";
+	
+	public static String addServiceScreenCloseBtn="//button[@title='Close this window']/lightning-primitive-icon";
+	
+	public static String add2ndServiceErrorMessage="//span[text()='You can´t add more than one service.']";
 
 
 

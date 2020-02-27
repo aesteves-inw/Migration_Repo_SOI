@@ -55,6 +55,12 @@ public class SalesForceCompany {
 	public static String linkOrders="/html/body/div[5]/div[1]/section/div/div/div[1]/div[3]/div/div[1]/div/div[2]/div[2]/div[3]/div/div/div[2]/article/a/div/span";
 	
 	
+	// ..:: Company Contact Person ::..
+	
+	public static String companyContactPerson="//article[contains(.,'Company contact person')]//a[starts-with(.,'Simple')]";
+	
+	
+	
 	// New Company Form
 	
 	public static String newCompanyHeader = "//h2[.='New Company']";
