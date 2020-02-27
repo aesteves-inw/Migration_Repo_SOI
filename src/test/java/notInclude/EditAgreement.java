@@ -141,15 +141,7 @@ public class EditAgreement {
 	{
 		stepsExecuted++;
 		
-		Screen screen = new Screen();
-		
 		String url="https://proximusitqa--prxittqa.lightning.force.com/lightning/r/csclm__Agreement__c/a2A3E000001QZFTUA4/view";
-		
-		String filesLink;
-		
-		String file2Upload="SimpleOrdering_Dummy_File";
-		
-		String agreementFileTestData=ExecStructure.workingDir+"\\testData\\"+file2Upload+".pdf";
 		
 		String editAgreementName="Edit Agreement Testing";
 		
