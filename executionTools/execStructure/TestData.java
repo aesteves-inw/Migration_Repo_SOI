@@ -55,57 +55,59 @@ public class TestData {
 	public static String tdCompanyName(String testName) throws Exception
 	{		
 
-		String tdCompanyName;
+		String tdCompanyName, testNameLower;
+		
+		testNameLower=testName.toLowerCase();
 
-		if(testName.contains("soi_66"))
+		if(testNameLower.contains("soi_66"))
 		{
 			tdCompanyName=searchDT(2,"testingCompanySOI66");
 		}
-		else if(testName.contains("soi_68"))
+		else if(testNameLower.contains("soi_68"))
 		{
 			tdCompanyName= searchDT(2,"testingCompanySOI68");
 		}
-		else if(testName.contains("soi_69"))
+		else if(testNameLower.contains("soi_69"))
 		{
 			tdCompanyName= searchDT(2,"testingCompanySOI69");
 		}
-		else if(testName.contains("soi_70"))
+		else if(testNameLower.contains("soi_70"))
 		{
 			tdCompanyName= searchDT(2,"testingCompanySOI70");
 		}
-		else if(testName.contains("soi_72"))
+		else if(testNameLower.contains("soi_72"))
 		{
 			tdCompanyName= searchDT(2,"testingCompanySOI72");
 		}
-		else if(testName.contains("soi_76"))
+		else if(testNameLower.contains("soi_76"))
 		{
 			tdCompanyName= searchDT(2,"testingCompanySOI76");
 		}
-		else if(testName.contains("soi_79"))
+		else if(testNameLower.contains("soi_79"))
 		{
 			tdCompanyName= searchDT(2,"testingCompanySOI79");
 		}
-		else if(testName.contains("soi_80"))
+		else if(testNameLower.contains("soi_80"))
 		{
 			tdCompanyName= searchDT(2,"testingCompanySOI80");
 		}
-		else if(testName.contains("soi_84"))
+		else if(testNameLower.contains("soi_84"))
 		{
 			tdCompanyName= searchDT(2,"testingCompanySOI84");
 		}
-		else if(testName.contains("soi_150"))
+		else if(testNameLower.contains("soi_150"))
 		{
 			tdCompanyName= searchDT(2,"testingCompanySOI150");
 		}
-		else if(testName.contains("soi_718"))
+		else if(testNameLower.contains("soi_718"))
 		{
 			tdCompanyName= searchDT(2,"testingCompanySOI718");
 		}
-		else if(testName.contains("soi_720"))
+		else if(testNameLower.contains("soi_720"))
 		{
 			tdCompanyName= searchDT(2,"testingCompanySOI720");
 		}
-		else if(testName.contains("soi_770"))
+		else if(testNameLower.contains("soi_770"))
 		{
 			tdCompanyName= searchDT(2,"testingCompanySOI770");
 		}
@@ -120,45 +122,47 @@ public class TestData {
 
 	public static String tdCompanyID(String testName) throws Exception
 	{
-		String tdCompanyID;
+		String tdCompanyID, testNameLower;
+		
+		testNameLower=testName.toLowerCase();
 
-		if(testName.contains("soi_66"))
+		if(testNameLower.contains("soi_66"))
 		{
 			tdCompanyID=searchDT(2,"idTestingCompanySOI66");
 		}
-		else if(testName.contains("soi_68"))
+		else if(testNameLower.contains("soi_68"))
 		{
 			tdCompanyID= searchDT(2,"idTestingCompanySOI68");
 		}
-		else if(testName.contains("soi_69"))
+		else if(testNameLower.contains("soi_69"))
 		{
 			tdCompanyID= searchDT(2,"idTestingCompanySOI69");
 		}
-		else if(testName.contains("soi_70"))
+		else if(testNameLower.contains("soi_70"))
 		{
 			tdCompanyID= searchDT(2,"idTestingCompanySOI70");
 		}
-		else if(testName.contains("soi_76"))
+		else if(testNameLower.contains("soi_76"))
 		{
 			tdCompanyID= searchDT(2,"idTestingCompanySOI76");
 		}
-		else if(testName.contains("soi_79"))
+		else if(testNameLower.contains("soi_79"))
 		{
 			tdCompanyID= searchDT(2,"idTestingCompanySOI79");
 		}
-		else if(testName.contains("soi_150"))
+		else if(testNameLower.contains("soi_150"))
 		{
 			tdCompanyID= searchDT(2,"idTestingCompanySOI150");
 		}
-		else if(testName.contains("soi_718"))
+		else if(testNameLower.contains("soi_718"))
         {
             tdCompanyID= searchDT(2,"idTestingCompanySOI718");
         }
-		else if(testName.contains("soi_720"))
+		else if(testNameLower.contains("soi_720"))
         {
             tdCompanyID= searchDT(2,"idTestingCompanySOI720");
         }
-		else if(testName.contains("soi_770"))
+		else if(testNameLower.contains("soi_770"))
         {
             tdCompanyID= searchDT(2,"idTestingCompanySOI770");
         }

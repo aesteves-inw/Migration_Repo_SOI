@@ -1,41 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+<testng-results skipped="0" failed="0" ignored="0" total="10" passed="10">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="72391" started-at="2020-02-27T17:30:32Z" finished-at="2020-02-27T17:31:44Z">
+  <suite name="Default suite" duration-ms="156495" started-at="2020-02-28T17:50:09Z" finished-at="2020-02-28T17:52:45Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="72391" started-at="2020-02-27T17:30:32Z" finished-at="2020-02-27T17:31:44Z">
-      <class name="delivery01.soi_66.SOI_66_TC2_AgreementCreation_Opportunity_Product_Not_MobileVoice">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:delivery01.soi_66.SOI_66_TC2_AgreementCreation_Opportunity_Product_Not_MobileVoice@4dfa3a9d]" name="beforeTest" is-config="true" duration-ms="7848" started-at="2020-02-27T17:30:32Z" finished-at="2020-02-27T17:30:40Z">
+    <test name="Default test" duration-ms="156495" started-at="2020-02-28T17:50:09Z" finished-at="2020-02-28T17:52:45Z">
+      <class name="notInclude.SOI_69_TC1_ServiceScreen_AddNewService">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:notInclude.SOI_69_TC1_ServiceScreen_AddNewService@6eebc39e]" name="beforeTest" is-config="true" duration-ms="7764" started-at="2020-02-28T17:50:09Z" finished-at="2020-02-28T17:50:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="step01()[pri:0, instance:delivery01.soi_66.SOI_66_TC2_AgreementCreation_Opportunity_Product_Not_MobileVoice@4dfa3a9d]" name="step01" duration-ms="12365" started-at="2020-02-27T17:30:40Z" finished-at="2020-02-27T17:30:52Z">
+        <test-method status="PASS" signature="step01()[pri:0, instance:notInclude.SOI_69_TC1_ServiceScreen_AddNewService@6eebc39e]" name="step01" duration-ms="11960" started-at="2020-02-28T17:50:16Z" finished-at="2020-02-28T17:50:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step01 -->
-        <test-method status="PASS" signature="step02()[pri:0, instance:delivery01.soi_66.SOI_66_TC2_AgreementCreation_Opportunity_Product_Not_MobileVoice@4dfa3a9d]" name="step02" duration-ms="7522" started-at="2020-02-27T17:30:52Z" depends-on-methods="delivery01.soi_66.SOI_66_TC2_AgreementCreation_Opportunity_Product_Not_MobileVoice.step01" finished-at="2020-02-27T17:31:00Z">
+        <test-method status="PASS" signature="step02()[pri:0, instance:notInclude.SOI_69_TC1_ServiceScreen_AddNewService@6eebc39e]" name="step02" duration-ms="7124" started-at="2020-02-28T17:50:28Z" depends-on-methods="notInclude.SOI_69_TC1_ServiceScreen_AddNewService.step01" finished-at="2020-02-28T17:50:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step02 -->
-        <test-method status="PASS" signature="step03()[pri:0, instance:delivery01.soi_66.SOI_66_TC2_AgreementCreation_Opportunity_Product_Not_MobileVoice@4dfa3a9d]" name="step03" duration-ms="17292" started-at="2020-02-27T17:31:00Z" depends-on-methods="delivery01.soi_66.SOI_66_TC2_AgreementCreation_Opportunity_Product_Not_MobileVoice.step02" finished-at="2020-02-27T17:31:17Z">
+        <test-method status="PASS" signature="step03()[pri:0, instance:notInclude.SOI_69_TC1_ServiceScreen_AddNewService@6eebc39e]" name="step03" duration-ms="17163" started-at="2020-02-28T17:50:35Z" depends-on-methods="notInclude.SOI_69_TC1_ServiceScreen_AddNewService.step02" finished-at="2020-02-28T17:50:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step03 -->
-        <test-method status="PASS" signature="step04()[pri:0, instance:delivery01.soi_66.SOI_66_TC2_AgreementCreation_Opportunity_Product_Not_MobileVoice@4dfa3a9d]" name="step04" duration-ms="16412" started-at="2020-02-27T17:31:17Z" depends-on-methods="delivery01.soi_66.SOI_66_TC2_AgreementCreation_Opportunity_Product_Not_MobileVoice.step03" finished-at="2020-02-27T17:31:33Z">
+        <test-method status="PASS" signature="step04()[pri:0, instance:notInclude.SOI_69_TC1_ServiceScreen_AddNewService@6eebc39e]" name="step04" duration-ms="18571" started-at="2020-02-28T17:50:53Z" depends-on-methods="notInclude.SOI_69_TC1_ServiceScreen_AddNewService.step03" finished-at="2020-02-28T17:51:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step04 -->
-        <test-method status="PASS" signature="step05()[pri:0, instance:delivery01.soi_66.SOI_66_TC2_AgreementCreation_Opportunity_Product_Not_MobileVoice@4dfa3a9d]" name="step05" duration-ms="5929" started-at="2020-02-27T17:31:33Z" depends-on-methods="delivery01.soi_66.SOI_66_TC2_AgreementCreation_Opportunity_Product_Not_MobileVoice.step04" finished-at="2020-02-27T17:31:39Z">
+        <test-method status="PASS" signature="step05()[pri:0, instance:notInclude.SOI_69_TC1_ServiceScreen_AddNewService@6eebc39e]" name="step05" duration-ms="7248" started-at="2020-02-28T17:51:11Z" depends-on-methods="notInclude.SOI_69_TC1_ServiceScreen_AddNewService.step04" finished-at="2020-02-28T17:51:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step05 -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:delivery01.soi_66.SOI_66_TC2_AgreementCreation_Opportunity_Product_Not_MobileVoice@4dfa3a9d]" name="afterTest" is-config="true" duration-ms="4959" started-at="2020-02-27T17:31:39Z" finished-at="2020-02-27T17:31:44Z">
+        <test-method status="PASS" signature="step06()[pri:0, instance:notInclude.SOI_69_TC1_ServiceScreen_AddNewService@6eebc39e]" name="step06" duration-ms="4791" started-at="2020-02-28T17:51:18Z" depends-on-methods="notInclude.SOI_69_TC1_ServiceScreen_AddNewService.step05" finished-at="2020-02-28T17:51:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- step06 -->
+        <test-method status="PASS" signature="step07()[pri:0, instance:notInclude.SOI_69_TC1_ServiceScreen_AddNewService@6eebc39e]" name="step07" duration-ms="20226" started-at="2020-02-28T17:51:23Z" depends-on-methods="notInclude.SOI_69_TC1_ServiceScreen_AddNewService.step06" finished-at="2020-02-28T17:51:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- step07 -->
+        <test-method status="PASS" signature="step08()[pri:0, instance:notInclude.SOI_69_TC1_ServiceScreen_AddNewService@6eebc39e]" name="step08" duration-ms="39737" started-at="2020-02-28T17:51:43Z" depends-on-methods="notInclude.SOI_69_TC1_ServiceScreen_AddNewService.step07" finished-at="2020-02-28T17:52:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- step08 -->
+        <test-method status="PASS" signature="step09()[pri:0, instance:notInclude.SOI_69_TC1_ServiceScreen_AddNewService@6eebc39e]" name="step09" duration-ms="13379" started-at="2020-02-28T17:52:23Z" depends-on-methods="notInclude.SOI_69_TC1_ServiceScreen_AddNewService.step08" finished-at="2020-02-28T17:52:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- step09 -->
+        <test-method status="PASS" signature="step10()[pri:0, instance:notInclude.SOI_69_TC1_ServiceScreen_AddNewService@6eebc39e]" name="step10" duration-ms="3492" started-at="2020-02-28T17:52:37Z" depends-on-methods="notInclude.SOI_69_TC1_ServiceScreen_AddNewService.step09" finished-at="2020-02-28T17:52:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- step10 -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:notInclude.SOI_69_TC1_ServiceScreen_AddNewService@6eebc39e]" name="afterTest" is-config="true" duration-ms="4927" started-at="2020-02-28T17:52:40Z" finished-at="2020-02-28T17:52:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-      </class> <!-- delivery01.soi_66.SOI_66_TC2_AgreementCreation_Opportunity_Product_Not_MobileVoice -->
+      </class> <!-- notInclude.SOI_69_TC1_ServiceScreen_AddNewService -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
