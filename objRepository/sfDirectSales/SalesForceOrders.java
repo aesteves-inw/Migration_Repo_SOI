@@ -89,7 +89,10 @@ public class SalesForceOrders {
 	public static String add2ndServiceErrorMessage="//span[text()='You can´t add more than one service.']";
 
 
-
+	//SOI-721
+	public static String orderTypeLabel="//span[@class='test-id__field-label'][text()='Order Type']";
+	
+	public static String orderTypeMACD="//div[@class='slds-form-element__control'][contains(.,'MACD')]";
 
 	// Related List
 

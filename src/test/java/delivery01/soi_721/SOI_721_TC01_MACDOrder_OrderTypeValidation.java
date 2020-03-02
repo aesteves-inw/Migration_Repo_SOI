@@ -372,7 +372,7 @@ public class SOI_721_TC01_MACDOrder_OrderTypeValidation {
 			//End of Rebuild
 			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 			
-			if (BrowserActions.isElementPresent(driver, SalesForceOrders.servicesContainer) && BrowserActions.isElementPresent(driver, SalesForceOrders.orderDetails) && BrowserActions.isElementPresent(driver, SalesForceOrders.orderHeader))
+			if (BrowserActions.isElementPresent(driver, SalesForceOrders.orderTypeLabel) && BrowserActions.isElementPresent(driver, SalesForceOrders.orderTypeMACD) && BrowserActions.isElementPresent(driver, SalesForceOrders.servicesContainer) && BrowserActions.isElementPresent(driver, SalesForceOrders.orderDetails) && BrowserActions.isElementPresent(driver, SalesForceOrders.orderHeader))
 			{
 				ExecStructure.screenShotTaking(driver, testName, stepsExecuted+"_OrderScreenValidation");
 				TestStepReportStructure step08 = new TestStepReportStructure(stepsExecuted, "Order Screen Validation", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepsExecuted+"_OrderScreenValidation");
