@@ -24,6 +24,12 @@ public class SFPC_Orders {
 	public static String submitOrderBtn="//div[@title='Submit Order']";
 	
 	
+	//Details Page Elements
+	public static String orderTypeLabel="//span[@class='test-id__field-label'][text()='Order Type']";
+	
+	public static String orderTypeMACD="//span[@class='uiOutputText'][text()='MACD']";
+	
+	
 	//Add Service Screen
 	
 	public static String addServiceConfigScreen="//section/lightning-record-form/lightning-record-edit-form/form/slot/div/div[1]";
