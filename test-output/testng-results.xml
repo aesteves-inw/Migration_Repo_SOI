@@ -1,61 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="10" passed="10">
+<testng-results skipped="0" failed="0" ignored="0" total="8" passed="8">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="156495" started-at="2020-02-28T17:50:09Z" finished-at="2020-02-28T17:52:45Z">
+  <suite name="Default suite" duration-ms="69905" started-at="2020-03-02T00:25:42Z" finished-at="2020-03-02T00:26:52Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="156495" started-at="2020-02-28T17:50:09Z" finished-at="2020-02-28T17:52:45Z">
-      <class name="notInclude.SOI_69_TC1_ServiceScreen_AddNewService">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:notInclude.SOI_69_TC1_ServiceScreen_AddNewService@6eebc39e]" name="beforeTest" is-config="true" duration-ms="7764" started-at="2020-02-28T17:50:09Z" finished-at="2020-02-28T17:50:16Z">
+    <test name="Default test" duration-ms="69905" started-at="2020-03-02T00:25:42Z" finished-at="2020-03-02T00:26:52Z">
+      <class name="delivery01.soi_721.SOI_721_TC03_PC_MACDOrder_OrderTypeValidation">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:delivery01.soi_721.SOI_721_TC03_PC_MACDOrder_OrderTypeValidation@6eebc39e]" name="beforeTest" is-config="true" duration-ms="8030" started-at="2020-03-02T00:25:42Z" finished-at="2020-03-02T00:25:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="step01()[pri:0, instance:notInclude.SOI_69_TC1_ServiceScreen_AddNewService@6eebc39e]" name="step01" duration-ms="11960" started-at="2020-02-28T17:50:16Z" finished-at="2020-02-28T17:50:28Z">
+        <test-method status="PASS" signature="step01()[pri:0, instance:delivery01.soi_721.SOI_721_TC03_PC_MACDOrder_OrderTypeValidation@6eebc39e]" name="step01" duration-ms="7709" started-at="2020-03-02T00:25:50Z" finished-at="2020-03-02T00:25:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step01 -->
-        <test-method status="PASS" signature="step02()[pri:0, instance:notInclude.SOI_69_TC1_ServiceScreen_AddNewService@6eebc39e]" name="step02" duration-ms="7124" started-at="2020-02-28T17:50:28Z" depends-on-methods="notInclude.SOI_69_TC1_ServiceScreen_AddNewService.step01" finished-at="2020-02-28T17:50:35Z">
+        <test-method status="PASS" signature="step02()[pri:0, instance:delivery01.soi_721.SOI_721_TC03_PC_MACDOrder_OrderTypeValidation@6eebc39e]" name="step02" duration-ms="6994" started-at="2020-03-02T00:25:58Z" depends-on-methods="delivery01.soi_721.SOI_721_TC03_PC_MACDOrder_OrderTypeValidation.step01" finished-at="2020-03-02T00:26:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step02 -->
-        <test-method status="PASS" signature="step03()[pri:0, instance:notInclude.SOI_69_TC1_ServiceScreen_AddNewService@6eebc39e]" name="step03" duration-ms="17163" started-at="2020-02-28T17:50:35Z" depends-on-methods="notInclude.SOI_69_TC1_ServiceScreen_AddNewService.step02" finished-at="2020-02-28T17:50:53Z">
+        <test-method status="PASS" signature="step03()[pri:0, instance:delivery01.soi_721.SOI_721_TC03_PC_MACDOrder_OrderTypeValidation@6eebc39e]" name="step03" duration-ms="2275" started-at="2020-03-02T00:26:05Z" depends-on-methods="delivery01.soi_721.SOI_721_TC03_PC_MACDOrder_OrderTypeValidation.step02" finished-at="2020-03-02T00:26:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step03 -->
-        <test-method status="PASS" signature="step04()[pri:0, instance:notInclude.SOI_69_TC1_ServiceScreen_AddNewService@6eebc39e]" name="step04" duration-ms="18571" started-at="2020-02-28T17:50:53Z" depends-on-methods="notInclude.SOI_69_TC1_ServiceScreen_AddNewService.step03" finished-at="2020-02-28T17:51:11Z">
+        <test-method status="PASS" signature="step04()[pri:0, instance:delivery01.soi_721.SOI_721_TC03_PC_MACDOrder_OrderTypeValidation@6eebc39e]" name="step04" duration-ms="1430" started-at="2020-03-02T00:26:07Z" depends-on-methods="delivery01.soi_721.SOI_721_TC03_PC_MACDOrder_OrderTypeValidation.step03" finished-at="2020-03-02T00:26:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step04 -->
-        <test-method status="PASS" signature="step05()[pri:0, instance:notInclude.SOI_69_TC1_ServiceScreen_AddNewService@6eebc39e]" name="step05" duration-ms="7248" started-at="2020-02-28T17:51:11Z" depends-on-methods="notInclude.SOI_69_TC1_ServiceScreen_AddNewService.step04" finished-at="2020-02-28T17:51:18Z">
+        <test-method status="PASS" signature="step05()[pri:0, instance:delivery01.soi_721.SOI_721_TC03_PC_MACDOrder_OrderTypeValidation@6eebc39e]" name="step05" duration-ms="1249" started-at="2020-03-02T00:26:09Z" depends-on-methods="delivery01.soi_721.SOI_721_TC03_PC_MACDOrder_OrderTypeValidation.step04" finished-at="2020-03-02T00:26:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step05 -->
-        <test-method status="PASS" signature="step06()[pri:0, instance:notInclude.SOI_69_TC1_ServiceScreen_AddNewService@6eebc39e]" name="step06" duration-ms="4791" started-at="2020-02-28T17:51:18Z" depends-on-methods="notInclude.SOI_69_TC1_ServiceScreen_AddNewService.step05" finished-at="2020-02-28T17:51:23Z">
+        <test-method status="PASS" signature="step06()[pri:0, instance:delivery01.soi_721.SOI_721_TC03_PC_MACDOrder_OrderTypeValidation@6eebc39e]" name="step06" duration-ms="3941" started-at="2020-03-02T00:26:10Z" depends-on-methods="delivery01.soi_721.SOI_721_TC03_PC_MACDOrder_OrderTypeValidation.step05" finished-at="2020-03-02T00:26:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step06 -->
-        <test-method status="PASS" signature="step07()[pri:0, instance:notInclude.SOI_69_TC1_ServiceScreen_AddNewService@6eebc39e]" name="step07" duration-ms="20226" started-at="2020-02-28T17:51:23Z" depends-on-methods="notInclude.SOI_69_TC1_ServiceScreen_AddNewService.step06" finished-at="2020-02-28T17:51:43Z">
+        <test-method status="PASS" signature="step07()[pri:0, instance:delivery01.soi_721.SOI_721_TC03_PC_MACDOrder_OrderTypeValidation@6eebc39e]" name="step07" duration-ms="30142" started-at="2020-03-02T00:26:14Z" depends-on-methods="delivery01.soi_721.SOI_721_TC03_PC_MACDOrder_OrderTypeValidation.step06" finished-at="2020-03-02T00:26:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step07 -->
-        <test-method status="PASS" signature="step08()[pri:0, instance:notInclude.SOI_69_TC1_ServiceScreen_AddNewService@6eebc39e]" name="step08" duration-ms="39737" started-at="2020-02-28T17:51:43Z" depends-on-methods="notInclude.SOI_69_TC1_ServiceScreen_AddNewService.step07" finished-at="2020-02-28T17:52:23Z">
+        <test-method status="PASS" signature="step08()[pri:0, instance:delivery01.soi_721.SOI_721_TC03_PC_MACDOrder_OrderTypeValidation@6eebc39e]" name="step08" duration-ms="2487" started-at="2020-03-02T00:26:44Z" depends-on-methods="delivery01.soi_721.SOI_721_TC03_PC_MACDOrder_OrderTypeValidation.step07" finished-at="2020-03-02T00:26:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step08 -->
-        <test-method status="PASS" signature="step09()[pri:0, instance:notInclude.SOI_69_TC1_ServiceScreen_AddNewService@6eebc39e]" name="step09" duration-ms="13379" started-at="2020-02-28T17:52:23Z" depends-on-methods="notInclude.SOI_69_TC1_ServiceScreen_AddNewService.step08" finished-at="2020-02-28T17:52:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- step09 -->
-        <test-method status="PASS" signature="step10()[pri:0, instance:notInclude.SOI_69_TC1_ServiceScreen_AddNewService@6eebc39e]" name="step10" duration-ms="3492" started-at="2020-02-28T17:52:37Z" depends-on-methods="notInclude.SOI_69_TC1_ServiceScreen_AddNewService.step09" finished-at="2020-02-28T17:52:40Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- step10 -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:notInclude.SOI_69_TC1_ServiceScreen_AddNewService@6eebc39e]" name="afterTest" is-config="true" duration-ms="4927" started-at="2020-02-28T17:52:40Z" finished-at="2020-02-28T17:52:45Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:delivery01.soi_721.SOI_721_TC03_PC_MACDOrder_OrderTypeValidation@6eebc39e]" name="afterTest" is-config="true" duration-ms="5583" started-at="2020-03-02T00:26:46Z" finished-at="2020-03-02T00:26:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-      </class> <!-- notInclude.SOI_69_TC1_ServiceScreen_AddNewService -->
+      </class> <!-- delivery01.soi_721.SOI_721_TC03_PC_MACDOrder_OrderTypeValidation -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
