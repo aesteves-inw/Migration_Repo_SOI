@@ -53,7 +53,7 @@ public class SOI_721_TC01_MACDOrder_OrderTypeValidation {
 
 	String testExecutionString;
 
-	String companyContactPerson="Simple Ordering OneFifty";
+	String companyContactPerson="Simple Ordering SevenTwentyOne";
 
 
 	@BeforeTest
