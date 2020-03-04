@@ -178,7 +178,18 @@ public class SalesForceOrders {
 	public static String selectFieldsSaveBtn="//button[@class='slds-button slds-button--neutral test-confirmButton uiButton--default uiButton--brand uiButton'][contains(.,'Save')]";
 
 	
+	//Order List View
+	public static String selectFilterListViewBtn="//a[@title='Select List View']";
 	
+	public static String inputSearchBar="//input[@name='csord__Order__c-search-input']";
+	
+	public static String firstOrderNameLink="//table/tbody/tr[1]/td[2]/span/a";
+	
+	public static String ordersNameLink="//table/tbody/tr/td[2]/span/a";
+	
+	public static String ordersTable="//table/tbody";
+	
+	public static String pinBtn="//force-list-view-manager-pin-button/div/lightning-helptext/div/button";
 
 
 

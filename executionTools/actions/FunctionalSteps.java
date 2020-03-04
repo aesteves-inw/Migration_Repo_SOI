@@ -12,9 +12,11 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import execReport.ReportStructure;
 import execReport.TestStepReportStructure;
 import execStructure.ExecStructure;
 import execStructure.TestData;
+import functionalActions.SFDS.Order;
 import sfDirectSales.SalesForceCompany;
 import sfDirectSales.SalesForceHomePage;
 import sfDirectSales.SalesForceNewMACDOrderScreen;
@@ -640,6 +642,155 @@ public class FunctionalSteps {
 
 
 	}
+
+	
+	
+	
+	// SOI-721
+	
+	public static TestStepReportStructure go2OrderListView(WebDriver driver, WebDriverWait wait, String testName, int stepID) throws Exception
+	{
+		TestStepReportStructure step;
+		
+		String stepName="Go To Order List View";
+		String stepNameMin="go2OrderListView";
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);
+		
+		boolean validation;
+		
+		try
+		{
+			Order.nav2OrdersListView(driver, stepID);
+			
+			validation=Order.orderListViewPageValidation(driver, wait, stepID);
+			
+			if (validation==true)
+			{
+				ExecStructure.screenShotTaking(driver, testName, evidenceName);
+				step=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('p', 'e'), ReportStructure.testReportFinalElement('p', 'a'), ReportStructure.testReportFinalElement('p', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+				return step;
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			ExecStructure.screenShotTaking(driver, testName, evidenceName);
+			step=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('f', 'e'), ReportStructure.testReportFinalElement('f', 'a'), ReportStructure.testReportFinalElement('f', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+			return step;
+		}
+	}
+
+	public static TestStepReportStructure search4MACDOrders(WebDriver driver, WebDriverWait wait, String testName, int stepID) throws Exception
+	{
+		TestStepReportStructure step;
+		
+		String stepName="Search for MACD Orders";
+		String stepNameMin="search4MACDOrders";
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);
+		
+		String inputvalue="MACD";
+		
+		try
+		{
+			Order.changeOrdersListFilter(driver, wait, stepID, "All Orders");
+			
+			Order.searchOrdersList(driver, wait, stepID, inputvalue);
+			
+			String tableText=driver.findElement(By.xpath(SalesForceOrders.ordersTable)).getText(); 
+			
+			if (tableText.contains(inputvalue))
+			{
+				ExecStructure.screenShotTaking(driver, testName, evidenceName);
+				step=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('p', 'e'), ReportStructure.testReportFinalElement('p', 'a'), ReportStructure.testReportFinalElement('p', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+				return step;
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			ExecStructure.screenShotTaking(driver, testName, evidenceName);
+			step=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('f', 'e'), ReportStructure.testReportFinalElement('f', 'a'), ReportStructure.testReportFinalElement('f', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+			return step;
+		}
+	}
+
+	public static TestStepReportStructure navigateToFirstMACDOrder(WebDriver driver, WebDriverWait wait, String testName, int stepID) throws Exception
+	{
+		TestStepReportStructure step;
+		String stepName="Navigate to the first MACD Order on the Table";
+		String stepNameMin="navigateToFirstMACDOrder";
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);
+		
+		try
+		{
+			driver.findElement(By.xpath(SalesForceOrders.firstOrderNameLink)).click();
+			
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			
+			boolean validation=Order.orderPageValidation(driver, wait, stepID);
+			
+			if(validation)
+			{
+				ExecStructure.screenShotTaking(driver, testName, evidenceName);
+				step=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('p', 'e'), ReportStructure.testReportFinalElement('p', 'a'), ReportStructure.testReportFinalElement('p', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+				return step;
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			ExecStructure.screenShotTaking(driver, testName, evidenceName);
+			step=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('f', 'e'), ReportStructure.testReportFinalElement('f', 'a'), ReportStructure.testReportFinalElement('f', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+			return step;
+		}
+	}
+
+	public static TestStepReportStructure orderValidationSOI721(WebDriver driver, WebDriverWait wait, String testName, int stepID) throws Exception
+	{
+		TestStepReportStructure step;
+		
+		String stepName="Order Validation according with SOI-721";
+		String stepNameMin="orderValidationSOI721";
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);
+		
+		try
+		{
+			if(BrowserActions.isElementPresent(driver, SalesForceOrders.orderTypeLabel) && BrowserActions.isElementPresent(driver, SalesForceOrders.orderTypeMACD))
+			{
+				ExecStructure.screenShotTaking(driver, testName, evidenceName);
+				step=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('p', 'e'), ReportStructure.testReportFinalElement('p', 'a'), ReportStructure.testReportFinalElement('p', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+				return step;
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			ExecStructure.screenShotTaking(driver, testName, evidenceName);
+			step=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('f', 'e'), ReportStructure.testReportFinalElement('f', 'a'), ReportStructure.testReportFinalElement('f', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+			return step;
+		}
+	}
+
+	
+
+
 
 
 }
