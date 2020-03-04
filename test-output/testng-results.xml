@@ -1,53 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="8" passed="8">
+<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="119712" started-at="2020-03-02T00:47:30Z" finished-at="2020-03-02T00:49:30Z">
+  <suite name="Default suite" duration-ms="43939" started-at="2020-03-04T13:14:04Z" finished-at="2020-03-04T13:14:48Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="119712" started-at="2020-03-02T00:47:30Z" finished-at="2020-03-02T00:49:30Z">
-      <class name="delivery01.soi_721.SOI_721_TC01_MACDOrder_OrderTypeValidation">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:delivery01.soi_721.SOI_721_TC01_MACDOrder_OrderTypeValidation@6eebc39e]" name="beforeTest" is-config="true" duration-ms="7998" started-at="2020-03-02T00:47:30Z" finished-at="2020-03-02T00:47:38Z">
+    <test name="Default test" duration-ms="43939" started-at="2020-03-04T13:14:04Z" finished-at="2020-03-04T13:14:48Z">
+      <class name="delivery01.soi_721.SOI_721_TC02_OrderTypeValidation_InOrdersListView">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:delivery01.soi_721.SOI_721_TC02_OrderTypeValidation_InOrdersListView@4dfa3a9d]" name="beforeTest" is-config="true" duration-ms="7757" started-at="2020-03-04T13:14:04Z" finished-at="2020-03-04T13:14:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="step01()[pri:0, instance:delivery01.soi_721.SOI_721_TC01_MACDOrder_OrderTypeValidation@6eebc39e]" name="step01" duration-ms="12646" started-at="2020-03-02T00:47:38Z" finished-at="2020-03-02T00:47:51Z">
+        <test-method status="PASS" signature="step01()[pri:0, instance:delivery01.soi_721.SOI_721_TC02_OrderTypeValidation_InOrdersListView@4dfa3a9d]" name="step01" duration-ms="13082" started-at="2020-03-04T13:14:12Z" finished-at="2020-03-04T13:14:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step01 -->
-        <test-method status="PASS" signature="step02()[pri:0, instance:delivery01.soi_721.SOI_721_TC01_MACDOrder_OrderTypeValidation@6eebc39e]" name="step02" duration-ms="9259" started-at="2020-03-02T00:47:51Z" depends-on-methods="delivery01.soi_721.SOI_721_TC01_MACDOrder_OrderTypeValidation.step01" finished-at="2020-03-02T00:48:00Z">
+        <test-method status="PASS" signature="step02()[pri:0, instance:delivery01.soi_721.SOI_721_TC02_OrderTypeValidation_InOrdersListView@4dfa3a9d]" name="step02" duration-ms="7562" started-at="2020-03-04T13:14:25Z" depends-on-methods="delivery01.soi_721.SOI_721_TC02_OrderTypeValidation_InOrdersListView.step01" finished-at="2020-03-04T13:14:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step02 -->
-        <test-method status="PASS" signature="step03()[pri:0, instance:delivery01.soi_721.SOI_721_TC01_MACDOrder_OrderTypeValidation@6eebc39e]" name="step03" duration-ms="3107" started-at="2020-03-02T00:48:00Z" depends-on-methods="delivery01.soi_721.SOI_721_TC01_MACDOrder_OrderTypeValidation.step02" finished-at="2020-03-02T00:48:03Z">
+        <test-method status="PASS" signature="step03()[pri:0, instance:delivery01.soi_721.SOI_721_TC02_OrderTypeValidation_InOrdersListView@4dfa3a9d]" name="step03" duration-ms="7064" started-at="2020-03-04T13:14:32Z" depends-on-methods="delivery01.soi_721.SOI_721_TC02_OrderTypeValidation_InOrdersListView.step02" finished-at="2020-03-04T13:14:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step03 -->
-        <test-method status="PASS" signature="step04()[pri:0, instance:delivery01.soi_721.SOI_721_TC01_MACDOrder_OrderTypeValidation@6eebc39e]" name="step04" duration-ms="1941" started-at="2020-03-02T00:48:03Z" depends-on-methods="delivery01.soi_721.SOI_721_TC01_MACDOrder_OrderTypeValidation.step03" finished-at="2020-03-02T00:48:05Z">
+        <test-method status="PASS" signature="step04()[pri:0, instance:delivery01.soi_721.SOI_721_TC02_OrderTypeValidation_InOrdersListView@4dfa3a9d]" name="step04" duration-ms="2879" started-at="2020-03-04T13:14:40Z" depends-on-methods="delivery01.soi_721.SOI_721_TC02_OrderTypeValidation_InOrdersListView.step03" finished-at="2020-03-04T13:14:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step04 -->
-        <test-method status="PASS" signature="step05()[pri:0, instance:delivery01.soi_721.SOI_721_TC01_MACDOrder_OrderTypeValidation@6eebc39e]" name="step05" duration-ms="1300" started-at="2020-03-02T00:48:05Z" depends-on-methods="delivery01.soi_721.SOI_721_TC01_MACDOrder_OrderTypeValidation.step04" finished-at="2020-03-02T00:48:07Z">
+        <test-method status="PASS" signature="step05()[pri:0, instance:delivery01.soi_721.SOI_721_TC02_OrderTypeValidation_InOrdersListView@4dfa3a9d]" name="step05" duration-ms="550" started-at="2020-03-04T13:14:42Z" depends-on-methods="delivery01.soi_721.SOI_721_TC02_OrderTypeValidation_InOrdersListView.step04" finished-at="2020-03-04T13:14:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step05 -->
-        <test-method status="PASS" signature="step06()[pri:0, instance:delivery01.soi_721.SOI_721_TC01_MACDOrder_OrderTypeValidation@6eebc39e]" name="step06" duration-ms="24389" started-at="2020-03-02T00:48:07Z" depends-on-methods="delivery01.soi_721.SOI_721_TC01_MACDOrder_OrderTypeValidation.step05" finished-at="2020-03-02T00:48:31Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- step06 -->
-        <test-method status="PASS" signature="step07()[pri:0, instance:delivery01.soi_721.SOI_721_TC01_MACDOrder_OrderTypeValidation@6eebc39e]" name="step07" duration-ms="48486" started-at="2020-03-02T00:48:31Z" depends-on-methods="delivery01.soi_721.SOI_721_TC01_MACDOrder_OrderTypeValidation.step06" finished-at="2020-03-02T00:49:20Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- step07 -->
-        <test-method status="PASS" signature="step08()[pri:0, instance:delivery01.soi_721.SOI_721_TC01_MACDOrder_OrderTypeValidation@6eebc39e]" name="step08" duration-ms="5556" started-at="2020-03-02T00:49:20Z" depends-on-methods="delivery01.soi_721.SOI_721_TC01_MACDOrder_OrderTypeValidation.step07" finished-at="2020-03-02T00:49:25Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- step08 -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:delivery01.soi_721.SOI_721_TC01_MACDOrder_OrderTypeValidation@6eebc39e]" name="afterTest" is-config="true" duration-ms="4962" started-at="2020-03-02T00:49:25Z" finished-at="2020-03-02T00:49:30Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:delivery01.soi_721.SOI_721_TC02_OrderTypeValidation_InOrdersListView@4dfa3a9d]" name="afterTest" is-config="true" duration-ms="4984" started-at="2020-03-04T13:14:43Z" finished-at="2020-03-04T13:14:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-      </class> <!-- delivery01.soi_721.SOI_721_TC01_MACDOrder_OrderTypeValidation -->
+      </class> <!-- delivery01.soi_721.SOI_721_TC02_OrderTypeValidation_InOrdersListView -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

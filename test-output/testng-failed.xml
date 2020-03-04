@@ -3,20 +3,17 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="delivery01.soi_721.SOI_721_TC01_MACDOrder_OrderTypeValidation">
+      <class name="delivery01.soi_721.SOI_721_TC02_OrderTypeValidation_InOrdersListView">
         <methods>
-          <include name="step06"/>
           <include name="step01"/>
-          <include name="step04"/>
-          <include name="beforeTest"/>
-          <include name="step07"/>
-          <include name="afterTest"/>
-          <include name="step05"/>
-          <include name="step08"/>
           <include name="step02"/>
           <include name="step03"/>
+          <include name="step04"/>
+          <include name="beforeTest"/>
+          <include name="step05"/>
+          <include name="afterTest"/>
         </methods>
-      </class> <!-- delivery01.soi_721.SOI_721_TC01_MACDOrder_OrderTypeValidation -->
+      </class> <!-- delivery01.soi_721.SOI_721_TC02_OrderTypeValidation_InOrdersListView -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
