@@ -29,7 +29,7 @@ public class CompanySFDS {
 		TestStepReportStructure navigate2CompanyCasesListView;
 
 
-		String stepName="Navigate to Company Case's List View";
+		String stepName="Company: Navigate to Company Case's List View";
 
 		String stepNameMin="navigate2CompanyCasesListView";
 

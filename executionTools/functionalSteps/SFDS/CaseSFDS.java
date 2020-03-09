@@ -19,13 +19,15 @@ import sfDirectSales.SalesforceCase;
 
 public class CaseSFDS {
 
+	
+	// Navigation Steps
 	public static TestStepReportStructure navigate2OpenCase(WebDriver driver, String testName, int stepID) throws Exception
 	{
 
 		TestStepReportStructure navigate2OpenCase;
 
 
-		String stepName="Navigate into an Open Case";
+		String stepName="Case: Navigate into an Open Case";
 
 		String stepNameMin="navigate2OpenCase";
 
@@ -64,7 +66,7 @@ public class CaseSFDS {
 		TestStepReportStructure navigate2Service;
 
 
-		String stepName="From Case Screen: Navigate to Service Screen";
+		String stepName="Case: Navigate to Service Screen";
 
 		String stepNameMin="navigate2Service";
 
@@ -104,6 +106,8 @@ public class CaseSFDS {
 		}
 	}
 
+	
+	// Operational Steps
 	public static TestStepReportStructure changeCaseStatus(WebDriver driver, String testName, int stepID, String status) throws Exception
 	{
 		

@@ -12,12 +12,10 @@ import execReport.TestStepReportStructure;
 import execStructure.ExecStructure;
 import execStructure.TestData;
 import functionalSteps.SFDS.CompanySFDS;
+import functionalSteps.SFDS.HomePageSFDS;
 import functionalSteps.SFDS.OrderSFDS;
 import functionalSteps.SFDS.ServiceSFDS;
 import sfDirectSales.SalesForceCompany;
-import sfDirectSales.SalesForceOrders;
-import sfDirectSales.SalesForceService;
-import sfDirectSales.SalesforceCase;
 import sfDirectSales.SalesforceNewMACDFlow;
 
 import org.testng.annotations.BeforeTest;
@@ -147,7 +145,7 @@ public class SOI_150_TC1_MobileOrderIntake_MACD_Flow {
 		try
 		{
 
-			TestStepReportStructure step02 = FunctionalSteps.navigate2CompanyDetails(driver, stepsExecuted, testName);
+			TestStepReportStructure step02 = HomePageSFDS.navigate2CompanyDetails(driver, stepsExecuted, testName);
 			testExecStructure.add(step02);
 			
 			testData.add(new TestReportTestData("Company", TestData.tdCompanyName(testName), "URL", driver.getCurrentUrl()));

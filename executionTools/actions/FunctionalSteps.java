@@ -87,73 +87,9 @@ import actions.BrowserActions;
 			}
 		}
 
-		public static TestStepReportStructure navigate2CompanyDetails(WebDriver driver, int stepID, String testName) throws Exception
-		{
+		
 
-			String companyURL = TestData.searchDT(0, "environmentITTQA").concat(TestData.searchDT(0, "accountView")).concat(TestData.tdCompanyID(testName)).concat("/view");
-
-			try
-			{
-
-				driver.get(companyURL);
-
-				driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
-
-				if (BrowserActions.isElementPresent(driver, SalesForceCompany.followBtn) && BrowserActions.isElementPresent(driver, SalesForceCompany.quickSaleOPTYBtn) && BrowserActions.isElementPresent(driver, SalesForceCompany.companyDetailsHeader) && BrowserActions.isElementPresent(driver, SalesForceCompany.companyDetailsInfo))
-				{
-					ExecStructure.screenShotTaking(driver, testName, stepID+"_Navigate2CompDetails");
-					TestStepReportStructure nav2ComDet = new TestStepReportStructure(stepID, "Navigation to Company Details", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_Navigate2CompDetails");
-					return nav2ComDet;
-				}
-				else
-				{
-					throw new Exception("Test Failed on Step: "+stepID+" - Navigation to Company Details");
-				}
-
-			}
-			catch(Exception e)
-			{
-				System.out.println(e);
-				ExecStructure.screenShotTaking(driver, testName, stepID+"_Navigate2CompDetails");
-				TestStepReportStructure nav2ComDet = new TestStepReportStructure(stepID, "Navigation to Company Details", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_Navigate2CompDetails");
-				return nav2ComDet;
-			}
-
-
-		}
-
-		public static TestStepReportStructure createStandardOppie(WebDriver driver, int stepID, String testName, String testExecutionString) throws Exception
-		{
-			try
-			{
-				FunctionalActionsSFDS.createNewStandardOpportunity(driver);
-
-				FunctionalActionsSFDS.inputOpportunityValues(driver, testExecutionString, testName);
-
-				driver.findElement(By.xpath(SalesForceOpportunity.nosSaveButton)).click();
-
-				driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
-
-				if(BrowserActions.isElementPresent(driver, SalesForceProducts.inputSearchProducts) && BrowserActions.isElementPresent(driver, SalesForceProducts.productsTable))
-				{
-					ExecStructure.screenShotTaking(driver, testName, stepID+"_CreateNewOppie");
-					TestStepReportStructure newOppie = new TestStepReportStructure(stepID, "Create new Opportunity", "Opportunity created with success", "Created with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_CreateNewOppie");
-					return newOppie;
-				}
-				else
-				{
-					throw new Exception("Test Failed on Step: "+stepID+" - Create New Opportunity");
-				}
-
-			}
-			catch(Exception e)
-			{
-				System.out.println(e);
-				ExecStructure.screenShotTaking(driver, testName, stepID+"_CreateNewOppie");
-				TestStepReportStructure newOppie = new TestStepReportStructure(stepID, "Create new Opportunity", "Opportunity created with success", "Not possible to create Opportunity", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_CreateNewOppie");
-				return newOppie;
-			}
-		}
+		
 
 		//27-Fev: Deprecated with the entering of SOI-150 on Simple Ordering Project
 		public static TestStepReportStructure createNewMACDOrder(WebDriver driver, int stepID, String testName, String testExecutionString) throws IOException
