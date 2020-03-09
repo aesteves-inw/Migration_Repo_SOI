@@ -67,5 +67,24 @@ public class SFPC_Orders {
 	
 	//Messages
 	public static String successMessage="//div[contains(.,'Your Order has been successfully submited')]";
+	
+	
+	//06-03-2020: SOI-721
+	
+	public static String ordersTable="//table/tbody";
+	
+	public static String macdOrders="//table/tbody//a[contains(@title,'Mobile')]";
+	
+	public static String inputSearchOrders="//input[@name='csord__Order__c-search-input']";
+	
+	public static String displayAsTableBtn="//button[@title='Display as Table']";
+	
+	public static String listViewControlsBtn="//button[@title='List View Controls']";
+	
+	public static String selectListViewButton="//a[@title='Select List View']";
+	
+	public static String ordersFilterLabel="//h1/div/div/span[2]";
+	
+	
 
 }

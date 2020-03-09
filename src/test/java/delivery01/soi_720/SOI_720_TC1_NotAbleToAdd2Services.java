@@ -340,7 +340,6 @@ public class SOI_720_TC1_NotAbleToAdd2Services {
 		}
 	}
 	
-	
 	@Test(dependsOnMethods = "step07")
 	public void step08() throws Exception
 	{
@@ -483,7 +482,6 @@ public class SOI_720_TC1_NotAbleToAdd2Services {
 			throw new Exception("Test Failed on Step "+stepsExecuted,e);
 		}
 	}
-	
 	
 	@Test(dependsOnMethods = "step11")
 	public void step12() throws Exception

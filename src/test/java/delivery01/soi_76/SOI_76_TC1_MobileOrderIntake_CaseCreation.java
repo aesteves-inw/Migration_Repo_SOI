@@ -11,6 +11,7 @@ import execReport.TestReportTestData;
 import execReport.TestStepReportStructure;
 import execStructure.ExecStructure;
 import execStructure.TestData;
+import functionalActions.SFDS.Agreement;
 import sfDirectSales.SalesForceAgreement;
 import sfDirectSales.SalesForceOpportunity;
 import sfDirectSales.SalesForceOrders;
@@ -74,7 +75,7 @@ public class SOI_76_TC1_MobileOrderIntake_CaseCreation {
 	String companyContactPerson="Simple Ordering SeventySix";
 
   @BeforeTest
-  public void beforeTest() {
+  	public void beforeTest() {
 	  System.out.println("Test Case: "+testName+" initiation");
 
 		ExecStructure.createReportStructure(testName);
@@ -343,7 +344,6 @@ public class SOI_76_TC1_MobileOrderIntake_CaseCreation {
 		}
 	}
 	
-	
 	@Test(dependsOnMethods = "step07")
 	public void step08() throws Exception
 	{
@@ -351,9 +351,7 @@ public class SOI_76_TC1_MobileOrderIntake_CaseCreation {
 		
 		try
 		{
-			driver.get(optyURL);
-			
-			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+			Agreement.navigateToOpportunity(driver, stepsExecuted, optyURL);
 			
 			FunctionalActionsSFDS.closeWonOppie(driver);
 			
@@ -491,27 +489,7 @@ public class SOI_76_TC1_MobileOrderIntake_CaseCreation {
 		
 		try
 		{
-			/*
-			FunctionalActionsSFDS.navigate2Service(driver, stepsExecuted);
-			
-			WebElement createdCase= driver.findElement(By.xpath(SalesForceService.caseLink));
-			
-			caseURL=createdCase.getAttribute("href");
-			
-			String serviceStatus=driver.findElement(By.xpath("//lightning-formatted-text[text()='New']")).getText();
-
-			if(createdCase.isDisplayed() && serviceStatus.contains("New"))
-			{
-				ExecStructure.screenShotTaking(driver, testName, stepsExecuted+"_ServiceAfterSubmission");
-				TestStepReportStructure step12 = new TestStepReportStructure(stepsExecuted, "Service after Submission", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepsExecuted+"_ServiceAfterSubmission");
-				testExecStructure.add(step12);
-			}
-			else
-			{
-				throw new Exception("Validation Failed on Step "+stepsExecuted);
-			}
-			*/
-			
+					
 			String serviceLink=driver.findElement(By.xpath(SalesForceOrders.firstServiceLink)).getAttribute("href");
 			
 			driver.get(serviceLink);
@@ -571,27 +549,6 @@ public class SOI_76_TC1_MobileOrderIntake_CaseCreation {
 				throw new Exception("Validation Failed on Step "+stepsExecuted);
 			}
 			
-			
-			//String caseLink=driver.findElement(By.xpath(SalesForceService.caseLinkOnDetails)).getAttribute("href");
-			/*
-			String caseLink=driver.findElement(By.xpath(SalesForceService.caseLinkOnDetails)).getAttribute("href");
-			
-			driver.get(caseLink);
-			
-			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
-			
-			if (BrowserActions.isElementPresent(driver, SalesforceCase.keyDetailsArticle) && BrowserActions.isElementPresent(driver, SalesforceCase.filesContainer))
-			{
-				ExecStructure.screenShotTaking(driver, testName, stepsExecuted+"_CaseScreenValidation");
-				TestStepReportStructure step13 = new TestStepReportStructure(stepsExecuted, "Case Screen Validation", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepsExecuted+"_CaseScreenValidation");
-				testExecStructure.add(step13);
-				testData.add(new TestReportTestData("Case",driver.findElement(By.xpath("//h1//lightning-formatted-text")).getAttribute("value"),"URL",caseLink));
-			}
-			else
-			{
-				throw new Exception("Validation Failed on Step "+stepsExecuted);
-			}
-			*/
 		}
 		catch(Exception e)
 		{
@@ -604,7 +561,7 @@ public class SOI_76_TC1_MobileOrderIntake_CaseCreation {
 	}
 
   @AfterTest
-  public void afterTest(){
+  	public void afterTest(){
 	  
 		finalTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
 
@@ -618,6 +575,9 @@ public class SOI_76_TC1_MobileOrderIntake_CaseCreation {
 
 		BrowserActions.endSession(driver);
   }
+
+
+
 
 }
 

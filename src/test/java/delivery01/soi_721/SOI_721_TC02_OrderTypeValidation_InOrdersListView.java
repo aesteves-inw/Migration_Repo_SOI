@@ -143,7 +143,6 @@ public class SOI_721_TC02_OrderTypeValidation_InOrdersListView {
 		}
 	}
 	
-	
 	@Test(dependsOnMethods = "step02")
 	public void step03() throws Exception 
 	{

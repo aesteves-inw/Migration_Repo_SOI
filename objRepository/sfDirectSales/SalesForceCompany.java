@@ -59,7 +59,9 @@ public class SalesForceCompany {
 	
 	public static String companyContactPerson="//article[contains(.,'Company contact person')]//a[starts-with(.,'Simple')]";
 	
+	// ..:: Case Area ::..
 	
+	public static String caseHeader="//article[contains(.,'Case')]//h2/a";
 	
 	// New Company Form
 	

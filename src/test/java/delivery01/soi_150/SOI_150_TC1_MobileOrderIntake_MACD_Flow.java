@@ -11,6 +11,9 @@ import execReport.TestReportTestData;
 import execReport.TestStepReportStructure;
 import execStructure.ExecStructure;
 import execStructure.TestData;
+import functionalSteps.SFDS.CompanySFDS;
+import functionalSteps.SFDS.OrderSFDS;
+import functionalSteps.SFDS.ServiceSFDS;
 import sfDirectSales.SalesForceCompany;
 import sfDirectSales.SalesForceOrders;
 import sfDirectSales.SalesForceService;
@@ -26,6 +29,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -170,8 +174,9 @@ public class SOI_150_TC1_MobileOrderIntake_MACD_Flow {
 		try {
 
 			driver.findElement(By.xpath(SalesForceCompany.newMACDOrderButton)).click();
+			
+			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesforceNewMACDFlow.newMACDOrderScreen)));
 
 			if (BrowserActions.isElementPresent(driver, SalesforceNewMACDFlow.headerNewMACDOrder) && BrowserActions.isElementPresent(driver, SalesforceNewMACDFlow.nextButton) && BrowserActions.isElementPresent(driver, SalesforceNewMACDFlow.newMACDOrderScreen) && BrowserActions.isElementPresent(driver, SalesforceNewMACDFlow.inputDomain) && BrowserActions.isElementPresent(driver, SalesforceNewMACDFlow.inputType) && BrowserActions.isElementPresent(driver, SalesforceNewMACDFlow.inputDetail))
 			{
@@ -282,6 +287,8 @@ public class SOI_150_TC1_MobileOrderIntake_MACD_Flow {
 			
 			driver.findElement(By.xpath(SalesforceNewMACDFlow.inputCompanyContactPerson)).sendKeys(companyContactPerson);
 			
+			driver.findElement(By.xpath(SalesforceNewMACDFlow.inputCompanyContactPerson)).sendKeys(Keys.ENTER);
+			
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(.,'"+companyContactPerson+"')]"))).click();
 			
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesforceNewMACDFlow.inputServiceRequestDate))).click();
@@ -365,41 +372,23 @@ public class SOI_150_TC1_MobileOrderIntake_MACD_Flow {
 		
 		try
 		{
-			//Rebuild Step 8
+			TestStepReportStructure step08 = CompanySFDS.navigate2FirstOrder(driver, testName, stepsExecuted);
+			testExecStructure.add(step08);
 			
-			BrowserActions.verticalScrollByPixs(driver, 250);
 			
-			String orderlink=driver.findElement(By.xpath(SalesForceCompany.firstOrderLink)).getAttribute("href");
-			
-			driver.get(orderlink);
-			
-			//End of Rebuild
-			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
-			
-			if (BrowserActions.isElementPresent(driver, SalesForceOrders.servicesContainer) && BrowserActions.isElementPresent(driver, SalesForceOrders.orderDetails) && BrowserActions.isElementPresent(driver, SalesForceOrders.orderHeader))
+			if (step08.getStepStatus().toLowerCase().contains("failed")) 
 			{
-				ExecStructure.screenShotTaking(driver, testName, stepsExecuted+"_OrderScreenValidation");
-				TestStepReportStructure step08 = new TestStepReportStructure(stepsExecuted, "Order Screen Validation", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepsExecuted+"_OrderScreenValidation");
-				testExecStructure.add(step08);
-				testData.add(new TestReportTestData("Order",driver.findElement(By.xpath("//h1//lightning-formatted-text")).getAttribute("value"),"URL",orderlink));
-			}
-			else
-			{
+
 				throw new Exception("Validation Failed on Step "+stepsExecuted);
 			}
-			
-			
 		}
 		catch(Exception e)
 		{
 			System.out.println(e);
-			ExecStructure.screenShotTaking(driver, testName, stepsExecuted+"_OrderScreenValidation");
-			TestStepReportStructure step08 = new TestStepReportStructure(stepsExecuted, "Order Screen Validation", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepsExecuted+"_OrderScreenValidation");
-			testExecStructure.add(step08);
-			throw new Exception("Test Failed on Step "+stepsExecuted,e);
+			throw new Exception("Test Failed on Step: "+stepsExecuted,e);
 		}
+			
 	}
-	
 	
 	@Test(dependsOnMethods = "step08")
 	public void step09() throws Exception {	
@@ -408,30 +397,19 @@ public class SOI_150_TC1_MobileOrderIntake_MACD_Flow {
 		
 		try
 		{
-			String serviceLink=driver.findElement(By.xpath(SalesForceOrders.firstServiceLink)).getAttribute("href");
+			TestStepReportStructure step09 = OrderSFDS.nav2Service(driver, testName, stepsExecuted);
+			testExecStructure.add(step09);
 			
-			driver.get(serviceLink);
-			
-			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);		
-			
-			if(BrowserActions.isElementPresent(driver, SalesForceService.filesContainer) && BrowserActions.isElementPresent(driver, SalesForceService.headerServicesPage) && BrowserActions.isElementPresent(driver, SalesForceService.detailsServicePage)  &&  BrowserActions.isElementPresent(driver, SalesForceService.fieldServiceName)  && BrowserActions.isElementPresent(driver, SalesForceService.fieldCase) && BrowserActions.isElementPresent(driver, SalesForceService.fieldDomain) && BrowserActions.isElementPresent(driver, SalesForceService.fieldType) && BrowserActions.isElementPresent(driver, SalesForceService.fieldDetail) && BrowserActions.isElementPresent(driver, SalesForceService.fieldServiceRequestDate) && BrowserActions.isElementPresent(driver, SalesForceService.fieldEnd2EndRequestOwner) && BrowserActions.isElementPresent(driver, SalesForceService.fieldStatus))
+			if (step09.getStepStatus().toLowerCase().contains("failed")) 
 			{
-				ExecStructure.screenShotTaking(driver, testName, stepsExecuted+"_ServiceScreenValidation");
-				TestStepReportStructure step09 = new TestStepReportStructure(stepsExecuted, "Service Screen Validation", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepsExecuted+"_ServiceScreenValidation");
-				testExecStructure.add(step09);
-				testData.add(new TestReportTestData("Service",driver.findElement(By.xpath("//h1//lightning-formatted-text")).getAttribute("value"),"URL",serviceLink));
-			}
-			else
-			{
+
 				throw new Exception("Validation Failed on Step "+stepsExecuted);
 			}
+		
 		}
 		catch(Exception e)
 		{
 			System.out.println(e);
-			ExecStructure.screenShotTaking(driver, testName, stepsExecuted+"_ServiceScreenValidation");
-			TestStepReportStructure step09 = new TestStepReportStructure(stepsExecuted, "Service Screen Validation", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepsExecuted+"_ServiceScreenValidation");
-			testExecStructure.add(step09);
 			throw new Exception("Test Failed on Step "+stepsExecuted,e);
 		}
 		
@@ -444,31 +422,19 @@ public class SOI_150_TC1_MobileOrderIntake_MACD_Flow {
 		
 		try
 		{
+			TestStepReportStructure step10 = ServiceSFDS.navigate2CaseScreen(driver, testName, stepsExecuted);
+			testExecStructure.add(step10);
 			
-			String caseLink=driver.findElement(By.xpath(SalesForceService.caseLink)).getAttribute("href");
-			
-			driver.get(caseLink);
-			
-			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
-			
-			if (BrowserActions.isElementPresent(driver, SalesforceCase.keyDetailsArticle) && BrowserActions.isElementPresent(driver, SalesforceCase.filesContainer))
+			if (step10.getStepStatus().toLowerCase().contains("failed")) 
 			{
-				ExecStructure.screenShotTaking(driver, testName, stepsExecuted+"_CaseScreenValidation");
-				TestStepReportStructure step10 = new TestStepReportStructure(stepsExecuted, "Case Screen Validation", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepsExecuted+"_CaseScreenValidation");
-				testExecStructure.add(step10);
-				testData.add(new TestReportTestData("Case",driver.findElement(By.xpath("//h1//lightning-formatted-text")).getAttribute("value"),"URL",caseLink));
-			}
-			else
-			{
+
 				throw new Exception("Validation Failed on Step "+stepsExecuted);
 			}
+			
 		}
 		catch(Exception e)
 		{
 			System.out.println(e);
-			ExecStructure.screenShotTaking(driver, testName, stepsExecuted+"_CaseScreenValidation");
-			TestStepReportStructure step10 = new TestStepReportStructure(stepsExecuted, "Case Screen Validation", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepsExecuted+"_CaseScreenValidation");
-			testExecStructure.add(step10);
 			throw new Exception("Test Failed on Step "+stepsExecuted,e);
 		}
 		
