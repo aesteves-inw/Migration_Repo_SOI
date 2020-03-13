@@ -1,5 +1,6 @@
 package functionalSteps.SFDS;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -140,7 +141,47 @@ public class OpportunitySFDS {
 			return soi66Validation;
 		}
 	}
-	
+
+	public static TestStepReportStructure negativeSoi66Validation(WebDriver driver, String testName, int stepID, String linkAgreementName) throws Exception
+	{
+		TestStepReportStructure negativeSoi66Validation;
+
+
+		String stepName="Opportunity: SOI-66 Validation (Negative)";
+
+		String stepNameMin="negativeSoi66Validation";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);
+		
+		
+		boolean validation;
+		
+		try
+		{
+			Opportunity.findAgreementOnOPTY(driver, stepID);
+			
+			validation=Opportunity.soi66opportunityValidation(driver, stepID, evidenceName);
+			
+			if(validation==false)
+			{
+				ExecStructure.screenShotTaking(driver, testName, evidenceName);
+				negativeSoi66Validation=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('p', 'e'), ReportStructure.testReportFinalElement('p', 'a'), ReportStructure.testReportFinalElement('p', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);;
+				return negativeSoi66Validation;
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+				
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			ExecStructure.screenShotTaking(driver, testName, evidenceName);
+			negativeSoi66Validation=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('f', 'e'), ReportStructure.testReportFinalElement('f', 'a'), ReportStructure.testReportFinalElement('f', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);;
+			return negativeSoi66Validation;
+		}
+	}
 }
 
 /*

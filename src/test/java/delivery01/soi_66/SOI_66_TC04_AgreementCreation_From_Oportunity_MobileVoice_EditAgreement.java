@@ -28,7 +28,7 @@ import execStructure.TestData;
 import sfDirectSales.SalesForceAgreement;
 import sfDirectSales.SalesForceOpportunity;
 
-public class SOI_66_TC4_AgreementCreation_From_Oportunity_MobileVoice_EditAgreement {
+public class SOI_66_TC04_AgreementCreation_From_Oportunity_MobileVoice_EditAgreement {
 
 	String testName = this.getClass().getName();
 

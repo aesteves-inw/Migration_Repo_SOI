@@ -29,7 +29,7 @@ import execStructure.TestData;
 import sfDirectSales.SalesForceAgreement;
 import sfDirectSales.SalesForceOpportunity;
 
-public class SOI_66_TC5_AgreementCreation_Add_File_2_Agreement {
+public class SOI_66_TC05_AgreementCreation_Add_File_2_Agreement {
 
 	String testName = this.getClass().getName();
 

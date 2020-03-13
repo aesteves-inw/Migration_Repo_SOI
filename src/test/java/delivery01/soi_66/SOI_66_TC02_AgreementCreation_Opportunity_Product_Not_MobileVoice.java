@@ -23,45 +23,46 @@ import functionalSteps.SFDS.CompanySFDS;
 import functionalSteps.SFDS.HomePageSFDS;
 import functionalSteps.SFDS.OpportunitySFDS;
 
-public class SOI_66_TC1_AgreementCreation_From_Oportunity_MobileVoice {
+public class SOI_66_TC02_AgreementCreation_Opportunity_Product_Not_MobileVoice {
 
-	String testName = this.getClass().getName();
-
+String testName = this.getClass().getName();
+	
 	String initialTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
-
+	
 	long startTime=System.nanoTime();
 
 	WebDriver driver = null;
-
+	
 	WebDriverWait wait;
 
 	List<TestStepReportStructure> testExecStructure = new ArrayList<TestStepReportStructure>();
 	
 	List<TestReportTestData> testData = new ArrayList<TestReportTestData>();
-
+	
 	String finalTestDate=null;
-
+	
 	long finishTime;
-
+	
 	int stepsExecuted;
-
+	
 	String testExecutionString;
 	
-	String optyName,linkAgreementName;
+	String optyName;
 	
-	String optyURL, agreementURL, orderURL;
+	String linkAgreementName;
 	
-	String companyContactPerson="Simple Ordering SixtyNine";
-
+ 
+  
   @BeforeTest
   public void beforeTest() {
+	  
 	  System.out.println("Test Case: "+testName+" initiation");
-
-		ExecStructure.createReportStructure(testName);
-
-		System.setProperty("webdriver.chrome.driver", TestData.ChromeDriverPath);
-
-		ChromeOptions Chrome_Profile = new ChromeOptions(); 
+	  
+	  ExecStructure.createReportStructure(testName);
+	  
+	  System.setProperty("webdriver.chrome.driver", TestData.ChromeDriverPath);
+	  
+	  ChromeOptions Chrome_Profile = new ChromeOptions(); 
 
 		Chrome_Profile.addArguments("--start-maximized"); 
 
@@ -78,7 +79,7 @@ public class SOI_66_TC1_AgreementCreation_From_Oportunity_MobileVoice {
 		Chrome_Profile.addArguments("browser.helperApps.neverAsk.saveToDisk", "application/pdf");
 
 		driver = new ChromeDriver(Chrome_Profile); 
-
+		
 		wait=new WebDriverWait(driver, 15);
 
 		Set<Cookie> allCookies = driver.manage().getCookies(); 
@@ -90,16 +91,15 @@ public class SOI_66_TC1_AgreementCreation_From_Oportunity_MobileVoice {
 			driver.manage().addCookie(cookie); 
 
 		}
-
-		testExecutionString = ExecStructure.formattedDate("yyyyMMdd")+"_TC1_Ex"+ExecStructure.numberOfSubFolders(ExecStructure.testFolder(testName));
 		
-		optyName="OPTY_"+testExecutionString;
-	}
+		testExecutionString = ExecStructure.formattedDate("yyyyMMdd")+"_TC1_Ex"+ExecStructure.numberOfSubFolders(ExecStructure.testFolder(testName));
+  }
+
   
   @Test
 	public void step01() throws Exception {
-
-		stepsExecuted++;
+	  
+	  stepsExecuted++;
 
 		String userProfile="regularUser";
 
@@ -123,11 +123,11 @@ public class SOI_66_TC1_AgreementCreation_From_Oportunity_MobileVoice {
 		}
 
 	}
-  
+	 
   @Test(dependsOnMethods = "step01")
-	public void step02() throws Exception {	
+	public void step02() throws Exception {		
 		
-		stepsExecuted++;
+	  stepsExecuted++;
 		
 		try
 		{
@@ -146,11 +146,10 @@ public class SOI_66_TC1_AgreementCreation_From_Oportunity_MobileVoice {
 			System.out.println(e);
 			throw new Exception("Test Failed on Step "+stepsExecuted,e);
 		}
-		
 	}
 	
 	@Test(dependsOnMethods = "step02")
-	public void step03() throws Exception {	
+	public void step03() throws Exception {		
 		
 		stepsExecuted++;
 		
@@ -170,18 +169,16 @@ public class SOI_66_TC1_AgreementCreation_From_Oportunity_MobileVoice {
 			System.out.println(e);
 			throw new Exception("Test Failed on Step "+stepsExecuted,e);
 		}
-		
-		
 	}
 	
 	@Test(dependsOnMethods = "step03")
 	public void step04() throws Exception {	
 		
 		stepsExecuted++;
-			
+		
 		try
 		{
-			TestStepReportStructure step04 = CompanySFDS.configNewMobileOpportunity(driver, wait, testName, testExecutionString, stepsExecuted);
+			TestStepReportStructure step04 = CompanySFDS.configNewNonMobileOpportunity(driver, wait, testName, testExecutionString, stepsExecuted);
 			testExecStructure.add(step04);
 			
 			if (step04.getStepStatus().toLowerCase().contains("failed")) 
@@ -195,17 +192,16 @@ public class SOI_66_TC1_AgreementCreation_From_Oportunity_MobileVoice {
 			System.out.println(e);
 			throw new Exception("Test Failed on Step "+stepsExecuted,e);
 		}
-		
 	}
 	
 	@Test(dependsOnMethods = "step04")
-	public void step05() throws Exception 
-	{	
+	public void step05() throws Exception {
+		
 		stepsExecuted++;
 		
 		try
 		{
-			TestStepReportStructure step05 = OpportunitySFDS.soi66Validation(driver, testName, stepsExecuted, optyName);
+			TestStepReportStructure step05 = OpportunitySFDS.negativeSoi66Validation(driver, testName, stepsExecuted, optyName);
 			testExecStructure.add(step05);
 			
 			if (step05.getStepStatus().toLowerCase().contains("failed")) 
@@ -219,44 +215,24 @@ public class SOI_66_TC1_AgreementCreation_From_Oportunity_MobileVoice {
 			System.out.println(e);
 			throw new Exception("Test Failed on Step "+stepsExecuted,e);
 		}
-	}
-	
-	@Test(dependsOnMethods = "step05")
-	public void step06() throws Exception 
-	{	
-		stepsExecuted++;
 		
-		try
-		{
-			TestStepReportStructure step06 = OpportunitySFDS.navigate2Agreement(driver, testName, stepsExecuted, optyName);
-			testExecStructure.add(step06);
-			
-			if (step06.getStepStatus().toLowerCase().contains("failed")) 
-			{
-				
-				throw new Exception("Validation Failed on Step "+stepsExecuted);
-			}
-		}
-		catch(Exception e)
-		{
-			System.out.println(e);
-			throw new Exception("Test Failed on Step "+stepsExecuted,e);
-		}
 	}
-	
-	  @AfterTest
-	  public void afterTest() {
-		  
-			finalTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
 
-			finishTime=System.nanoTime();
-
-			TestReportHeaderStructure testHeader = new TestReportHeaderStructure(testName, initialTestDate, finalTestDate, startTime, finishTime, stepsExecuted);
-
-			new CreateTestReport(testExecStructure, testHeader, testData);
-
-			System.out.println("Test Case: "+testName+" completion");
-
-			BrowserActions.endSession(driver);
-	  }
+  @AfterTest
+  public void afterTest() {
+	  
+	  
+	  finalTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
+	  
+	  finishTime=System.nanoTime();
+	  
+	  TestReportHeaderStructure testHeader = new TestReportHeaderStructure(testName, initialTestDate, finalTestDate, startTime, finishTime, stepsExecuted);
+	  
+	  new CreateTestReport(testExecStructure, testHeader, testData);
+	  
+	  System.out.println("Test Case: "+testName+" completion");
+	  
+	  BrowserActions.endSession(driver);
+	  
+  }
 }

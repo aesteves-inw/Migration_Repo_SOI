@@ -31,7 +31,7 @@ import sfPartnersCommunity.SFPC_LoginPage;
 import sfPartnersCommunity.SFPC_Opportunity;
 import sfPartnersCommunity.SFPC_Products;
 
-public class SOI_66_TC8_PC_AgreementCreation_From_Oportunity_MobileVoice {
+public class SOI_66_TC08_PC_AgreementCreation_From_Oportunity_MobileVoice {
 
 	private String testName = this.getClass().getName();
 

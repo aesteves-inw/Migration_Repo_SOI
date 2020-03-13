@@ -1,5 +1,6 @@
 package functionalSteps.SFDS;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -302,6 +303,61 @@ public class CompanySFDS {
 			return configNewMobileOpportunity;
 		}
 		
+	}
+	
+	public static TestStepReportStructure configNewNonMobileOpportunity(WebDriver driver, WebDriverWait wait, String testName, String testExecutionString, int stepID) throws Exception
+	{
+		TestStepReportStructure step;
+
+
+		String stepName="Company: Configure new Opportunity - Not Mobile Voice";
+
+		String stepNameMin="configNewNonMobileOpportunity";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);
+		
+		
+		boolean validation;
+		
+		
+		String optyName="OPTY_"+testExecutionString;
+		
+		String optyElement="//a[@title='"+optyName+"']";
+		
+		
+		try
+		{
+			Opportunity.addProductToOppie(driver, stepID, "nonMobileVoice");
+			
+			Opportunity.editProductConfiguration(driver, 1, stepID);
+			
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesForceOpportunity.optyTablePool)));
+			
+			driver.get(driver.findElement(By.xpath(optyElement)).getAttribute("href"));
+			
+			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);	
+			
+			
+			validation=Opportunity.opportunityScreenValidation(driver, stepID);
+			
+			if(validation==true)
+			{
+				ExecStructure.screenShotTaking(driver, testName, evidenceName);
+				step=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('p', 'e'), ReportStructure.testReportFinalElement('p', 'a'), ReportStructure.testReportFinalElement('p', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);;
+				return step;
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			ExecStructure.screenShotTaking(driver, testName, evidenceName);
+			step=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('f', 'e'), ReportStructure.testReportFinalElement('f', 'a'), ReportStructure.testReportFinalElement('f', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);;
+			return step;
+		}
 	}
 	
 	public static TestStepReportStructure createCloseStandardMobileVoiceOppie(WebDriver driver, int stepID, String testName, String testExecutionString) throws Exception
