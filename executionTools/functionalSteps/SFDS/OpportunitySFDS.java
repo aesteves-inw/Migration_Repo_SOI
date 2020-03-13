@@ -10,6 +10,7 @@ import actions.FunctionalActionsSFDS;
 import execReport.ReportStructure;
 import execReport.TestStepReportStructure;
 import execStructure.ExecStructure;
+import functionalActions.SFDS.Opportunity;
 import sfDirectSales.SalesForceAgreement;
 import sfDirectSales.SalesForceOpportunity;
 import sfDirectSales.SalesForceOrders;
@@ -99,7 +100,46 @@ public class OpportunitySFDS {
 	
 	// Operational Steps
 	
-	
+	public static TestStepReportStructure soi66Validation(WebDriver driver, String testName, int stepID, String linkAgreementName) throws Exception
+	{
+		TestStepReportStructure soi66Validation;
+
+
+		String stepName="Opportunity: SOI-66 Validation";
+
+		String stepNameMin="soi66Validation";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);
+		
+		
+		boolean validation;
+		
+		try
+		{
+			Opportunity.findAgreementOnOPTY(driver, stepID);
+			
+			validation=Opportunity.soi66opportunityValidation(driver, stepID, evidenceName);
+			
+			if(validation==true)
+			{
+				ExecStructure.screenShotTaking(driver, testName, evidenceName);
+				soi66Validation=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('p', 'e'), ReportStructure.testReportFinalElement('p', 'a'), ReportStructure.testReportFinalElement('p', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);;
+				return soi66Validation;
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+				
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			ExecStructure.screenShotTaking(driver, testName, evidenceName);
+			soi66Validation=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('f', 'e'), ReportStructure.testReportFinalElement('f', 'a'), ReportStructure.testReportFinalElement('f', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);;
+			return soi66Validation;
+		}
+	}
 	
 }
 

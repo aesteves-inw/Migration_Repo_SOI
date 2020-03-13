@@ -14,10 +14,11 @@ import actions.FunctionalActionsSFDS;
 import execReport.ReportStructure;
 import execReport.TestStepReportStructure;
 import execStructure.ExecStructure;
+import functionalActions.SFDS.Company;
+import functionalActions.SFDS.Opportunity;
 import sfDirectSales.SalesForceCompany;
 import sfDirectSales.SalesForceOpportunity;
 import sfDirectSales.SalesForceOrders;
-import sfDirectSales.SalesForceProducts;
 import sfDirectSales.SalesforceCase;
 import sfDirectSales.SalesforceNewMACDFlow;
 
@@ -112,6 +113,10 @@ public class CompanySFDS {
 		}
 	}
 	
+	
+	
+	
+	
 	// Operational Steps
 	public static TestStepReportStructure createStandardOppie(WebDriver driver, int stepID, String testName, String testExecutionString) throws Exception
 	{
@@ -126,17 +131,21 @@ public class CompanySFDS {
 		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);
 		
 		
+		boolean validation;
+		
 		try
 		{
-			FunctionalActionsSFDS.createNewStandardOpportunity(driver);
+			Company.createNewStandardOpportunity(driver, stepID);
 
-			FunctionalActionsSFDS.inputOpportunityValues(driver, testExecutionString, testName);
+			Opportunity.inputOpportunityValues(driver, testExecutionString, testName);
 
 			driver.findElement(By.xpath(SalesForceOpportunity.nosSaveButton)).click();
 
 			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+			
+			validation=Opportunity.productScreenValidation(driver, stepID);
 
-			if(BrowserActions.isElementPresent(driver, SalesForceProducts.inputSearchProducts) && BrowserActions.isElementPresent(driver, SalesForceProducts.productsTable))
+			if(validation==true)
 			{
 				ExecStructure.screenShotTaking(driver, testName, evidenceName);
 				createStandardOppie=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('p', 'e'), ReportStructure.testReportFinalElement('p', 'a'), ReportStructure.testReportFinalElement('p', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
@@ -156,7 +165,7 @@ public class CompanySFDS {
 			return createStandardOppie;
 		}
 	}
-
+	
 	public static TestStepReportStructure createMACDOrder(WebDriver driver, String testName, int stepID, String companyContactPerson) throws Exception
 	{
 		TestStepReportStructure createMACDOrder;
@@ -240,7 +249,61 @@ public class CompanySFDS {
 			return createMACDOrder;
 		}
 	}
+	
+	public static TestStepReportStructure configNewMobileOpportunity(WebDriver driver, WebDriverWait wait, String testName, String testExecutionString, int stepID) throws Exception
+	{
+		TestStepReportStructure configNewMobileOpportunity;
 
+
+		String stepName="Company: Configure new Mobile Voice Opportunity";
+
+		String stepNameMin="createNewMobileOpportunity";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);
+		
+		
+		boolean validation;
+		
+		
+		String optyName="OPTY_"+testExecutionString;
+		
+		String optyElement="//a[@title='"+optyName+"']";
+		
+		try
+		{
+			Opportunity.addProductToOppie(driver, stepID, "mobileVoice");
+			
+			Opportunity.editProductConfiguration(driver, 1, stepID);
+			
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesForceOpportunity.optyTablePool)));
+			
+			driver.get(driver.findElement(By.xpath(optyElement)).getAttribute("href"));
+			
+			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);	
+			
+			validation=Opportunity.opportunityScreenValidation(driver, stepID);
+			
+			if(validation==true)
+			{
+				ExecStructure.screenShotTaking(driver, testName, evidenceName);
+				configNewMobileOpportunity=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('p', 'e'), ReportStructure.testReportFinalElement('p', 'a'), ReportStructure.testReportFinalElement('p', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);;
+				return configNewMobileOpportunity;
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			ExecStructure.screenShotTaking(driver, testName, evidenceName);
+			configNewMobileOpportunity=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('f', 'e'), ReportStructure.testReportFinalElement('f', 'a'), ReportStructure.testReportFinalElement('f', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);;
+			return configNewMobileOpportunity;
+		}
+		
+	}
+	
 	public static TestStepReportStructure createCloseStandardMobileVoiceOppie(WebDriver driver, int stepID, String testName, String testExecutionString) throws Exception
 	{
 		TestStepReportStructure createCloseStandardMobileVoiceOppie;
@@ -255,19 +318,19 @@ public class CompanySFDS {
 		
 		try
 		{
-			FunctionalActionsSFDS.createNewStandardOpportunity(driver);
+			Company.createNewStandardOpportunity(driver, stepID);
 
-			FunctionalActionsSFDS.inputOpportunityValues(driver, testExecutionString, testName);
+			Opportunity.inputOpportunityValues(driver, testExecutionString, testName);
 
 			driver.findElement(By.xpath(SalesForceOpportunity.nosSaveButton)).click();
 
 			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 
-			FunctionalActionsSFDS.addProductToOppie(driver, "mobileVoice");
+			Opportunity.addProductToOppie(driver, stepID, "mobileVoice");
 
-			FunctionalActionsSFDS.editProductConfiguration(driver, 1);
+			Opportunity.editProductConfiguration(driver, 1, stepID);
 
-			FunctionalActionsSFDS.closeWonOppie(driver);
+			Opportunity.closeWonOppie(driver, stepID);
 
 			if (BrowserActions.isElementPresent(driver, SalesForceOpportunity.stageClosedWonDetails))
 			{
@@ -289,6 +352,7 @@ public class CompanySFDS {
 			return createCloseStandardMobileVoiceOppie;
 		}
 	}
+
 	
 	
 	

@@ -26,6 +26,7 @@ import execReport.TestStepReportStructure;
 import execStructure.ExecStructure;
 import execStructure.TestData;
 import functionalSteps.SFDS.CaseSFDS;
+import functionalSteps.SFDS.HomePageSFDS;
 import sfDirectSales.SalesForceCompany;
 import sfDirectSales.SalesForceOrders;
 import sfDirectSales.SalesForceService;
@@ -142,7 +143,7 @@ public class SOI_880_TC03_CaseRouting_MACD {
 		try
 		{
 
-			TestStepReportStructure step02 = FunctionalSteps.navigate2CompanyDetails(driver, stepsExecuted, testName);
+			TestStepReportStructure step02 = HomePageSFDS.navigate2CompanyDetails(driver, stepsExecuted, testName);
 			testExecStructure.add(step02);
 			
 			testData.add(new TestReportTestData("Company", TestData.tdCompanyName(testName), "URL", driver.getCurrentUrl()));

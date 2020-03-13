@@ -27,6 +27,8 @@ import execReport.TestStepReportStructure;
 import execStructure.ExecStructure;
 import execStructure.TestData;
 import functionalSteps.SFDS.CaseSFDS;
+import functionalSteps.SFDS.CompanySFDS;
+import functionalSteps.SFDS.HomePageSFDS;
 import sfDirectSales.SalesForceAgreement;
 import sfDirectSales.SalesForceOpportunity;
 import sfDirectSales.SalesForceOrders;
@@ -151,7 +153,7 @@ public class SOI_880_TC01_CaseRouting_NewContractFlow {
 		try
 		{
 			
-			TestStepReportStructure step02 = FunctionalSteps.navigate2CompanyDetails(driver, stepsExecuted, testName);
+			TestStepReportStructure step02 = HomePageSFDS.navigate2CompanyDetails(driver, stepsExecuted, testName);
 			testExecStructure.add(step02);
 			
 			if (step02.getStepStatus().toLowerCase().contains("failed")) 
@@ -175,7 +177,7 @@ public class SOI_880_TC01_CaseRouting_NewContractFlow {
 		
 		try
 		{
-			TestStepReportStructure step03 = FunctionalSteps.createStandardOppie(driver, stepsExecuted, testName, testExecutionString);
+			TestStepReportStructure step03 = CompanySFDS.createStandardOppie(driver, stepsExecuted, testName, testExecutionString);
 			testExecStructure.add(step03);
 			
 			if (step03.getStepStatus().toLowerCase().contains("failed")) 
@@ -341,7 +343,6 @@ public class SOI_880_TC01_CaseRouting_NewContractFlow {
 		}
 	}
 	
-	
 	@Test(dependsOnMethods = "step07")
 	public void step08() throws Exception
 	{
@@ -489,37 +490,13 @@ public class SOI_880_TC01_CaseRouting_NewContractFlow {
 		
 		try
 		{
-			/*
-			FunctionalActionsSFDS.navigate2Service(driver, stepsExecuted);
-			
-			WebElement createdCase= driver.findElement(By.xpath(SalesForceService.caseLink));
-			
-			caseURL=createdCase.getAttribute("href");
-			
-			String serviceStatus=driver.findElement(By.xpath("//lightning-formatted-text[text()='New']")).getText();
-
-			if(createdCase.isDisplayed() && serviceStatus.contains("New"))
-			{
-				ExecStructure.screenShotTaking(driver, testName, stepsExecuted+"_ServiceAfterSubmission");
-				TestStepReportStructure step12 = new TestStepReportStructure(stepsExecuted, "Service after Submission", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepsExecuted+"_ServiceAfterSubmission");
-				testExecStructure.add(step12);
-			}
-			else
-			{
-				throw new Exception("Validation Failed on Step "+stepsExecuted);
-			}
-			*/
 			
 			String serviceLink=driver.findElement(By.xpath(SalesForceOrders.firstServiceLink)).getAttribute("href");
 			
 			driver.get(serviceLink);
 			
 			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);		
-			/*
-			WebElement createdCase= driver.findElement(By.xpath(SalesForceService.caseLink));
-			
-			caseURL=createdCase.getAttribute("href");
-			*/
+
 			if(BrowserActions.isElementPresent(driver, SalesForceService.filesContainer) && BrowserActions.isElementPresent(driver, SalesForceService.headerServicesPage) && BrowserActions.isElementPresent(driver, SalesForceService.detailsServicePage)  &&  BrowserActions.isElementPresent(driver, SalesForceService.fieldServiceName)  && BrowserActions.isElementPresent(driver, SalesForceService.fieldCase) && BrowserActions.isElementPresent(driver, SalesForceService.fieldDomain) && BrowserActions.isElementPresent(driver, SalesForceService.fieldType) && BrowserActions.isElementPresent(driver, SalesForceService.fieldDetail) && BrowserActions.isElementPresent(driver, SalesForceService.fieldServiceRequestDate) && BrowserActions.isElementPresent(driver, SalesForceService.fieldEnd2EndRequestOwner) && BrowserActions.isElementPresent(driver, SalesForceService.fieldStatus))
 			{
 				ExecStructure.screenShotTaking(driver, testName, stepsExecuted+"_ServiceScreenValidation");

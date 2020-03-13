@@ -107,7 +107,7 @@ public class ServiceSFDS {
 		TestStepReportStructure serviceStatusValidation;
 
 
-		String stepName="Login in Partners Community";
+		String stepName="Service: Status Validation";
 
 		String stepNameMin="serviceStatusValidation";
 

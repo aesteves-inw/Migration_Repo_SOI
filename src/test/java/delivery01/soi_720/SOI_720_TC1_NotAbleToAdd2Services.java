@@ -26,6 +26,8 @@ import execReport.TestReportTestData;
 import execReport.TestStepReportStructure;
 import execStructure.ExecStructure;
 import execStructure.TestData;
+import functionalSteps.SFDS.CompanySFDS;
+import functionalSteps.SFDS.HomePageSFDS;
 import sfDirectSales.SalesForceAgreement;
 import sfDirectSales.SalesForceOpportunity;
 import sfDirectSales.SalesForceOrders;
@@ -150,7 +152,7 @@ public class SOI_720_TC1_NotAbleToAdd2Services {
 		try
 		{
 			
-			TestStepReportStructure step02 = FunctionalSteps.navigate2CompanyDetails(driver, stepsExecuted, testName);
+			TestStepReportStructure step02 = HomePageSFDS.navigate2CompanyDetails(driver, stepsExecuted, testName);
 			testExecStructure.add(step02);
 			
 			if (step02.getStepStatus().toLowerCase().contains("failed")) 
@@ -174,7 +176,7 @@ public class SOI_720_TC1_NotAbleToAdd2Services {
 		
 		try
 		{
-			TestStepReportStructure step03 = FunctionalSteps.createStandardOppie(driver, stepsExecuted, testName, testExecutionString);
+			TestStepReportStructure step03 = CompanySFDS.createStandardOppie(driver, stepsExecuted, testName, testExecutionString);
 			testExecStructure.add(step03);
 			
 			if (step03.getStepStatus().toLowerCase().contains("failed")) 

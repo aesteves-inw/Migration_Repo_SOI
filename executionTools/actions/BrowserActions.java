@@ -10,8 +10,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import execStructure.TestData;
-
 
 public class BrowserActions {
 	
@@ -24,13 +22,31 @@ public class BrowserActions {
 		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 		
 	}
+
+	public static void waitUntilElementFade(WebDriver driver, String xpath) throws Exception
+	{
 	
+			for(int i=0;i<10;i++)
+			{
+				if(BrowserActions.isElementPresent(driver, xpath)==true)
+				{
+					Thread.sleep(1000);
+				}
+				else
+				{
+					break;
+				}
+			}
+
+	}
 	
 	//Elements validation
-	public static boolean isElementPresent(WebDriver driver, String webObject)
+ 	public static boolean isElementPresent(WebDriver driver, String webObject)
 	{
 		return driver.findElements(By.xpath(webObject)).size() > 0;
 	}
+ 	
+ 	
 	
 	public static WebElement expandRootElement(WebDriver driver, WebElement element) 
 	{
@@ -72,6 +88,13 @@ public class BrowserActions {
 	
 	}
 
+	public static WebElement getElement(WebDriver driver, String xpathElement) throws Exception
+	{
+		WebElement ele;
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		ele = (WebElement) (js).executeScript("return arguments[0]", xpathElement);
+		return ele;
+	}
 	
 	
 	//Elements attributes 

@@ -219,9 +219,37 @@ public class TestData {
 		return pConfig;
 	}
 
-
+	public static String[] getSalesforceUser(String user) throws Exception
+	{
+		
+		if(user.contains("regularUser"))
+		{
+			String[] finalUser= {TestData.searchDT(0, "envUserNameITTQA"), TestData.searchDT(0, "envPasswordITTQA")};
+			return finalUser;
+		}
+		else if(user.contains("approverProfile"))
+		{
+			String[] finalUser= {TestData.searchDT(0, "approverProfileUser"), TestData.searchDT(0, "approverProfilePass")};
+			return finalUser;
+		}
+		else if(user.contains("costumerSupportProfile"))
+		{
+			String[] finalUser= {TestData.searchDT(0, "costumerSupportProfileUser"), TestData.searchDT(0, "costumerSupportProfilePass")};
+			return finalUser;
+		}
+		else if(user.contains("salesSupportProfile"))
+		{
+			String[] finalUser= {TestData.searchDT(0, "salesSupportProfileUser"), TestData.searchDT(0, "salesSupportProfilePass")};
+			return finalUser;
+		}
+		else
+		{
+			throw new Exception("Not possible to identify User Profile");
+		}
+	}
 
 	// Orders Related View - SOI-80
+	
 	public static String allOrdersURL="https://proximusitqa--prxittqa.lightning.force.com/lightning/o/csord__Order__c/list?filterName=00B58000004rXxlEAE";
 
 	public static String myOrdersURL="https://proximusitqa--prxittqa.lightning.force.com/lightning/o/csord__Order__c/list?filterName=00B3E000002XCLdUAO";

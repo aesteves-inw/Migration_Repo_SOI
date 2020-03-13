@@ -622,7 +622,7 @@ public class OrderSFDS {
 
 	public static TestStepReportStructure navigateToFirstMACDOrder(WebDriver driver, WebDriverWait wait, String testName, int stepID) throws Exception
 	{
-		TestStepReportStructure step;
+		TestStepReportStructure navigateToFirstMACDOrder;
 		String stepName="Navigate to the first MACD Order on the Table";
 		String stepNameMin="navigateToFirstMACDOrder";
 		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);
@@ -638,8 +638,8 @@ public class OrderSFDS {
 			if(validation)
 			{
 				ExecStructure.screenShotTaking(driver, testName, evidenceName);
-				step=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('p', 'e'), ReportStructure.testReportFinalElement('p', 'a'), ReportStructure.testReportFinalElement('p', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
-				return step;
+				navigateToFirstMACDOrder=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('p', 'e'), ReportStructure.testReportFinalElement('p', 'a'), ReportStructure.testReportFinalElement('p', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+				return navigateToFirstMACDOrder;
 			}
 			else
 			{
@@ -651,8 +651,8 @@ public class OrderSFDS {
 		{
 			System.out.println(e);
 			ExecStructure.screenShotTaking(driver, testName, evidenceName);
-			step=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('f', 'e'), ReportStructure.testReportFinalElement('f', 'a'), ReportStructure.testReportFinalElement('f', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
-			return step;
+			navigateToFirstMACDOrder=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('f', 'e'), ReportStructure.testReportFinalElement('f', 'a'), ReportStructure.testReportFinalElement('f', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+			return navigateToFirstMACDOrder;
 		}
 	}
 

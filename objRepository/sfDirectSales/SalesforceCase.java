@@ -12,7 +12,9 @@ public class SalesforceCase {
 	
 	//06-03-2020 - Cases Detail Page
 	
-	public static String detailsBtn="//a[@id='detailTab__item']";
+	//public static String detailsBtn="//a[@id='detailTab__item']";
+	
+	public static String detailsBtn="/html/body/div[4]/div[1]/section/div/div/div[1]/div[3]/div/one-record-home-flexipage2/forcegenerated-flexipage_case_record_page_custom_case__view_js/flexipage-record-page-decorator/div/slot/flexipage-record-home-template-desktop2/div/div[2]/div[1]/slot/slot/flexipage-component2/force-progressive-renderer/slot/slot/flexipage-tabset2/div/lightning-tabset/div/lightning-tab-bar/ul/li[4]";
 	
 	public static String servicelinkRelatedMenu="//article[contains(.,'Services')]//a[starts-with(.,'Mobile')]";
 	
@@ -52,6 +54,8 @@ public class SalesforceCase {
 	
 	
 	//06-03-2020 - Case Page validation - SOI-880
+	
+	public static String caseStatusFieldLabel="//article/div/div[2]/div/div/div[2]/div/section/div[1]/div/div/div/div/div[4]/div[1]/div/div[2]/span/span";
 	
 	public static String caseOwnerFieldLabel="//article/div/div[2]/div/div/div[2]/div/section/div[1]/div/div/div/div/div[3]/div[1]/div/div[2]/span/span";
 

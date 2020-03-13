@@ -184,14 +184,17 @@ public class CaseSFDS {
 		
 		try
 		{
-			driver.findElement(By.xpath(SalesforceCase.detailsBtn)).click();
 			
-			waitcaseValidationBySOI880.until(ExpectedConditions.visibilityOfElementLocated(By.linkText(TestData.tdCompanyName(testName))));
+			
+			waitcaseValidationBySOI880.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath(SalesforceCase.keyDetailsArticle), TestData.tdCompanyName(testName)));
 			
 			String caseStatus=driver.findElement(By.xpath(SalesforceCase.caseStatusLabel)).getText();
 			String caseOwner=driver.findElement(By.xpath(SalesforceCase.caseOwnerFieldLabel)).getText();
 			
-			if(caseStatus.toLowerCase()=="open" && caseOwner.isEmpty()==false)
+			System.out.println("caseValidationBySOI880 Debug 01: "+caseStatus.toLowerCase().contains("open"));
+			System.out.println("caseOwner Debug 02: "+caseOwner.isEmpty());
+			
+			if(caseStatus.toLowerCase().contains("open") && (caseOwner.isEmpty()==false))
 			{
 				ExecStructure.screenShotTaking(driver, testName, evidenceName);
 				caseValidationBySOI880=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('p', 'e'), ReportStructure.testReportFinalElement('p', 'a'), ReportStructure.testReportFinalElement('p', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);

@@ -27,182 +27,9 @@ public class FunctionalActionsSFDS {
 
 
 
-	public static void createNewStandardOpportunity(WebDriver driver) throws Exception
-	{
-		WebDriverWait waitNSOS = new WebDriverWait(driver, 10);
+	
 
-		try
-		{	
-			
-			String rmOpportunitiesListViewlink = driver.findElement(By.xpath(SalesForceCompany.rmOpportunitieslink)).getAttribute("href");
-			
-			driver.get(rmOpportunitiesListViewlink);
-			
-			driver.findElement(By.xpath(SalesForceOpportunity.newButton)).click();
-			
-			waitNSOS.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesForceOpportunity.newOpportunityHeader)));
-			
-		}
-		catch(Exception e)
-		{
-			throw new Exception ("Navigation failed to New Opportunity Screen",e);
-		}
-	}
-
-	public static void inputOpportunityValues(WebDriver driver, String testExecutionString, String testName) throws Exception
-	{
-		WebDriverWait waitNSOS = new WebDriverWait(driver, 10);
-
-		String optyName="OPTY_"+testExecutionString;
-
-		String optyStage=TestData.searchDT(2, "optyStage");
-
-		String optyForecastCategory=TestData.searchDT(2, "optyForecastCategory");
-		
-
-		try
-		{
-			
-			driver.findElement(By.xpath(SalesForceOpportunity.inputOpportunityName)).clear();
-
-			driver.findElement(By.xpath(SalesForceOpportunity.inputOpportunityName)).sendKeys(optyName);
-
-			driver.findElement(By.xpath(SalesForceOpportunity.inputCloseDate)).clear();
-
-			driver.findElement(By.xpath(SalesForceOpportunity.inputCloseDate)).sendKeys(ExecStructure.formattedDate("dd/MM/yyyy"));
-
-			driver.findElement(By.xpath(SalesForceOpportunity.selectStage)).click();
-
-			waitNSOS.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@title='"+optyStage+"']"))).click();
-
-			driver.findElement(By.xpath(SalesForceOpportunity.selectForecastCategory)).click();
-
-			waitNSOS.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@title='"+optyForecastCategory+"']"))).click();
-			
-
-			//14-02-2020 - Adding Terms&Conditions value to the oppie
-
-			BrowserActions.verticalscrollByVisibleElement(driver, SalesForceOpportunity.additionalInformationTab);
-
-			driver.findElement(By.xpath(SalesForceOpportunity.termsAndConditionsComboBox)).click();
-
-			waitNSOS.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesForceOpportunity.termAndConditionsOption))).click();
-
-			driver.findElement(By.xpath(SalesForceOpportunity.nosSaveButton)).click();
-
-			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
-
-		}
-		catch(Exception e)
-		{
-			throw new Exception ("Input on Opportunity Screen Failed",e);
-		}
-	}
-
-	public static void addProductToOppie(WebDriver driver, String product) throws Exception
-	{
-		WebDriverWait waitAp2o = new WebDriverWait(driver, 10);
-
-		String product2Add = TestData.searchDT(2,product);
-
-		try
-		{
-			driver.findElement(By.xpath(SalesForceProducts.inputSearchProducts)).clear();
-
-			driver.findElement(By.xpath(SalesForceProducts.inputSearchProducts)).sendKeys(product2Add);
-			
-			driver.findElement(By.xpath(SalesForceProducts.inputSearchProducts)).sendKeys(Keys.ENTER);
-			
-			Thread.sleep(3000);
-			
-			driver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div[2]/div[2]/div[1]/div/div/table/tbody/tr[1]/td[2]/span/span/label/span[1]")).click();
-			
-			driver.findElement(By.xpath(SalesForceProducts.nextButtonScreen)).click();
-
-			waitAp2o.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesForceProducts.editProductHeader)));
-
-		}
-		catch(Exception e)
-		{
-			throw new Exception ("Add Product To Opportunity Failed",e);
-		}
-	}
-
-	public static void editProductConfiguration(WebDriver driver, int tcNumber) throws Exception
-	{
-		String[] config2Apply=TestData.prodConfiguration(tcNumber);
-
-		WebDriverWait wait = new WebDriverWait(driver,10);
-
-		try
-		{
-
-			driver.findElement(By.xpath(SalesForceProducts.totalContractValue)).click();
-
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesForceProducts.inputContractValue))).sendKeys(config2Apply[0]);
-
-			driver.findElement(By.xpath(SalesForceProducts.contractDuration)).click();
-
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesForceProducts.inputContratDuration))).sendKeys(config2Apply[1]);
-
-			driver.findElement(By.xpath(SalesForceProducts.revenueType)).click();
-			driver.findElement(By.xpath(SalesForceProducts.revenueType)).click();
-			driver.findElement(By.linkText(config2Apply[2])).click();
-
-			BrowserActions.ScrollByPixs(driver, 100, 0);
-
-			driver.findElement(By.xpath(SalesForceProducts.productRegimeType)).click();
-			driver.findElement(By.xpath(SalesForceProducts.productRegimeType2)).click();
-			driver.findElement(By.linkText(config2Apply[3])).click();
-
-			driver.findElement(By.xpath(SalesForceProducts.saveButtonEdit)).click();
-
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(SalesForceProducts.editProductHeader)));
-
-		}
-		catch(Exception e)
-		{
-			throw new Exception ("Edit Product Configuration Failed",e);
-		}
-	}
-
-	public static void closeWonOppie(WebDriver driver) throws Exception
-	{
-		WebDriverWait waitCWO = new WebDriverWait(driver, 10);
-		
-		Screen screen = new Screen();
-
-		try
-		{
-			screen.wait(SalesForceSikuli.closeOPTYBtn, 20);
-			
-			screen.click(SalesForceSikuli.closeOPTYBtn);
-			
-			screen.wait(SalesForceSikuli.selectClosedStageBtn, 20);
-			
-			screen.click(SalesForceSikuli.selectClosedStageBtn);
-			
-			waitCWO.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesForceOpportunity.ctomHeader)));
-
-			Select closedStage = new Select(driver.findElement(By.xpath("//select")));
-
-			closedStage.selectByVisibleText("Closed Won");
-
-			driver.findElement(By.xpath(SalesForceOpportunity.nosSaveButton)).click();
-
-			waitCWO.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(SalesForceOpportunity.ctomHeader)));
-
-			driver.navigate().refresh();
-
-			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
-
-		}
-		catch(Exception e)
-		{
-			throw new Exception ("Closing Won Opportunity - Failed",e);
-		}
-	}
-
+	
 	public static void navigate2Agreement(WebDriver driver, int stepID, String linkAgreementName) throws Exception
 	{
 		try
@@ -228,62 +55,9 @@ public class FunctionalActionsSFDS {
 		}
 	}
 
-	public static void findAgreementOnOPTY(WebDriver driver, int stepID, String linkAgreementName) throws Exception
-	{
-
-		WebDriverWait waitFAO = new WebDriverWait(driver, 10);
-
-		try
-		{
-
-			for(int i=0;i<2;i++)
-			{
-				waitFAO.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesForceOpportunity.agreementsContainer)));
-
-				BrowserActions.verticalScrollByPixs(driver, BrowserActions.getYOfElement(driver, SalesForceOpportunity.agreementsContainer));
-
-				Thread.sleep(3000);
-			}
 
 
-			waitFAO.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(linkAgreementName)));
-
-			BrowserActions.verticalScrollByPixs(driver, BrowserActions.getYOfElement(driver, linkAgreementName));
-
-		}
-		catch(Exception e)
-		{
-			throw new Exception("Test Procedure to find Agreement on Opportunity's Related Menu. Failed on StepID: "+stepID,e);
-		}
-	}
-
-	public static void findOrderOnCompany(WebDriver driver, int stepID) throws Exception
-	{
-		WebDriverWait waitFOC = new WebDriverWait(driver, 10);
-
-		try
-		{
-
-			for(int i=0;i<2;i++)
-			{
-				waitFOC.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesForceCompany.articleOrders)));
-
-				BrowserActions.verticalScrollByPixs(driver, BrowserActions.getYOfElement(driver, SalesForceCompany.articleOrders));
-
-				Thread.sleep(3000);
-			}
-
-
-			waitFOC.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesForceCompany.firstOrderLink)));
-
-			BrowserActions.verticalScrollByPixs(driver, BrowserActions.getYOfElement(driver, SalesForceCompany.firstOrderLink));
-
-		}
-		catch(Exception e)
-		{
-			throw new Exception("Test Procedure to find Agreement on Opportunity's Related Menu. Failed on StepID: "+stepID,e);
-		}
-	}
+	
 	
 	public static void addFile2Agreement(WebDriver driver, int stepID, String file2Upload) throws Exception
 	{
@@ -497,6 +271,10 @@ public class FunctionalActionsSFDS {
 		}
 	}
 
+	
+	
+	
+	
 
 }
 
