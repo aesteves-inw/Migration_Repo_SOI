@@ -16,7 +16,9 @@ public class SFPC_Agreements {
 	
 	public static String filesArea="//article[contains(.,'Files')]";
 	
-	public static String addFilesButton="//article[contains(.,'Files')]/div[2]/div/div/ul/li/a/div";
+	public static String addFilesButton="//span[text()='Upload Files']";
+	
+	public static String cssUploadFilesBtn="#file-selector-label-303 > span.slds-file-selector__button.slds-button.slds-button_neutral";
 	
 	public static String uploadFilesButton="//span[contains(.,'Upload Files')]";
 	

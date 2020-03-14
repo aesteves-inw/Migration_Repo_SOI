@@ -14,11 +14,64 @@ import actions.FunctionalActionsSFDS;
 import execReport.ReportStructure;
 import execReport.TestStepReportStructure;
 import execStructure.ExecStructure;
+import functionalActions.SFDS.Agreement;
 import sfDirectSales.SalesForceAgreement;
 import sfDirectSales.SalesForceOpportunity;
 import sfSikuli.SalesForceSikuli;
 
 public class AgreementSFDS {
+	
+	// 14-03-2020: Example/Template for steps
+				/*
+				public static TestStepReportStructure step(WebDriver driver, int stepID, String testName) throws Exception
+				{
+					TestStepReportStructure step;
+
+
+					String stepName="step";
+
+					String stepNameMin="step";
+
+					String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+					boolean validation;
+
+					try
+					{
+						<FUNCTIONAL STEPS>
+						
+						<FUNCTIONAL STEPS>
+						
+						<FUNCTIONAL STEPS>
+
+						validation = <FUNCTIONAL STEP FOR VALIDATION>
+
+						if(validation==true)
+						{
+							ExecStructure.screenShotTaking(driver, testName, evidenceName);
+							step=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('p', 'e'), ReportStructure.testReportFinalElement('p', 'a'), ReportStructure.testReportFinalElement('p', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+							return step;
+						}
+						else
+						{
+							throw new Exception (stepName+" - Failed in Step: "+stepID);
+						}
+
+
+					}
+					catch(Exception e)
+					{
+						System.out.println(e);
+						ExecStructure.screenShotTaking(driver, testName, evidenceName);
+						step=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('f', 'e'), ReportStructure.testReportFinalElement('f', 'a'), ReportStructure.testReportFinalElement('f', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+						return step;
+					}
+
+				}
+
+			*/
+	
 	
 	
 	// Navigation Steps
@@ -226,7 +279,7 @@ public class AgreementSFDS {
 		}
 	}
 
-	public static TestStepReportStructure editAgreement(WebDriver driver, WebDriverWait wait, String testName, int stepID, String editAgreementName) throws Exception
+	public static TestStepReportStructure editAgreement(WebDriver driver, WebDriverWait wait, String testName, int stepID, String testExecutionString) throws Exception
 	{
 		TestStepReportStructure editAgreement;
 
@@ -236,22 +289,17 @@ public class AgreementSFDS {
 		String stepNameMin="editAgreement";
 
 		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);
+		
+		
+		boolean validation;
 
 		try
 		{
-			driver.findElement(By.xpath("//button[@name='Edit'][contains(.,'Edit')]")).click();
+			Agreement.editAgreement(driver, wait, stepID, testExecutionString);
 			
-			driver.findElement(By.xpath("//input[@class=' input']")).clear();
-			
-			driver.findElement(By.xpath("//input[@class=' input']")).sendKeys(editAgreementName);
-			
-			driver.findElement(By.xpath("//button[@title='Save']/span[contains(.,'Save')]")).click();
-			
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//button[@title='Save']/span[contains(.,'Save')]")));
-			
-			String editVal=driver.findElement(By.xpath("//lightning-formatted-text[@data-output-element-id='output-field']")).getAttribute("value");
+			validation=Agreement.validateAgreementAfterEdition(driver, wait, stepID, testExecutionString);
 				
-			if(editVal.contains(editAgreementName))
+			if(validation == true)
 			{
 				ExecStructure.screenShotTaking(driver, testName, evidenceName);
 				editAgreement=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('p', 'e'), ReportStructure.testReportFinalElement('p', 'a'), ReportStructure.testReportFinalElement('p', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);

@@ -7,18 +7,13 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.sikuli.script.Screen;
 
 import execStructure.ExecStructure;
-import execStructure.TestData;
-import io.github.sukgu.Shadow;
 import sfDirectSales.SalesForceAgreement;
-import sfDirectSales.SalesForceCompany;
 import sfDirectSales.SalesForceOpportunity;
 import sfDirectSales.SalesForceOrders;
-import sfDirectSales.SalesForceProducts;
 import sfDirectSales.SalesForceService;
 import sfDirectSales.SalesforceNewMACDFlow;
 import sfSikuli.SalesForceSikuli;

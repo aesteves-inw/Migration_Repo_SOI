@@ -1,8 +1,9 @@
-package delivery01.soi_66;
+package delivery01.soi_68;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -19,12 +20,11 @@ import execReport.TestReportTestData;
 import execReport.TestStepReportStructure;
 import execStructure.ExecStructure;
 import execStructure.TestData;
-import functionalSteps.SFPC.AgreementSFPC;
-import functionalSteps.SFPC.CompanySFPC;
-import functionalSteps.SFPC.HomePageSFPC;
-import functionalSteps.SFPC.OpportunitySFPC;
+import functionalSteps.SFDS.CompanySFDS;
+import functionalSteps.SFDS.HomePageSFDS;
+import functionalSteps.SFDS.OpportunitySFDS;
 
-public class SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement {
+public class SOI_68_TC01_OrderCreation_From_OPTYClosure_Won_MobileVoice {
 
 	String testName = this.getClass().getName();
 
@@ -54,11 +54,9 @@ public class SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement {
 	
 	String companyContactPerson="Simple Ordering SixtyNine";
 
-
-	@BeforeTest
-	public void beforeTest() {
-
-		System.out.println("Test Case: "+testName+" initiation");
+  @BeforeTest
+  public void beforeTest() {
+	  System.out.println("Test Case: "+testName+" initiation");
 
 		ExecStructure.createReportStructure(testName);
 
@@ -78,11 +76,11 @@ public class SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement {
 
 		Chrome_Profile.addArguments("download.prompt_for_download", "false");
 
-		Chrome_Profile.addArguments("browser.helperApps.neverAsk.saveToDisk", "application/pdf"); 	
+		Chrome_Profile.addArguments("browser.helperApps.neverAsk.saveToDisk", "application/pdf");
 
 		driver = new ChromeDriver(Chrome_Profile); 
-		
-		wait = new WebDriverWait(driver, 15);
+
+		wait=new WebDriverWait(driver, 15);
 
 		Set<Cookie> allCookies = driver.manage().getCookies(); 
 
@@ -94,21 +92,27 @@ public class SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement {
 
 		}
 
-		testExecutionString = ExecStructure.formattedDate("yyyyMMdd")+"_TC4PC_Ex"+ExecStructure.numberOfSubFolders(ExecStructure.testFolder(testName));
-	}
-
-	@Test
-	public void step01() throws Exception {
+		testExecutionString = ExecStructure.formattedDate("yyyyMMdd")+"_TC1_Ex"+ExecStructure.numberOfSubFolders(ExecStructure.testFolder(testName));
 		
+		optyName="OPTY_"+testExecutionString;
+	}
+  
+  @Test
+	public void step01() throws Exception {
+
 		stepsExecuted++;
+
+		String userProfile="regularUser";
 
 		try 
 		{
-			TestStepReportStructure step01 = HomePageSFPC.loginSFPC(driver, stepsExecuted, testName);
+
+			TestStepReportStructure step01 = HomePageSFDS.loginSFDS(driver, testName, stepsExecuted, userProfile);
 			testExecStructure.add(step01);
 			
 			if (step01.getStepStatus().toLowerCase().contains("failed")) 
 			{
+
 				throw new Exception("Validation Failed on Step "+stepsExecuted);
 			}
 
@@ -116,25 +120,27 @@ public class SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement {
 		catch(Exception e)
 		{
 			System.out.println(e);
-			throw new Exception("Test Failed on Step "+stepsExecuted,e);
+			throw new Exception("Test Failed on Step 1",e);
 		}
+
 	}
-	
-	@Test(dependsOnMethods = "step01")
-	public void step02() throws Exception {
+  
+  @Test(dependsOnMethods = "step01")
+	public void step02() throws Exception {	
 		
 		stepsExecuted++;
 		
-		try 
+		try
 		{
-			TestStepReportStructure step02 = HomePageSFPC.navigate2CompDetailsPC(driver, testName, stepsExecuted, testExecutionString);
+			
+			TestStepReportStructure step02 = HomePageSFDS.navigate2CompanyDetails(driver, stepsExecuted, testName);
 			testExecStructure.add(step02);
 			
 			if (step02.getStepStatus().toLowerCase().contains("failed")) 
 			{
+			
 				throw new Exception("Validation Failed on Step "+stepsExecuted);
 			}
-
 		}
 		catch(Exception e)
 		{
@@ -145,43 +151,45 @@ public class SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement {
 	}
 	
 	@Test(dependsOnMethods = "step02")
-	public void step03() throws Exception {
+	public void step03() throws Exception {	
 		
 		stepsExecuted++;
-
-		try 
+		
+		try
 		{
-			TestStepReportStructure step03 = CompanySFPC.createNewOpportunity(driver, wait, stepsExecuted, testName, testExecutionString);
+			TestStepReportStructure step03 = CompanySFDS.createStandardOppie(driver, stepsExecuted, testName, testExecutionString);
 			testExecStructure.add(step03);
 			
 			if (step03.getStepStatus().toLowerCase().contains("failed")) 
 			{
+				
 				throw new Exception("Validation Failed on Step "+stepsExecuted);
 			}
-
 		}
 		catch(Exception e)
 		{
 			System.out.println(e);
 			throw new Exception("Test Failed on Step "+stepsExecuted,e);
 		}
+		
+		
 	}
 	
 	@Test(dependsOnMethods = "step03")
-	public void step04() throws Exception {
+	public void step04() throws Exception {	
 		
 		stepsExecuted++;
-		
-		try 
+			
+		try
 		{
-			TestStepReportStructure step04 = OpportunitySFPC.opportunityAddProductScreen(driver, wait, stepsExecuted, testName, testExecutionString);
+			TestStepReportStructure step04 = CompanySFDS.configNewMobileOpportunity(driver, wait, testName, testExecutionString, stepsExecuted);
 			testExecStructure.add(step04);
 			
 			if (step04.getStepStatus().toLowerCase().contains("failed")) 
 			{
+				
 				throw new Exception("Validation Failed on Step "+stepsExecuted);
 			}
-
 		}
 		catch(Exception e)
 		{
@@ -192,117 +200,65 @@ public class SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement {
 	}
 	
 	@Test(dependsOnMethods = "step04")
-	public void step05() throws Exception {
-		
+	public void step05() throws Exception 
+	{	
 		stepsExecuted++;
 		
-		try 
+		try
 		{
-			TestStepReportStructure step06 = OpportunitySFPC.optyProductConfiguration(driver, wait, stepsExecuted, testName, testExecutionString);
+			TestStepReportStructure step05 = OpportunitySFDS.soi66Validation(driver, testName, stepsExecuted, optyName);
+			testExecStructure.add(step05);
+			
+			if (step05.getStepStatus().toLowerCase().contains("failed")) 
+			{
+				
+				throw new Exception("Validation Failed on Step "+stepsExecuted);
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception("Test Failed on Step "+stepsExecuted,e);
+		}
+	}
+	
+	@Test(dependsOnMethods = "step05")
+	public void step06() throws Exception 
+	{	
+		stepsExecuted++;
+		
+		try
+		{
+			TestStepReportStructure step06 = OpportunitySFDS.navigate2Agreement(driver, testName, stepsExecuted, optyName);
 			testExecStructure.add(step06);
 			
 			if (step06.getStepStatus().toLowerCase().contains("failed")) 
 			{
+				
 				throw new Exception("Validation Failed on Step "+stepsExecuted);
 			}
-
 		}
 		catch(Exception e)
 		{
 			System.out.println(e);
 			throw new Exception("Test Failed on Step "+stepsExecuted,e);
 		}
-		
-		
 	}
 	
-	@Test(dependsOnMethods = "step05")
-	public void step06() throws Exception {
-		
-		stepsExecuted++;
-		
-		try 
-		{
-			TestStepReportStructure step07 = OpportunitySFPC.soi66validation(driver, wait, testName, stepsExecuted, testExecutionString);
-			testExecStructure.add(step07);
-			
-			if (step07.getStepStatus().toLowerCase().contains("failed")) 
-			{
-				throw new Exception("Validation Failed on Step "+stepsExecuted);
-			}
+	  @AfterTest
+	  public void afterTest() {
+		  
+			finalTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
 
-		}
-		catch(Exception e)
-		{
-			System.out.println(e);
-			throw new Exception("Test Failed on Step "+stepsExecuted,e);
-		}
-		
-	}
-	
-	@Test(dependsOnMethods = "step06")
-	public void step07() throws Exception {
-		
-		stepsExecuted++;
-		
-		try 
-		{
-			TestStepReportStructure step08 = AgreementSFPC.agreementValidation(driver, stepsExecuted, testName, testExecutionString);
-			testExecStructure.add(step08);
-			
-			if (step08.getStepStatus().toLowerCase().contains("failed")) 
-			{
-				throw new Exception("Validation Failed on Step "+stepsExecuted);
-			}
+			finishTime=System.nanoTime();
 
-		}
-		catch(Exception e)
-		{
-			System.out.println(e);
-			throw new Exception("Test Failed on Step "+stepsExecuted,e);
-		}
-		
-	}
-	
-	@Test(dependsOnMethods = "step07")
-	public void step08() throws Exception 
-	{
-		stepsExecuted++;
-		
-		try 
-		{
-			TestStepReportStructure step08 = AgreementSFPC.addFile2Agreement(driver, stepsExecuted, testName);
-			testExecStructure.add(step08);
-			
-			if (step08.getStepStatus().toLowerCase().contains("failed")) 
-			{
-				throw new Exception("Validation Failed on Step "+stepsExecuted);
-			}
+			TestReportHeaderStructure testHeader = new TestReportHeaderStructure(testName, initialTestDate, finalTestDate, startTime, finishTime, stepsExecuted);
 
-		}
-		catch(Exception e)
-		{
-			System.out.println(e);
-			throw new Exception("Test Failed on Step "+stepsExecuted,e);
-		}
-		
-	}
-	
-	@AfterTest
-	public void afterTest() {
+			new CreateTestReport(testExecStructure, testHeader, testData);
 
-		finalTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
+			System.out.println("Test Case: "+testName+" completion");
 
-		finishTime=System.nanoTime();
-
-		TestReportHeaderStructure testHeader = new TestReportHeaderStructure(testName, initialTestDate, finalTestDate, startTime, finishTime, stepsExecuted);
-
-		new CreateTestReport(testExecStructure, testHeader, testData);
-
-		System.out.println("Test Case: "+testName+" completion");
-
-		BrowserActions.endSession(driver);
-
-	}
-	
+			BrowserActions.endSession(driver);
+	  }
+	  
 }

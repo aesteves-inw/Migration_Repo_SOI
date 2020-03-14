@@ -14,34 +14,56 @@ import sfDirectSales.SalesForceAgreement;
 import sfSikuli.SalesForceSikuli;
 
 public class Agreement {
-	
+
+	// Regular Actions
+	/*02-03-2020:LMA
+	 * sketch for every regular functions
+	 *=====================================
+	 *String actionName="";
+
+
+					try
+					{
+						<JAVA CODE>
+
+						System.out.println(actionName+" - Succeeded in Step "+stepID);
+
+					}
+					catch(Exception e)
+					{
+						System.out.println(e);
+						throw new Exception (actionName+" - Failed in Step "+stepID,e);
+					}
+
+	 */
+
 	public static void navigateToOpportunity(WebDriver driver, int stepID, String optyURL) throws Exception
 	{
 		String actionName = "Agreement: Navigation to Opportunity";
-		
-		
+
+
 		try
 		{
 			driver.get(optyURL);
-			
+
 			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
-			
+
 			System.out.println(actionName+" - Succeeded in Step "+stepID);
-			
+
 		}
 		catch(Exception e)
 		{
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
-		
-		
+
+
 	}
-	
+
 	public static void addFile2Agreement(WebDriver driver, WebDriverWait wait, int stepID, String file2Upload) throws Exception
 	{
 		String actionName = "Agreement: Add file to Agreement";
-		
-		
+
+
 		Screen screen = new Screen();	
 
 		String agreementFileTestData=ExecStructure.workingDir+"\\testData\\"+file2Upload+".pdf";
@@ -50,13 +72,13 @@ public class Agreement {
 		try
 		{
 			//driver.findElement(By.xpath(SalesForceAgreement.uploadFilesBtn)).click();
-			
+
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//article[contains(.,'Files')]")));
 
 			WebElement uploadFilesBTN=driver.findElement(By.xpath("//*[starts-with(@id,'file-selector-label-')]/span[1]"));
 
 			uploadFilesBTN.click();
-			
+
 			// Sikuli: Snippet for adding File to Agreement
 			// ==============================================
 			//screen.click(SalesForceSikuli.uploadFilesButton);
@@ -76,9 +98,9 @@ public class Agreement {
 			screen.click(SalesForceSikuli.doneButton);
 
 			// ==============================================
-			
+
 			//Thread.sleep(10000);
-			
+
 			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 
 			WebElement file = driver.findElement(By.xpath(SalesForceAgreement.filesContainer.concat("//a[contains(.,'"+file2Upload+"')]")));
@@ -87,7 +109,7 @@ public class Agreement {
 			{
 				throw new Exception (actionName+" - Failed in Step "+stepID);
 			}
-			
+
 			System.out.println(actionName+" - Succeeded in Step "+stepID);
 
 		}
@@ -96,5 +118,95 @@ public class Agreement {
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
 	}
-	
+
+	public static void editAgreement(WebDriver driver, WebDriverWait wait, int stepID, String testExecutionString) throws Exception
+	{
+		String actionName="Agreement: Edit Agreement";
+
+		String editAgreementName="Agreement_"+testExecutionString;
+
+		try
+		{
+			driver.findElement(By.xpath("//button[@name='Edit'][contains(.,'Edit')]")).click();
+
+			driver.findElement(By.xpath("//input[@class=' input']")).clear();
+
+			driver.findElement(By.xpath("//input[@class=' input']")).sendKeys(editAgreementName);
+
+			driver.findElement(By.xpath("//button[@title='Save']/span[contains(.,'Save')]")).click();
+
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//button[@title='Save']/span[contains(.,'Save')]")));
+
+			
+
+
+			System.out.println(actionName+" - Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+
+	}
+
+
+
+	// Validation Actions
+	/*02-03-2020:LMA
+	 * sketch for every validation functions
+	 *=====================================
+	 *String actionName="";
+	 * 	try
+							{
+								if()
+								{
+									System.out.println(actionName+" - Succeeded in Step: "+stepID);
+									return true;
+								}
+								else
+								{
+									return false;
+								}
+
+							}
+							catch(Exception e)
+							{
+								System.out.println(e);
+								throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+							}
+
+	 */
+
+	public static boolean validateAgreementAfterEdition(WebDriver driver, WebDriverWait wait, int stepID, String testExecutionString) throws Exception
+	{
+		String actionName="Agreement: Agreement validation after edition";
+		
+		
+		String editAgreementName="Agreement_"+testExecutionString;
+		
+		
+		try
+		{
+			String editVal=driver.findElement(By.xpath("//lightning-formatted-text[@data-output-element-id='output-field']")).getAttribute("value");
+			
+			if(editVal.contains(editAgreementName))
+			{
+				System.out.println(actionName+" - Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
+
 }

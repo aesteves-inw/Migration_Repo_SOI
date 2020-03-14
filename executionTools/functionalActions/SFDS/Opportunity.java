@@ -346,7 +346,8 @@ public class Opportunity {
 		catch(Exception e)
 		{
 			System.out.println(e);
-			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+			//throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+			return false;
 		}
 
 	}

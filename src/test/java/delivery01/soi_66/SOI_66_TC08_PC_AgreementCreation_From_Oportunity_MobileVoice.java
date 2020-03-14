@@ -3,15 +3,10 @@ package delivery01.soi_66;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -24,12 +19,10 @@ import execReport.TestReportTestData;
 import execReport.TestStepReportStructure;
 import execStructure.ExecStructure;
 import execStructure.TestData;
-import sfPartnersCommunity.SFPC_Agreements;
-import sfPartnersCommunity.SFPC_Company;
-import sfPartnersCommunity.SFPC_HomePage;
-import sfPartnersCommunity.SFPC_LoginPage;
-import sfPartnersCommunity.SFPC_Opportunity;
-import sfPartnersCommunity.SFPC_Products;
+import functionalSteps.SFPC.AgreementSFPC;
+import functionalSteps.SFPC.CompanySFPC;
+import functionalSteps.SFPC.HomePageSFPC;
+import functionalSteps.SFPC.OpportunitySFPC;
 
 public class SOI_66_TC08_PC_AgreementCreation_From_Oportunity_MobileVoice {
 
@@ -55,7 +48,6 @@ public class SOI_66_TC08_PC_AgreementCreation_From_Oportunity_MobileVoice {
 	
 	private WebDriverWait wait;
 	
-	private String oppiename;
 
 	@BeforeTest
 	public void beforeTest() {
@@ -99,54 +91,27 @@ public class SOI_66_TC08_PC_AgreementCreation_From_Oportunity_MobileVoice {
 		testExecutionString = ExecStructure.formattedDate("yyyyMMdd")+"_TC4PC_Ex"+ExecStructure.numberOfSubFolders(ExecStructure.testFolder(testName));
 	}
 
-
 	@Test
 	public void step01() throws Exception {
 		
 		stepsExecuted++;
 
-		String envURL=TestData.searchDT(1, "environmentITTQA");
-
-		String username=TestData.searchDT(1, "envUserNameITTQA");
-
-		String password=TestData.searchDT(1, "envPasswordITTQA");
-
-		try
+		try 
 		{
-			driver.get(envURL);
-
-			driver.findElement(By.xpath(SFPC_LoginPage.inputUserame)).sendKeys(username);
-
-			driver.findElement(By.xpath(SFPC_LoginPage.inputPassword)).sendKeys(password);
-
-			driver.findElement(By.xpath(SFPC_LoginPage.loginButton)).click();
-
-			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
-
-			if(BrowserActions.isElementPresent(driver, SFPC_HomePage.headerNavigationBar) && BrowserActions.isElementPresent(driver, SFPC_HomePage.quickCreateButton) && BrowserActions.isElementPresent(driver, SFPC_HomePage.inputSearchBar) && BrowserActions.isElementPresent(driver, SFPC_HomePage.dashboard))
+			TestStepReportStructure step01 = HomePageSFPC.loginSFPC(driver, stepsExecuted, testName);
+			testExecStructure.add(step01);
+			
+			if (step01.getStepStatus().toLowerCase().contains("failed")) 
 			{
-				ExecStructure.screenShotTaking(driver, testName, 1+"_LoginScreen");
-				TestStepReportStructure step01 = new TestStepReportStructure(1, "Login into Salesforce", "Login with success", "Login in Salesforce with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), 1+"_LoginScreen");
-				testExecStructure.add(step01);
+				throw new Exception("Validation Failed on Step "+stepsExecuted);
 			}
-			else
-			{
-				throw new Exception("Not possible to perform login on Partners Community");
-			}
-
 
 		}
 		catch(Exception e)
 		{
 			System.out.println(e);
-			ExecStructure.screenShotTaking(driver, testName, 1+"_LoginScreen");
-			TestStepReportStructure step01 = new TestStepReportStructure(1, "Login into Salesforce", "Login with success", "Login in Salesforce with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), 1+"_LoginScreen");
-			testExecStructure.add(step01);
-			stepsExecuted++;
-			throw new Exception("Test Failed on Step 1",e);
-
+			throw new Exception("Test Failed on Step "+stepsExecuted,e);
 		}
-
 	}
 	
 	@Test(dependsOnMethods = "step01")
@@ -154,92 +119,45 @@ public class SOI_66_TC08_PC_AgreementCreation_From_Oportunity_MobileVoice {
 		
 		stepsExecuted++;
 		
-		String companyURL=(TestData.searchDT(1, "environmentITTQA")).concat(TestData.searchDT(1, "CompanyDetails")).concat(TestData.tdCompanyID(testName));
-		
-		try
+		try 
 		{
-			driver.get(companyURL);
+			TestStepReportStructure step02 = HomePageSFPC.navigate2CompDetailsPC(driver, testName, stepsExecuted, testExecutionString);
+			testExecStructure.add(step02);
 			
-			if(BrowserActions.isElementPresent(driver, SFPC_Company.buttonFollow) && BrowserActions.isElementPresent(driver, SFPC_Company.buttonNewMACDOrder) && BrowserActions.isElementPresent(driver, SFPC_Company.buttonEdit) && BrowserActions.isElementPresent(driver, SFPC_Company.relListNewOPTYButton) && BrowserActions.isElementPresent(driver, SFPC_Company.relListAgreementsLink) && BrowserActions.isElementPresent(driver, SFPC_Company.companyDetails) && BrowserActions.isElementPresent(driver, SFPC_Company.headerCompany))
+			if (step02.getStepStatus().toLowerCase().contains("failed")) 
 			{
-				ExecStructure.screenShotTaking(driver, testName, 2+"_Navigate2CompDetails");
-				TestStepReportStructure step02 = new TestStepReportStructure(2, "Navigation to Company Details", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), 2+"_Navigate2CompDetails");
-				testExecStructure.add(step02);
+				throw new Exception("Validation Failed on Step "+stepsExecuted);
 			}
-			else
-			{
-				throw new Exception("Not possible to validate Company Details Page on Partners Community");
-			}
+
 		}
 		catch(Exception e)
 		{
 			System.out.println(e);
-			ExecStructure.screenShotTaking(driver, testName, 2+"_Navigate2CompDetails");
-			TestStepReportStructure step02 = new TestStepReportStructure(2, "Navigation to Company Details", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), 2+"_Navigate2CompDetails");
-			testExecStructure.add(step02);
-			throw new Exception("Test Failed on Step 2",e);
+			throw new Exception("Test Failed on Step "+stepsExecuted,e);
 		}
+		
 	}
-	
 	
 	@Test(dependsOnMethods = "step02")
 	public void step03() throws Exception {
 		
 		stepsExecuted++;
-		
-		oppiename="OPTY_"+testExecutionString;
-		
-		String optyStage=TestData.searchDT(2, "optyStage");
-		
-		String optyForecastCategory=TestData.searchDT(2, "optyForecastCategory");
-	
-		try
+
+		try 
 		{
-			driver.findElement(By.xpath(SFPC_Company.newOppieButton)).click();
+			TestStepReportStructure step03 = CompanySFPC.createNewOpportunity(driver, wait, stepsExecuted, testName, testExecutionString);
+			testExecStructure.add(step03);
 			
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SFPC_Opportunity.newOpportunityHeader)));
-			
-			driver.findElement(By.xpath(SFPC_Opportunity.inputOpportunityName)).clear();
-			driver.findElement(By.xpath(SFPC_Opportunity.inputOpportunityName)).sendKeys(oppiename);
-			
-			driver.findElement(By.xpath(SFPC_Opportunity.inputCloseDate)).clear();
-			driver.findElement(By.xpath(SFPC_Opportunity.inputCloseDate)).sendKeys(ExecStructure.formattedDate("dd/MM/yyyy"));
-			
-			driver.findElement(By.xpath(SFPC_Opportunity.selectStage)).click();
-			
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@title='"+optyStage+"']"))).click();
-			
-			driver.findElement(By.xpath(SFPC_Opportunity.selectForecastCategory)).click();
-			
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@title='"+optyForecastCategory+"']"))).click();
-						
-			driver.findElement(By.xpath(SFPC_Opportunity.saveButton)).click();
-			
-			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
-			
-			WebElement oppieLink=driver.findElement(By.linkText(oppiename));
-			
-			if(oppieLink.isDisplayed())
+			if (step03.getStepStatus().toLowerCase().contains("failed")) 
 			{
-				ExecStructure.screenShotTaking(driver, testName, 3+"_CreateNewOppie");
-				TestStepReportStructure step03 = new TestStepReportStructure(3, "Create new Opportunity", "Opportunity created with success", "Created with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), 3+"_CreateNewOppie");
-				testExecStructure.add(step03);
+				throw new Exception("Validation Failed on Step "+stepsExecuted);
 			}
-			else
-			{
-				throw new Exception ("Not possible to create Opportunity");
-			}
-			
-			
-			
+
 		}
 		catch(Exception e)
 		{
 			System.out.println(e);
-			ExecStructure.screenShotTaking(driver, testName, 3+"_CreateNewOppie");
-			TestStepReportStructure step03 = new TestStepReportStructure(3, "Create new Opportunity", "Opportunity created with success", "Not possible to create Opportunity", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), 3+"_CreateNewOppie");
-			testExecStructure.add(step03);
-			throw new Exception("Test Failed on Step 3",e);
+			throw new Exception("Test Failed on Step "+stepsExecuted,e);
 		}
 	}
 	
@@ -248,79 +166,48 @@ public class SOI_66_TC08_PC_AgreementCreation_From_Oportunity_MobileVoice {
 		
 		stepsExecuted++;
 		
-		try
+		try 
 		{
-			driver.findElement(By.linkText(oppiename)).click();
+			TestStepReportStructure step04 = OpportunitySFPC.opportunityAddProductScreen(driver, wait, stepsExecuted, testName, testExecutionString);
+			testExecStructure.add(step04);
 			
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SFPC_Opportunity.optyDetails)));
-			
-			driver.findElement(By.xpath(SFPC_Opportunity.addProductsButton)).click();
-			
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SFPC_Opportunity.optyDetails)));
-			
-			if(BrowserActions.isElementPresent(driver,SFPC_Products.addProductsHeader) && BrowserActions.isElementPresent(driver,SFPC_Products.inputSearchProducts) && BrowserActions.isElementPresent(driver,SFPC_Products.nextButton) && BrowserActions.isElementPresent(driver,SFPC_Products.cancelButton) && BrowserActions.isElementPresent(driver,SFPC_Products.productTable))
+			if (step04.getStepStatus().toLowerCase().contains("failed")) 
 			{
-				ExecStructure.screenShotTaking(driver, testName, "4_AddProductScreenValidation");
-				TestStepReportStructure step04 = new TestStepReportStructure(4, "Add Product Screen validation", "Validation with success", "Validated with success.", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "4_AddProductScreenValidation");
-				testExecStructure.add(step04);
-				stepsExecuted=4;
+				throw new Exception("Validation Failed on Step "+stepsExecuted);
 			}
-			else
-			{
-				throw new Exception ("Not possible to validate add product screen");
-			}
-			
+
 		}
 		catch(Exception e)
 		{
 			System.out.println(e);
-			ExecStructure.screenShotTaking(driver, testName, "4_AddProductScreenValidation");
-			TestStepReportStructure step04 = new TestStepReportStructure(4, "Add Product Screen validation", "Validation with success", "Not possible to validate.", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "4_AddProductScreenValidation");
-			testExecStructure.add(step04);
-			throw new Exception("Test Failed on Step 4",e);
+			throw new Exception("Test Failed on Step "+stepsExecuted,e);
 		}
+		
 	}
-	
 	
 	@Test(dependsOnMethods = "step04")
 	public void step05() throws Exception {
 		
 		stepsExecuted++;
 		
-		String mobileVoice=TestData.searchDT(3, "mobileVoice");
-		
-		String mobileVoiceProduct="//div[@title='"+mobileVoice+"']";
-		
-		try
+		try 
 		{
-			driver.findElement(By.xpath(SFPC_Products.inputSearchProducts)).sendKeys(mobileVoice);
+			TestStepReportStructure step06 = OpportunitySFPC.optyProductConfiguration(driver, wait, stepsExecuted, testName, testExecutionString);
+			testExecStructure.add(step06);
 			
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(mobileVoiceProduct))).click();
-			
-			driver.findElement(By.xpath(SFPC_Products.nextButton)).click();
-			
-			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
-			
-			if(BrowserActions.isElementPresent(driver,SFPC_Products.headerEditSelectedProducts) && BrowserActions.isElementPresent(driver,SFPC_Products.backButton) && BrowserActions.isElementPresent(driver,SFPC_Products.totalContractValue) && BrowserActions.isElementPresent(driver,SFPC_Products.contractDuration) && BrowserActions.isElementPresent(driver,SFPC_Products.revenueType) && BrowserActions.isElementPresent(driver,SFPC_Products.productRegime))
+			if (step06.getStepStatus().toLowerCase().contains("failed")) 
 			{
-				ExecStructure.screenShotTaking(driver, testName, "5_MobileVoiceAddedtoOppie");
-				TestStepReportStructure step05 = new TestStepReportStructure(5, "Mobile Voice product adiction validation", "Validation with success", "Validated with success.", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "5_MobileVoiceAddedtoOppie");
-				testExecStructure.add(step05);
+				throw new Exception("Validation Failed on Step "+stepsExecuted);
 			}
-			else
-			{
-				throw new Exception ("Not possible to add Mobile Voice Product");
-			}
-			
+
 		}
 		catch(Exception e)
 		{
 			System.out.println(e);
-			ExecStructure.screenShotTaking(driver, testName, "5_MobileVoiceAddedtoOppie");
-			TestStepReportStructure step05 = new TestStepReportStructure(5, "Mobile Voice product adiction validation", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "5_MobileVoiceAddedtoOppie");
-			testExecStructure.add(step05);
-			throw new Exception("Test Failed on Step 5",e);
+			throw new Exception("Test Failed on Step "+stepsExecuted,e);
 		}
+		
+		
 	}
 	
 	@Test(dependsOnMethods = "step05")
@@ -328,58 +215,21 @@ public class SOI_66_TC08_PC_AgreementCreation_From_Oportunity_MobileVoice {
 		
 		stepsExecuted++;
 		
-		String[] config2Apply=TestData.prodConfiguration(1);
-		
-		String mobileVoice=TestData.searchDT(3, "mobileVoice");
-		
-		String lineItemOppie=(SFPC_Opportunity.productsArea).concat("//a[contains(.,'"+mobileVoice+"')]");
-		
-		String generatedAgreement=(SFPC_Opportunity.agreementsArea).concat("//a[contains(.,'"+oppiename+"')]");
-		
-		try
+		try 
 		{
+			TestStepReportStructure step07 = OpportunitySFPC.soi66validation(driver, wait, testName, stepsExecuted, testExecutionString);
+			testExecStructure.add(step07);
+			
+			if (step07.getStepStatus().toLowerCase().contains("failed")) 
+			{
+				throw new Exception("Validation Failed on Step "+stepsExecuted);
+			}
 
-			driver.findElement(By.xpath(SFPC_Products.totalContractValue)).click();
-			
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SFPC_Products.inputContractValue))).sendKeys(config2Apply[0]);
-			
-			driver.findElement(By.xpath(SFPC_Products.contractDuration)).click();
-			
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SFPC_Products.inputContratDuration))).sendKeys(config2Apply[1]);
-			
-			driver.findElement(By.xpath(SFPC_Products.revenueType)).click();
-			driver.findElement(By.xpath(SFPC_Products.revenueType2)).click();
-			driver.findElement(By.linkText(config2Apply[2])).click();
-			
-			BrowserActions.ScrollByPixs(driver, 100, 0);
-			
-			driver.findElement(By.xpath(SFPC_Products.productRegime)).click();
-			driver.findElement(By.xpath(SFPC_Products.productRegime2)).click();
-			driver.findElement(By.linkText(config2Apply[3])).click();
-			
-			driver.findElement(By.xpath(SFPC_Products.saveButton)).click();
-			
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(SFPC_Products.headerEditSelectedProducts)));
-			
-			if(BrowserActions.isElementPresent(driver, lineItemOppie) && BrowserActions.isElementPresent(driver, generatedAgreement))
-			{
-				ExecStructure.screenShotTaking(driver, testName, "6_MobileVoiceEditedtoOppie");
-				TestStepReportStructure step06 = new TestStepReportStructure(6, "Mobile Voice product edition validation", "Validation with success", "Validated with success.", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "6_MobileVoiceEditedtoOppie");
-				testExecStructure.add(step06);
-			}
-			else
-			{
-				throw new Exception ("Not possible to edit Mobile Voice Product");
-			}
-						
 		}
 		catch(Exception e)
 		{
 			System.out.println(e);
-			ExecStructure.screenShotTaking(driver, testName, "6_MobileVoiceEditedtoOppie");
-			TestStepReportStructure step06 = new TestStepReportStructure(6, "Mobile Voice product edition validation", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "6_MobileVoiceEditedtoOppie");
-			testExecStructure.add(step06);
-			throw new Exception("Test Failed on Step 6",e);
+			throw new Exception("Test Failed on Step "+stepsExecuted,e);
 		}
 		
 	}
@@ -389,34 +239,21 @@ public class SOI_66_TC08_PC_AgreementCreation_From_Oportunity_MobileVoice {
 		
 		stepsExecuted++;
 		
-		String generatedAgreement=(SFPC_Opportunity.agreementsArea).concat("//a[contains(.,'"+oppiename+"')]");
-		
-		try
+		try 
 		{
-			driver.findElement(By.xpath(generatedAgreement)).click();
+			TestStepReportStructure step08 = AgreementSFPC.agreementValidation(driver, stepsExecuted, testName, testExecutionString);
+			testExecStructure.add(step08);
 			
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SFPC_Agreements.agreementsDetails)));
-			
-			
-			if(BrowserActions.isElementPresent(driver,SFPC_Agreements.agreementsDetails) && BrowserActions.isElementPresent(driver,SFPC_Agreements.agreementHeader) && BrowserActions.isElementPresent(driver,SFPC_Agreements.filesArea) && BrowserActions.isElementPresent(driver,SFPC_Agreements.addFilesButton))
+			if (step08.getStepStatus().toLowerCase().contains("failed")) 
 			{
-				ExecStructure.screenShotTaking(driver, testName, "7_AgreementValdiation");
-				TestStepReportStructure step07 = new TestStepReportStructure(7, "Generated Agreement validation", "Validation with success", "Validated with success.", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "7_AgreementValdiation");
-				testExecStructure.add(step07);
+				throw new Exception("Validation Failed on Step "+stepsExecuted);
 			}
-			else
-			{
-				throw new Exception ("Not possible to validate generated Agreement");
-			}
-			
+
 		}
 		catch(Exception e)
 		{
 			System.out.println(e);
-			ExecStructure.screenShotTaking(driver, testName, "7_AgreementValdiation");
-			TestStepReportStructure step07 = new TestStepReportStructure(7, "Generated Agreement validation", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), "7_AgreementValdiation");
-			testExecStructure.add(step07);
-			throw new Exception("Test Failed on Step 7",e);
+			throw new Exception("Test Failed on Step "+stepsExecuted,e);
 		}
 		
 	}

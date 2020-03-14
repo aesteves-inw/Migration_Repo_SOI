@@ -74,35 +74,7 @@ public class FunctionalActionsSFPC {
 		}
 	}
 
-	public static TestStepReportStructure navigate2CompDetailsPC(WebDriver driver, String testName, int stepID) throws Exception
-	{
-		TestStepReportStructure nav2comp;
 
-		String companyURL=(TestData.searchDT(1, "environmentITTQA")).concat(TestData.searchDT(1, "CompanyDetails")).concat(TestData.tdCompanyID(testName));
-
-		try
-		{
-			driver.get(companyURL);
-
-			if(BrowserActions.isElementPresent(driver, SFPC_Company.buttonFollow) && BrowserActions.isElementPresent(driver, SFPC_Company.buttonNewMACDOrder) && BrowserActions.isElementPresent(driver, SFPC_Company.buttonEdit) && BrowserActions.isElementPresent(driver, SFPC_Company.relListNewOPTYButton) && BrowserActions.isElementPresent(driver, SFPC_Company.relListAgreementsLink) && BrowserActions.isElementPresent(driver, SFPC_Company.companyDetails) && BrowserActions.isElementPresent(driver, SFPC_Company.headerCompany))
-			{
-				ExecStructure.screenShotTaking(driver, testName, stepID+"_Navigate2CompDetails");
-				nav2comp = new TestStepReportStructure(stepID, "Navigation to Company Details", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_Navigate2CompDetails");
-				return nav2comp;
-			}
-			else
-			{
-				throw new Exception("Not possible to validate Company Details Page on Partners Community");
-			}
-		}
-		catch(Exception e)
-		{
-			System.out.println(e);
-			ExecStructure.screenShotTaking(driver, testName, stepID+"_Navigate2CompDetails");
-			nav2comp = new TestStepReportStructure(stepID, "Navigation to Company Details", "Validation with success", "Not possible to validate", "Failed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepID+"_Navigate2CompDetails");
-			return nav2comp;
-		}
-	}
 
 	public static TestStepReportStructure createNewOppie(WebDriver driver, WebDriverWait wait, String testName, int stepID, String testExecutionString, String optyStage, String optyForecastCategory) throws Exception 
 	{
@@ -276,49 +248,7 @@ public class FunctionalActionsSFPC {
 	
 	public static void addFile2Agreement(WebDriver driver, int stepID) throws Exception
 	{
-			Screen screen = new Screen();	
-		
-			String file2Upload="SimpleOrdering_Dummy_File";
 			
-			String agreementFileTestData=ExecStructure.workingDir+"\\testData\\"+file2Upload+".pdf";
-		
-		try
-		{
-			screen.wait(SalesForceSikuli.uploadFilesPCButton, 20);
-			
-			screen.click(SalesForceSikuli.uploadFilesPCButton);
-			
-			screen.wait(SalesForceSikuli.uploadBarFilePathOpenCancel, 20);
-			
-			screen.find(SalesForceSikuli.filePath);
-			
-			screen.paste(agreementFileTestData);
-			
-			screen.click(SalesForceSikuli.openButton);
-			
-			screen.wait(SalesForceSikuli.uploadFilesDoneSalesforce, 20);
-			
-			screen.wait(SalesForceSikuli.doneButton, 20);
-			
-			screen.click(SalesForceSikuli.doneButton);
-			
-			
-			Thread.sleep(10000);
-			
-									
-			WebElement file = driver.findElement(By.xpath(SalesForceAgreement.filesContainer.concat("//a[contains(.,'"+file2Upload+"')]")));
-			
-			if (file.isDisplayed() == false)
-			{
-				throw new Exception("Not possible to Add File on Agreement on Step ID: "+stepID);
-			}
-
-		}
-		catch(Exception e)
-		{
-			System.out.println(e);
-			throw new Exception("Test Procedure to Add File to Agreement. Failed on StepID: "+stepID,e);
-		}
 	}
 		
 	public static void addFile2MACDOrder(WebDriver driver, int stepID) throws Exception
