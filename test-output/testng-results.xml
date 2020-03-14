@@ -1,45 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
+<testng-results skipped="0" failed="0" ignored="0" total="8" passed="8">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="101670" started-at="2020-03-13T17:51:04Z" finished-at="2020-03-13T17:52:45Z">
+  <suite name="Default suite" duration-ms="110560" started-at="2020-03-14T17:47:00Z" finished-at="2020-03-14T17:48:51Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="101670" started-at="2020-03-13T17:51:04Z" finished-at="2020-03-13T17:52:45Z">
-      <class name="delivery01.soi_66.SOI_66_TC1_AgreementCreation_From_Oportunity_MobileVoice">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:delivery01.soi_66.SOI_66_TC1_AgreementCreation_From_Oportunity_MobileVoice@4dfa3a9d]" name="beforeTest" is-config="true" duration-ms="7562" started-at="2020-03-13T17:51:04Z" finished-at="2020-03-13T17:51:11Z">
+    <test name="Default test" duration-ms="110560" started-at="2020-03-14T17:47:00Z" finished-at="2020-03-14T17:48:51Z">
+      <class name="delivery01.soi_66.SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:delivery01.soi_66.SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement@6eebc39e]" name="beforeTest" is-config="true" duration-ms="7843" started-at="2020-03-14T17:47:00Z" finished-at="2020-03-14T17:47:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="step01()[pri:0, instance:delivery01.soi_66.SOI_66_TC1_AgreementCreation_From_Oportunity_MobileVoice@4dfa3a9d]" name="step01" duration-ms="11659" started-at="2020-03-13T17:51:11Z" finished-at="2020-03-13T17:51:23Z">
+        <test-method status="PASS" signature="step01()[pri:0, instance:delivery01.soi_66.SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement@6eebc39e]" name="step01" duration-ms="9308" started-at="2020-03-14T17:47:08Z" finished-at="2020-03-14T17:47:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step01 -->
-        <test-method status="PASS" signature="step02()[pri:0, instance:delivery01.soi_66.SOI_66_TC1_AgreementCreation_From_Oportunity_MobileVoice@4dfa3a9d]" name="step02" duration-ms="8207" started-at="2020-03-13T17:51:23Z" depends-on-methods="delivery01.soi_66.SOI_66_TC1_AgreementCreation_From_Oportunity_MobileVoice.step01" finished-at="2020-03-13T17:51:31Z">
+        <test-method status="PASS" signature="step02()[pri:0, instance:delivery01.soi_66.SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement@6eebc39e]" name="step02" duration-ms="6337" started-at="2020-03-14T17:47:17Z" depends-on-methods="delivery01.soi_66.SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement.step01" finished-at="2020-03-14T17:47:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step02 -->
-        <test-method status="PASS" signature="step03()[pri:0, instance:delivery01.soi_66.SOI_66_TC1_AgreementCreation_From_Oportunity_MobileVoice@4dfa3a9d]" name="step03" duration-ms="16690" started-at="2020-03-13T17:51:31Z" depends-on-methods="delivery01.soi_66.SOI_66_TC1_AgreementCreation_From_Oportunity_MobileVoice.step02" finished-at="2020-03-13T17:51:48Z">
+        <test-method status="PASS" signature="step03()[pri:0, instance:delivery01.soi_66.SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement@6eebc39e]" name="step03" duration-ms="11352" started-at="2020-03-14T17:47:24Z" depends-on-methods="delivery01.soi_66.SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement.step02" finished-at="2020-03-14T17:47:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step03 -->
-        <test-method status="PASS" signature="step04()[pri:0, instance:delivery01.soi_66.SOI_66_TC1_AgreementCreation_From_Oportunity_MobileVoice@4dfa3a9d]" name="step04" duration-ms="37585" started-at="2020-03-13T17:51:48Z" depends-on-methods="delivery01.soi_66.SOI_66_TC1_AgreementCreation_From_Oportunity_MobileVoice.step03" finished-at="2020-03-13T17:52:25Z">
+        <test-method status="PASS" signature="step04()[pri:0, instance:delivery01.soi_66.SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement@6eebc39e]" name="step04" duration-ms="9307" started-at="2020-03-14T17:47:35Z" depends-on-methods="delivery01.soi_66.SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement.step03" finished-at="2020-03-14T17:47:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step04 -->
-        <test-method status="PASS" signature="step05()[pri:0, instance:delivery01.soi_66.SOI_66_TC1_AgreementCreation_From_Oportunity_MobileVoice@4dfa3a9d]" name="step05" duration-ms="10225" started-at="2020-03-13T17:52:25Z" depends-on-methods="delivery01.soi_66.SOI_66_TC1_AgreementCreation_From_Oportunity_MobileVoice.step04" finished-at="2020-03-13T17:52:36Z">
+        <test-method status="PASS" signature="step05()[pri:0, instance:delivery01.soi_66.SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement@6eebc39e]" name="step05" duration-ms="29669" started-at="2020-03-14T17:47:44Z" depends-on-methods="delivery01.soi_66.SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement.step04" finished-at="2020-03-14T17:48:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step05 -->
-        <test-method status="PASS" signature="step06()[pri:0, instance:delivery01.soi_66.SOI_66_TC1_AgreementCreation_From_Oportunity_MobileVoice@4dfa3a9d]" name="step06" duration-ms="4925" started-at="2020-03-13T17:52:36Z" depends-on-methods="delivery01.soi_66.SOI_66_TC1_AgreementCreation_From_Oportunity_MobileVoice.step05" finished-at="2020-03-13T17:52:41Z">
+        <test-method status="PASS" signature="step06()[pri:0, instance:delivery01.soi_66.SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement@6eebc39e]" name="step06" duration-ms="7716" started-at="2020-03-14T17:48:14Z" depends-on-methods="delivery01.soi_66.SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement.step05" finished-at="2020-03-14T17:48:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step06 -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:delivery01.soi_66.SOI_66_TC1_AgreementCreation_From_Oportunity_MobileVoice@4dfa3a9d]" name="afterTest" is-config="true" duration-ms="4737" started-at="2020-03-13T17:52:41Z" finished-at="2020-03-13T17:52:45Z">
+        <test-method status="PASS" signature="step07()[pri:0, instance:delivery01.soi_66.SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement@6eebc39e]" name="step07" duration-ms="1905" started-at="2020-03-14T17:48:22Z" depends-on-methods="delivery01.soi_66.SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement.step06" finished-at="2020-03-14T17:48:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- step07 -->
+        <test-method status="PASS" signature="step08()[pri:0, instance:delivery01.soi_66.SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement@6eebc39e]" name="step08" duration-ms="22047" started-at="2020-03-14T17:48:24Z" depends-on-methods="delivery01.soi_66.SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement.step07" finished-at="2020-03-14T17:48:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- step08 -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:delivery01.soi_66.SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement@6eebc39e]" name="afterTest" is-config="true" duration-ms="5003" started-at="2020-03-14T17:48:46Z" finished-at="2020-03-14T17:48:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-      </class> <!-- delivery01.soi_66.SOI_66_TC1_AgreementCreation_From_Oportunity_MobileVoice -->
+      </class> <!-- delivery01.soi_66.SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

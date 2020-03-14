@@ -3,18 +3,20 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="delivery01.soi_66.SOI_66_TC1_AgreementCreation_From_Oportunity_MobileVoice">
+      <class name="delivery01.soi_66.SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement">
         <methods>
-          <include name="step02"/>
+          <include name="step08"/>
+          <include name="beforeTest"/>
+          <include name="afterTest"/>
+          <include name="step04"/>
+          <include name="step07"/>
           <include name="step05"/>
           <include name="step03"/>
-          <include name="step01"/>
-          <include name="beforeTest"/>
           <include name="step06"/>
-          <include name="step04"/>
-          <include name="afterTest"/>
+          <include name="step01"/>
+          <include name="step02"/>
         </methods>
-      </class> <!-- delivery01.soi_66.SOI_66_TC1_AgreementCreation_From_Oportunity_MobileVoice -->
+      </class> <!-- delivery01.soi_66.SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
