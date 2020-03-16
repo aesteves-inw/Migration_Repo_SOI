@@ -95,7 +95,7 @@ public class OrderSFDS {
 
 			driver.get(serviceLink);
 
-			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);		
+			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 
 			if(BrowserActions.isElementPresent(driver, SalesForceService.filesContainer) && BrowserActions.isElementPresent(driver, SalesForceService.headerServicesPage) && BrowserActions.isElementPresent(driver, SalesForceService.detailsServicePage)  &&  BrowserActions.isElementPresent(driver, SalesForceService.fieldServiceName)  && BrowserActions.isElementPresent(driver, SalesForceService.fieldCase) && BrowserActions.isElementPresent(driver, SalesForceService.fieldDomain) && BrowserActions.isElementPresent(driver, SalesForceService.fieldType) && BrowserActions.isElementPresent(driver, SalesForceService.fieldDetail) && BrowserActions.isElementPresent(driver, SalesForceService.fieldServiceRequestDate) && BrowserActions.isElementPresent(driver, SalesForceService.fieldEnd2EndRequestOwner) && BrowserActions.isElementPresent(driver, SalesForceService.fieldStatus))
 			{
@@ -687,7 +687,7 @@ public class OrderSFDS {
 			
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			
-			boolean validation=Order.orderPageValidation(driver, wait, stepID);
+			boolean validation=Order.orderPageValidation(driver, stepID);
 			
 			if(validation)
 			{

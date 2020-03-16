@@ -9,14 +9,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.sikuli.script.Screen;
-
 import actions.BrowserActions;
 import execStructure.ExecStructure;
 import execStructure.TestData;
 import sfDirectSales.SalesForceOpportunity;
 import sfDirectSales.SalesForceProducts;
-import sfSikuli.SalesForceSikuli;
 
 public class Opportunity {
 
@@ -24,21 +21,21 @@ public class Opportunity {
 	/*02-03-2020:LMA
 	 * sketch for every regular functions
 	 *=====================================
-	 *String actionName="";
+	 String actionName="";
 
 
-					try
-					{
-						<JAVA CODE>
+		try
+		{
+			<JAVA CODE>
 
-						System.out.println(actionName+" - Succeeded in Step "+stepID);
+			System.out.println(actionName+" - Succeeded in Step "+stepID);
 
-					}
-					catch(Exception e)
-					{
-						System.out.println(e);
-						throw new Exception (actionName+" - Failed in Step "+stepID,e);
-					}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
 
 	 */
 
@@ -211,10 +208,11 @@ public class Opportunity {
 
 		WebDriverWait waitCWO = new WebDriverWait(driver, 10);
 
-		Screen screen = new Screen();
+		//Screen screen = new Screen();
 
 		try
 		{
+			/*
 			screen.wait(SalesForceSikuli.closeOPTYBtn, 20);
 
 			screen.click(SalesForceSikuli.closeOPTYBtn);
@@ -222,7 +220,12 @@ public class Opportunity {
 			screen.wait(SalesForceSikuli.selectClosedStageBtn, 20);
 
 			screen.click(SalesForceSikuli.selectClosedStageBtn);
-
+			*/
+			
+			driver.findElement(By.cssSelector("div#brandBand_1>div>div>div:nth-of-type(3)>div>one-record-home-flexipage2>forcegenerated-flexipage_opportunity_record_page3_opportunity__view_js>flexipage-record-page-decorator>div>slot>flexipage-record-home-with-subheader-template-desktop2>div>div:nth-of-type(2)>slot>slot>flexipage-component2>force-progressive-renderer>slot>slot>flexipage-aura-wrapper>div>div>article>div>div>div>div>div>div>div>div>ul>li:nth-of-type(7)>a")).click();
+			
+			driver.findElement(By.cssSelector("div#brandBand_1>div>div>div:nth-of-type(3)>div>one-record-home-flexipage2>forcegenerated-flexipage_opportunity_record_page3_opportunity__view_js>flexipage-record-page-decorator>div>slot>flexipage-record-home-with-subheader-template-desktop2>div>div:nth-of-type(2)>slot>slot>flexipage-component2>force-progressive-renderer>slot>slot>flexipage-aura-wrapper>div>div>article>div>div>div>div>div:nth-of-type(2)>button>span")).click();
+			
 			waitCWO.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesForceOpportunity.ctomHeader)));
 
 			Select closedStage = new Select(driver.findElement(By.xpath("//select")));
@@ -254,25 +257,25 @@ public class Opportunity {
 	/*02-03-2020:LMA
 	 * sketch for every validation functions
 	 *=====================================
-	 *String actionName="";
-	 * 	try
-						{
-							if()
-							{
-								System.out.println(actionName+" - Succeeded in Step: "+stepID);
-								return true;
-							}
-							else
-							{
-								return false;
-							}
+		 String actionName="";
+		 try
+			{
+			if()
+			{
+				System.out.println(actionName+" - Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
 
-						}
-						catch(Exception e)
-						{
-							System.out.println(e);
-							throw new Exception (actionName+" - Failed in Step: "+stepID,e);
-						}
+			}
+			catch(Exception e)
+			{
+				System.out.println(e);
+				throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+			}
 
 	 */
 
@@ -350,5 +353,34 @@ public class Opportunity {
 			return false;
 		}
 
+	}
+
+	public static boolean validationClosedWonOpty(WebDriver driver, int stepID, String optyName)
+	{
+		String actionName="Opportunity: Closed Won Opportunity validation";
+		
+		
+		 try
+			{
+			 	WebElement closedWonMarker = driver.findElement(By.xpath("//lightning-formatted-text[text()='Closed Won']"));
+			 	
+				if(closedWonMarker.isDisplayed()==true)
+				{
+					System.out.println(actionName+" - Succeeded in Step: "+stepID);
+					return true;
+				}
+				else
+				{
+					throw new Exception (actionName+" - Failed in Step: "+stepID);
+				}
+
+			}
+			catch(Exception e)
+			{
+				System.out.println(e);
+				System.out.println(actionName+" - Failed in Step: "+stepID);
+				return false;
+				
+			}
 	}
 }

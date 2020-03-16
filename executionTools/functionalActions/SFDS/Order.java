@@ -102,7 +102,7 @@ public class Order {
 	
 	
 	//VALIDATIONS
-	public static boolean orderPageValidation(WebDriver driver, WebDriverWait wait, int stepID) throws Exception
+	public static boolean orderPageValidation(WebDriver driver, int stepID) throws Exception
 	{
 		String actionName="Order Page Validation";
 				
@@ -155,7 +155,7 @@ public class Order {
 /*02-03-2020:LMA
  * sketch for every regular functions
  *=====================================
- *String actionName = "Navigation to Orders List View";
+ *		String actionName = "Navigation to Orders List View";
 		
 		String ordersListViewURL=TestData.searchDT(0, "environmentITTQA").concat(TestData.searchDT(0, "ordersList"));
 		
@@ -178,24 +178,24 @@ public class Order {
 /*02-03-2020:LMA
  * sketch for every validation functions
  *=====================================
- *String actionName="";
- * 	try
+ 	String actionName="";
+ 	try
+	{
+		if()
 		{
-			if()
-			{
-				System.out.println(actionName+" - Succeeded in Step: "+stepID);
-				return true;
-			}
-			else
-			{
-				return false;
-			}
-			
+			System.out.println(actionName+" - Succeeded in Step: "+stepID);
+			return true;
 		}
-		catch(Exception e)
+		else
 		{
-			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+			return false;
 		}
+		
+	}
+	catch(Exception e)
+	{
+		throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+	}
 		
 		*/
 

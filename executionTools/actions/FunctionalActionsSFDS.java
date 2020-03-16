@@ -20,10 +20,37 @@ import sfSikuli.SalesForceSikuli;
 
 public class FunctionalActionsSFDS {
 
+	
+	// GENERAL FUNCTIONAL ACTIONS
+	
+	public static void goToByURL(WebDriver driver, int stepID, String object, String objectURL) throws Exception
+	{
+		 String actionName="General: Go to "+object;
 
 
+			try
+			{
+				driver.get(objectURL);
+				
+				driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+				
+				
+
+				System.out.println(actionName+" - Succeeded in Step "+stepID);
+
+			}
+			catch(Exception e)
+			{
+				System.out.println(e);
+				throw new Exception (actionName+" - Failed in Step "+stepID,e);
+			}
+	}
+	
 	
 
+	
+	
+	// LEGACY
 	
 	public static void navigate2Agreement(WebDriver driver, int stepID, String linkAgreementName) throws Exception
 	{
@@ -49,10 +76,6 @@ public class FunctionalActionsSFDS {
 			throw new Exception("Test Procedure to Navigate to Agreement's page. Failed on StepID: "+stepID,e);
 		}
 	}
-
-
-
-	
 	
 	public static void addFile2Agreement(WebDriver driver, int stepID, String file2Upload) throws Exception
 	{

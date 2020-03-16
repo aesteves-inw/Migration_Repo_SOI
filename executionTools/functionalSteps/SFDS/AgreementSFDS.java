@@ -75,7 +75,7 @@ public class AgreementSFDS {
 	
 	
 	// Navigation Steps
-	public static TestStepReportStructure navigate2Opportunity(WebDriver driver, String testName, int stepID, String optyURL) throws Exception
+	public static TestStepReportStructure navigate2Opportunity(WebDriver driver, String testName, int stepID, String optyName) throws Exception
 	{
 		TestStepReportStructure step;
 
@@ -88,7 +88,7 @@ public class AgreementSFDS {
 		
 		try
 		{
-			driver.get(optyURL);
+			driver.findElement(By.linkText(optyName)).click();
 			
 			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);	
 			

@@ -1,14 +1,11 @@
 package actions;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -16,17 +13,195 @@ import execReport.ReportStructure;
 import execReport.TestStepReportStructure;
 import execStructure.ExecStructure;
 import execStructure.TestData;
+import functionalActions.SFDS.Case;
+import functionalActions.SFDS.Opportunity;
 import functionalActions.SFDS.Order;
+import functionalActions.SFDS.Service;
 import sfDirectSales.SalesForceCompany;
 import sfDirectSales.SalesForceHomePage;
 import sfDirectSales.SalesForceNewMACDOrderScreen;
-import sfDirectSales.SalesForceOpportunity;
-import sfDirectSales.SalesForceOrders;
-import sfDirectSales.SalesForceProducts;
 import actions.BrowserActions;
 
 	public class FunctionalSteps {
 
+		
+		// GENERAL FUNCTIONAL ACTIONS
+		
+		public static TestStepReportStructure goToOpportunity(WebDriver driver, int stepID, String testName, String objectURL) throws Exception
+		{
+			TestStepReportStructure goToOpportunity;
+
+
+			String stepName="General: Go To Opportunity";
+
+			String stepNameMin="goToOpportunity";
+
+			String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+			boolean validation;
+
+			try
+			{
+				FunctionalActionsSFDS.goToByURL(driver, stepID, "Opportunity", objectURL);
+
+				validation = Opportunity.opportunityScreenValidation(driver, stepID);
+
+				if(validation==true)
+				{
+					ExecStructure.screenShotTaking(driver, testName, evidenceName);
+					goToOpportunity=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('p', 'e'), ReportStructure.testReportFinalElement('p', 'a'), ReportStructure.testReportFinalElement('p', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+					return goToOpportunity;
+				}
+				else
+				{
+					throw new Exception (stepName+" - Failed in Step: "+stepID);
+				}
+
+
+			}
+			catch(Exception e)
+			{
+				System.out.println(e);
+				ExecStructure.screenShotTaking(driver, testName, evidenceName);
+				goToOpportunity=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('f', 'e'), ReportStructure.testReportFinalElement('f', 'a'), ReportStructure.testReportFinalElement('f', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+				return goToOpportunity;
+			}
+
+		}
+		
+		public static TestStepReportStructure goToOrder(WebDriver driver, int stepID, String testName, String objectURL) throws Exception
+		{
+			TestStepReportStructure goToOrder;
+
+
+			String stepName="General: Go To Order";
+
+			String stepNameMin="goToOrder";
+
+			String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+			boolean validation;
+
+			try
+			{
+				FunctionalActionsSFDS.goToByURL(driver, stepID, "Order", objectURL);
+
+				validation = Order.orderPageValidation(driver, stepID);
+
+				if(validation==true)
+				{
+					ExecStructure.screenShotTaking(driver, testName, evidenceName);
+					goToOrder=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('p', 'e'), ReportStructure.testReportFinalElement('p', 'a'), ReportStructure.testReportFinalElement('p', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+					return goToOrder;
+				}
+				else
+				{
+					throw new Exception (stepName+" - Failed in Step: "+stepID);
+				}
+
+
+			}
+			catch(Exception e)
+			{
+				System.out.println(e);
+				ExecStructure.screenShotTaking(driver, testName, evidenceName);
+				goToOrder=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('f', 'e'), ReportStructure.testReportFinalElement('f', 'a'), ReportStructure.testReportFinalElement('f', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+				return goToOrder;
+			}
+
+		}
+		
+		public static TestStepReportStructure goToService(WebDriver driver, int stepID, String testName, String objectURL) throws Exception
+		{
+			TestStepReportStructure goToService;
+
+
+			String stepName="General: Go To Service";
+
+			String stepNameMin="goToService";
+
+			String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+			boolean validation;
+
+			try
+			{
+				FunctionalActionsSFDS.goToByURL(driver, stepID, "Service", objectURL);
+
+				validation = Service.validationServicePage(driver, stepID);
+
+				if(validation==true)
+				{
+					ExecStructure.screenShotTaking(driver, testName, evidenceName);
+					goToService=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('p', 'e'), ReportStructure.testReportFinalElement('p', 'a'), ReportStructure.testReportFinalElement('p', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+					return goToService;
+				}
+				else
+				{
+					throw new Exception (stepName+" - Failed in Step: "+stepID);
+				}
+
+
+			}
+			catch(Exception e)
+			{
+				System.out.println(e);
+				ExecStructure.screenShotTaking(driver, testName, evidenceName);
+				goToService=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('f', 'e'), ReportStructure.testReportFinalElement('f', 'a'), ReportStructure.testReportFinalElement('f', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+				return goToService;
+			}
+
+		}
+		
+		public static TestStepReportStructure goToCase(WebDriver driver, int stepID, String testName, String objectURL) throws Exception
+		{
+			TestStepReportStructure goToCase;
+
+
+			String stepName="General: Go To Case";
+
+			String stepNameMin="goToCase";
+
+			String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+			boolean validation;
+
+			try
+			{
+				FunctionalActionsSFDS.goToByURL(driver, stepID, "Case", objectURL);
+
+				validation = Case.validationCasePage(driver, stepID);
+
+				if(validation==true)
+				{
+					ExecStructure.screenShotTaking(driver, testName, evidenceName);
+					goToCase=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('p', 'e'), ReportStructure.testReportFinalElement('p', 'a'), ReportStructure.testReportFinalElement('p', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+					return goToCase;
+				}
+				else
+				{
+					throw new Exception (stepName+" - Failed in Step: "+stepID);
+				}
+
+
+			}
+			catch(Exception e)
+			{
+				System.out.println(e);
+				ExecStructure.screenShotTaking(driver, testName, evidenceName);
+				goToCase=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('f', 'e'), ReportStructure.testReportFinalElement('f', 'a'), ReportStructure.testReportFinalElement('f', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+				return goToCase;
+			}
+
+		}
+		
+		// LEGACY
+		
+		
 		// Salesforce Direct Sales
 		public static TestStepReportStructure loginSalesForce(WebDriver driver, int stepID, String sFEnvironment, String testName) throws Exception
 		{
@@ -87,10 +262,6 @@ import actions.BrowserActions;
 			}
 		}
 
-		
-
-		
-
 		//27-Fev: Deprecated with the entering of SOI-150 on Simple Ordering Project
 		public static TestStepReportStructure createNewMACDOrder(WebDriver driver, int stepID, String testName, String testExecutionString) throws IOException
 		{
@@ -138,10 +309,6 @@ import actions.BrowserActions;
 			}
 		}
 
-		
-
-		
-		// Salesforce Partners Community
 		
 		
 

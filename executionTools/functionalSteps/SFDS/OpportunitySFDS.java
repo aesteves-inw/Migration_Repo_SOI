@@ -236,7 +236,48 @@ public class OpportunitySFDS {
 		}
 	}
 
-	
+	public static TestStepReportStructure closingWonOPTY(WebDriver driver, int stepID, String testName, String optyName) throws Exception
+	{
+		TestStepReportStructure closingWonOPTY;
+
+
+		String stepName="step";
+
+		String stepNameMin="closingWonOPTY";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			Opportunity.closeWonOppie(driver, stepID);
+
+			validation = Opportunity.validationClosedWonOpty(driver, stepID, optyName);
+
+			if(validation==true)
+			{
+				ExecStructure.screenShotTaking(driver, testName, evidenceName);
+				closingWonOPTY=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('p', 'e'), ReportStructure.testReportFinalElement('p', 'a'), ReportStructure.testReportFinalElement('p', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+				return closingWonOPTY;
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			ExecStructure.screenShotTaking(driver, testName, evidenceName);
+			closingWonOPTY=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('f', 'e'), ReportStructure.testReportFinalElement('f', 'a'), ReportStructure.testReportFinalElement('f', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+			return closingWonOPTY;
+		}
+
+	}
 }
 
 /*

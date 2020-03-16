@@ -131,7 +131,7 @@ public class ServiceSFDS {
 			
 			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);	
 			
-			validation=Order.orderPageValidation(driver, wait, stepID);
+			validation=Order.orderPageValidation(driver, stepID);
 			
 			if(validation==true)
 			{
@@ -191,6 +191,8 @@ public class ServiceSFDS {
 			return serviceStatusValidation;
 		}
 	}
+
+
 	
 
 	
