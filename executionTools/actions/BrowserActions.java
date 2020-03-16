@@ -48,9 +48,7 @@ public class BrowserActions {
 	{
 		return driver.findElements(By.xpath(webObject)).size() > 0;
 	}
- 	
- 	
-	
+
 	public static WebElement expandRootElement(WebDriver driver, WebElement element) 
 	{
 		JavascriptExecutor js = (JavascriptExecutor) driver;
