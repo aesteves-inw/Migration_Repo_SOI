@@ -20,17 +20,6 @@
 					<suiteXmlFiles>
 						<suiteXmlFile>src\test\java\delivery01\soi_66\SOI_66_TestSuite.xml</suiteXmlFile>
 						<suiteXmlFile>src\test\java\delivery01\soi_68\SOI_68_TestSuite.xml</suiteXmlFile>
-						<!-- <suiteXmlFile>src\test\java\delivery01\SOI_69_TestSuite.xml</suiteXmlFile>
-						<suiteXmlFile>src\test\java\delivery01\SOI_76_TestSuite.xml</suiteXmlFile>
-						<suiteXmlFile>src\test\java\delivery01\SOI_79_TestSuite.xml</suiteXmlFile>
-						<suiteXmlFile>src\test\java\delivery01\SOI_80_TestSuite.xml</suiteXmlFile> -->
-						<suiteXmlFile>src\test\java\delivery01\soi_150\SOI_150_TestSuite.xml</suiteXmlFile>
-						<!-- <suiteXmlFile>src\test\java\delivery01\SOI_718_TestSuite.xml</suiteXmlFile>
-						<suiteXmlFile>src\test\java\delivery01\SOI_720_TestSuite.xml</suiteXmlFile>
-						<suiteXmlFile>src\test\java\delivery01\SOI_721_TestSuite.xml</suiteXmlFile>
-						<suiteXmlFile>src\test\java\delivery01\SOI_770_TestSuite.xml</suiteXmlFile>
-						<suiteXmlFile>src\test\java\delivery01\SOI_795_TestSuite.xml</suiteXmlFile>
-						<suiteXmlFile>src\test\java\delivery01\SOI_880_TestSuite.xml</suiteXmlFile> -->
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
