@@ -1,11 +1,9 @@
 package actions;
 
-import java.util.List;
 //import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -15,17 +13,12 @@ import org.sikuli.script.Screen;
 
 import execReport.TestStepReportStructure;
 import execStructure.ExecStructure;
-import execStructure.TestData;
-import sfDirectSales.SalesForceAgreement;
-import sfDirectSales.SalesForceNewMACDOrderScreen;
 import sfDirectSales.SalesForceOpportunity;
 import sfDirectSales.SalesforceNewMACDFlow;
-import sfPartnersCommunity.SFPC_Agreements;
 import sfPartnersCommunity.SFPC_Company;
 import sfPartnersCommunity.SFPC_HomePage;
 import sfPartnersCommunity.SFPC_LoginPage;
 import sfPartnersCommunity.SFPC_NewMACDFlow;
-import sfPartnersCommunity.SFPC_NewMACDOrderScreen;
 import sfPartnersCommunity.SFPC_Opportunity;
 import sfPartnersCommunity.SFPC_Orders;
 import sfPartnersCommunity.SFPC_Products;
@@ -167,7 +160,7 @@ public class FunctionalActionsSFPC {
 
 	public static void closeWonOPTY(WebDriver driver, int stepID) throws Exception
 	{
-		Screen screen = new Screen();
+		// Screen screen = new Screen();
 		
 		WebDriverWait waitCWO = new WebDriverWait(driver, 15);
 		
@@ -363,7 +356,6 @@ public class FunctionalActionsSFPC {
 				
 				driver.findElement(By.xpath(SFPC_NewMACDFlow.inputCompanyContactPerson)).sendKeys(companyContactPerson);
 				
-				BrowserActions.updateInnerHTMLSelenium(driver);
 				
 				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[@class='slds-listbox__item cPRX_SOI_CustomLookupResult']"))).click();				
 								

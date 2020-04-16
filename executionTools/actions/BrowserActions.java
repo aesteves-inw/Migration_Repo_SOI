@@ -40,7 +40,7 @@ public class BrowserActions {
 
 	}
 
-
+	
 	
 	
 	//Elements validation
@@ -199,19 +199,7 @@ public class BrowserActions {
 
 	}
 	
-	public static void updateInnerHTMLSelenium(WebDriver driver)
-	{
-		WebElement ulElement = driver.findElement(By.tagName("ul"));
-		
-		String ulElementInnerHTML=ulElement.getAttribute("innerHTML");
-	}
 	
-	public static void updateInnerHTMLSelenium(WebDriver driver, String element)
-	{
-		WebElement ulElement = driver.findElement(By.tagName(element));
-		
-		String ulElementInnerHTML=ulElement.getAttribute("innerHTML");
-	}
 	
 	public WebElement getElement(WebDriver driver, String attribute, String nameOfSalesforceComponent)
 	{

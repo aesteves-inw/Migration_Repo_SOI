@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SOI-66 Test Suite" parallel="false">
+<test name="SOI_66_TC01_AgreementCreation_From_Oportunity_MobileVoice">
+  	<classes>
+  		<class name ="delivery01.soi_66.SOI_66_TC01_AgreementCreation_From_Oportunity_MobileVoice"/>
+  	</classes>
+  </test>	
+    <test name="SOI_66_TC02_AgreementCreation_Opportunity_Product_Not_MobileVoice">
+  	<classes>
+  		<class name ="delivery01.soi_66.SOI_66_TC02_AgreementCreation_Opportunity_Product_Not_MobileVoice"/>
+  	</classes>
+  </test> 
+   <test name="SOI_66_TC04_AgreementCreation_From_Oportunity_MobileVoice_EditAgreement">
+  	<classes>
+  		<class name ="delivery01.soi_66.SOI_66_TC04_AgreementCreation_From_Oportunity_MobileVoice_EditAgreement"/>
+  	</classes>
+  </test> 
+    <test name="SOI_66_TC05_AgreementCreation_Add_File_2_Agreement">
+  	<classes>
+  		<class name ="delivery01.soi_66.SOI_66_TC05_AgreementCreation_Add_File_2_Agreement"/>
+  	</classes>
+  </test> 
+    <test name="SOI_66_TC08_PC_AgreementCreation_From_Oportunity_MobileVoice">
+  	<classes>
+  		<class name ="delivery01.soi_66.SOI_66_TC08_PC_AgreementCreation_From_Oportunity_MobileVoice"/>
+  	</classes>
+  </test> 
+    <test name="SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement">
+  	<classes>
+  		<class name ="delivery01.soi_66.SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement"/>
+  	</classes>
+  </test> 
+</suite>

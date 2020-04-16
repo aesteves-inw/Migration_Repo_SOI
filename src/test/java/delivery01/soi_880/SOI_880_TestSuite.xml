@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SOI-880 - Test Suite" parallel="false">
+  <test name="SOI_880_TC01_CaseRouting_NewContractFlow">
+  	<classes>
+  		<class name ="delivery01.soi_66.SOI_880_TC01_CaseRouting_NewContractFlow"/>
+  	</classes>
+  </test> 
+    <test name="SOI_880_TC02_PC_CaseRouting_NewContractFlow">
+  	<classes>
+  		<class name ="delivery01.soi_66.SOI_880_TC02_PC_CaseRouting_NewContractFlow"/>
+  	</classes>
+  </test> 
+    <test name="SOI_880_TC03_CaseRouting_MACD">
+  	<classes>
+  		<class name ="delivery01.soi_66.SOI_880_TC03_CaseRouting_MACD"/>
+  	</classes>
+  </test> 
+    <test name="SOI_880_TC04_PC_CaseRouting_MACD">
+  	<classes>
+  		<class name ="delivery01.soi_66.SOI_880_TC04_PC_CaseRouting_MACD"/>
+  	</classes>
+  </test> 	
+</suite>

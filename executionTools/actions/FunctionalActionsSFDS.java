@@ -27,7 +27,6 @@ public class FunctionalActionsSFDS {
 	{
 		 String actionName="General: Go to "+object;
 
-
 			try
 			{
 				driver.get(objectURL);
@@ -289,10 +288,6 @@ public class FunctionalActionsSFDS {
 		}
 	}
 
-	
-	
-	
-	
 
 }
 

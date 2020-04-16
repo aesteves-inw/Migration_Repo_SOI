@@ -7,6 +7,44 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Simple Ordering</name>
 	<description>Test Automation for Simple Ordering project</description>
+	<build>
+				<!-- Source directory configuration -->
+		<sourceDirectory>${project.basedir}</sourceDirectory>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0-M3</version>
+				<configuration>
+					<!-- Suite testng xml file to consider for test execution -->
+					<suiteXmlFiles>
+						<suiteXmlFile>src\test\java\delivery01\SOI_66_TestSuite.xml</suiteXmlFile>
+						<suiteXmlFile>src\test\java\delivery01\SOI_68_TestSuite.xml</suiteXmlFile>
+						<!-- <suiteXmlFile>src\test\java\delivery01\SOI_69_TestSuite.xml</suiteXmlFile>
+						<suiteXmlFile>src\test\java\delivery01\SOI_76_TestSuite.xml</suiteXmlFile>
+						<suiteXmlFile>src\test\java\delivery01\SOI_79_TestSuite.xml</suiteXmlFile>
+						<suiteXmlFile>src\test\java\delivery01\SOI_80_TestSuite.xml</suiteXmlFile> -->
+						<suiteXmlFile>src\test\java\delivery01\SOI_150_TestSuite.xml</suiteXmlFile>
+						<!-- <suiteXmlFile>src\test\java\delivery01\SOI_718_TestSuite.xml</suiteXmlFile>
+						<suiteXmlFile>src\test\java\delivery01\SOI_720_TestSuite.xml</suiteXmlFile>
+						<suiteXmlFile>src\test\java\delivery01\SOI_721_TestSuite.xml</suiteXmlFile>
+						<suiteXmlFile>src\test\java\delivery01\SOI_770_TestSuite.xml</suiteXmlFile>
+						<suiteXmlFile>src\test\java\delivery01\SOI_795_TestSuite.xml</suiteXmlFile>
+						<suiteXmlFile>src\test\java\delivery01\SOI_880_TestSuite.xml</suiteXmlFile> -->
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 	<repositories>
 		<repository>
 			<id>snapshot</id>
