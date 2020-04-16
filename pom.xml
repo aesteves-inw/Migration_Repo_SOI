@@ -18,13 +18,13 @@
 				<configuration>
 					<!-- Suite testng xml file to consider for test execution -->
 					<suiteXmlFiles>
-						<suiteXmlFile>src\test\java\delivery01\SOI_66_TestSuite.xml</suiteXmlFile>
-						<suiteXmlFile>src\test\java\delivery01\SOI_68_TestSuite.xml</suiteXmlFile>
+						<suiteXmlFile>src\test\java\delivery01\soi_66\SOI_66_TestSuite.xml</suiteXmlFile>
+						<suiteXmlFile>src\test\java\delivery01\soi_68\SOI_68_TestSuite.xml</suiteXmlFile>
 						<!-- <suiteXmlFile>src\test\java\delivery01\SOI_69_TestSuite.xml</suiteXmlFile>
 						<suiteXmlFile>src\test\java\delivery01\SOI_76_TestSuite.xml</suiteXmlFile>
 						<suiteXmlFile>src\test\java\delivery01\SOI_79_TestSuite.xml</suiteXmlFile>
 						<suiteXmlFile>src\test\java\delivery01\SOI_80_TestSuite.xml</suiteXmlFile> -->
-						<suiteXmlFile>src\test\java\delivery01\SOI_150_TestSuite.xml</suiteXmlFile>
+						<suiteXmlFile>src\test\java\delivery01\soi_150\SOI_150_TestSuite.xml</suiteXmlFile>
 						<!-- <suiteXmlFile>src\test\java\delivery01\SOI_718_TestSuite.xml</suiteXmlFile>
 						<suiteXmlFile>src\test\java\delivery01\SOI_720_TestSuite.xml</suiteXmlFile>
 						<suiteXmlFile>src\test\java\delivery01\SOI_721_TestSuite.xml</suiteXmlFile>
@@ -89,21 +89,21 @@
 			<version>4.1.0</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.sikuli/sikuli-api -->
-	<dependency>
-	    <groupId>com.sikulix</groupId>
-	    <artifactId>sikulixapi</artifactId>
-	    <version>1.1.2</version>
-	     <exclusions>
-		  <exclusion>
-		   <groupId>com.github.vidstige</groupId>
-		   <artifactId>jadb</artifactId>
-		  </exclusion>
-		 </exclusions>
-	</dependency>
-	<dependency>
-  <groupId>io.github.sukgu</groupId>
-  <artifactId>automation</artifactId>
-  <version>0.0.12</version>
-</dependency>
+		<dependency>
+			<groupId>com.sikulix</groupId>
+			<artifactId>sikulixapi</artifactId>
+			<version>1.1.2</version>
+			<exclusions>
+			<exclusion>
+			<groupId>com.github.vidstige</groupId>
+			<artifactId>jadb</artifactId>
+			</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>io.github.sukgu</groupId>
+			<artifactId>automation</artifactId>
+			<version>0.0.12</version>
+		</dependency>
 	</dependencies>
 </project>
