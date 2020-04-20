@@ -9,11 +9,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.sikuli.script.Screen;
+
 import actions.BrowserActions;
 import execStructure.ExecStructure;
 import execStructure.TestData;
 import sfDirectSales.SalesForceOpportunity;
 import sfDirectSales.SalesForceProducts;
+import sfSikuli.SalesForceSikuli;
 
 public class Opportunity {
 
@@ -208,11 +211,11 @@ public class Opportunity {
 
 		WebDriverWait waitCWO = new WebDriverWait(driver, 10);
 
-		//Screen screen = new Screen();
+		Screen screen = new Screen();
 
 		try
 		{
-			/*
+			
 			screen.wait(SalesForceSikuli.closeOPTYBtn, 20);
 
 			screen.click(SalesForceSikuli.closeOPTYBtn);
@@ -220,11 +223,12 @@ public class Opportunity {
 			screen.wait(SalesForceSikuli.selectClosedStageBtn, 20);
 
 			screen.click(SalesForceSikuli.selectClosedStageBtn);
-			*/
 			
-			driver.findElement(By.cssSelector("div#brandBand_1>div>div>div:nth-of-type(3)>div>one-record-home-flexipage2>forcegenerated-flexipage_opportunity_record_page3_opportunity__view_js>flexipage-record-page-decorator>div>slot>flexipage-record-home-with-subheader-template-desktop2>div>div:nth-of-type(2)>slot>slot>flexipage-component2>force-progressive-renderer>slot>slot>flexipage-aura-wrapper>div>div>article>div>div>div>div>div>div>div>div>ul>li:nth-of-type(7)>a")).click();
 			
-			driver.findElement(By.cssSelector("div#brandBand_1>div>div>div:nth-of-type(3)>div>one-record-home-flexipage2>forcegenerated-flexipage_opportunity_record_page3_opportunity__view_js>flexipage-record-page-decorator>div>slot>flexipage-record-home-with-subheader-template-desktop2>div>div:nth-of-type(2)>slot>slot>flexipage-component2>force-progressive-renderer>slot>slot>flexipage-aura-wrapper>div>div>article>div>div>div>div>div:nth-of-type(2)>button>span")).click();
+			//Thread.sleep(3000);
+			
+			//BrowserActions.getElementByJSQuery(driver, waitCWO, SalesForceOpportunity.closeOPTYHeaderButton).click();
+			
 			
 			waitCWO.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesForceOpportunity.ctomHeader)));
 
@@ -246,12 +250,35 @@ public class Opportunity {
 		}
 		catch(Exception e)
 		{
+			System.out.println(e);
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
 	}
 
+	public static void orderVisibleOnOpportunityScreen(WebDriver driver, int stepID, String optyName) throws Exception
+	{
+		 String actionName="Opportunity: Order visibility on Opportunity screen";
+		 
+			try
+			{
+				WebElement orderLinkRelatedMenu=driver.findElement(By.xpath(SalesForceOpportunity.ordersContainer));
+				
+				if (orderLinkRelatedMenu.isDisplayed() == false)
+				{
+					BrowserActions.verticalscrollByVisibleElement(driver, SalesForceOpportunity.ordersContainer);				
+				}
 
+				System.out.println(actionName+" - Succeeded in Step "+stepID);
 
+			}
+			catch(Exception e)
+			{
+				System.out.println(e);
+				throw new Exception (actionName+" - Failed in Step "+stepID,e);
+			}
+	}
+
+	
 
 	// Validation Actions
 	/*02-03-2020:LMA
@@ -383,4 +410,36 @@ public class Opportunity {
 				
 			}
 	}
+
+	public static boolean soi68opportunityValidation(WebDriver driver, int stepID, String optyName) throws Exception
+	{
+		 String actionName="Opportunity: SOI-68 Validation";
+		 	 		 
+		 try
+			{
+			 	String orderLink="//a[contains(.,'"+optyName+"')]";
+			 	
+			 	String ordersNameLink=SalesForceOpportunity.ordersContainer.concat(orderLink);
+			 
+				if(BrowserActions.isElementPresent(driver, ordersNameLink))
+				{
+					System.out.println(actionName+" - Succeeded in Step: "+stepID);
+					return true;
+				}
+				else
+				{
+					System.out.println(actionName+" - Succeeded in Step: "+stepID);
+					return false;
+				}
+
+			}
+			catch(Exception e)
+			{
+				System.out.println(e);
+				throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+			}
+	}
+
+
+
 }

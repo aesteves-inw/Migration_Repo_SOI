@@ -278,10 +278,10 @@ public class SOI_68_TC01_OrderCreation_From_OPTYClosure_Won_MobileVoice {
 		
 		try
 		{
-			TestStepReportStructure step07 = AgreementSFDS.navigate2Opportunity(driver, testName, stepsExecuted, optyName);
-			testExecStructure.add(step07);
+			TestStepReportStructure step08 = AgreementSFDS.navigate2Opportunity(driver, testName, stepsExecuted, optyName);
+			testExecStructure.add(step08);
 			
-			if (step07.getStepStatus().toLowerCase().contains("failed")) 
+			if (step08.getStepStatus().toLowerCase().contains("failed")) 
 			{
 				
 				throw new Exception("Validation Failed on Step "+stepsExecuted);
@@ -301,10 +301,10 @@ public class SOI_68_TC01_OrderCreation_From_OPTYClosure_Won_MobileVoice {
 		
 		try
 		{
-			TestStepReportStructure step07 = OpportunitySFDS.closingWonOPTY(driver, stepsExecuted, testName, optyName);
-			testExecStructure.add(step07);
+			TestStepReportStructure step09 = OpportunitySFDS.closingWonOPTY(driver, stepsExecuted, testName, optyName);
+			testExecStructure.add(step09);
 			
-			if (step07.getStepStatus().toLowerCase().contains("failed")) 
+			if (step09.getStepStatus().toLowerCase().contains("failed")) 
 			{
 				
 				throw new Exception("Validation Failed on Step "+stepsExecuted);
@@ -315,6 +315,52 @@ public class SOI_68_TC01_OrderCreation_From_OPTYClosure_Won_MobileVoice {
 			System.out.println(e);
 			throw new Exception("Test Failed on Step "+stepsExecuted,e);
 		}
+	}
+	
+	@Test(dependsOnMethods = "step09")
+	public void step10() throws Exception 
+	{	
+		stepsExecuted++;
+		
+		try
+		{
+			TestStepReportStructure step10 = OpportunitySFDS.soi68Validation(driver, stepsExecuted, testName, optyName);
+			testExecStructure.add(step10);
+			
+			if (step10.getStepStatus().toLowerCase().contains("failed")) 
+			{
+				
+				throw new Exception("Validation Failed on Step "+stepsExecuted);
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception("Test Failed on Step "+stepsExecuted,e);
+		}
+	}
+	
+	@Test(dependsOnMethods = "step10")
+	public void step11() throws Exception 
+	{	
+		stepsExecuted++;
+		
+		try
+		{
+			TestStepReportStructure step11 = OpportunitySFDS.navigate2Order(driver, testName, stepsExecuted, optyName);
+			
+			if (step11.getStepStatus().toLowerCase().contains("failed")) 
+			{
+				
+				throw new Exception("Validation Failed on Step "+stepsExecuted);
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception("Test Failed on Step "+stepsExecuted,e);
+		}
+		
 	}
 	
 	  @AfterTest

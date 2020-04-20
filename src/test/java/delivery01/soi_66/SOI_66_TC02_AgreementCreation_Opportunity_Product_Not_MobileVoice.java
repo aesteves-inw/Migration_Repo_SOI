@@ -25,7 +25,7 @@ import functionalSteps.SFDS.OpportunitySFDS;
 
 public class SOI_66_TC02_AgreementCreation_Opportunity_Product_Not_MobileVoice {
 
-String testName = this.getClass().getName();
+	String testName = this.getClass().getName();
 	
 	String initialTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
 	
@@ -217,6 +217,7 @@ String testName = this.getClass().getName();
 		}
 		
 	}
+	
 
   @AfterTest
   public void afterTest() {

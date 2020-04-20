@@ -98,6 +98,7 @@ public class BrowserActions {
 	}
 	
 	
+	
 	//Elements attributes 
 	public static int getXOfElement(WebDriver driver, String WebObject) throws Exception
 	{
@@ -129,6 +130,35 @@ public class BrowserActions {
 		}
 	}
 
+	
+	
+	// Elements Manipulation
+	public WebElement getElementbyXpath(WebDriver driver, String attribute, String nameOfSalesforceComponent)
+	{
+		WebElement element = driver.findElement(By.xpath("//*[contains(@"+attribute+", '"+nameOfSalesforceComponent+"')]"));
+		return element;
+	}
+
+	public static WebElement getElementByJSQuery(WebDriver driver, WebDriverWait wait, String queryToExec) throws Exception
+	{
+		try
+		{
+			Thread.sleep(5000);
+			
+			WebElement element = (WebElement) ((JavascriptExecutor)driver).executeScript(queryToExec);
+			
+			
+			
+			
+			return element;
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception("getElementByJSQuery: Not possible to locate element: "+queryToExec,e);
+		}
+		
+	}
 	
 	
 	// Scrolls
@@ -184,6 +214,9 @@ public class BrowserActions {
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(elementXpath)));		
 	}
 
+	
+	
+	// End of Session
 	public static void endSession(WebDriver driver)
 	{
 		/*
@@ -201,11 +234,6 @@ public class BrowserActions {
 	
 	
 	
-	public WebElement getElement(WebDriver driver, String attribute, String nameOfSalesforceComponent)
-	{
-		WebElement element = driver.findElement(By.xpath("//*[contains(@"+attribute+", '"+nameOfSalesforceComponent+"')]"));
-		return element;
-	}
 
 	
 }

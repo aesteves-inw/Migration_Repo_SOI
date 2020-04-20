@@ -147,12 +147,16 @@ public class TestingMACDJSQuery {
 		try 
 		{
 			
-			driver.get("https://proximusitqa--prxittqa.lightning.force.com/lightning/r/Account/0013E000018TkAIQA0/view");
+			driver.get("https://proximusitqa--prxittqa.lightning.force.com/lightning/r/Opportunity/0063E000007A4EeQAK/view");
 
-			//Thread.sleep(5000);
+			Thread.sleep(5000);
 			
-			String queryString = "return document.querySelector('one-record-home-flexipage2').shadowRoot.querySelector('forcegenerated-flexipage_company_record_page_account__view_js').shadowRoot.querySelector('records-lwc-highlights-panel').shadowRoot.querySelector('records-lwc-record-layout').shadowRoot.querySelector('forcegenerated-highlightspanel_account___012000000000000aaa___compact___view___recordlayout2').shadowRoot.querySelector('force-highlights2').shadowRoot.querySelectorAll('li.slds-button.slds-button--neutral.slds-truncate')[1]";
+			//String queryString = "return document.querySelector('one-record-home-flexipage2').shadowRoot.querySelector('forcegenerated-flexipage_company_record_page_account__view_js').shadowRoot.querySelector('records-lwc-highlights-panel').shadowRoot.querySelector('records-lwc-record-layout').shadowRoot.querySelector('forcegenerated-highlightspanel_account___012000000000000aaa___compact___view___recordlayout2').shadowRoot.querySelector('force-highlights2').shadowRoot.querySelectorAll('li.slds-button.slds-button--neutral.slds-truncate')[1]";
 			
+			//String queryString = "return document.querySelector('one-record-home-flexipage2').shadowRoot.querySelector('forcegenerated-flexipage_opportunity_record_page3_opportunity__view_js').shadowRoot.querySelectorAll('flexipage-aura-wrapper')[0].shadowRoot.querySelectorAll('a.tabHeader.slds-path__link')[6]";
+			
+			String queryString = "return document.querySelector('one-record-home-flexipage2').shadowRoot.querySelector('forcegenerated-flexipage_opportunity_record_page3_opportunity__view_js').shadowRoot.querySelectorAll('flexipage-aura-wrapper')[0].shadowRoot.querySelectorAll('span.title.slds-path__title')[6]";
+					
 			wait.until(ExpectedConditions.visibilityOf((WebElement) ((JavascriptExecutor)driver).executeScript(queryString)));
 			
 			WebElement element = (WebElement) ((JavascriptExecutor)driver).executeScript(queryString);

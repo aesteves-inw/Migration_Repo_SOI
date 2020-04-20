@@ -8,7 +8,7 @@ public class SFPC_HomePage {
 	
 	public static String quickCreateButton="//span[@class='triggerLabel truncate']";
 	
-	public static String inputSearchBar="//input[@title='Search...']";
+	public static String inputSearchBar="//input[@placeholder='Search']";
 	
 	public static String dashboard="//section[@role='tabpanel']";
 	

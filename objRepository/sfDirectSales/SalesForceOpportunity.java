@@ -11,6 +11,8 @@ public class SalesForceOpportunity {
 	public static String agreementsContainer="//article[contains(.,'Agreements')]";
 	
 	public static String ordersContainer="//article[contains(.,'Orders')]";
+	
+	
 
 	// New Opportunity Screen
 	
@@ -76,9 +78,16 @@ public class SalesForceOpportunity {
 	
 	public static String stageClosedWonDetails="//*/div/div[2]/div[2]/div/div[2]/span/span[.='Closed Won']";
 	
-	public static String closeOPTYHeaderButton = "(//span[@class='title slds-path__title'][contains(.,'Closed')])[2]";
+	//public static String closeOPTYHeaderButton = "(//span[@class='title slds-path__title'][contains(.,'Closed')])[2]";
+	
+	
+	public static String closeOPTYHeaderButton = "return document.querySelectorAll('one-record-home-flexipage2')[1].shadowRoot.querySelector('forcegenerated-flexipage_opportunity_record_page3_opportunity__view_js').shadowRoot.querySelectorAll('flexipage-aura-wrapper')[0].shadowRoot.querySelectorAll('li.slds-is-incomplete.slds-path__item.runtime_sales_pathassistantPathAssistantTab')[5]";
 	
 	public static String selectCloseMenu="//span[.='Select Closed Stage']";
+	
+	//--
+	
+	
 	
 	
 	//Close This Opportunity Menu

@@ -67,8 +67,6 @@ public class FunctionalActionsSFPC {
 		}
 	}
 
-
-
 	public static TestStepReportStructure createNewOppie(WebDriver driver, WebDriverWait wait, String testName, int stepID, String testExecutionString, String optyStage, String optyForecastCategory) throws Exception 
 	{
 		String oppiename = "OPTY_"+testExecutionString;
@@ -285,7 +283,7 @@ public class FunctionalActionsSFPC {
 	
 	public static void addService2Order(WebDriver driver, int stepID, String testName, String companyContactPerson) throws Exception
 	{
-		WebDriverWait waitAS2O= new WebDriverWait(driver, 15);
+		//WebDriverWait waitAS2O= new WebDriverWait(driver, 15);
 		
 	
 		

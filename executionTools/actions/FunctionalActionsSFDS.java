@@ -50,7 +50,7 @@ public class FunctionalActionsSFDS {
 	
 	
 	// LEGACY
-	
+
 	public static void navigate2Agreement(WebDriver driver, int stepID, String linkAgreementName) throws Exception
 	{
 		try

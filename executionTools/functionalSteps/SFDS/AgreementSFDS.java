@@ -88,7 +88,9 @@ public class AgreementSFDS {
 		
 		try
 		{
-			driver.findElement(By.linkText(optyName)).click();
+			//driver.findElement(By.linkText(optyName)).click();
+			
+			driver.findElement(By.xpath("//a[text()='"+optyName+"']")).click();
 			
 			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);	
 			
