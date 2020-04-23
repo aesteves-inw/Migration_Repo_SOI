@@ -20,9 +20,10 @@ import execReport.TestReportTestData;
 import execReport.TestStepReportStructure;
 import execStructure.ExecStructure;
 import execStructure.TestData;
-import functionalSteps.SFDS.CompanySFDS;
-import functionalSteps.SFDS.HomePageSFDS;
-import functionalSteps.SFDS.OpportunitySFDS;
+import functionalSteps.SFDS.StpsSalesCompany;
+import functionalSteps.SFDS.StpsSalesHomePage;
+import functionalSteps.SFDS.StpsSalesOpportunity;
+
 
 public class SOI_68_TC2_OrderCreation_From_OPTYClosure_Won_NotMobileVoice {
 
@@ -107,7 +108,7 @@ String testName = this.getClass().getName();
 		try 
 		{
 
-			TestStepReportStructure step01 = HomePageSFDS.loginSFDS(driver, testName, stepsExecuted, userProfile);
+			TestStepReportStructure step01 = StpsSalesHomePage.loginSFDS(driver, testName, stepsExecuted, userProfile);
 			testExecStructure.add(step01);
 			
 			if (step01.getStepStatus().toLowerCase().contains("failed")) 
@@ -133,7 +134,7 @@ String testName = this.getClass().getName();
 		try
 		{
 			
-			TestStepReportStructure step02 = HomePageSFDS.navigate2CompanyDetails(driver, stepsExecuted, testName);
+			TestStepReportStructure step02 = StpsSalesHomePage.navigate2CompanyDetails(driver, stepsExecuted, testName);
 			testExecStructure.add(step02);
 			
 			if (step02.getStepStatus().toLowerCase().contains("failed")) 
@@ -156,7 +157,7 @@ String testName = this.getClass().getName();
 		
 		try
 		{
-			TestStepReportStructure step03 = CompanySFDS.createStandardOppie(driver, stepsExecuted, testName, testExecutionString);
+			TestStepReportStructure step03 = StpsSalesCompany.createStandardOppie(driver, stepsExecuted, testName, testExecutionString);
 			testExecStructure.add(step03);
 			
 			if (step03.getStepStatus().toLowerCase().contains("failed")) 
@@ -179,7 +180,7 @@ String testName = this.getClass().getName();
 		
 		try
 		{
-			TestStepReportStructure step04 = CompanySFDS.configNewNonMobileOpportunity(driver, wait, testName, testExecutionString, stepsExecuted);
+			TestStepReportStructure step04 = StpsSalesCompany.configNewNonMobileOpportunity(driver, wait, testName, testExecutionString, stepsExecuted);
 			testExecStructure.add(step04);
 			
 			if (step04.getStepStatus().toLowerCase().contains("failed")) 
@@ -202,7 +203,7 @@ String testName = this.getClass().getName();
 		
 		try
 		{
-			TestStepReportStructure step05 = OpportunitySFDS.closingWonOPTY(driver, stepsExecuted, testName, optyName);
+			TestStepReportStructure step05 = StpsSalesOpportunity.closingWonOPTY(driver, stepsExecuted, testName, optyName);
 			testExecStructure.add(step05);
 			
 			if (step05.getStepStatus().toLowerCase().contains("failed")) 
@@ -226,7 +227,7 @@ String testName = this.getClass().getName();
 		
 		try
 		{
-			TestStepReportStructure step06 = OpportunitySFDS.negativeSoi68Validation(driver, stepsExecuted, testName, optyName);
+			TestStepReportStructure step06 = StpsSalesOpportunity.negativeSoi68Validation(driver, stepsExecuted, testName, optyName);
 			testExecStructure.add(step06);
 			
 			if (step06.getStepStatus().toLowerCase().contains("failed")) 

@@ -89,5 +89,7 @@ public class SFPC_Opportunity {
 	
 
 	
+	//  --- Products ---
 	
+	public static String ordersArea="//article[contains(.,'Orders')]";
 }

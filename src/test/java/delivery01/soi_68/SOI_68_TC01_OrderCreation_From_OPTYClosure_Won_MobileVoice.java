@@ -20,10 +20,11 @@ import execReport.TestReportTestData;
 import execReport.TestStepReportStructure;
 import execStructure.ExecStructure;
 import execStructure.TestData;
-import functionalSteps.SFDS.AgreementSFDS;
-import functionalSteps.SFDS.CompanySFDS;
-import functionalSteps.SFDS.HomePageSFDS;
-import functionalSteps.SFDS.OpportunitySFDS;
+import functionalSteps.SFDS.StpsSalesAgreement;
+import functionalSteps.SFDS.StpsSalesCompany;
+import functionalSteps.SFDS.StpsSalesHomePage;
+import functionalSteps.SFDS.StpsSalesOpportunity;
+
 
 public class SOI_68_TC01_OrderCreation_From_OPTYClosure_Won_MobileVoice {
 
@@ -108,7 +109,7 @@ public class SOI_68_TC01_OrderCreation_From_OPTYClosure_Won_MobileVoice {
 		try 
 		{
 
-			TestStepReportStructure step01 = HomePageSFDS.loginSFDS(driver, testName, stepsExecuted, userProfile);
+			TestStepReportStructure step01 = StpsSalesHomePage.loginSFDS(driver, testName, stepsExecuted, userProfile);
 			testExecStructure.add(step01);
 
 			if (step01.getStepStatus().toLowerCase().contains("failed")) 
@@ -134,7 +135,7 @@ public class SOI_68_TC01_OrderCreation_From_OPTYClosure_Won_MobileVoice {
 		try
 		{
 
-			TestStepReportStructure step02 = HomePageSFDS.navigate2CompanyDetails(driver, stepsExecuted, testName);
+			TestStepReportStructure step02 = StpsSalesHomePage.navigate2CompanyDetails(driver, stepsExecuted, testName);
 			testExecStructure.add(step02);
 
 			if (step02.getStepStatus().toLowerCase().contains("failed")) 
@@ -158,7 +159,7 @@ public class SOI_68_TC01_OrderCreation_From_OPTYClosure_Won_MobileVoice {
 
 		try
 		{
-			TestStepReportStructure step03 = CompanySFDS.createStandardOppie(driver, stepsExecuted, testName, testExecutionString);
+			TestStepReportStructure step03 = StpsSalesCompany.createStandardOppie(driver, stepsExecuted, testName, testExecutionString);
 			testExecStructure.add(step03);
 
 			if (step03.getStepStatus().toLowerCase().contains("failed")) 
@@ -183,7 +184,7 @@ public class SOI_68_TC01_OrderCreation_From_OPTYClosure_Won_MobileVoice {
 
 		try
 		{
-			TestStepReportStructure step04 = CompanySFDS.configNewMobileOpportunity(driver, wait, testName, testExecutionString, stepsExecuted);
+			TestStepReportStructure step04 = StpsSalesCompany.configNewMobileOpportunity(driver, wait, testName, testExecutionString, stepsExecuted);
 			testExecStructure.add(step04);
 
 			if (step04.getStepStatus().toLowerCase().contains("failed")) 
@@ -207,7 +208,7 @@ public class SOI_68_TC01_OrderCreation_From_OPTYClosure_Won_MobileVoice {
 
 		try
 		{
-			TestStepReportStructure step05 = OpportunitySFDS.soi66Validation(driver, testName, stepsExecuted, optyName);
+			TestStepReportStructure step05 = StpsSalesOpportunity.soi66Validation(driver, testName, stepsExecuted, optyName);
 			testExecStructure.add(step05);
 
 			if (step05.getStepStatus().toLowerCase().contains("failed")) 
@@ -230,7 +231,7 @@ public class SOI_68_TC01_OrderCreation_From_OPTYClosure_Won_MobileVoice {
 
 		try
 		{
-			TestStepReportStructure step06 = OpportunitySFDS.navigate2Agreement(driver, testName, stepsExecuted, optyName);
+			TestStepReportStructure step06 = StpsSalesOpportunity.navigate2Agreement(driver, testName, stepsExecuted, optyName);
 			testExecStructure.add(step06);
 
 			if (step06.getStepStatus().toLowerCase().contains("failed")) 
@@ -255,7 +256,7 @@ public class SOI_68_TC01_OrderCreation_From_OPTYClosure_Won_MobileVoice {
 		{
 			String file2Upload="SimpleOrdering_Dummy_File";
 
-			TestStepReportStructure step07 = AgreementSFDS.add1stFileToAgreement(driver, testName, stepsExecuted, file2Upload);
+			TestStepReportStructure step07 = StpsSalesAgreement.add1stFileToAgreement(driver, testName, stepsExecuted, file2Upload);
 			testExecStructure.add(step07);
 
 			if (step07.getStepStatus().toLowerCase().contains("failed")) 
@@ -278,7 +279,7 @@ public class SOI_68_TC01_OrderCreation_From_OPTYClosure_Won_MobileVoice {
 		
 		try
 		{
-			TestStepReportStructure step08 = AgreementSFDS.navigate2Opportunity(driver, testName, stepsExecuted, optyName);
+			TestStepReportStructure step08 = StpsSalesAgreement.navigate2Opportunity(driver, testName, stepsExecuted, optyName);
 			testExecStructure.add(step08);
 			
 			if (step08.getStepStatus().toLowerCase().contains("failed")) 
@@ -301,7 +302,7 @@ public class SOI_68_TC01_OrderCreation_From_OPTYClosure_Won_MobileVoice {
 		
 		try
 		{
-			TestStepReportStructure step09 = OpportunitySFDS.closingWonOPTY(driver, stepsExecuted, testName, optyName);
+			TestStepReportStructure step09 = StpsSalesOpportunity.closingWonOPTY(driver, stepsExecuted, testName, optyName);
 			testExecStructure.add(step09);
 			
 			if (step09.getStepStatus().toLowerCase().contains("failed")) 
@@ -324,7 +325,7 @@ public class SOI_68_TC01_OrderCreation_From_OPTYClosure_Won_MobileVoice {
 		
 		try
 		{
-			TestStepReportStructure step10 = OpportunitySFDS.soi68Validation(driver, stepsExecuted, testName, optyName);
+			TestStepReportStructure step10 = StpsSalesOpportunity.soi68Validation(driver, stepsExecuted, testName, optyName);
 			testExecStructure.add(step10);
 			
 			if (step10.getStepStatus().toLowerCase().contains("failed")) 
@@ -347,7 +348,7 @@ public class SOI_68_TC01_OrderCreation_From_OPTYClosure_Won_MobileVoice {
 		
 		try
 		{
-			TestStepReportStructure step11 = OpportunitySFDS.navigate2Order(driver, testName, stepsExecuted, optyName);
+			TestStepReportStructure step11 = StpsSalesOpportunity.navigate2Order(driver, testName, stepsExecuted, optyName);
 			
 			if (step11.getStepStatus().toLowerCase().contains("failed")) 
 			{

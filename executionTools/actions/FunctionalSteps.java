@@ -13,10 +13,10 @@ import execReport.ReportStructure;
 import execReport.TestStepReportStructure;
 import execStructure.ExecStructure;
 import execStructure.TestData;
-import functionalActions.SFDS.Case;
-import functionalActions.SFDS.Opportunity;
-import functionalActions.SFDS.Order;
-import functionalActions.SFDS.Service;
+import functionalActions.SFDS.ActsSalesCase;
+import functionalActions.SFDS.ActsSalesOpportunity;
+import functionalActions.SFDS.ActsSalesOrder;
+import functionalActions.SFDS.ActsSalesService;
 import sfDirectSales.SalesForceCompany;
 import sfDirectSales.SalesForceHomePage;
 import sfDirectSales.SalesForceNewMACDOrderScreen;
@@ -45,7 +45,7 @@ import actions.BrowserActions;
 			{
 				FunctionalActionsSFDS.goToByURL(driver, stepID, "Opportunity", objectURL);
 
-				validation = Opportunity.opportunityScreenValidation(driver, stepID);
+				validation = ActsSalesOpportunity.opportunityScreenValidation(driver, stepID);
 
 				if(validation==true)
 				{
@@ -88,7 +88,7 @@ import actions.BrowserActions;
 			{
 				FunctionalActionsSFDS.goToByURL(driver, stepID, "Order", objectURL);
 
-				validation = Order.orderPageValidation(driver, stepID);
+				validation = ActsSalesOrder.orderPageValidation(driver, stepID);
 
 				if(validation==true)
 				{
@@ -131,7 +131,7 @@ import actions.BrowserActions;
 			{
 				FunctionalActionsSFDS.goToByURL(driver, stepID, "Service", objectURL);
 
-				validation = Service.validationServicePage(driver, stepID);
+				validation = ActsSalesService.validationServicePage(driver, stepID);
 
 				if(validation==true)
 				{
@@ -174,7 +174,7 @@ import actions.BrowserActions;
 			{
 				FunctionalActionsSFDS.goToByURL(driver, stepID, "Case", objectURL);
 
-				validation = Case.validationCasePage(driver, stepID);
+				validation = ActsSalesCase.validationCasePage(driver, stepID);
 
 				if(validation==true)
 				{

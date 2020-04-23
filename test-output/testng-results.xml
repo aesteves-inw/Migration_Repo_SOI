@@ -1,45 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
+<testng-results skipped="0" failed="0" ignored="0" total="7" passed="7">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="144590" started-at="2020-04-20T00:17:09Z" finished-at="2020-04-20T00:19:34Z">
+  <suite name="Default suite" duration-ms="104126" started-at="2020-04-23T00:06:01Z" finished-at="2020-04-23T00:07:45Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="144590" started-at="2020-04-20T00:17:09Z" finished-at="2020-04-20T00:19:34Z">
-      <class name="delivery01.soi_68.SOI_68_TC2_OrderCreation_From_OPTYClosure_Won_NotMobileVoice">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:delivery01.soi_68.SOI_68_TC2_OrderCreation_From_OPTYClosure_Won_NotMobileVoice@4dfa3a9d]" name="beforeTest" is-config="true" duration-ms="7778" started-at="2020-04-20T00:17:09Z" finished-at="2020-04-20T00:17:17Z">
+    <test name="Default test" duration-ms="104126" started-at="2020-04-23T00:06:01Z" finished-at="2020-04-23T00:07:45Z">
+      <class name="delivery01.soi_68.SOI_68_TC8_PC_OrderCreationForNewContract_NegativeValidation_ManualCreation">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:delivery01.soi_68.SOI_68_TC8_PC_OrderCreationForNewContract_NegativeValidation_ManualCreation@4dfa3a9d]" name="beforeTest" is-config="true" duration-ms="7664" started-at="2020-04-23T00:06:01Z" finished-at="2020-04-23T00:06:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="step01()[pri:0, instance:delivery01.soi_68.SOI_68_TC2_OrderCreation_From_OPTYClosure_Won_NotMobileVoice@4dfa3a9d]" name="step01" duration-ms="12313" started-at="2020-04-20T00:17:17Z" finished-at="2020-04-20T00:17:29Z">
+        <test-method status="PASS" signature="step01()[pri:0, instance:delivery01.soi_68.SOI_68_TC8_PC_OrderCreationForNewContract_NegativeValidation_ManualCreation@4dfa3a9d]" name="step01" duration-ms="6897" started-at="2020-04-23T00:06:09Z" finished-at="2020-04-23T00:06:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step01 -->
-        <test-method status="PASS" signature="step02()[pri:0, instance:delivery01.soi_68.SOI_68_TC2_OrderCreation_From_OPTYClosure_Won_NotMobileVoice@4dfa3a9d]" name="step02" duration-ms="8564" started-at="2020-04-20T00:17:29Z" depends-on-methods="delivery01.soi_68.SOI_68_TC2_OrderCreation_From_OPTYClosure_Won_NotMobileVoice.step01" finished-at="2020-04-20T00:17:38Z">
+        <test-method status="PASS" signature="step02()[pri:0, instance:delivery01.soi_68.SOI_68_TC8_PC_OrderCreationForNewContract_NegativeValidation_ManualCreation@4dfa3a9d]" name="step02" duration-ms="5804" started-at="2020-04-23T00:06:16Z" depends-on-methods="delivery01.soi_68.SOI_68_TC8_PC_OrderCreationForNewContract_NegativeValidation_ManualCreation.step01" finished-at="2020-04-23T00:06:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step02 -->
-        <test-method status="PASS" signature="step03()[pri:0, instance:delivery01.soi_68.SOI_68_TC2_OrderCreation_From_OPTYClosure_Won_NotMobileVoice@4dfa3a9d]" name="step03" duration-ms="17897" started-at="2020-04-20T00:17:38Z" depends-on-methods="delivery01.soi_68.SOI_68_TC2_OrderCreation_From_OPTYClosure_Won_NotMobileVoice.step02" finished-at="2020-04-20T00:17:56Z">
+        <test-method status="PASS" signature="step03()[pri:0, instance:delivery01.soi_68.SOI_68_TC8_PC_OrderCreationForNewContract_NegativeValidation_ManualCreation@4dfa3a9d]" name="step03" duration-ms="9539" started-at="2020-04-23T00:06:22Z" depends-on-methods="delivery01.soi_68.SOI_68_TC8_PC_OrderCreationForNewContract_NegativeValidation_ManualCreation.step02" finished-at="2020-04-23T00:06:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step03 -->
-        <test-method status="PASS" signature="step04()[pri:0, instance:delivery01.soi_68.SOI_68_TC2_OrderCreation_From_OPTYClosure_Won_NotMobileVoice@4dfa3a9d]" name="step04" duration-ms="38715" started-at="2020-04-20T00:17:56Z" depends-on-methods="delivery01.soi_68.SOI_68_TC2_OrderCreation_From_OPTYClosure_Won_NotMobileVoice.step03" finished-at="2020-04-20T00:18:34Z">
+        <test-method status="PASS" signature="step04()[pri:0, instance:delivery01.soi_68.SOI_68_TC8_PC_OrderCreationForNewContract_NegativeValidation_ManualCreation@4dfa3a9d]" name="step04" duration-ms="11650" started-at="2020-04-23T00:06:31Z" depends-on-methods="delivery01.soi_68.SOI_68_TC8_PC_OrderCreationForNewContract_NegativeValidation_ManualCreation.step03" finished-at="2020-04-23T00:06:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step04 -->
-        <test-method status="PASS" signature="step05()[pri:0, instance:delivery01.soi_68.SOI_68_TC2_OrderCreation_From_OPTYClosure_Won_NotMobileVoice@4dfa3a9d]" name="step05" duration-ms="33648" started-at="2020-04-20T00:18:34Z" depends-on-methods="delivery01.soi_68.SOI_68_TC2_OrderCreation_From_OPTYClosure_Won_NotMobileVoice.step04" finished-at="2020-04-20T00:19:08Z">
+        <test-method status="PASS" signature="step05()[pri:0, instance:delivery01.soi_68.SOI_68_TC8_PC_OrderCreationForNewContract_NegativeValidation_ManualCreation@4dfa3a9d]" name="step05" duration-ms="10030" started-at="2020-04-23T00:06:43Z" depends-on-methods="delivery01.soi_68.SOI_68_TC8_PC_OrderCreationForNewContract_NegativeValidation_ManualCreation.step04" finished-at="2020-04-23T00:06:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step05 -->
-        <test-method status="PASS" signature="step06()[pri:0, instance:delivery01.soi_68.SOI_68_TC2_OrderCreation_From_OPTYClosure_Won_NotMobileVoice@4dfa3a9d]" name="step06" duration-ms="20548" started-at="2020-04-20T00:19:08Z" depends-on-methods="delivery01.soi_68.SOI_68_TC2_OrderCreation_From_OPTYClosure_Won_NotMobileVoice.step05" finished-at="2020-04-20T00:19:29Z">
+        <test-method status="PASS" signature="step06()[pri:0, instance:delivery01.soi_68.SOI_68_TC8_PC_OrderCreationForNewContract_NegativeValidation_ManualCreation@4dfa3a9d]" name="step06" duration-ms="26784" started-at="2020-04-23T00:06:53Z" depends-on-methods="delivery01.soi_68.SOI_68_TC8_PC_OrderCreationForNewContract_NegativeValidation_ManualCreation.step05" finished-at="2020-04-23T00:07:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step06 -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:delivery01.soi_68.SOI_68_TC2_OrderCreation_From_OPTYClosure_Won_NotMobileVoice@4dfa3a9d]" name="afterTest" is-config="true" duration-ms="5024" started-at="2020-04-20T00:19:29Z" finished-at="2020-04-20T00:19:34Z">
+        <test-method status="PASS" signature="step07()[pri:0, instance:delivery01.soi_68.SOI_68_TC8_PC_OrderCreationForNewContract_NegativeValidation_ManualCreation@4dfa3a9d]" name="step07" duration-ms="20617" started-at="2020-04-23T00:07:20Z" depends-on-methods="delivery01.soi_68.SOI_68_TC8_PC_OrderCreationForNewContract_NegativeValidation_ManualCreation.step06" finished-at="2020-04-23T00:07:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- step07 -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:delivery01.soi_68.SOI_68_TC8_PC_OrderCreationForNewContract_NegativeValidation_ManualCreation@4dfa3a9d]" name="afterTest" is-config="true" duration-ms="5082" started-at="2020-04-23T00:07:40Z" finished-at="2020-04-23T00:07:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-      </class> <!-- delivery01.soi_68.SOI_68_TC2_OrderCreation_From_OPTYClosure_Won_NotMobileVoice -->
+      </class> <!-- delivery01.soi_68.SOI_68_TC8_PC_OrderCreationForNewContract_NegativeValidation_ManualCreation -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

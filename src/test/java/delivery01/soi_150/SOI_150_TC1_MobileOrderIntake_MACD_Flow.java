@@ -11,10 +11,10 @@ import execReport.TestReportTestData;
 import execReport.TestStepReportStructure;
 import execStructure.ExecStructure;
 import execStructure.TestData;
-import functionalSteps.SFDS.CompanySFDS;
-import functionalSteps.SFDS.HomePageSFDS;
-import functionalSteps.SFDS.OrderSFDS;
-import functionalSteps.SFDS.ServiceSFDS;
+import functionalSteps.SFDS.StpsSalesCompany;
+import functionalSteps.SFDS.StpsSalesHomePage;
+import functionalSteps.SFDS.StpsSalesOrder;
+import functionalSteps.SFDS.StpsSalesService;
 import sfDirectSales.SalesForceCompany;
 import sfDirectSales.SalesforceNewMACDFlow;
 
@@ -145,7 +145,7 @@ public class SOI_150_TC1_MobileOrderIntake_MACD_Flow {
 		try
 		{
 
-			TestStepReportStructure step02 = HomePageSFDS.navigate2CompanyDetails(driver, stepsExecuted, testName);
+			TestStepReportStructure step02 = StpsSalesHomePage.navigate2CompanyDetails(driver, stepsExecuted, testName);
 			testExecStructure.add(step02);
 			
 			testData.add(new TestReportTestData("Company", TestData.tdCompanyName(testName), "URL", driver.getCurrentUrl()));
@@ -370,7 +370,7 @@ public class SOI_150_TC1_MobileOrderIntake_MACD_Flow {
 		
 		try
 		{
-			TestStepReportStructure step08 = CompanySFDS.navigate2FirstOrder(driver, testName, stepsExecuted);
+			TestStepReportStructure step08 = StpsSalesCompany.navigate2FirstOrder(driver, testName, stepsExecuted);
 			testExecStructure.add(step08);
 			
 			
@@ -395,7 +395,7 @@ public class SOI_150_TC1_MobileOrderIntake_MACD_Flow {
 		
 		try
 		{
-			TestStepReportStructure step09 = OrderSFDS.nav2Service(driver, testName, stepsExecuted);
+			TestStepReportStructure step09 = StpsSalesOrder.nav2Service(driver, testName, stepsExecuted);
 			testExecStructure.add(step09);
 			
 			if (step09.getStepStatus().toLowerCase().contains("failed")) 
@@ -420,7 +420,7 @@ public class SOI_150_TC1_MobileOrderIntake_MACD_Flow {
 		
 		try
 		{
-			TestStepReportStructure step10 = ServiceSFDS.navigate2CaseScreen(driver, testName, stepsExecuted);
+			TestStepReportStructure step10 = StpsSalesService.navigate2CaseScreen(driver, testName, stepsExecuted);
 			testExecStructure.add(step10);
 			
 			if (step10.getStepStatus().toLowerCase().contains("failed")) 

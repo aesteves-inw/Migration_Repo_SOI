@@ -19,10 +19,10 @@ import execReport.TestReportTestData;
 import execReport.TestStepReportStructure;
 import execStructure.ExecStructure;
 import execStructure.TestData;
-import functionalSteps.SFPC.AgreementSFPC;
-import functionalSteps.SFPC.CompanySFPC;
-import functionalSteps.SFPC.HomePageSFPC;
-import functionalSteps.SFPC.OpportunitySFPC;
+import functionalSteps.SFPC.StpsPartsAgreement;
+import functionalSteps.SFPC.StpsPartsCompany;
+import functionalSteps.SFPC.StpsPartsHomePage;
+import functionalSteps.SFPC.StpsPartsOpportunity;
 
 public class SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement {
 
@@ -104,7 +104,7 @@ public class SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement {
 
 		try 
 		{
-			TestStepReportStructure step01 = HomePageSFPC.loginSFPC(driver, stepsExecuted, testName);
+			TestStepReportStructure step01 = StpsPartsHomePage.loginSFPC(driver, stepsExecuted, testName);
 			testExecStructure.add(step01);
 			
 			if (step01.getStepStatus().toLowerCase().contains("failed")) 
@@ -127,7 +127,7 @@ public class SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement {
 		
 		try 
 		{
-			TestStepReportStructure step02 = HomePageSFPC.navigate2CompDetailsPC(driver, testName, stepsExecuted, testExecutionString);
+			TestStepReportStructure step02 = StpsPartsHomePage.navigate2CompDetailsPC(driver, testName, stepsExecuted, testExecutionString);
 			testExecStructure.add(step02);
 			
 			if (step02.getStepStatus().toLowerCase().contains("failed")) 
@@ -151,7 +151,7 @@ public class SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement {
 
 		try 
 		{
-			TestStepReportStructure step03 = CompanySFPC.createNewOpportunity(driver, wait, stepsExecuted, testName, testExecutionString);
+			TestStepReportStructure step03 = StpsPartsCompany.createNewOpportunity(driver, wait, stepsExecuted, testName, testExecutionString);
 			testExecStructure.add(step03);
 			
 			if (step03.getStepStatus().toLowerCase().contains("failed")) 
@@ -174,7 +174,7 @@ public class SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement {
 		
 		try 
 		{
-			TestStepReportStructure step04 = OpportunitySFPC.opportunityAddProductScreen(driver, wait, stepsExecuted, testName, testExecutionString);
+			TestStepReportStructure step04 = StpsPartsOpportunity.opportunityAddProductScreen(driver, wait, stepsExecuted, testName, testExecutionString);
 			testExecStructure.add(step04);
 			
 			if (step04.getStepStatus().toLowerCase().contains("failed")) 
@@ -198,7 +198,7 @@ public class SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement {
 		
 		try 
 		{
-			TestStepReportStructure step06 = OpportunitySFPC.optyProductConfiguration(driver, wait, stepsExecuted, testName, testExecutionString);
+			TestStepReportStructure step06 = StpsPartsOpportunity.optyProductConfiguration(driver, wait, stepsExecuted, testName, testExecutionString);
 			testExecStructure.add(step06);
 			
 			if (step06.getStepStatus().toLowerCase().contains("failed")) 
@@ -223,7 +223,7 @@ public class SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement {
 		
 		try 
 		{
-			TestStepReportStructure step07 = OpportunitySFPC.soi66validation(driver, wait, testName, stepsExecuted, testExecutionString);
+			TestStepReportStructure step07 = StpsPartsOpportunity.soi66validation(driver, wait, testName, stepsExecuted, testExecutionString);
 			testExecStructure.add(step07);
 			
 			if (step07.getStepStatus().toLowerCase().contains("failed")) 
@@ -247,7 +247,7 @@ public class SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement {
 		
 		try 
 		{
-			TestStepReportStructure step08 = AgreementSFPC.agreementValidation(driver, stepsExecuted, testName, testExecutionString);
+			TestStepReportStructure step08 = StpsPartsAgreement.agreementValidation(driver, stepsExecuted, testName, testExecutionString);
 			testExecStructure.add(step08);
 			
 			if (step08.getStepStatus().toLowerCase().contains("failed")) 
@@ -271,7 +271,7 @@ public class SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement {
 		
 		try 
 		{
-			TestStepReportStructure step08 = AgreementSFPC.addFile2Agreement(driver, stepsExecuted, testName);
+			TestStepReportStructure step08 = StpsPartsAgreement.addFile2Agreement(driver, stepsExecuted, testName);
 			testExecStructure.add(step08);
 			
 			if (step08.getStepStatus().toLowerCase().contains("failed")) 
@@ -287,6 +287,8 @@ public class SOI_66_TC12_PC_AgreementCreation_Add_File_2_Agreement {
 		}
 		
 	}
+	
+
 	
 	@AfterTest
 	public void afterTest() {
