@@ -14,6 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class BrowserActions {
 	
 	
+	
 	//Browser Actions
 	public static void refreshPage(WebDriver driver)
 	{
@@ -39,8 +40,6 @@ public class BrowserActions {
 			}
 
 	}
-
-	
 	
 	
 	//Elements validation
@@ -97,6 +96,21 @@ public class BrowserActions {
 		return ele;
 	}
 	
+	public static boolean isJSElementPresent(WebDriver driver, String jsElement)
+	{
+		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+		
+		WebElement element = (WebElement) jsExecutor.executeScript(jsElement);
+		
+		if (element == null)
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
 	
 	
 	//Elements attributes 
@@ -139,15 +153,13 @@ public class BrowserActions {
 		return element;
 	}
 
-	public static WebElement getElementByJSQuery(WebDriver driver, WebDriverWait wait, String queryToExec) throws Exception
+	public static WebElement getElementByJSQuery(WebDriver driver, String queryToExec) throws Exception
 	{
 		try
 		{
-			Thread.sleep(5000);
+			JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 			
-			WebElement element = (WebElement) ((JavascriptExecutor)driver).executeScript(queryToExec);
-			
-			
+			WebElement element = (WebElement) jsExecutor.executeScript(queryToExec);
 			
 			
 			return element;
@@ -159,6 +171,24 @@ public class BrowserActions {
 		}
 		
 	}
+
+	public static void jsClick(WebDriver driver, WebElement element) throws Exception
+	{
+		try
+		{
+			JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+			
+			jsExecutor.executeScript("arguments[0].click();", element);
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception("jsClick: Not possible to locate element: "+element,e);
+		}
+	}
+	
+	
+	
 	
 	
 	// Scrolls
@@ -204,6 +234,7 @@ public class BrowserActions {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 	}
+	
 	
 	
 	

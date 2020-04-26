@@ -81,9 +81,13 @@ public class SalesForceOpportunity {
 	//public static String closeOPTYHeaderButton = "(//span[@class='title slds-path__title'][contains(.,'Closed')])[2]";
 	
 	
-	public static String closeOPTYHeaderButton = "return document.querySelectorAll('one-record-home-flexipage2')[1].shadowRoot.querySelector('forcegenerated-flexipage_opportunity_record_page3_opportunity__view_js').shadowRoot.querySelectorAll('flexipage-aura-wrapper')[0].shadowRoot.querySelectorAll('li.slds-is-incomplete.slds-path__item.runtime_sales_pathassistantPathAssistantTab')[5]";
+	//public static String closeOPTYHeaderButton = "return document.querySelectorAll('one-record-home-flexipage2')[1].shadowRoot.querySelector('forcegenerated-flexipage_opportunity_record_page3_opportunity__view_js').shadowRoot.querySelectorAll('flexipage-aura-wrapper')[0].shadowRoot.querySelectorAll('li.slds-is-incomplete.slds-path__item.runtime_sales_pathassistantPathAssistantTab')[5]";
 	
-	public static String selectCloseMenu="//span[.='Select Closed Stage']";
+	public static String closeOPTYHeaderButton="return document.querySelectorAll('one-record-home-flexipage2')[1].shadowRoot.querySelector('forcegenerated-flexipage_opportunity_record_page3_opportunity__view_js').shadowRoot.querySelectorAll('flexipage-aura-wrapper')[0].shadowRoot.querySelectorAll('span.title.slds-path__title')[6]";
+	
+	//public static String selectCloseMenu="//span[.='Select Closed Stage']";
+	
+	public static String selectCloseMenu="return document.querySelectorAll('one-record-home-flexipage2')[1].shadowRoot.querySelector('forcegenerated-flexipage_opportunity_record_page3_opportunity__view_js').shadowRoot.querySelectorAll('flexipage-aura-wrapper')[0].shadowRoot.querySelector('span.uiOutputText')";
 	
 	//--
 	

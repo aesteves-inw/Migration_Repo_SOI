@@ -28,6 +28,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -65,31 +66,31 @@ public class SOI_150_TC1_MobileOrderIntake_MACD_Flow {
 	@BeforeTest
 	public void beforeTest() {
 
-		System.out.println("Test Case: "+testName+" initiation");
+		  System.out.println("Test Case: "+testName+" initiation");
+		  
+		  ExecStructure.createReportStructure(testName);
+		  
+		  System.setProperty("webdriver.chrome.driver", TestData.ChromeDriverPath);
+		  
+		  ChromeOptions chromeProfile = new ChromeOptions(); 
 
-		ExecStructure.createReportStructure(testName);
+		  chromeProfile.addArguments("--start-maximized"); 
 
-		System.setProperty("webdriver.chrome.driver", TestData.ChromeDriverPath);
+		  chromeProfile.addArguments("chrome.switches","--disable-extensions");
 
-		ChromeOptions Chrome_Profile = new ChromeOptions(); 
+		  chromeProfile.addArguments("user-data-dir=" + TestData.ChromeProfilePath);
 
-		Chrome_Profile.addArguments("--start-maximized"); 
+		  chromeProfile.addArguments("disable-infobars");
 
-		Chrome_Profile.addArguments("chrome.switches","--disable-extensions");
+		  chromeProfile.addArguments("profile.default_content_settings.popups", "0"); 
 
-		Chrome_Profile.addArguments("user-data-dir=" + TestData.ChromeProfilePath);
+		  chromeProfile.addArguments("download.prompt_for_download", "false");
 
-		Chrome_Profile.addArguments("disable-infobars");
+		  chromeProfile.addArguments("browser.helperApps.neverAsk.saveToDisk", "application/pdf");
+			
+		  chromeProfile.setPageLoadStrategy(PageLoadStrategy.NORMAL);
 
-		Chrome_Profile.addArguments("profile.default_content_settings.popups", "0"); 
-
-		Chrome_Profile.addArguments("download.prompt_for_download", "false");
-
-		Chrome_Profile.addArguments("browser.helperApps.neverAsk.saveToDisk", "application/pdf");
-
-		driver = new ChromeDriver(Chrome_Profile); 
-
-		wait=new WebDriverWait(driver, 15);
+			driver = new ChromeDriver(chromeProfile); 
 
 		Set<Cookie> allCookies = driver.manage().getCookies(); 
 

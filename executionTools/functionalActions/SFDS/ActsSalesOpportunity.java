@@ -3,9 +3,11 @@ package functionalActions.SFDS;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -207,28 +209,20 @@ public class ActsSalesOpportunity {
 	{
 		String actionName="Opportunity: Close Won Opportunity";
 
-
-
 		WebDriverWait waitCWO = new WebDriverWait(driver, 10);
-
-		Screen screen = new Screen();
 
 		try
 		{
 			
-			screen.wait(SalesForceSikuli.closeOPTYBtn, 20);
-
-			screen.click(SalesForceSikuli.closeOPTYBtn);
-
-			screen.wait(SalesForceSikuli.selectClosedStageBtn, 20);
-
-			screen.click(SalesForceSikuli.selectClosedStageBtn);
+			WebElement closeOPTYLink = BrowserActions.getElementByJSQuery(driver, SalesForceOpportunity.closeOPTYHeaderButton);
 			
+			System.out.println("isJSElementPresent Debug: "+BrowserActions.isJSElementPresent(driver, SalesForceOpportunity.closeOPTYHeaderButton));
 			
-			//Thread.sleep(3000);
+			BrowserActions.jsClick(driver, closeOPTYLink);		
+						
+			WebElement selectCloseButton=BrowserActions.getElementByJSQuery(driver, SalesForceOpportunity.selectCloseMenu);
 			
-			//BrowserActions.getElementByJSQuery(driver, waitCWO, SalesForceOpportunity.closeOPTYHeaderButton).click();
-			
+			BrowserActions.jsClick(driver, selectCloseButton);	
 			
 			waitCWO.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesForceOpportunity.ctomHeader)));
 

@@ -1,10 +1,12 @@
 package delivery01.soi_68;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
 import org.openqa.selenium.Cookie;
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -64,25 +66,27 @@ public class SOI_68_TC8_PC_OrderCreationForNewContract_NegativeValidation_Manual
 	  
 	  System.setProperty("webdriver.chrome.driver", TestData.ChromeDriverPath);
 	  
-	  ChromeOptions Chrome_Profile = new ChromeOptions(); 
+	  ChromeOptions ChromeProfile = new ChromeOptions(); 
 
-		Chrome_Profile.addArguments("--start-maximized"); 
+	  ChromeProfile.addArguments("--start-maximized"); 
 
-		Chrome_Profile.addArguments("chrome.switches","--disable-extensions");
+	  ChromeProfile.addArguments("chrome.switches","--disable-extensions");
 
-		Chrome_Profile.addArguments("user-data-dir=" + TestData.ChromeProfilePath);
+	  ChromeProfile.addArguments("user-data-dir=" + TestData.ChromeProfilePath);
 
-		Chrome_Profile.addArguments("disable-infobars");
+	  ChromeProfile.addArguments("disable-infobars");
 
-		Chrome_Profile.addArguments("profile.default_content_settings.popups", "0"); 
+	  ChromeProfile.addArguments("profile.default_content_settings.popups", "0"); 
 
-		Chrome_Profile.addArguments("download.prompt_for_download", "false");
+	  ChromeProfile.addArguments("download.prompt_for_download", "false");
 
-		Chrome_Profile.addArguments("browser.helperApps.neverAsk.saveToDisk", "application/pdf");
-
-		driver = new ChromeDriver(Chrome_Profile); 
+	  ChromeProfile.addArguments("browser.helperApps.neverAsk.saveToDisk", "application/pdf");
 		
-		wait=new WebDriverWait(driver, 15);
+	  ChromeProfile.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+
+		driver = new ChromeDriver(ChromeProfile); 
+		
+		wait = new WebDriverWait(driver, 15);
 
 		Set<Cookie> allCookies = driver.manage().getCookies(); 
 
