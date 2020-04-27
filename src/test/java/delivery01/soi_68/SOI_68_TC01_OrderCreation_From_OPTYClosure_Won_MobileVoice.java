@@ -59,6 +59,7 @@ public class SOI_68_TC01_OrderCreation_From_OPTYClosure_Won_MobileVoice {
 
   @BeforeTest
   public void beforeTest() {
+	  
 	  System.out.println("Test Case: "+testName+" initiation");
 	  
 	  ExecStructure.createReportStructure(testName);

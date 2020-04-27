@@ -96,11 +96,10 @@ public class BrowserActions {
 		return ele;
 	}
 	
-	public static boolean isJSElementPresent(WebDriver driver, String jsElement)
+	public static boolean isJSElementPresent(WebDriver driver, String jsElement) throws Exception
 	{
-		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-		
-		WebElement element = (WebElement) jsExecutor.executeScript(jsElement);
+				
+		WebElement element = getElementByJSQuery(driver, jsElement);
 		
 		if (element == null)
 		{

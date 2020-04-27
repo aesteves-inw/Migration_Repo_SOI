@@ -216,8 +216,6 @@ public class ActsSalesOpportunity {
 			
 			WebElement closeOPTYLink = BrowserActions.getElementByJSQuery(driver, SalesForceOpportunity.closeOPTYHeaderButton);
 			
-			System.out.println("isJSElementPresent Debug: "+BrowserActions.isJSElementPresent(driver, SalesForceOpportunity.closeOPTYHeaderButton));
-			
 			BrowserActions.jsClick(driver, closeOPTYLink);		
 						
 			WebElement selectCloseButton=BrowserActions.getElementByJSQuery(driver, SalesForceOpportunity.selectCloseMenu);
