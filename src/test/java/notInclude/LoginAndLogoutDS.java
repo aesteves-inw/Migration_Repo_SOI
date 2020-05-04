@@ -75,7 +75,7 @@ public class LoginAndLogoutDS extends ExecDriverClass {
 
 	}
 	
-	/*@Test(dependsOnMethods = "step01")
+	@Test(dependsOnMethods = "step01")
 	public void step02() throws Exception 
 	{
 		stepsExecuted++;
@@ -98,7 +98,7 @@ public class LoginAndLogoutDS extends ExecDriverClass {
 			System.out.println(e);
 			throw new Exception("Test Failed on Step "+stepsExecuted,e);
 		}
-	}*/
+	}
 
 	@AfterClass
 	public void afterClass() 

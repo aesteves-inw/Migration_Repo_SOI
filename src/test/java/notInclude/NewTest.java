@@ -1,11 +1,8 @@
 package notInclude;
 
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 import execReport.TestStepReportStructure;
-import execStructure.TestStructure;
 import functionalSteps.SFDS.StpsSalesHomePage;
 
 public class NewTest extends LoginAndLogoutDS{
