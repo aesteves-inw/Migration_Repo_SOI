@@ -248,12 +248,22 @@ public class TestData {
 		}
 	}
 
+	public static String getOPTYName(String testClassName)
+	{
+		String optyName=TestData.OPTY+ExecStructure.getTestExecutionString(testClassName);
+		
+		return optyName;
+	}
+	
 	// Orders Related View - SOI-80
 	
 	public static String allOrdersURL="https://proximusitqa--prxittqa.lightning.force.com/lightning/o/csord__Order__c/list?filterName=00B58000004rXxlEAE";
 
 	public static String myOrdersURL="https://proximusitqa--prxittqa.lightning.force.com/lightning/o/csord__Order__c/list?filterName=00B3E000002XCLdUAO";
 
+	
+	//CONSTANTS
+	public static final String OPTY="OPTY_";
 	
 	//Report Elements
 	

@@ -83,8 +83,15 @@ public class SFPC_Orders {
 	
 	public static String selectListViewButton="//a[@title='Select List View']";
 	
+	public static String refreshButton="//button[@title='Refresh']";
+	
+	public static String bannerHeader="//div[@role='banner']";
+	
 	public static String ordersFilterLabel="//h1/div/div/span[2]";
 	
+	
+	// NOT EXISTING
+	public static String newOrderButton="//*[contains(.,'New')]";
 	
 
 }

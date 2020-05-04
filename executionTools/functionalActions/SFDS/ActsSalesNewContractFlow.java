@@ -3,6 +3,7 @@ package functionalActions.SFDS;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -28,11 +29,13 @@ public class ActsSalesNewContractFlow {
 			}
 			catch(Exception e)
 			{
-
+				System.out.println(e);
 				throw new Exception (actionName+" - Failed in Step "+stepID,e);
 			}
 
 	 */
+	
+	
 
 	public static void creatingSerivceFromOrder(WebDriver driver, WebDriverWait wait, int stepID) throws Exception
 	{
@@ -77,7 +80,7 @@ public class ActsSalesNewContractFlow {
 
 			driver.findElement(By.xpath(SalesForceOrders.nextButton)).click();
 
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesforceNewMACDFlow.secondScreen)));
+			//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesforceNewMACDFlow.secondScreen)));
 
 
 			System.out.println(actionName+" - Succeeded in Step "+stepID);
@@ -85,7 +88,7 @@ public class ActsSalesNewContractFlow {
 		}
 		catch(Exception e)
 		{
-
+			System.out.println(e);
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
 	}
@@ -123,18 +126,20 @@ public class ActsSalesNewContractFlow {
 		}
 	}
 
-	public static void savingService(WebDriver driver, int stepID) throws Exception
+	public static void savingService(WebDriver driver, WebDriverWait wait, int stepID) throws Exception
 	{
 		String actionName="New Contact Flow: Save Service";
 
 
 		try
 		{
-			driver.findElement(By.xpath(SalesForceOrders.nextButton)).click();
-
-			BrowserActions.waitUntilElementFade(driver, SalesforceNewMACDFlow.secondScreen);
-
-			//waitAS2O.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(SalesforceNewMACDFlow.secondScreen)));
+			WebElement nextButton = driver.findElement(By.xpath(SalesForceOrders.nextButton));
+			
+			nextButton.click();
+			
+			
+			
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(SalesforceNewMACDFlow.secondScreen)));
 
 
 			System.out.println(actionName+" - Succeeded in Step "+stepID);
@@ -142,7 +147,7 @@ public class ActsSalesNewContractFlow {
 		}
 		catch(Exception e)
 		{
-
+			System.out.println(e);
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
 	}
@@ -256,6 +261,7 @@ public class ActsSalesNewContractFlow {
 		}
 		catch(Exception e)
 		{
+			System.out.println(e);
 			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
 		}
 
@@ -280,6 +286,7 @@ public class ActsSalesNewContractFlow {
 		}
 		catch(Exception e)
 		{
+			System.out.println(e);
 			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
 		}
 	}

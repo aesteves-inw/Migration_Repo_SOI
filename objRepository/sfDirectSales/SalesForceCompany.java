@@ -54,6 +54,9 @@ public class SalesForceCompany {
 	
 	public static String linkOrders="/html/body/div[5]/div[1]/section/div/div/div[1]/div[3]/div/div[1]/div/div[2]/div[2]/div[3]/div/div/div[2]/article/a/div/span";
 	
+	public static String ordersLinkRelatedMenu="return document.querySelectorAll('one-record-home-flexipage2')[1].shadowRoot.querySelector('forcegenerated-flexipage_company_record_page_account__view_js').shadowRoot.querySelectorAll('flexipage-aura-wrapper')[2].shadowRoot.querySelectorAll('a.slds-card__header-link.baseCard__header-title-container')[3]";
+	
+	public static String showMoreActionsOrder="return document.querySelectorAll('one-record-home-flexipage2')[1].shadowRoot.querySelector('forcegenerated-flexipage_company_record_page_account__view_js').shadowRoot.querySelectorAll('flexipage-aura-wrapper')[2].shadowRoot.querySelector('a.menuTrigger')";
 	
 	// ..:: Company Contact Person ::..
 	

@@ -1,7 +1,11 @@
 package functionalActions.SFDS;
 
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -94,6 +98,55 @@ public class ActsSalesCompany {
 		}
 	}
 	
+	public static void ordersShowMoreMenu(WebDriver driver, int stepID) throws Exception
+	{
+		String actionName="Company: Show more Actions on orders area";
+
+
+		try
+		{
+			WebElement showMoreActions = BrowserActions.getElementByJSQuery(driver, SalesForceCompany.showMoreActionsOrder);
+			
+			BrowserActions.jsClick(driver, showMoreActions);
+			
+			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+			
+
+			System.out.println(actionName+" - Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+	}
+	
+	
+	public static void goToOrdersListViewPageFromCompany(WebDriver driver, int stepID) throws Exception
+	{
+		String actionName="Company: Go to Company's Orders List View";
+
+
+		try
+		{
+			WebElement orderslistViewLink = BrowserActions.getElementByJSQuery(driver, SalesForceCompany.ordersLinkRelatedMenu);
+			
+			BrowserActions.jsClick(driver, orderslistViewLink);
+			
+			
+			
+
+			System.out.println(actionName+" - Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+	}
+	
 	// Validation Actions
 		/*02-03-2020:LMA
 		 * sketch for every validation functions
@@ -119,6 +172,31 @@ public class ActsSalesCompany {
 
 		 */
 	
-	
+	public static boolean orderActionsMenuValidation(WebDriver driver, int stepID) throws Exception
+	{
+		String actionName="Company: Order Actions on Related Menu";
+		
+		  	try
+					{
+		  		
+		  			List<WebElement> menuActions = driver.findElements(By.tagName("a"));
+		  			
+						if(menuActions.size() > 0)
+						{
+							System.out.println(actionName+" - Succeeded in Step: "+stepID);
+							return true;
+						}
+						else
+						{
+							System.out.println(actionName+" - Succeeded in Step: "+stepID);
+							return false;
+						}
+
+					}
+					catch(Exception e)
+					{
+						throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+					}
+	}
 	
 }

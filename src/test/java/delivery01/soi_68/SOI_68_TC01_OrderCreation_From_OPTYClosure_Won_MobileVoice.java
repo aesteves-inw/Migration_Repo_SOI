@@ -353,6 +353,7 @@ public class SOI_68_TC01_OrderCreation_From_OPTYClosure_Won_MobileVoice {
 		try
 		{
 			TestStepReportStructure step11 = StpsSalesOpportunity.navigate2Order(driver, testName, stepsExecuted, optyName);
+			testExecStructure.add(step11);
 			
 			if (step11.getStepStatus().toLowerCase().contains("failed")) 
 			{

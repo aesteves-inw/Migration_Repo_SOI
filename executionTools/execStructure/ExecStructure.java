@@ -5,16 +5,10 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Set;
-
-import org.openqa.selenium.Cookie;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.io.FileHandler;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ExecStructure {
 		
@@ -54,6 +48,7 @@ public class ExecStructure {
 			
 			return finaldate;
 		}
+		
 		// Function for Directory creation
 		public static void createDirectoryIfNeeded(String directoryName)
 		{
@@ -137,7 +132,30 @@ public class ExecStructure {
 	    	
 		}
 
-		
+		//Function to retrieve Test Execution String from classname
+		public static String getTestExecutionString(String testClassName)
+		{
+			String finalTestExecutionString;
+			
+			String[] fstDecompName=testClassName.split("_");
+			
+			/*
+			if(fstDecompName[3].equals("PC") || fstDecompName[3].equals("DS"))
+			{
+				finalTestExecutionString=fstDecompName[0]+"_"+fstDecompName[1]+"_"+fstDecompName[2]+"_"+fstDecompName[3];
+			}
+			else
+			{
+				finalTestExecutionString=fstDecompName[0]+"_"+fstDecompName[1]+"_"+fstDecompName[2];
+			}
+			*/
+			
+			finalTestExecutionString=fstDecompName[0]+"_"+fstDecompName[1]+"_"+fstDecompName[2]+"_Ex"+ExecStructure.numberOfSubFolders(ExecStructure.testFolder(testClassName))+"_"+ExecStructure.formattedDate("yyyyMMdd");
+			
+			return finalTestExecutionString;
+			
+		}
+
 		
 
 

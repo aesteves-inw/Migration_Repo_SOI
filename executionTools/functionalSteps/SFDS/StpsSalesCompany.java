@@ -1,5 +1,6 @@
 package functionalSteps.SFDS;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -16,6 +17,7 @@ import execReport.TestStepReportStructure;
 import execStructure.ExecStructure;
 import functionalActions.SFDS.ActsSalesCompany;
 import functionalActions.SFDS.ActsSalesOpportunity;
+import functionalActions.SFDS.ActsSalesOrder;
 import sfDirectSales.SalesForceCompany;
 import sfDirectSales.SalesForceOpportunity;
 import sfDirectSales.SalesForceOrders;
@@ -461,8 +463,91 @@ public class StpsSalesCompany {
 		}
 	}
 
+	public static TestStepReportStructure ordersActionsCompanyRelatedMenu(WebDriver driver, int stepID, String testName) throws Exception
+	{
+		TestStepReportStructure step;
+
+
+		String stepName="Company: Orders Area validation on Related Menu";
+
+		String stepNameMin="ordersActionsCompanyRelatedMenu";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			ActsSalesCompany.ordersShowMoreMenu(driver, stepID);
+
+			validation = ActsSalesCompany.orderActionsMenuValidation(driver, stepID);
+
+			if(validation==false)
+			{
+				ExecStructure.screenShotTaking(driver, testName, evidenceName);
+				step=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('p', 'e'), ReportStructure.testReportFinalElement('p', 'a'), ReportStructure.testReportFinalElement('p', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+				return step;
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			ExecStructure.screenShotTaking(driver, testName, evidenceName);
+			step=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('f', 'e'), ReportStructure.testReportFinalElement('f', 'a'), ReportStructure.testReportFinalElement('f', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+			return step;
+		}
+	}
 	
-	
+	public static TestStepReportStructure companyOrdersListViewPageValidation(WebDriver driver, WebDriverWait wait, int stepID, String testName) throws Exception
+	{
+		TestStepReportStructure step;
+
+
+		String stepName="Company: Go to Orders List View from Company's Related Menu";
+
+		String stepNameMin="companyOrdersPageValidation";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			ActsSalesCompany.goToOrdersListViewPageFromCompany(driver, stepID);
+
+			validation = ActsSalesOrder.orderListViewPageValidation(driver, wait, stepID);
+
+			if(validation==true)
+			{
+				ExecStructure.screenShotTaking(driver, testName, evidenceName);
+				step=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('p', 'e'), ReportStructure.testReportFinalElement('p', 'a'), ReportStructure.testReportFinalElement('p', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+				return step;
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			ExecStructure.screenShotTaking(driver, testName, evidenceName);
+			step=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('f', 'e'), ReportStructure.testReportFinalElement('f', 'a'), ReportStructure.testReportFinalElement('f', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+			return step;
+		}
+
+	}
+
 	
 
 }

@@ -38,5 +38,7 @@ public class SFPC_Company {
 	public static String newOppieButton="//article[contains(.,'Opportunities')]//ul/li/a";
 	
 	public static String firstOrderLink="(//article[contains(.,'Orders')]//a)[2]";
+	
+	public static String ordersListViewPageLink="//article//h2/a/span[text()='Orders']";
 
 }

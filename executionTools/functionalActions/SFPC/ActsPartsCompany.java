@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import actions.BrowserActions;
 
@@ -80,7 +81,30 @@ public class ActsPartsCompany {
 
 	}
 
+	public static void goToCompanyOrdersListViewPage(WebDriver driver, int stepID) throws Exception
+	{
+		String actionName="Company: Go to Company's Orders List View Page";
 
+
+		try
+		{
+			WebElement ordersLink=driver.findElement(By.xpath(SFPC_Company.ordersListViewPageLink));
+			
+			ordersLink.click();
+			
+			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+			
+
+			System.out.println(actionName+" - Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+
+	}
 
 	// Validation Actions
 	/*02-03-2020:LMA

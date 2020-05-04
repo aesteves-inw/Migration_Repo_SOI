@@ -112,6 +112,52 @@ public class StpsPartsHomePage {
 
 	}
 
+	public static TestStepReportStructure logoutSFPC(WebDriver driver, int stepID, String testName) throws Exception
+	{
+		TestStepReportStructure step;
+
+
+		String stepName="Logout Salesforce - Partners Community";
+
+		String stepNameMin="logoutSFPC";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			ActsPartsHomePage.logoutPC(driver, stepID);
+
+			validation = ActsPartsHomePage.validateLogoutHomePage(driver, stepID);
+
+			if(validation==true)
+			{
+				ExecStructure.screenShotTaking(driver, testName, evidenceName);
+				step=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('p', 'e'), ReportStructure.testReportFinalElement('p', 'a'), ReportStructure.testReportFinalElement('p', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+				return step;
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			ExecStructure.screenShotTaking(driver, testName, evidenceName);
+			step=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('f', 'e'), ReportStructure.testReportFinalElement('f', 'a'), ReportStructure.testReportFinalElement('f', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+			return step;
+		}
+
+	}
+
+	
+	
+	
 	public static TestStepReportStructure navigate2SpecificCompanyDetails(WebDriver driver, String testName, int stepID, String companyUS) throws Exception
 	{
 		TestStepReportStructure navigate2SpecificCompanyDetails;

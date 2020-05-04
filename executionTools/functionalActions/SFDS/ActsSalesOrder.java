@@ -13,10 +13,49 @@ import execStructure.TestData;
 import sfDirectSales.SalesForceOrders;
 
 public class ActsSalesOrder {
+	/*
+	 String actionName="";
+
+
+		try
+		{
+			<JAVA CODE>
+
+			System.out.println(actionName+" - Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+	*/
 	
-	//ORDER PAGE
+	//ORDER PAGE	
+	public static void addServiceToOrder(WebDriver driver, int stepID) throws Exception
+	{
+		 String actionName="Order: Add Service (First Screen)";
+
+
+			try
+			{
+				driver.findElement(By.xpath(SalesForceOrders.addServiceButton)).click();
+				
+				driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+				
+
+				System.out.println(actionName+" - Succeeded in Step "+stepID);
+
+			}
+			catch(Exception e)
+			{
+				System.out.println(e);
+				throw new Exception (actionName+" - Failed in Step "+stepID,e);
+			}
+	}
 	
-	//ORDER LIST VIEW
+	//ORDER LIST VIEW // SOI-80
+
 	public static void nav2OrdersListView(WebDriver driver, int stepID) throws Exception
 	{
 		String actionName = "Navigation to Orders List View";
@@ -28,6 +67,7 @@ public class ActsSalesOrder {
 			driver.get(ordersListViewURL);
 			
 			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+			
 			
 			System.out.println(actionName+" - Succeeded in Step "+stepID);
 			
@@ -102,6 +142,39 @@ public class ActsSalesOrder {
 	
 	
 	//VALIDATIONS
+	
+	/*02-03-2020:LMA
+	 * sketch for every validation functions
+	 *=====================================
+	 	String actionName="";
+	 	
+	 	boolean validationValue;
+	 	
+	 	try
+		{
+			if()
+			{
+				
+				validationValue = true;
+			}
+			else
+			{
+				validationValue = false;
+			}
+			
+			System.out.println(actionName+" - Succeeded in Step: "+stepID);
+			
+			return validationValue;
+			
+		}
+		catch(Exception e)
+		{
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+			
+			*/
+	
+	
 	public static boolean orderPageValidation(WebDriver driver, int stepID) throws Exception
 	{
 		String actionName="Order Page Validation";
@@ -148,55 +221,74 @@ public class ActsSalesOrder {
 		}
 	}
 	
-	
-	
-}
-
-/*02-03-2020:LMA
- * sketch for every regular functions
- *=====================================
- *		String actionName = "Navigation to Orders List View";
+	public static boolean addServiceToOrderValidation1stScreen(WebDriver driver, int stepID) throws Exception
+	{
+		String actionName="Order: Add Service First Screen Validation";
 		
-		String ordersListViewURL=TestData.searchDT(0, "environmentITTQA").concat(TestData.searchDT(0, "ordersList"));
+		boolean validationValue;
 		
-		try
+	 	try
 		{
-			<JAVA CODE>
+	 		
+			if(
+					BrowserActions.isElementPresent(driver, SalesForceOrders.addServiceHeader) &&
+					BrowserActions.isElementPresent(driver, SalesForceOrders.inputDomain) && 
+					BrowserActions.isElementPresent(driver, SalesForceOrders.inputType) && 
+					BrowserActions.isElementPresent(driver, SalesForceOrders.inputDetail) &&
+					BrowserActions.isElementPresent(driver, SalesForceOrders.nextButton)
+					)
+			{
+				validationValue = true;
+			}
+			else
+			{
+				validationValue = false;
+			}
 			
-			System.out.println(actionName+" - Succeeded in Step "+stepID);
+			
+			System.out.println(actionName+" - Succeeded in Step: "+stepID);
+			
+			return validationValue;
+		}
+		catch(Exception e)
+		{
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
+	
+	public static boolean serviceValidationOnOrderPage(WebDriver driver, int stepID) throws Exception
+	{
+	 	String actionName="Order: Service validation on Order's Page";
+	 	
+	 	boolean validationValue;
+	 	
+	 	try
+		{
+			if(BrowserActions.isElementPresent(driver, SalesForceOrders.serviceMobileLink))
+			{
+				
+				validationValue = true;
+			}
+			else
+			{
+				validationValue = false;
+			}
+			
+			System.out.println(actionName+" - Succeeded in Step: "+stepID);
+			
+			return validationValue;
 			
 		}
 		catch(Exception e)
 		{
-			
-			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
 		}
-		
-		*/
+	}
+}
 
 
-/*02-03-2020:LMA
- * sketch for every validation functions
- *=====================================
- 	String actionName="";
- 	try
-	{
-		if()
-		{
-			System.out.println(actionName+" - Succeeded in Step: "+stepID);
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-		
-	}
-	catch(Exception e)
-	{
-		throw new Exception (actionName+" - Failed in Step: "+stepID,e);
-	}
-		
-		*/
+
+
+
 
 

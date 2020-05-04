@@ -4,12 +4,15 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import actions.BrowserActions;
 import actions.FunctionalActionsSFDS;
 import execReport.ReportStructure;
 import execReport.TestStepReportStructure;
 import execStructure.ExecStructure;
+import functionalActions.SFDS.ActsSalesCompany;
 import functionalActions.SFDS.ActsSalesOpportunity;
 import sfDirectSales.SalesForceAgreement;
 import sfDirectSales.SalesForceOpportunity;
@@ -150,6 +153,7 @@ public class StpsSalesOpportunity {
 		}
 		
 	}
+	
 	
 	
 	

@@ -42,6 +42,7 @@ public class BrowserActions {
 	}
 	
 	
+	
 	//Elements validation
  	public static boolean isElementPresent(WebDriver driver, String webObject)
 	{
@@ -110,6 +111,8 @@ public class BrowserActions {
 			return true;
 		}
 	}
+	
+	
 	
 	
 	//Elements attributes 

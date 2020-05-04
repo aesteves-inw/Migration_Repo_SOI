@@ -97,6 +97,8 @@ public class SalesForceOrders {
 	// Related List
 
 	public static String firstServiceLink="(//article[contains(.,'Services')]//li//a)[2]";
+	
+	public static String serviceMobileLink="//article[contains(.,'Services')]//a[contains(.,'Mobile')]";
 
 
 	//Orders List View

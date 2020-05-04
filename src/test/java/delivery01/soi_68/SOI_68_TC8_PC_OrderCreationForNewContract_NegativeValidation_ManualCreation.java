@@ -1,6 +1,5 @@
 package delivery01.soi_68;
 
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -24,7 +23,6 @@ import execStructure.ExecStructure;
 import execStructure.TestData;
 import functionalSteps.SFPC.StpsPartsCompany;
 import functionalSteps.SFPC.StpsPartsHomePage;
-import functionalSteps.SFPC.StpsPartsOpportunity;
 
 
 public class SOI_68_TC8_PC_OrderCreationForNewContract_NegativeValidation_ManualCreation {
@@ -153,41 +151,16 @@ public class SOI_68_TC8_PC_OrderCreationForNewContract_NegativeValidation_Manual
 	public void step03() throws Exception {
 		
 		stepsExecuted++;
-
-		try 
+		
+		try
 		{
-			TestStepReportStructure step03 = StpsPartsCompany.createNewOpportunity(driver, wait, stepsExecuted, testName, testExecutionString);
+			TestStepReportStructure step03 = StpsPartsCompany.companyOrdersListViewPageValidation(driver, wait, stepsExecuted, testName);
 			testExecStructure.add(step03);
 			
 			if (step03.getStepStatus().toLowerCase().contains("failed")) 
 			{
 				throw new Exception("Validation Failed on Step "+stepsExecuted);
 			}
-
-		}
-		catch(Exception e)
-		{
-			System.out.println(e);
-			throw new Exception("Test Failed on Step "+stepsExecuted,e);
-		}
-	}
-	
-	
-	@Test(dependsOnMethods = "step03")
-	public void step04() throws Exception {
-		
-		stepsExecuted++;
-		
-		try 
-		{
-			TestStepReportStructure step04 = StpsPartsOpportunity.opportunityAddProductScreen(driver, wait, stepsExecuted, testName, testExecutionString);
-			testExecStructure.add(step04);
-			
-			if (step04.getStepStatus().toLowerCase().contains("failed")) 
-			{
-				throw new Exception("Validation Failed on Step "+stepsExecuted);
-			}
-
 		}
 		catch(Exception e)
 		{
@@ -197,78 +170,11 @@ public class SOI_68_TC8_PC_OrderCreationForNewContract_NegativeValidation_Manual
 		
 	}
 	
-	@Test(dependsOnMethods = "step04")
-	public void step05() throws Exception {
-		
-		stepsExecuted++;
-		
-		try 
-		{
-			TestStepReportStructure step05 = StpsPartsOpportunity.optyProductConfigurationNonMobile(driver, wait, stepsExecuted, testName, testExecutionString);
-			testExecStructure.add(step05);
-			
-			if (step05.getStepStatus().toLowerCase().contains("failed")) 
-			{
-				throw new Exception("Validation Failed on Step "+stepsExecuted);
-			}
-
-		}
-		catch(Exception e)
-		{
-			System.out.println(e);
-			throw new Exception("Test Failed on Step "+stepsExecuted,e);
-		}
-		
-	}
-	
-	@Test(dependsOnMethods = "step05")
-	public void step06() throws Exception {
-		
-		stepsExecuted++;
-		
-		try 
-		{
-			TestStepReportStructure step06 = StpsPartsOpportunity.closeWonOPTY(driver, wait, stepsExecuted, testName);
-			testExecStructure.add(step06);
-			
-			if (step06.getStepStatus().toLowerCase().contains("failed")) 
-			{
-				throw new Exception("Validation Failed on Step "+stepsExecuted);
-			}
-
-		}
-		catch(Exception e)
-		{
-			System.out.println(e);
-			throw new Exception("Test Failed on Step "+stepsExecuted,e);
-		}
-		
-		
-	}
 	
 	
-	@Test(dependsOnMethods = "step06")
-	public void step07() throws Exception {
-		
-		stepsExecuted++;
-		
-		try
-		{
-			TestStepReportStructure step07 = StpsPartsOpportunity.negativeSOI68Validation(driver, stepsExecuted, testName, testExecutionString);
-			testExecStructure.add(step07);
-			
-			if (step07.getStepStatus().toLowerCase().contains("failed")) 
-			{
-				throw new Exception("Validation Failed on Step "+stepsExecuted);
-			}
-		}
-		catch(Exception e)
-		{
-			System.out.println(e);
-			throw new Exception("Test Failed on Step "+stepsExecuted,e);
-		}
-		
-	}
+	
+	
+	
 
   @AfterTest
   public void afterTest() {

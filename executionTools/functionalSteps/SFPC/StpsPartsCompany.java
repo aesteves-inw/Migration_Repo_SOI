@@ -8,6 +8,7 @@ import execReport.TestStepReportStructure;
 import execStructure.ExecStructure;
 import functionalActions.SFPC.ActsPartsCompany;
 import functionalActions.SFPC.ActsPartsOpportunity;
+import functionalActions.SFPC.ActsPartsOrders;
 
 public class StpsPartsCompany {
 	
@@ -105,6 +106,50 @@ public class StpsPartsCompany {
 			return step;
 		}
 
+	}
+
+
+	public static TestStepReportStructure companyOrdersListViewPageValidation(WebDriver driver, WebDriverWait wait, int stepID, String testName) throws Exception 
+	{
+		TestStepReportStructure step;
+
+
+		String stepName="Company: Orders List View from Related Menu";
+
+		String stepNameMin="companyOrdersListViewPageValidation";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			ActsPartsCompany.goToCompanyOrdersListViewPage(driver, stepID);
+			
+
+			validation = ActsPartsOrders.ordersListViewPageValidation(driver, stepID);
+
+			if(validation==true)
+			{
+				ExecStructure.screenShotTaking(driver, testName, evidenceName);
+				step=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('p', 'e'), ReportStructure.testReportFinalElement('p', 'a'), ReportStructure.testReportFinalElement('p', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+				return step;
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			ExecStructure.screenShotTaking(driver, testName, evidenceName);
+			step=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('f', 'e'), ReportStructure.testReportFinalElement('f', 'a'), ReportStructure.testReportFinalElement('f', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+			return step;
+		}
 	}
 	
 	

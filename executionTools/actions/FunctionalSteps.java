@@ -13,13 +13,16 @@ import execReport.ReportStructure;
 import execReport.TestStepReportStructure;
 import execStructure.ExecStructure;
 import execStructure.TestData;
+import functionalActions.SFDS.ActsSalesAgreement;
 import functionalActions.SFDS.ActsSalesCase;
+import functionalActions.SFDS.ActsSalesCompany;
 import functionalActions.SFDS.ActsSalesOpportunity;
 import functionalActions.SFDS.ActsSalesOrder;
 import functionalActions.SFDS.ActsSalesService;
 import sfDirectSales.SalesForceCompany;
 import sfDirectSales.SalesForceHomePage;
 import sfDirectSales.SalesForceNewMACDOrderScreen;
+import sfDirectSales.SalesForceOpportunity;
 import actions.BrowserActions;
 
 	public class FunctionalSteps {
@@ -27,6 +30,7 @@ import actions.BrowserActions;
 		
 		// GENERAL FUNCTIONAL ACTIONS
 		
+		// Navigation Steps
 		public static TestStepReportStructure goToOpportunity(WebDriver driver, int stepID, String testName, String objectURL) throws Exception
 		{
 			TestStepReportStructure goToOpportunity;
@@ -196,6 +200,102 @@ import actions.BrowserActions;
 				goToCase=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('f', 'e'), ReportStructure.testReportFinalElement('f', 'a'), ReportStructure.testReportFinalElement('f', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
 				return goToCase;
 			}
+
+		}
+		
+		
+		//Operational Steps
+		// Opportunity Creation and closure
+		public static TestStepReportStructure createAndCloseMobileOpportunity(WebDriver driver, WebDriverWait wait, String testName, int stepID, String testExecutionString) throws Exception
+		{
+			TestStepReportStructure step;
+
+
+			String stepName="step";
+
+			String stepNameMin="createAndCloseMobileOpportunity";
+
+			String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+			
+			String optyName="OPTY_"+testExecutionString;
+
+			String optyElement="//a[@title='"+optyName+"']";
+
+			String linkAgreementName=SalesForceOpportunity.agreementsContainer.concat("//a[contains(.,'"+optyName+"')]");
+			
+			String optyURL;
+			
+			
+			String file2Upload="SimpleOrdering_Dummy_File";
+			
+
+			boolean validation;
+
+			try
+			{
+				ActsSalesCompany.createNewStandardOpportunity(driver, stepID);
+
+				ActsSalesOpportunity.inputOpportunityValues(driver, testExecutionString, testName);
+
+				driver.findElement(By.xpath(SalesForceOpportunity.nosSaveButton)).click();
+
+				driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+
+				ActsSalesOpportunity.addProductToOppie(driver, stepID, "mobileVoice");
+
+				ActsSalesOpportunity.editProductConfiguration(driver, 1, stepID);
+
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesForceOpportunity.optyTablePool)));
+				
+				optyURL=driver.findElement(By.xpath(optyElement)).getAttribute("href");
+				
+				driver.get(optyURL);
+
+				driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);	
+
+				ActsSalesOpportunity.findAgreementOnOPTY(driver, stepID);
+
+				driver.get(driver.findElement(By.xpath(linkAgreementName)).getAttribute("href"));
+
+				driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+
+				FunctionalActionsSFDS.addFile2Agreement(driver, stepID, file2Upload);
+
+				driver.findElement(By.xpath("//a[text()='"+optyName+"']")).click();
+				
+				driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);	
+
+				//added the following statement to control the appearance on opportunitys page of element.
+				
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesForceOpportunity.optyHeader)));
+
+				ActsSalesOpportunity.closeWonOppie(driver, stepID);
+
+				validation = ActsSalesOpportunity.validationClosedWonOpty(driver, stepID, optyName);
+
+				if(validation==true)
+				{
+					ExecStructure.screenShotTaking(driver, testName, evidenceName);
+					step=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('p', 'e'), ReportStructure.testReportFinalElement('p', 'a'), ReportStructure.testReportFinalElement('p', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+					return step;
+				}
+				else
+				{
+					throw new Exception (stepName+" - Failed in Step: "+stepID);
+				}
+
+
+				}
+				catch(Exception e)
+				{
+				System.out.println(e);
+				ExecStructure.screenShotTaking(driver, testName, evidenceName);
+				step=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('f', 'e'), ReportStructure.testReportFinalElement('f', 'a'), ReportStructure.testReportFinalElement('f', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+				return step;
+				}
+				
+				
 
 		}
 		

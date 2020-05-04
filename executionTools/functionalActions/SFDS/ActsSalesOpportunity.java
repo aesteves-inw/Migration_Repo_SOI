@@ -3,22 +3,17 @@ package functionalActions.SFDS;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.sikuli.script.Screen;
-
 import actions.BrowserActions;
 import execStructure.ExecStructure;
 import execStructure.TestData;
 import sfDirectSales.SalesForceOpportunity;
 import sfDirectSales.SalesForceProducts;
-import sfSikuli.SalesForceSikuli;
 
 public class ActsSalesOpportunity {
 
@@ -210,7 +205,7 @@ public class ActsSalesOpportunity {
 		String actionName="Opportunity: Close Won Opportunity";
 
 		WebDriverWait waitCWO = new WebDriverWait(driver, 10);
-
+		
 		try
 		{
 			
@@ -231,8 +226,6 @@ public class ActsSalesOpportunity {
 			driver.findElement(By.xpath(SalesForceOpportunity.nosSaveButton)).click();
 
 			waitCWO.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(SalesForceOpportunity.ctomHeader)));
-
-			driver.navigate().refresh();
 
 			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 

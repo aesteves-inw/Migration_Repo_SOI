@@ -1,5 +1,6 @@
 package functionalSteps.SFDS;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -199,7 +200,49 @@ public class StpsSalesHomePage {
 		}
 	}
 
-	
+	public static TestStepReportStructure logoutSFDS(WebDriver driver, String testName, int stepID) throws Exception
+	{
+		TestStepReportStructure step;
+
+
+		String stepName="Logout Salesforce - Direct Sales";
+
+		String stepNameMin="logoutSFDS";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			ActsSalesHomePage.logoutDS(driver, stepID);
+			
+			
+			validation = ActsSalesHomePage.homePageLoginValidation(driver, stepID);
+
+			if(validation==true)
+			{
+				ExecStructure.screenShotTaking(driver, testName, evidenceName);
+				step=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('p', 'e'), ReportStructure.testReportFinalElement('p', 'a'), ReportStructure.testReportFinalElement('p', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+				return step;
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			ExecStructure.screenShotTaking(driver, testName, evidenceName);
+			step=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('f', 'e'), ReportStructure.testReportFinalElement('f', 'a'), ReportStructure.testReportFinalElement('f', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+			return step;
+		}
+
+	}
 	
 
 

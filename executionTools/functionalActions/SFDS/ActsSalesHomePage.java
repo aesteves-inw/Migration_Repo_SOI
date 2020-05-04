@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import actions.BrowserActions;
 import execStructure.TestData;
 import sfDirectSales.SalesForceHomePage;
+import sfDirectSales.SalesForceLoginPage;
 
 public class ActsSalesHomePage {
 
@@ -51,9 +52,9 @@ public class ActsSalesHomePage {
 		try
 		{
 			driver.get(envURL);
-			
+
 			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
-			
+
 			WebElement usernameBox = driver.findElement(By.xpath(sfDirectSales.SalesForceLoginPage.userName));
 			WebElement passwordBox = driver.findElement(By.xpath(sfDirectSales.SalesForceLoginPage.passWord));
 			WebElement loginBtn = driver.findElement(By.xpath(sfDirectSales.SalesForceLoginPage.loginbtn));
@@ -68,36 +69,62 @@ public class ActsSalesHomePage {
 			{
 				throw new Exception (actionName+" - Failed in Step "+stepID);
 			}
-			
+
 			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
-			
+
 			System.out.println(actionName+" - Succeeded in Step "+stepID);
 
 		}
 		catch(Exception e)
 		{
+			System.out.println("Exception found: "+e);
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
 
 	}
 
+	public static void logoutDS(WebDriver driver, int stepID) throws Exception
+	{
+		String actionName="Home Page: Logout Salesforce";
 
+
+		try
+		{
+			String logoutURL=TestData.searchDT(0, "environmentITTQA")+TestData.searchDT(0, "logout");
+
+
+			driver.get(logoutURL);
+
+			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+
+
+			System.out.println(actionName+" - Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+	}
 
 	// Validation Actions
 	/*02-03-2020:LMA
 	 * sketch for every validation functions
 	 *=====================================
 	 *String actionName="";
+	 *
+	 *boolean validationValue;
 	 * 	try
 				{
 					if()
 					{
 						System.out.println(actionName+" - Succeeded in Step: "+stepID);
-						return true;
+						validationValue = true;
 					}
 					else
 					{
-						return false;
+						validationValue = false;
 					}
 
 				}
@@ -105,14 +132,18 @@ public class ActsSalesHomePage {
 				{
 					throw new Exception (actionName+" - Failed in Step: "+stepID,e);
 				}
+				
+				System.out.println(actionName+" - Succeeded in Step: "+stepID);
+				
+				return validationValue;
 
 	 */
 
 	public static boolean loginValidation(WebDriver driver, int stepID) throws Exception
 	{
 		String actionName="HomePage: Login Validation";
-		
-		
+
+
 		try
 		{
 			if(BrowserActions.isElementPresent(driver, SalesForceHomePage.header) && BrowserActions.isElementPresent(driver, SalesForceHomePage.headerIcons))
@@ -132,4 +163,31 @@ public class ActsSalesHomePage {
 		}
 	}
 
+	public static boolean homePageLoginValidation(WebDriver driver, int stepID) throws Exception
+	{
+		String actionName="Home Page: Login Page validation";
+
+		boolean validationValue;
+		
+		try
+		{
+			if(BrowserActions.isElementPresent(driver, SalesForceLoginPage.userName) && BrowserActions.isElementPresent(driver, SalesForceLoginPage.passWord) && BrowserActions.isElementPresent(driver, SalesForceLoginPage.rememberCredentials))
+			{
+				validationValue = true;
+			}
+			else
+			{
+				validationValue = false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+
+		System.out.println(actionName+" - Succeeded in Step: "+stepID);
+		
+		return validationValue;
+	}
 }
