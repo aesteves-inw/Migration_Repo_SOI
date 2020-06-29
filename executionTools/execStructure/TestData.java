@@ -21,7 +21,7 @@ public class TestData {
 		public static String CHROME_EXTENSION2SALESFORCE_PATH = "C:\\Users\\andre.esteves\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\nnlnikmkkbpgioojghgojoejgcheilic\\0.0.1_0";
 	 */
 
-	public static String ChromeProfilePath = "C:\\Users\\luis.achas\\AppData\\Local\\Google\\Chrome\\User Data\\Default";
+	public static String ChromeProfilePath = "C:\\Users\\luis.achas\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 1";
 	// End Of Chrome Configs
 
 	public static String searchDT(int indexOftheSheet, String val2Search) throws Exception

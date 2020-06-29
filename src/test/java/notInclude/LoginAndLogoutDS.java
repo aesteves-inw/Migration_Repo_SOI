@@ -2,6 +2,7 @@ package notInclude;
 
 import org.testng.annotations.Test;
 
+import actions.BrowserActions;
 import execReport.TestReportTestData;
 import execReport.TestStepReportStructure;
 import execStructure.ExecDriverClass;
@@ -14,12 +15,13 @@ import java.util.List;
 
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeTest;
 
 
 public class LoginAndLogoutDS extends ExecDriverClass {
 
-	String testName = this.getClass().getName();
+	String testName = this.getClass().getSimpleName();
 
 	String initialTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
 
@@ -47,7 +49,7 @@ public class LoginAndLogoutDS extends ExecDriverClass {
 		TestStructure.startTest(testName);
 	}
 
-	@Test()
+	@Test
 	public void step01() throws Exception 
 	{
 		stepsExecuted++;
@@ -74,7 +76,7 @@ public class LoginAndLogoutDS extends ExecDriverClass {
 		}
 
 	}
-	
+	/*
 	@Test(dependsOnMethods = "step01")
 	public void step02() throws Exception 
 	{
@@ -98,12 +100,18 @@ public class LoginAndLogoutDS extends ExecDriverClass {
 			System.out.println(e);
 			throw new Exception("Test Failed on Step "+stepsExecuted,e);
 		}
-	}
+	}*/
 
 	@AfterClass
 	public void afterClass() 
 	{
-		TestStructure.finishTest(testName, initialTestDate, startTime, stepsExecuted, testExecStructure, testData, driver);	
+		//TestStructure.finishTest(testName, initialTestDate, startTime, stepsExecuted, testExecStructure, testData, driver);
+	}
+	
+	@AfterSuite
+	public void killDriver()
+	{
+		//BrowserActions.endSession(driver);
 	}
 
 }

@@ -1,13 +1,15 @@
 package notInclude;
 
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
 import execReport.TestStepReportStructure;
+import execStructure.TestStructure;
 import functionalSteps.SFDS.StpsSalesHomePage;
 
 public class NewTest extends LoginAndLogoutDS{
 
-	@Test(dependsOnMethods = "step01")
+	@Test
 	public void step02() throws Exception 
 	{
 		stepsExecuted++;
@@ -31,12 +33,12 @@ public class NewTest extends LoginAndLogoutDS{
 			throw new Exception("Test Failed on Step "+stepsExecuted,e);
 		}
 	}
-	/*
+	
 	@AfterClass
   public void afterTest() 
   {
 	  TestStructure.finishTest(testName, initialTestDate, startTime, stepsExecuted, testExecStructure, testData, driver);
 	  
   }
-*/
+
 }

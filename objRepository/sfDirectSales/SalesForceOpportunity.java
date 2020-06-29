@@ -20,17 +20,17 @@ public class SalesForceOpportunity {
 
 	public static String newOpportunityHeader="//h2[contains(.,'New Opportunity')]";
 
-	public static String inputCloseDate="/html/body/div[4]/div[2]/div[1]/div[2]/div/div[2]/div/div/div[1]/div/article/div[3]/div/div[1]/div/div/div[1]/div[2]/div/div/div/div/input";
+	public static String inputCloseDate="//article/div[3]/div/div[1]/div/div/div[2]/div[2]/div/div/div/div/input";
 
-	public static String inputOpportunityName="/html/body/div[4]/div[2]/div[1]/div[2]/div/div[2]/div/div/div[1]/div/article/div[3]/div/div[1]/div/div/div[2]/div[1]/div/div/div/input";
+	public static String inputOpportunityName="//article/div[3]/div/div[1]/div/div/div[1]/div[1]/div/div/div/input";
 
-	public static String selectStage="/html/body/div[4]/div[2]/div[1]/div[2]/div/div[2]/div/div/div[1]/div/article/div[3]/div/div[1]/div/div/div[2]/div[2]/div/div/div/div/div[1]/div/div/a";
+	public static String selectStage="//article/div[3]/div/div[1]/div/div/div[3]/div[2]/div/div/div/div/div[1]/div/div/a";
 
-	public static String listState="/html/body/div[10]/div/ul";
+	public static String listState="/html/body/div[9]/div/ul";
 	
 	public static String closeWonOptyStage="//*/div/ul/li[8]/a";
 
-	public static String selectForecastCategory="/html/body/div[4]/div[2]/div[1]/div[2]/div/div[2]/div/div/div[1]/div/article/div[3]/div/div[1]/div/div/div[5]/div[2]/div/div/div/div/div[1]/div/div/a";
+	public static String selectForecastCategory="//article/div[3]/div/div[1]/div/div/div[4]/div[2]/div/div/div/div/div[1]/div/div/a";
 
 	public static String listForecastCategory="/html/body/div[11]/div/ul";
 
@@ -40,7 +40,7 @@ public class SalesForceOpportunity {
 	
 	public static String additionalInformationTab="//h3[contains(.,'Additional Information')]";
 	
-	public static String termsAndConditionsComboBox="/html/body/div[4]/div[2]/div/div[2]/div/div[2]/div/div/div[1]/div/article/div[3]/div/div[2]/div/div/div[2]/div[2]/div/div/div/div/div[1]/div/div/a";
+	public static String termsAndConditionsComboBox="//article/div[3]/div/div[1]/div/div/div[7]/div[1]/div/div/div/div/div[1]/div/div/a";
 	
 	public static String termAndConditionsOption="//a[@title='Proximus standard T&C are applicable']";
 	

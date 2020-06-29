@@ -216,7 +216,7 @@ public class StpsSalesCompany {
 		{
 			System.out.println(e);
 			ExecStructure.screenShotTaking(driver, testName, evidenceName);
-			createStandardOppie=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('p', 'e'), ReportStructure.testReportFinalElement('p', 'a'), ReportStructure.testReportFinalElement('p', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+			createStandardOppie=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('f', 'e'), ReportStructure.testReportFinalElement('f', 'a'), ReportStructure.testReportFinalElement('f', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
 			return createStandardOppie;
 		}
 	}

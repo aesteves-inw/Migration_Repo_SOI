@@ -38,7 +38,7 @@ public class ActsSalesCompany {
 	
 	public static void createNewStandardOpportunity(WebDriver driver, int stepID) throws Exception
 	{
-		String actionName="Create New Opportunity Screen";
+		String actionName="New Opportunity Screen";
 		
 		WebDriverWait waitNSOS = new WebDriverWait(driver, 10);
 

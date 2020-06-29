@@ -57,7 +57,8 @@ public class SOI_66_TC01_AgreementCreation_From_Oportunity_MobileVoice {
 
   @BeforeTest
   public void beforeTest() {
-	  System.out.println("Test Case: "+testName+" initiation");
+	  
+	  	System.out.println("Test Case: "+testName+" initiation");
 
 		ExecStructure.createReportStructure(testName);
 
