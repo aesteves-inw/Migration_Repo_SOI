@@ -7,7 +7,6 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import actions.BrowserActions;
 import execStructure.ExecStructure;
@@ -169,7 +168,7 @@ public class ActsSalesOpportunity {
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
 	}
-
+/*
 	public static void findAgreementOnOPTY(WebDriver driver, int stepID) throws Exception
 	{
 
@@ -263,7 +262,7 @@ public class ActsSalesOpportunity {
 			}
 	}
 
-	
+	*/
 
 	// Validation Actions
 	/*02-03-2020:LMA
@@ -336,7 +335,7 @@ public class ActsSalesOpportunity {
 			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
 		}
 	}
-
+/*
 	public static boolean soi66opportunityValidation(WebDriver driver, int stepID, String optyName) throws Exception
 	{
 		String actionName="Opportunity: SOI-66 Validation";
@@ -366,7 +365,7 @@ public class ActsSalesOpportunity {
 		}
 
 	}
-
+*/
 	public static boolean validationClosedWonOpty(WebDriver driver, int stepID, String optyName)
 	{
 		String actionName="Opportunity: Closed Won Opportunity validation";
@@ -396,6 +395,7 @@ public class ActsSalesOpportunity {
 			}
 	}
 
+	/*
 	public static boolean soi68opportunityValidation(WebDriver driver, int stepID, String optyName) throws Exception
 	{
 		 String actionName="Opportunity: SOI-68 Validation";
@@ -424,7 +424,7 @@ public class ActsSalesOpportunity {
 				throw new Exception (actionName+" - Failed in Step: "+stepID,e);
 			}
 	}
-
+	*/
 
 
 }

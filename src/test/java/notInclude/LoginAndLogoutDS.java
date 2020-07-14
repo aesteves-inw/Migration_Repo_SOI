@@ -105,7 +105,7 @@ public class LoginAndLogoutDS extends ExecDriverClass {
 	@AfterClass
 	public void afterClass() 
 	{
-		//TestStructure.finishTest(testName, initialTestDate, startTime, stepsExecuted, testExecStructure, testData, driver);
+		TestStructure.finishTest(testName, initialTestDate, startTime, stepsExecuted, testExecStructure, testData, driver);
 	}
 	
 	@AfterSuite

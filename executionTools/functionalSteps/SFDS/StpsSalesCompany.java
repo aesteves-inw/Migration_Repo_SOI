@@ -414,6 +414,7 @@ public class StpsSalesCompany {
 		}
 	}
 	
+	/*
 	public static TestStepReportStructure createCloseStandardMobileVoiceOppie(WebDriver driver, int stepID, String testName, String testExecutionString) throws Exception
 	{
 		TestStepReportStructure createCloseStandardMobileVoiceOppie;
@@ -462,7 +463,7 @@ public class StpsSalesCompany {
 			return createCloseStandardMobileVoiceOppie;
 		}
 	}
-
+*/
 	public static TestStepReportStructure ordersActionsCompanyRelatedMenu(WebDriver driver, int stepID, String testName) throws Exception
 	{
 		TestStepReportStructure step;
@@ -548,6 +549,61 @@ public class StpsSalesCompany {
 
 	}
 
+	// Delivery 02
+	
+	public static TestStepReportStructure createNewQuickSaleOpportunity(WebDriver driver, int stepID, String testName) throws Exception
+	{
+		TestStepReportStructure createNewQuickSaleOpportunity;
+
+
+		String stepName="Company: Create New Quick Sale Opportunity";
+
+		String stepNameMin="createNewQuickSaleOpportunity";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+		
+		
+		boolean validation, validationQuickSaleOpty;
+
+		try
+		{
+			ActsSalesCompany.createNewQuickSaleOPTY(driver, stepID, testName);
+			
+			validationQuickSaleOpty = ActsSalesCompany.validateNewQuickSaleOPTY(driver, stepID, testName);
+			
+			if (validationQuickSaleOpty == true)
+			{
+				ActsSalesCompany.goToOpportunityOnRelatedMenu(driver, stepID, testName);
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+			
+			validation=ActsSalesOpportunity.opportunityScreenValidation(driver, stepID);
+
+			if(validation==true)
+			{
+				ExecStructure.screenShotTaking(driver, testName, evidenceName);
+				createNewQuickSaleOpportunity=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('p', 'e'), ReportStructure.testReportFinalElement('p', 'a'), ReportStructure.testReportFinalElement('p', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+				return createNewQuickSaleOpportunity;
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			ExecStructure.screenShotTaking(driver, testName, evidenceName);
+			createNewQuickSaleOpportunity=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('f', 'e'), ReportStructure.testReportFinalElement('f', 'a'), ReportStructure.testReportFinalElement('f', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+			return createNewQuickSaleOpportunity;
+		}
+
+	}
 	
 
 }
