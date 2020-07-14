@@ -124,7 +124,7 @@ public class SOI_66_TC01_AgreementCreation_From_Oportunity_MobileVoice {
 		catch(Exception e)
 		{
 			System.out.println(e);
-			throw new Exception("Test Failed on Step 1",e);
+			throw new Exception("Test Failed on Step +stepsExecuted",e);
 		}
 
 	}

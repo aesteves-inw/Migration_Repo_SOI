@@ -319,7 +319,7 @@ public class ActsSalesOpportunity {
 		String actionName="Opportunity: Opportunity Page validation";
 		try
 		{
-			if(BrowserActions.isElementPresent(driver, SalesForceOpportunity.optyHeader) && BrowserActions.isElementPresent(driver, SalesForceOpportunity.productContainer))
+			if(BrowserActions.isElementPresent(driver, SalesForceOpportunity.optyHeader) && BrowserActions.isElementPresent(driver, SalesForceOpportunity.optyDetails))
 			{
 				System.out.println(actionName+" - Succeeded in Step: "+stepID);
 				return true;

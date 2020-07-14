@@ -2,32 +2,32 @@
 <testng-results skipped="1" failed="1" ignored="0" total="6" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="127471" started-at="2020-06-29T12:02:30Z" finished-at="2020-06-29T12:04:38Z">
+  <suite name="Default suite" duration-ms="102676" started-at="2020-07-11T23:21:48Z" finished-at="2020-07-11T23:23:30Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="127471" started-at="2020-06-29T12:02:30Z" finished-at="2020-06-29T12:04:38Z">
+    <test name="Default test" duration-ms="102676" started-at="2020-07-11T23:21:48Z" finished-at="2020-07-11T23:23:30Z">
       <class name="delivery01.soi_66.SOI_66_TC01_AgreementCreation_From_Oportunity_MobileVoice">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:delivery01.soi_66.SOI_66_TC01_AgreementCreation_From_Oportunity_MobileVoice@4dfa3a9d]" name="beforeTest" is-config="true" duration-ms="7780" started-at="2020-06-29T12:02:30Z" finished-at="2020-06-29T12:02:38Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:delivery01.soi_66.SOI_66_TC01_AgreementCreation_From_Oportunity_MobileVoice@4dfa3a9d]" name="beforeTest" is-config="true" duration-ms="6181" started-at="2020-07-11T23:21:48Z" finished-at="2020-07-11T23:21:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="step01()[pri:0, instance:delivery01.soi_66.SOI_66_TC01_AgreementCreation_From_Oportunity_MobileVoice@4dfa3a9d]" name="step01" duration-ms="16215" started-at="2020-06-29T12:02:38Z" finished-at="2020-06-29T12:02:54Z">
+        <test-method status="PASS" signature="step01()[pri:0, instance:delivery01.soi_66.SOI_66_TC01_AgreementCreation_From_Oportunity_MobileVoice@4dfa3a9d]" name="step01" duration-ms="12787" started-at="2020-07-11T23:21:54Z" finished-at="2020-07-11T23:22:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step01 -->
-        <test-method status="PASS" signature="step02()[pri:0, instance:delivery01.soi_66.SOI_66_TC01_AgreementCreation_From_Oportunity_MobileVoice@4dfa3a9d]" name="step02" duration-ms="11094" started-at="2020-06-29T12:02:54Z" depends-on-methods="delivery01.soi_66.SOI_66_TC01_AgreementCreation_From_Oportunity_MobileVoice.step01" finished-at="2020-06-29T12:03:05Z">
+        <test-method status="PASS" signature="step02()[pri:0, instance:delivery01.soi_66.SOI_66_TC01_AgreementCreation_From_Oportunity_MobileVoice@4dfa3a9d]" name="step02" duration-ms="7819" started-at="2020-07-11T23:22:07Z" depends-on-methods="delivery01.soi_66.SOI_66_TC01_AgreementCreation_From_Oportunity_MobileVoice.step01" finished-at="2020-07-11T23:22:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step02 -->
-        <test-method status="PASS" signature="step03()[pri:0, instance:delivery01.soi_66.SOI_66_TC01_AgreementCreation_From_Oportunity_MobileVoice@4dfa3a9d]" name="step03" duration-ms="23689" started-at="2020-06-29T12:03:05Z" depends-on-methods="delivery01.soi_66.SOI_66_TC01_AgreementCreation_From_Oportunity_MobileVoice.step02" finished-at="2020-06-29T12:03:29Z">
+        <test-method status="PASS" signature="step03()[pri:0, instance:delivery01.soi_66.SOI_66_TC01_AgreementCreation_From_Oportunity_MobileVoice@4dfa3a9d]" name="step03" duration-ms="17342" started-at="2020-07-11T23:22:14Z" depends-on-methods="delivery01.soi_66.SOI_66_TC01_AgreementCreation_From_Oportunity_MobileVoice.step02" finished-at="2020-07-11T23:22:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step03 -->
-        <test-method status="PASS" signature="step04()[pri:0, instance:delivery01.soi_66.SOI_66_TC01_AgreementCreation_From_Oportunity_MobileVoice@4dfa3a9d]" name="step04" duration-ms="46771" started-at="2020-06-29T12:03:29Z" depends-on-methods="delivery01.soi_66.SOI_66_TC01_AgreementCreation_From_Oportunity_MobileVoice.step03" finished-at="2020-06-29T12:04:16Z">
+        <test-method status="PASS" signature="step04()[pri:0, instance:delivery01.soi_66.SOI_66_TC01_AgreementCreation_From_Oportunity_MobileVoice@4dfa3a9d]" name="step04" duration-ms="36677" started-at="2020-07-11T23:22:32Z" depends-on-methods="delivery01.soi_66.SOI_66_TC01_AgreementCreation_From_Oportunity_MobileVoice.step03" finished-at="2020-07-11T23:23:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step04 -->
-        <test-method status="FAIL" signature="step05()[pri:0, instance:delivery01.soi_66.SOI_66_TC01_AgreementCreation_From_Oportunity_MobileVoice@4dfa3a9d]" name="step05" duration-ms="20577" started-at="2020-06-29T12:04:16Z" depends-on-methods="delivery01.soi_66.SOI_66_TC01_AgreementCreation_From_Oportunity_MobileVoice.step04" finished-at="2020-06-29T12:04:36Z">
+        <test-method status="FAIL" signature="step05()[pri:0, instance:delivery01.soi_66.SOI_66_TC01_AgreementCreation_From_Oportunity_MobileVoice@4dfa3a9d]" name="step05" duration-ms="20512" started-at="2020-07-11T23:23:08Z" depends-on-methods="delivery01.soi_66.SOI_66_TC01_AgreementCreation_From_Oportunity_MobileVoice.step04" finished-at="2020-07-11T23:23:29Z">
           <exception class="java.lang.Exception">
             <message>
               <![CDATA[Test Failed on Step 5]]>
@@ -69,7 +69,7 @@ at delivery01.soi_66.SOI_66_TC01_AgreementCreation_From_Oportunity_MobileVoice.s
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step05 -->
-        <test-method status="SKIP" signature="step06()[pri:0, instance:delivery01.soi_66.SOI_66_TC01_AgreementCreation_From_Oportunity_MobileVoice@4dfa3a9d]" name="step06" duration-ms="0" started-at="2020-06-29T12:04:36Z" depends-on-methods="delivery01.soi_66.SOI_66_TC01_AgreementCreation_From_Oportunity_MobileVoice.step05" finished-at="2020-06-29T12:04:36Z">
+        <test-method status="SKIP" signature="step06()[pri:0, instance:delivery01.soi_66.SOI_66_TC01_AgreementCreation_From_Oportunity_MobileVoice@4dfa3a9d]" name="step06" duration-ms="0" started-at="2020-07-11T23:23:29Z" depends-on-methods="delivery01.soi_66.SOI_66_TC01_AgreementCreation_From_Oportunity_MobileVoice.step05" finished-at="2020-07-11T23:23:29Z">
           <exception class="java.lang.Throwable">
             <message>
               <![CDATA[Method SOI_66_TC01_AgreementCreation_From_Oportunity_MobileVoice.step06()[pri:0, instance:delivery01.soi_66.SOI_66_TC01_AgreementCreation_From_Oportunity_MobileVoice@4dfa3a9d] depends on not successfully finished methods]]>
@@ -100,7 +100,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step06 -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:delivery01.soi_66.SOI_66_TC01_AgreementCreation_From_Oportunity_MobileVoice@4dfa3a9d]" name="afterTest" is-config="true" duration-ms="1279" started-at="2020-06-29T12:04:36Z" finished-at="2020-06-29T12:04:38Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:delivery01.soi_66.SOI_66_TC01_AgreementCreation_From_Oportunity_MobileVoice@4dfa3a9d]" name="afterTest" is-config="true" duration-ms="1290" started-at="2020-07-11T23:23:29Z" finished-at="2020-07-11T23:23:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
