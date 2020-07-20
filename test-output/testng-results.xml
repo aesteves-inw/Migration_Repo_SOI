@@ -2,40 +2,40 @@
 <testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="39993" started-at="2020-07-19T08:34:20Z" finished-at="2020-07-19T08:35:00Z">
+  <suite name="Default suite" duration-ms="125120" started-at="2020-07-20T10:26:15Z" finished-at="2020-07-20T10:28:20Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="39993" started-at="2020-07-19T08:34:20Z" finished-at="2020-07-19T08:35:00Z">
+    <test name="Default test" duration-ms="125120" started-at="2020-07-20T10:26:15Z" finished-at="2020-07-20T10:28:20Z">
       <class name="delivery02.soi_1312.SOI_1312_TC03_DS_ChineseWallsDuringQuoting_SalesUserProfile">
-        <test-method status="PASS" signature="setupDriver()[pri:0, instance:delivery02.soi_1312.SOI_1312_TC03_DS_ChineseWallsDuringQuoting_SalesUserProfile@464bee09]" name="setupDriver" is-config="true" duration-ms="5633" started-at="2020-07-19T08:34:14Z" finished-at="2020-07-19T08:34:20Z">
+        <test-method status="PASS" signature="setupDriver()[pri:0, instance:delivery02.soi_1312.SOI_1312_TC03_DS_ChineseWallsDuringQuoting_SalesUserProfile@464bee09]" name="setupDriver" is-config="true" duration-ms="8665" started-at="2020-07-20T10:26:06Z" finished-at="2020-07-20T10:26:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupDriver -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:delivery02.soi_1312.SOI_1312_TC03_DS_ChineseWallsDuringQuoting_SalesUserProfile@464bee09]" name="beforeTest" is-config="true" duration-ms="4" started-at="2020-07-19T08:34:20Z" finished-at="2020-07-19T08:34:20Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:delivery02.soi_1312.SOI_1312_TC03_DS_ChineseWallsDuringQuoting_SalesUserProfile@464bee09]" name="beforeTest" is-config="true" duration-ms="53" started-at="2020-07-20T10:26:15Z" finished-at="2020-07-20T10:26:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="step01()[pri:0, instance:delivery02.soi_1312.SOI_1312_TC03_DS_ChineseWallsDuringQuoting_SalesUserProfile@464bee09]" name="step01" duration-ms="10502" started-at="2020-07-19T08:34:20Z" finished-at="2020-07-19T08:34:30Z">
+        <test-method status="PASS" signature="step01()[pri:0, instance:delivery02.soi_1312.SOI_1312_TC03_DS_ChineseWallsDuringQuoting_SalesUserProfile@464bee09]" name="step01" duration-ms="21133" started-at="2020-07-20T10:26:15Z" finished-at="2020-07-20T10:26:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step01 -->
-        <test-method status="PASS" signature="step02()[pri:0, instance:delivery02.soi_1312.SOI_1312_TC03_DS_ChineseWallsDuringQuoting_SalesUserProfile@464bee09]" name="step02" duration-ms="7501" started-at="2020-07-19T08:34:30Z" depends-on-methods="delivery02.soi_1312.SOI_1312_TC03_DS_ChineseWallsDuringQuoting_SalesUserProfile.step01" finished-at="2020-07-19T08:34:38Z">
+        <test-method status="PASS" signature="step02()[pri:0, instance:delivery02.soi_1312.SOI_1312_TC03_DS_ChineseWallsDuringQuoting_SalesUserProfile@464bee09]" name="step02" duration-ms="19158" started-at="2020-07-20T10:26:36Z" depends-on-methods="delivery02.soi_1312.SOI_1312_TC03_DS_ChineseWallsDuringQuoting_SalesUserProfile.step01" finished-at="2020-07-20T10:26:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step02 -->
-        <test-method status="PASS" signature="step03()[pri:0, instance:delivery02.soi_1312.SOI_1312_TC03_DS_ChineseWallsDuringQuoting_SalesUserProfile@464bee09]" name="step03" duration-ms="8615" started-at="2020-07-19T08:34:38Z" depends-on-methods="delivery02.soi_1312.SOI_1312_TC03_DS_ChineseWallsDuringQuoting_SalesUserProfile.step02" finished-at="2020-07-19T08:34:46Z">
+        <test-method status="PASS" signature="step03()[pri:0, instance:delivery02.soi_1312.SOI_1312_TC03_DS_ChineseWallsDuringQuoting_SalesUserProfile@464bee09]" name="step03" duration-ms="24819" started-at="2020-07-20T10:26:56Z" depends-on-methods="delivery02.soi_1312.SOI_1312_TC03_DS_ChineseWallsDuringQuoting_SalesUserProfile.step02" finished-at="2020-07-20T10:27:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step03 -->
-        <test-method status="PASS" signature="step04()[pri:0, instance:delivery02.soi_1312.SOI_1312_TC03_DS_ChineseWallsDuringQuoting_SalesUserProfile@464bee09]" name="step04" duration-ms="7071" started-at="2020-07-19T08:34:46Z" depends-on-methods="delivery02.soi_1312.SOI_1312_TC03_DS_ChineseWallsDuringQuoting_SalesUserProfile.step03" finished-at="2020-07-19T08:34:53Z">
+        <test-method status="PASS" signature="step04()[pri:0, instance:delivery02.soi_1312.SOI_1312_TC03_DS_ChineseWallsDuringQuoting_SalesUserProfile@464bee09]" name="step04" duration-ms="10713" started-at="2020-07-20T10:27:20Z" depends-on-methods="delivery02.soi_1312.SOI_1312_TC03_DS_ChineseWallsDuringQuoting_SalesUserProfile.step03" finished-at="2020-07-20T10:27:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step04 -->
-        <test-method status="PASS" signature="step05()[pri:0, instance:delivery02.soi_1312.SOI_1312_TC03_DS_ChineseWallsDuringQuoting_SalesUserProfile@464bee09]" name="step05" duration-ms="1263" started-at="2020-07-19T08:34:53Z" depends-on-methods="delivery02.soi_1312.SOI_1312_TC03_DS_ChineseWallsDuringQuoting_SalesUserProfile.step04" finished-at="2020-07-19T08:34:55Z">
+        <test-method status="PASS" signature="step05()[pri:0, instance:delivery02.soi_1312.SOI_1312_TC03_DS_ChineseWallsDuringQuoting_SalesUserProfile@464bee09]" name="step05" duration-ms="1764" started-at="2020-07-20T10:27:31Z" depends-on-methods="delivery02.soi_1312.SOI_1312_TC03_DS_ChineseWallsDuringQuoting_SalesUserProfile.step04" finished-at="2020-07-20T10:27:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step05 -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:delivery02.soi_1312.SOI_1312_TC03_DS_ChineseWallsDuringQuoting_SalesUserProfile@464bee09]" name="afterClass" is-config="true" duration-ms="4954" started-at="2020-07-19T08:34:55Z" finished-at="2020-07-19T08:35:00Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:delivery02.soi_1312.SOI_1312_TC03_DS_ChineseWallsDuringQuoting_SalesUserProfile@464bee09]" name="afterClass" is-config="true" duration-ms="47375" started-at="2020-07-20T10:27:33Z" finished-at="2020-07-20T10:28:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
