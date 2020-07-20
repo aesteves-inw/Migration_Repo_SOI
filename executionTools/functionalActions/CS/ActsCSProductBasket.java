@@ -137,9 +137,9 @@ public class ActsCSProductBasket {
 
 		try
 		{
-
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(CloudSenseProductBasket.iframeProductBasket)));
+			
 			changeToProductBasketiFrame(driver, wait, stepID);
-
 
 			if(BrowserActions.isElementPresent(driver, CloudSenseProductBasket.cloneBasketButton) && 
 					BrowserActions.isElementPresent(driver, CloudSenseProductBasket.syncButton) && 

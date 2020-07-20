@@ -327,7 +327,7 @@ public class ActsSalesOpportunity {
 				
 				driver.findElement(By.xpath(SalesforceProductBasket.newProductBasketButton)).click();
 								
-				wait.until(ExpectedConditions.elementToBeClickable(By.xpath(CloudSenseProductBasket.iframeProductBasket)));
+				
 				
 				
 
