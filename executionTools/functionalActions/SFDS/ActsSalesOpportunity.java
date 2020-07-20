@@ -9,10 +9,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import actions.BrowserActions;
+import cloudSense.CloudSenseProductBasket;
 import execStructure.ExecStructure;
 import execStructure.TestData;
 import sfDirectSales.SalesForceOpportunity;
 import sfDirectSales.SalesForceProducts;
+import sfDirectSales.SalesforceProductBasket;
 
 public class ActsSalesOpportunity {
 
@@ -20,6 +22,8 @@ public class ActsSalesOpportunity {
 	/*02-03-2020:LMA
 	 * sketch for every regular functions
 	 *=====================================
+	 public static void functionName()
+	 {
 	 String actionName="";
 
 
@@ -34,6 +38,7 @@ public class ActsSalesOpportunity {
 		{
 			System.out.println(e);
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
 		}
 
 	 */
@@ -156,7 +161,7 @@ public class ActsSalesOpportunity {
 			driver.findElement(By.xpath(SalesForceProducts.saveButtonEdit)).click();
 
 			BrowserActions.waitUntilElementFade(driver, SalesForceProducts.editProductHeader);
-			
+
 			//wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(SalesForceProducts.editProductHeader)));
 
 
@@ -168,7 +173,7 @@ public class ActsSalesOpportunity {
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
 	}
-/*
+	/*
 	public static void findAgreementOnOPTY(WebDriver driver, int stepID) throws Exception
 	{
 
@@ -204,18 +209,18 @@ public class ActsSalesOpportunity {
 		String actionName="Opportunity: Close Won Opportunity";
 
 		WebDriverWait waitCWO = new WebDriverWait(driver, 10);
-		
+
 		try
 		{
-			
+
 			WebElement closeOPTYLink = BrowserActions.getElementByJSQuery(driver, SalesForceOpportunity.closeOPTYHeaderButton);
-			
+
 			BrowserActions.jsClick(driver, closeOPTYLink);		
-						
+
 			WebElement selectCloseButton=BrowserActions.getElementByJSQuery(driver, SalesForceOpportunity.selectCloseMenu);
-			
+
 			BrowserActions.jsClick(driver, selectCloseButton);	
-			
+
 			waitCWO.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesForceOpportunity.ctomHeader)));
 
 			Select closedStage = new Select(driver.findElement(By.xpath("//select")));
@@ -242,11 +247,11 @@ public class ActsSalesOpportunity {
 	public static void orderVisibleOnOpportunityScreen(WebDriver driver, int stepID, String optyName) throws Exception
 	{
 		 String actionName="Opportunity: Order visibility on Opportunity screen";
-		 
+
 			try
 			{
 				WebElement orderLinkRelatedMenu=driver.findElement(By.xpath(SalesForceOpportunity.ordersContainer));
-				
+
 				if (orderLinkRelatedMenu.isDisplayed() == false)
 				{
 					BrowserActions.verticalscrollByVisibleElement(driver, SalesForceOpportunity.ordersContainer);				
@@ -262,7 +267,81 @@ public class ActsSalesOpportunity {
 			}
 	}
 
-	*/
+	 */
+
+	public static void showAllRelatedMenuOptions(WebDriver driver, int stepID) throws Exception
+	{
+		String actionName="Opportunity: Show All Related Menu Options";
+
+
+		try
+		{
+			WebElement showAllRelatedItemslink= driver.findElement(By.xpath("//article/div[2]/div/a"));
+			
+			BrowserActions.jsClick(driver, showAllRelatedItemslink);
+
+			System.out.println(actionName+" - Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+	}
+
+	public static void goToProductBasketRelatedList(WebDriver driver, int stepID) throws Exception
+	{
+		String actionName="Opportunity: Go To Product Baskets Related List";
+
+
+		try
+		{
+			showAllRelatedMenuOptions(driver, stepID);
+			
+			WebElement productBasketRelatedListLink= driver.findElement(By.xpath(SalesForceOpportunity.productBasketsLink));
+			
+			BrowserActions.jsClick(driver, productBasketRelatedListLink);
+			
+			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+
+			System.out.println(actionName+" - Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+		}
+
+	public static void createNewProductBasket(WebDriver driver, WebDriverWait wait, int stepID) throws Exception
+	{
+		 String actionName="Opportunity: Create New Product Basket";
+
+		
+
+			try
+			{
+				goToProductBasketRelatedList(driver, stepID);
+				
+				driver.findElement(By.xpath(SalesforceProductBasket.newProductBasketButton)).click();
+								
+				wait.until(ExpectedConditions.elementToBeClickable(By.xpath(CloudSenseProductBasket.iframeProductBasket)));
+				
+				
+
+				System.out.println(actionName+" - Succeeded in Step "+stepID);
+
+			}
+			catch(Exception e)
+			{
+				System.out.println(e);
+				throw new Exception (actionName+" - Failed in Step "+stepID,e);
+			}
+	}
+
+
 
 	// Validation Actions
 	/*02-03-2020:LMA
@@ -335,17 +414,17 @@ public class ActsSalesOpportunity {
 			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
 		}
 	}
-/*
+	/*
 	public static boolean soi66opportunityValidation(WebDriver driver, int stepID, String optyName) throws Exception
 	{
 		String actionName="Opportunity: SOI-66 Validation";
-		
+
 		try
 		{
 			WebElement agreementContainer=driver.findElement(By.xpath(SalesForceOpportunity.agreementsContainer));
-			
+
 			WebElement agreementName = agreementContainer.findElement(By.cssSelector("flexipage-tab2#tab-8>slot>flexipage-component2>force-progressive-renderer>slot>slot>flexipage-aura-wrapper>div>div>div>div:nth-of-type(14)>article>div:nth-of-type(2)>div>div>div>div>ul>li>div:nth-of-type(2)>h3>div>a"));
-			
+
 			if(agreementName.isDisplayed())
 			{
 				System.out.println(actionName+" - Succeeded in Step: "+stepID);
@@ -365,47 +444,47 @@ public class ActsSalesOpportunity {
 		}
 
 	}
-*/
+	 */
 	public static boolean validationClosedWonOpty(WebDriver driver, int stepID, String optyName)
 	{
 		String actionName="Opportunity: Closed Won Opportunity validation";
-		
-		
-		 try
-			{
-			 	WebElement closedWonMarker = driver.findElement(By.xpath("//lightning-formatted-text[text()='Closed Won']"));
-			 	
-				if(closedWonMarker.isDisplayed()==true)
-				{
-					System.out.println(actionName+" - Succeeded in Step: "+stepID);
-					return true;
-				}
-				else
-				{
-					throw new Exception (actionName+" - Failed in Step: "+stepID);
-				}
 
-			}
-			catch(Exception e)
+
+		try
+		{
+			WebElement closedWonMarker = driver.findElement(By.xpath("//lightning-formatted-text[text()='Closed Won']"));
+
+			if(closedWonMarker.isDisplayed()==true)
 			{
-				System.out.println(e);
-				System.out.println(actionName+" - Failed in Step: "+stepID);
-				return false;
-				
+				System.out.println(actionName+" - Succeeded in Step: "+stepID);
+				return true;
 			}
+			else
+			{
+				throw new Exception (actionName+" - Failed in Step: "+stepID);
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			System.out.println(actionName+" - Failed in Step: "+stepID);
+			return false;
+
+		}
 	}
 
 	/*
 	public static boolean soi68opportunityValidation(WebDriver driver, int stepID, String optyName) throws Exception
 	{
 		 String actionName="Opportunity: SOI-68 Validation";
-		 	 		 
+
 		 try
 			{
 			 	String orderLink="//a[contains(.,'"+optyName+"')]";
-			 	
+
 			 	String ordersNameLink=SalesForceOpportunity.ordersContainer.concat(orderLink);
-			 
+
 				if(BrowserActions.isElementPresent(driver, ordersNameLink))
 				{
 					System.out.println(actionName+" - Succeeded in Step: "+stepID);
@@ -424,7 +503,7 @@ public class ActsSalesOpportunity {
 				throw new Exception (actionName+" - Failed in Step: "+stepID,e);
 			}
 	}
-	*/
+	 */
 
 
 }

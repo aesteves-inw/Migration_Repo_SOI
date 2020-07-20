@@ -8,7 +8,9 @@
           <include name="step01"/>
           <include name="step03"/>
           <include name="step02"/>
+          <include name="step05"/>
           <include name="afterClass"/>
+          <include name="step04"/>
           <include name="setupDriver"/>
           <include name="beforeTest"/>
         </methods>

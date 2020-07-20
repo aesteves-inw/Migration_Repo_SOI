@@ -1,10 +1,6 @@
 package functionalSteps.SFDS;
 
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import actions.BrowserActions;
@@ -12,10 +8,8 @@ import actions.FunctionalActionsSFDS;
 import execReport.ReportStructure;
 import execReport.TestStepReportStructure;
 import execStructure.ExecStructure;
-import functionalActions.SFDS.ActsSalesCompany;
+import functionalActions.CS.ActsCSProductBasket;
 import functionalActions.SFDS.ActsSalesOpportunity;
-import sfDirectSales.SalesForceAgreement;
-import sfDirectSales.SalesForceOpportunity;
 import sfDirectSales.SalesForceOrders;
 
 public class StpsSalesOpportunity {
@@ -75,7 +69,7 @@ public class StpsSalesOpportunity {
 	
 
 	// Navigation Steps
-	
+	/*
 	public static TestStepReportStructure navigate2Agreement(WebDriver driver, String testName, int stepID, String optyName) throws Exception
 	{
 		TestStepReportStructure navigate2Agreement;
@@ -116,7 +110,7 @@ public class StpsSalesOpportunity {
 			return navigate2Agreement;
 		}
 	}
-	
+	*/
 	public static TestStepReportStructure navigate2Order(WebDriver driver, String testName, int stepID, String optyName) throws Exception
 	{
 		TestStepReportStructure navigate2Order;
@@ -159,6 +153,9 @@ public class StpsSalesOpportunity {
 	
 	// Operational Steps
 	
+	
+	
+	/*
 	public static TestStepReportStructure soi66Validation(WebDriver driver, String testName, int stepID, String linkAgreementName) throws Exception
 	{
 		TestStepReportStructure soi66Validation;
@@ -372,7 +369,55 @@ public class StpsSalesOpportunity {
 			return step;
 		}
 	}
+		*/
+	
+	
+	
+	public static TestStepReportStructure createNewProductBasketEmpty(WebDriver driver, int stepID, String testName) throws Exception
+	{
+		TestStepReportStructure createNewProductBasketEmpty;
 
+
+		String stepName="Opportunity: Create a New Product Basket (Empty)";
+
+		String stepNameMin="createNewProductBasketEmpty";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+		
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+
+
+		boolean validation;
+
+		try
+		{
+			
+			ActsSalesOpportunity.createNewProductBasket(driver, wait, stepID);
+						
+			validation = ActsCSProductBasket.productBasketScreenValidation(driver, wait, stepID);
+
+			if(validation==true)
+			{
+				ExecStructure.screenShotTaking(driver, testName, evidenceName);
+				createNewProductBasketEmpty=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('p', 'e'), ReportStructure.testReportFinalElement('p', 'a'), ReportStructure.testReportFinalElement('p', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+				return createNewProductBasketEmpty;
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			ExecStructure.screenShotTaking(driver, testName, evidenceName);
+			createNewProductBasketEmpty=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('f', 'e'), ReportStructure.testReportFinalElement('f', 'a'), ReportStructure.testReportFinalElement('f', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+			return createNewProductBasketEmpty;
+		}
+
+	}
 	
 	
 }

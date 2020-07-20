@@ -3,7 +3,6 @@ package delivery02.soi_1312;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -14,122 +13,175 @@ import execStructure.ExecDriverClass;
 import execStructure.ExecStructure;
 import execStructure.TestData;
 import execStructure.TestStructure;
+import functionalSteps.CS.StpsCSProductBasket;
 import functionalSteps.SFDS.StpsSalesCompany;
 import functionalSteps.SFDS.StpsSalesHomePage;
+import functionalSteps.SFDS.StpsSalesOpportunity;
 
 public class SOI_1312_TC03_DS_ChineseWallsDuringQuoting_SalesUserProfile extends ExecDriverClass {
 
-		String testName = this.getClass().getSimpleName();
+	String testName = this.getClass().getSimpleName();
 
-		String initialTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
+	String initialTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
 
-		long startTime=System.nanoTime();
+	long startTime=System.nanoTime();
 
-		WebDriverWait wait;
+	List<TestStepReportStructure> testExecStructure = new ArrayList<TestStepReportStructure>();
 
-		List<TestStepReportStructure> testExecStructure = new ArrayList<TestStepReportStructure>();
-		
-		List<TestReportTestData> testData = new ArrayList<TestReportTestData>();
+	List<TestReportTestData> testData = new ArrayList<TestReportTestData>();
 
-		String finalTestDate=null;
+	int stepsExecuted;
+	
+	private String userProfile="regularUser";
 
-		long finishTime;
 
-		int stepsExecuted;
+	@BeforeTest
+	public void beforeTest() 
+	{
+		TestStructure.startTest(testName);
+	}
 
-		String testExecutionString;
+	@Test
+	public void step01() throws Exception 
+	{
+		stepsExecuted++;
 
-		String companyContactPerson="Simple Ordering OneFifty";
+		//String userProfile="regularUser";
 
-		@BeforeTest
-		public void beforeTest() 
+		try 
 		{
-			TestStructure.startTest(testName);
-		}
 
-		@Test
-		public void step01() throws Exception 
+			TestStepReportStructure step01 = StpsSalesHomePage.loginSFDS(driver, testName, stepsExecuted, userProfile);
+			testExecStructure.add(step01);
+
+			if (step01.getStepStatus().toLowerCase().contains("failed")) 
+			{
+
+				throw new Exception("Validation Failed on Step "+stepsExecuted);
+			}
+
+		}
+		catch(Exception e)
 		{
-			stepsExecuted++;
-
-			String userProfile="regularUser";
-
-			try 
-			{
-
-				TestStepReportStructure step01 = StpsSalesHomePage.loginSFDS(driver, testName, stepsExecuted, userProfile);
-				testExecStructure.add(step01);
-				
-				if (step01.getStepStatus().toLowerCase().contains("failed")) 
-				{
-
-					throw new Exception("Validation Failed on Step "+stepsExecuted);
-				}
-
-			}
-			catch(Exception e)
-			{
-				System.out.println(e);
-				throw new Exception("Test Failed on Step "+stepsExecuted,e);
-			}
-
+			System.out.println(e);
+			throw new Exception("Test Failed on Step "+stepsExecuted,e);
 		}
-		
-		@Test(dependsOnMethods = "step01")
-		public void step02() throws Exception {		
 
-			stepsExecuted++;
+	}
 
-			try
+	@Test(dependsOnMethods = "step01")
+	public void step02() throws Exception {		
+
+		stepsExecuted++;
+
+		try
+		{
+
+			TestStepReportStructure step02 = StpsSalesHomePage.navigate2CompanyDetails(driver, stepsExecuted, testName);
+			testExecStructure.add(step02);
+
+			testData.add(new TestReportTestData("Company", TestData.tdCompanyName(testName), "URL", driver.getCurrentUrl()));
+
+
+			if (step02.getStepStatus().toLowerCase().contains("failed")) 
 			{
 
-				TestStepReportStructure step02 = StpsSalesHomePage.navigate2CompanyDetails(driver, stepsExecuted, testName);
-				testExecStructure.add(step02);
-				
-				testData.add(new TestReportTestData("Company", TestData.tdCompanyName(testName), "URL", driver.getCurrentUrl()));
-				
-
-				if (step02.getStepStatus().toLowerCase().contains("failed")) 
-				{
-
-					throw new Exception("Validation Failed on Step "+stepsExecuted);
-				}
-			}
-			catch(Exception e)
-			{
-				System.out.println(e);
-				throw new Exception("Test Failed on Step "+stepsExecuted,e);
+				throw new Exception("Validation Failed on Step "+stepsExecuted);
 			}
 		}
-		
-		@Test(dependsOnMethods = "step02")
-		public void step03() throws Exception {		
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception("Test Failed on Step "+stepsExecuted,e);
+		}
+	}
 
-			stepsExecuted++;
+	@Test(dependsOnMethods = "step02")
+	public void step03() throws Exception {		
 
-			try
+		stepsExecuted++;
+
+		try
+		{
+
+			TestStepReportStructure step03 = StpsSalesCompany.createNewQuickSaleOpportunity(driver, stepsExecuted, testName);
+			testExecStructure.add(step03);
+			
+			testData.add(new TestReportTestData("Quick Sale Opportunity", TestData.getOPTYName(testName), "URL", driver.getCurrentUrl()));
+
+
+			if (step03.getStepStatus().toLowerCase().contains("failed")) 
 			{
 
-				TestStepReportStructure step03 = StpsSalesCompany.createNewQuickSaleOpportunity(driver, stepsExecuted, testName);
-				testExecStructure.add(step03);
-						
-
-				if (step03.getStepStatus().toLowerCase().contains("failed")) 
-				{
-
-					throw new Exception("Validation Failed on Step "+stepsExecuted);
-				}
-			}
-			catch(Exception e)
-			{
-				System.out.println(e);
-				throw new Exception("Test Failed on Step "+stepsExecuted,e);
+				throw new Exception("Validation Failed on Step "+stepsExecuted);
 			}
 		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception("Test Failed on Step "+stepsExecuted,e);
+		}
+	}
+
+	@Test(dependsOnMethods = "step03")
+	public void step04() throws Exception 
+	{	
+
+		stepsExecuted++;
+
+		try
+		{
+			TestStepReportStructure step04 = StpsSalesOpportunity.createNewProductBasketEmpty(driver, stepsExecuted, testName);
+			testExecStructure.add(step04);
+			
+			//testData.add(new TestReportTestData("Product Basket", "", "URL", driver.getCurrentUrl()));
+
+
+			if (step04.getStepStatus().toLowerCase().contains("failed")) 
+			{
+
+				throw new Exception("Validation Failed on Step "+stepsExecuted);
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception("Test Failed on Step "+stepsExecuted,e);
+		}
 		
+	}
+	
+	@Test(dependsOnMethods = "step04")
+	public void step05() throws Exception 
+	{	
+
+		stepsExecuted++;
+
+		try
+		{
+			TestStepReportStructure step05 = StpsCSProductBasket.chineseWallsDuringQuoting(driver, stepsExecuted, testName, userProfile);
+			testExecStructure.add(step05);
+
+
+			if (step05.getStepStatus().toLowerCase().contains("failed")) 
+			{
+
+				throw new Exception("Validation Failed on Step "+stepsExecuted);
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception("Test Failed on Step "+stepsExecuted,e);
+		}
+		
+	}
+
+
+
 		@AfterClass
 		public void afterClass() 
 		{
 			TestStructure.finishTest(testName, initialTestDate, startTime, stepsExecuted, testExecStructure, testData, driver);
 		}
-}
+	}
