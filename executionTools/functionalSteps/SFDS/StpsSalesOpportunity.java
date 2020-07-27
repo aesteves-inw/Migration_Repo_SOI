@@ -385,8 +385,7 @@ public class StpsSalesOpportunity {
 		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
 		
 		WebDriverWait wait = new WebDriverWait(driver, 20);
-
-
+		
 		boolean validation;
 
 		try

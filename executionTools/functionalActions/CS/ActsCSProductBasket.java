@@ -200,8 +200,15 @@ public class ActsCSProductBasket {
 	public static boolean soi1312Validation(WebDriver driver, int stepID, String userProfile) throws Exception
 	{
 		String actionName="Product Basket: Chinese Walls validation (SOI-1312)";
+		
+		WebDriverWait wait = new WebDriverWait(driver, 7);
+		
 		try
 		{
+			//String productCatalogText=driver.findElement(By.xpath(CloudSenseProductBasket.productCatalog)).getText().toString();
+			
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("EBU")));
+			
 			String productCatalogText=driver.findElement(By.xpath(CloudSenseProductBasket.productCatalog)).getText().toString();
 			
 			if(!productCatalogText.contains("Carrier & Wholesale Solutions") || userProfile=="SysAdmin")

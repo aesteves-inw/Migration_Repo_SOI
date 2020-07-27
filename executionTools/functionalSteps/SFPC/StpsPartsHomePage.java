@@ -200,7 +200,7 @@ public class StpsPartsHomePage {
 		}
 	}
 
-	public static TestStepReportStructure navigate2CompDetailsPC(WebDriver driver, String testName, int stepID, String testExecutionString) throws Exception
+	public static TestStepReportStructure navigate2CompDetailsPC(WebDriver driver, String testName, int stepID/*, String testExecutionString*/) throws Exception
 	{
 		TestStepReportStructure nav2comp;
 
