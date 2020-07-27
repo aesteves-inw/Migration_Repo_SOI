@@ -47,6 +47,7 @@ public class ActsCSProductBasket {
 
 		try
 		{
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(CloudSenseProductBasket.iframeProductBasket)));
 
 			WebElement iframeProductBasket = driver.findElement(By.xpath(CloudSenseProductBasket.iframeProductBasket));
 
@@ -136,9 +137,7 @@ public class ActsCSProductBasket {
 
 
 		try
-		{
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(CloudSenseProductBasket.iframeProductBasket)));
-			
+		{			
 			changeToProductBasketiFrame(driver, wait, stepID);
 
 			if(BrowserActions.isElementPresent(driver, CloudSenseProductBasket.cloneBasketButton) && 
@@ -149,7 +148,6 @@ public class ActsCSProductBasket {
 					BrowserActions.isElementPresent(driver, CloudSenseProductBasket.opportunityName))
 			{
 				System.out.println(actionName+" - Succeeded in Step: "+stepID);
-
 
 
 				return true;
