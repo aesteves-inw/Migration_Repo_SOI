@@ -3,18 +3,19 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="delivery02.soi_1312.SOI_1312_TC03_DS_ChineseWallsDuringQuoting_SalesUserProfile">
+      <class name="delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet">
         <methods>
-          <include name="step01"/>
-          <include name="step03"/>
-          <include name="step02"/>
+          <include name="beforeTest"/>
           <include name="step05"/>
           <include name="afterClass"/>
           <include name="step04"/>
+          <include name="step06"/>
+          <include name="step01"/>
+          <include name="step03"/>
+          <include name="step02"/>
           <include name="setupDriver"/>
-          <include name="beforeTest"/>
         </methods>
-      </class> <!-- delivery02.soi_1312.SOI_1312_TC03_DS_ChineseWallsDuringQuoting_SalesUserProfile -->
+      </class> <!-- delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

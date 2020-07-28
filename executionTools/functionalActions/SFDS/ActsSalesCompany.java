@@ -186,13 +186,15 @@ public class ActsSalesCompany {
 
 		String getOPTYName=TestData.getOPTYName(testName);
 		
-		
+		WebDriverWait wait = new WebDriverWait(driver, 10);
 
 		try
 		{
 			driver.findElement(By.xpath(SalesForceCompany.quickSaleOPTYBtn)).click();
 			
-			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+			//driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+			
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(SalesForceOpportunity.optyNameinput)));
 
 			driver.findElement(By.xpath(SalesForceOpportunity.optyNameinput)).sendKeys(getOPTYName);
 

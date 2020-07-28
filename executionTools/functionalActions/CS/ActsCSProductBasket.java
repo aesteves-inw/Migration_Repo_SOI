@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import actions.BrowserActions;
 import cloudSense.CloudSenseProductBasket;
+import execStructure.TestData;
 
 
 
@@ -104,11 +105,57 @@ public class ActsCSProductBasket {
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
 	}
-
+	
+	 public static void pickProductOnAddOfferBasketByTestName(WebDriver driver, int stepID, String testName) throws Exception
+	 {
+		 WebDriverWait wait = new WebDriverWait(driver, 15);
+		 
+		 String productToAdd=TestData.getD02ProductToAdd(testName);
+		 
+		 String actionName="Add Offer to Basket: Pick Product - "+productToAdd;
+	
+	
+			try
+			{
+				driver.findElement(By.linkText(productToAdd)).click();
+				
+				WebElement productSummary=driver.findElement(By.xpath(CloudSenseProductBasket.summarySection));
+				
+				String productVal=productSummary.getText().toString();
+				
+				if(productVal.contains(productToAdd))
+				{
+					driver.findElement(By.xpath(CloudSenseProductBasket.add2OfferButton)).click();
+					
+					wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(CloudSenseProductBasket.singleLineItemProduct)));
+					
+				}
+				else
+				{
+					throw new Exception ("Not Possible to confirm Product Selection on Step "+stepID);
+				}
+	
+				System.out.println(actionName+" - Succeeded in Step "+stepID);
+	
+			}
+			catch(Exception e)
+			{
+				System.out.println(e);
+				throw new Exception (actionName+" - Failed in Step "+stepID,e);
+			}
+		}
+	
+	
+	
+	
+	
 	// Validation Actions
 	/*02-03-2020:LMA
 	 * sketch for every validation functions
 	 *=====================================
+	 	public static boolean functionName()
+	 	{
+	 	
 			 String actionName="";
 			 try
 				{
@@ -128,6 +175,7 @@ public class ActsCSProductBasket {
 					System.out.println(e);
 					throw new Exception (actionName+" - Failed in Step: "+stepID,e);
 				}
+		}
 
 	 */
 
@@ -198,8 +246,15 @@ public class ActsCSProductBasket {
 	public static boolean soi1312Validation(WebDriver driver, int stepID, String userProfile) throws Exception
 	{
 		String actionName="Product Basket: Chinese Walls validation (SOI-1312)";
+		
+		WebDriverWait wait = new WebDriverWait(driver, 7);
+		
 		try
 		{
+			//String productCatalogText=driver.findElement(By.xpath(CloudSenseProductBasket.productCatalog)).getText().toString();
+			
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("EBU")));
+			
 			String productCatalogText=driver.findElement(By.xpath(CloudSenseProductBasket.productCatalog)).getText().toString();
 			
 			if(!productCatalogText.contains("Carrier & Wholesale Solutions") || userProfile=="SysAdmin")
@@ -219,4 +274,34 @@ public class ActsCSProductBasket {
 			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
 		}
 	}
+
+ 	public static boolean productOnProductBasketValidationByTestName(WebDriver driver, int stepID, String testName) throws Exception
+ 	{
+ 		String productToAdd=TestData.getD02ProductToAdd(testName);
+ 		
+		String actionName="Product Basket: Product Added into Product Basket Validation (By TestName)";
+		 
+		 try
+			{
+			 	WebElement productBasketTable=driver.findElement(By.xpath(CloudSenseProductBasket.productBasketTable));
+			 	
+			 	String productBasketLineItemValidation=productBasketTable.getText().toString();
+			 
+				if(productBasketLineItemValidation.contains(productToAdd))
+				{
+					System.out.println(actionName+" - Succeeded in Step: "+stepID);
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			}
+			catch(Exception e)
+			{
+				System.out.println(e);
+				throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+			}
+	}
+
 }

@@ -37,9 +37,13 @@ public class CloudSenseProductBasket {
 	
 	public static String add2OfferCancelButton = "/html/body/div[2]/div[2]/div/footer/div/button[1]/span";
 	
-	public static String add2OfferButton ="/html/body/div[2]/div[2]/div/footer/div/button[2]/span";
+	//public static String add2OfferButton ="/html/body/div[2]/div[2]/div/footer/div/button[2]/span";
 	
-	public static String summarySection = "/html/body/div[2]/div[2]/div/div/div[3]";
+	public static String add2OfferButton ="//button[@ng-click='addProductAndClose()']";
+	
+	//public static String summarySection = "/html/body/div[2]/div[2]/div/div/div[3]";
+	
+	public static String summarySection = "//section[@class='summary-section ng-scope']";
 	
 	public static String productCatalog="//div[@class='product-category']";
 	
@@ -48,6 +52,10 @@ public class CloudSenseProductBasket {
 	public static String productBasketiFrame="/html/body/div[4]/div[1]/section/div/div/div[1]/div[5]/div/force-aloha-page/div/iframe";
 	
 	public static String productBasketLabel="//span[text()='Product basket']";
+	
+	public static String productBasketTable="//*[@id='basket-table']/div[2]/div/ul";
+	
+	public static String singleLineItemProduct="//*[@id='basket-table']/div[2]/div/ul/li/div/div/div/div/div[2]/div";
 
 }
 

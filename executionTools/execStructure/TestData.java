@@ -21,7 +21,10 @@ public class TestData {
 		public static String CHROME_EXTENSION2SALESFORCE_PATH = "C:\\Users\\andre.esteves\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\nnlnikmkkbpgioojghgojoejgcheilic\\0.0.1_0";
 	 */
 
-	public static String ChromeProfilePath = "C:\\Users\\luis.achas\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 1";
+	//public static String ChromeProfilePath = "C:\\Users\\andre.esteves\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 1";
+	
+	public static String ChromeProfilePath=ExecStructure.workingDir+"\\Selenium_Support";
+	
 	// End Of Chrome Configs
 
 	public static String searchDT(int indexOftheSheet, String val2Search) throws Exception
@@ -47,7 +50,8 @@ public class TestData {
 				val2Return=row1.getCell(1).getStringCellValue();
 			}
 		}
-
+		
+		wb.close();
 		file.close();
 		return val2Return;
 	} 
@@ -119,6 +123,19 @@ public class TestData {
 		{
 			tdCompanyName= searchDT(2,"testingCompanySOI880");
 		}
+		// 28-07-2020 - Delivery D02 Companies
+		else if(testNameLower.contains("soi_175"))
+		{
+			tdCompanyName= searchDT(2,"testingCompanySOI175");
+		}
+		else if(testNameLower.contains("soi_220"))
+		{
+			tdCompanyName= searchDT(2,"testingCompanySOI220");
+		}
+		else if(testNameLower.contains("soi_239"))
+		{
+			tdCompanyName= searchDT(2,"testingCompanySOI239");
+		}
 		else if(testNameLower.contains("soi_1312"))
 		{
 			tdCompanyName= searchDT(2,"testingCompanySOI1312");
@@ -186,6 +203,19 @@ public class TestData {
         {
             tdCompanyID= searchDT(2,"idTestingCompanySOI880");
         }
+		// 28-07-2020 - Delivery D02 Companies
+		else if(testNameLower.contains("soi_175"))
+        {
+            tdCompanyID= searchDT(2,"idTestingCompanySOI175");
+        }
+		else if(testNameLower.contains("soi_220"))
+        {
+            tdCompanyID= searchDT(2,"idTestingCompanySOI220");
+        }
+		else if(testNameLower.contains("soi_239"))
+        {
+            tdCompanyID= searchDT(2,"idTestingCompanySOI239");
+        }
 		else if(testNameLower.contains("soi_1312"))
         {
             tdCompanyID= searchDT(2,"idTestingCompanySOI1312");
@@ -250,6 +280,16 @@ public class TestData {
 			String[] finalUser= {TestData.searchDT(0, "salesSupportProfileUser"), TestData.searchDT(0, "salesSupportProfilePass")};
 			return finalUser;
 		}
+		else if(user.contains("SysAdmin"))
+		{
+			String[] finalUser= {TestData.searchDT(0, "sysAdminProfileUser"), TestData.searchDT(0, "sysAdminProfilePass")};
+			return finalUser;
+		}
+		else if(user.contains("farmerUser"))
+		{
+			String[] finalUser= {TestData.searchDT(1, "envUserNameITTQA"), TestData.searchDT(1, "envPasswordITTQA")};
+			return finalUser;
+		}
 		else
 		{
 			throw new Exception("Not possible to identify User Profile");
@@ -272,6 +312,33 @@ public class TestData {
 	
 	//CONSTANTS
 	public static final String OPTY="OPTY_";
+
+	public static String getD02ProductToAdd(String testName) throws Exception 
+	{
+		System.out.println("getD02ProductToAdd - Debug - TestName: "+testName);
+		
+		String finalProduct;
+		
+		if (testName.contains("_175_"))
+		{
+			finalProduct="Professional Internet";
+		}
+		else if(testName.contains("_220_"))
+		{
+			finalProduct="Voice Continuity";
+		}
+		else if(testName.contains("_239_"))
+		{
+			finalProduct="Phone Line";
+		}
+		else
+		{
+			throw new Exception("Not possible to identify Test Case");
+		}
+		
+		return finalProduct;
+		
+	}
 	
 	//Report Elements
 	
