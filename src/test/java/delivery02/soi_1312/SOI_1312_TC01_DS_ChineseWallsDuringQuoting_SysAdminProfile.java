@@ -17,8 +17,6 @@ import functionalSteps.CS.StpsCSProductBasket;
 import functionalSteps.SFDS.StpsSalesCompany;
 import functionalSteps.SFDS.StpsSalesHomePage;
 import functionalSteps.SFDS.StpsSalesOpportunity;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.AfterTest;
 
 public class SOI_1312_TC01_DS_ChineseWallsDuringQuoting_SysAdminProfile extends ExecDriverClass {
 	
