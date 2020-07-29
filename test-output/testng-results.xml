@@ -2,44 +2,44 @@
 <testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="47125" started-at="2020-07-28T23:49:13Z" finished-at="2020-07-28T23:50:00Z">
+  <suite name="Default suite" duration-ms="79595" started-at="2020-07-29T10:36:14Z" finished-at="2020-07-29T10:37:33Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="47125" started-at="2020-07-28T23:49:13Z" finished-at="2020-07-28T23:50:00Z">
+    <test name="Default test" duration-ms="79595" started-at="2020-07-29T10:36:14Z" finished-at="2020-07-29T10:37:33Z">
       <class name="delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet">
-        <test-method status="PASS" signature="setupDriver()[pri:0, instance:delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet@464bee09]" name="setupDriver" is-config="true" duration-ms="5405" started-at="2020-07-28T23:49:07Z" finished-at="2020-07-28T23:49:13Z">
+        <test-method status="PASS" signature="setupDriver()[pri:0, instance:delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet@464bee09]" name="setupDriver" is-config="true" duration-ms="8873" started-at="2020-07-29T10:36:05Z" finished-at="2020-07-29T10:36:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupDriver -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet@464bee09]" name="beforeTest" is-config="true" duration-ms="17" started-at="2020-07-28T23:49:13Z" finished-at="2020-07-28T23:49:13Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet@464bee09]" name="beforeTest" is-config="true" duration-ms="6" started-at="2020-07-29T10:36:14Z" finished-at="2020-07-29T10:36:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="step01()[pri:0, instance:delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet@464bee09]" name="step01" duration-ms="10374" started-at="2020-07-28T23:49:13Z" finished-at="2020-07-28T23:49:23Z">
+        <test-method status="PASS" signature="step01()[pri:0, instance:delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet@464bee09]" name="step01" duration-ms="20093" started-at="2020-07-29T10:36:14Z" finished-at="2020-07-29T10:36:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step01 -->
-        <test-method status="PASS" signature="step02()[pri:0, instance:delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet@464bee09]" name="step02" duration-ms="6929" started-at="2020-07-28T23:49:23Z" depends-on-methods="delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet.step01" finished-at="2020-07-28T23:49:30Z">
+        <test-method status="PASS" signature="step02()[pri:0, instance:delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet@464bee09]" name="step02" duration-ms="13120" started-at="2020-07-29T10:36:34Z" depends-on-methods="delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet.step01" finished-at="2020-07-29T10:36:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step02 -->
-        <test-method status="PASS" signature="step03()[pri:0, instance:delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet@464bee09]" name="step03" duration-ms="7757" started-at="2020-07-28T23:49:30Z" depends-on-methods="delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet.step02" finished-at="2020-07-28T23:49:38Z">
+        <test-method status="PASS" signature="step03()[pri:0, instance:delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet@464bee09]" name="step03" duration-ms="14501" started-at="2020-07-29T10:36:47Z" depends-on-methods="delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet.step02" finished-at="2020-07-29T10:37:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step03 -->
-        <test-method status="PASS" signature="step04()[pri:0, instance:delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet@464bee09]" name="step04" duration-ms="6520" started-at="2020-07-28T23:49:38Z" depends-on-methods="delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet.step03" finished-at="2020-07-28T23:49:44Z">
+        <test-method status="PASS" signature="step04()[pri:0, instance:delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet@464bee09]" name="step04" duration-ms="8936" started-at="2020-07-29T10:37:01Z" depends-on-methods="delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet.step03" finished-at="2020-07-29T10:37:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step04 -->
-        <test-method status="PASS" signature="step05()[pri:0, instance:delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet@464bee09]" name="step05" duration-ms="1296" started-at="2020-07-28T23:49:44Z" depends-on-methods="delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet.step04" finished-at="2020-07-28T23:49:46Z">
+        <test-method status="PASS" signature="step05()[pri:0, instance:delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet@464bee09]" name="step05" duration-ms="1522" started-at="2020-07-29T10:37:10Z" depends-on-methods="delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet.step04" finished-at="2020-07-29T10:37:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step05 -->
-        <test-method status="PASS" signature="step06()[pri:0, instance:delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet@464bee09]" name="step06" duration-ms="9208" started-at="2020-07-28T23:49:46Z" depends-on-methods="delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet.step05" finished-at="2020-07-28T23:49:55Z">
+        <test-method status="PASS" signature="step06()[pri:0, instance:delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet@464bee09]" name="step06" duration-ms="21352" started-at="2020-07-29T10:37:12Z" depends-on-methods="delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet.step05" finished-at="2020-07-29T10:37:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step06 -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet@464bee09]" name="afterClass" is-config="true" duration-ms="4978" started-at="2020-07-28T23:49:55Z" finished-at="2020-07-28T23:50:00Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet@464bee09]" name="afterClass" is-config="true" duration-ms="0" started-at="2020-07-29T10:37:33Z" finished-at="2020-07-29T10:37:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
