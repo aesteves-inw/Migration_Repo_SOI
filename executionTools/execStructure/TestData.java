@@ -9,8 +9,6 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import execStructure.*;
-
 public class TestData {
 
 	//Chrome Configs
@@ -298,21 +296,11 @@ public class TestData {
 
 	public static String getOPTYName(String testClassName)
 	{
-		String optyName=TestData.OPTY+ExecStructure.getTestExecutionString(testClassName);
+		String optyName=ExecStructure.getTestExecutionString(testClassName);
 		
 		return optyName;
 	}
 	
-	// Orders Related View - SOI-80
-	
-	public static String allOrdersURL="https://proximusitqa--prxittqa.lightning.force.com/lightning/o/csord__Order__c/list?filterName=00B58000004rXxlEAE";
-
-	public static String myOrdersURL="https://proximusitqa--prxittqa.lightning.force.com/lightning/o/csord__Order__c/list?filterName=00B3E000002XCLdUAO";
-
-	
-	//CONSTANTS
-	public static final String OPTY="OPTY_";
-
 	public static String getD02ProductToAdd(String testName) throws Exception 
 	{
 		System.out.println("getD02ProductToAdd - Debug - TestName: "+testName);
@@ -339,6 +327,18 @@ public class TestData {
 		return finalProduct;
 		
 	}
+	
+	// Orders Related View - SOI-80
+	
+	public static String allOrdersURL="https://proximusitqa--prxittqa.lightning.force.com/lightning/o/csord__Order__c/list?filterName=00B58000004rXxlEAE";
+
+	public static String myOrdersURL="https://proximusitqa--prxittqa.lightning.force.com/lightning/o/csord__Order__c/list?filterName=00B3E000002XCLdUAO";
+
+	
+	//CONSTANTS
+	public static final String OPTY="OPTY_";
+
+	
 	
 	//Report Elements
 	

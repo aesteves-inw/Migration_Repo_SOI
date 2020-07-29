@@ -114,6 +114,7 @@ public class StpsCSProductBasket {
 		
 
 		String productToAdd=TestData.getD02ProductToAdd(testName);
+		
 
 		String stepName="Add Offer to Basket: "+productToAdd;
 
