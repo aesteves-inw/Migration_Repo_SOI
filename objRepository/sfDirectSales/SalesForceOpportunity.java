@@ -120,7 +120,7 @@ public class SalesForceOpportunity {
 
 	public static String refreshButton = "//button[@name='refreshButton']";
 
-	public static String newButton = "(//ul/li/a/div[@title='New'])[2]";
+	public static String newButton = "//div[@title='New']"/*"(//ul/li/a/div[@title='New'])[2]"*/;
 
 	public static String optyTablePool = "//table[@role='grid']";
 

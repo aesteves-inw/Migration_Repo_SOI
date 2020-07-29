@@ -1,49 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
+<testng-results skipped="1" failed="1" ignored="0" total="2" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="79595" started-at="2020-07-29T10:36:14Z" finished-at="2020-07-29T10:37:33Z">
+  <suite name="Default suite" duration-ms="1412" started-at="2020-07-29T12:58:13Z" finished-at="2020-07-29T12:58:14Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="79595" started-at="2020-07-29T10:36:14Z" finished-at="2020-07-29T10:37:33Z">
-      <class name="delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet">
-        <test-method status="PASS" signature="setupDriver()[pri:0, instance:delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet@464bee09]" name="setupDriver" is-config="true" duration-ms="8873" started-at="2020-07-29T10:36:05Z" finished-at="2020-07-29T10:36:14Z">
+    <test name="Default test" duration-ms="1412" started-at="2020-07-29T12:58:13Z" finished-at="2020-07-29T12:58:14Z">
+      <class name="delivery01.soi_273.SOI_273_TC01_NoContactPerson_SalesUser">
+        <test-method status="PASS" signature="setupDriver()[pri:0, instance:delivery01.soi_273.SOI_273_TC01_NoContactPerson_SalesUser@77cd7a0]" name="setupDriver" is-config="true" duration-ms="5075" started-at="2020-07-29T12:58:08Z" finished-at="2020-07-29T12:58:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupDriver -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet@464bee09]" name="beforeTest" is-config="true" duration-ms="6" started-at="2020-07-29T10:36:14Z" finished-at="2020-07-29T10:36:14Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:delivery01.soi_273.SOI_273_TC01_NoContactPerson_SalesUser@77cd7a0]" name="beforeTest" is-config="true" duration-ms="8" started-at="2020-07-29T12:58:13Z" finished-at="2020-07-29T12:58:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="step01()[pri:0, instance:delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet@464bee09]" name="step01" duration-ms="20093" started-at="2020-07-29T10:36:14Z" finished-at="2020-07-29T10:36:34Z">
+        <test-method status="FAIL" signature="step01()[pri:0, instance:delivery01.soi_273.SOI_273_TC01_NoContactPerson_SalesUser@77cd7a0]" name="step01" duration-ms="594" started-at="2020-07-29T12:58:13Z" finished-at="2020-07-29T12:58:13Z">
+          <exception class="java.lang.Exception">
+            <message>
+              <![CDATA[Test Failed on Step 1]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Exception: Test Failed on Step 1
+at delivery01.soi_273.SOI_273_TC01_NoContactPerson_SalesUser.step01(SOI_273_TC01_NoContactPerson_SalesUser.java:69)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.Exception: Validation Failed on Step 1
+at delivery01.soi_273.SOI_273_TC01_NoContactPerson_SalesUser.step01(SOI_273_TC01_NoContactPerson_SalesUser.java:62)
+... 25 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Exception -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step01 -->
-        <test-method status="PASS" signature="step02()[pri:0, instance:delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet@464bee09]" name="step02" duration-ms="13120" started-at="2020-07-29T10:36:34Z" depends-on-methods="delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet.step01" finished-at="2020-07-29T10:36:47Z">
+        <test-method status="SKIP" signature="step02()[pri:0, instance:delivery01.soi_273.SOI_273_TC01_NoContactPerson_SalesUser@77cd7a0]" name="step02" duration-ms="0" started-at="2020-07-29T12:58:13Z" depends-on-methods="delivery01.soi_273.SOI_273_TC01_NoContactPerson_SalesUser.step01" finished-at="2020-07-29T12:58:13Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method SOI_273_TC01_NoContactPerson_SalesUser.step02()[pri:0, instance:delivery01.soi_273.SOI_273_TC01_NoContactPerson_SalesUser@77cd7a0] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method SOI_273_TC01_NoContactPerson_SalesUser.step02()[pri:0, instance:delivery01.soi_273.SOI_273_TC01_NoContactPerson_SalesUser@77cd7a0] depends on not successfully finished methods
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- step02 -->
-        <test-method status="PASS" signature="step03()[pri:0, instance:delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet@464bee09]" name="step03" duration-ms="14501" started-at="2020-07-29T10:36:47Z" depends-on-methods="delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet.step02" finished-at="2020-07-29T10:37:01Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- step03 -->
-        <test-method status="PASS" signature="step04()[pri:0, instance:delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet@464bee09]" name="step04" duration-ms="8936" started-at="2020-07-29T10:37:01Z" depends-on-methods="delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet.step03" finished-at="2020-07-29T10:37:10Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- step04 -->
-        <test-method status="PASS" signature="step05()[pri:0, instance:delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet@464bee09]" name="step05" duration-ms="1522" started-at="2020-07-29T10:37:10Z" depends-on-methods="delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet.step04" finished-at="2020-07-29T10:37:12Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- step05 -->
-        <test-method status="PASS" signature="step06()[pri:0, instance:delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet@464bee09]" name="step06" duration-ms="21352" started-at="2020-07-29T10:37:12Z" depends-on-methods="delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet.step05" finished-at="2020-07-29T10:37:33Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- step06 -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet@464bee09]" name="afterClass" is-config="true" duration-ms="0" started-at="2020-07-29T10:37:33Z" finished-at="2020-07-29T10:37:33Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:delivery01.soi_273.SOI_273_TC01_NoContactPerson_SalesUser@77cd7a0]" name="afterClass" is-config="true" duration-ms="767" started-at="2020-07-29T12:58:13Z" finished-at="2020-07-29T12:58:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-      </class> <!-- delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet -->
+      </class> <!-- delivery01.soi_273.SOI_273_TC01_NoContactPerson_SalesUser -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

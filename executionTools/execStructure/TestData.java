@@ -101,6 +101,10 @@ public class TestData {
 		{
 			tdCompanyName= searchDT(2,"testingCompanySOI150");
 		}
+		else if(testNameLower.contains("soi_273"))
+		{
+			tdCompanyName= searchDT(2,"testingCompanySOI273");
+		}
 		else if(testNameLower.contains("soi_718"))
 		{
 			tdCompanyName= searchDT(2,"testingCompanySOI718");
@@ -180,6 +184,10 @@ public class TestData {
 		else if(testNameLower.contains("soi_150"))
 		{
 			tdCompanyID= searchDT(2,"idTestingCompanySOI150");
+		}
+		else if(testNameLower.contains("soi_273"))
+		{
+			tdCompanyID= searchDT(2,"idTestingCompanySOI273");
 		}
 		else if(testNameLower.contains("soi_718"))
         {

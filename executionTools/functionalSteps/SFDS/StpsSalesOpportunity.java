@@ -155,7 +155,7 @@ public class StpsSalesOpportunity {
 	
 	
 	
-	/*
+	
 	public static TestStepReportStructure soi66Validation(WebDriver driver, String testName, int stepID, String linkAgreementName) throws Exception
 	{
 		TestStepReportStructure soi66Validation;
@@ -237,7 +237,7 @@ public class StpsSalesOpportunity {
 			return negativeSoi66Validation;
 		}
 	}
-
+	///*
 	public static TestStepReportStructure closingWonOPTY(WebDriver driver, int stepID, String testName, String optyName) throws Exception
 	{
 		TestStepReportStructure closingWonOPTY;
@@ -369,7 +369,7 @@ public class StpsSalesOpportunity {
 			return step;
 		}
 	}
-		*/
+		//*/
 	
 	
 	

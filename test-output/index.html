@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Default_suite">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\luis.achas\AppData\Local\Temp\testng-eclipse-1687489993\testng-customsuite.xml</span>
+                    <span>C:\Users\andre.esteves\AppData\Local\Temp\testng-eclipse--344956274\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,46 +91,35 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">6 methods,   6 passed</span>
+                    <span class="method-stats">2 methods, 1 failed,  1 skipped,  </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Default_suite" class="hide-methods passed suite-Default_suite"> (hide)</a> <!-- hide-methods passed suite-Default_suite -->
-                      <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
                     </span>
-                    <div class="method-list-content passed suite-Default_suite">
+                    <div class="method-list-content failed suite-Default_suite">
                       <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet" hash-for-method="step01">step01</a> <!-- method navigator-link -->
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="delivery01.soi_273.SOI_273_TC01_NoContactPerson_SalesUser" hash-for-method="step01">step01</a> <!-- method navigator-link -->
                       </span>
                       <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods skipped suite-Default_suite"> (hide)</a> <!-- hide-methods skipped suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods skipped suite-Default_suite"> (show)</a> <!-- show-methods skipped suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content skipped suite-Default_suite">
                       <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet" hash-for-method="step02">step02</a> <!-- method navigator-link -->
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="delivery01.soi_273.SOI_273_TC01_NoContactPerson_SalesUser" hash-for-method="step02">step02</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet" hash-for-method="step03">step03</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet" hash-for-method="step04">step04</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet" hash-for-method="step05">step05</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet" hash-for-method="step06">step06</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content passed suite-Default_suite -->
+                    </div> <!-- method-list-content skipped suite-Default_suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -142,10 +131,10 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-passed">
+          <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet</span>
+              <img src="failed.png"/>
+              <span class="class-name">delivery01.soi_273.SOI_273_TC01_NoContactPerson_SalesUser</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -153,49 +142,82 @@
                   <a name="step01">
                   </a> <!-- step01 -->
                   <span class="method-name">step01</span>
+                  <div class="stack-trace">java.lang.Exception: Test Failed on Step 1
+	at delivery01.soi_273.SOI_273_TC01_NoContactPerson_SalesUser.step01(SOI_273_TC01_NoContactPerson_SalesUser.java:69)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.Exception: Validation Failed on Step 1
+	at delivery01.soi_273.SOI_273_TC01_NoContactPerson_SalesUser.step01(SOI_273_TC01_NoContactPerson_SalesUser.java:62)
+	... 25 more
+
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-failed -->
+          <div class="suite-Default_suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">delivery01.soi_273.SOI_273_TC01_NoContactPerson_SalesUser</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
                   <a name="step02">
                   </a> <!-- step02 -->
                   <span class="method-name">step02</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="step03">
-                  </a> <!-- step03 -->
-                  <span class="method-name">step03</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="step04">
-                  </a> <!-- step04 -->
-                  <span class="method-name">step04</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="step05">
-                  </a> <!-- step05 -->
-                  <span class="method-name">step05</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="step06">
-                  </a> <!-- step06 -->
-                  <span class="method-name">step06</span>
+                  <div class="stack-trace">java.lang.Throwable: Method SOI_273_TC01_NoContactPerson_SalesUser.step02()[pri:0, instance:delivery01.soi_273.SOI_273_TC01_NoContactPerson_SalesUser@77cd7a0] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Default_suite-class-passed -->
+          </div> <!-- suite-Default_suite-class-skipped -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\luis.achas\AppData\Local\Temp\testng-eclipse-1687489993\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\andre.esteves\AppData\Local\Temp\testng-eclipse--344956274\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -204,7 +226,7 @@
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default suite&quot;&gt;
   &lt;test thread-count=&quot;5&quot; verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet&quot;/&gt;
+      &lt;class name=&quot;delivery01.soi_273.SOI_273_TC01_NoContactPerson_SalesUser&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -244,36 +266,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(6);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'step06')
-data.setCell(0, 2, 'delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet')
-data.setCell(0, 3, 21352);
+data.setCell(0, 1, 'step01')
+data.setCell(0, 2, 'delivery01.soi_273.SOI_273_TC01_NoContactPerson_SalesUser')
+data.setCell(0, 3, 594);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'step01')
-data.setCell(1, 2, 'delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet')
-data.setCell(1, 3, 20093);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'step03')
-data.setCell(2, 2, 'delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet')
-data.setCell(2, 3, 14501);
-data.setCell(3, 0, 3)
-data.setCell(3, 1, 'step02')
-data.setCell(3, 2, 'delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet')
-data.setCell(3, 3, 13120);
-data.setCell(4, 0, 4)
-data.setCell(4, 1, 'step04')
-data.setCell(4, 2, 'delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet')
-data.setCell(4, 3, 8936);
-data.setCell(5, 0, 5)
-data.setCell(5, 1, 'step05')
-data.setCell(5, 2, 'delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet')
-data.setCell(5, 3, 1522);
+data.setCell(1, 1, 'step02')
+data.setCell(1, 2, 'delivery01.soi_273.SOI_273_TC01_NoContactPerson_SalesUser')
+data.setCell(1, 3, 0);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 594 ms</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -299,42 +305,24 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">delivery02.soi_175.SOI_175_DS_Configure_Standalone_Internet</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">delivery01.soi_273.SOI_273_TC01_NoContactPerson_SalesUser</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">setupDriver</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-test before">
                 <span class="method-name">beforeTest</span>
-                <span class="method-start">8879 ms</span>
+                <span class="method-start">5076 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">step01</span>
-                <span class="method-start">8918 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">step02</span>
-                <span class="method-start">29027 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">step03</span>
-                <span class="method-start">42149 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">step04</span>
-                <span class="method-start">56653 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">step05</span>
-                <span class="method-start">65590 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">step06</span>
-                <span class="method-start">67114 ms</span>
+                <span class="method-start">5098 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">afterClass</span>
-                <span class="method-start">88468 ms</span>
+                <span class="method-start">5719 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
