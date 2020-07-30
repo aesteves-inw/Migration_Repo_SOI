@@ -5,9 +5,12 @@
     <classes>
       <class name="delivery01.soi_273.SOI_273_TC01_NoContactPerson_SalesUser">
         <methods>
+          <include name="step03"/>
           <include name="step02"/>
           <include name="step01"/>
           <include name="afterClass"/>
+          <include name="step05"/>
+          <include name="step04"/>
           <include name="beforeTest"/>
           <include name="setupDriver"/>
         </methods>

@@ -99,6 +99,14 @@ public class SalesForceOpportunity {
 	public static String optyHeader = "//h1[contains(.,'Opportunity')]";
 
 	public static String optyDetails = "//div[@class='slds-tabs_default']";
+	
+	public static String optyEdit = "//a[@title='Edit']";
+	
+	public static String editSelectStage ="//div[@class='uiMenu uiInput uiInputSelect forceInputPicklist uiInput--default uiInput--select']";
+	
+	public static String noCloseWonHeader ="//span[contains(.,'Review the errors on this page.')]";
+	
+	public static String noCloseWonText ="//li[contains(.,'Please select a contact person first.')]";
 
 
 	//Edit Opportunity Screen
@@ -120,7 +128,7 @@ public class SalesForceOpportunity {
 
 	public static String refreshButton = "//button[@name='refreshButton']";
 
-	public static String newButton = "//div[@title='New']"/*"(//ul/li/a/div[@title='New'])[2]"*/;
+	public static String newButton = "//a[@title='New']";
 
 	public static String optyTablePool = "//table[@role='grid']";
 

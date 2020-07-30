@@ -282,6 +282,51 @@ public class StpsSalesOpportunity {
 		}
 
 	}
+	
+	public static TestStepReportStructure noClosingWonOPTY(WebDriver driver, int stepID, String testName, String optyName) throws Exception
+	{
+		TestStepReportStructure noClosingWonOPTY;
+
+
+		String stepName="Opportunity: No Closing Won Opportunity";
+
+		String stepNameMin="noClosingWonOPTY";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			ActsSalesOpportunity.closeWonOppie(driver, stepID);
+			
+			//BrowserActions.refreshPage(driver);
+
+			validation = ActsSalesOpportunity.negativeValidationClosedWonOpty(driver, stepID, optyName);
+
+			if(validation==true)
+			{
+				ExecStructure.screenShotTaking(driver, testName, evidenceName);
+				noClosingWonOPTY=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('p', 'e'), ReportStructure.testReportFinalElement('p', 'a'), ReportStructure.testReportFinalElement('p', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+				return noClosingWonOPTY;
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			ExecStructure.screenShotTaking(driver, testName, evidenceName);
+			noClosingWonOPTY=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('f', 'e'), ReportStructure.testReportFinalElement('f', 'a'), ReportStructure.testReportFinalElement('f', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+			return noClosingWonOPTY;
+		}
+
+	}
 
 	public static TestStepReportStructure soi68Validation(WebDriver driver, int stepID, String testName, String optyName) throws Exception
 	{
