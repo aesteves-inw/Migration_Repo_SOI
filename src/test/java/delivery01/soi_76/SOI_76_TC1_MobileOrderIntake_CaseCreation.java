@@ -12,6 +12,8 @@ import execReport.TestStepReportStructure;
 import execStructure.ExecStructure;
 import execStructure.TestData;
 import functionalActions.SFDS.Agreement;
+import functionalSteps.SFDS.StpsSalesCompany;
+import functionalSteps.SFDS.StpsSalesHomePage;
 import sfDirectSales.SalesForceAgreement;
 import sfDirectSales.SalesForceOpportunity;
 import sfDirectSales.SalesForceOrders;
@@ -154,7 +156,7 @@ public class SOI_76_TC1_MobileOrderIntake_CaseCreation {
 		try
 		{
 			
-			TestStepReportStructure step02 = FunctionalSteps.navigate2CompanyDetails(driver, stepsExecuted, testName);
+			TestStepReportStructure step02 = StpsSalesHomePage.navigate2CompanyDetails(driver, stepsExecuted, testName);
 			testExecStructure.add(step02);
 			
 			if (step02.getStepStatus().toLowerCase().contains("failed")) 
@@ -178,7 +180,7 @@ public class SOI_76_TC1_MobileOrderIntake_CaseCreation {
 		
 		try
 		{
-			TestStepReportStructure step03 = FunctionalSteps.createStandardOppie(driver, stepsExecuted, testName, testExecutionString);
+			TestStepReportStructure step03 = StpsSalesCompany.createStandardOppie(driver, stepsExecuted, testName, testExecutionString);
 			testExecStructure.add(step03);
 			
 			if (step03.getStepStatus().toLowerCase().contains("failed")) 
@@ -207,9 +209,9 @@ public class SOI_76_TC1_MobileOrderIntake_CaseCreation {
 		
 		try
 		{
-			FunctionalActionsSFDS.addProductToOppie(driver, "mobileVoice");
-			
-			FunctionalActionsSFDS.editProductConfiguration(driver, 1);
+			//FunctionalActionsSFDS.addProductToOppie(driver, "mobileVoice");
+			functionalSteps.SFDS.StpsSalesCompany.configNewMobileOpportunity(driver, wait, optyElement, optyElement, stepsExecuted);
+			//FunctionalActionsSFDS.editProductConfiguration(driver, 1);
 			
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesForceOpportunity.optyTablePool)));
 			
@@ -217,7 +219,7 @@ public class SOI_76_TC1_MobileOrderIntake_CaseCreation {
 			
 			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);	
 
-			if(BrowserActions.isElementPresent(driver, SalesForceOpportunity.optyHeader) && BrowserActions.isElementPresent(driver, SalesForceOpportunity.productContainer))
+			/*if(BrowserActions.isElementPresent(driver, SalesForceOpportunity.optyHeader) && BrowserActions.isElementPresent(driver, SalesForceOpportunity.productContainer))
 			{
 				ExecStructure.screenShotTaking(driver, testName, stepsExecuted+"_OppieValidation");
 				TestStepReportStructure step04 = new TestStepReportStructure(stepsExecuted, "Opportunity Screen Validation", "Validation with success", "Validated with success", "Passed", ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), stepsExecuted+"_OppieValidation");
@@ -226,7 +228,7 @@ public class SOI_76_TC1_MobileOrderIntake_CaseCreation {
 			else
 			{
 				throw new Exception("Validation Failed on Step "+stepsExecuted);
-			}
+			}*/
 			
 		}
 		catch(Exception e)

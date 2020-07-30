@@ -3,7 +3,11 @@ package functionalSteps.SFDS;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import actions.BrowserActions;
 import execReport.ReportStructure;
 import execReport.TestStepReportStructure;
@@ -123,7 +127,7 @@ public class StpsSalesHomePage {
 
 		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);
 		
-		
+		//WebDriverWait wait = new WebDriverWait(driver, 20);
 
 		String companyURL = TestData.searchDT(0, "environmentITTQA").concat(TestData.searchDT(0, "accountView")).concat(TestData.tdCompanyID(testName)).concat("/view");
 

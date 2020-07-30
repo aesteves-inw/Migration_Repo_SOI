@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -41,19 +42,18 @@ public class ActsSalesCompany {
 	{
 		String actionName="New Opportunity Screen";
 
-		WebDriverWait waitNSOS = new WebDriverWait(driver, 10);
-
+		WebDriverWait waitNSOS = new WebDriverWait(driver, 20);
+		
 		try
 		{	
 
 			String rmOpportunitiesListViewlink = driver.findElement(By.xpath(SalesForceCompany.rmOpportunitieslink)).getAttribute("href");
 
 			driver.get(rmOpportunitiesListViewlink);
-
-			driver.findElement(By.xpath(SalesForceOpportunity.newButton)).click();
+			
+			driver.findElement(By.linkText("New")).click();
 
 			waitNSOS.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesForceOpportunity.newOpportunityHeader)));
-
 
 			System.out.println(actionName+" - Succeeded in Step "+stepID);
 		}

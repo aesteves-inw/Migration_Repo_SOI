@@ -173,6 +173,55 @@ public class ActsSalesOpportunity {
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
 	}
+	
+	public static void closeWonOppie(WebDriver driver, int stepID) throws Exception
+	{
+		String actionName="Opportunity: Close Won Opportunity";
+
+		WebDriverWait waitCWO = new WebDriverWait(driver, 10);
+
+		try
+		{
+
+			//WebElement closeOPTYLink = BrowserActions.getElementByJSQuery(driver, SalesForceOpportunity.closeOPTYHeaderButton);
+			//WebElement optyStageField = BrowserActions.getElementByJSQuery(driver, SalesForceOpportunity.optyEdit);
+			
+			//BrowserActions.jsClick(driver, optyStageField);		
+			
+			driver.findElement(By.xpath(SalesForceOpportunity.optyEdit)).click();
+			
+			driver.findElement(By.xpath(SalesForceOpportunity.editSelectStage)).click();
+			
+			driver.findElement(By.xpath("//a[@title='Closed Won']")).click();
+			
+			driver.findElement(By.xpath("//button[@title='Save']")).click();
+
+			/*WebElement selectCloseButton=BrowserActions.getElementByJSQuery(driver, SalesForceOpportunity.selectCloseMenu);
+
+			BrowserActions.jsClick(driver, selectCloseButton);	
+
+			waitCWO.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesForceOpportunity.ctomHeader)));
+
+			Select closedStage = new Select(driver.findElement(By.xpath("//select")));
+
+			closedStage.selectByVisibleText("Closed Won");
+
+			driver.findElement(By.xpath(SalesForceOpportunity.nosSaveButton)).click();
+
+			waitCWO.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(SalesForceOpportunity.ctomHeader)));
+
+			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);*/
+
+
+			System.out.println(actionName+" - Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+	}
 	/*
 	public static void findAgreementOnOPTY(WebDriver driver, int stepID) throws Exception
 	{
@@ -455,6 +504,37 @@ public class ActsSalesOpportunity {
 			WebElement closedWonMarker = driver.findElement(By.xpath("//lightning-formatted-text[text()='Closed Won']"));
 
 			if(closedWonMarker.isDisplayed()==true)
+			{
+				System.out.println(actionName+" - Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				throw new Exception (actionName+" - Failed in Step: "+stepID);
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			System.out.println(actionName+" - Failed in Step: "+stepID);
+			return false;
+
+		}
+	}
+	
+	public static boolean negativeValidationClosedWonOpty(WebDriver driver, int stepID, String optyName)
+	{
+		String actionName="Opportunity: Closed Won Opportunity validation";
+
+
+		try
+		{
+			WebElement closedWonMarker1 = driver.findElement(By.xpath(SalesForceOpportunity.noCloseWonHeader));
+			
+			WebElement closedWonMarker2 = driver.findElement(By.xpath(SalesForceOpportunity.noCloseWonText));
+
+			if(closedWonMarker1.isDisplayed()==true && closedWonMarker2.isDisplayed()==true)
 			{
 				System.out.println(actionName+" - Succeeded in Step: "+stepID);
 				return true;
