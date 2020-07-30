@@ -200,6 +200,30 @@ public class SOI_175_DS_Configure_Standalone_Internet extends ExecDriverClass {
 			throw new Exception("Test Failed on Step "+stepsExecuted,e);
 		}
 	}
+	
+	@Test(dependsOnMethods = "step06")
+	public void step07() throws Exception 
+	{
+		stepsExecuted++;
+		
+		try
+		{
+			TestStepReportStructure step07 = StpsCSProductBasket.goToEditProductConfigurationScreen(stepsExecuted, driver, testName);
+			testExecStructure.add(step07);
+
+
+			if (step07.getStepStatus().toLowerCase().contains("failed")) 
+			{
+
+				throw new Exception("Validation Failed on Step "+stepsExecuted);
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception("Test Failed on Step "+stepsExecuted,e);
+		}
+	}
 
 
 

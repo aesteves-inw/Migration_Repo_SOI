@@ -1,13 +1,12 @@
 package functionalSteps.CS;
 
-import java.io.IOException;
-
 import org.openqa.selenium.WebDriver;
 
 import execReport.ReportStructure;
 import execReport.TestStepReportStructure;
 import execStructure.ExecStructure;
 import execStructure.TestData;
+import functionalActions.CS.ActsCSEditProductConfiguration;
 import functionalActions.CS.ActsCSProductBasket;
 
 public class StpsCSProductBasket {
@@ -152,6 +151,48 @@ public class StpsCSProductBasket {
 			return addProductToProductBasketByTestName;
 		}
 
+	}
+
+	public static TestStepReportStructure goToEditProductConfigurationScreen(int stepID, WebDriver driver, String testName) throws Exception 
+	{
+		TestStepReportStructure step;
+
+
+		String stepName="Product Basket: Go To Edit Product Configuration Screen";
+
+		String stepNameMin="goToEditProductConfigurationScreen";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			ActsCSProductBasket.goToEditProductConfigurationScreen(driver, stepID);
+			
+			validation = ActsCSEditProductConfiguration.goToEditProductConfigurationScreenValidationByTestName(driver, stepID, testName);
+
+			if(validation==true)
+			{
+				ExecStructure.screenShotTaking(driver, testName, evidenceName);
+				step=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('p', 'e'), ReportStructure.testReportFinalElement('p', 'a'), ReportStructure.testReportFinalElement('p', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+				return step;
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			ExecStructure.screenShotTaking(driver, testName, evidenceName);
+			step=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('f', 'e'), ReportStructure.testReportFinalElement('f', 'a'), ReportStructure.testReportFinalElement('f', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+			return step;
+		}
 	}
 	
 

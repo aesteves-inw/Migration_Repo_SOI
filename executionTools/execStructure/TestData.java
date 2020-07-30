@@ -2,6 +2,9 @@ package execStructure;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Iterator;
 
 import org.apache.poi.ss.usermodel.DataFormatter;
@@ -23,7 +26,13 @@ public class TestData {
 	
 	public static String ChromeProfilePath=ExecStructure.workingDir+"\\Selenium_Support";
 	
+	
+	
 	// End Of Chrome Configs
+	
+	
+	
+	//Fetch Data
 
 	public static String searchDT(int indexOftheSheet, String val2Search) throws Exception
 	{
@@ -303,7 +312,6 @@ public class TestData {
 	
 	public static String getD02ProductToAdd(String testName) throws Exception 
 	{
-		System.out.println("getD02ProductToAdd - Debug - TestName: "+testName);
 		
 		String finalProduct;
 		
@@ -328,6 +336,35 @@ public class TestData {
 		
 	}
 	
+	public static ArrayList<String> getD02ConfigurationToApplyByDefault(String product) throws Exception
+	{
+		ArrayList<String> configuration = new ArrayList<String>();
+			
+		switch(product)
+		{
+		case "Professional Internet":
+			throw new Exception("Configuration Not Built");
+		case "Voice Continuity":
+			configuration.add(searchDT(6,"defaultContractType"));
+			configuration.add(searchDT(6,"defaultVoiceProductSelection"));
+			configuration.add(searchDT(6,"defaultVoiceInstallationStatus"));
+			configuration.add(searchDT(6,"defaultLineIdentifier"));
+			configuration.add(searchDT(6,"defaultNewProductReference"));
+			configuration.add(searchDT(6,"defaultDISDForBilling"));
+			configuration.add(searchDT(6,"defaultVoiceContinuityFlavour"));
+			break;
+		case "Phone Line":
+			throw new Exception("Configuration Not Built");
+		default:
+			throw new Exception("Product not found");
+		}
+		
+		
+		
+		return configuration;
+	}
+	
+	
 	// Orders Related View - SOI-80
 	
 	public static String allOrdersURL="https://proximusitqa--prxittqa.lightning.force.com/lightning/o/csord__Order__c/list?filterName=00B58000004rXxlEAE";
@@ -338,6 +375,26 @@ public class TestData {
 	//CONSTANTS
 	public static final String OPTY="OPTY_";
 
+	
+	//Utils
+	public static String tomorrowFormattedDate() 
+	{
+		String finalDate;
+		
+		LocalDate todayDate, tomorrowDate;
+		
+		todayDate = LocalDate.now();
+		
+		tomorrowDate=todayDate.plusDays(1);
+		
+		DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		
+		finalDate = myFormatObj.format(tomorrowDate);
+		
+
+		return finalDate;
+
+	}
 	
 	
 	//Report Elements
