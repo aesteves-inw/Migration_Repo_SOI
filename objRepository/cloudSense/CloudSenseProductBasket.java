@@ -49,6 +49,7 @@ public class CloudSenseProductBasket {
 	
 	
 	//Simple Ordering Intake mapping
+	//Product Basket Screen
 	public static String productBasketiFrame="/html/body/div[4]/div[1]/section/div/div/div[1]/div[5]/div/force-aloha-page/div/iframe";
 	
 	public static String productBasketLabel="//span[text()='Product basket']";
@@ -56,6 +57,8 @@ public class CloudSenseProductBasket {
 	public static String productBasketTable="//*[@id='basket-table']/div[2]/div/ul";
 	
 	public static String singleLineItemProduct="//*[@id='basket-table']/div[2]/div/ul/li/div/div/div/div/div[2]/div";
+	
+	public static String editProductConfigurationButton="//button[@aria-label='Edit configuration']";
 
 }
 
