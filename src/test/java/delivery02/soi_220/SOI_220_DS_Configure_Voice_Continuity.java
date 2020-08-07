@@ -13,6 +13,7 @@ import execStructure.ExecDriverClass;
 import execStructure.ExecStructure;
 import execStructure.TestData;
 import execStructure.TestStructure;
+import functionalSteps.CS.StpsCSEditProductConfiguration;
 import functionalSteps.CS.StpsCSProductBasket;
 import functionalSteps.SFDS.StpsSalesCompany;
 import functionalSteps.SFDS.StpsSalesHomePage;
@@ -128,13 +129,14 @@ public class SOI_220_DS_Configure_Voice_Continuity extends ExecDriverClass {
 	{	
 
 		stepsExecuted++;
+		
 
 		try
 		{
 			TestStepReportStructure step04 = StpsSalesOpportunity.createNewProductBasketEmpty(driver, stepsExecuted, testName);
 			testExecStructure.add(step04);
 
-			//testData.add(new TestReportTestData("Product Basket", "", "URL", driver.getCurrentUrl()));
+			
 
 
 			if (step04.getStepStatus().toLowerCase().contains("failed")) 
@@ -200,12 +202,12 @@ public class SOI_220_DS_Configure_Voice_Continuity extends ExecDriverClass {
 			throw new Exception("Test Failed on Step "+stepsExecuted,e);
 		}
 	}
-	
+
 	@Test(dependsOnMethods = "step06")
 	public void step07() throws Exception 
 	{
 		stepsExecuted++;
-		
+
 		try
 		{
 			TestStepReportStructure step07 = StpsCSProductBasket.goToEditProductConfigurationScreen(stepsExecuted, driver, testName);
@@ -213,6 +215,54 @@ public class SOI_220_DS_Configure_Voice_Continuity extends ExecDriverClass {
 
 
 			if (step07.getStepStatus().toLowerCase().contains("failed")) 
+			{
+
+				throw new Exception("Validation Failed on Step "+stepsExecuted);
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception("Test Failed on Step "+stepsExecuted,e);
+		}
+	}
+
+	@Test(dependsOnMethods = "step07")
+	public void step08() throws Exception 
+	{
+		stepsExecuted++;
+
+		try
+		{
+			TestStepReportStructure step08 = StpsCSEditProductConfiguration.configureVoiceContinuityByDefault(driver, stepsExecuted, testName);
+			testExecStructure.add(step08);
+
+
+			if (step08.getStepStatus().toLowerCase().contains("failed")) 
+			{
+
+				throw new Exception("Validation Failed on Step "+stepsExecuted);
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception("Test Failed on Step "+stepsExecuted,e);
+		}
+	}
+	
+	@Test(dependsOnMethods = "step08")
+	public void step09() throws Exception 
+	{
+		stepsExecuted++;
+
+		try
+		{
+			TestStepReportStructure step09 = StpsCSEditProductConfiguration.finsihConfiguration(driver, stepsExecuted, testName);
+			testExecStructure.add(step09);
+
+
+			if (step09.getStepStatus().toLowerCase().contains("failed")) 
 			{
 
 				throw new Exception("Validation Failed on Step "+stepsExecuted);

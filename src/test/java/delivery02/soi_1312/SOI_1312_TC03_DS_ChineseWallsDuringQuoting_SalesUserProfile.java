@@ -29,7 +29,7 @@ public class SOI_1312_TC03_DS_ChineseWallsDuringQuoting_SalesUserProfile extends
 	List<TestStepReportStructure> testExecStructure = new ArrayList<TestStepReportStructure>();
 
 	List<TestReportTestData> testData = new ArrayList<TestReportTestData>();
- 
+
 	int stepsExecuted;
 	
 	private String userProfile="regularUser";
