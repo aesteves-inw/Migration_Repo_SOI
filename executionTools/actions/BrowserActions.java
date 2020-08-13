@@ -1,5 +1,7 @@
 package actions;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Point;
@@ -11,11 +13,48 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BrowserActions {
 	
-	public static boolean isElementPresent(WebDriver driver, String webObject)
+	
+	
+	//Browser Actions
+	public static void refreshPage(WebDriver driver)
+	{
+		driver.navigate().refresh();
+
+		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+		
+	}
+
+	public static void waitUntilElementFade(WebDriver driver, String xpath) throws Exception
+	{
+	
+			for(int i=0;i<10;i++)
+			{
+				if(BrowserActions.isElementPresent(driver, xpath)==true)
+				{
+					Thread.sleep(1000);
+				}
+				else
+				{
+					break;
+				}
+			}
+
+	}
+	
+	
+	
+	//Elements validation
+ 	public static boolean isElementPresent(WebDriver driver, String webObject)
 	{
 		return driver.findElements(By.xpath(webObject)).size() > 0;
 	}
-	
+
+	public static WebElement expandRootElement(WebDriver driver, WebElement element) 
+	{
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebElement ele = (WebElement) (js).executeScript("return arguments[0].shadowRoot",element);
+		return ele;
+	}
 
 	public static boolean isElementPresent(WebDriver driver, String value, String webObject) throws Exception
 	{
@@ -31,8 +70,52 @@ public class BrowserActions {
 			throw new Exception("Please specify the value of the WebObject you want to validate. Received: "+value); 
 		}
 	}
+	
+	public static boolean isClickable(WebDriver driver, WebElement element)
+	{
+		try
+		{
+			WebDriverWait wait = new WebDriverWait(driver, 10);
+			
+			wait.until(ExpectedConditions.elementToBeClickable(element));
+			
+			return true;
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			return false;
+		}
+	
+	}
 
-	//Elements atributes 
+	public static WebElement getElement(WebDriver driver, String xpathElement) throws Exception
+	{
+		WebElement ele;
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		ele = (WebElement) (js).executeScript("return arguments[0]", xpathElement);
+		return ele;
+	}
+	
+	public static boolean isJSElementPresent(WebDriver driver, String jsElement) throws Exception
+	{
+				
+		WebElement element = getElementByJSQuery(driver, jsElement);
+		
+		if (element == null)
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
+	
+	
+	
+	
+	//Elements attributes 
 	public static int getXOfElement(WebDriver driver, String WebObject) throws Exception
 	{
 		try
@@ -63,6 +146,53 @@ public class BrowserActions {
 		}
 	}
 
+	
+	
+	// Elements Manipulation
+	public WebElement getElementbyXpath(WebDriver driver, String attribute, String nameOfSalesforceComponent)
+	{
+		WebElement element = driver.findElement(By.xpath("//*[contains(@"+attribute+", '"+nameOfSalesforceComponent+"')]"));
+		return element;
+	}
+
+	public static WebElement getElementByJSQuery(WebDriver driver, String queryToExec) throws Exception
+	{
+		try
+		{
+			JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+			
+			WebElement element = (WebElement) jsExecutor.executeScript(queryToExec);
+			
+			
+			return element;
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception("getElementByJSQuery: Not possible to locate element: "+queryToExec,e);
+		}
+		
+	}
+
+	public static void jsClick(WebDriver driver, WebElement element) throws Exception
+	{
+		try
+		{
+			JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+			
+			jsExecutor.executeScript("arguments[0].click();", element);
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception("jsClick: Not possible to locate element: "+element,e);
+		}
+	}
+	
+	
+	
+	
+	
 	// Scrolls
 	public static void verticalscrollByVisibleElement(WebDriver driver, String webObject) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -101,15 +231,32 @@ public class BrowserActions {
 		}
 	}
 
+	public static void scroll2Bottom(WebDriver driver)
+	{
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+	}
+	
+	
+	
+	
 	// Wait for Element
-	public static void explicitWait(WebDriver driver, String elementXpath) {
+	public static void explicitWait(WebDriver driver, String elementXpath) 
+	{
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(elementXpath)));		
 	}
 
+	
+	
+	// End of Session
 	public static void endSession(WebDriver driver)
 	{
-				
+		/*
+		String logoutURL=TestData.searchDT(0, "environmentITTQA").concat(TestData.searchDT(0, "logout"));
+		
+		driver.get(logoutURL);	
+		*/
 		if (driver != null)
 		{
 			driver.close();
@@ -117,5 +264,9 @@ public class BrowserActions {
 		}
 
 	}
+	
+	
+	
 
+	
 }

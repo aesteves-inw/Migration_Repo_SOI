@@ -11,7 +11,7 @@ import java.util.List;
 import execStructure.ExecStructure;
 
 public class CreateTestReport {
-	public CreateTestReport(List<TestStepReportStructure> testReport, TestReportHeaderStructure testHeader){
+	public CreateTestReport(List<TestStepReportStructure> testReport, TestReportHeaderStructure testHeader, List<TestReportTestData> testData){
 		
 		try {
 	        
@@ -44,16 +44,14 @@ public class CreateTestReport {
 	        htmlSB.append("<body>");
 			
 	        htmlSB.append("<br><br><br>");
-	        
-	        // Space for Used Test Data
-	        
-	        // End of Space for Used Test Data
 			
 	        htmlSB.append("<div class=\"testreport\">");
 			
 	        htmlSB.append("<h2> Test Execution Report</h2>");
 	        
 	        htmlSB.append("<table align=\"center\" border=\"1\" bordercolor=\"#000000\">");
+	        
+	        htmlSB.append("<caption><h3>Execution Information</h3></caption>");
 	        
 	        htmlSB.append("<tr><td class=\"reportheader\">");
 			
@@ -76,8 +74,34 @@ public class CreateTestReport {
 	        htmlSB.append("<p><b>Steps Executed: </b>"+testHeader.getStepsExecuted()+"</p>");
 	        
 	        htmlSB.append("</td></tr></table><br>");
+	        
+	        htmlSB.append("<table align=\"center\" border=\"1\" bordercolor=\"#000000\">");
+	        
+	        htmlSB.append("<caption><h3>Test Data Information</h3></caption>");
+	        
+	        htmlSB.append("<tr><td><b>Object Type</b></td><td><b>Object Name</b></td><td><b>Object Information</b></td><td><b>Object Additional Information</b></td></tr>");
+	        
+	        for(TestReportTestData td: testData)
+	        {
+	        	htmlSB.append("<tr><td>"+td.getObjectType()+"</td><td>"+td.getObjectName()+"</td><td>"+td.getObjectInfo()+"</td><td>");
+	        	
+	        	if (td.getObjectInfo() == "URL")
+	        	{
+	        		htmlSB.append("<a href="+td.getObjectAdditional()+">"+td.getObjectAdditional()+"<a>");
+	        	}
+	        	else
+	        	{
+	        		htmlSB.append(td.getObjectAdditional());
+	        	}
+	        	
+	        	htmlSB.append("</td></tr>");
+	        }
+	        
+	        htmlSB.append("</td></tr></table><br>");
 	        	            
 	        htmlSB.append("<table align=\"center\" border=\"1\" bordercolor=\"#000000\">");
+	        
+	        htmlSB.append("<caption><h3>Test Procedure Information</h3></caption>");
 	        
 	        htmlSB.append("<tr><td><b>Step ID</b></td><td><b>Description</b></td><td><b>Expected Outcome</b></td><td><b>Actual Outcome</b></td><td><b>Step Status</b></td><td><b>TimeStamp</b></td><td><b>Evidence Name</b></td></tr>");
 	        
@@ -111,8 +135,7 @@ public class CreateTestReport {
 				}
 		
 
-
-				 public static void WriteToFile(String fileContent, String fileName, String testName) throws IOException {
+	public static void WriteToFile(String fileContent, String fileName, String testName) throws IOException {
 				        String executionPath = ExecStructure.currentTestExecutionFolder(testName);
 				        String tempFile = executionPath + File.separator+fileName;
 				        File file = new File(tempFile);

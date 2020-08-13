@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SOI-721 Test Suite" parallel="false">
+  <test name="SOI_721_TC01_MACDOrder_OrderTypeValidation">
+  	<classes>
+  		<class name ="delivery01.soi_66.SOI_721_TC01_MACDOrder_OrderTypeValidation"/>
+  	</classes>
+  </test> 
+    <test name="SOI_721_TC02_OrderTypeValidation_InOrdersListView">
+  	<classes>
+  		<class name ="delivery01.soi_66.SOI_721_TC02_OrderTypeValidation_InOrdersListView"/>
+  	</classes>
+  </test> 
+    <test name="SOI_721_TC03_PC_MACDOrder_OrderTypeValidation">
+  	<classes>
+  		<class name ="delivery01.soi_66.SOI_721_TC03_PC_MACDOrder_OrderTypeValidation"/>
+  	</classes>
+  </test> 
+    <test name="SOI_721_TC04_PC_OrderTypeValidation_InOrdersListView">
+  	<classes>
+  		<class name ="delivery01.soi_66.SOI_721_TC04_PC_OrderTypeValidation_InOrdersListView"/>
+  	</classes>
+  </test> 
+  </suite>

@@ -9,13 +9,13 @@ public class SFPC_Opportunity {
 	
 	public static String newOpportunityHeader="//h2[contains(.,'New Opportunity')]";
 	
-	public static String inputOpportunityName="/html/body/div[8]/div/div[2]/div/div[2]/div/div/article/div[3]/div/div[1]/div/div/div[2]/div[1]/div/div/div/input";
+	public static String inputOpportunityName="/html/body/div[7]/div/div[2]/div/div[2]/div/div/article/div[3]/div/div[1]/div/div/div[2]/div[1]/div/div/div/input";
 	
-	public static String inputCloseDate="/html/body/div[8]/div/div[2]/div/div[2]/div/div/article/div[3]/div/div[1]/div/div/div[1]/div[2]/div/div/div/div/input";
+	public static String inputCloseDate="/html/body/div[7]/div/div[2]/div/div[2]/div/div/article/div[3]/div/div[1]/div/div/div[1]/div[2]/div/div/div/div/input";
 	
-	public static String selectStage="/html/body/div[8]/div/div[2]/div/div[2]/div/div/article/div[3]/div/div[1]/div/div/div[2]/div[2]/div/div/div/div/div[1]/div/div/a";
+	public static String selectStage="/html/body/div[7]/div/div[2]/div/div[2]/div/div/article/div[3]/div/div[1]/div/div/div[2]/div[2]/div/div/div/div/div[1]/div/div/a";
 	
-	public static String selectForecastCategory="/html/body/div[8]/div/div[2]/div/div[2]/div/div/article/div[3]/div/div[1]/div/div/div[6]/div[2]/div/div/div/div/div[1]/div/div/a";
+	public static String selectForecastCategory="/html/body/div[7]/div/div[2]/div/div[2]/div/div/article/div[3]/div/div[1]/div/div/div[6]/div[2]/div/div/div/div/div[1]/div/div/a";
 	
 	public static String saveButton="//button[@title='Save']";
 	
@@ -27,7 +27,7 @@ public class SFPC_Opportunity {
 	
 	public static String nextBtn="//button[.='Next']";
 	
-	public static String closeOptyBtn="//a[@title='Closed']";
+	public static String closeOptyBtn="//span[text()='Closed']";
 	
 	public static String selectClosedStageBtn="//button[contains(.,'Select Closed Stage')]";
 	
@@ -70,9 +70,14 @@ public class SFPC_Opportunity {
 	public static String newAgreementButton="//article[contains(.,'Agreements')]/div[2]/div/div/ul/li/a/div";
 	
 	
+	
 	//  --- Products ---
 
 	public static String productsArea="//article[contains(.,'Products')]";
+	
+	public static String showMoreActions="//article[contains(.,'Products')]//a[@title='Show one more action']";
+	
+	public static String addProductBtn="//a[@title='Add Products']";
 	
 	public static String addProductsButton="//article[contains(.,'Products')]//li/a/div[@title='Add Products']";
 	
@@ -80,7 +85,11 @@ public class SFPC_Opportunity {
 	
 	public static String productsTable="//article[contains(.,'Products')]//table";
 	
+	public static String productsListViewLink="//article[contains(.,'Products')]//h2/a";
+	
 
 	
+	//  --- Products ---
 	
+	public static String ordersArea="//article[contains(.,'Orders')]";
 }

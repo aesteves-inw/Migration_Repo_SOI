@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SOI-795 Test Suite" parallel="false">
+  <test name="SOI_795_TC01_CaseServiceStatus">
+  	<classes>
+  		<class name ="delivery01.soi_66.SOI_795_TC01_CaseServiceStatus"/>
+  	</classes>
+  </test> 
+  <test name="SOI_795_PC_TC02_CaseServiceStatus">
+  	<classes>
+  		<class name ="delivery01.soi_66.SOI_795_PC_TC02_CaseServiceStatus"/>
+  	</classes>
+  </test> 
+  </suite>

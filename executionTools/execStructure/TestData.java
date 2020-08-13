@@ -2,6 +2,9 @@ package execStructure;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Iterator;
 
 import org.apache.poi.ss.usermodel.DataFormatter;
@@ -9,34 +12,40 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import execStructure.*;
-
 public class TestData {
-	
+
 	//Chrome Configs
-		public static String ChromeDriverPath = ExecStructure.workingDir+"\\lib\\chromedriver.exe";
-		
-		/*
+	public static String ChromeDriverPath = ExecStructure.workingDir+"\\lib\\chromedriver.exe";
+
+	/*
 		public static String ChromeProfilePath = "C:\\Users\\andre.esteves\\AppData\\Local\\Google\\Chrome\\User Data\\Default";
 		public static String CHROME_EXTENSION2SALESFORCE_PATH = "C:\\Users\\andre.esteves\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\nnlnikmkkbpgioojghgojoejgcheilic\\0.0.1_0";
-		*/
-		
-		public static String ChromeProfilePath = "C:\\Users\\luis.achas\\AppData\\Local\\Google\\Chrome\\User Data\\Default";
-		
-		
-		
+	 */
+
+	//public static String ChromeProfilePath = "C:\\Users\\andre.esteves\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 1";
+	
+	public static String ChromeProfilePath=ExecStructure.workingDir+"\\Selenium_Support";
+	
+	
+	
+	// End Of Chrome Configs
+	
+	
+	
+	//Fetch Data
+
 	public static String searchDT(int indexOftheSheet, String val2Search) throws Exception
 	{
 		String testDataFileID=ExecStructure.workingDir+"\\testData\\testData.xlsx";
-		
+
 		DataFormatter formatter = new DataFormatter();
-			
+
 		String val2Return=null;
-		
+
 		FileInputStream file;
-		
+
 		file = new FileInputStream(new File(testDataFileID));
-		
+
 		XSSFWorkbook wb = new XSSFWorkbook(file);
 		XSSFSheet sheet = wb.getSheetAt(indexOftheSheet);
 		Iterator<Row> rowIterator = sheet.iterator();
@@ -49,72 +58,195 @@ public class TestData {
 			}
 		}
 		
+		wb.close();
 		file.close();
 		return val2Return;
 	} 
-	
+
 	public static String tdCompanyName(String testName) throws Exception
 	{		
+
+		String tdCompanyName, testNameLower;
 		
-		String tdCompanyName;
-		
-		if(testName.contains("66"))
+		testNameLower=testName.toLowerCase();
+
+		if(testNameLower.contains("soi_66"))
 		{
 			tdCompanyName=searchDT(2,"testingCompanySOI66");
 		}
-		else if(testName.contains("68"))
+		else if(testNameLower.contains("soi_68"))
 		{
 			tdCompanyName= searchDT(2,"testingCompanySOI68");
 		}
-		else if(testName.contains("69"))
+		else if(testNameLower.contains("soi_69"))
 		{
 			tdCompanyName= searchDT(2,"testingCompanySOI69");
 		}
-		else if(testName.contains("70"))
+		else if(testNameLower.contains("soi_70"))
 		{
 			tdCompanyName= searchDT(2,"testingCompanySOI70");
 		}
+		else if(testNameLower.contains("soi_72"))
+		{
+			tdCompanyName= searchDT(2,"testingCompanySOI72");
+		}
+		else if(testNameLower.contains("soi_76"))
+		{
+			tdCompanyName= searchDT(2,"testingCompanySOI76");
+		}
+		else if(testNameLower.contains("soi_79"))
+		{
+			tdCompanyName= searchDT(2,"testingCompanySOI79");
+		}
+		else if(testNameLower.contains("soi_80"))
+		{
+			tdCompanyName= searchDT(2,"testingCompanySOI80");
+		}
+		else if(testNameLower.contains("soi_84"))
+		{
+			tdCompanyName= searchDT(2,"testingCompanySOI84");
+		}
+		else if(testNameLower.contains("soi_150"))
+		{
+			tdCompanyName= searchDT(2,"testingCompanySOI150");
+		}
+		else if(testNameLower.contains("soi_273"))
+		{
+			tdCompanyName= searchDT(2,"testingCompanySOI273");
+		}
+		else if(testNameLower.contains("soi_718"))
+		{
+			tdCompanyName= searchDT(2,"testingCompanySOI718");
+		}
+		else if(testNameLower.contains("soi_720"))
+		{
+			tdCompanyName= searchDT(2,"testingCompanySOI720");
+		}
+		else if(testNameLower.contains("soi_721"))
+		{
+			tdCompanyName= searchDT(2,"testingCompanySOI721");
+		}
+		else if(testNameLower.contains("soi_770"))
+		{
+			tdCompanyName= searchDT(2,"testingCompanySOI770");
+		}
+		else if(testNameLower.contains("soi_880"))
+		{
+			tdCompanyName= searchDT(2,"testingCompanySOI880");
+		}
+		// 28-07-2020 - Delivery D02 Companies
+		else if(testNameLower.contains("soi_175"))
+		{
+			tdCompanyName= searchDT(2,"testingCompanySOI175");
+		}
+		else if(testNameLower.contains("soi_220"))
+		{
+			tdCompanyName= searchDT(2,"testingCompanySOI220");
+		}
+		else if(testNameLower.contains("soi_239"))
+		{
+			tdCompanyName= searchDT(2,"testingCompanySOI239");
+		}
+		else if(testNameLower.contains("soi_1312"))
+		{
+			tdCompanyName= searchDT(2,"testingCompanySOI1312");
+		}
 		else
 		{
 			throw new Exception("Not possible to identify Test Case");
 		}
-		
+
 		return tdCompanyName;
-		
+
 	}
-	
+
 	public static String tdCompanyID(String testName) throws Exception
 	{
-		String tdCompanyID;
+		String tdCompanyID, testNameLower;
 		
-		if(testName.contains("66"))
+		testNameLower=testName.toLowerCase();
+
+		if(testNameLower.contains("soi_66"))
 		{
 			tdCompanyID=searchDT(2,"idTestingCompanySOI66");
 		}
-		else if(testName.contains("68"))
+		else if(testNameLower.contains("soi_68"))
 		{
 			tdCompanyID= searchDT(2,"idTestingCompanySOI68");
 		}
-		else if(testName.contains("69"))
+		else if(testNameLower.contains("soi_69"))
 		{
 			tdCompanyID= searchDT(2,"idTestingCompanySOI69");
 		}
-		else if(testName.contains("70"))
+		else if(testNameLower.contains("soi_70"))
 		{
 			tdCompanyID= searchDT(2,"idTestingCompanySOI70");
 		}
+		else if(testNameLower.contains("soi_76"))
+		{
+			tdCompanyID= searchDT(2,"idTestingCompanySOI76");
+		}
+		else if(testNameLower.contains("soi_79"))
+		{
+			tdCompanyID= searchDT(2,"idTestingCompanySOI79");
+		}
+		else if(testNameLower.contains("soi_150"))
+		{
+			tdCompanyID= searchDT(2,"idTestingCompanySOI150");
+		}
+		else if(testNameLower.contains("soi_273"))
+		{
+			tdCompanyID= searchDT(2,"idTestingCompanySOI273");
+		}
+		else if(testNameLower.contains("soi_718"))
+        {
+            tdCompanyID= searchDT(2,"idTestingCompanySOI718");
+        }
+		else if(testNameLower.contains("soi_720"))
+        {
+            tdCompanyID= searchDT(2,"idTestingCompanySOI720");
+        }
+		else if(testNameLower.contains("soi_721"))
+        {
+            tdCompanyID= searchDT(2,"idTestingCompanySOI721");
+        }
+		else if(testNameLower.contains("soi_770"))
+        {
+            tdCompanyID= searchDT(2,"idTestingCompanySOI770");
+        }
+		else if(testNameLower.contains("soi_880"))
+        {
+            tdCompanyID= searchDT(2,"idTestingCompanySOI880");
+        }
+		// 28-07-2020 - Delivery D02 Companies
+		else if(testNameLower.contains("soi_175"))
+        {
+            tdCompanyID= searchDT(2,"idTestingCompanySOI175");
+        }
+		else if(testNameLower.contains("soi_220"))
+        {
+            tdCompanyID= searchDT(2,"idTestingCompanySOI220");
+        }
+		else if(testNameLower.contains("soi_239"))
+        {
+            tdCompanyID= searchDT(2,"idTestingCompanySOI239");
+        }
+		else if(testNameLower.contains("soi_1312"))
+        {
+            tdCompanyID= searchDT(2,"idTestingCompanySOI1312");
+        }
 		else
 		{
 			throw new Exception("Not possible to identify Test Case");
 		}
-		
+
 		return tdCompanyID;
 	}
-	
+
 	public static int tcDataindex(int tcNumber) throws Exception
 	{
 		int tcindex;
-		
+
 		// add more 
 		switch(tcNumber)
 		{
@@ -130,7 +262,7 @@ public class TestData {
 		default:
 			throw new Exception("Not possible to identify Test Case");
 		}
-		
+
 		return tcindex;
 	}
 
@@ -140,7 +272,139 @@ public class TestData {
 		return pConfig;
 	}
 
+	public static String[] getSalesforceUser(String user) throws Exception
+	{
+		
+		if(user.contains("regularUser"))
+		{
+			String[] finalUser= {TestData.searchDT(0, "envUserNameITTQA"), TestData.searchDT(0, "envPasswordITTQA")};
+			return finalUser;
+		}
+		else if(user.contains("approverProfile"))
+		{
+			String[] finalUser= {TestData.searchDT(0, "approverProfileUser"), TestData.searchDT(0, "approverProfilePass")};
+			return finalUser;
+		}
+		else if(user.contains("costumerSupportProfile"))
+		{
+			String[] finalUser= {TestData.searchDT(0, "costumerSupportProfileUser"), TestData.searchDT(0, "costumerSupportProfilePass")};
+			return finalUser;
+		}
+		else if(user.contains("salesSupportProfile"))
+		{
+			String[] finalUser= {TestData.searchDT(0, "salesSupportProfileUser"), TestData.searchDT(0, "salesSupportProfilePass")};
+			return finalUser;
+		}
+		else if(user.contains("SysAdmin"))
+		{
+			String[] finalUser= {TestData.searchDT(0, "sysAdminProfileUser"), TestData.searchDT(0, "sysAdminProfilePass")};
+			return finalUser;
+		}
+		else if(user.contains("farmerUser"))
+		{
+			String[] finalUser= {TestData.searchDT(1, "envUserNameITTQA"), TestData.searchDT(1, "envPasswordITTQA")};
+			return finalUser;
+		}
+		else
+		{
+			throw new Exception("Not possible to identify User Profile");
+		}
+	}
 
+	public static String getOPTYName(String testClassName)
+	{
+		String optyName=ExecStructure.getTestExecutionString(testClassName);
+		
+		return optyName;
+	}
+	
+	public static String getD02ProductToAdd(String testName) throws Exception 
+	{
+		
+		String finalProduct;
+		
+		if (testName.contains("_175_"))
+		{
+			finalProduct="Professional Internet";
+		}
+		else if(testName.contains("_220_"))
+		{
+			finalProduct="Voice Continuity";
+		}
+		else if(testName.contains("_239_"))
+		{
+			finalProduct="Phone Line";
+		}
+		else
+		{
+			throw new Exception("Not possible to identify Test Case");
+		}
+		
+		return finalProduct;
+		
+	}
+	
+	public static ArrayList<String> getD02ConfigurationToApplyByDefault(String product) throws Exception
+	{
+		ArrayList<String> configuration = new ArrayList<String>();
+			
+		switch(product)
+		{
+		case "Professional Internet":
+			throw new Exception("Configuration Not Built");
+		case "Voice Continuity":
+			configuration.add(searchDT(6,"defaultContractType"));
+			configuration.add(searchDT(6,"defaultVoiceProductSelection"));
+			configuration.add(searchDT(6,"defaultVoiceInstallationStatus"));
+			configuration.add(searchDT(6,"defaultLineIdentifier"));
+			configuration.add(searchDT(6,"defaultNewProductReference"));
+			configuration.add(searchDT(6,"defaultDISDForBilling"));
+			configuration.add(searchDT(6,"defaultVoiceContinuityFlavour"));
+			break;
+		case "Phone Line":
+			throw new Exception("Configuration Not Built");
+		default:
+			throw new Exception("Product not found");
+		}
+		
+		
+		
+		return configuration;
+	}
+	
+	
+	// Orders Related View - SOI-80
+	
+	public static String allOrdersURL="https://proximusitqa--prxittqa.lightning.force.com/lightning/o/csord__Order__c/list?filterName=00B58000004rXxlEAE";
 
+	public static String myOrdersURL="https://proximusitqa--prxittqa.lightning.force.com/lightning/o/csord__Order__c/list?filterName=00B3E000002XCLdUAO";
 
+	
+	//CONSTANTS
+	public static final String OPTY="OPTY_";
+
+	
+	//Utils
+	public static String tomorrowFormattedDate() 
+	{
+		String finalDate;
+		
+		LocalDate todayDate, tomorrowDate;
+		
+		todayDate = LocalDate.now();
+		
+		tomorrowDate=todayDate.plusDays(1);
+		
+		DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		
+		finalDate = myFormatObj.format(tomorrowDate);
+		
+
+		return finalDate;
+
+	}
+	
+	
+	//Report Elements
+	
 }

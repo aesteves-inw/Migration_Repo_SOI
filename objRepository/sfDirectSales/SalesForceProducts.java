@@ -17,7 +17,7 @@ public class SalesForceProducts {
 	
 	public static String inputSearchProducts="//input[@title='Search Products']";
 	
-	public static String productsTable="/html/body/div[5]/div[2]/div/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div[2]/div[2]/div[1]/div/div/table";
+	public static String productsTable="/html/body/div[4]/div[2]/div/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div[2]/div[2]/div[1]/div/div/table";
 	
 	public static String cancelButtonScreen="//button[@title='Cancel']";
 	
@@ -29,27 +29,27 @@ public class SalesForceProducts {
 	
 	public static String editProductHeader ="//h2[@id='modal-title']";
 	
-	public static String totalContractValue="/html/body/div[5]/div[2]/div/div[2]/div/div[2]/div/div[2]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div/div/table/tbody/tr/td[2]/span/span[2]/button";
+	public static String totalContractValue="/html/body/div[4]/div[2]/div/div[2]/div/div[2]/div/div[2]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div/div/table/tbody/tr/td[2]/span/span[2]/button";
 	
-	public static String inputContractValue="/html/body/div[5]/div[2]/div/div[2]/div/div[2]/div/div[2]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div/div/table/tbody/tr/td[2]/div/div/div[1]/div/div/div/input";
+	public static String inputContractValue="/html/body/div[4]/div[2]/div/div[2]/div/div[2]/div/div[2]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div/div/table/tbody/tr/td[2]/div/div/div[1]/div/div/div/input";
 	
-	public static String contractDuration="/html/body/div[5]/div[2]/div/div[2]/div/div[2]/div/div[2]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div/div/table/tbody/tr/td[3]";
+	public static String contractDuration="/html/body/div[4]/div[2]/div/div[2]/div/div[2]/div/div[2]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div/div/table/tbody/tr/td[3]";
 	
-	public static String inputContratDuration="/html/body/div[5]/div[2]/div/div[2]/div/div[2]/div/div[2]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div/div/table/tbody/tr/td[3]/div/div/div[1]/div/div/div/input";
+	public static String inputContratDuration="/html/body/div[4]/div[2]/div/div[2]/div/div[2]/div/div[2]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div/div/table/tbody/tr/td[3]/div/div/div[1]/div/div/div/input";
 	
-	public static String revenueType="/html/body/div[5]/div[2]/div/div[2]/div/div[2]/div/div[2]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div/div/table/tbody/tr/td[5]";
+	public static String revenueType="/html/body/div[4]/div[2]/div/div[2]/div/div[2]/div/div[2]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div/div/table/tbody/tr/td[5]";
 	
-	public static String revenueTypeMenu="/html/body/div[5]/div[2]/div/div[2]/div/div[2]/div/div[2]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div/div/table/tbody/tr/td[5]/div/div/div[1]/div/div/div/div/div[1]/div/div";
+	public static String revenueTypeMenu="/html/body/div[4]/div[2]/div/div[2]/div/div[2]/div/div[2]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div/div/table/tbody/tr/td[5]/div/div/div[1]/div/div/div/div/div[1]/div/div";
 	
 	public static String addRevenueType="/html/body/div[10]/div/ul/li[5]";
 	
 	public static String productRegimeTableHeader="(//span[.='Product Regime'])[2]";
 	
-	public static String productRegimeType="/html/body/div[5]/div[2]/div/div[2]/div/div[2]/div/div[2]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div/div/table/tbody/tr/td[6]/span/span[2]/button";
+	public static String productRegimeType="/html/body/div[4]/div[2]/div/div[2]/div/div[2]/div/div[2]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div/div/table/tbody/tr/td[6]/span/span[2]/button";
 	
-	public static String productRegimeType2="/html/body/div[5]/div[2]/div/div[2]/div/div[2]/div/div[2]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div/div/table/tbody/tr/td[6]/div/div/div[1]/div/div/div/div/div[1]/div/div/a";
+	public static String productRegimeType2="/html/body/div[4]/div[2]/div/div[2]/div/div[2]/div/div[2]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div/div/table/tbody/tr/td[6]/div/div/div[1]/div/div/div/div/div[1]/div/div/a";
 	
-	public static String productConfig="/html/body/div[5]/div[2]/div/div[2]/div/div[2]/div/div[2]/div[2]/div/div[1]/div[2]/div[2]/div[1]";
+	public static String productConfig="/html/body/div[4]/div[2]/div/div[2]/div/div[2]/div/div[2]/div[2]/div/div[1]/div[2]/div[2]/div[1]";
 	
 	public static String saveButtonEdit="//button[@title='Save']";
 	

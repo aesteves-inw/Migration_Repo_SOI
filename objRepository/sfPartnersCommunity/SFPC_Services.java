@@ -31,6 +31,8 @@ public class SFPC_Services {
 	
 	public static String fieldStatus="//span[.='Status']";
 	
+	public static String caseLink="//a[contains(@href,'case')][contains(.,'0')]";
+	
 
 
 }

@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -31,6 +30,23 @@ public class ExecStructure {
 
 			return str;
 
+		}
+		
+		public static String todaysformattedDateddMMMyyyy()
+		{
+			String finaldate;
+			
+			String day= formattedDate("dd");
+			String month=formattedDate("MMM");
+			String year=formattedDate("yyyy");
+			
+			String monthOutput= month.substring(0, 1).toUpperCase()+month.substring(1);
+			
+			
+			finaldate=day+"-"+monthOutput+"-"+year;
+			
+			
+			return finaldate;
 		}
 		
 		// Function for Directory creation
@@ -107,7 +123,6 @@ public class ExecStructure {
 			
 		}
 		
-		
 		// Function to Take Screen Shots from WebDriver
 		public static void screenShotTaking(WebDriver driver, String TestName, String shotName) throws IOException {
 			
@@ -117,7 +132,34 @@ public class ExecStructure {
 	    	
 		}
 
-	}
+		//Function to retrieve Test Execution String from classname
+		public static String getTestExecutionString(String testClassName)
+		{
+			String finalTestExecutionString;
+			
+			String[] fstDecompName=testClassName.split("_");
+			
+			/*
+			if(fstDecompName[3].equals("PC") || fstDecompName[3].equals("DS"))
+			{
+				finalTestExecutionString=fstDecompName[0]+"_"+fstDecompName[1]+"_"+fstDecompName[2]+"_"+fstDecompName[3];
+			}
+			else
+			{
+				finalTestExecutionString=fstDecompName[0]+"_"+fstDecompName[1]+"_"+fstDecompName[2];
+			}
+			*/
+			
+			finalTestExecutionString=fstDecompName[0]+"_"+fstDecompName[1]+"_"+fstDecompName[2]+"_Ex"+ExecStructure.numberOfSubFolders(ExecStructure.testFolder(testClassName))+"_"+ExecStructure.formattedDate("yyyyMMdd");
+			
+			return finalTestExecutionString;
+			
+		}
+
+		
+
+
+}
 
 
 
