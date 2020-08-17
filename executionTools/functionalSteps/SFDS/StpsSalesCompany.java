@@ -1,6 +1,5 @@
 package functionalSteps.SFDS;
 
-import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;

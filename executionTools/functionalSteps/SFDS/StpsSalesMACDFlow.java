@@ -217,7 +217,7 @@ public class StpsSalesMACDFlow {
 		}
 	}
 
-	public static TestStepReportStructure submittingMACDOrder(WebDriver driver, WebDriverWait wait, String testName, int stepID, String companyContactPerson) throws Exception
+	public static TestStepReportStructure submittingMACDOrder(WebDriver driver, String testName, int stepID, String companyContactPerson) throws Exception
 	{
 		TestStepReportStructure step;
 
@@ -227,6 +227,8 @@ public class StpsSalesMACDFlow {
 		String stepNameMin="submittingMACDOrder";
 
 		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);
+		
+		WebDriverWait wait = new WebDriverWait(driver, 20);
 
 		try
 		{

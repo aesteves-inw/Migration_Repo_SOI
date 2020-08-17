@@ -91,6 +91,10 @@ public class StpsSalesService {
 			
 			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 			
+			
+			
+			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+			
 			if(BrowserActions.isElementPresent(driver, SalesforceCase.keyDetailsArticle) && BrowserActions.isElementPresent(driver, SalesforceCase.filesContainer))
 			{
 				ExecStructure.screenShotTaking(driver, testName, evidenceName);

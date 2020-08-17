@@ -12,9 +12,9 @@ public class ActsSalesCase {
 	/*02-03-2020:LMA
 	 * sketch for every regular functions
 	 *=====================================
-	 *		String actionName = "Navigation to Orders List View";
+	 *		String actionName = "";
 			
-			String ordersListViewURL=TestData.searchDT(0, "environmentITTQA").concat(TestData.searchDT(0, "ordersList"));
+			
 			
 			try
 			{
@@ -25,12 +25,30 @@ public class ActsSalesCase {
 			}
 			catch(Exception e)
 			{
-				
+				System.out.println(e);
 				throw new Exception (actionName+" - Failed in Step "+stepID,e);
 			}
 			
 			*/
-
+	public static void goToCaseDetailstab()
+	{
+		 	String actionName = "";
+			
+			
+			
+			try
+			{
+				<JAVA CODE>
+				
+				System.out.println(actionName+" - Succeeded in Step "+stepID);
+				
+			}
+			catch(Exception e)
+			{
+				System.out.println(e);
+				throw new Exception (actionName+" - Failed in Step "+stepID,e);
+			}
+	}
 	
 	
 	/*02-03-2020:LMA

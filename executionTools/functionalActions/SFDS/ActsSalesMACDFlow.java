@@ -5,13 +5,16 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.sikuli.script.Key;
 import org.sikuli.script.Screen;
 
 import actions.BrowserActions;
 import actions.FunctionalActionsSFDS;
 import execStructure.ExecStructure;
+import execStructure.TestData;
 import sfDirectSales.SalesForceCompany;
 import sfDirectSales.SalesforceNewMACDFlow;
 import sfSikuli.SalesForceSikuli;
@@ -34,7 +37,7 @@ public class ActsSalesMACDFlow {
 			}
 			catch(Exception e)
 			{
-
+				System.out.println(e);
 				throw new Exception (actionName+" - Failed in Step "+stepID,e);
 			}
 
@@ -79,7 +82,7 @@ public class ActsSalesMACDFlow {
 		}
 		catch(Exception e)
 		{
-
+			System.out.println(e);
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
 
@@ -111,23 +114,148 @@ public class ActsSalesMACDFlow {
 
 		try
 		{
-			driver.findElement(By.xpath(SalesforceNewMACDFlow.inputCompanyContactPerson)).click();
+			lookupCompanyContactPerson(driver, wait, stepID, companyContactPerson);
+			
+			lookupOrderOwner(driver, wait, stepID);
+			
+			lookupSalesforceID(driver, wait, stepID);
+			
+			inputServiceRequestDate(driver, wait, stepID);
+			
+			inputQuoteID(driver, stepID);
+			
+			inputComments(driver, stepID,testName);
 
+			System.out.println(actionName+" - Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+	}
+
+
+
+	private static void lookupCompanyContactPerson(WebDriver driver, WebDriverWait wait, int stepID, String companyContactPerson) throws Exception 
+	{
+		String actionName="New MACD Order - 2ndScreen - Company Contact Person name Field";
+
+
+		try
+		{
 			driver.findElement(By.xpath(SalesforceNewMACDFlow.inputCompanyContactPerson)).sendKeys(companyContactPerson);
+			
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesforceNewMACDFlow.liCompanyContactPerson))).click();
+			
+			System.out.println(actionName+" - Succeeded in Step "+stepID);
 
-			driver.findElement(By.xpath(SalesforceNewMACDFlow.inputCompanyContactPerson)).sendKeys(Keys.ENTER);
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+		
+	}
+	
+	
+	private static void lookupOrderOwner(WebDriver driver, WebDriverWait wait, int stepID) throws Exception 
+	{
+		String actionName="New MACD Order - 2ndScreen - Order Owner Field";
+		
+		String usernameSalesforce=TestData.searchDT(0, "envUsernameNameITTQA");
+		
+		String orderOwnerPersonElement="//input[@placeholder='"+usernameSalesforce+"']";
+		
+		boolean orderOwnerPersonValidation;
 
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(.,'"+companyContactPerson+"')]"))).click();
 
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesforceNewMACDFlow.inputServiceRequestDate))).click();
+		try
+		{
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(orderOwnerPersonElement)));	
+			
+			orderOwnerPersonValidation=BrowserActions.isElementPresent(driver, orderOwnerPersonElement);
+					
+			if(orderOwnerPersonValidation == false)
+			{
+				driver.findElement(By.xpath(SalesforceNewMACDFlow.orderOwnerClearSelection)).click();
+				
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@title='"+usernameSalesforce+"']"))).click();
+			}
 
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesforceNewMACDFlow.calendarTable)));
+			System.out.println(actionName+" - Succeeded in Step "+stepID);
 
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesforceNewMACDFlow.todayCalendarButton))).click();
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+		
+	}
+	
 
-			driver.findElement(By.xpath(SalesforceNewMACDFlow.inputComments)).sendKeys(testName);
+	private static void lookupSalesforceID(WebDriver driver, WebDriverWait wait, int stepID) throws Exception 
+	{
+		String actionName="New MACD Order - 2ndScreen - Salesforce ID Field";
+		
+		String usernameSalesforce=TestData.searchDT(0, "envUsernameNameITTQA");
+		
+		String salesforceIDElement="//input[@placeholder='"+usernameSalesforce+"']";
+		
+		boolean salesforceIDPreValidation;
 
-			FunctionalActionsSFDS.addFile2MACDOrder(driver, stepID, "SimpleOrdering_Dummy_File");
+
+		try
+		{
+			salesforceIDPreValidation=BrowserActions.isElementPresent(driver, salesforceIDElement);
+			
+			if(salesforceIDPreValidation==false)
+			{
+				driver.findElement(By.xpath(SalesforceNewMACDFlow.salesforceIDClearSelection)).click();
+				
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@title='"+usernameSalesforce+"']"))).click();
+			}
+
+			System.out.println(actionName+" - Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+		
+	}
+
+	private static void inputServiceRequestDate(WebDriver driver, WebDriverWait wait, int stepID) throws Exception 
+	{
+		String actionName="New MACD Order - 2ndScreen - Service Request Date Field";
+
+
+		try
+		{
+			driver.findElement(By.xpath(SalesforceNewMACDFlow.inputServiceRequestDate)).sendKeys(ExecStructure.formattedDate("dd/MM/yyyy"));
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+		
+	}
+
+	private static void inputQuoteID(WebDriver driver, int stepID) throws Exception 
+	{
+		String actionName="New MACD Order - 2ndScreen - Quote ID Field";
+
+
+		try
+		{
+			driver.findElement(By.xpath(SalesforceNewMACDFlow.inputQuoteID)).sendKeys("862181");
 
 			System.out.println(actionName+" - Succeeded in Step "+stepID);
 
@@ -137,6 +265,29 @@ public class ActsSalesMACDFlow {
 
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
+		
+	}
+
+	private static void inputComments(WebDriver driver, int stepID, String testName) throws Exception 
+	{
+		String actionName="New MACD Order - 2ndScreen - Comments Field";
+		
+		String testExecutionString=ExecStructure.getTestExecutionString(testName);
+
+
+		try
+		{
+			driver.findElement(By.xpath(SalesforceNewMACDFlow.inputComments)).sendKeys(testExecutionString);
+
+			System.out.println(actionName+" - Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+		
 	}
 
 	public static void submittingMACDOrder(WebDriver driver, WebDriverWait wait, String testName, int stepID, String companyContactPerson) throws Exception
@@ -227,6 +378,7 @@ public class ActsSalesMACDFlow {
 			}
 			catch(Exception e)
 			{
+				System.out.println(e);
 				throw new Exception (actionName+" - Failed in Step: "+stepID,e);
 			}
 
@@ -309,13 +461,16 @@ public class ActsSalesMACDFlow {
 	public static boolean secondMACDOrderScreenValidation(WebDriver driver, String testName, int stepID, String companyContactPerson) throws Exception
 	{
 		String actionName="New MACD Order: Second Screen Validation";
+		
+		String testExecutionString=ExecStructure.getTestExecutionString(testName);
+		
 		try
 		{
 			String vSecMACDCompCont=driver.findElement(By.xpath(SalesforceNewMACDFlow.secondScreen)).getText().toString();
 
 			String vSecMACDComment=driver.findElement(By.xpath(SalesforceNewMACDFlow.inputComments)).getAttribute("value");
 
-			if(vSecMACDCompCont.contains(companyContactPerson) && vSecMACDComment.contains(testName))
+			if(vSecMACDCompCont.contains(companyContactPerson) && vSecMACDComment.contains(testExecutionString))
 			{
 				System.out.println(actionName+" - Succeeded in Step: "+stepID);
 				return true;

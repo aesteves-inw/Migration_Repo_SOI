@@ -221,6 +221,114 @@ public class SOI_150_TC1_MobileOrderIntake_MACD_Flow extends ExecDriverClass{
 	}
 	
 	
+	@Test(dependsOnMethods = "step06")
+	public void step07() throws Exception 
+	{	
+		
+		stepsExecuted++;
+
+		try
+		{
+
+			TestStepReportStructure step07 = StpsSalesMACDFlow.submittingMACDOrder(driver, testName, stepsExecuted, companyContactPerson);
+			testExecStructure.add(step07);
+
+			
+			if (step07.getStepStatus().toLowerCase().contains("failed")) 
+			{
+
+				throw new Exception("Validation Failed on Step "+stepsExecuted);
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception("Test Failed on Step "+stepsExecuted,e);
+		}
+		
+	}
+
+	
+	@Test(dependsOnMethods = "step07")
+	public void step08() throws Exception 
+	{	
+		stepsExecuted++;
+
+		try
+		{
+
+			TestStepReportStructure step08 = StpsSalesCompany.navigate2FirstOrder(driver, testName, stepsExecuted);
+			testExecStructure.add(step08);
+
+			
+			if (step08.getStepStatus().toLowerCase().contains("failed")) 
+			{
+
+				throw new Exception("Validation Failed on Step "+stepsExecuted);
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception("Test Failed on Step "+stepsExecuted,e);
+		}
+	}
+	
+	
+	
+	@Test(dependsOnMethods = "step08")
+	public void step09() throws Exception 
+	{	
+		stepsExecuted++;
+
+		try
+		{
+
+			TestStepReportStructure step09 = StpsSalesOrder.nav2Service(driver, testName, stepsExecuted);
+			testExecStructure.add(step09);
+
+			
+			if (step09.getStepStatus().toLowerCase().contains("failed")) 
+			{
+
+				throw new Exception("Validation Failed on Step "+stepsExecuted);
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception("Test Failed on Step "+stepsExecuted,e);
+		}
+	}
+	
+	
+	/*
+	@Test(dependsOnMethods = "step09")
+	public void step10() throws Exception 
+	{	
+		stepsExecuted++;
+
+		try
+		{
+
+			TestStepReportStructure step10 = StpsSalesService.navigate2CaseScreen(driver, testName, stepsExecuted);
+			testExecStructure.add(step10);
+
+			
+			if (step10.getStepStatus().toLowerCase().contains("failed")) 
+			{
+
+				throw new Exception("Validation Failed on Step "+stepsExecuted);
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception("Test Failed on Step "+stepsExecuted,e);
+		}
+	}
+	*/
+	
 	@AfterClass
 	public void afterClass() 
 	{

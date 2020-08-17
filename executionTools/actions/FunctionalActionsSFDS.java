@@ -121,7 +121,7 @@ public class FunctionalActionsSFDS {
 			throw new Exception("Test Procedure to Add File to Agreement. Failed on StepID: "+stepID,e);
 		}
 	}
-
+/*
 	public static void addFile2MACDOrder(WebDriver driver, int stepID, String file2Upload) throws Exception
 	{
 		Screen screen = new Screen();	
@@ -158,7 +158,40 @@ public class FunctionalActionsSFDS {
 
 
 	}
+*/
+	
+	public static void addFile2MACDOrder(WebDriver driver, int stepID, String file2Upload) throws Exception
+	{
+		
 
+		String agreementFileTestData=ExecStructure.workingDir+"\\testData\\"+file2Upload+".pdf";
+
+		try
+		{
+			WebElement inputUpLoadFile=driver.findElement(By.xpath(SalesforceNewMACDFlow.inputUploadFiles));
+			
+			inputUpLoadFile.click();
+			
+			inputUpLoadFile.sendKeys(agreementFileTestData);
+			
+			inputUpLoadFile.sendKeys(Keys.ENTER);
+			
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception("Test Procedure to Add File to MACD Order. Failed on StepID: "+stepID,e);
+		}
+
+
+	}
+	
+	
+	
+	
+	
+	
 	public static void navigate2Order(WebDriver driver, int stepID, String optyName) throws Exception
 	{
 		String orderLinkXpath=SalesForceOpportunity.ordersContainer.concat("//a[contains(.,'"+optyName+"')]");

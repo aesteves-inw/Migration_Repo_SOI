@@ -30,17 +30,27 @@ public class SalesforceNewMACDFlow {
 	// Second Screen fields
 	public static String secondScreen="//div[contains(@id, 'content_')]";
 	
-	public static String inputCompanyContactPerson="//article/div/div[2]/div/div/div[1]/div/div/div[2]/input";
+	public static String inputCompanyContactPerson="//input[@placeholder='Search Company contact person name...']";
+	
+	public static String liCompanyContactPerson="//li[1]/span[1]/span[2]/span[1]";
+	
+	public static String orderOwnerClearSelection="(//button[@title='Clear Selection'])[1]";
+	
+	public static String salesforceIDClearSelection="(//button[@title='Clear Selection'])[2]";
 	
 	public static String inputServiceRequestDate="//input[@name='Service_Request_Date']";
 	
-	public static String calendarButton="//button[@title='Select a date']";
+	public static String calendarButton="//lightning-button-icon/button[@title='Select a date']";
 	
 	public static String calendarTable="//table[@class='slds-datepicker__month']";
 	
 	public static String todayCalendarButton="//button[@name='today']";
 	
+	public static String inputQuoteID="//input[@name='Quote_Id']";
+	
 	public static String inputComments="//textarea";
 	
 	public static String uploadFilesButton="//span[contains(.,'Upload Files')]";
+	
+	public static String inputUploadFiles="//lightning-file-upload/lightning-input/div/div/lightning-primitive-file-droppable-zone/slot/input";
 }
