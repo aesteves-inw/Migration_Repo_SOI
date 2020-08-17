@@ -112,10 +112,12 @@ public class StpsSalesMACDFlow {
 		String stepNameMin="firstMACDOrderScreen";
 
 		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);
+		
+		WebDriverWait wait = new WebDriverWait(driver, 10);
 
 		try
 		{
-			ActsSalesMACDFlow.firstMACDOrderScreenValidation(driver, stepID);
+			ActsSalesMACDFlow.firstMACDOrderScreen(driver, wait, stepID);
 			
 			boolean validation = ActsSalesMACDFlow.firstMACDOrderScreenValidation(driver, stepID);
 			
@@ -176,7 +178,7 @@ public class StpsSalesMACDFlow {
 		}
 	}
 	
-	public static TestStepReportStructure secondMACDOrderScreen(WebDriver driver, WebDriverWait wait, String testName, int stepID, String companyContactPerson) throws Exception
+	public static TestStepReportStructure secondMACDOrderScreen(WebDriver driver, String testName, int stepID, String companyContactPerson) throws Exception
 	{
 		TestStepReportStructure step;
 
@@ -186,6 +188,8 @@ public class StpsSalesMACDFlow {
 		String stepNameMin="secondMACDOrderScreen";
 
 		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);
+		
+		WebDriverWait wait = new WebDriverWait(driver, 10);
 
 		try
 		{

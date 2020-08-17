@@ -15,6 +15,7 @@ import execStructure.TestData;
 import execStructure.TestStructure;
 import functionalSteps.SFDS.StpsSalesCompany;
 import functionalSteps.SFDS.StpsSalesHomePage;
+import functionalSteps.SFDS.StpsSalesMACDFlow;
 import functionalSteps.SFDS.StpsSalesOrder;
 import functionalSteps.SFDS.StpsSalesService;
 import sfDirectSales.SalesForceCompany;
@@ -116,7 +117,110 @@ public class SOI_150_TC1_MobileOrderIntake_MACD_Flow extends ExecDriverClass{
 			throw new Exception("Test Failed on Step "+stepsExecuted,e);
 		}
 	}
+	
+	@Test(dependsOnMethods = "step02")
+	public void step03() throws Exception {		
 
+		stepsExecuted++;
+
+		try
+		{
+
+			TestStepReportStructure step03 = StpsSalesMACDFlow.createMACDOrder(driver, testName, stepsExecuted);
+			testExecStructure.add(step03);
+
+			
+			if (step03.getStepStatus().toLowerCase().contains("failed")) 
+			{
+
+				throw new Exception("Validation Failed on Step "+stepsExecuted);
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception("Test Failed on Step "+stepsExecuted,e);
+		}
+	}
+	
+	
+	@Test(dependsOnMethods = "step03")
+	public void step04() throws Exception {		
+
+		stepsExecuted++;
+
+		try
+		{
+
+			TestStepReportStructure step04 = StpsSalesMACDFlow.firstMACDOrderScreen(driver, testName, stepsExecuted);
+			testExecStructure.add(step04);
+
+			
+			if (step04.getStepStatus().toLowerCase().contains("failed")) 
+			{
+
+				throw new Exception("Validation Failed on Step "+stepsExecuted);
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception("Test Failed on Step "+stepsExecuted,e);
+		}
+	}
+	
+	@Test(dependsOnMethods = "step04")
+	public void step05() throws Exception {		
+
+		stepsExecuted++;
+
+		try
+		{
+
+			TestStepReportStructure step05 = StpsSalesMACDFlow.goToSecondMACDOrderScreen(driver, testName, stepsExecuted);
+			testExecStructure.add(step05);
+
+			
+			if (step05.getStepStatus().toLowerCase().contains("failed")) 
+			{
+
+				throw new Exception("Validation Failed on Step "+stepsExecuted);
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception("Test Failed on Step "+stepsExecuted,e);
+		}
+	}
+	
+
+	@Test(dependsOnMethods = "step05")
+	public void step06() throws Exception {		
+
+		stepsExecuted++;
+
+		try
+		{
+
+			TestStepReportStructure step06 = StpsSalesMACDFlow.secondMACDOrderScreen(driver, testName, stepsExecuted, companyContactPerson);
+			testExecStructure.add(step06);
+
+			
+			if (step06.getStepStatus().toLowerCase().contains("failed")) 
+			{
+
+				throw new Exception("Validation Failed on Step "+stepsExecuted);
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception("Test Failed on Step "+stepsExecuted,e);
+		}
+	}
+	
+	
 	@AfterClass
 	public void afterClass() 
 	{
