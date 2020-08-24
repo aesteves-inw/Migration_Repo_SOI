@@ -41,7 +41,18 @@ public class BrowserActions {
 
 	}
 	
-	
+	public static void jsClick(WebDriver driver, By locator) {
+	    jsClick(driver, driver.findElement(locator));
+	}
+	 
+	public static void jsClick(WebDriver driver, WebElement elem) {
+	    ((JavascriptExecutor) driver).executeScript(
+	        "arguments[0].click();", elem
+	    );
+	    try { Thread.sleep(1000L); }
+	    catch (InterruptedException ie) { ; /* ignore */ }
+	}
+
 	
 	//Elements validation
  	public static boolean isElementPresent(WebDriver driver, String webObject)
@@ -89,13 +100,7 @@ public class BrowserActions {
 	
 	}
 
-	public static WebElement getElement(WebDriver driver, String xpathElement) throws Exception
-	{
-		WebElement ele;
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		ele = (WebElement) (js).executeScript("return arguments[0]", xpathElement);
-		return ele;
-	}
+
 	
 	public static boolean isJSElementPresent(WebDriver driver, String jsElement) throws Exception
 	{
@@ -173,7 +178,7 @@ public class BrowserActions {
 		}
 		
 	}
-
+/*
 	public static void jsClick(WebDriver driver, WebElement element) throws Exception
 	{
 		try
@@ -188,7 +193,9 @@ public class BrowserActions {
 			throw new Exception("jsClick: Not possible to locate element: "+element,e);
 		}
 	}
+*/	
 	
+
 	
 	
 	

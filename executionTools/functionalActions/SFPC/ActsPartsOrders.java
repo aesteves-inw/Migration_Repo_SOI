@@ -32,12 +32,13 @@ public class ActsPartsOrders {
 
 
 
+
 	// Validation Actions
 	/*02-03-2020:LMA
 	 * sketch for every validation functions
 	 *=====================================
-	 *String actionName="";
-	 * 	try
+	 String actionName="";
+	 	try
 							{
 								if()
 								{
@@ -52,6 +53,7 @@ public class ActsPartsOrders {
 							}
 							catch(Exception e)
 							{
+								System.out.println(e);
 								throw new Exception (actionName+" - Failed in Step: "+stepID,e);
 							}
 
@@ -60,10 +62,10 @@ public class ActsPartsOrders {
 	public static boolean ordersListViewPageValidation(WebDriver driver, int stepID) throws Exception
 	{
 		boolean validation;
-		
+
 		String actionName="Order: List View Page Validation";
-		
-		
+
+
 		try
 		{
 			if(
@@ -80,7 +82,7 @@ public class ActsPartsOrders {
 			{
 				validation = false;
 			}
-			
+
 			System.out.println(actionName+" - Succeeded in Step: "+stepID);
 			return validation;
 
@@ -90,4 +92,33 @@ public class ActsPartsOrders {
 			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
 		}
 	}
+
+	public static boolean ordersPageValidation(WebDriver driver, int stepID) throws Exception
+	{
+		String actionName="Order: Order Page Validation";
+		try
+		{
+			if(
+					BrowserActions.isElementPresent(driver, SFPC_Orders.servicesContainer) &&
+					BrowserActions.isElementPresent(driver, SFPC_Orders.headerOrder) &&
+					BrowserActions.isElementPresent(driver, SFPC_Orders.orderDetails)
+					)
+			{
+				System.out.println(actionName+" - Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
+
+
 }

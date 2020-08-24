@@ -90,7 +90,7 @@ public class ActsSalesMACDFlow {
 
 	public static void goToSecondMACDScreen(WebDriver driver, int stepID) throws Exception
 	{
-		String actionName="";
+		String actionName="New MACD Order: Go To 2nd Screen";
 
 		try
 		{
@@ -116,9 +116,9 @@ public class ActsSalesMACDFlow {
 		{
 			lookupCompanyContactPerson(driver, wait, stepID, companyContactPerson);
 			
-			lookupOrderOwner(driver, wait, stepID);
+			lookupOrderOwner(driver, wait, stepID,testName);
 			
-			lookupSalesforceID(driver, wait, stepID);
+			lookupSalesforceID(driver, wait, stepID,testName);
 			
 			inputServiceRequestDate(driver, wait, stepID);
 			
@@ -135,8 +135,6 @@ public class ActsSalesMACDFlow {
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
 	}
-
-
 
 	private static void lookupCompanyContactPerson(WebDriver driver, WebDriverWait wait, int stepID, String companyContactPerson) throws Exception 
 	{
@@ -159,13 +157,12 @@ public class ActsSalesMACDFlow {
 		}
 		
 	}
-	
-	
-	private static void lookupOrderOwner(WebDriver driver, WebDriverWait wait, int stepID) throws Exception 
+
+	private static void lookupOrderOwner(WebDriver driver, WebDriverWait wait, int stepID, String testName) throws Exception 
 	{
 		String actionName="New MACD Order - 2ndScreen - Order Owner Field";
 		
-		String usernameSalesforce=TestData.searchDT(0, "envUsernameNameITTQA");
+		String usernameSalesforce=getUsernameSalesforce(testName);
 		
 		String orderOwnerPersonElement="//input[@placeholder='"+usernameSalesforce+"']";
 		
@@ -196,12 +193,30 @@ public class ActsSalesMACDFlow {
 		
 	}
 	
+	private static String getUsernameSalesforce(String testName) throws Exception {
+		
+		String usernameSalesforce;
+		
+		if(testName.contains("_PC_"))
+		{
+			usernameSalesforce=TestData.searchDT(1, "envUsernameNameITTQA");
+		}
+		else
+		{
+			usernameSalesforce=TestData.searchDT(0, "envUsernameNameITTQA");
+		}
+		
+		System.out.println("getUsernameSalesforce -  Debug: "+usernameSalesforce);
+		
+		return usernameSalesforce;
+	}
 
-	private static void lookupSalesforceID(WebDriver driver, WebDriverWait wait, int stepID) throws Exception 
+	private static void lookupSalesforceID(WebDriver driver, WebDriverWait wait, int stepID,String testName) throws Exception 
 	{
 		String actionName="New MACD Order - 2ndScreen - Salesforce ID Field";
 		
-		String usernameSalesforce=TestData.searchDT(0, "envUsernameNameITTQA");
+		String usernameSalesforce=getUsernameSalesforce(testName);
+		
 		
 		String salesforceIDElement="//input[@placeholder='"+usernameSalesforce+"']";
 		
@@ -300,13 +315,15 @@ public class ActsSalesMACDFlow {
 			driver.findElement(By.xpath(SalesforceNewMACDFlow.submitOrderButton)).click();
 
 			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(SalesforceNewMACDFlow.submitOrderButton)));
+			
+			//BrowserActions.waitUntilElementFade(driver, SalesforceNewMACDFlow.submitOrderButton);
 
 			System.out.println(actionName+" - Succeeded in Step "+stepID);
 
 		}
 		catch(Exception e)
 		{
-
+			System.out.println(e);
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
 	}
@@ -483,6 +500,7 @@ public class ActsSalesMACDFlow {
 		}
 		catch(Exception e)
 		{
+			System.out.println(e);
 			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
 		}
 	}
@@ -506,6 +524,7 @@ public class ActsSalesMACDFlow {
 		}
 		catch(Exception e)
 		{
+			System.out.println(e);
 			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
 		}
 	}

@@ -217,12 +217,14 @@ public class StpsSalesMACDFlow {
 		}
 	}
 
+
+	
 	public static TestStepReportStructure submittingMACDOrder(WebDriver driver, String testName, int stepID, String companyContactPerson) throws Exception
 	{
 		TestStepReportStructure step;
 
 
-		String stepName="Agreement: Navigate to Opportunity";
+		String stepName="New MACD Order: Submitting MACD Order";
 
 		String stepNameMin="submittingMACDOrder";
 

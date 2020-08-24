@@ -1,12 +1,17 @@
 package functionalActions.SFDS;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import io.github.sukgu.*;
 
 import actions.BrowserActions;
 import execStructure.TestData;
@@ -30,6 +35,48 @@ public class ActsSalesOrder {
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
 	*/
+	
+	// NAVIGATION ACTIONS
+	public static void navigateToSingleService(WebDriver driver, WebDriverWait wait, int stepID) throws Exception
+	{
+		String actionName="navigateToService: Order - Navigate to Service Screen";
+		
+		
+		try
+		{
+			
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(SalesForceOrders.serviceContainer)));
+			
+			System.out.println("Debug de SalesForceOrders.serviceContainer: "+BrowserActions.isElementPresent(driver, SalesForceOrders.serviceContainer));
+			
+			WebElement servicesContainer = driver.findElement(By.xpath(SalesForceOrders.serviceContainer));
+			
+			List<WebElement> serviceLinks = servicesContainer.findElements(By.tagName("a"));
+			
+			for(WebElement we:serviceLinks)
+			{
+				System.out.println("Debug: "+we.getAttribute("href"));
+				
+				if(we.getAttribute("href").contains("csord__Service__c"))
+				{
+					driver.get(we.getAttribute("href"));
+					break;
+				}
+			}
+			
+			
+			
+			System.out.println(actionName+" - Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+	}
+	
+	
 	
 	//ORDER PAGE	
 	public static void addServiceToOrder(WebDriver driver, int stepID) throws Exception
@@ -169,6 +216,7 @@ public class ActsSalesOrder {
 		}
 		catch(Exception e)
 		{
+			System.out.println(e);
 			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
 		}
 			

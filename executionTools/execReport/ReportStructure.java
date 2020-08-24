@@ -74,7 +74,7 @@ public class ReportStructure {
 		}
 		else
 		{
-			String[] reportElements= {"Failed", failedStep, passedStep};
+			String[] reportElements= {"Failed", passedStep, failedStep};
 			return reportElements;
 		}
 		

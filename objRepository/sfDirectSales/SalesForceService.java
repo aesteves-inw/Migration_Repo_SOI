@@ -39,11 +39,13 @@ public class SalesForceService {
 	
 	public static String fieldfilledCompanyContactPerson="//article/div[2]/div/div[1]/div/div/div[4]/div[2]/div";
 	
-	public static String caseLink="//force-hoverable-link/div/a[starts-with(.,'00')]";
+	public static String caseLink="//force-highlights-details-item[3]/div/p[2]/slot/force-lookup/div/force-hoverable-link/div/a";
 	
 	//public static String serviceStatus="(//force-record-layout-item[1]/div/div/div[2]/span/slot[1]/slot/lightning-formatted-text)[28]";
 	
 	public static String caseLinkOnDetails="(//force-hoverable-link/div/a[contains(.,'00')])[3]";
+	
+	public static String tabDetails="//*[@id=\"brandBand_2\"]/div/div/div/div/one-record-home-flexipage2/forcegenerated-adgrollup_component___forcegenerated__flexipage_recordpage___service_record_page1___csord__service__c___view/forcegenerated-flexipage_service_record_page1_csord__service__c__view_js/record_flexipage-record-page-decorator/div/slot/flexipage-record-home-template-desktop2/div/div[2]/div[1]/slot/slot/flexipage-component2/slot/flexipage-tabset2/div/lightning-tabset/div/lightning-tab-bar/ul/li[2]";
 	
 	
 	// --- Edit Buttons ---

@@ -2,11 +2,6 @@ package delivery01.soi_150;
 
 import org.testng.annotations.Test;
 
-import actions.BrowserActions;
-import actions.FunctionalActionsSFDS;
-import actions.FunctionalSteps;
-import execReport.CreateTestReport;
-import execReport.TestReportHeaderStructure;
 import execReport.TestReportTestData;
 import execReport.TestStepReportStructure;
 import execStructure.ExecDriverClass;
@@ -18,26 +13,11 @@ import functionalSteps.SFDS.StpsSalesHomePage;
 import functionalSteps.SFDS.StpsSalesMACDFlow;
 import functionalSteps.SFDS.StpsSalesOrder;
 import functionalSteps.SFDS.StpsSalesService;
-import sfDirectSales.SalesForceCompany;
-import sfDirectSales.SalesforceNewMACDFlow;
 
 import org.testng.annotations.BeforeTest;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.Cookie;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.PageLoadStrategy;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
 
 public class SOI_150_TC1_MobileOrderIntake_MACD_Flow extends ExecDriverClass{
@@ -302,7 +282,7 @@ public class SOI_150_TC1_MobileOrderIntake_MACD_Flow extends ExecDriverClass{
 	}
 	
 	
-	/*
+	
 	@Test(dependsOnMethods = "step09")
 	public void step10() throws Exception 
 	{	
@@ -327,10 +307,10 @@ public class SOI_150_TC1_MobileOrderIntake_MACD_Flow extends ExecDriverClass{
 			throw new Exception("Test Failed on Step "+stepsExecuted,e);
 		}
 	}
-	*/
 	
-	@AfterClass
-	public void afterClass() 
+	
+	@AfterTest
+	public void afterTest() 
 	{
 		TestStructure.finishTest(testName, initialTestDate, startTime, stepsExecuted, testExecStructure, testData, driver);
 	}

@@ -255,41 +255,7 @@ public class ActsPartsOpportunity {
 		}
 	}
 	
-	public static void closeWonOpty(WebDriver driver, WebDriverWait wait, int stepID) throws Exception
-	{
-		String actionName="Opportunity: Closing Won Opportunity";
-		
-		
-		try
-		{
-			driver.findElement(By.xpath(SFPC_Opportunity.closeOptyBtn)).click();
-			
-			driver.findElement(By.xpath(SFPC_Opportunity.selectClosedStageBtn)).click();
-			
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SalesForceOpportunity.ctomHeader)));
-
-			Select closedStage = new Select(driver.findElement(By.xpath("//select")));
-
-			closedStage.selectByVisibleText("Closed Won");
-
-			driver.findElement(By.xpath(SalesForceOpportunity.nosSaveButton)).click();
-
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(SalesForceOpportunity.ctomHeader)));
-
-			driver.navigate().refresh();
-
-			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
-			
 	
-			System.out.println(actionName+" - Succeeded in Step "+stepID);
-	
-		}
-		catch(Exception e)
-		{
-	
-			throw new Exception (actionName+" - Failed in Step "+stepID,e);
-		}
-	}
 	
 	public static void scrollToOrdersArea(WebDriver driver, int stepID) throws Exception
 	{
@@ -337,28 +303,7 @@ public class ActsPartsOpportunity {
 
 	 */
 	
-	public static boolean opportunityScreenValidation(WebDriver driver, int stepID)
-	{
-		String actionName="Opportunity: Opportunity screen validation";
-	  	try
-		{
-			if(BrowserActions.isElementPresent(driver, SalesForceOpportunity.optyHeader) && BrowserActions.isElementPresent(driver, SalesForceOpportunity.productContainer))
-			{
-				System.out.println(actionName+" - Succeeded in Step: "+stepID);
-				return true;
-			}
-			else
-			{
-				throw new Exception (actionName+" - Failed in Step "+stepID);
-			}
-
-		}
-		catch(Exception e)
-		{
-				System.out.println(actionName+" - Failed in Step: "+stepID);
-				return false;
-		}
-	}
+	
 
 	public static boolean newOpportunityDetailsPage(WebDriver driver, String testName, int stepID, String testExecutionString) throws Exception
 	{

@@ -46,81 +46,6 @@ public class FunctionalActionsSFDS {
 	}
 	
 	
-
-	
-	
-	// LEGACY
-
-	public static void navigate2Agreement(WebDriver driver, int stepID, String linkAgreementName) throws Exception
-	{
-		try
-		{
-			BrowserActions.verticalscrollByVisibleElement(driver, SalesForceOpportunity.agreementsContainer);
-
-			if (BrowserActions.isElementPresent(driver, linkAgreementName))
-			{
-				driver.findElement(By.xpath(linkAgreementName)).click();
-
-				driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
-			}
-			else
-			{
-				throw new Exception("Not possible to navigate into Agreement's Page on Step: "+stepID);
-			}
-		}
-		catch(Exception e)
-		{
-			System.out.println(e);
-
-			throw new Exception("Test Procedure to Navigate to Agreement's page. Failed on StepID: "+stepID,e);
-		}
-	}
-	
-	public static void addFile2Agreement(WebDriver driver, int stepID, String file2Upload) throws Exception
-	{
-		Screen screen = new Screen();	
-
-		String agreementFileTestData=ExecStructure.workingDir+"\\testData\\"+file2Upload+".pdf";
-
-
-		try
-		{
-			//driver.findElement(By.xpath(SalesForceAgreement.uploadFilesBtn)).click();
-			
-			screen.click(SalesForceSikuli.uploadFilesButton);
-
-			screen.wait(SalesForceSikuli.uploadBarFilePathOpenCancel, 20);
-
-			screen.find(SalesForceSikuli.filePath);
-
-			screen.paste(agreementFileTestData);
-
-			screen.click(SalesForceSikuli.openButton);
-
-			screen.wait(SalesForceSikuli.uploadFilesDoneSalesforce, 20);
-
-			screen.wait(SalesForceSikuli.doneButton, 20);
-
-			screen.click(SalesForceSikuli.doneButton);
-
-
-			Thread.sleep(10000);
-
-
-			WebElement file = driver.findElement(By.xpath(SalesForceAgreement.filesContainer.concat("//a[contains(.,'"+file2Upload+"')]")));
-
-			if (file.isDisplayed() == false)
-			{
-				throw new Exception("Not possible to Add File on Agreement on Step ID: "+stepID);
-			}
-
-
-		}
-		catch(Exception e)
-		{
-			throw new Exception("Test Procedure to Add File to Agreement. Failed on StepID: "+stepID,e);
-		}
-	}
 /*
 	public static void addFile2MACDOrder(WebDriver driver, int stepID, String file2Upload) throws Exception
 	{
@@ -187,36 +112,7 @@ public class FunctionalActionsSFDS {
 
 	}
 	
-	
-	
-	
-	
-	
-	public static void navigate2Order(WebDriver driver, int stepID, String optyName) throws Exception
-	{
-		String orderLinkXpath=SalesForceOpportunity.ordersContainer.concat("//a[contains(.,'"+optyName+"')]");
 
-		try
-		{
-			BrowserActions.verticalscrollByVisibleElement(driver, SalesForceOpportunity.ordersContainer);
-
-			if (BrowserActions.isElementPresent(driver, orderLinkXpath))
-			{
-				driver.get(driver.findElement(By.xpath(orderLinkXpath)).getAttribute("href"));
-
-				driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
-			}
-			else
-			{
-				throw new Exception("Not possible to navigate into Order's Page on Step: "+stepID);
-			}
-		}
-		catch (Exception e)
-		{
-			System.out.println(e);
-			throw new Exception("Test Procedure to Navigate to Order's page. Failed on StepID: "+stepID,e);
-		}
-	}
 
 	public static void navigate2Service(WebDriver driver, int stepID) throws Exception
 	{

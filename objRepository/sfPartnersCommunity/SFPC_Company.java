@@ -40,5 +40,10 @@ public class SFPC_Company {
 	public static String firstOrderLink="(//article[contains(.,'Orders')]//a)[2]";
 	
 	public static String ordersListViewPageLink="//article//h2/a/span[text()='Orders']";
+	
+	
+	
+	// ..:: MACD Order ::..
+	public static String linkMACDOrder="//article[contains(.,'Orders')]//tr/th/div/a";
 
 }

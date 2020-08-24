@@ -18,6 +18,7 @@ import execReport.TestStepReportStructure;
 import execStructure.ExecStructure;
 import execStructure.TestData;
 import functionalActions.SFDS.ActsSalesOrder;
+import functionalActions.SFDS.ActsSalesService;
 import sfDirectSales.SalesForceOrders;
 import sfDirectSales.SalesForceService;
 
@@ -88,31 +89,38 @@ public class StpsSalesOrder {
 		String stepNameMin="nav2Service";
 
 		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);
+		
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		
+		boolean validation;
 
 		try
 		{
-			String serviceLink=driver.findElement(By.xpath(SalesForceOrders.firstServiceLink)).getAttribute("href");
+			ActsSalesOrder.navigateToSingleService(driver, wait, stepID);
+			
+			ActsSalesService.goToServiceDetails(driver, wait, stepID);
+			
 
-			driver.get(serviceLink);
+			validation = ActsSalesService.validationServicePage(driver, stepID);
 
-			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
-
-			if(BrowserActions.isElementPresent(driver, SalesForceService.filesContainer) && BrowserActions.isElementPresent(driver, SalesForceService.headerServicesPage) && BrowserActions.isElementPresent(driver, SalesForceService.detailsServicePage)  &&  BrowserActions.isElementPresent(driver, SalesForceService.fieldServiceName)  && BrowserActions.isElementPresent(driver, SalesForceService.fieldCase) && BrowserActions.isElementPresent(driver, SalesForceService.fieldDomain) && BrowserActions.isElementPresent(driver, SalesForceService.fieldType) && BrowserActions.isElementPresent(driver, SalesForceService.fieldDetail) && BrowserActions.isElementPresent(driver, SalesForceService.fieldServiceRequestDate) && BrowserActions.isElementPresent(driver, SalesForceService.fieldEnd2EndRequestOwner) && BrowserActions.isElementPresent(driver, SalesForceService.fieldStatus))
+			if(validation==true)
 			{
 				ExecStructure.screenShotTaking(driver, testName, evidenceName);
-				nav2Service=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('p', 'e'), ReportStructure.testReportFinalElement('p', 'a'), ReportStructure.testReportFinalElement('p', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);;
+				nav2Service=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('p', 'e'), ReportStructure.testReportFinalElement('p', 'a'), ReportStructure.testReportFinalElement('p', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
 				return nav2Service;
 			}
 			else
 			{
 				throw new Exception (stepName+" - Failed in Step: "+stepID);
 			}
+
+
 		}
 		catch(Exception e)
 		{
 			System.out.println(e);
 			ExecStructure.screenShotTaking(driver, testName, evidenceName);
-			nav2Service=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('f', 'e'), ReportStructure.testReportFinalElement('f', 'a'), ReportStructure.testReportFinalElement('f', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);;
+			nav2Service=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('f', 'e'), ReportStructure.testReportFinalElement('f', 'a'), ReportStructure.testReportFinalElement('f', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
 			return nav2Service;
 		}
 	}

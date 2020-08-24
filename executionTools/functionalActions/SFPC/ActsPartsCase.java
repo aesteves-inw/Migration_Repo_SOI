@@ -1,21 +1,16 @@
-package functionalActions.SFDS;
-
-import java.util.concurrent.TimeUnit;
+package functionalActions.SFPC;
 
 import org.openqa.selenium.WebDriver;
 
 import actions.BrowserActions;
-import sfDirectSales.SalesforceCase;
+import sfPartnersCommunity.SFPC_Case;
 
-public class ActsSalesCase {
-	
-	
+public class ActsPartsCase {
 	
 	/*02-03-2020:LMA
 	 * sketch for every regular functions
 	 *=====================================
-	 *		String actionName = "";
-			
+	 	String actionName = "";
 			
 			
 			try
@@ -32,7 +27,10 @@ public class ActsSalesCase {
 			}
 			
 			*/
-
+	
+	
+	
+	
 	
 	/*02-03-2020:LMA
 	 * sketch for every validation functions
@@ -58,12 +56,16 @@ public class ActsSalesCase {
 			
 			*/
 	
-	public static boolean validationCasePage(WebDriver driver, int stepID) throws Exception
+	public static boolean validateCasePage(WebDriver driver, int stepID) throws Exception
 	{
-	 	String actionName="Case: Case screen Validation";
+	 	String actionName="Case: Validate Case's Page";
 	 	try
 		{
-			if(BrowserActions.isElementPresent(driver, SalesforceCase.keyDetailsArticle) && BrowserActions.isElementPresent(driver, SalesforceCase.filesContainer))
+			if(BrowserActions.isElementPresent(driver, SFPC_Case.caseInformation) && 
+					BrowserActions.isElementPresent(driver, SFPC_Case.caseCategorization) && 
+					BrowserActions.isElementPresent(driver, SFPC_Case.additionalInformation) && 
+					BrowserActions.isElementPresent(driver, SFPC_Case.headerCase) && 
+					BrowserActions.isElementPresent(driver, SFPC_Case.detailsCase))
 			{
 				System.out.println(actionName+" - Succeeded in Step: "+stepID);
 				return true;

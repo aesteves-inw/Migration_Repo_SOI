@@ -11,9 +11,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import actions.BrowserActions;
+import actions.FunctionalActionsSFPC;
 import execReport.ReportStructure;
 import execReport.TestStepReportStructure;
 import execStructure.ExecStructure;
+import functionalActions.SFPC.ActsPartsService;
 import sfDirectSales.SalesForceOrders;
 import sfPartnersCommunity.SFPC_Orders;
 
@@ -235,7 +237,51 @@ public class StpsPartsOrder {
 		
 	}
 
+	
+	public static TestStepReportStructure navigate2ServiceScreen(WebDriver driver, int stepID, String testName) throws Exception 
+	{
+		TestStepReportStructure step;
 
+
+		String stepName="Order: Navigate to Service Screeen";
+
+		String stepNameMin="navigate2ServiceScreen";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			FunctionalActionsSFPC.navigate2ServiceScreen(driver, stepID);
+
+			validation = ActsPartsService.serviceScreenValidation(driver, stepID);
+
+			if(validation==true)
+			{
+				ExecStructure.screenShotTaking(driver, testName, evidenceName);
+				step=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('p', 'e'), ReportStructure.testReportFinalElement('p', 'a'), ReportStructure.testReportFinalElement('p', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+				return step;
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			ExecStructure.screenShotTaking(driver, testName, evidenceName);
+			step=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('f', 'e'), ReportStructure.testReportFinalElement('f', 'a'), ReportStructure.testReportFinalElement('f', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+			return step;
+		}
+
+	}
+
+	
 	
 	
 	

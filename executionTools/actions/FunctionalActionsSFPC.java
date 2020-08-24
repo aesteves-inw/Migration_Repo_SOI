@@ -156,65 +156,6 @@ public class FunctionalActionsSFPC {
 
 	}
 
-	public static void closeWonOPTY(WebDriver driver, int stepID) throws Exception
-	{
-		// Screen screen = new Screen();
-		
-		WebDriverWait waitCWO = new WebDriverWait(driver, 15);
-		
-		try
-		{
-			/*do {
-				screen.wait(SalesForceSikuli.nextPCButton, 5);
-				
-				screen.click(SalesForceSikuli.nextPCButton);
-				
-			}while(driver.findElement(By.xpath(SFPC_Opportunity.closeOptyBtn)).isDisplayed()==false);*/
-			
-			if(BrowserActions.isElementPresent(driver, SFPC_Opportunity.nextBtn))
-			{
-				do {
-					driver.findElement(By.xpath(SFPC_Opportunity.nextBtn)).click();
-				}while(driver.findElement(By.xpath(SFPC_Opportunity.closeOptyBtn)).isDisplayed()==false);
-			}
-			
-			driver.findElement(By.xpath(SFPC_Opportunity.closeOptyBtn)).click();
-			/*
-			screen.wait(SalesForceSikuli.closePCBtn, 5);
-			
-			screen.click(SalesForceSikuli.closePCBtn);
-			*/
-			driver.findElement(By.xpath(SFPC_Opportunity.closeOptyBtn)).click();
-			
-			waitCWO.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SFPC_Opportunity.selectClosedStageBtn))).click();
-			
-			waitCWO.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SFPC_Opportunity.ctoHeader)));
-			
-			Select closeOpty = new Select(driver.findElement(By.xpath(SFPC_Opportunity.ctoSelectStage)));
-			
-			closeOpty.selectByVisibleText("Closed Won");
-			
-			driver.findElement(By.xpath(SFPC_Opportunity.saveButton)).click();
-			
-			waitCWO.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(SFPC_Opportunity.ctoHeader)));
-			
-			driver.navigate().refresh();
-			
-			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
-			
-			if (!(BrowserActions.isElementPresent(driver, SalesForceOpportunity.stageClosedWonDetails)))
-			{
-				throw new Exception("Not possible to Close Won Opportunity. Step: "+stepID);
-			}
-			
-		}
-		catch(Exception e)
-		{
-			System.out.println(e);
-
-			throw new Exception("Test Procedure to Close Won Opportunity. Failed on StepID: "+stepID,e);
-	}
-}
 
 	public static void navigate2Agreement(WebDriver driver, int stepID, String generatedAgreement) throws Exception
 	{

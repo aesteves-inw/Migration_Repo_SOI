@@ -160,7 +160,10 @@ public class ActsPartsHomePage {
 
 		try
 		{
-			if(BrowserActions.isElementPresent(driver, SFPC_HomePage.headerNavigationBar) && BrowserActions.isElementPresent(driver, SFPC_HomePage.quickCreateButton) && BrowserActions.isElementPresent(driver, SFPC_HomePage.inputSearchBar) && BrowserActions.isElementPresent(driver, SFPC_HomePage.dashboard))
+			if(BrowserActions.isElementPresent(driver, SFPC_HomePage.headerNavigationBar) && 
+					BrowserActions.isElementPresent(driver, SFPC_HomePage.quickCreateButton) && 
+					BrowserActions.isElementPresent(driver, SFPC_HomePage.inputSearchBar) && 
+					BrowserActions.isElementPresent(driver, SFPC_HomePage.dashboard))
 			{
 				System.out.println(actionName+" - Succeeded in Step: "+stepID);
 				return true;

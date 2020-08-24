@@ -1,6 +1,13 @@
 package functionalActions.SFDS;
 
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import actions.BrowserActions;
 import sfDirectSales.SalesForceService;
@@ -10,9 +17,8 @@ public class ActsSalesService {
 	/*02-03-2020:LMA
 	 * sketch for every regular functions
 	 *=====================================
-	 *		String actionName = "Navigation to Orders List View";
+	 *		String actionName = "";
 			
-			String ordersListViewURL=TestData.searchDT(0, "environmentITTQA").concat(TestData.searchDT(0, "ordersList"));
 			
 			try
 			{
@@ -23,13 +29,36 @@ public class ActsSalesService {
 			}
 			catch(Exception e)
 			{
-				
+				System.out.println(e);
 				throw new Exception (actionName+" - Failed in Step "+stepID,e);
 			}
 			
 			*/
 
-	
+	public static void goToServiceDetails(WebDriver driver, WebDriverWait wait, int stepID) throws Exception
+	{
+		String actionName = "goToServiceDetails - Service: Go To Service Details Page";
+		
+		
+		
+		try
+		{
+			
+			BrowserActions.jsClick(driver, By.xpath(SalesForceService.tabDetails));
+			
+			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+			
+			
+			
+			System.out.println(actionName+" - Succeeded in Step "+stepID);
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+	}
 	
 	/*02-03-2020:LMA
 	 * sketch for every validation functions

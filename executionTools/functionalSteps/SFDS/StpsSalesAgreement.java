@@ -75,85 +75,11 @@ public class StpsSalesAgreement {
 	
 	
 	// Navigation Steps
-	public static TestStepReportStructure navigate2Opportunity(WebDriver driver, String testName, int stepID, String optyName) throws Exception
-	{
-		TestStepReportStructure step;
-
-
-		String stepName="Agreement: Navigate to Opportunity";
-
-		String stepNameMin="navigate2Opportunity";
-
-		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);
-		
-		try
-		{
-			//driver.findElement(By.linkText(optyName)).click();
-			
-			driver.findElement(By.xpath("//a[text()='"+optyName+"']")).click();
-			
-			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);	
-			
-			if(BrowserActions.isElementPresent(driver, SalesForceOpportunity.optyHeader) && BrowserActions.isElementPresent(driver, SalesForceOpportunity.productContainer))
-			{
-				ExecStructure.screenShotTaking(driver, testName, evidenceName);
-				step=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('p', 'e'), ReportStructure.testReportFinalElement('p', 'a'), ReportStructure.testReportFinalElement('p', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
-				return step;
-			}
-			else
-			{
-				throw new Exception (stepName+" - Failed in Step: "+stepID);
-			}
-		}
-		catch(Exception e)
-		{
-			System.out.println(e);
-			ExecStructure.screenShotTaking(driver, testName, evidenceName);
-			step=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('f', 'e'), ReportStructure.testReportFinalElement('f', 'a'), ReportStructure.testReportFinalElement('f', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
-			return step;
-		}
-	}
+	
 	
 	
 	//Operational Steps
-	public static TestStepReportStructure add1stFileToAgreement(WebDriver driver, String testName, int stepID, String file2Upload) throws Exception
-	{
-		TestStepReportStructure add1stFileToAgreement;
-		
-
-		String stepName="Agreement: Add First File to Agreement";
-
-		String stepNameMin="add1stFileToAgreement";
-
-		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);
-
-		
-		try
-		{
-			
-			FunctionalActionsSFDS.addFile2Agreement(driver, stepID, file2Upload);
-			
-			WebElement file = driver.findElement(By.xpath(SalesForceAgreement.filesContainer.concat("//a[contains(.,'"+file2Upload+"')]")));
-			
-			if (file.isDisplayed())
-			{
-				ExecStructure.screenShotTaking(driver, testName, evidenceName);
-				add1stFileToAgreement=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('p', 'e'), ReportStructure.testReportFinalElement('p', 'a'), ReportStructure.testReportFinalElement('p', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
-				return add1stFileToAgreement;
-			}
-			else
-			{
-				throw new Exception (stepName+" - Failed in Step: "+stepID);
-			}
-		}
-		catch(Exception e)
-		{
-			System.out.println(e);
-			ExecStructure.screenShotTaking(driver, testName, evidenceName);
-			add1stFileToAgreement=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('f', 'e'), ReportStructure.testReportFinalElement('f', 'a'), ReportStructure.testReportFinalElement('f', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
-			return add1stFileToAgreement;
-		}
-	}
+	
 	
 	public static TestStepReportStructure addDiferentFile2Agreement(WebDriver driver, WebDriverWait wait, String testName, int stepID) throws Exception
 	{

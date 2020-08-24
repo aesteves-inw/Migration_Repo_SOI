@@ -13,7 +13,7 @@ public class SFPC_Orders {
 	
 	public static String changeOwnerButton="//li/a/div[@title='Change Owner']";
 	
-	public static String headerOrder="//h1";
+	public static String headerOrder="//h1[contains(.,'Order')]";
 	
 	public static String headerOrderDetail="//h3[contains(.,'Order')]";
 	
@@ -63,7 +63,7 @@ public class SFPC_Orders {
 	
 	
 
-	public static String firstServiceLink="(//article[contains(.,'Services')]//a)[2]";
+	public static String firstServiceLink="//article[contains(.,'Services')]//tr/td/a";
 	
 	//Messages
 	public static String successMessage="//div[contains(.,'Your Order has been successfully submited')]";

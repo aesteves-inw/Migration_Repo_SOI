@@ -28,7 +28,7 @@ import execStructure.ExecStructure;
 import execStructure.TestData;
 import sfDirectSales.SalesForceOrders;
 
-public class TestingMACDJSQuery {
+public class TestingMACDJSQuery2 {
 
 	String testName = this.getClass().getName();
 
@@ -41,7 +41,7 @@ public class TestingMACDJSQuery {
 	WebDriverWait wait;
 
 	List<TestStepReportStructure> testExecStructure = new ArrayList<TestStepReportStructure>();
-	
+
 	List<TestReportTestData> testData = new ArrayList<TestReportTestData>();
 
 	String finalTestDate=null;
@@ -53,12 +53,12 @@ public class TestingMACDJSQuery {
 	String testExecutionString;
 
 	String companyContactPerson="Simple Ordering SeventySix";
-	
+
 	String oppiename, generatedAgreement, productsLinkView;
-	
-	
-	
-	
+
+
+
+
 	@BeforeTest
 	public void beforeTest() {
 
@@ -85,7 +85,7 @@ public class TestingMACDJSQuery {
 		Chrome_Profile.addArguments("browser.helperApps.neverAsk.saveToDisk", "application/pdf"); 	
 
 		driver = new ChromeDriver(Chrome_Profile); 
-		
+
 		wait=new WebDriverWait(driver, 15);
 
 		Set<Cookie> allCookies = driver.manage().getCookies(); 
@@ -101,16 +101,16 @@ public class TestingMACDJSQuery {
 		testExecutionString = ExecStructure.formattedDate("yyyyMMdd")+"_TC14_Ex"+ExecStructure.numberOfSubFolders(ExecStructure.testFolder(testName));
 
 	}
-	
-	
+
+
 
 	@Test
 	public void step01() throws Exception {
-		
+
 		stepsExecuted++;
 
 		String envURL=TestData.searchDT(0, "environmentITTQA");
-		
+
 
 		try 
 		{
@@ -119,7 +119,7 @@ public class TestingMACDJSQuery {
 
 			TestStepReportStructure step01 = FunctionalSteps.loginSalesForce(driver, stepsExecuted, "DS", testName);
 			testExecStructure.add(step01);
-			
+
 
 			if (step01.getStepStatus().toLowerCase().contains("failed")) 
 			{
@@ -141,39 +141,25 @@ public class TestingMACDJSQuery {
 		}
 
 	}
-	
+
 	@Test(dependsOnMethods = "step01")
 	public void step02() throws Exception
 	{
+
+		
 		try 
 		{
-			
-			driver.get("https://proximus--prxitt.lightning.force.com/lightning/r/csord__Order__c/a1b3M0000008TJUQA2/view");
 
-			Thread.sleep(5000);
+			driver.get("https://proximus--prxitt.lightning.force.com/lightning/r/csord__Service__c/a1e3M00000051vrQAA/view");
+
+			Thread.sleep(10000);
+
+			BrowserActions.jsClick(driver, By.xpath("//*[@id=\"brandBand_2\"]/div/div/div/div/one-record-home-flexipage2/forcegenerated-adgrollup_component___forcegenerated__flexipage_recordpage___service_record_page1___csord__service__c___view/forcegenerated-flexipage_service_record_page1_csord__service__c__view_js/record_flexipage-record-page-decorator/div/slot/flexipage-record-home-template-desktop2/div/div[2]/div[1]/slot/slot/flexipage-component2/slot/flexipage-tabset2/div/lightning-tabset/div/lightning-tab-bar/ul/li[2]"));
 			
-			/*
-			//String queryString = "return document.querySelector('one-record-home-flexipage2').shadowRoot.querySelector('forcegenerated-flexipage_company_record_page_account__view_js').shadowRoot.querySelector('records-lwc-highlights-panel').shadowRoot.querySelector('records-lwc-record-layout').shadowRoot.querySelector('forcegenerated-highlightspanel_account___012000000000000aaa___compact___view___recordlayout2').shadowRoot.querySelector('force-highlights2').shadowRoot.querySelectorAll('li.slds-button.slds-button--neutral.slds-truncate')[1]";
-			
-			//String queryString = "return document.querySelector('one-record-home-flexipage2').shadowRoot.querySelector('forcegenerated-flexipage_opportunity_record_page3_opportunity__view_js').shadowRoot.querySelectorAll('flexipage-aura-wrapper')[0].shadowRoot.querySelectorAll('a.tabHeader.slds-path__link')[6]";
-			
-			String queryString = "return document.querySelector('one-record-home-flexipage2').shadowRoot.querySelector('forcegenerated-flexipage_opportunity_record_page3_opportunity__view_js').shadowRoot.querySelectorAll('flexipage-aura-wrapper')[0].shadowRoot.querySelectorAll('span.title.slds-path__title')[6]";
-					
-			//wait.until(ExpectedConditions.visibilityOf((WebElement) ((JavascriptExecutor)driver).executeScript(SalesForceOrders.jspathServiceLink)));
-			
-			//WebElement element = (WebElement) ((JavascriptExecutor)driver).executeScript(queryString);
-			
-			Thread.sleep(1000);
-			
-			BrowserActions.jsClick(driver, element);
-			*/
-			
-			JavascriptExecutor jsExecutor = (JavascriptExecutor)driver;
-			jsExecutor.executeScript("document.querySelector('one-record-home-flexipage2').shadowRoot.querySelector('forcegenerated-adgrollup_component___forcegenerated__flexipage_recordpage___order_record_page___csord__order__c___view').shadowRoot.querySelector('forcegenerated-flexipage_order_record_page_csord__order__c__view_js').shadowRoot.querySelectorAll('flexipage-aura-wrapper')[0].shadowRoot.querySelector('lightning-formatted-url').shadowRoot.querySelector('a').click();");
-			
-			
+
+
 			System.out.println("PASSA CONAÇA!");
-			
+
 		}
 		catch(Exception e)
 		{
@@ -181,7 +167,7 @@ public class TestingMACDJSQuery {
 			System.out.println(e);
 		}
 	}
-	
+
 	/*
 	@AfterTest
 	public void afterTest() {
@@ -199,5 +185,11 @@ public class TestingMACDJSQuery {
 		//BrowserActions.endSession(driver);
 
 	}
-	*/
+	 */
+
+	public WebElement expandRootElement(WebElement element) {
+		WebElement ele = (WebElement) ((JavascriptExecutor) driver)
+				.executeScript("return arguments[0].shadowRoot",element);
+		return ele;
+	}
 }

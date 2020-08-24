@@ -106,6 +106,27 @@ public class ActsPartsCompany {
 
 	}
 
+	public static void goToFirstOrder(WebDriver driver, int stepID) throws Exception
+	{
+		String actionName="Company: Go To MACD Order";
+
+
+		try
+		{
+			driver.findElement(By.xpath(SFPC_Company.linkMACDOrder)).click();
+			
+			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+
+			System.out.println(actionName+" - Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+	}
+	
 	// Validation Actions
 	/*02-03-2020:LMA
 	 * sketch for every validation functions
@@ -126,6 +147,7 @@ public class ActsPartsCompany {
 						}
 						catch(Exception e)
 						{
+							System.out.println(e);
 							throw new Exception (actionName+" - Failed in Step: "+stepID,e);
 						}
 
@@ -138,7 +160,13 @@ public class ActsPartsCompany {
 		
 		try
 		{
-			if(BrowserActions.isElementPresent(driver, SFPC_Company.buttonFollow) && BrowserActions.isElementPresent(driver, SFPC_Company.buttonNewMACDOrder) && BrowserActions.isElementPresent(driver, SFPC_Company.buttonEdit) && BrowserActions.isElementPresent(driver, SFPC_Company.relListNewOPTYButton) && BrowserActions.isElementPresent(driver, SFPC_Company.relListAgreementsLink) && BrowserActions.isElementPresent(driver, SFPC_Company.companyDetails) && BrowserActions.isElementPresent(driver, SFPC_Company.headerCompany))
+			if(BrowserActions.isElementPresent(driver, SFPC_Company.buttonFollow) && 
+					BrowserActions.isElementPresent(driver, SFPC_Company.buttonNewMACDOrder) && 
+					BrowserActions.isElementPresent(driver, SFPC_Company.buttonEdit) && 
+					BrowserActions.isElementPresent(driver, SFPC_Company.relListNewOPTYButton) && 
+					//BrowserActions.isElementPresent(driver, SFPC_Company.relListAgreementsLink) && 
+					BrowserActions.isElementPresent(driver, SFPC_Company.companyDetails) && 
+					BrowserActions.isElementPresent(driver, SFPC_Company.headerCompany))
 			{
 				System.out.println(actionName+" - Succeeded in Step: "+stepID);
 				return true;
@@ -151,6 +179,7 @@ public class ActsPartsCompany {
 		}
 		catch(Exception e)
 		{
+			System.out.println(e);
 			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
 		}
 

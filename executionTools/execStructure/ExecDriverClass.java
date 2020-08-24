@@ -9,12 +9,13 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
 
 public class ExecDriverClass {
 
 	protected WebDriver driver;
 
-	@BeforeSuite
+	@BeforeTest
 	public void setupDriver()
 	{
 		System.setProperty("webdriver.chrome.driver", TestData.ChromeDriverPath);
