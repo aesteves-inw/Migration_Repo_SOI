@@ -316,7 +316,7 @@ public class ActsSalesMACDFlow {
 
 			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(SalesforceNewMACDFlow.submitOrderButton)));
 			
-			//BrowserActions.waitUntilElementFade(driver, SalesforceNewMACDFlow.submitOrderButton);
+			
 
 			System.out.println(actionName+" - Succeeded in Step "+stepID);
 

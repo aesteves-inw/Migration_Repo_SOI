@@ -2,49 +2,20 @@ package delivery01.soi_150;
 
 import org.testng.annotations.Test;
 
-import actions.BrowserActions;
-import execReport.CreateTestReport;
-import execReport.TestReportHeaderStructure;
 import execReport.TestReportTestData;
 import execReport.TestStepReportStructure;
 import execStructure.ExecDriverClass;
 import execStructure.ExecStructure;
-import execStructure.TestData;
 import execStructure.TestStructure;
-import functionalSteps.SFDS.StpsSalesHomePage;
 import functionalSteps.SFDS.StpsSalesMACDFlow;
 import functionalSteps.SFPC.StpsPartsCompany;
 import functionalSteps.SFPC.StpsPartsHomePage;
 import functionalSteps.SFPC.StpsPartsOrder;
 import functionalSteps.SFPC.StpsPartsService;
-import sfDirectSales.SalesForceCompany;
-import sfDirectSales.SalesForceOrders;
-import sfDirectSales.SalesForceService;
-import sfDirectSales.SalesforceNewMACDFlow;
-import sfPartnersCommunity.SFPC_Case;
-import sfPartnersCommunity.SFPC_Company;
-import sfPartnersCommunity.SFPC_HomePage;
-import sfPartnersCommunity.SFPC_LoginPage;
-import sfPartnersCommunity.SFPC_NewMACDFlow;
-import sfPartnersCommunity.SFPC_Orders;
-import sfPartnersCommunity.SFPC_Services;
-
 import org.testng.annotations.BeforeTest;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.Cookie;
-import org.openqa.selenium.PageLoadStrategy;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 
 public class SOI_150_TC4_PC_MobileOrderIntake_MACD_Flow extends ExecDriverClass{

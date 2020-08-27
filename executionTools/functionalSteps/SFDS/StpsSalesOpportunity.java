@@ -1,5 +1,7 @@
 package functionalSteps.SFDS;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -68,49 +70,7 @@ public class StpsSalesOpportunity {
 	
 	
 
-	// Navigation Steps
-	/*
-	public static TestStepReportStructure navigate2Agreement(WebDriver driver, String testName, int stepID, String optyName) throws Exception
-	{
-		TestStepReportStructure navigate2Agreement;
-
-
-		String stepName="Opportunity: Navigate to Agreement Page";
-
-		String stepNameMin="navigate2Agreement";
-
-		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);
-		
-		
-		
-		try
-		{
-			String linkAgreementName=SalesForceOpportunity.agreementsContainer.concat("//a[contains(.,'"+optyName+"')]");
-			
-			driver.get(driver.findElement(By.xpath(linkAgreementName)).getAttribute("href"));
-			
-			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
-					
-			if(BrowserActions.isElementPresent(driver, SalesForceAgreement.filesContainer) && BrowserActions.isElementPresent(driver, SalesForceAgreement.headerAgreementPage) && BrowserActions.isElementPresent(driver, SalesForceAgreement.detailsAgreement) && BrowserActions.isElementPresent(driver, SalesForceAgreement.nameAgreement))
-			{
-				ExecStructure.screenShotTaking(driver, testName, evidenceName);
-				navigate2Agreement=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('p', 'e'), ReportStructure.testReportFinalElement('p', 'a'), ReportStructure.testReportFinalElement('p', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);;
-				return navigate2Agreement;
-			}
-			else
-			{
-				throw new Exception (stepName+" - Failed in Step: "+stepID);
-			}
-		}
-		catch(Exception e)
-		{
-			System.out.println(e);
-			ExecStructure.screenShotTaking(driver, testName, evidenceName);
-			navigate2Agreement=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('f', 'e'), ReportStructure.testReportFinalElement('f', 'a'), ReportStructure.testReportFinalElement('f', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);;
-			return navigate2Agreement;
-		}
-	}
-	*/
+	//Navigation Steps
 	public static TestStepReportStructure navigate2Order(WebDriver driver, String testName, int stepID, String optyName) throws Exception
 	{
 		TestStepReportStructure navigate2Order;
@@ -148,7 +108,52 @@ public class StpsSalesOpportunity {
 		
 	}
 	
-	
+	public static TestStepReportStructure navigate2Agreement(WebDriver driver, String testName, int stepID,
+			String optyName) throws Exception 
+	{
+		TestStepReportStructure step;
+
+
+		String stepName="step";
+
+		String stepNameMin="step";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			
+			
+			
+			
+			
+
+			//validation = 
+
+			if(validation==true)
+			{
+				ExecStructure.screenShotTaking(driver, testName, evidenceName);
+				step=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('p', 'e'), ReportStructure.testReportFinalElement('p', 'a'), ReportStructure.testReportFinalElement('p', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+				return step;
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			ExecStructure.screenShotTaking(driver, testName, evidenceName);
+			step=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('f', 'e'), ReportStructure.testReportFinalElement('f', 'a'), ReportStructure.testReportFinalElement('f', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
+			return step;
+		}
+	}
 	
 	
 	// Operational Steps
@@ -414,8 +419,6 @@ public class StpsSalesOpportunity {
 			return step;
 		}
 	}
-		//*/
-	
 	
 	
 	public static TestStepReportStructure createNewProductBasketEmpty(WebDriver driver, int stepID, String testName) throws Exception
@@ -462,6 +465,11 @@ public class StpsSalesOpportunity {
 		}
 
 	}
+
+
+
+
+
 	
 	
 }

@@ -53,7 +53,7 @@ public class SOI_66_TC01_AgreementCreation_From_Oportunity_MobileVoice {
 	
 	String optyURL, agreementURL, orderURL;
 	
-	String companyContactPerson="Simple Ordering SixtyNine";
+	String companyContactPerson="Simple Ordering SixtySix";
 
   @BeforeTest
   public void beforeTest() {
@@ -202,7 +202,7 @@ public class SOI_66_TC01_AgreementCreation_From_Oportunity_MobileVoice {
 		}
 		
 	}
-	
+	/*
 	@Test(dependsOnMethods = "step04")
 	public void step05() throws Exception 
 	{	
@@ -248,7 +248,7 @@ public class SOI_66_TC01_AgreementCreation_From_Oportunity_MobileVoice {
 			throw new Exception("Test Failed on Step "+stepsExecuted,e);
 		}
 	}
-	
+	*/
 	  @AfterTest
 	  public void afterTest() {
 		  
