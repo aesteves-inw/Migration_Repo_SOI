@@ -246,6 +246,8 @@ public class SOI_150_TC1_MobileOrderIntake_MACD_Flow extends ExecDriverClass{
 
 				throw new Exception("Validation Failed on Step "+stepsExecuted);
 			}
+			
+			testData.add(new TestReportTestData("Order", "MACD Order", "URL", driver.getCurrentUrl()));
 		}
 		catch(Exception e)
 		{
@@ -273,6 +275,8 @@ public class SOI_150_TC1_MobileOrderIntake_MACD_Flow extends ExecDriverClass{
 
 				throw new Exception("Validation Failed on Step "+stepsExecuted);
 			}
+			
+			testData.add(new TestReportTestData("Service", "MACD Service", "URL", driver.getCurrentUrl()));
 		}
 		catch(Exception e)
 		{
@@ -300,6 +304,8 @@ public class SOI_150_TC1_MobileOrderIntake_MACD_Flow extends ExecDriverClass{
 
 				throw new Exception("Validation Failed on Step "+stepsExecuted);
 			}
+			
+			testData.add(new TestReportTestData("Case", "MACD Case", "URL", driver.getCurrentUrl()));
 		}
 		catch(Exception e)
 		{
