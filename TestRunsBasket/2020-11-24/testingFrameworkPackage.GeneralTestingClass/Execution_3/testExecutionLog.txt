@@ -1,0 +1,11 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: testingFrameworkPackage.GeneralTestingClass
+Log Date: 24-11-2020 08:58:55
+Test Status: <font color="green"><b>Passed</b></font>
+###############################################################################
+24-11-2020 08:59:00 - INFO - startTest - Test Case: testingFrameworkPackage.GeneralTestingClass initiation
+24-11-2020 08:59:00 - INFO - test - Just Testing this MothaphukkinG
+24-11-2020 08:59:00 - INFO - finishTest - Test Case: testingFrameworkPackage.GeneralTestingClass completion
+############################# End Of Log File #################################

@@ -11,8 +11,8 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.sikuli.script.Screen;
 
-import execReport.TestStepReportStructure;
-import execStructure.ExecStructure;
+import executionTools.BrowserActions;
+import executionTools.ExecStructure;
 import sfDirectSales.SalesForceOpportunity;
 import sfDirectSales.SalesforceNewMACDFlow;
 import sfPartnersCommunity.SFPC_Company;
@@ -24,6 +24,7 @@ import sfPartnersCommunity.SFPC_Orders;
 import sfPartnersCommunity.SFPC_Products;
 import sfPartnersCommunity.SFPC_Services;
 import sfSikuli.SalesForceSikuli;
+import testReportComposition.TestStepReportStructure;
 
 public class FunctionalActionsSFPC {
 

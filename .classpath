@@ -7,8 +7,14 @@
 			<attribute name="test" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" path="objRepository"/>
+	<classpathentry kind="src" path="objectRepository"/>
 	<classpathentry kind="src" path="executionTools"/>
+	<classpathentry kind="src" path="TestReporting"/>
+	<classpathentry kind="src" path="TestLogging"/>
+	<classpathentry kind="src" path="FunctionalLibrary"/>
+	<classpathentry kind="src" path="TestLibrary"/>
+	<classpathentry kind="src" path="TestExecution"/>
+	<classpathentry kind="src" path="TestData"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>

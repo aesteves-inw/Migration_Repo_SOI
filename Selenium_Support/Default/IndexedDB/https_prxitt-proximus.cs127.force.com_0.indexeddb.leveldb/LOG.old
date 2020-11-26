@@ -1,0 +1,41 @@
+2020/08/25-08:57:23.448 6e34 Reusing MANIFEST C:\source\simpleOrderingIntake\Selenium_Support\Default\IndexedDB\https_prxitt-proximus.cs127.force.com_0.indexeddb.leveldb/MANIFEST-000001
+2020/08/25-08:57:23.449 6e34 Recovering log #185
+2020/08/25-08:57:23.450 6e34 Reusing old log C:\source\simpleOrderingIntake\Selenium_Support\Default\IndexedDB\https_prxitt-proximus.cs127.force.com_0.indexeddb.leveldb/000185.log 
+2020/08/25-08:57:23.718 19a4 Compacting 1@1 + 6@2 files
+2020/08/25-08:57:23.766 19a4 Generated table #188@1: 2029 keys, 2144985 bytes
+2020/08/25-08:57:23.838 19a4 Generated table #189@1: 881 keys, 2132481 bytes
+2020/08/25-08:57:23.918 19a4 Generated table #190@1: 890 keys, 2133152 bytes
+2020/08/25-08:57:24.109 19a4 Generated table #191@1: 870 keys, 2138829 bytes
+2020/08/25-08:57:24.205 19a4 Generated table #192@1: 848 keys, 2134180 bytes
+2020/08/25-08:57:24.329 19a4 Generated table #193@1: 11322 keys, 2210189 bytes
+2020/08/25-08:57:24.340 19a4 Generated table #194@1: 995 keys, 112032 bytes
+2020/08/25-08:57:24.340 19a4 Compacted 1@1 + 6@2 files => 13005848 bytes
+2020/08/25-08:57:24.342 19a4 compacted to: files[ 0 0 7 0 0 0 0 ]
+2020/08/25-08:57:55.691 19a4 Level-0 table #196: started
+2020/08/25-08:57:55.726 19a4 Level-0 table #196: 1635698 bytes OK
+2020/08/25-08:57:55.729 19a4 Delete type=2 #179
+2020/08/25-08:57:55.729 19a4 Delete type=2 #180
+2020/08/25-08:57:55.729 19a4 Delete type=2 #181
+2020/08/25-08:57:55.730 19a4 Delete type=2 #182
+2020/08/25-08:57:55.730 19a4 Delete type=2 #183
+2020/08/25-08:57:55.730 19a4 Delete type=2 #184
+2020/08/25-08:57:55.730 19a4 Delete type=0 #185
+2020/08/25-08:57:55.730 19a4 Delete type=2 #186
+2020/08/25-08:58:45.767 19a4 Compacting 1@1 + 7@2 files
+2020/08/25-08:58:45.813 19a4 Generated table #197@1: 1983 keys, 2146987 bytes
+2020/08/25-08:58:45.875 19a4 Generated table #198@1: 881 keys, 2132481 bytes
+2020/08/25-08:58:45.935 19a4 Generated table #199@1: 869 keys, 2131676 bytes
+2020/08/25-08:58:46.006 19a4 Generated table #200@1: 862 keys, 2129787 bytes
+2020/08/25-08:58:46.056 19a4 Generated table #201@1: 917 keys, 2136448 bytes
+2020/08/25-08:58:46.150 19a4 Generated table #202@1: 10142 keys, 2196159 bytes
+2020/08/25-08:58:46.173 19a4 Generated table #203@1: 2758 keys, 586829 bytes
+2020/08/25-08:58:46.173 19a4 Compacted 1@1 + 7@2 files => 13460367 bytes
+2020/08/25-08:58:46.174 19a4 compacted to: files[ 0 0 7 0 0 0 0 ]
+2020/08/25-08:58:46.175 19a4 Delete type=2 #188
+2020/08/25-08:58:46.175 19a4 Delete type=2 #189
+2020/08/25-08:58:46.175 19a4 Delete type=2 #190
+2020/08/25-08:58:46.175 19a4 Delete type=2 #191
+2020/08/25-08:58:46.175 19a4 Delete type=2 #192
+2020/08/25-08:58:46.176 19a4 Delete type=2 #193
+2020/08/25-08:58:46.176 19a4 Delete type=2 #194
+2020/08/25-08:58:46.176 19a4 Delete type=2 #196

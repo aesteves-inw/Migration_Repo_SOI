@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [SOI-150 Test Suite]">
+  <test thread-count="5" name="SOI_150_TC1_MobileOrderIntake_MACD_Flow(failed)">
+    <classes>
+      <class name="delivery01.soi_150.SOI_150_TC1_MobileOrderIntake_MACD_Flow">
+        <methods>
+          <include name="step05"/>
+          <include name="step08"/>
+          <include name="step06"/>
+          <include name="step01"/>
+          <include name="step04"/>
+          <include name="beforeTest"/>
+          <include name="step07"/>
+          <include name="step09"/>
+          <include name="afterTest"/>
+          <include name="step02"/>
+          <include name="step03"/>
+          <include name="setupDriver"/>
+          <include name="step10"/>
+        </methods>
+      </class> <!-- delivery01.soi_150.SOI_150_TC1_MobileOrderIntake_MACD_Flow -->
+    </classes>
+  </test> <!-- SOI_150_TC1_MobileOrderIntake_MACD_Flow(failed) -->
+  <test thread-count="5" name="SOI_150_TC4_PC_MobileOrderIntake_MACD_Flow(failed)">
+    <classes>
+      <class name="delivery01.soi_150.SOI_150_TC4_PC_MobileOrderIntake_MACD_Flow">
+        <methods>
+          <include name="step01"/>
+          <include name="step03"/>
+          <include name="step10"/>
+          <include name="step06"/>
+          <include name="step09"/>
+          <include name="step08"/>
+          <include name="beforeTest"/>
+          <include name="step02"/>
+          <include name="step05"/>
+          <include name="step04"/>
+          <include name="step07"/>
+          <include name="afterTest"/>
+          <include name="setupDriver"/>
+        </methods>
+      </class> <!-- delivery01.soi_150.SOI_150_TC4_PC_MobileOrderIntake_MACD_Flow -->
+    </classes>
+  </test> <!-- SOI_150_TC4_PC_MobileOrderIntake_MACD_Flow(failed) -->
+</suite> <!-- Failed suite [SOI-150 Test Suite] -->

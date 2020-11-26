@@ -1,0 +1,11 @@
+2020/09/03-08:54:16.578 66fc Reusing MANIFEST C:\source\simpleOrderingIntake\Selenium_Support\Default\IndexedDB\https_proximus--prxitt.lightning.force.com_0.indexeddb.leveldb/MANIFEST-000466
+2020/09/03-08:54:16.579 66fc Recovering log #540
+2020/09/03-08:54:16.585 66fc Reusing old log C:\source\simpleOrderingIntake\Selenium_Support\Default\IndexedDB\https_proximus--prxitt.lightning.force.com_0.indexeddb.leveldb/000540.log 
+2020/09/03-08:54:21.230 6ef8 Compacting 1@1 + 2@2 files
+2020/09/03-08:54:21.299 6ef8 Generated table #543@1: 3394 keys, 2443845 bytes
+2020/09/03-08:54:21.369 6ef8 Generated table #544@1: 4904 keys, 1474397 bytes
+2020/09/03-08:54:21.370 6ef8 Compacted 1@1 + 2@2 files => 3918242 bytes
+2020/09/03-08:54:21.371 6ef8 compacted to: files[ 0 0 2 0 0 0 0 ]
+2020/09/03-08:54:21.374 6ef8 Delete type=2 #537
+2020/09/03-08:54:21.374 6ef8 Delete type=2 #538
+2020/09/03-08:54:21.375 6ef8 Delete type=2 #541

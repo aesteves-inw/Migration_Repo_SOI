@@ -18,8 +18,8 @@
 				<configuration>
 					<!-- Suite testng xml file to consider for test execution -->
 					<suiteXmlFiles>
-						<suiteXmlFile>src\test\java\delivery01\soi_66\SOI_66_TestSuite.xml</suiteXmlFile>
-						<suiteXmlFile>src\test\java\delivery01\soi_68\SOI_68_TestSuite.xml</suiteXmlFile>
+						<!--   <suiteXmlFile>src\test\java\delivery01\soi_66\SOI_66_TestSuite.xml</suiteXmlFile>
+						<suiteXmlFile>src\test\java\delivery01\soi_68\SOI_68_TestSuite.xml</suiteXmlFile> -->
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
@@ -34,12 +34,6 @@
 			</plugin>
 		</plugins>
 	</build>
-	<repositories>
-		<repository>
-			<id>snapshot</id>
-			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-		</repository>
-	</repositories>
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>
@@ -76,23 +70,6 @@
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml-schemas</artifactId>
 			<version>4.1.0</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.sikuli/sikuli-api -->
-		<dependency>
-			<groupId>com.sikulix</groupId>
-			<artifactId>sikulixapi</artifactId>
-			<version>1.1.2</version>
-			<exclusions>
-			<exclusion>
-			<groupId>com.github.vidstige</groupId>
-			<artifactId>jadb</artifactId>
-			</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>io.github.sukgu</groupId>
-			<artifactId>automation</artifactId>
-			<version>0.0.13</version>
 		</dependency>
 	</dependencies>
 </project>

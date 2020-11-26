@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="SOI-718 Test Suite" parallel="false">
-  <test name="SOI_718_TC1_CaseCreationPartnersAdapt_FullFlow">
-  	<classes>
-  		<class name ="delivery01.soi_66.SOI_718_TC1_CaseCreationPartnersAdapt_FullFlow"/>
-  	</classes>
-  </test> 
-  </suite>

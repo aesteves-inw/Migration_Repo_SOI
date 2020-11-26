@@ -9,10 +9,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import execReport.ReportStructure;
-import execReport.TestStepReportStructure;
-import execStructure.ExecStructure;
-import execStructure.TestData;
+import execStructure.TestDataManagement;
+import executionTools.BrowserActions;
+import executionTools.ExecStructure;
 import functionalActions.SFDS.ActsSalesAgreement;
 import functionalActions.SFDS.ActsSalesCase;
 import functionalActions.SFDS.ActsSalesCompany;
@@ -23,7 +22,8 @@ import sfDirectSales.SalesForceCompany;
 import sfDirectSales.SalesForceHomePage;
 import sfDirectSales.SalesForceNewMACDOrderScreen;
 import sfDirectSales.SalesForceOpportunity;
-import actions.BrowserActions;
+import testReportComposition.ReportStructure;
+import testReportComposition.TestStepReportStructure;
 
 	public class FunctionalSteps {
 
@@ -221,13 +221,13 @@ import actions.BrowserActions;
 			{
 				if(sFEnvironment == "DS")
 				{
-					loginUserName = TestData.searchDT(0, "envUserNameITTQA");
-					loginPassWord=TestData.searchDT(0, "envPasswordITTQA");
+					loginUserName = TestDataManagement.searchDT(0, "envUserNameITTQA");
+					loginPassWord=TestDataManagement.searchDT(0, "envPasswordITTQA");
 				}
 				else if (sFEnvironment == "PC")
 				{
-					loginUserName = TestData.searchDT(1, "envUserNameITTQA");
-					loginPassWord=TestData.searchDT(1, "envPasswordITTQA");
+					loginUserName = TestDataManagement.searchDT(1, "envUserNameITTQA");
+					loginPassWord=TestDataManagement.searchDT(1, "envPasswordITTQA");
 				}
 				else
 				{
