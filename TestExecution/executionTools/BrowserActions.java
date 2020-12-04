@@ -18,7 +18,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BrowserActions {
 
-
+	//Navigation by URL
+	public static void goToByURL(WebDriver driver, String url)
+	{
+		driver.navigate().to(url);
+	}
+	
+	
 
 	//Browser Actions
 	public static void refreshPage(WebDriver driver)
