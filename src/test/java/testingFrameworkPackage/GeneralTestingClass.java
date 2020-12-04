@@ -41,7 +41,9 @@ public class GeneralTestingClass extends ExecDriverClass
 	@Test
 	public void test()
 	{
-		TestLogger.logInfo(logStream, "test", "Just Testing this MothaphukkinG");
+		//TestLogger.logInfo(logStream, "test", "Just Testing this MothaphukkinG");
+		D01NewFlowModel(TestReportStream, TestLogStrem, TestData, CompanyName, MobileVoice);
+		
 	}
 	
 	@AfterTest

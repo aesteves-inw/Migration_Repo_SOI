@@ -58,6 +58,8 @@ public class BrowserActions {
 		catch (InterruptedException ie) { ; /* ignore */ }
 	}
 
+	
+	
 	// Function to Take Screen Shots from WebDriver
 	public static void screenShotTaking(WebDriver driver, String TestName, String shotName) throws IOException {
 
@@ -67,6 +69,7 @@ public class BrowserActions {
 
 	}
 
+	
 	
 	//Elements validation
 	public static boolean isElementPresent(WebDriver driver, String webObject)
