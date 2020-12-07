@@ -32,34 +32,34 @@ public class TestCasesData {
 	public static String[] getSalesforceUser(String user) throws Exception
 	{
 		
-		if(user.contains("regularUser"))
+		if(user.contains("salesUser"))
 		{
-			String[] finalUser= {ExcelDataFetch.searchDT(0, "envUserNameITTQA"), ExcelDataFetch.searchDT(0, "envPasswordITTQA")};
+			String[] finalUser= {ExcelDataFetch.searchDT(1, "PRX_SalesUserProfile_userName"), ExcelDataFetch.searchDT(0, "PRX_SalesUserProfile_passWord")};
 			return finalUser;
 		}
-		else if(user.contains("approverProfile"))
+		else if(user.contains("salesSupportUser"))
 		{
-			String[] finalUser= {ExcelDataFetch.searchDT(0, "approverProfileUser"), ExcelDataFetch.searchDT(0, "approverProfilePass")};
+			String[] finalUser= {ExcelDataFetch.searchDT(1, "PRX_SalesSupportProfile_userName"), ExcelDataFetch.searchDT(0, "PRX_SalesSupportProfile_passWord")};
 			return finalUser;
 		}
 		else if(user.contains("costumerSupportProfile"))
 		{
-			String[] finalUser= {ExcelDataFetch.searchDT(0, "costumerSupportProfileUser"), ExcelDataFetch.searchDT(0, "costumerSupportProfilePass")};
-			return finalUser;
-		}
-		else if(user.contains("salesSupportProfile"))
-		{
-			String[] finalUser= {ExcelDataFetch.searchDT(0, "salesSupportProfileUser"), ExcelDataFetch.searchDT(0, "salesSupportProfilePass")};
+			String[] finalUser= {ExcelDataFetch.searchDT(1, "PRX_EBUCustomerSupportProfile_userName"), ExcelDataFetch.searchDT(0, "PRX_EBUCustomerSupportProfile_passWord")};
 			return finalUser;
 		}
 		else if(user.contains("SysAdmin"))
 		{
-			String[] finalUser= {ExcelDataFetch.searchDT(0, "sysAdminProfileUser"), ExcelDataFetch.searchDT(0, "sysAdminProfilePass")};
+			String[] finalUser= {ExcelDataFetch.searchDT(1, "sysAdminProfile_userName"), ExcelDataFetch.searchDT(0, "sysAdminProfile_passWord")};
 			return finalUser;
 		}
 		else if(user.contains("farmerUser"))
 		{
-			String[] finalUser= {ExcelDataFetch.searchDT(1, "envUserNameITTQA"), ExcelDataFetch.searchDT(1, "envPasswordITTQA")};
+			String[] finalUser= {ExcelDataFetch.searchDT(1, "PRXPartnerFarmerProfile_userName"), ExcelDataFetch.searchDT(1, "PRXPartnerFarmerProfile_passWord")};
+			return finalUser;
+		}
+		else if(user.contains("hunterUser"))
+		{
+			String[] finalUser= {ExcelDataFetch.searchDT(1, "PRXPartnerHunterProfile_userName"), ExcelDataFetch.searchDT(0, "PRXPartnerHunterProfile_passWord")};
 			return finalUser;
 		}
 		else

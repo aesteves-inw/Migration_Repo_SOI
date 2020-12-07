@@ -22,6 +22,9 @@ public class BrowserActions {
 	public static void goToByURL(WebDriver driver, String url)
 	{
 		driver.navigate().to(url);
+		
+		//07-12-2020 - To review after
+		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 	}
 	
 	

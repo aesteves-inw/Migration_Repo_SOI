@@ -8,6 +8,11 @@ import testLogBuilder.TestLog;
 public class TestLogger
 
 {
+	public final static String logInfo="Executed with success";
+	
+	public final static String logError="Executed with errors";
+	
+	
 	
 	public static void logInfo(List<TestLog> logStream, String componentOfTheLog, String messageOfTheLog)
 	{

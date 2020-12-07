@@ -53,4 +53,6 @@ public class DirSalesMACDFlow {
 	public static String uploadFilesButton="//span[contains(.,'Upload Files')]";
 	
 	public static String inputUploadFiles="//lightning-file-upload/lightning-input/div/div/lightning-primitive-file-droppable-zone/slot/input";
+	
+	public static String buttonDoneUploadFiles="//button/span[text()='Done']";
 }

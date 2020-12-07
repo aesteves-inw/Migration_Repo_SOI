@@ -41,7 +41,7 @@ public class DirSalesOpportunity {
 	//New Quick Sale Opportunity - D02
 	public static String quickSaleHeader = "//h2[. = 'Quick Sale']";
 	
-	public static String optyNameinput = "//section/div/div/div/div/div/div[1]/div/div/div/div/input";
+	public static String optyNameinput = "//input[@maxlength=120][@type='text']";
 	
 	public static String quickSaleOptyForm = "//div[@class='slds-form slds-form_stacked slds-is-editing']";
 	
