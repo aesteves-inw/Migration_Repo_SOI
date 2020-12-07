@@ -15,9 +15,10 @@ import testLogger.TestLogger;
 
 public class LoginPageAction {
 	
-	public void loginDirectSales(List<TestLog> logStream, WebDriver driver, String user) throws Exception
+	public static void loginDirectSales(List<TestLog> logStream, WebDriver driver, int stepID, String user) throws Exception
 	{
 		String componentName="loginDirectSales";
+		String locatedcomponentName=componentName+" on Step "+stepID;
 		
 		try
 		{
@@ -28,17 +29,17 @@ public class LoginPageAction {
 			pressLoginButton(logStream, driver);
 			
 			
-			TestLogger.logInfo(logStream, componentName, TestLogger.logInfo);
+			TestLogger.logInfo(logStream, locatedcomponentName, TestLogger.logInfo);
 			
 		}
 		catch(Exception e)
 		{
-			TestLogger.logError(logStream, componentName, TestLogger.logError, e.toString());
-			throw new Exception(componentName+" - "+TestLogger.logError, e);
+			TestLogger.logError(logStream, locatedcomponentName, TestLogger.logError, e.toString());
+			throw new Exception(locatedcomponentName+" - "+TestLogger.logError, e);
 		}
 	}
 
-	private void goToLoginPage(List<TestLog> logStream, WebDriver driver) throws Exception 
+	private static void goToLoginPage(List<TestLog> logStream, WebDriver driver) throws Exception 
 	{
 		String componentName="goToLoginPage";
 		
@@ -59,7 +60,7 @@ public class LoginPageAction {
 		
 	}
 
-	private void fillcredentials(List<TestLog> logStream, WebDriver driver, String user) throws Exception 
+	private static void fillcredentials(List<TestLog> logStream, WebDriver driver, String user) throws Exception 
 	{
 		String componentName="fillcredentials";
 		
@@ -84,17 +85,13 @@ public class LoginPageAction {
 		
 	}
 
-	private void pressLoginButton(List<TestLog> logStream, WebDriver driver) throws Exception 
+	private static void pressLoginButton(List<TestLog> logStream, WebDriver driver) throws Exception 
 	{
 		String componentName="pressLoginButton";
 		
 		try
 		{
-			driver.findElement(By.xpath(DirSalesLoginPage.loginbtn)).click();
-			
-			//07-12-2020 - To Review after first execution.
-			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
-			
+			driver.findElement(By.xpath(DirSalesLoginPage.loginbtn)).click();		
 			
 			
 			TestLogger.logTrace(logStream, componentName, TestLogger.logInfo);

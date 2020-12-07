@@ -34,22 +34,22 @@ public class TestCasesData {
 		
 		if(user.contains("salesUser"))
 		{
-			String[] finalUser= {ExcelDataFetch.searchDT(1, "PRX_SalesUserProfile_userName"), ExcelDataFetch.searchDT(0, "PRX_SalesUserProfile_passWord")};
+			String[] finalUser= {ExcelDataFetch.searchDT(1, "PRX_SalesUserProfile_userName"), ExcelDataFetch.searchDT(1, "PRX_SalesUserProfile_passWord")};
 			return finalUser;
 		}
 		else if(user.contains("salesSupportUser"))
 		{
-			String[] finalUser= {ExcelDataFetch.searchDT(1, "PRX_SalesSupportProfile_userName"), ExcelDataFetch.searchDT(0, "PRX_SalesSupportProfile_passWord")};
+			String[] finalUser= {ExcelDataFetch.searchDT(1, "PRX_SalesSupportProfile_userName"), ExcelDataFetch.searchDT(1, "PRX_SalesSupportProfile_passWord")};
 			return finalUser;
 		}
 		else if(user.contains("costumerSupportProfile"))
 		{
-			String[] finalUser= {ExcelDataFetch.searchDT(1, "PRX_EBUCustomerSupportProfile_userName"), ExcelDataFetch.searchDT(0, "PRX_EBUCustomerSupportProfile_passWord")};
+			String[] finalUser= {ExcelDataFetch.searchDT(1, "PRX_EBUCustomerSupportProfile_userName"), ExcelDataFetch.searchDT(1, "PRX_EBUCustomerSupportProfile_passWord")};
 			return finalUser;
 		}
 		else if(user.contains("SysAdmin"))
 		{
-			String[] finalUser= {ExcelDataFetch.searchDT(1, "sysAdminProfile_userName"), ExcelDataFetch.searchDT(0, "sysAdminProfile_passWord")};
+			String[] finalUser= {ExcelDataFetch.searchDT(1, "sysAdminProfile_userName"), ExcelDataFetch.searchDT(1, "sysAdminProfile_passWord")};
 			return finalUser;
 		}
 		else if(user.contains("farmerUser"))
@@ -59,7 +59,7 @@ public class TestCasesData {
 		}
 		else if(user.contains("hunterUser"))
 		{
-			String[] finalUser= {ExcelDataFetch.searchDT(1, "PRXPartnerHunterProfile_userName"), ExcelDataFetch.searchDT(0, "PRXPartnerHunterProfile_passWord")};
+			String[] finalUser= {ExcelDataFetch.searchDT(1, "PRXPartnerHunterProfile_userName"), ExcelDataFetch.searchDT(1, "PRXPartnerHunterProfile_passWord")};
 			return finalUser;
 		}
 		else

@@ -4,24 +4,27 @@ import java.util.List;
 
 import org.openqa.selenium.WebDriver;
 
-import executionTools.BrowserActions;
-import executionTools.ExecStructure;
 import homePageDirectSales.HomePageAction;
 import testLogBuilder.TestLog;
+import testLogger.TestLogger;
 import testReportComposition.ReportStructure;
 import testReportComposition.TestStepReportStructure;
+import testReporter.TestReporter;
 
 public class LoginPageStep {
 	
-	public static TestStepReportStructure loginSFDS(List<TestLog> logStream, WebDriver driver, String testName, int stepID, String userProfile) throws Exception
+	public static void loginSFDS(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, String testName, int stepID, String userProfile) throws Exception
 	{
-		TestStepReportStructure loginSFDS;
-
+		stepID++;
+		
+		
 		String stepName="Login in Salesforce (Direct Sales)";
 
 		String stepNameMin="loginSFDS";
 
 		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);
+		
+		String componentOfTheLog=stepNameMin+" - Step "+stepID;
 		
 		
 		boolean validation;
@@ -35,9 +38,8 @@ public class LoginPageStep {
 			
 			if (validation==true) 
 			{
-				BrowserActions.screenShotTaking(driver, testName, evidenceName);
-				loginSFDS=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('p', 'e'), ReportStructure.testReportFinalElement('p', 'a'), ReportStructure.testReportFinalElement('p', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
-				return loginSFDS;
+				TestLogger.logInfo(logStream, componentOfTheLog, TestLogger.logInfo);
+				TestReporter.stepPassed(testReportStream, driver, testName, stepID, stepName, evidenceName);
 			}
 			else
 			{
@@ -46,10 +48,8 @@ public class LoginPageStep {
 		}
 		catch(Exception e)
 		{
-			System.out.println(e);
-			BrowserActions.screenShotTaking(driver, testName, evidenceName);
-			loginSFDS=new TestStepReportStructure(stepID, stepName, ReportStructure.testReportFinalElement('f', 'e'), ReportStructure.testReportFinalElement('f', 'a'), ReportStructure.testReportFinalElement('f', 's'), ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss"), evidenceName);
-			return loginSFDS;
+			TestLogger.logError(logStream, componentOfTheLog, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testReportStream, driver, testName, stepID, stepName, evidenceName);
 		}
 	}
 

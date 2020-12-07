@@ -2,7 +2,7 @@ package objectMap.sfDirectSales;
 
 public class DirSalesHomePage {
 	
-	public static String header = "//*[@id='oneHeader']";
+	public static String header = "//header[@id='oneHeader']";
 	
 	public static String headerIcons = "//*[@id='oneHeader']/div[2]/span/div[2]";
 	
@@ -16,3 +16,7 @@ public class DirSalesHomePage {
 	// public static String
 	
 }
+
+
+
+

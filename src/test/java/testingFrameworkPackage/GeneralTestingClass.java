@@ -10,8 +10,8 @@ import org.testng.annotations.Test;
 import executionDriver.ExecDriverClass;
 import executionTools.ExecStructure;
 import executionTools.TestStructure;
+import loginPageDirectSales.LoginPageStep;
 import testLogBuilder.TestLog;
-import testLogger.TestLogger;
 import testReportComposition.TestReportTestData;
 import testReportComposition.TestStepReportStructure;
 
@@ -39,9 +39,9 @@ public class GeneralTestingClass extends ExecDriverClass
 	}
 	
 	@Test
-	public void test()
+	public void LoginSFDSForTestingFramework() throws Exception
 	{
-		TestLogger.logInfo(logStream, "test", "Just Testing this MothaphukkinG");
+		LoginPageStep.loginSFDS(testExecStructure, logStream, driver, testName, stepsExecuted, "salesUser");
 		
 		
 	}
