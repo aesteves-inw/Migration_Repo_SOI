@@ -1,7 +1,194 @@
 package companyDirectSales;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import objectMap.sfDirectSales.DirSalesOpportunity;
+import testExecutionData.TestCasesData;
+import testLogBuilder.TestLog;
+import testLogger.TestLogger;
+import testReportComposition.ReportStructure;
+import testReportComposition.TestStepReportStructure;
+import testReporter.TestReporter;
+
 public class CompanyStep {
 	
+	public static void createQuickSaleOpportunity(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, String testName, int stepID) throws Exception
+	{
+		
+		System.out.println("Passa aqui: createQuickSaleOpportunity");
+		
+		stepID++;
+		
+		String stepName="Company: Create Quick Sale Opportunity";
+
+		String stepNameMin="createQuickSaleOpportunity";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);
+		
+		String componentOfTheLog=stepNameMin+" - Step "+stepID;
+		
+		
+		//boolean validation;
+		
+		String opportunityName = TestCasesData.getOPTYName(testName);
+		
+		
+		try
+		{
+			
+			CompanyAction.createQuickSaleOpty(logStream, driver, testName);
+			
+			CompanyNavigation.goToOpportunityPage(logStream, driver, testName, opportunityName);
+			
+			
+			
+			TestLogger.logInfo(logStream, componentOfTheLog, TestLogger.logInfo);
+			TestReporter.stepPassed(testReportStream, driver, testName, stepID, stepName, evidenceName);
+			
+			/*if (validation==true) 
+			{
+				TestLogger.logInfo(logStream, componentOfTheLog, TestLogger.logInfo);
+				TestReporter.stepPassed(testReportStream, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}*/
+		}
+		catch(Exception e)
+		{
+			TestLogger.logError(logStream, componentOfTheLog, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testReportStream, driver, testName, stepID, stepName, evidenceName);
+		}
+		
+	}
+
+	public static void startQuickSaleOPTY(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, int stepID, String testName) throws Exception
+	{
+		
+		String stepName="Start Quick Sale Opportunity";
+
+		String stepNameMin="startQuickSaleOPTY";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			CompanyAction.openQuickSaleOPTYScreen(logStream, driver, testName);
+			
+			new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesOpportunity.quickSaleOptyForm)));
+
+			validation = CompanyAction.quickSaleFormValidation(logStream, driver, stepID);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testReportStream, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testReportStream, driver, testName, stepID, stepName, evidenceName);
+		}
+
+	}
+	
+	public static void validateQuickSalePreFilledFields(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, int stepsExecuted, String testName) throws Exception {
+		
+		String stepName="Validate the pre filled fields";
+
+		String stepNameMin="validateQuickSalePreFilledFields";
+
+		String evidenceName=ReportStructure.evidenceName(stepsExecuted, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			
+			validation = CompanyAction.validateQuickSaleFilledFields(logStream, driver, stepsExecuted);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepsExecuted, stepName, evidenceName);
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepsExecuted);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepsExecuted, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepsExecuted);
+		}
+		
+	}
+
+	public static void finishQuickSaleOPTYCreation(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, int stepID, String testName) throws Exception
+	{
+		
+		String stepName="Fill Mandatory Fields and Press Save Button";
+
+		String stepNameMin="finishQuickSaleOPTYCreation";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			CompanyAction.fillQSOpportunityFields(logStream, driver, testName);
+			
+			CompanyAction.saveOpportunity(logStream, driver);
+			
+
+			validation = !(CompanyAction.quickSaleFormValidation(logStream, driver, stepID));
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testReportStream, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testReportStream, driver, testName, stepID, stepName, evidenceName);
+		}
+
+	}
 	
 
 }

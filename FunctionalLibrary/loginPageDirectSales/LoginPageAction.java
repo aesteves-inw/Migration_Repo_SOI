@@ -1,13 +1,14 @@
 package loginPageDirectSales;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import executionTools.BrowserActions;
 import fetchDataFromExcelFiles.ExcelDataFetch;
+import objectMap.sfDirectSales.DirSalesHomePage;
 import objectMap.sfDirectSales.DirSalesLoginPage;
 import testExecutionData.TestCasesData;
 import testLogBuilder.TestLog;
@@ -87,11 +88,15 @@ public class LoginPageAction {
 
 	private static void pressLoginButton(List<TestLog> logStream, WebDriver driver) throws Exception 
 	{
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		
 		String componentName="pressLoginButton";
 		
 		try
 		{
-			driver.findElement(By.xpath(DirSalesLoginPage.loginbtn)).click();		
+			driver.findElement(By.xpath(DirSalesLoginPage.loginbtn)).click();	
+			
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesHomePage.header)));
 			
 			
 			TestLogger.logTrace(logStream, componentName, TestLogger.logInfo);

@@ -1,0 +1,14 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: testingFrameworkPackage.GeneralTestingClass
+Log Date: 07-12-2020 23:13:01
+Test Status: Failed
+###############################################################################
+07-12-2020 23:13:07 - INFO - startTest - Test Case: testingFrameworkPackage.GeneralTestingClass initiation
+07-12-2020 23:13:10 - TRACE - goToLoginPage - Executed with success
+07-12-2020 23:13:11 - ERROR - fillcredentials - Executed with errors - java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+07-12-2020 23:13:11 - ERROR - loginDirectSales on Step 0 - Executed with errors - java.lang.Exception: fillcredentials - Executed with errors
+07-12-2020 23:13:11 - ERROR - loginSFDS - Step 0 - Executed with errors - java.lang.Exception: loginDirectSales on Step 0 - Executed with errors
+07-12-2020 23:13:12 - INFO - finishTest - Test Case: testingFrameworkPackage.GeneralTestingClass completion
+############################# End Of Log File #################################

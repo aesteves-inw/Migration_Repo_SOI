@@ -14,9 +14,7 @@ import testReporter.TestReporter;
 public class LoginPageStep {
 	
 	public static void loginSFDS(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, String testName, int stepID, String userProfile) throws Exception
-	{
-		stepID++;
-		
+	{	
 		
 		String stepName="Login in Salesforce (Direct Sales)";
 
@@ -48,8 +46,10 @@ public class LoginPageStep {
 		}
 		catch(Exception e)
 		{
+			System.out.println(e);
 			TestLogger.logError(logStream, componentOfTheLog, TestLogger.logError, e.toString());
 			TestReporter.stepFailed(testReportStream, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID, e);
 		}
 	}
 

@@ -1,0 +1,16 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: testingFrameworkPackage.GeneralTestingClass
+Log Date: 08-12-2020 00:40:51
+Test Status: Passed
+###############################################################################
+08-12-2020 00:40:55 - INFO - startTest - Test Case: testingFrameworkPackage.GeneralTestingClass initiation
+08-12-2020 00:40:57 - TRACE - goToLoginPage - Executed with success
+08-12-2020 00:40:59 - TRACE - fillcredentials - Executed with success
+08-12-2020 00:41:00 - TRACE - pressLoginButton - Executed with success
+08-12-2020 00:41:00 - INFO - loginDirectSales on Step 1 - Executed with success
+08-12-2020 00:41:06 - TRACE - homePageValidation - Executed with success
+08-12-2020 00:41:06 - INFO - loginSFDS - Step 1 - Executed with success
+08-12-2020 00:41:07 - INFO - finishTest - Test Case: testingFrameworkPackage.GeneralTestingClass completion
+############################# End Of Log File #################################

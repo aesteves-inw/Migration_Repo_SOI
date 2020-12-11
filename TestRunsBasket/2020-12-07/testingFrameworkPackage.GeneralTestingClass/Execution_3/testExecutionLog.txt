@@ -1,0 +1,15 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: testingFrameworkPackage.GeneralTestingClass
+Log Date: 07-12-2020 23:17:33
+Test Status: Failed
+###############################################################################
+07-12-2020 23:17:37 - INFO - startTest - Test Case: testingFrameworkPackage.GeneralTestingClass initiation
+07-12-2020 23:17:39 - TRACE - goToLoginPage - Executed with success
+07-12-2020 23:17:41 - TRACE - fillcredentials - Executed with success
+07-12-2020 23:17:42 - TRACE - pressLoginButton - Executed with success
+07-12-2020 23:17:42 - INFO - loginDirectSales on Step 0 - Executed with success
+07-12-2020 23:17:42 - ERROR - loginSFDS - Step 0 - Executed with errors - java.lang.Exception: Login in Salesforce (Direct Sales) - Failed in Step: 0
+07-12-2020 23:17:49 - INFO - finishTest - Test Case: testingFrameworkPackage.GeneralTestingClass completion
+############################# End Of Log File #################################

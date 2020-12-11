@@ -1,0 +1,18 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: testingFrameworkPackage.GeneralTestingClass
+Log Date: 08-12-2020 17:01:27
+Test Status: Failed
+###############################################################################
+08-12-2020 17:01:33 - INFO - startTest - Test Case: testingFrameworkPackage.GeneralTestingClass initiation
+08-12-2020 17:01:35 - TRACE - goToLoginPage - Executed with success
+08-12-2020 17:01:37 - TRACE - fillcredentials - Executed with success
+08-12-2020 17:01:42 - TRACE - pressLoginButton - Executed with success
+08-12-2020 17:01:42 - INFO - loginDirectSales on Step 1 - Executed with success
+08-12-2020 17:01:42 - TRACE - homePageValidation - Executed with success
+08-12-2020 17:01:42 - INFO - loginSFDS - Step 1 - Executed with success
+08-12-2020 17:01:48 - TRACE - goToCompanyDetailsPage - Executed with success
+08-12-2020 17:01:49 - ERROR - navigateToCompanyPage - Step 1 - Executed with errors - java.lang.NullPointerException
+08-12-2020 17:01:50 - INFO - finishTest - Test Case: testingFrameworkPackage.GeneralTestingClass completion
+############################# End Of Log File #################################

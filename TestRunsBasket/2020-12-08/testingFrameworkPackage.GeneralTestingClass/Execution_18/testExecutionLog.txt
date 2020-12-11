@@ -1,0 +1,23 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: testingFrameworkPackage.GeneralTestingClass
+Log Date: 08-12-2020 16:40:09
+Test Status: Failed
+###############################################################################
+08-12-2020 16:40:14 - INFO - startTest - Test Case: testingFrameworkPackage.GeneralTestingClass initiation
+08-12-2020 16:40:16 - TRACE - goToLoginPage - Executed with success
+08-12-2020 16:40:18 - TRACE - fillcredentials - Executed with success
+08-12-2020 16:40:24 - TRACE - pressLoginButton - Executed with success
+08-12-2020 16:40:24 - INFO - loginDirectSales on Step 1 - Executed with success
+08-12-2020 16:40:25 - TRACE - homePageValidation - Executed with success
+08-12-2020 16:40:25 - INFO - loginSFDS - Step 1 - Executed with success
+08-12-2020 16:40:59 - ERROR - goToCompanyDetailsPage - Executed with errors - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to no longer be visible: By.xpath: //h1[contains(.,'Company')] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'INNOWAVE-383', ip: '192.168.0.164', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_251'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\source\simpleOrderingInt...}, goog:chromeOptions: {debuggerAddress: localhost:55989}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: df4bfb9837f5c79ea2baa9f25028db4a
+08-12-2020 16:40:59 - ERROR - navigateToCompanyPage - Step 1 - Executed with errors - java.lang.Exception: goToCompanyDetailsPage - Executed with errors
+08-12-2020 16:41:00 - INFO - finishTest - Test Case: testingFrameworkPackage.GeneralTestingClass completion
+############################# End Of Log File #################################

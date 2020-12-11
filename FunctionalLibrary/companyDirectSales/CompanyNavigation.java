@@ -14,13 +14,13 @@ public class CompanyNavigation {
 	
 	//07-12-2020 - To be taken as Improvement - Introducing Switch loop instead of specific function.
 
-	String logInfo="Executed with success";
-	String logError="Executed with errors";
+	static String logInfo="Executed with success";
+	static String logError="Executed with errors";
 
-	String companyID;
+	static String companyID;
 
 	//Objects
-	public void goToOpportunityPage(List<TestLog> logStream, WebDriver driver, String testName, String opportunityName) throws Exception
+	public static void goToOpportunityPage(List<TestLog> logStream, WebDriver driver, String testName, String opportunityName) throws Exception
 	{
 
 		String optyURL, optyRecordID;
@@ -77,7 +77,7 @@ public class CompanyNavigation {
 	
 	
 	//Related Menu
-	public void goToOpportunityRelatedMenuOnCompany(List<TestLog> logStream, WebDriver driver, String testName) throws Exception 
+	public static void goToOpportunityRelatedMenuOnCompany(List<TestLog> logStream, WebDriver driver, String testName) throws Exception 
 	{
 		String companyOpportunityRelatedListLink;
 

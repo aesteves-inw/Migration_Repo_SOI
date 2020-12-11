@@ -9,6 +9,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import executionTools.BrowserActions;
+import executionTools.ExecStructure;
+import fetchDataFromExcelFiles.ExcelDataFetch;
 import objectMap.sfDirectSales.DirSalesMACDFlow;
 import objectMap.sfDirectSales.DirSalesOpportunity;
 import testDataFiles.TestDataFiles;
@@ -19,14 +21,14 @@ import testLogger.TestLogger;
 
 public class CompanyAction {
 
-	String companyID;
+	static String companyID;
 
-	String logInfo="Executed with success";
-	String logError="Executed with errors";
+	static String logInfo="Executed with success";
+	static String logError="Executed with errors";
 
 	//Quick Sale
 
-	public void createQuickSaleOpty(List<TestLog> logStream, WebDriver driver, String testName) throws Exception
+	public static void createQuickSaleOpty(List<TestLog> logStream, WebDriver driver, String testName) throws Exception
 	{
 		try
 		{
@@ -46,7 +48,7 @@ public class CompanyAction {
 		}
 	}
 
-	private void fillQSOpportunityFields(List<TestLog> logStream, WebDriver driver, String testName) throws Exception 
+	public static void fillQSOpportunityFields(List<TestLog> logStream, WebDriver driver, String testName) throws Exception 
 	{
 		//07-12-2020 - Only to fill Opportunity Name.
 		//Later and if applicable new functions should be added for other fields
@@ -63,33 +65,39 @@ public class CompanyAction {
 		}
 		catch(Exception e)
 		{
+			System.out.println(e);
 			TestLogger.logError(logStream, "fillQSOpportunityFields", logError, e.toString());
 			throw new Exception("fillQSOpportunityFields - "+logError, e);
 		}
 
 	}
 
-	private void saveOpportunity(List<TestLog> logStream, WebDriver driver) throws Exception {
+	public static void saveOpportunity(List<TestLog> logStream, WebDriver driver) throws Exception {
 
 		try
 		{
 			driver.findElement(By.xpath(DirSalesOpportunity.saveButton)).click();
+			
+			new WebDriverWait(driver, 15).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(DirSalesOpportunity.quickSaleOptyForm)));
 
 			TestLogger.logTrace(logStream, "saveOpportunity", logInfo);
 		}
 		catch(Exception e)
 		{
+			System.out.println(e);
 			TestLogger.logError(logStream, "saveOpportunity", logError, e.toString());
 			throw new Exception("saveOpportunity - "+logError, e);
 		}
 
 	}
 
-	private void openQuickSaleOPTYScreen(List<TestLog> logStream, WebDriver driver, String testName) throws Exception
+	public static void openQuickSaleOPTYScreen(List<TestLog> logStream, WebDriver driver, String testName) throws Exception
 	{
 		String quickSaleURL;
 
-		companyID=CompaniesTestData.tdCompanyID(testName);
+		//companyID=CompaniesTestData.tdCompanyID(testName);
+
+		companyID="0013M000004hDSQQA2";
 
 
 		try
@@ -97,6 +105,8 @@ public class CompanyAction {
 			quickSaleURL="https://proximus--prxitt.lightning.force.com/lightning/action/quick/Account.PB_Opportunity?objectApiName=Opportunity&recordId="+companyID+"&backgroundContext=%2Flightning%2Fr%2FAccount%2F"+companyID+"%2Fview";
 
 			BrowserActions.goToByURL(driver, quickSaleURL);
+
+
 
 			TestLogger.logTrace(logStream, "openQuickSaleOPTYScreen", logInfo);
 		}
@@ -107,7 +117,70 @@ public class CompanyAction {
 		}
 	}
 
+	public static boolean quickSaleFormValidation(List<TestLog> logStream, WebDriver driver, int stepsExecuted) throws Exception
+	{
+		String actionName="quickSaleFormValidation";
+		try
+		{
+			if(BrowserActions.isElementPresent(driver, DirSalesOpportunity.quickSaleHeader)&&
+					BrowserActions.isElementPresent(driver, DirSalesOpportunity.optyNameinput)&&
+					BrowserActions.isElementPresent(driver, DirSalesOpportunity.companyName) &&
+					BrowserActions.isElementPresent(driver, DirSalesOpportunity.forecastCategoryMenu)&&
+					BrowserActions.isElementPresent(driver, DirSalesOpportunity.closeDateInput)&&
+					BrowserActions.isElementPresent(driver, DirSalesOpportunity.stageMenu)&&
+					BrowserActions.isElementPresent(driver, DirSalesOpportunity.totalContractValueInput))
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepsExecuted);
+				System.out.println(actionName+" - Succeeded in Step: "+stepsExecuted);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
 
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, "openQuickSaleOPTYScreen", logError, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepsExecuted,e);
+		}
+	}
+
+	public static boolean validateQuickSaleFilledFields(List<TestLog> logStream, WebDriver driver, int stepsExecuted) throws Exception 
+	{
+		String actionName="validateQuickSaleFilledFields";
+
+		String forecastCategoryValidation, closeDateValidation, stageValidation;
+		
+		try
+		{
+			forecastCategoryValidation=driver.findElement(By.xpath(DirSalesOpportunity.forecastCategoryText)).getText().toString();
+			
+			stageValidation=driver.findElement(By.xpath(DirSalesOpportunity.stageText)).getText().toString();
+			
+			closeDateValidation=driver.findElement(By.xpath(DirSalesOpportunity.closeDateInput)).getAttribute("value");
+			
+			
+			if(forecastCategoryValidation.contains("Committed") && stageValidation.contains("Prospecting") && closeDateValidation.contains(ExecStructure.formattedDate("dd/MM/YYYY")))
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepsExecuted);
+				System.out.println(actionName+" - Succeeded in Step: "+stepsExecuted);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepsExecuted, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepsExecuted,e);
+		}
+	}
 
 	//Standard Opportunity
 
@@ -307,7 +380,7 @@ public class CompanyAction {
 		}
 
 	}
-
+	/*
 	private void fillOrderOwner(List<TestLog> logStream, WebDriver driver) {
 		// TODO Auto-generated method stub
 
@@ -327,7 +400,7 @@ public class CompanyAction {
 		// TODO Auto-generated method stub
 
 	}
-
+	 */
 	private void fillComments(List<TestLog> logStream, WebDriver driver, String testName) throws Exception {
 
 		String componentName="fillComments";
@@ -393,5 +466,51 @@ public class CompanyAction {
 		}
 
 	}
+
+
+	//Validation of Company Page
+
+	public static boolean companyPageValidation(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
+	{
+		String componentName="companyPageValidation";
+
+		boolean validation;
+
+		String companyURLvalidation, companyTitleValidation;
+
+		String companyName=ExcelDataFetch.searchDT(2, "testingCompanyD02Functional");
+
+		companyID=ExcelDataFetch.searchDT(2, "idCompanyD02Functional");
+
+
+		try
+		{			
+			companyURLvalidation=driver.getCurrentUrl();
+			companyTitleValidation=driver.getTitle();
+
+			if(companyURLvalidation.contains(companyID) && companyTitleValidation.contains(companyName))
+			{
+				TestLogger.logTrace(logStream, componentName, TestLogger.logInfo);
+				validation=true;
+			}
+			else
+			{
+				validation=false;
+				throw new Exception("Validation Failed on Step "+stepID);
+			}
+
+			return validation;
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, componentName, TestLogger.logError, e.toString());
+			throw new Exception(componentName+" - "+TestLogger.logError, e);
+		}
+	}
+
+
+
+
 
 }

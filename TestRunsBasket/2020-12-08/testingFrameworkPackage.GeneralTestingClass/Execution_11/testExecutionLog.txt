@@ -1,0 +1,17 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: testingFrameworkPackage.GeneralTestingClass
+Log Date: 08-12-2020 00:45:39
+Test Status: Failed
+###############################################################################
+08-12-2020 00:45:44 - INFO - startTest - Test Case: testingFrameworkPackage.GeneralTestingClass initiation
+08-12-2020 00:45:46 - TRACE - goToLoginPage - Executed with success
+08-12-2020 00:45:48 - TRACE - fillcredentials - Executed with success
+08-12-2020 00:45:49 - TRACE - pressLoginButton - Executed with success
+08-12-2020 00:45:49 - INFO - loginDirectSales on Step 1 - Executed with success
+08-12-2020 00:45:55 - ERROR - loginSFDS - Step 1 - Executed with errors - java.lang.Exception: Login in Salesforce (Direct Sales) - Failed in Step: 1
+08-12-2020 00:45:58 - TRACE - openQuickSaleOPTYScreen - Executed with success
+08-12-2020 00:45:58 - ERROR - createQuickSaleOpty - Executed with errors - java.lang.ArrayIndexOutOfBoundsException: 1
+08-12-2020 00:45:58 - INFO - finishTest - Test Case: testingFrameworkPackage.GeneralTestingClass completion
+############################# End Of Log File #################################

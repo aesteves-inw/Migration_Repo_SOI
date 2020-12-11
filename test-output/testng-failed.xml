@@ -3,14 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testingFrameworkPackage.GeneralTestingClass">
+      <class name="sq.J1835004000_64.SQ_J1835004000_64_Quick_Sale_Opportunity_PreFilledFields">
         <methods>
+          <include name="goToCompanyDetailsPage"/>
           <include name="setupDriver"/>
-          <include name="beforeTest"/>
-          <include name="afterTest"/>
-          <include name="test"/>
+          <include name="afterMethod"/>
+          <include name="loginSFDS"/>
+          <include name="beforeMethod"/>
         </methods>
-      </class> <!-- testingFrameworkPackage.GeneralTestingClass -->
+      </class> <!-- sq.J1835004000_64.SQ_J1835004000_64_Quick_Sale_Opportunity_PreFilledFields -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
