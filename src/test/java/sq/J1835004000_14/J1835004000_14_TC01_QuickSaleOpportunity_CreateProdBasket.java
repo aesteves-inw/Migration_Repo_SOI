@@ -16,7 +16,7 @@ import testLogBuilder.TestLog;
 import testReportComposition.TestReportTestData;
 import testReportComposition.TestStepReportStructure;
 
-public class J1835004000_14_TC01_Quick_Sale_Opportunity_CreateProdBasket {
+public class J1835004000_14_TC01_QuickSaleOpportunity_CreateProdBasket {
 
 		String testName = "J1835004000_14_TC01_Quick_Sale_Opportunity_CreateProdBasket";
 
