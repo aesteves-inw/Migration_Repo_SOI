@@ -47,6 +47,27 @@ public class ProductBasketAction {
 		}
 	}
 	
+	public static void changeToDefaultiFrame(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
+	{
+		String actionName="Product Basket: Change to default frame";
+
+
+		try
+		{
+			driver.switchTo().defaultContent();
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+		}
+	}
+
+	
+	
 	//Validation Actions
 	
 	public static boolean productBasketScreenValidation(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception

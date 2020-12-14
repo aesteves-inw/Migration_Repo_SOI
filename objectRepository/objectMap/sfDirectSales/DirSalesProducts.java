@@ -6,14 +6,11 @@ public class DirSalesProducts {
 	
 	public static String productsLink="(//span[.='Products'])[2]";
 	
-	//public static String productShowMoreButton="/html/body/div[5]/div[1]/section/div/div/div[1]/div/div[1]/div/div[3]/div[2]/div/div/section/div[1]/div/div/div[7]/article/div[2]/div/div/div/a";
 	public static String productShowMoreButton="/html/body/div[5]/div[1]/section/div/div/div[1]/div/div/div[1]/div/div[3]/div[2]/div/div/section/div[1]/div/div/div[2]/article/div[2]/div/div/div/a";
 	
 	public static String addProductsLink="//a[@title='Add Products']";
 	
 	// Add Products Screen
-	
-	public static String addProductHeaderScreen="/html/body/div[5]/div[2]/div/div[2]/div/div[1]/div[1]";
 	
 	public static String inputSearchProducts="//input[@title='Search Products']";
 	

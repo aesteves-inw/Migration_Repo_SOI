@@ -1,6 +1,8 @@
 package companyDirectSales;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,6 +14,7 @@ import executionTools.ExecStructure;
 import fetchDataFromExcelFiles.ExcelDataFetch;
 import objectMap.sfDirectSales.DirSalesMACDFlow;
 import objectMap.sfDirectSales.DirSalesOpportunity;
+import objectMap.sfDirectSales.DirSalesProducts;
 import testDataFiles.TestDataFiles;
 import testExecutionData.CompaniesTestData;
 import testExecutionData.TestCasesData;
@@ -57,7 +60,7 @@ public class CompanyAction {
 		optyName=TestCasesData.getOPTYName(testName);
 
 		try
-		{
+		{			
 			driver.findElement(By.xpath(DirSalesOpportunity.optyNameinput)).sendKeys(optyName);
 
 			TestLogger.logTrace(logStream, "createQuickSaleOpty", logInfo);
@@ -76,9 +79,9 @@ public class CompanyAction {
 		try
 		{
 			WebElement saveOPTYButton=driver.findElement(By.xpath(DirSalesOpportunity.saveButton));
-			
+
 			saveOPTYButton.click();
-			
+
 			new WebDriverWait(driver, 15).until(ExpectedConditions.invisibilityOf(saveOPTYButton));
 
 			TestLogger.logTrace(logStream, "saveOpportunity", logInfo);
@@ -154,16 +157,16 @@ public class CompanyAction {
 		String actionName="validateQuickSaleFilledFields";
 
 		String forecastCategoryValidation, closeDateValidation, stageValidation;
-		
+
 		try
 		{
 			forecastCategoryValidation=driver.findElement(By.xpath(DirSalesOpportunity.forecastCategoryText)).getText().toString();
-			
+
 			stageValidation=driver.findElement(By.xpath(DirSalesOpportunity.stageText)).getText().toString();
-			
+
 			closeDateValidation=driver.findElement(By.xpath(DirSalesOpportunity.closeDateInput)).getAttribute("value");
-			
-			
+
+
 			if(forecastCategoryValidation.contains("Committed") && stageValidation.contains("Prospecting") && closeDateValidation.contains(ExecStructure.formattedDate("dd/MM/YYYY")))
 			{
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepsExecuted);
@@ -183,8 +186,223 @@ public class CompanyAction {
 		}
 	}
 
+	
 	//Standard Opportunity
 
+	public static void createStandardOpportunity(List<TestLog> logStream, WebDriver driver, String testName, int stepsExecuted) throws Exception
+	{
+		String actionName="createStandardOpportunity";
+
+		try
+		{
+			CompanyNavigation.goToOpportunityRelatedMenuOnCompany(logStream, driver, testName);
+
+			WebElement newButton = new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOf(driver.findElement(By.linkText("New"))));
+
+			newButton.click();
+
+			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath(DirSalesOpportunity.newOpportunityHeader))));
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepsExecuted);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepsExecuted, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepsExecuted,e);
+		}
+	}
+
+	public static void fillStandardOpportunityFields(List<TestLog> logStream, WebDriver driver, String testName, int stepsExecuted) throws Exception
+	{
+		String actionName="fillStandardOpportunityFields";
+
+		try
+		{
+			fillOpportunityName(logStream, driver, stepsExecuted, testName);
+			fillCloseDate(logStream, driver, stepsExecuted);
+			fillStage(logStream, driver, stepsExecuted);
+			fillForecastCategory(logStream, driver, stepsExecuted);
+			fillTermsAndConditions(logStream, driver, stepsExecuted);
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepsExecuted);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepsExecuted, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepsExecuted,e);
+		}
+
+	}
+
+	public static void saveStandardOpportunity(List<TestLog> logStream, WebDriver driver, String testName, int stepsExecuted) throws Exception
+	{	
+
+		String actionName="saveStandardOpportunity";
+
+
+		try
+		{
+			driver.findElement(By.xpath(DirSalesOpportunity.nosSaveButton)).click();
+
+			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepsExecuted);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepsExecuted, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepsExecuted,e);
+		}
+	}
+
+
+	public static void fillOpportunityName(List<TestLog> logStream, WebDriver driver, int stepsExecuted,
+			String testName) throws Exception 
+	{
+		String actionName="fillOpportunityName";
+
+		String optyName=TestCasesData.getOPTYName(testName);
+
+
+		try
+		{
+			driver.findElement(By.xpath(DirSalesOpportunity.optyNameinput)).clear();
+
+			driver.findElement(By.xpath(DirSalesOpportunity.optyNameinput)).sendKeys(optyName);
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepsExecuted);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepsExecuted, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepsExecuted,e);
+		}
+
+	}
+
+	private static void fillCloseDate(List<TestLog> logStream, WebDriver driver, int stepsExecuted) throws Exception 
+	{
+		String actionName="fillCloseDate";
+
+		try
+		{
+
+			driver.findElement(By.xpath(DirSalesOpportunity.inputCloseDate)).clear();
+
+			driver.findElement(By.xpath(DirSalesOpportunity.inputCloseDate)).sendKeys(ExecStructure.formattedDate("dd/MM/yyyy"));
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepsExecuted);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepsExecuted, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepsExecuted,e);
+		}		
+	}
+
+	private static void fillStage(List<TestLog> logStream, WebDriver driver, int stepsExecuted) throws Exception 
+	{
+		String actionName="fillStage";
+
+		String optyStage=ExcelDataFetch.searchDT(3, "optyStage");
+
+		try
+		{
+			driver.findElement(By.xpath(DirSalesOpportunity.selectStage)).click();
+
+			new WebDriverWait(driver, 5).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@title='"+optyStage+"']"))).click();
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepsExecuted);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepsExecuted, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepsExecuted,e);
+		}
+
+	}
+
+	private static void fillForecastCategory(List<TestLog> logStream, WebDriver driver, int stepsExecuted) throws Exception 
+	{
+		String actionName="fillForecastCategory";
+
+		String optyForecastCategory=ExcelDataFetch.searchDT(3, "optyForecastCategory");
+
+		try
+		{
+			driver.findElement(By.xpath(DirSalesOpportunity.selectForecastCategory)).click();
+
+			new WebDriverWait(driver, 5).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@title='"+optyForecastCategory+"']"))).click();
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepsExecuted);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepsExecuted, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepsExecuted,e);
+		}	
+	}
+
+	private static void fillTermsAndConditions(List<TestLog> logStream, WebDriver driver, int stepsExecuted) throws Exception 
+	{
+		String actionName="fillTermsAndConditions";
+
+
+		try
+		{
+			driver.findElement(By.xpath(DirSalesOpportunity.termsAndConditionsComboBox)).click();
+
+			new WebDriverWait(driver, 5).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesOpportunity.termAndConditionsOption))).click();
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepsExecuted);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepsExecuted, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepsExecuted,e);
+		}		
+
+	}
+
+	
+	public static void standardOpportunityForD02(List<TestLog> logStream, WebDriver driver, String testName, int stepID) throws Exception 
+	{
+		String actionName="Standard Opportunity for SQ/D02";
+
+		try
+		{
+			if (BrowserActions.isElementPresent(driver, DirSalesProducts.inputSearchProducts))
+			{
+				driver.findElement(By.xpath(DirSalesOpportunity.nosCancelButton)).click();
+			}
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+	}
+	
 	//MACD Order
 
 	public void createMACDOrder(List<TestLog> logStream, WebDriver driver, String testName, String companyContactPerson) throws Exception
@@ -512,6 +730,14 @@ public class CompanyAction {
 
 
 
+	
 
 
-}
+
+	}
+
+
+
+
+
+

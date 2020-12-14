@@ -113,7 +113,7 @@ public class DirSalesOpportunity {
 
 	public static String editHeader="//h2[contains(.,'Edit')]";
 
-
+	public static String editOpportunityErrors="//div[@class='pageLevelErrors']";
 
 
 

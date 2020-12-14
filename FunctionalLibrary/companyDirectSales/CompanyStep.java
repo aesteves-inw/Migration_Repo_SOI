@@ -21,8 +21,6 @@ public class CompanyStep {
 	public static void createQuickSaleOpportunity(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, String testName, int stepID) throws Exception
 	{
 		
-		System.out.println("Passa aqui: createQuickSaleOpportunity");
-		
 		stepID++;
 		
 		String stepName="Company: Create Quick Sale Opportunity";
@@ -149,6 +147,7 @@ public class CompanyStep {
 		
 	}
 
+
 	public static void finishQuickSaleOPTYCreation(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, int stepID, String testName) throws Exception
 	{
 		
@@ -191,7 +190,6 @@ public class CompanyStep {
 
 	}
 
-	
 	public static void navigateToOpportunityPage(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, int stepID, String testName) throws Exception
 	{
 		String stepName="Navigate to Opportunity Page";
@@ -206,8 +204,6 @@ public class CompanyStep {
 		try
 		{
 			CompanyNavigation.goToOpportunityPage(logStream, driver, testName);
-			
-			
 
 			validation = OpportunityAction.opportunityScreenValidation(logStream,driver, stepID);
 
@@ -231,4 +227,51 @@ public class CompanyStep {
 		}
 	}
 
+	public static void createStandardOpportunityForD02(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, int stepID, String testName) throws Exception
+	{
+		
+		String stepName="Create Standard Opportunity";
+
+		String stepNameMin="createStandardOpportunity";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			CompanyAction.createStandardOpportunity(logStream, driver, testName, stepID);
+			
+			CompanyAction.fillStandardOpportunityFields(logStream, driver, testName, stepID);
+			
+			CompanyAction.saveStandardOpportunity(logStream, driver, testName, stepID);
+			
+			CompanyAction.standardOpportunityForD02(logStream, driver, testName, stepID);
+			
+			CompanyNavigation.goToOpportunityPage(logStream, driver, testName);
+
+			validation = OpportunityAction.opportunityScreenValidation(logStream, driver, stepID);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testReportStream, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testReportStream, driver, testName, stepID, stepName, evidenceName);
+		}
+
+	}
+	
 }
