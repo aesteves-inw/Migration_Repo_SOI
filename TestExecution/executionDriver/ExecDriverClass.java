@@ -6,18 +6,19 @@ import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.annotations.BeforeTest;
-
+import org.testng.annotations.BeforeMethod;
 import browserManagement.BrowserData;
 
 
 public class ExecDriverClass {
 
-	protected WebDriver driver;
+	//protected static WebDriver driver;
 
-	@BeforeTest
-	public void setupDriver()
+	//@BeforeMethod
+	public static WebDriver setupDriver()
 	{
+		WebDriver driver;
+		
 		System.setProperty("webdriver.chrome.driver", BrowserData.ChromeDriverPath);
 
 		ChromeOptions chromeProfile = new ChromeOptions(); 
@@ -47,6 +48,7 @@ public class ExecDriverClass {
 		{ 
 			driver.manage().addCookie(cookie); 
 		}
+		return driver;
 		
 		
 	}

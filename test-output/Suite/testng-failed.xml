@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="sq.J1835004000_64.SQ_J1835004000_64_QuickSaleOpportunity_OpportunityCreation">
+        <methods>
+          <include name="goToCompanyDetailsPage"/>
+          <include name="setupDriver"/>
+          <include name="loginSFDS"/>
+          <include name="quickSaleOnCompany"/>
+          <include name="quickSaleOPTYPreFilledFields"/>
+          <include name="fillNameAndSaveQuickSaleOPTY"/>
+          <include name="afterMethod"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- sq.J1835004000_64.SQ_J1835004000_64_QuickSaleOpportunity_OpportunityCreation -->
+    </classes>
+  </test> <!-- Test(failed) -->
+  <test thread-count="5" name="Test1(failed)">
+    <classes>
+      <class name="sq.J1835004000_64.SQ_J1835004000_64_QuickSaleOpportunity_PreFilledFields">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="goToCompanyDetailsPage"/>
+          <include name="setupDriver"/>
+          <include name="loginSFDS"/>
+          <include name="quickSaleOnCompany"/>
+          <include name="quickSaleOPTYPreFilledFields"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- sq.J1835004000_64.SQ_J1835004000_64_QuickSaleOpportunity_PreFilledFields -->
+    </classes>
+  </test> <!-- Test1(failed) -->
+</suite> <!-- Failed suite [Suite] -->

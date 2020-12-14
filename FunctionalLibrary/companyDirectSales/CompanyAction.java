@@ -1,7 +1,6 @@
 package companyDirectSales;
 
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -76,9 +75,11 @@ public class CompanyAction {
 
 		try
 		{
-			driver.findElement(By.xpath(DirSalesOpportunity.saveButton)).click();
+			WebElement saveOPTYButton=driver.findElement(By.xpath(DirSalesOpportunity.saveButton));
 			
-			new WebDriverWait(driver, 15).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(DirSalesOpportunity.quickSaleOptyForm)));
+			saveOPTYButton.click();
+			
+			new WebDriverWait(driver, 15).until(ExpectedConditions.invisibilityOf(saveOPTYButton));
 
 			TestLogger.logTrace(logStream, "saveOpportunity", logInfo);
 		}

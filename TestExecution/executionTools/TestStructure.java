@@ -23,13 +23,15 @@ public class TestStructure {
 	}
 	
 	
-	public static void finishTest(String testName, String initialTestDate, long startTime, int stepsExecuted, List<TestStepReportStructure> testExecStructure, List<TestReportTestData> testData, WebDriver driver, List<TestLog> logstream)
+	public static void finishTest(String testName, String initialTestDate, long startTime, List<TestStepReportStructure> testExecStructure, List<TestReportTestData> testData, WebDriver driver, List<TestLog> logstream)
 	{
 		String finalTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
 
 		long finishTime=System.nanoTime();
+		
+		int newStepCounterForReport=testExecStructure.size();
 
-		TestReportHeaderStructure testHeader = new TestReportHeaderStructure(testName, initialTestDate, finalTestDate, startTime, finishTime, stepsExecuted);
+		TestReportHeaderStructure testHeader = new TestReportHeaderStructure(testName, initialTestDate, finalTestDate, startTime, finishTime, newStepCounterForReport);
 
 		new CreateTestReport(testExecStructure, testHeader, testData);
 			
@@ -39,7 +41,7 @@ public class TestStructure {
 
 		BrowserActions.endSession(driver);
 		
-		System.exit(1);
+		
 	}
 
 }

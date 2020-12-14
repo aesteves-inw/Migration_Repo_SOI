@@ -3,13 +3,11 @@ package testingFrameworkPackage;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import companyDirectSales.CompanyAction;
-import companyDirectSales.CompanyNavigation;
-import companyDirectSales.CompanyStep;
 import executionDriver.ExecDriverClass;
 import executionTools.ExecStructure;
 import executionTools.TestStructure;
@@ -34,11 +32,17 @@ public class GeneralTestingClass extends ExecDriverClass
 	
 	List<TestLog> logStream = new ArrayList<TestLog>();
 	
-	int stepsExecuted; 
+	int stepsExecuted;
 	
-	@BeforeTest
-	public void beforeTest() 
+	WebDriver driver;
+	
+	
+	
+	@BeforeClass
+	public void beforeClass() 
 	{
+		driver = ExecDriverClass.setupDriver();
+		
 		TestStructure.startTest(logStream,testName);
 	}
 	
@@ -51,16 +55,14 @@ public class GeneralTestingClass extends ExecDriverClass
 		stepsExecuted++;
 		HomePageStep.navigateToCompanyPage(testExecStructure, logStream, driver, testName, stepsExecuted);
 		
-		//CompanyStep.createQuickSaleOpportunity(testExecStructure, logStream, driver, testName, stepsExecuted);
 		
 	}
 	
 	
-	
-	@AfterTest
-	public void afterTest() 
+	@AfterClass
+	public void afterClass() 
 	{
-		TestStructure.finishTest(testName, initialTestDate, startTime, stepsExecuted, testExecStructure, testData, driver, logStream);
+		TestStructure.finishTest(testName, initialTestDate, startTime, testExecStructure, testData, driver, logStream);
 	}
 
 }

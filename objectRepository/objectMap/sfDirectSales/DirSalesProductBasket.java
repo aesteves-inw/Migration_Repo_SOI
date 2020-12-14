@@ -11,7 +11,7 @@ public class DirSalesProductBasket {
 	// Product Basket Screen
 		//Simple Quoting Legacy
 		
-		public static String iframeProductBasket = "//*[starts-with(@id,'brandBand_')]/div/div/div[5]/div/force-aloha-page/div/iframe";
+		public static String iframeProductBasket = "//*[starts-with(@id,'brandBand_')]/div/div/div[3]/div/force-aloha-page/div/iframe";
 			
 		public static String iframeProductBasketSynched ="/html/body/div[5]/div[1]/section/div/div/div[1]/div/div/force-aloha-page/div/iframe";
 		

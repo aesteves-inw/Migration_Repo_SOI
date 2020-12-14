@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import objectMap.sfDirectSales.DirSalesOpportunity;
+import opportunityDirectSales.OpportunityAction;
 import testExecutionData.TestCasesData;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
@@ -43,7 +44,7 @@ public class CompanyStep {
 			
 			CompanyAction.createQuickSaleOpty(logStream, driver, testName);
 			
-			CompanyNavigation.goToOpportunityPage(logStream, driver, testName, opportunityName);
+			CompanyNavigation.goToOpportunityPage(logStream, driver, opportunityName);
 			
 			
 			
@@ -189,6 +190,45 @@ public class CompanyStep {
 		}
 
 	}
+
 	
+	public static void navigateToOpportunityPage(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, int stepID, String testName) throws Exception
+	{
+		String stepName="Navigate to Opportunity Page";
+
+		String stepNameMin="navigateToOpportunityPage";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			CompanyNavigation.goToOpportunityPage(logStream, driver, testName);
+			
+			
+
+			validation = OpportunityAction.opportunityScreenValidation(logStream,driver, stepID);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testReportStream, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testReportStream, driver, testName, stepID, stepName, evidenceName);
+		}
+	}
 
 }

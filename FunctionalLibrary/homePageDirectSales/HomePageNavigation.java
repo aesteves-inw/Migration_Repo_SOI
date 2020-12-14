@@ -13,6 +13,7 @@ import fetchDataFromExcelFiles.ExcelDataFetch;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
 
+@SuppressWarnings("unused")
 public class HomePageNavigation {
 
 	public static void goToDefaultCompanyDetailsPage(List<TestLog> logStream, WebDriver driver, int stepsExecuted) throws Exception

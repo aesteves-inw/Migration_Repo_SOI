@@ -6,7 +6,9 @@ import org.openqa.selenium.WebDriver;
 
 import executionTools.BrowserActions;
 import executionTools.TestObjectTools;
+import fetchDataFromExcelFiles.ExcelDataFetch;
 import testExecutionData.CompaniesTestData;
+import testExecutionData.TestCasesData;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
 
@@ -20,17 +22,19 @@ public class CompanyNavigation {
 	static String companyID;
 
 	//Objects
-	public static void goToOpportunityPage(List<TestLog> logStream, WebDriver driver, String testName, String opportunityName) throws Exception
+	public static void goToOpportunityPage(List<TestLog> logStream, WebDriver driver, String testName) throws Exception
 	{
 
 		String optyURL, optyRecordID;
+		
+		String optyName=TestCasesData.getOPTYName(testName);
 
 		try
 		{
 
 			goToOpportunityRelatedMenuOnCompany(logStream, driver, testName);
 
-			optyRecordID= TestObjectTools.getDataRecordID(driver, opportunityName);
+			optyRecordID= TestObjectTools.getDataRecordID(driver, optyName);
 
 			optyURL="https://proximus--prxitt.lightning.force.com/lightning/r/Opportunity/"+optyRecordID+"/view";
 
@@ -83,7 +87,9 @@ public class CompanyNavigation {
 
 		try
 		{
-			companyID=CompaniesTestData.tdCompanyID(testName);
+			//companyID=CompaniesTestData.tdCompanyID(testName);
+			
+			companyID=ExcelDataFetch.searchDT(2, "idCompanyD02Functional");
 
 			companyOpportunityRelatedListLink="https://proximus--prxitt.lightning.force.com/lightning/r/"+companyID+"/related/Opportunities/view";
 

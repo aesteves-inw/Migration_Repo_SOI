@@ -28,7 +28,23 @@ public class BrowserActions {
 	}
 	
 	
+	
+	//URL Manipulation
+	public static String getRecordIDByURL(WebDriver driver)
+	{
+		String optyRecordID;
+		
+		String OPTYURL=driver.getCurrentUrl();
+				
+		String[] arrOfOPTYURL=OPTYURL.split("/");
+		
+		optyRecordID=arrOfOPTYURL[6];
+		
+		return optyRecordID;
+	}
 
+	
+	
 	//Browser Actions
 	public static void refreshPage(WebDriver driver)
 	{
@@ -78,6 +94,7 @@ public class BrowserActions {
 
 	}
 
+	
 	
 	
 	//Elements validation
@@ -143,6 +160,7 @@ public class BrowserActions {
 
 
 
+	
 	//Elements attributes 
 	public static int getXOfElement(WebDriver driver, String WebObject) throws Exception
 	{
@@ -256,7 +274,7 @@ public class BrowserActions {
 
 		if (driver != null)
 		{
-			driver.close();
+			//driver.close();
 			driver.quit();
 		}
 
