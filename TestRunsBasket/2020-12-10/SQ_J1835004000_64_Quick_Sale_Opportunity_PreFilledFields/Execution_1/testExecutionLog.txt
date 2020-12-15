@@ -1,0 +1,13 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SQ_J1835004000_64_Quick_Sale_Opportunity_PreFilledFields
+Log Date: 10-12-2020 22:02:38
+Test Status: Failed
+###############################################################################
+10-12-2020 22:02:43 - INFO - startTest - Test Case: SQ_J1835004000_64_Quick_Sale_Opportunity_PreFilledFields initiation
+10-12-2020 22:02:45 - TRACE - goToLoginPage - Executed with success
+10-12-2020 22:02:45 - ERROR - loginDirectSales on Step 2 - Executed with errors - java.lang.Exception: Not possible to identify User Profile
+10-12-2020 22:02:45 - ERROR - loginSFDS - Step 2 - Executed with errors - java.lang.Exception: loginDirectSales on Step 2 - Executed with errors
+10-12-2020 22:02:45 - INFO - finishTest - Test Case: SQ_J1835004000_64_Quick_Sale_Opportunity_PreFilledFields completion
+############################# End Of Log File #################################

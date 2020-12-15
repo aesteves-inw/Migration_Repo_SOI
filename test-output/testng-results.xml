@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="74580" started-at="2020-12-14T12:27:14Z" finished-at="2020-12-14T12:28:29Z">
+  <suite name="Default suite" duration-ms="110187" started-at="2020-12-15T17:21:04Z" finished-at="2020-12-15T17:22:54Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="74580" started-at="2020-12-14T12:27:14Z" finished-at="2020-12-14T12:28:29Z">
-      <class name="sq.J1835004000_64.J1835004000_64_TC02_QuickSaleOpportunity_OpportunityCreation">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:sq.J1835004000_64.J1835004000_64_TC02_QuickSaleOpportunity_OpportunityCreation@143640d5]" name="beforeClass" is-config="true" duration-ms="4391" started-at="2020-12-14T12:27:14Z" finished-at="2020-12-14T12:27:19Z">
+    <test name="Default test" duration-ms="110187" started-at="2020-12-15T17:21:04Z" finished-at="2020-12-15T17:22:54Z">
+      <class name="sq.J1835004000_18.J1835004000_18_TC02_Add_EnterpriseVoice_To_ProductBasket_DeleteProduct_InvalidConfig">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:sq.J1835004000_18.J1835004000_18_TC02_Add_EnterpriseVoice_To_ProductBasket_DeleteProduct_InvalidConfig@143640d5]" name="beforeClass" is-config="true" duration-ms="4788" started-at="2020-12-15T17:21:04Z" finished-at="2020-12-15T17:21:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="testCase()[pri:0, instance:sq.J1835004000_64.J1835004000_64_TC02_QuickSaleOpportunity_OpportunityCreation@143640d5]" name="testCase" duration-ms="66730" started-at="2020-12-14T12:27:19Z" finished-at="2020-12-14T12:28:25Z">
+        <test-method status="PASS" signature="testCase()[pri:0, instance:sq.J1835004000_18.J1835004000_18_TC02_Add_EnterpriseVoice_To_ProductBasket_DeleteProduct_InvalidConfig@143640d5]" name="testCase" duration-ms="102057" started-at="2020-12-15T17:21:09Z" finished-at="2020-12-15T17:22:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCase -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:sq.J1835004000_64.J1835004000_64_TC02_QuickSaleOpportunity_OpportunityCreation@143640d5]" name="afterClass" is-config="true" duration-ms="3429" started-at="2020-12-14T12:28:25Z" finished-at="2020-12-14T12:28:29Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:sq.J1835004000_18.J1835004000_18_TC02_Add_EnterpriseVoice_To_ProductBasket_DeleteProduct_InvalidConfig@143640d5]" name="afterClass" is-config="true" duration-ms="3307" started-at="2020-12-15T17:22:51Z" finished-at="2020-12-15T17:22:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-      </class> <!-- sq.J1835004000_64.J1835004000_64_TC02_QuickSaleOpportunity_OpportunityCreation -->
+      </class> <!-- sq.J1835004000_18.J1835004000_18_TC02_Add_EnterpriseVoice_To_ProductBasket_DeleteProduct_InvalidConfig -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

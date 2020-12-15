@@ -1,0 +1,36 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SQ_J1835004000_14_Quick_Sale_Opportunity_CreateProdBasket
+Log Date: 14-12-2020 10:47:59
+Test Status: Failed
+###############################################################################
+14-12-2020 10:48:04 - INFO - startTest - Test Case: SQ_J1835004000_14_Quick_Sale_Opportunity_CreateProdBasket initiation
+14-12-2020 10:48:06 - TRACE - goToLoginPage - Executed with success
+14-12-2020 10:48:07 - TRACE - fillcredentials - Executed with success
+14-12-2020 10:48:14 - TRACE - pressLoginButton - Executed with success
+14-12-2020 10:48:14 - INFO - loginDirectSales on Step 1 - Executed with success
+14-12-2020 10:48:14 - TRACE - homePageValidation - Executed with success
+14-12-2020 10:48:14 - INFO - loginSFDS - Step 1 - Executed with success
+14-12-2020 10:48:21 - TRACE - goToCompanyDetailsPage - Executed with success
+14-12-2020 10:48:22 - TRACE - companyPageValidation - Executed with success
+14-12-2020 10:48:22 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+14-12-2020 10:48:25 - TRACE - openQuickSaleOPTYScreen - Executed with success
+14-12-2020 10:48:29 - TRACE - quickSaleFormValidation - Succeeded in Step: 3
+14-12-2020 10:48:29 - INFO - startQuickSaleOPTY - Executed with success
+14-12-2020 10:48:30 - TRACE - validateQuickSaleFilledFields - Succeeded in Step: 4
+14-12-2020 10:48:30 - INFO - validateQuickSalePreFilledFields - Executed with success
+14-12-2020 10:48:31 - TRACE - createQuickSaleOpty - Executed with success
+14-12-2020 10:48:36 - TRACE - saveOpportunity - Executed with success
+14-12-2020 10:48:56 - INFO - finishQuickSaleOPTYCreation - Executed with success
+14-12-2020 10:48:59 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+14-12-2020 10:49:04 - INFO - goToOpportunityPage - Executed with success
+14-12-2020 10:49:07 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 6
+14-12-2020 10:49:07 - INFO - navigateToOpportunityPage - Executed with success
+14-12-2020 10:49:09 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 6
+14-12-2020 10:49:11 - TRACE - clickNewProductBasketLink - Succeeded in Step 6
+14-12-2020 10:49:11 - TRACE - createProductBasket - Succeeded in Step 6
+14-12-2020 10:49:52 - ERROR - Product Basket: Change to Product Basket iframe - Failed in Step 6 - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //*[starts-with(@id,'brandBand_')]/div/div/div[5]/div/force-aloha-page/div/iframe (tried for 30 second(s) with 500 milliseconds interval)
+14-12-2020 10:49:52 - ERROR - createProductBasket - Executed with errors - java.lang.Exception: Product Basket: Validation of Product Basket Screen - Failed in Step: 6
+14-12-2020 10:49:52 - INFO - finishTest - Test Case: SQ_J1835004000_14_Quick_Sale_Opportunity_CreateProdBasket completion
+############################# End Of Log File #################################

@@ -1,0 +1,10 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SQ_J1835004000_64_QuickSaleOpportunity_OpportunityCreation
+Log Date: 11-12-2020 12:26:48
+Test Status: Passed
+###############################################################################
+11-12-2020 12:26:48 - INFO - startTest - Test Case: SQ_J1835004000_64_QuickSaleOpportunity_OpportunityCreation initiation
+11-12-2020 12:27:20 - INFO - finishTest - Test Case: SQ_J1835004000_64_QuickSaleOpportunity_OpportunityCreation completion
+############################# End Of Log File #################################

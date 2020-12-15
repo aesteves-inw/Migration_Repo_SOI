@@ -1,0 +1,52 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: J1835004000_14_TC02_QuickSaleOpportunity_CreateMoreThanOneProdBasket
+Log Date: 14-12-2020 14:47:22
+Test Status: Passed
+###############################################################################
+14-12-2020 14:47:26 - INFO - startTest - Test Case: J1835004000_14_TC02_QuickSaleOpportunity_CreateMoreThanOneProdBasket initiation
+14-12-2020 14:47:28 - TRACE - goToLoginPage - Executed with success
+14-12-2020 14:47:30 - TRACE - fillcredentials - Executed with success
+14-12-2020 14:47:35 - TRACE - pressLoginButton - Executed with success
+14-12-2020 14:47:35 - INFO - loginDirectSales on Step 1 - Executed with success
+14-12-2020 14:47:35 - TRACE - homePageValidation - Executed with success
+14-12-2020 14:47:35 - INFO - loginSFDS - Step 1 - Executed with success
+14-12-2020 14:47:41 - TRACE - goToCompanyDetailsPage - Executed with success
+14-12-2020 14:47:42 - TRACE - companyPageValidation - Executed with success
+14-12-2020 14:47:42 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+14-12-2020 14:47:45 - TRACE - openQuickSaleOPTYScreen - Executed with success
+14-12-2020 14:47:49 - TRACE - quickSaleFormValidation - Succeeded in Step: 3
+14-12-2020 14:47:49 - INFO - startQuickSaleOPTY - Executed with success
+14-12-2020 14:47:49 - TRACE - validateQuickSaleFilledFields - Succeeded in Step: 4
+14-12-2020 14:47:49 - INFO - validateQuickSalePreFilledFields - Executed with success
+14-12-2020 14:47:50 - TRACE - createQuickSaleOpty - Executed with success
+14-12-2020 14:47:55 - TRACE - saveOpportunity - Executed with success
+14-12-2020 14:48:15 - INFO - finishQuickSaleOPTYCreation - Executed with success
+14-12-2020 14:48:17 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+14-12-2020 14:48:21 - INFO - goToOpportunityPage - Executed with success
+14-12-2020 14:48:23 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 6
+14-12-2020 14:48:23 - INFO - navigateToOpportunityPage - Executed with success
+14-12-2020 14:48:25 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 7
+14-12-2020 14:48:27 - TRACE - clickNewProductBasketLink - Succeeded in Step 7
+14-12-2020 14:48:27 - TRACE - createProductBasket - Succeeded in Step 7
+14-12-2020 14:48:35 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 7
+14-12-2020 14:48:35 - INFO - createProductBasket - Executed with success
+14-12-2020 14:48:36 - TRACE - Product Basket: Change to default frame - Succeeded in Step 7
+14-12-2020 14:48:37 - TRACE - goToOPTYByURL - Succeeded in Step 8
+14-12-2020 14:48:40 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 8
+14-12-2020 14:48:40 - INFO - goToOpportunityByURL - Executed with success
+14-12-2020 14:48:41 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 9
+14-12-2020 14:48:44 - TRACE - clickNewProductBasketLink - Succeeded in Step 9
+14-12-2020 14:48:44 - TRACE - createProductBasket - Succeeded in Step 9
+14-12-2020 14:48:49 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 9
+14-12-2020 14:48:50 - INFO - createProductBasket - Executed with success
+14-12-2020 14:48:50 - TRACE - Product Basket: Change to default frame - Succeeded in Step 9
+14-12-2020 14:48:52 - TRACE - goToOPTYByURL - Succeeded in Step 10
+14-12-2020 14:48:54 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 10
+14-12-2020 14:48:54 - INFO - goToOpportunityByURL - Executed with success
+14-12-2020 14:48:56 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 11
+14-12-2020 14:48:57 - TRACE - validateMoreThanOneRelatedProductBasket - Succeeded in Step: 11
+14-12-2020 14:48:57 - INFO - relatedProductBasketsValidation - Executed with success
+14-12-2020 14:48:58 - INFO - finishTest - Test Case: J1835004000_14_TC02_QuickSaleOpportunity_CreateMoreThanOneProdBasket completion
+############################# End Of Log File #################################

@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="sq.J1835004000_64.SQ_J1835004000_64_QuickSaleOpportunity_OpportunityCreation">
+      <class name="d02.SOI_1013.SOI_1013_TC03_DS_Sync_ProductBasket_EmptyProduct_NegativeTest">
         <methods>
-          <include name="afterTest"/>
+          <include name="beforeClass"/>
+          <include name="afterClass"/>
           <include name="testCase"/>
-          <include name="beforeTest"/>
         </methods>
-      </class> <!-- sq.J1835004000_64.SQ_J1835004000_64_QuickSaleOpportunity_OpportunityCreation -->
+      </class> <!-- d02.SOI_1013.SOI_1013_TC03_DS_Sync_ProductBasket_EmptyProduct_NegativeTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

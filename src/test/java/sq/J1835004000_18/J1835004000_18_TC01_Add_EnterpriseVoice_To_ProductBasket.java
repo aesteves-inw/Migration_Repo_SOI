@@ -13,6 +13,7 @@ import executionTools.ExecStructure;
 import executionTools.TestStructure;
 import simpleQuoting.J1835004000_18;
 import testLogBuilder.TestLog;
+import testLogger.TestLogger;
 import testReportComposition.TestReportTestData;
 import testReportComposition.TestStepReportStructure;
 
@@ -46,7 +47,16 @@ public class J1835004000_18_TC01_Add_EnterpriseVoice_To_ProductBasket {
 	@Test
 	public void testCase() throws Exception
 	{
-		J1835004000_18.J1835004000_18_TC01_Add_EnterpriseVoice_To_ProductBasket(testExecStructure, logStream, driver, testName, stepsExecuted);
+		try
+		{
+			J1835004000_18.J1835004000_18_TC01_Add_EnterpriseVoice_To_ProductBasket(testExecStructure, logStream, driver, testName, stepsExecuted);
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, testName, "Test Execution Failed", e.toString());
+			throw new Exception (testName+" - Execution Failed",e);
+		}
 	}
 
 	@AfterClass

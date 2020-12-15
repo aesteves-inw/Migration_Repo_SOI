@@ -1,0 +1,17 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SQ_J1835004000_64_Quick_Sale_Opportunity_PreFilledFields
+Log Date: 10-12-2020 22:36:46
+Test Status: Passed
+###############################################################################
+10-12-2020 22:36:51 - INFO - startTest - Test Case: SQ_J1835004000_64_Quick_Sale_Opportunity_PreFilledFields initiation
+10-12-2020 22:36:52 - TRACE - goToLoginPage - Executed with success
+10-12-2020 22:36:54 - TRACE - fillcredentials - Executed with success
+10-12-2020 22:36:58 - TRACE - pressLoginButton - Executed with success
+10-12-2020 22:36:58 - INFO - loginDirectSales on Step 1 - Executed with success
+10-12-2020 22:36:58 - TRACE - homePageValidation - Executed with success
+10-12-2020 22:36:58 - INFO - loginSFDS - Step 1 - Executed with success
+10-12-2020 22:37:00 - INFO - startTest - Test Case: SQ_J1835004000_64_Quick_Sale_Opportunity_PreFilledFields initiation
+10-12-2020 22:37:00 - INFO - finishTest - Test Case: SQ_J1835004000_64_Quick_Sale_Opportunity_PreFilledFields completion
+############################# End Of Log File #################################

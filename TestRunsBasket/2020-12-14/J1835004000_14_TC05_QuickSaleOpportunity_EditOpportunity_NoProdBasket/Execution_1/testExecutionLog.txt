@@ -1,0 +1,34 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: J1835004000_14_TC05_QuickSaleOpportunity_EditOpportunity_NoProdBasket
+Log Date: 14-12-2020 17:13:35
+Test Status: Passed
+###############################################################################
+14-12-2020 17:13:41 - INFO - startTest - Test Case: J1835004000_14_TC05_QuickSaleOpportunity_EditOpportunity_NoProdBasket initiation
+14-12-2020 17:13:44 - TRACE - goToLoginPage - Executed with success
+14-12-2020 17:13:45 - TRACE - fillcredentials - Executed with success
+14-12-2020 17:13:51 - TRACE - pressLoginButton - Executed with success
+14-12-2020 17:13:51 - INFO - loginDirectSales on Step 1 - Executed with success
+14-12-2020 17:13:52 - TRACE - homePageValidation - Executed with success
+14-12-2020 17:13:52 - INFO - loginSFDS - Step 1 - Executed with success
+14-12-2020 17:13:58 - TRACE - goToCompanyDetailsPage - Executed with success
+14-12-2020 17:13:59 - TRACE - companyPageValidation - Executed with success
+14-12-2020 17:14:00 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+14-12-2020 17:14:01 - TRACE - openQuickSaleOPTYScreen - Executed with success
+14-12-2020 17:14:08 - TRACE - quickSaleFormValidation - Succeeded in Step: 3
+14-12-2020 17:14:08 - INFO - startQuickSaleOPTY - Executed with success
+14-12-2020 17:14:09 - TRACE - validateQuickSaleFilledFields - Succeeded in Step: 4
+14-12-2020 17:14:09 - INFO - validateQuickSalePreFilledFields - Executed with success
+14-12-2020 17:14:10 - TRACE - createQuickSaleOpty - Executed with success
+14-12-2020 17:14:15 - TRACE - saveOpportunity - Executed with success
+14-12-2020 17:14:35 - INFO - finishQuickSaleOPTYCreation - Executed with success
+14-12-2020 17:14:37 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+14-12-2020 17:14:40 - INFO - goToOpportunityPage - Executed with success
+14-12-2020 17:14:42 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 6
+14-12-2020 17:14:42 - INFO - navigateToOpportunityPage - Executed with success
+14-12-2020 17:14:44 - TRACE - goToEditScreen - Succeeded in Step 0
+14-12-2020 17:14:48 - TRACE - validateEditOpportunityScreen - Succeeded in Step: 0
+14-12-2020 17:14:48 - INFO - goToEditOpportunityScreen - Executed with success
+14-12-2020 17:14:48 - INFO - finishTest - Test Case: J1835004000_14_TC05_QuickSaleOpportunity_EditOpportunity_NoProdBasket completion
+############################# End Of Log File #################################

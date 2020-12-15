@@ -1,0 +1,18 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SQ_J1835004000_64_Quick_Sale_Opportunity_PreFilledFields
+Log Date: 10-12-2020 22:21:17
+Test Status: Failed
+###############################################################################
+10-12-2020 22:21:21 - INFO - startTest - Test Case: SQ_J1835004000_64_Quick_Sale_Opportunity_PreFilledFields initiation
+10-12-2020 22:21:22 - TRACE - goToLoginPage - Executed with success
+10-12-2020 22:21:24 - TRACE - fillcredentials - Executed with success
+10-12-2020 22:21:28 - TRACE - pressLoginButton - Executed with success
+10-12-2020 22:21:28 - INFO - loginDirectSales on Step 1 - Executed with success
+10-12-2020 22:21:28 - TRACE - homePageValidation - Executed with success
+10-12-2020 22:21:28 - INFO - loginSFDS - Step 1 - Executed with success
+10-12-2020 22:21:33 - TRACE - goToCompanyDetailsPage - Executed with success
+10-12-2020 22:21:34 - ERROR - navigateToCompanyPage - Step 2 - Executed with errors - java.lang.NullPointerException
+10-12-2020 22:21:35 - INFO - finishTest - Test Case: SQ_J1835004000_64_Quick_Sale_Opportunity_PreFilledFields completion
+############################# End Of Log File #################################

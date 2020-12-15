@@ -1,0 +1,57 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: J1835004000_14_TC04_StandardOpportunity_CreateMoreThanOneProdBasket
+Log Date: 14-12-2020 16:39:01
+Test Status: Failed
+###############################################################################
+14-12-2020 16:39:05 - INFO - startTest - Test Case: J1835004000_14_TC04_StandardOpportunity_CreateMoreThanOneProdBasket initiation
+14-12-2020 16:39:07 - TRACE - goToLoginPage - Executed with success
+14-12-2020 16:39:08 - TRACE - fillcredentials - Executed with success
+14-12-2020 16:39:13 - TRACE - pressLoginButton - Executed with success
+14-12-2020 16:39:13 - INFO - loginDirectSales on Step 1 - Executed with success
+14-12-2020 16:39:14 - TRACE - homePageValidation - Executed with success
+14-12-2020 16:39:14 - INFO - loginSFDS - Step 1 - Executed with success
+14-12-2020 16:39:19 - TRACE - goToCompanyDetailsPage - Executed with success
+14-12-2020 16:39:20 - TRACE - companyPageValidation - Executed with success
+14-12-2020 16:39:20 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+14-12-2020 16:39:22 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+14-12-2020 16:39:25 - TRACE - createStandardOpportunity - Succeeded in Step 3
+14-12-2020 16:39:27 - TRACE - fillOpportunityName - Succeeded in Step 3
+14-12-2020 16:39:27 - TRACE - fillCloseDate - Succeeded in Step 3
+14-12-2020 16:39:28 - TRACE - fillStage - Succeeded in Step 3
+14-12-2020 16:39:28 - TRACE - fillForecastCategory - Succeeded in Step 3
+14-12-2020 16:39:29 - TRACE - fillTermsAndConditions - Succeeded in Step 3
+14-12-2020 16:39:29 - TRACE - fillStandardOpportunityFields - Succeeded in Step 3
+14-12-2020 16:39:29 - TRACE - saveStandardOpportunity - Succeeded in Step 3
+14-12-2020 16:39:35 - TRACE - Standard Opportunity for SQ/D02 - Succeeded in Step 3
+14-12-2020 16:39:36 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+14-12-2020 16:39:39 - INFO - goToOpportunityPage - Executed with success
+14-12-2020 16:39:41 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 3
+14-12-2020 16:39:41 - INFO - createStandardOpportunity - Executed with success
+14-12-2020 16:39:43 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 4
+14-12-2020 16:39:45 - TRACE - clickNewProductBasketLink - Succeeded in Step 4
+14-12-2020 16:39:45 - TRACE - createProductBasket - Succeeded in Step 4
+14-12-2020 16:39:51 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 4
+14-12-2020 16:39:52 - INFO - createProductBasket - Executed with success
+14-12-2020 16:39:52 - ERROR - goToProductBasketRelatedMenu - Failed in Step 5 - java.lang.ArrayIndexOutOfBoundsException: 6
+14-12-2020 16:39:52 - ERROR - createProductBasket - Failed in Step 5 - java.lang.Exception: goToProductBasketRelatedMenu - Failed in Step 5
+14-12-2020 16:39:52 - ERROR - createProductBasket - Executed with errors - java.lang.Exception: createProductBasket - Failed in Step 5
+14-12-2020 16:39:53 - TRACE - Product Basket: Change to default frame - Succeeded in Step 5
+14-12-2020 16:39:53 - TRACE - goToOPTYByURL - Succeeded in Step 6
+14-12-2020 16:39:56 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 6
+14-12-2020 16:39:56 - INFO - goToOpportunityByURL - Executed with success
+14-12-2020 16:39:57 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 7
+14-12-2020 16:39:59 - TRACE - clickNewProductBasketLink - Succeeded in Step 7
+14-12-2020 16:39:59 - TRACE - createProductBasket - Succeeded in Step 7
+14-12-2020 16:40:05 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 7
+14-12-2020 16:40:05 - INFO - createProductBasket - Executed with success
+14-12-2020 16:40:06 - TRACE - Product Basket: Change to default frame - Succeeded in Step 7
+14-12-2020 16:40:07 - TRACE - goToOPTYByURL - Succeeded in Step 8
+14-12-2020 16:40:09 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 8
+14-12-2020 16:40:09 - INFO - goToOpportunityByURL - Executed with success
+14-12-2020 16:40:11 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 9
+14-12-2020 16:40:13 - TRACE - validateMoreThanOneRelatedProductBasket - Succeeded in Step: 9
+14-12-2020 16:40:13 - INFO - relatedProductBasketsValidation - Executed with success
+14-12-2020 16:40:13 - INFO - finishTest - Test Case: J1835004000_14_TC04_StandardOpportunity_CreateMoreThanOneProdBasket completion
+############################# End Of Log File #################################

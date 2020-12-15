@@ -1,0 +1,18 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SQ_J1835004000_64_Quick_Sale_Opportunity_PreFilledFields
+Log Date: 10-12-2020 23:39:27
+Test Status: Failed
+###############################################################################
+10-12-2020 23:39:31 - INFO - startTest - Test Case: SQ_J1835004000_64_Quick_Sale_Opportunity_PreFilledFields initiation
+10-12-2020 23:39:33 - TRACE - goToLoginPage - Executed with success
+10-12-2020 23:39:34 - TRACE - fillcredentials - Executed with success
+10-12-2020 23:39:38 - TRACE - pressLoginButton - Executed with success
+10-12-2020 23:39:38 - INFO - loginDirectSales on Step 1 - Executed with success
+10-12-2020 23:39:39 - TRACE - homePageValidation - Executed with success
+10-12-2020 23:39:39 - INFO - loginSFDS - Step 1 - Executed with success
+10-12-2020 23:40:02 - ERROR - goToCompanyDetailsPage - Executed with errors - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.linkText: Company (tried for 10 second(s) with 500 milliseconds interval)
+10-12-2020 23:40:02 - ERROR - navigateToCompanyPage - Step 2 - Executed with errors - java.lang.Exception: goToCompanyDetailsPage - Executed with errors
+10-12-2020 23:40:02 - INFO - finishTest - Test Case: SQ_J1835004000_64_Quick_Sale_Opportunity_PreFilledFields completion
+############################# End Of Log File #################################

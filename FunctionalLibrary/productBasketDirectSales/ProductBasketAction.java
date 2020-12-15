@@ -1,6 +1,7 @@
 package productBasketDirectSales;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -66,6 +67,112 @@ public class ProductBasketAction {
 		}
 	}
 
+	public static void openAddProductMenu(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
+	{
+		String actionName="Product Basket: Open Add Product Menu";
+
+
+		try
+		{
+			driver.findElement(By.xpath(DirSalesProductBasket.addProductButton)).click();
+
+			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+	}
+	
+	public static void syncProductBasket(List<TestLog> logStream, WebDriver driver, int newStepCounter) throws Exception 
+	{
+		String actionName="syncProductBasket";
+
+
+		try
+		{
+			driver.findElement(By.xpath(DirSalesProductBasket.syncButton)).click();
+			
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+newStepCounter);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+newStepCounter, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+newStepCounter,e);
+		}
+		
+	}
+	
+	public static void selectLineItem(List<TestLog> logStream, WebDriver driver, int newStepCounter, String productName) throws Exception 
+	{
+		String actionName="selectLineItem";
+
+
+		try
+		{
+			WebElement productBasketTable=driver.findElement(By.xpath(DirSalesProductBasket.productBasketTable));
+			
+			List<WebElement> productBasketLineItem=productBasketTable.findElements(By.tagName("li"));
+			
+			for(WebElement we : productBasketLineItem)
+			{
+				if(we.getText().contains(productName))
+				{
+					we.findElement(By.xpath(DirSalesProductBasket.selectLineItemCheckBox)).click();
+					break;
+				}
+			}			
+			
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+newStepCounter);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+newStepCounter, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+newStepCounter,e);
+		}
+		
+	}
+
+	public static void deleteLineItem(List<TestLog> logStream, WebDriver driver, int newStepCounter) throws Exception 
+	{
+		String actionName="deleteLineItem";
+
+
+		try
+		{
+			WebElement deleteButton = new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@aria-label='Delete Product']")));
+			
+			deleteButton.click();
+			
+			new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(By.xpath("//h3[text()='Delete Product']")));
+			
+			driver.findElement(By.xpath("//span[@ng-bind='::LabelsConstant.DELETE_PRODUCTS_CONFIRMATION_DIALOG.BTN_OK']")).click();
+			
+			Thread.sleep(5000);
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+newStepCounter);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+newStepCounter, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+newStepCounter,e);
+		}
+		
+	}
+	
 	
 	
 	//Validation Actions
@@ -85,7 +192,7 @@ public class ProductBasketAction {
 					BrowserActions.isElementPresent(driver, DirSalesProductBasket.addProductButton) && 
 					BrowserActions.isElementPresent(driver, DirSalesProductBasket.opportunityName))
 			{
-				System.out.println(actionName+" - Succeeded in Step: "+stepID);
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
 
 
 				return true;
@@ -99,9 +206,99 @@ public class ProductBasketAction {
 		catch(Exception e)
 		{
 			System.out.println(e);
-
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
 			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
 		}
 	}
+
+	
+	public static boolean productOnProductBasketValidation(List<TestLog> logStream, WebDriver driver, int stepID,
+			String productName) throws Exception 
+	{
+		String actionName="productOnProductBasketValidation";
+		 
+		 try
+			{
+			 	WebElement productBasketTable=driver.findElement(By.xpath(DirSalesProductBasket.productBasketTable));
+			 	
+			 	String productBasketLineItemValidation=productBasketTable.getText().toString();
+			 
+				if(productBasketLineItemValidation.contains(productName))
+				{
+					TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			}
+			catch(Exception e)
+			{
+				System.out.println(e);
+				TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+				throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+			}
+	}
+	
+	public static boolean productOnProductBasketNegativeValidation(List<TestLog> logStream, WebDriver driver, int stepID,
+			String productName) throws Exception 
+	{
+		String actionName="productOnProductBasketNegativeValidation";
+		 
+		 try
+			{		 
+				if(BrowserActions.isElementPresent(driver, "//ul/li[text()='"+productName+"']")==false)
+				{
+					TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			}
+			catch(Exception e)
+			{
+				System.out.println(e);
+				TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+				throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+			}
+	}
+
+	
+	public static boolean syncProductBasketNegVal(List<TestLog> logStream, WebDriver driver, int newStepCounter) throws Exception 
+	{
+		
+		 String actionName="syncProductBasketNegVal";
+		 
+	     	try
+					{
+						if(BrowserActions.isElementPresent(driver, DirSalesProductBasket.errorMessagePB))
+						{
+							TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+newStepCounter);
+							return true;
+						}
+						else
+						{
+							return false;
+						}
+
+					}
+					catch(Exception e)
+					{
+						System.out.println(e);
+						TestLogger.logError(logStream, actionName, "Failed in Step "+newStepCounter, e.toString());
+						throw new Exception (actionName+" - Failed in Step: "+newStepCounter,e);
+					}
+	}
+
+	
+	
+	
+
+	
+	
+
 
 }

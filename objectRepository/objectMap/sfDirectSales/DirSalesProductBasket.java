@@ -17,7 +17,9 @@ public class DirSalesProductBasket {
 		
 		public static String cloneBasketButton="/html/body/div[1]/span/div/div[2]/div/div[2]/div[1]/button/span[2]";
 		
-		public static String syncButton="/html/body/div[1]/span/div/div[2]/div/div[2]/div[2]/button/span[2]";
+		//public static String syncButton="/html/body/div[1]/span/div/div[2]/div/div[2]/div[2]/button/span[2]";
+		
+		public static String syncButton="//button[@aria-label='Sync']";
 		
 		public static String cancelButton="//span[.='Cancel']";
 		
@@ -29,8 +31,7 @@ public class DirSalesProductBasket {
 		
 		public static String opportunityName = "//*[@id='select2-chosen-2']";
 												
-		public static String addProductButton = "/html/body/div[1]/span/div/div[3]/div[2]/div[2]/div/div[1]/div/div[2]/div/button/span[2]";
-		
+		public static String addProductButton = "/html/body/div[1]/span/div/div[3]/div[2]/div[2]/div/div[1]/div/div[2]/div/button/span[2]";	
 		
 		
 		//Simple Ordering Intake mapping
@@ -44,5 +45,10 @@ public class DirSalesProductBasket {
 		public static String singleLineItemProduct="//*[@id='basket-table']/div[2]/div/ul/li/div/div/div/div/div[2]/div";
 		
 		public static String editProductConfigurationButton="//button[@aria-label='Edit configuration']";
-
+		
+		public static String errorMessagePB="//div[@class='toast ng-scope toast-error']";
+		
+		public static String syncWithPBFlag="//input[@aria-labelledby='csbb__Synchronised_With_Opportunity__c']";
+		
+		public static String selectLineItemCheckBox="//button[@type='button'][@class='bt-btn btn-checkbox ng-scope']";
 }

@@ -1,0 +1,54 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: J1835004000_14_TC04_StandardOpportunity_CreateMoreThanOneProdBasket
+Log Date: 14-12-2020 16:41:55
+Test Status: Passed
+###############################################################################
+14-12-2020 16:42:00 - INFO - startTest - Test Case: J1835004000_14_TC04_StandardOpportunity_CreateMoreThanOneProdBasket initiation
+14-12-2020 16:42:02 - TRACE - goToLoginPage - Executed with success
+14-12-2020 16:42:03 - TRACE - fillcredentials - Executed with success
+14-12-2020 16:42:07 - TRACE - pressLoginButton - Executed with success
+14-12-2020 16:42:07 - INFO - loginDirectSales on Step 1 - Executed with success
+14-12-2020 16:42:08 - TRACE - homePageValidation - Executed with success
+14-12-2020 16:42:08 - INFO - loginSFDS - Step 1 - Executed with success
+14-12-2020 16:42:13 - TRACE - goToCompanyDetailsPage - Executed with success
+14-12-2020 16:42:14 - TRACE - companyPageValidation - Executed with success
+14-12-2020 16:42:14 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+14-12-2020 16:42:16 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+14-12-2020 16:42:20 - TRACE - createStandardOpportunity - Succeeded in Step 3
+14-12-2020 16:42:21 - TRACE - fillOpportunityName - Succeeded in Step 3
+14-12-2020 16:42:21 - TRACE - fillCloseDate - Succeeded in Step 3
+14-12-2020 16:42:22 - TRACE - fillStage - Succeeded in Step 3
+14-12-2020 16:42:23 - TRACE - fillForecastCategory - Succeeded in Step 3
+14-12-2020 16:42:23 - TRACE - fillTermsAndConditions - Succeeded in Step 3
+14-12-2020 16:42:23 - TRACE - fillStandardOpportunityFields - Succeeded in Step 3
+14-12-2020 16:42:23 - TRACE - saveStandardOpportunity - Succeeded in Step 3
+14-12-2020 16:42:29 - TRACE - Standard Opportunity for SQ/D02 - Succeeded in Step 3
+14-12-2020 16:42:31 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+14-12-2020 16:42:33 - INFO - goToOpportunityPage - Executed with success
+14-12-2020 16:42:36 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 3
+14-12-2020 16:42:36 - INFO - createStandardOpportunity - Executed with success
+14-12-2020 16:42:38 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 4
+14-12-2020 16:42:39 - TRACE - clickNewProductBasketLink - Succeeded in Step 4
+14-12-2020 16:42:39 - TRACE - createProductBasket - Succeeded in Step 4
+14-12-2020 16:42:46 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 4
+14-12-2020 16:42:46 - INFO - createProductBasket - Executed with success
+14-12-2020 16:42:47 - TRACE - Product Basket: Change to default frame - Succeeded in Step 4
+14-12-2020 16:42:48 - TRACE - goToOPTYByURL - Succeeded in Step 5
+14-12-2020 16:42:50 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 5
+14-12-2020 16:42:50 - INFO - goToOpportunityByURL - Executed with success
+14-12-2020 16:42:52 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 6
+14-12-2020 16:42:53 - TRACE - clickNewProductBasketLink - Succeeded in Step 6
+14-12-2020 16:42:53 - TRACE - createProductBasket - Succeeded in Step 6
+14-12-2020 16:42:59 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 6
+14-12-2020 16:42:59 - INFO - createProductBasket - Executed with success
+14-12-2020 16:43:00 - TRACE - Product Basket: Change to default frame - Succeeded in Step 6
+14-12-2020 16:43:01 - TRACE - goToOPTYByURL - Succeeded in Step 7
+14-12-2020 16:43:03 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 7
+14-12-2020 16:43:03 - INFO - goToOpportunityByURL - Executed with success
+14-12-2020 16:43:04 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 8
+14-12-2020 16:43:06 - TRACE - validateMoreThanOneRelatedProductBasket - Succeeded in Step: 8
+14-12-2020 16:43:06 - INFO - relatedProductBasketsValidation - Executed with success
+14-12-2020 16:43:07 - INFO - finishTest - Test Case: J1835004000_14_TC04_StandardOpportunity_CreateMoreThanOneProdBasket completion
+############################# End Of Log File #################################

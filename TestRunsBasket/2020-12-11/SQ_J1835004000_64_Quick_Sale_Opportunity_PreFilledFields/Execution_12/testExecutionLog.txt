@@ -1,0 +1,28 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SQ_J1835004000_64_Quick_Sale_Opportunity_PreFilledFields
+Log Date: 11-12-2020 01:13:00
+Test Status: Failed
+###############################################################################
+11-12-2020 01:13:04 - INFO - startTest - Test Case: SQ_J1835004000_64_Quick_Sale_Opportunity_PreFilledFields initiation
+11-12-2020 01:13:06 - TRACE - goToLoginPage - Executed with success
+11-12-2020 01:13:07 - TRACE - fillcredentials - Executed with success
+11-12-2020 01:13:12 - TRACE - pressLoginButton - Executed with success
+11-12-2020 01:13:12 - INFO - loginDirectSales on Step 1 - Executed with success
+11-12-2020 01:13:12 - TRACE - homePageValidation - Executed with success
+11-12-2020 01:13:12 - INFO - loginSFDS - Step 1 - Executed with success
+11-12-2020 01:13:18 - TRACE - goToCompanyDetailsPage - Executed with success
+11-12-2020 01:13:19 - TRACE - companyPageValidation - Executed with success
+11-12-2020 01:13:19 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+11-12-2020 01:13:22 - TRACE - openQuickSaleOPTYScreen - Executed with success
+11-12-2020 01:13:25 - TRACE - quickSaleFormValidation - Succeeded in Step: 3
+11-12-2020 01:13:25 - INFO - startQuickSaleOPTY - Executed with success
+11-12-2020 01:13:26 - TRACE - validateQuickSaleFilledFields - Succeeded in Step: 4
+11-12-2020 01:13:26 - INFO - validateQuickSalePreFilledFields - Executed with success
+11-12-2020 01:13:27 - TRACE - createQuickSaleOpty - Executed with success
+11-12-2020 01:13:27 - TRACE - saveOpportunity - Executed with success
+11-12-2020 01:13:27 - TRACE - quickSaleFormValidation - Succeeded in Step: 5
+11-12-2020 01:13:27 - ERROR - finishQuickSaleOPTYCreation - Executed with errors - java.lang.Exception: Fill Mandatory Fields and Press Save Button - Failed in Step: 5
+11-12-2020 01:13:28 - INFO - finishTest - Test Case: SQ_J1835004000_64_Quick_Sale_Opportunity_PreFilledFields completion
+############################# End Of Log File #################################
