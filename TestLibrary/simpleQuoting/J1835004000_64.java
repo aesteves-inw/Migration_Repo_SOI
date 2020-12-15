@@ -12,7 +12,7 @@ import testReportComposition.TestStepReportStructure;
 
 public class J1835004000_64 {
 
-	public static void SQ_J1835004000_64_QuickSaleOpportunity_PreFilledFields(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, 
+	public static void J1835004000_64_TC01_QuickSaleOpportunity_PreFilledFields(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, 
 			WebDriver driver, String testName, int stepsExecuted) throws Exception
 	{
 		try
@@ -44,7 +44,7 @@ public class J1835004000_64 {
 
 	}
 
-	public static void SQ_J1835004000_64_QuickSaleOpportunity_OpportunityCreation(
+	public static void J1835004000_64_TC02_QuickSaleOpportunity_OpportunityCreation(
 			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver, String testName,
 			int stepsExecuted) throws Exception {
 
@@ -53,7 +53,7 @@ public class J1835004000_64 {
 
 			int newStepCounter;
 
-			SQ_J1835004000_64_QuickSaleOpportunity_PreFilledFields(testExecStructure, logStream, driver, testName, stepsExecuted);
+			J1835004000_64_TC01_QuickSaleOpportunity_PreFilledFields(testExecStructure, logStream, driver, testName, stepsExecuted);
 
 			newStepCounter = testExecStructure.size();
 
@@ -75,5 +75,6 @@ public class J1835004000_64 {
 		}
 	}
 
+	
 
 }

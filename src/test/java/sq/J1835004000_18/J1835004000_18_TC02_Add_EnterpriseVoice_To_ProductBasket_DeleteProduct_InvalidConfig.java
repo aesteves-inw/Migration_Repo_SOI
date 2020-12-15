@@ -1,4 +1,4 @@
-package sq.J1835004000_14;
+package sq.J1835004000_18;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,14 +11,14 @@ import org.testng.annotations.Test;
 import executionDriver.ExecDriverClass;
 import executionTools.ExecStructure;
 import executionTools.TestStructure;
-import simpleQuoting.J1835004000_14;
+import simpleQuoting.J1835004000_18;
 import testLogBuilder.TestLog;
 import testReportComposition.TestReportTestData;
 import testReportComposition.TestStepReportStructure;
 
-public class J1835004000_14_TC02_QuickSaleOpportunity_CreateMoreThanOneProdBasket {
+public class J1835004000_18_TC02_Add_EnterpriseVoice_To_ProductBasket_DeleteProduct_InvalidConfig {
 	
-	String testName = "J1835004000_14_TC02_QuickSaleOpportunity_CreateMoreThanOneProdBasket";
+	String testName = "J1835004000_18_TC02_Add_EnterpriseVoice_To_ProductBasket_DeleteProduct_InvalidConfig";
 
 	String initialTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
 
@@ -46,7 +46,7 @@ public class J1835004000_14_TC02_QuickSaleOpportunity_CreateMoreThanOneProdBaske
 	@Test
 	public void testCase() throws Exception
 	{
-		J1835004000_14.J1835004000_14_TC02_QuickSaleOpportunity_CreateMoreThanOneProdBasket(testExecStructure, logStream, driver, testName, stepsExecuted);
+		J1835004000_18.J1835004000_18_TC02_Add_EnterpriseVoice_To_ProductBasket_DeleteProduct_InvalidConfig(testExecStructure, logStream, driver, testName, stepsExecuted);
 	}
 
 	@AfterClass
@@ -54,6 +54,5 @@ public class J1835004000_14_TC02_QuickSaleOpportunity_CreateMoreThanOneProdBaske
 	{
 		TestStructure.finishTest(testName, initialTestDate, startTime, testExecStructure, testData, driver, logStream);
 	}
-
 
 }

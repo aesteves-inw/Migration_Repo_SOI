@@ -46,7 +46,7 @@ public class J1835004000_14_TC01_QuickSaleOpportunity_CreateProdBasket {
 		@Test
 		public void testCase() throws Exception
 		{
-			J1835004000_14.SQ_J1835004000_14_Quick_Sale_Opportunity_CreateProdBasket(testExecStructure, logStream, driver, testName, stepsExecuted);
+			J1835004000_14.J1835004000_14_TC01_Quick_Sale_Opportunity_CreateProdBasket(testExecStructure, logStream, driver, testName, stepsExecuted);
 		}
 
 		@AfterClass

@@ -15,13 +15,13 @@ import testReportComposition.TestStepReportStructure;
 
 public class J1835004000_14 {
 
-	public static void SQ_J1835004000_14_Quick_Sale_Opportunity_CreateProdBasket(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver, String testName, int stepsExecuted) throws Exception
+	public static void J1835004000_14_TC01_Quick_Sale_Opportunity_CreateProdBasket(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver, String testName, int stepsExecuted) throws Exception
 	{
 		try
 		{
 			int newStepCounter;
 			
-			J1835004000_64.SQ_J1835004000_64_QuickSaleOpportunity_OpportunityCreation(testExecStructure, logStream, driver, testName, stepsExecuted);
+			J1835004000_64.J1835004000_64_TC02_QuickSaleOpportunity_OpportunityCreation(testExecStructure, logStream, driver, testName, stepsExecuted);
 			
 			newStepCounter = testExecStructure.size();
 			
@@ -37,7 +37,7 @@ public class J1835004000_14 {
 		}
 	}
 	
-	public static void SQ_J1835004000_14_QuickSaleOpportunity_CreateMoreThanOneProdBasket(
+	public static void J1835004000_14_TC02_QuickSaleOpportunity_CreateMoreThanOneProdBasket(
 			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver, String testName,
 			int stepsExecuted) throws Exception {
 		
@@ -45,7 +45,7 @@ public class J1835004000_14 {
 		{
 			int newStepCounter;
 			
-			J1835004000_64.SQ_J1835004000_64_QuickSaleOpportunity_OpportunityCreation(testExecStructure, logStream, driver, testName, stepsExecuted);
+			J1835004000_64.J1835004000_64_TC02_QuickSaleOpportunity_OpportunityCreation(testExecStructure, logStream, driver, testName, stepsExecuted);
 			
 			newStepCounter = testExecStructure.size();
 			
@@ -176,14 +176,13 @@ public class J1835004000_14 {
 		
 	}
 
-	
 	public static void J1835004000_14_TC05_QuickSaleOpportunity_EditOpportunity_NoProdBasket(
 			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver, String testName,
 			int stepsExecuted) throws Exception 
 	{
 		try
 		{
-			J1835004000_64.SQ_J1835004000_64_QuickSaleOpportunity_OpportunityCreation(testExecStructure, logStream, driver, testName, stepsExecuted);
+			J1835004000_64.J1835004000_64_TC02_QuickSaleOpportunity_OpportunityCreation(testExecStructure, logStream, driver, testName, stepsExecuted);
 			
 			OpportunityStep.goToEditOpportunityScreen(testExecStructure, logStream, driver, testName, stepsExecuted);
 			
@@ -196,6 +195,8 @@ public class J1835004000_14 {
 		}
 		
 	}
+
+	
 
 	
 	

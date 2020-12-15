@@ -48,7 +48,7 @@ public class J1835004000_64_TC02_QuickSaleOpportunity_OpportunityCreation{
 	@Test
 	public void testCase() throws Exception
 	{
-		J1835004000_64.SQ_J1835004000_64_QuickSaleOpportunity_OpportunityCreation(testExecStructure, logStream, driver, testName, stepsExecuted);
+		J1835004000_64.J1835004000_64_TC02_QuickSaleOpportunity_OpportunityCreation(testExecStructure, logStream, driver, testName, stepsExecuted);
 	}
 
 
