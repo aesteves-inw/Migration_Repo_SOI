@@ -261,7 +261,6 @@ public class CompanyAction {
 		}
 	}
 
-
 	public static void fillOpportunityName(List<TestLog> logStream, WebDriver driver, int stepsExecuted,
 			String testName) throws Exception 
 	{
@@ -380,7 +379,6 @@ public class CompanyAction {
 
 	}
 
-	
 	public static void standardOpportunityForD02(List<TestLog> logStream, WebDriver driver, String testName, int stepID) throws Exception 
 	{
 		String actionName="Standard Opportunity for SQ/D02";
@@ -402,6 +400,8 @@ public class CompanyAction {
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
 	}
+	
+	
 	
 	//MACD Order
 

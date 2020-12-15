@@ -13,11 +13,12 @@ import executionTools.ExecStructure;
 import executionTools.TestStructure;
 import simpleQuoting.J1835004000_14;
 import testLogBuilder.TestLog;
+import testLogger.TestLogger;
 import testReportComposition.TestReportTestData;
 import testReportComposition.TestStepReportStructure;
 
 public class J1835004000_14_TC02_QuickSaleOpportunity_CreateMoreThanOneProdBasket {
-	
+
 	String testName = "J1835004000_14_TC02_QuickSaleOpportunity_CreateMoreThanOneProdBasket";
 
 	String initialTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
@@ -42,11 +43,20 @@ public class J1835004000_14_TC02_QuickSaleOpportunity_CreateMoreThanOneProdBaske
 
 		TestStructure.startTest(logStream,testName);
 	}
-	
+
 	@Test
 	public void testCase() throws Exception
 	{
-		J1835004000_14.J1835004000_14_TC02_QuickSaleOpportunity_CreateMoreThanOneProdBasket(testExecStructure, logStream, driver, testName, stepsExecuted);
+		try
+		{
+			J1835004000_14.J1835004000_14_TC02_QuickSaleOpportunity_CreateMoreThanOneProdBasket(testExecStructure, logStream, driver, testName, stepsExecuted);
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, testName, "Test Execution Failed", e.toString());
+			throw new Exception (testName+" - Execution Failed",e);
+		}
 	}
 
 	@AfterClass

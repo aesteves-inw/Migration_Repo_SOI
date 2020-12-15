@@ -13,6 +13,7 @@ import executionTools.ExecStructure;
 import executionTools.TestStructure;
 import simpleQuoting.J1835004000_64;
 import testLogBuilder.TestLog;
+import testLogger.TestLogger;
 import testReportComposition.TestReportTestData;
 import testReportComposition.TestStepReportStructure;
 
@@ -32,15 +33,15 @@ public class J1835004000_64_TC02_QuickSaleOpportunity_OpportunityCreation{
 	List<TestLog> logStream = new ArrayList<TestLog>();
 
 	int stepsExecuted;
-	
+
 	WebDriver driver;
-	
-	
+
+
 	@BeforeClass
 	public void beforeClass() 
 	{
 		driver = ExecDriverClass.setupDriver();
-		
+
 		TestStructure.startTest(logStream,testName);
 	}
 
@@ -48,7 +49,16 @@ public class J1835004000_64_TC02_QuickSaleOpportunity_OpportunityCreation{
 	@Test
 	public void testCase() throws Exception
 	{
-		J1835004000_64.J1835004000_64_TC02_QuickSaleOpportunity_OpportunityCreation(testExecStructure, logStream, driver, testName, stepsExecuted);
+		try
+		{
+			J1835004000_64.J1835004000_64_TC02_QuickSaleOpportunity_OpportunityCreation(testExecStructure, logStream, driver, testName, stepsExecuted);
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, testName, "Test Execution Failed", e.toString());
+			throw new Exception (testName+" - Execution Failed",e);
+		}
 	}
 
 

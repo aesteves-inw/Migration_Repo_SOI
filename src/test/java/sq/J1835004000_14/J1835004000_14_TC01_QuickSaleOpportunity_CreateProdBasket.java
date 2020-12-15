@@ -13,47 +13,57 @@ import executionTools.ExecStructure;
 import executionTools.TestStructure;
 import simpleQuoting.J1835004000_14;
 import testLogBuilder.TestLog;
+import testLogger.TestLogger;
 import testReportComposition.TestReportTestData;
 import testReportComposition.TestStepReportStructure;
 
 public class J1835004000_14_TC01_QuickSaleOpportunity_CreateProdBasket {
 
-		String testName = "J1835004000_14_TC01_Quick_Sale_Opportunity_CreateProdBasket";
+	String testName = "J1835004000_14_TC01_Quick_Sale_Opportunity_CreateProdBasket";
 
-		String initialTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
+	String initialTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
 
-		long startTime=System.nanoTime();
+	long startTime=System.nanoTime();
 
-		List<TestStepReportStructure> testExecStructure = new ArrayList<TestStepReportStructure>();
+	List<TestStepReportStructure> testExecStructure = new ArrayList<TestStepReportStructure>();
 
-		List<TestReportTestData> testData = new ArrayList<TestReportTestData>();
+	List<TestReportTestData> testData = new ArrayList<TestReportTestData>();
 
-		List<TestLog> logStream = new ArrayList<TestLog>();
+	List<TestLog> logStream = new ArrayList<TestLog>();
 
-		int stepsExecuted;
+	int stepsExecuted;
 
-		WebDriver driver;
+	WebDriver driver;
 
 
-		@BeforeClass
-		public void beforeClass() 
-		{
-			driver = ExecDriverClass.setupDriver();
+	@BeforeClass
+	public void beforeClass() 
+	{
+		driver = ExecDriverClass.setupDriver();
 
-			TestStructure.startTest(logStream,testName);
-		}
-		
-		@Test
-		public void testCase() throws Exception
+		TestStructure.startTest(logStream,testName);
+	}
+
+	@Test
+	public void testCase() throws Exception
+	{
+		try
 		{
 			J1835004000_14.J1835004000_14_TC01_Quick_Sale_Opportunity_CreateProdBasket(testExecStructure, logStream, driver, testName, stepsExecuted);
 		}
-
-		@AfterClass
-		public void afterClass()
+		catch(Exception e)
 		{
-			TestStructure.finishTest(testName, initialTestDate, startTime, testExecStructure, testData, driver, logStream);
+			System.out.println(e);
+			TestLogger.logError(logStream, testName, "Test Execution Failed", e.toString());
+			throw new Exception (testName+" - Execution Failed",e);
 		}
-
 	}
+
+	@AfterClass
+	public void afterClass()
+	{
+		TestStructure.finishTest(testName, initialTestDate, startTime, testExecStructure, testData, driver, logStream);
+	}
+
+}
 
