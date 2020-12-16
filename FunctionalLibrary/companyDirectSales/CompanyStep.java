@@ -63,6 +63,7 @@ public class CompanyStep {
 		{
 			TestLogger.logError(logStream, componentOfTheLog, TestLogger.logError, e.toString());
 			TestReporter.stepFailed(testReportStream, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
 		
 	}
@@ -104,6 +105,7 @@ public class CompanyStep {
 			System.out.println(e);
 			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
 			TestReporter.stepFailed(testReportStream, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
 
 	}
@@ -186,6 +188,7 @@ public class CompanyStep {
 			System.out.println(e);
 			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
 			TestReporter.stepFailed(testReportStream, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
 
 	}
@@ -224,6 +227,7 @@ public class CompanyStep {
 			System.out.println(e);
 			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
 			TestReporter.stepFailed(testReportStream, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
 	}
 
@@ -270,6 +274,7 @@ public class CompanyStep {
 			System.out.println(e);
 			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
 			TestReporter.stepFailed(testReportStream, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
 
 	}

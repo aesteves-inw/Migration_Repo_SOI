@@ -48,6 +48,7 @@ public class ProductBasketStep
 			System.out.println(e);
 			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
 			TestReporter.stepFailed(testReportStream, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
 
 	}
@@ -87,6 +88,7 @@ public class ProductBasketStep
 			System.out.println(e);
 			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
 			TestReporter.stepFailed(testExecStructure, driver, testName, newStepCounter, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+newStepCounter);
 		}
 
 		
@@ -130,6 +132,7 @@ public class ProductBasketStep
 			System.out.println(e);
 			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
 			TestReporter.stepFailed(testExecStructure, driver, testName, newStepCounter, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+newStepCounter);
 		}
 		
 	}
