@@ -39,6 +39,8 @@ public class CompanyAction {
 			fillQSOpportunityFields(logStream, driver, testName);
 
 			saveOpportunity(logStream, driver);
+			
+			
 
 			TestLogger.logInfo(logStream, "createQuickSaleOpty", logInfo);
 
@@ -715,6 +717,7 @@ public class CompanyAction {
 			else
 			{
 				validation=false;
+				TestLogger.logTrace(logStream, componentName, "Validation Failed on Step "+stepID);
 				throw new Exception("Validation Failed on Step "+stepID);
 			}
 

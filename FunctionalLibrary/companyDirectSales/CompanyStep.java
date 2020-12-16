@@ -9,7 +9,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import objectMap.sfDirectSales.DirSalesOpportunity;
 import opportunityDirectSales.OpportunityAction;
-import testExecutionData.TestCasesData;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
 import testReportComposition.ReportStructure;
@@ -21,7 +20,7 @@ public class CompanyStep {
 	public static void createQuickSaleOpportunity(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, String testName, int stepID) throws Exception
 	{
 		
-		stepID++;
+		
 		
 		String stepName="Company: Create Quick Sale Opportunity";
 
@@ -32,9 +31,7 @@ public class CompanyStep {
 		String componentOfTheLog=stepNameMin+" - Step "+stepID;
 		
 		
-		//boolean validation;
-		
-		String opportunityName = TestCasesData.getOPTYName(testName);
+		boolean validation;
 		
 		
 		try
@@ -42,14 +39,18 @@ public class CompanyStep {
 			
 			CompanyAction.createQuickSaleOpty(logStream, driver, testName);
 			
-			CompanyNavigation.goToOpportunityPage(logStream, driver, opportunityName);
+			System.out.println("Passou aqui no Step 3");
 			
+			CompanyNavigation.goToOpportunityPage(logStream, driver, testName);
 			
-			
+			/*
 			TestLogger.logInfo(logStream, componentOfTheLog, TestLogger.logInfo);
 			TestReporter.stepPassed(testReportStream, driver, testName, stepID, stepName, evidenceName);
+			*/
 			
-			/*if (validation==true) 
+			validation=OpportunityAction.opportunityScreenValidation(logStream, driver, stepID);
+			
+			if (validation==true) 
 			{
 				TestLogger.logInfo(logStream, componentOfTheLog, TestLogger.logInfo);
 				TestReporter.stepPassed(testReportStream, driver, testName, stepID, stepName, evidenceName);
@@ -57,7 +58,7 @@ public class CompanyStep {
 			else
 			{
 				throw new Exception (stepName+" - Failed in Step: "+stepID);
-			}*/
+			}
 		}
 		catch(Exception e)
 		{
@@ -148,7 +149,6 @@ public class CompanyStep {
 		}
 		
 	}
-
 
 	public static void finishQuickSaleOPTYCreation(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, int stepID, String testName) throws Exception
 	{
@@ -278,6 +278,5 @@ public class CompanyStep {
 		}
 
 	}
-
 	
 }

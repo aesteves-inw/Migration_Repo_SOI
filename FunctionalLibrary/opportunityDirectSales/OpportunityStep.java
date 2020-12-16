@@ -35,7 +35,6 @@ public class OpportunityStep {
 
 			if(validation==true)
 			{
-				
 				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
 				TestReporter.stepPassed(testReportStream, driver, testName, stepID, stepName, evidenceName);
 			}

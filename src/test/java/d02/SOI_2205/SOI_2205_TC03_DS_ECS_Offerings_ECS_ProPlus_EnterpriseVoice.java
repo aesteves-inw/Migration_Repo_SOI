@@ -1,4 +1,4 @@
-package testingFrameworkPackage;
+package d02.SOI_2205;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,54 +8,62 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import delivery02.SOI_2205;
 import executionDriver.ExecDriverClass;
 import executionTools.ExecStructure;
 import executionTools.TestStructure;
-import testFrameworkLibrary.D02Models;
 import testLogBuilder.TestLog;
+import testLogger.TestLogger;
 import testReportComposition.TestReportTestData;
 import testReportComposition.TestStepReportStructure;
 
-public class GeneralTestingClass extends ExecDriverClass
+public class SOI_2205_TC03_DS_ECS_Offerings_ECS_ProPlus_EnterpriseVoice 
 {
-	
-	String testName = "GeneralTestingClass_D02_TC01_ToHaveAProductBasket";
+	String testName = "SOI_2205_TC03_DS_ECS_Offerings_ECS_ProPlus_EnterpriseVoice";
 
 	String initialTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
 
 	long startTime=System.nanoTime();
 
 	List<TestStepReportStructure> testExecStructure = new ArrayList<TestStepReportStructure>();
-	
+
 	List<TestReportTestData> testData = new ArrayList<TestReportTestData>();
-	
+
 	List<TestLog> logStream = new ArrayList<TestLog>();
-	
-	int stepsExecuted;
+
+	int stepsExecuted; 
 	
 	WebDriver driver;
 	
-	
-	
+
 	@BeforeClass
 	public void beforeClass() 
 	{
 		driver = ExecDriverClass.setupDriver();
 		
 		TestStructure.startTest(logStream,testName);
+		
 	}
+
 	
 	@Test
-	public void ToHaveAProductBasket() throws Exception
-	{		
-		D02Models.ToHaveAProductBasket(testExecStructure, logStream, driver, testName, stepsExecuted);
+	public void testCase() throws Exception
+	{
+		try
+		{
+			SOI_2205.SOI_2205_TC03_DS_ECS_Offerings_ECS_ProPlus_EnterpriseVoice(testExecStructure, logStream, driver, testName, stepsExecuted);
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, testName, "Test Execution Failed", e.toString());
+			throw new Exception (testName+" - Execution Failed",e);
+		}
 	}
-	
-	
-	@AfterClass
+
+		@AfterClass
 	public void afterClass() 
 	{
 		TestStructure.finishTest(testName, initialTestDate, startTime, testExecStructure, testData, driver, logStream);
 	}
-
 }
