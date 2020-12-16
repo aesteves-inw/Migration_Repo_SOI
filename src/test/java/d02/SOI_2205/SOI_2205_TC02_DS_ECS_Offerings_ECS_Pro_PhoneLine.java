@@ -19,7 +19,7 @@ import testReportComposition.TestStepReportStructure;
 
 public class SOI_2205_TC02_DS_ECS_Offerings_ECS_Pro_PhoneLine 
 {
-	String testName = "<Test Case Name>";
+	String testName = "SOI_2205_TC02_DS_ECS_Offerings_ECS_Pro_PhoneLine";
 
 	String initialTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
 

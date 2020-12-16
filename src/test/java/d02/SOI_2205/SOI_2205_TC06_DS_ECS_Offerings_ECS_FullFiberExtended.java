@@ -17,7 +17,7 @@ import testLogger.TestLogger;
 import testReportComposition.TestReportTestData;
 import testReportComposition.TestStepReportStructure;
 
-public class SOI_2205_TC06_DS_ECS_Offerings_ECS_FullFiberExtended 
+public class SOI_2205_TC06_DS_ECS_Offerings_ECS_FullFiberExtended
 {
 	String testName = "SOI_2205_TC06_DS_ECS_Offerings_ECS_FullFiberExtended";
 
