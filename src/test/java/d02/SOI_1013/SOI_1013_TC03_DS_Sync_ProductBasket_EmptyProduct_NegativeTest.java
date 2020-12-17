@@ -13,7 +13,6 @@ import executionDriver.ExecDriverClass;
 import executionTools.ExecStructure;
 import executionTools.TestStructure;
 import testLogBuilder.TestLog;
-import testLogger.TestLogger;
 import testReportComposition.TestReportTestData;
 import testReportComposition.TestStepReportStructure;
 
