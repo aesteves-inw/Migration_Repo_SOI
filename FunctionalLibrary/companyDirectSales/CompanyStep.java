@@ -39,14 +39,7 @@ public class CompanyStep {
 			
 			CompanyAction.createQuickSaleOpty(logStream, driver, testName);
 			
-			System.out.println("Passou aqui no Step 3");
-			
 			CompanyNavigation.goToOpportunityPage(logStream, driver, testName);
-			
-			/*
-			TestLogger.logInfo(logStream, componentOfTheLog, TestLogger.logInfo);
-			TestReporter.stepPassed(testReportStream, driver, testName, stepID, stepName, evidenceName);
-			*/
 			
 			validation=OpportunityAction.opportunityScreenValidation(logStream, driver, stepID);
 			

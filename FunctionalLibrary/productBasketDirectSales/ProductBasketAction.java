@@ -15,16 +15,16 @@ import testLogBuilder.TestLog;
 import testLogger.TestLogger;
 
 public class ProductBasketAction {
-	
+
 	//Operational Actions
-	
+
 	public static void changeToProductBasketiFrame(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
 	{
 		WebDriverWait wait = new WebDriverWait(driver,30);
-		
+
 		String actionName="Product Basket: Change to Product Basket iframe";
 
-		
+
 		try
 		{
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(DirSalesProductBasket.iframeProductBasket)));
@@ -36,8 +36,8 @@ public class ProductBasketAction {
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesProductBasket.productBasketLabel)));
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
-			
-			
+
+
 
 		}
 		catch(Exception e)
@@ -47,7 +47,7 @@ public class ProductBasketAction {
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
 	}
-	
+
 	public static void changeToDefaultiFrame(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
 	{
 		String actionName="Product Basket: Change to default frame";
@@ -88,7 +88,7 @@ public class ProductBasketAction {
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
 	}
-	
+
 	public static void syncProductBasket(List<TestLog> logStream, WebDriver driver, int newStepCounter) throws Exception 
 	{
 		String actionName="syncProductBasket";
@@ -97,7 +97,7 @@ public class ProductBasketAction {
 		try
 		{
 			driver.findElement(By.xpath(DirSalesProductBasket.syncButton)).click();
-			
+
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+newStepCounter);
 
@@ -108,9 +108,9 @@ public class ProductBasketAction {
 			TestLogger.logError(logStream, actionName, "Failed in Step "+newStepCounter, e.toString());
 			throw new Exception (actionName+" - Failed in Step "+newStepCounter,e);
 		}
-		
+
 	}
-	
+
 	public static void selectLineItem(List<TestLog> logStream, WebDriver driver, int newStepCounter, String productName) throws Exception 
 	{
 		String actionName="selectLineItem";
@@ -119,9 +119,9 @@ public class ProductBasketAction {
 		try
 		{
 			WebElement productBasketTable=driver.findElement(By.xpath(DirSalesProductBasket.productBasketTable));
-			
+
 			List<WebElement> productBasketLineItem=productBasketTable.findElements(By.tagName("li"));
-			
+
 			for(WebElement we : productBasketLineItem)
 			{
 				if(we.getText().contains(productName))
@@ -130,7 +130,7 @@ public class ProductBasketAction {
 					break;
 				}
 			}			
-			
+
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+newStepCounter);
 
@@ -141,7 +141,7 @@ public class ProductBasketAction {
 			TestLogger.logError(logStream, actionName, "Failed in Step "+newStepCounter, e.toString());
 			throw new Exception (actionName+" - Failed in Step "+newStepCounter,e);
 		}
-		
+
 	}
 
 	public static void deleteLineItem(List<TestLog> logStream, WebDriver driver, int newStepCounter) throws Exception 
@@ -152,13 +152,13 @@ public class ProductBasketAction {
 		try
 		{
 			WebElement deleteButton = new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@aria-label='Delete Product']")));
-			
+
 			deleteButton.click();
-			
+
 			new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(By.xpath("//h3[text()='Delete Product']")));
-			
+
 			driver.findElement(By.xpath("//span[@ng-bind='::LabelsConstant.DELETE_PRODUCTS_CONFIRMATION_DIALOG.BTN_OK']")).click();
-			
+
 			Thread.sleep(5000);
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+newStepCounter);
@@ -170,13 +170,47 @@ public class ProductBasketAction {
 			TestLogger.logError(logStream, actionName, "Failed in Step "+newStepCounter, e.toString());
 			throw new Exception (actionName+" - Failed in Step "+newStepCounter,e);
 		}
-		
+
 	}
-	
-	
-	
+
+	public static void expandingECS(List<TestLog> logStream, WebDriver driver, int stepID, String productName) throws Exception 
+	{
+		String actionName="expandingECS";
+
+		try
+		{
+
+			WebElement productBasketTable=driver.findElement(By.xpath(DirSalesProductBasket.productBasketTable));
+
+			List<WebElement> productBasketLineItem=productBasketTable.findElements(By.tagName("li"));
+
+			for(WebElement we : productBasketLineItem)
+			{
+				if(we.getText().contains(productName))
+				{
+					we.findElement(By.xpath(DirSalesProductBasket.expandPackageButton)).click();
+					
+					break;
+				}
+			}	
+
+			Thread.sleep(5000);
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+
+	}
+
+
 	//Validation Actions
-	
+
 	public static boolean productBasketScreenValidation(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
 	{
 		String actionName="Product Basket: Validation of Product Basket Screen";
@@ -211,94 +245,352 @@ public class ProductBasketAction {
 		}
 	}
 
-	
 	public static boolean productOnProductBasketValidation(List<TestLog> logStream, WebDriver driver, int stepID,
 			String productName) throws Exception 
 	{
 		String actionName="productOnProductBasketValidation";
-		 
-		 try
+
+		try
+		{
+			WebElement productBasketTable=driver.findElement(By.xpath(DirSalesProductBasket.productBasketTable));
+
+			String productBasketLineItemValidation=productBasketTable.getText().toString();
+
+			if(productBasketLineItemValidation.contains(productName))
 			{
-			 	WebElement productBasketTable=driver.findElement(By.xpath(DirSalesProductBasket.productBasketTable));
-			 	
-			 	String productBasketLineItemValidation=productBasketTable.getText().toString();
-			 
-				if(productBasketLineItemValidation.contains(productName))
-				{
-					TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
-					return true;
-				}
-				else
-				{
-					return false;
-				}
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
 			}
-			catch(Exception e)
+			else
 			{
-				System.out.println(e);
-				TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
-				throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+				return false;
 			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
 	}
-	
+
 	public static boolean productOnProductBasketNegativeValidation(List<TestLog> logStream, WebDriver driver, int stepID,
 			String productName) throws Exception 
 	{
 		String actionName="productOnProductBasketNegativeValidation";
-		 
-		 try
-			{		 
-				if(BrowserActions.isElementPresent(driver, "//ul/li[text()='"+productName+"']")==false)
-				{
-					TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
-					return true;
-				}
-				else
-				{
-					return false;
-				}
-			}
-			catch(Exception e)
+
+		try
+		{		 
+			if(BrowserActions.isElementPresent(driver, "//ul/li[text()='"+productName+"']")==false)
 			{
-				System.out.println(e);
-				TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
-				throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
 			}
+			else
+			{
+				return false;
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
 	}
 
-	
 	public static boolean syncProductBasketNegVal(List<TestLog> logStream, WebDriver driver, int newStepCounter) throws Exception 
 	{
-		
-		 String actionName="syncProductBasketNegVal";
-		 
-	     	try
-					{
-						if(BrowserActions.isElementPresent(driver, DirSalesProductBasket.errorMessagePB))
-						{
-							TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+newStepCounter);
-							return true;
-						}
-						else
-						{
-							return false;
-						}
 
-					}
-					catch(Exception e)
-					{
-						System.out.println(e);
-						TestLogger.logError(logStream, actionName, "Failed in Step "+newStepCounter, e.toString());
-						throw new Exception (actionName+" - Failed in Step: "+newStepCounter,e);
-					}
+		String actionName="syncProductBasketNegVal";
+
+		try
+		{
+			if(BrowserActions.isElementPresent(driver, DirSalesProductBasket.errorMessagePB))
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+newStepCounter);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+newStepCounter, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+newStepCounter,e);
+		}
 	}
 
-	
-	
+	public static boolean expandedECSPackValidation(List<TestLog> logStream, WebDriver driver, int stepID,
+			String productName) throws Exception 
+	{
+		String actionName="expandedECSPackValidation";
+
+		boolean result;
+		
 	
 
-	
-	
+		try
+		{
+			switch(productName)
+			{
+			case "Enterprise Call & Surf Pro with Phone Line":
+				result=validateExpandedECSProPhoneLine(logStream, driver, stepID);
+				break;
+			case "Enterprise Call & Surf Pro with Enterprise Voice":
+				result=validateExpandedECSProEV(logStream, driver, stepID);
+				break;
+			case "Enterprise Call & Surf Pro+ with Phone Line":
+				result=validateExpandedECSProPlusPhoneLine(logStream, driver, stepID);
+				break;
+			case "Enterprise Call & Surf Pro+ with Enterprise Voice":
+				result=validateExpandedECSProPlusEV(logStream, driver, stepID);
+				break;
+			case "Enterprise Call & Surf FullFiber":
+				result=validateExpandedECSFullFiber(logStream, driver, stepID);
+				break;
+			case "Enterprise Call & Surf FullFiber Extended":
+				result=validateExpandedECSFullFiberExtended(logStream, driver, stepID);
+				break;
+			default:
+				TestLogger.logInfo(logStream, actionName, TestLogger.logInfo);
+				throw new Exception (actionName+" - Failed in Step: "+stepID);
+			}
+
+			return result;
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
+
+	private static boolean validateExpandedECSProPlusPhoneLine(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
+	{
+		String actionName="validateECSProPlusPhoneLine";
+
+		int validation=0;
+
+		try
+		{
+			List<WebElement> ecsProductExpanded = new WebDriverWait(driver, 15).until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//li[@class='ng-scope']")));
+
+			for(WebElement we:ecsProductExpanded)
+			{
+				if(we.getText().contains("Internet Pro+") || we.getText().contains("Phone Line") || we.getText().contains("Business Continuity"))
+				{
+					validation++;
+				}
+			}
+
+			if(validation > 2)
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
+
+	private static boolean validateExpandedECSProPhoneLine(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
+	{
+		String actionName="validateECSProPhoneLine";
+
+		int validation=0;
+
+		try
+		{
+			List<WebElement> ecsProductExpanded = new WebDriverWait(driver, 15).until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//li[@class='ng-scope']")));
+
+			for(WebElement we:ecsProductExpanded)
+			{
+				if(we.getText().contains("Internet Pro") || we.getText().contains("Phone Line") || we.getText().contains("Business Continuity"))
+				{
+					validation++;
+				}
+			}
+
+			if(validation > 2)
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
+
+	private static boolean validateExpandedECSProEV(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
+	{
+		String actionName="validateECSProEV";
+
+		int validation=0;
+
+		try
+		{
+			List<WebElement> ecsProductExpanded = new WebDriverWait(driver, 15).until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//li[@class='ng-scope']")));
+
+			for(WebElement we:ecsProductExpanded)
+			{
+				if(we.getText().contains("Internet Pro") || we.getText().contains("Enterprise Voice - Converged") || we.getText().contains("Business Continuity"))
+				{
+					validation++;
+				}
+			}
+
+			if(validation > 2)
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
+
+	private static boolean validateExpandedECSProPlusEV(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
+	{
+		String actionName="validateECSProPlusEV";
+
+		int validation=0;
+
+		try
+		{
+			List<WebElement> ecsProductExpanded = new WebDriverWait(driver, 15).until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//li[@class='ng-scope']")));
+
+			for(WebElement we:ecsProductExpanded)
+			{
+				if(we.getText().contains("Internet Pro+") || we.getText().contains("Enterprise Voice - Converged") || we.getText().contains("Business Continuity"))
+				{
+					validation++;
+				}
+			}
+
+			if(validation > 2)
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
+
+	private static boolean validateExpandedECSFullFiber(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
+	{
+		String actionName="validateECSFullFiber";
+
+		int validation=0;
+
+		try
+		{
+			List<WebElement> ecsProductExpanded = new WebDriverWait(driver, 15).until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//li[@class='ng-scope']")));
+
+			for(WebElement we:ecsProductExpanded)
+			{
+				if(we.getText().contains("FullFiber") || we.getText().contains("Enterprise Voice - Converged") || we.getText().contains("Business Continuity"))
+				{
+					validation++;
+				}
+			}
+
+			if(validation > 2)
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
+
+	private static boolean validateExpandedECSFullFiberExtended(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
+	{
+		String actionName="validateECSFullFiberExtended";
+
+		int validation=0;
+
+		try
+		{
+			List<WebElement> ecsProductExpanded = new WebDriverWait(driver, 15).until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//li[@class='ng-scope']")));
+
+			for(WebElement we:ecsProductExpanded)
+			{
+				if(we.getText().contains("FullFiber Extended") || we.getText().contains("Enterprise Voice - Converged") || we.getText().contains("Business Continuity"))
+				{
+					validation++;
+				}
+			}
+
+			if(validation > 2)
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
 
 
 }

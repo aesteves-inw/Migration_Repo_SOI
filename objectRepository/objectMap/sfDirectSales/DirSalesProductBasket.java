@@ -51,4 +51,6 @@ public class DirSalesProductBasket {
 		public static String syncWithPBFlag="//input[@aria-labelledby='csbb__Synchronised_With_Opportunity__c']";
 		
 		public static String selectLineItemCheckBox="//button[@type='button'][@class='bt-btn btn-checkbox ng-scope']";
+		
+		public static String expandPackageButton="//button[@aria-label='Expand package']";
 }
