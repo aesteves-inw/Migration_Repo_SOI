@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="SOI-2205" parallel="false">
+<suite name="SOI-2205 User Story" parallel="false">
 <test name="SOI_2205_TC01_DS_ECS_Offerings_ECS_Pro_EnterpriseVoice">
     <classes>
       <class name="d02.SOI_2205.SOI_2205_TC01_DS_ECS_Offerings_ECS_Pro_EnterpriseVoice"/>
