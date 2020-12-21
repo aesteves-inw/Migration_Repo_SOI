@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 
 import delivery02.SOI_1013;
 import executionDriver.ExecDriverClass;
+import executionTools.BrowserActions;
 import executionTools.ExecStructure;
 import executionTools.TestStructure;
 import testLogBuilder.TestLog;
@@ -41,6 +42,8 @@ public class SOI_1013_TC02_DS_Sync_ProductBasket_ProductNotValid_NegativeTest {
 	@BeforeClass
 	public void beforeClass() 
 	{
+		BrowserActions.endSession(driver);
+		
 		driver = ExecDriverClass.setupDriver();
 		
 		TestStructure.startTest(logStream,testName);

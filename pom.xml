@@ -16,10 +16,11 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.0.0-M3</version>
 				<configuration>
+				 <forkCount>0</forkCount>
 					<!-- Suite testng xml file to consider for test execution -->
 					<suiteXmlFiles>
-						<!--   <suiteXmlFile>src\test\java\delivery01\soi_66\SOI_66_TestSuite.xml</suiteXmlFile>
-						<suiteXmlFile>src\test\java\delivery01\soi_68\SOI_68_TestSuite.xml</suiteXmlFile> -->
+						<suiteXmlFile>src\test\java\d02\SOI_2206\SOI_2206_TestSuite.xml</suiteXmlFile>
+						<suiteXmlFile>src\test\java\d02\SOI_2205\SOI_2205_TestSuite.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
