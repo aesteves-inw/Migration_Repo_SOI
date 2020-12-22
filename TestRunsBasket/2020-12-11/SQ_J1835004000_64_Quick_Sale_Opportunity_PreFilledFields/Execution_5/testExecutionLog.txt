@@ -1,0 +1,23 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SQ_J1835004000_64_Quick_Sale_Opportunity_PreFilledFields
+Log Date: 11-12-2020 00:45:35
+Test Status: Failed
+###############################################################################
+11-12-2020 00:45:40 - INFO - startTest - Test Case: SQ_J1835004000_64_Quick_Sale_Opportunity_PreFilledFields initiation
+11-12-2020 00:45:41 - TRACE - goToLoginPage - Executed with success
+11-12-2020 00:45:43 - TRACE - fillcredentials - Executed with success
+11-12-2020 00:45:48 - TRACE - pressLoginButton - Executed with success
+11-12-2020 00:45:48 - INFO - loginDirectSales on Step 1 - Executed with success
+11-12-2020 00:45:50 - TRACE - homePageValidation - Executed with success
+11-12-2020 00:45:50 - INFO - loginSFDS - Step 1 - Executed with success
+11-12-2020 00:45:55 - TRACE - goToCompanyDetailsPage - Executed with success
+11-12-2020 00:45:56 - TRACE - companyPageValidation - Executed with success
+11-12-2020 00:45:56 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+11-12-2020 00:45:57 - TRACE - openQuickSaleOPTYScreen - Executed with success
+11-12-2020 00:46:01 - TRACE - quickSaleFormValidation - Succeeded in Step: 3
+11-12-2020 00:46:01 - INFO - startQuickSaleOPTY - Executed with success
+11-12-2020 00:46:02 - ERROR - validateQuickSalePreFilledFields - Executed with errors - java.lang.Exception: step - Failed in Step: 4
+11-12-2020 00:46:02 - INFO - finishTest - Test Case: SQ_J1835004000_64_Quick_Sale_Opportunity_PreFilledFields completion
+############################# End Of Log File #################################

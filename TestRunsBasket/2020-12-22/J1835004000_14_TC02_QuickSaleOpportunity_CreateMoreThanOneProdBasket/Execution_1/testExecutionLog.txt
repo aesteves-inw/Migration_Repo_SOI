@@ -1,0 +1,54 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: J1835004000_14_TC02_QuickSaleOpportunity_CreateMoreThanOneProdBasket
+Log Date: 22-12-2020 00:31:12
+Test Status: Passed
+###############################################################################
+22-12-2020 00:33:14 - INFO - startTest - Test Case: J1835004000_14_TC02_QuickSaleOpportunity_CreateMoreThanOneProdBasket initiation
+22-12-2020 00:33:14 - TRACE - goToLoginPage - Executed with success
+22-12-2020 00:33:16 - TRACE - fillcredentials - Executed with success
+22-12-2020 00:33:20 - TRACE - pressLoginButton - Executed with success
+22-12-2020 00:33:20 - INFO - loginDirectSales on Step 1 - Executed with success
+22-12-2020 00:33:20 - TRACE - homePageValidation - Executed with success
+22-12-2020 00:33:20 - INFO - loginSFDS - Step 1 - Executed with success
+22-12-2020 00:33:27 - TRACE - goToCompanyDetailsPage - Executed with success
+22-12-2020 00:33:28 - TRACE - companyPageValidation - Executed with success
+22-12-2020 00:33:28 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+22-12-2020 00:33:30 - TRACE - openQuickSaleOPTYScreen - Executed with success
+22-12-2020 00:33:35 - TRACE - quickSaleFormValidation - Succeeded in Step: 3
+22-12-2020 00:33:35 - INFO - startQuickSaleOPTY - Executed with success
+22-12-2020 00:33:36 - TRACE - validateQuickSaleFilledFields - Succeeded in Step: 4
+22-12-2020 00:33:36 - INFO - validateQuickSalePreFilledFields - Executed with success
+22-12-2020 00:33:37 - TRACE - createQuickSaleOpty - Executed with success
+22-12-2020 00:33:42 - TRACE - saveOpportunity - Executed with success
+22-12-2020 00:34:02 - INFO - finishQuickSaleOPTYCreation - Executed with success
+22-12-2020 00:34:05 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+22-12-2020 00:34:09 - INFO - goToOpportunityPage - Executed with success
+22-12-2020 00:34:12 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 6
+22-12-2020 00:34:12 - INFO - navigateToOpportunityPage - Executed with success
+22-12-2020 00:34:13 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 7
+22-12-2020 00:34:17 - TRACE - clickNewProductBasketLink - Succeeded in Step 7
+22-12-2020 00:34:17 - TRACE - createProductBasket - Succeeded in Step 7
+22-12-2020 00:34:23 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 7
+22-12-2020 00:34:24 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 7
+22-12-2020 00:34:24 - INFO - createProductBasket - Executed with success
+22-12-2020 00:34:25 - TRACE - Product Basket: Change to default frame - Succeeded in Step 7
+22-12-2020 00:34:26 - TRACE - goToOPTYByURL - Succeeded in Step 8
+22-12-2020 00:34:29 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 8
+22-12-2020 00:34:29 - INFO - goToOpportunityByURL - Executed with success
+22-12-2020 00:34:30 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 9
+22-12-2020 00:34:34 - TRACE - clickNewProductBasketLink - Succeeded in Step 9
+22-12-2020 00:34:34 - TRACE - createProductBasket - Succeeded in Step 9
+22-12-2020 00:34:39 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 9
+22-12-2020 00:34:40 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 9
+22-12-2020 00:34:40 - INFO - createProductBasket - Executed with success
+22-12-2020 00:34:41 - TRACE - Product Basket: Change to default frame - Succeeded in Step 9
+22-12-2020 00:34:42 - TRACE - goToOPTYByURL - Succeeded in Step 10
+22-12-2020 00:34:44 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 10
+22-12-2020 00:34:44 - INFO - goToOpportunityByURL - Executed with success
+22-12-2020 00:34:47 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 11
+22-12-2020 00:34:49 - TRACE - validateMoreThanOneRelatedProductBasket - Succeeded in Step: 11
+22-12-2020 00:34:49 - INFO - relatedProductBasketsValidation - Executed with success
+22-12-2020 00:34:49 - INFO - finishTest - Test Case: J1835004000_14_TC02_QuickSaleOpportunity_CreateMoreThanOneProdBasket completion
+############################# End Of Log File #################################

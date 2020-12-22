@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="J1835004000-18 User Story" parallel="false">
+  <test name="J1835004000_18_TC01_Add_EnterpriseVoice_To_ProductBasket">
+    <classes>
+      <class name="sq.J1835004000_18.J1835004000_18_TC01_Add_EnterpriseVoice_To_ProductBasket"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="J1835004000_18_TC02_Add_EnterpriseVoice_To_ProductBasket_DeleteProduct_InvalidConfig">
+    <classes>
+      <class name="sq.J1835004000_18.J1835004000_18_TC02_Add_EnterpriseVoice_To_ProductBasket_DeleteProduct_InvalidConfig"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- J1835004000-18 User Story -->

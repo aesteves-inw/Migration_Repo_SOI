@@ -1,0 +1,27 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: testingFrameworkPackage.GeneralTestingClass
+Log Date: 16-12-2020 12:17:49
+Test Status: Failed
+###############################################################################
+16-12-2020 12:17:54 - INFO - startTest - Test Case: testingFrameworkPackage.GeneralTestingClass initiation
+16-12-2020 12:17:56 - TRACE - goToLoginPage - Executed with success
+16-12-2020 12:17:57 - TRACE - fillcredentials - Executed with success
+16-12-2020 12:18:02 - TRACE - pressLoginButton - Executed with success
+16-12-2020 12:18:02 - INFO - loginDirectSales on Step 1 - Executed with success
+16-12-2020 12:18:03 - TRACE - homePageValidation - Executed with success
+16-12-2020 12:18:03 - INFO - loginSFDS - Step 1 - Executed with success
+16-12-2020 12:18:08 - TRACE - goToCompanyDetailsPage - Executed with success
+16-12-2020 12:18:09 - TRACE - companyPageValidation - Executed with success
+16-12-2020 12:18:09 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+16-12-2020 12:18:11 - TRACE - openQuickSaleOPTYScreen - Executed with success
+16-12-2020 12:18:15 - TRACE - quickSaleFormValidation - Succeeded in Step: 3
+16-12-2020 12:18:15 - INFO - startQuickSaleOPTY - Executed with success
+16-12-2020 12:18:16 - TRACE - validateQuickSaleFilledFields - Succeeded in Step: 4
+16-12-2020 12:18:16 - INFO - validateQuickSalePreFilledFields - Executed with success
+16-12-2020 12:18:16 - ERROR - finishQuickSaleOPTYCreation - Executed with errors - java.lang.ArrayIndexOutOfBoundsException: 1
+16-12-2020 12:18:17 - ERROR - testingFrameworkPackage.GeneralTestingClass - Test Failed - java.lang.Exception: Fill Mandatory Fields and Press Save Button - Failed in Step: 5
+16-12-2020 12:18:17 - ERROR - testingFrameworkPackage.GeneralTestingClass - Test Failed on Pre Conditions Setup - java.lang.Exception: testingFrameworkPackage.GeneralTestingClass: Failed
+16-12-2020 12:18:17 - INFO - finishTest - Test Case: testingFrameworkPackage.GeneralTestingClass completion
+############################# End Of Log File #################################

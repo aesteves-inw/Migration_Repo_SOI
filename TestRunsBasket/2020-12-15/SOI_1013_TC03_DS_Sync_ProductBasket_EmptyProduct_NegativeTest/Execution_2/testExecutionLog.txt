@@ -1,0 +1,49 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SOI_1013_TC03_DS_Sync_ProductBasket_EmptyProduct_NegativeTest
+Log Date: 15-12-2020 14:44:07
+Test Status: Failed
+###############################################################################
+15-12-2020 14:44:11 - INFO - startTest - Test Case: SOI_1013_TC03_DS_Sync_ProductBasket_EmptyProduct_NegativeTest initiation
+15-12-2020 14:44:13 - TRACE - goToLoginPage - Executed with success
+15-12-2020 14:44:14 - TRACE - fillcredentials - Executed with success
+15-12-2020 14:44:19 - TRACE - pressLoginButton - Executed with success
+15-12-2020 14:44:19 - INFO - loginDirectSales on Step 1 - Executed with success
+15-12-2020 14:44:20 - TRACE - homePageValidation - Executed with success
+15-12-2020 14:44:20 - INFO - loginSFDS - Step 1 - Executed with success
+15-12-2020 14:44:25 - TRACE - goToCompanyDetailsPage - Executed with success
+15-12-2020 14:44:25 - TRACE - companyPageValidation - Executed with success
+15-12-2020 14:44:25 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+15-12-2020 14:44:27 - TRACE - openQuickSaleOPTYScreen - Executed with success
+15-12-2020 14:44:32 - TRACE - quickSaleFormValidation - Succeeded in Step: 3
+15-12-2020 14:44:32 - INFO - startQuickSaleOPTY - Executed with success
+15-12-2020 14:44:32 - TRACE - validateQuickSaleFilledFields - Succeeded in Step: 4
+15-12-2020 14:44:32 - INFO - validateQuickSalePreFilledFields - Executed with success
+15-12-2020 14:44:33 - TRACE - createQuickSaleOpty - Executed with success
+15-12-2020 14:44:37 - TRACE - saveOpportunity - Executed with success
+15-12-2020 14:44:57 - INFO - finishQuickSaleOPTYCreation - Executed with success
+15-12-2020 14:44:59 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+15-12-2020 14:45:02 - INFO - goToOpportunityPage - Executed with success
+15-12-2020 14:45:04 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 6
+15-12-2020 14:45:04 - INFO - navigateToOpportunityPage - Executed with success
+15-12-2020 14:45:06 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 7
+15-12-2020 14:45:08 - TRACE - clickNewProductBasketLink - Succeeded in Step 7
+15-12-2020 14:45:08 - TRACE - createProductBasket - Succeeded in Step 7
+15-12-2020 14:45:14 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 7
+15-12-2020 14:45:14 - INFO - createProductBasket - Executed with success
+15-12-2020 14:45:15 - ERROR - goToProductBasketRelatedMenu - Failed in Step 8 - java.lang.ArrayIndexOutOfBoundsException: 6
+15-12-2020 14:45:15 - ERROR - createProductBasket - Failed in Step 8 - java.lang.Exception: goToProductBasketRelatedMenu - Failed in Step 8
+15-12-2020 14:45:15 - ERROR - createProductBasket - Executed with errors - java.lang.Exception: createProductBasket - Failed in Step 8
+15-12-2020 14:45:15 - TRACE - syncProductBasket - Succeeded in Step 9
+15-12-2020 14:45:16 - ERROR - syncProductBasketNegVal - Failed in Step 9 - org.openqa.selenium.WebDriverException: target frame detached
+  (Session info: chrome=87.0.4280.88)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'INNOWAVE-383', ip: '192.168.0.164', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_251'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\source\simpleOrderingInt...}, goog:chromeOptions: {debuggerAddress: localhost:61883}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 5a3318700a5ff1df03ba6fb6d5b1bd48
+*** Element info: {Using=xpath, value=//div[@class='toast ng-scope toast-error']}
+15-12-2020 14:45:16 - ERROR - syncProductBasketNegVal - Executed with errors - java.lang.Exception: syncProductBasketNegVal - Failed in Step: 9
+15-12-2020 14:45:16 - INFO - finishTest - Test Case: SOI_1013_TC03_DS_Sync_ProductBasket_EmptyProduct_NegativeTest completion
+############################# End Of Log File #################################

@@ -1,0 +1,20 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: testingFrameworkPackage.GeneralTestingClass
+Log Date: 16-12-2020 12:04:18
+Test Status: Passed
+###############################################################################
+16-12-2020 12:04:23 - INFO - startTest - Test Case: testingFrameworkPackage.GeneralTestingClass initiation
+16-12-2020 12:04:25 - TRACE - goToLoginPage - Executed with success
+16-12-2020 12:04:27 - TRACE - fillcredentials - Executed with success
+16-12-2020 12:04:33 - TRACE - pressLoginButton - Executed with success
+16-12-2020 12:04:33 - INFO - loginDirectSales on Step 1 - Executed with success
+16-12-2020 12:04:34 - TRACE - homePageValidation - Executed with success
+16-12-2020 12:04:34 - INFO - loginSFDS - Step 1 - Executed with success
+16-12-2020 12:04:40 - TRACE - goToCompanyDetailsPage - Executed with success
+16-12-2020 12:04:41 - TRACE - companyPageValidation - Executed with success
+16-12-2020 12:04:41 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+16-12-2020 12:04:42 - ERROR - testingFrameworkPackage.GeneralTestingClass - Test Failed on Pre Conditions Setup - java.lang.ArrayIndexOutOfBoundsException: 1
+16-12-2020 12:04:42 - INFO - finishTest - Test Case: testingFrameworkPackage.GeneralTestingClass completion
+############################# End Of Log File #################################

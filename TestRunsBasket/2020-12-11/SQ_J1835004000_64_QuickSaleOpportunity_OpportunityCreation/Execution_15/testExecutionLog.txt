@@ -1,0 +1,27 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SQ_J1835004000_64_QuickSaleOpportunity_OpportunityCreation
+Log Date: 11-12-2020 12:11:10
+Test Status: Passed
+###############################################################################
+11-12-2020 12:11:15 - INFO - startTest - Test Case: SQ_J1835004000_64_QuickSaleOpportunity_OpportunityCreation initiation
+11-12-2020 12:11:16 - TRACE - goToLoginPage - Executed with success
+11-12-2020 12:11:18 - TRACE - fillcredentials - Executed with success
+11-12-2020 12:11:23 - TRACE - pressLoginButton - Executed with success
+11-12-2020 12:11:23 - INFO - loginDirectSales on Step 1 - Executed with success
+11-12-2020 12:11:24 - TRACE - homePageValidation - Executed with success
+11-12-2020 12:11:24 - INFO - loginSFDS - Step 1 - Executed with success
+11-12-2020 12:11:31 - TRACE - goToCompanyDetailsPage - Executed with success
+11-12-2020 12:11:32 - TRACE - companyPageValidation - Executed with success
+11-12-2020 12:11:32 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+11-12-2020 12:11:34 - TRACE - openQuickSaleOPTYScreen - Executed with success
+11-12-2020 12:11:38 - TRACE - quickSaleFormValidation - Succeeded in Step: 3
+11-12-2020 12:11:38 - INFO - startQuickSaleOPTY - Executed with success
+11-12-2020 12:11:39 - TRACE - validateQuickSaleFilledFields - Succeeded in Step: 4
+11-12-2020 12:11:39 - INFO - validateQuickSalePreFilledFields - Executed with success
+11-12-2020 12:11:40 - TRACE - createQuickSaleOpty - Executed with success
+11-12-2020 12:11:45 - TRACE - saveOpportunity - Executed with success
+11-12-2020 12:12:05 - INFO - finishQuickSaleOPTYCreation - Executed with success
+11-12-2020 12:12:05 - INFO - finishTest - Test Case: SQ_J1835004000_64_QuickSaleOpportunity_OpportunityCreation completion
+############################# End Of Log File #################################

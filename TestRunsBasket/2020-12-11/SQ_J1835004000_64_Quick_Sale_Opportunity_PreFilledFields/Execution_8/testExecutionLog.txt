@@ -1,0 +1,23 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SQ_J1835004000_64_Quick_Sale_Opportunity_PreFilledFields
+Log Date: 11-12-2020 00:49:46
+Test Status: Failed
+###############################################################################
+11-12-2020 00:49:51 - INFO - startTest - Test Case: SQ_J1835004000_64_Quick_Sale_Opportunity_PreFilledFields initiation
+11-12-2020 00:49:52 - TRACE - goToLoginPage - Executed with success
+11-12-2020 00:49:54 - TRACE - fillcredentials - Executed with success
+11-12-2020 00:49:58 - TRACE - pressLoginButton - Executed with success
+11-12-2020 00:49:58 - INFO - loginDirectSales on Step 1 - Executed with success
+11-12-2020 00:49:58 - TRACE - homePageValidation - Executed with success
+11-12-2020 00:49:58 - INFO - loginSFDS - Step 1 - Executed with success
+11-12-2020 00:50:03 - TRACE - goToCompanyDetailsPage - Executed with success
+11-12-2020 00:50:04 - TRACE - companyPageValidation - Executed with success
+11-12-2020 00:50:04 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+11-12-2020 00:50:06 - TRACE - openQuickSaleOPTYScreen - Executed with success
+11-12-2020 00:50:10 - TRACE - quickSaleFormValidation - Succeeded in Step: 3
+11-12-2020 00:50:10 - INFO - startQuickSaleOPTY - Executed with success
+11-12-2020 00:50:11 - ERROR - validateQuickSalePreFilledFields - Executed with errors - java.lang.Exception: Validate the pre filled fields - Failed in Step: 4
+11-12-2020 00:50:11 - INFO - finishTest - Test Case: SQ_J1835004000_64_Quick_Sale_Opportunity_PreFilledFields completion
+############################# End Of Log File #################################

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SOI-1013 User Story" parallel="false">
+  <test name="SOI_1013_TC02_DS_Sync_ProductBasket_ProductNotValid_NegativeTest">
+    <classes>
+      <class name="d02.SOI_1013.SOI_1013_TC02_DS_Sync_ProductBasket_ProductNotValid_NegativeTest"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="SOI_1013_TC03_DS_Sync_ProductBasket_EmptyProduct_NegativeTest">
+    <classes>
+      <class name="d02.SOI_1013.SOI_1013_TC03_DS_Sync_ProductBasket_EmptyProduct_NegativeTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- SOI-1013 User Story -->

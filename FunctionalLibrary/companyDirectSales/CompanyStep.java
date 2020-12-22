@@ -9,7 +9,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import objectMap.sfDirectSales.DirSalesOpportunity;
 import opportunityDirectSales.OpportunityAction;
-import testExecutionData.TestCasesData;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
 import testReportComposition.ReportStructure;
@@ -21,7 +20,7 @@ public class CompanyStep {
 	public static void createQuickSaleOpportunity(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, String testName, int stepID) throws Exception
 	{
 		
-		stepID++;
+		
 		
 		String stepName="Company: Create Quick Sale Opportunity";
 
@@ -32,9 +31,7 @@ public class CompanyStep {
 		String componentOfTheLog=stepNameMin+" - Step "+stepID;
 		
 		
-		//boolean validation;
-		
-		String opportunityName = TestCasesData.getOPTYName(testName);
+		boolean validation;
 		
 		
 		try
@@ -42,14 +39,11 @@ public class CompanyStep {
 			
 			CompanyAction.createQuickSaleOpty(logStream, driver, testName);
 			
-			CompanyNavigation.goToOpportunityPage(logStream, driver, opportunityName);
+			CompanyNavigation.goToOpportunityPage(logStream, driver, testName);
 			
+			validation=OpportunityAction.opportunityScreenValidation(logStream, driver, stepID);
 			
-			
-			TestLogger.logInfo(logStream, componentOfTheLog, TestLogger.logInfo);
-			TestReporter.stepPassed(testReportStream, driver, testName, stepID, stepName, evidenceName);
-			
-			/*if (validation==true) 
+			if (validation==true) 
 			{
 				TestLogger.logInfo(logStream, componentOfTheLog, TestLogger.logInfo);
 				TestReporter.stepPassed(testReportStream, driver, testName, stepID, stepName, evidenceName);
@@ -57,12 +51,13 @@ public class CompanyStep {
 			else
 			{
 				throw new Exception (stepName+" - Failed in Step: "+stepID);
-			}*/
+			}
 		}
 		catch(Exception e)
 		{
 			TestLogger.logError(logStream, componentOfTheLog, TestLogger.logError, e.toString());
 			TestReporter.stepFailed(testReportStream, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
 		
 	}
@@ -104,6 +99,7 @@ public class CompanyStep {
 			System.out.println(e);
 			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
 			TestReporter.stepFailed(testReportStream, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
 
 	}
@@ -147,7 +143,6 @@ public class CompanyStep {
 		
 	}
 
-
 	public static void finishQuickSaleOPTYCreation(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, int stepID, String testName) throws Exception
 	{
 		
@@ -186,6 +181,7 @@ public class CompanyStep {
 			System.out.println(e);
 			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
 			TestReporter.stepFailed(testReportStream, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
 
 	}
@@ -224,6 +220,7 @@ public class CompanyStep {
 			System.out.println(e);
 			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
 			TestReporter.stepFailed(testReportStream, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
 	}
 
@@ -270,6 +267,7 @@ public class CompanyStep {
 			System.out.println(e);
 			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
 			TestReporter.stepFailed(testReportStream, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
 
 	}

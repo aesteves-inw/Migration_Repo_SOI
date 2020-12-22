@@ -1,0 +1,31 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: J1835004000_64_TC02_QuickSaleOpportunity_OpportunityCreation
+Log Date: 22-12-2020 00:31:12
+Test Status: Passed
+###############################################################################
+22-12-2020 00:31:50 - INFO - startTest - Test Case: J1835004000_64_TC02_QuickSaleOpportunity_OpportunityCreation initiation
+22-12-2020 00:31:51 - TRACE - goToLoginPage - Executed with success
+22-12-2020 00:31:53 - TRACE - fillcredentials - Executed with success
+22-12-2020 00:31:57 - TRACE - pressLoginButton - Executed with success
+22-12-2020 00:31:57 - INFO - loginDirectSales on Step 1 - Executed with success
+22-12-2020 00:31:59 - TRACE - homePageValidation - Executed with success
+22-12-2020 00:31:59 - INFO - loginSFDS - Step 1 - Executed with success
+22-12-2020 00:32:04 - TRACE - goToCompanyDetailsPage - Executed with success
+22-12-2020 00:32:06 - TRACE - companyPageValidation - Executed with success
+22-12-2020 00:32:06 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+22-12-2020 00:32:08 - TRACE - openQuickSaleOPTYScreen - Executed with success
+22-12-2020 00:32:13 - TRACE - quickSaleFormValidation - Succeeded in Step: 3
+22-12-2020 00:32:13 - INFO - startQuickSaleOPTY - Executed with success
+22-12-2020 00:32:13 - TRACE - validateQuickSaleFilledFields - Succeeded in Step: 4
+22-12-2020 00:32:13 - INFO - validateQuickSalePreFilledFields - Executed with success
+22-12-2020 00:32:15 - TRACE - createQuickSaleOpty - Executed with success
+22-12-2020 00:32:20 - TRACE - saveOpportunity - Executed with success
+22-12-2020 00:32:40 - INFO - finishQuickSaleOPTYCreation - Executed with success
+22-12-2020 00:32:42 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+22-12-2020 00:32:47 - INFO - goToOpportunityPage - Executed with success
+22-12-2020 00:32:49 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 6
+22-12-2020 00:32:49 - INFO - navigateToOpportunityPage - Executed with success
+22-12-2020 00:32:50 - INFO - finishTest - Test Case: J1835004000_64_TC02_QuickSaleOpportunity_OpportunityCreation completion
+############################# End Of Log File #################################

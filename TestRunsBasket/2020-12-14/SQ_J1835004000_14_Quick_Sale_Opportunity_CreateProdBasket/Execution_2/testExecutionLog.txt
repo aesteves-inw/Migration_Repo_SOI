@@ -1,0 +1,36 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SQ_J1835004000_14_Quick_Sale_Opportunity_CreateProdBasket
+Log Date: 14-12-2020 10:54:26
+Test Status: Passed
+###############################################################################
+14-12-2020 10:54:31 - INFO - startTest - Test Case: SQ_J1835004000_14_Quick_Sale_Opportunity_CreateProdBasket initiation
+14-12-2020 10:54:33 - TRACE - goToLoginPage - Executed with success
+14-12-2020 10:54:35 - TRACE - fillcredentials - Executed with success
+14-12-2020 10:54:40 - TRACE - pressLoginButton - Executed with success
+14-12-2020 10:54:40 - INFO - loginDirectSales on Step 1 - Executed with success
+14-12-2020 10:54:40 - TRACE - homePageValidation - Executed with success
+14-12-2020 10:54:40 - INFO - loginSFDS - Step 1 - Executed with success
+14-12-2020 10:54:48 - TRACE - goToCompanyDetailsPage - Executed with success
+14-12-2020 10:54:49 - TRACE - companyPageValidation - Executed with success
+14-12-2020 10:54:49 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+14-12-2020 10:54:51 - TRACE - openQuickSaleOPTYScreen - Executed with success
+14-12-2020 10:54:56 - TRACE - quickSaleFormValidation - Succeeded in Step: 3
+14-12-2020 10:54:56 - INFO - startQuickSaleOPTY - Executed with success
+14-12-2020 10:54:57 - TRACE - validateQuickSaleFilledFields - Succeeded in Step: 4
+14-12-2020 10:54:57 - INFO - validateQuickSalePreFilledFields - Executed with success
+14-12-2020 10:54:58 - TRACE - createQuickSaleOpty - Executed with success
+14-12-2020 10:55:03 - TRACE - saveOpportunity - Executed with success
+14-12-2020 10:55:23 - INFO - finishQuickSaleOPTYCreation - Executed with success
+14-12-2020 10:55:25 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+14-12-2020 10:55:30 - INFO - goToOpportunityPage - Executed with success
+14-12-2020 10:55:32 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 6
+14-12-2020 10:55:32 - INFO - navigateToOpportunityPage - Executed with success
+14-12-2020 10:55:36 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 6
+14-12-2020 10:55:37 - TRACE - clickNewProductBasketLink - Succeeded in Step 6
+14-12-2020 10:55:37 - TRACE - createProductBasket - Succeeded in Step 6
+14-12-2020 10:55:44 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 6
+14-12-2020 10:55:44 - INFO - createProductBasket - Executed with success
+14-12-2020 10:55:45 - INFO - finishTest - Test Case: SQ_J1835004000_14_Quick_Sale_Opportunity_CreateProdBasket completion
+############################# End Of Log File #################################

@@ -1,0 +1,28 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SQ_J1835004000_64_QuickSaleOpportunity_OpportunityCreation
+Log Date: 14-12-2020 08:50:50
+Test Status: Failed
+###############################################################################
+14-12-2020 08:50:54 - INFO - startTest - Test Case: SQ_J1835004000_64_QuickSaleOpportunity_OpportunityCreation initiation
+14-12-2020 08:50:56 - TRACE - goToLoginPage - Executed with success
+14-12-2020 08:50:57 - TRACE - fillcredentials - Executed with success
+14-12-2020 08:51:02 - TRACE - pressLoginButton - Executed with success
+14-12-2020 08:51:02 - INFO - loginDirectSales on Step 1 - Executed with success
+14-12-2020 08:51:03 - TRACE - homePageValidation - Executed with success
+14-12-2020 08:51:03 - INFO - loginSFDS - Step 1 - Executed with success
+14-12-2020 08:51:08 - TRACE - goToCompanyDetailsPage - Executed with success
+14-12-2020 08:51:09 - TRACE - companyPageValidation - Executed with success
+14-12-2020 08:51:09 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+14-12-2020 08:51:10 - TRACE - openQuickSaleOPTYScreen - Executed with success
+14-12-2020 08:51:14 - TRACE - quickSaleFormValidation - Succeeded in Step: 3
+14-12-2020 08:51:14 - INFO - startQuickSaleOPTY - Executed with success
+14-12-2020 08:51:15 - TRACE - validateQuickSaleFilledFields - Succeeded in Step: 4
+14-12-2020 08:51:15 - INFO - validateQuickSalePreFilledFields - Executed with success
+14-12-2020 08:51:16 - TRACE - createQuickSaleOpty - Executed with success
+14-12-2020 08:51:16 - TRACE - saveOpportunity - Executed with success
+14-12-2020 08:51:16 - TRACE - quickSaleFormValidation - Succeeded in Step: 5
+14-12-2020 08:51:16 - ERROR - finishQuickSaleOPTYCreation - Executed with errors - java.lang.Exception: Fill Mandatory Fields and Press Save Button - Failed in Step: 5
+14-12-2020 08:51:17 - INFO - finishTest - Test Case: SQ_J1835004000_64_QuickSaleOpportunity_OpportunityCreation completion
+############################# End Of Log File #################################

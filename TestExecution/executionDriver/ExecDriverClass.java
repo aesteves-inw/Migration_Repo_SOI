@@ -6,7 +6,6 @@ import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.annotations.BeforeMethod;
 import browserManagement.BrowserData;
 
 
@@ -23,7 +22,11 @@ public class ExecDriverClass {
 
 		ChromeOptions chromeProfile = new ChromeOptions(); 
 
-		chromeProfile.addArguments("--start-maximized"); 
+		//chromeProfile.addArguments("--window-size=1980,1080");
+		
+		//chromeProfile.addArguments("--start-maximized"); 
+		
+		chromeProfile.addArguments("--start-fullscreen");
 
 		chromeProfile.addArguments("chrome.switches","--disable-extensions");
 

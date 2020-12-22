@@ -1,0 +1,24 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: J1835004000_64_TC01_QuickSaleOpportunity_PreFilledFields
+Log Date: 22-12-2020 09:07:05
+Test Status: Passed
+###############################################################################
+22-12-2020 09:07:11 - INFO - startTest - Test Case: J1835004000_64_TC01_QuickSaleOpportunity_PreFilledFields initiation
+22-12-2020 09:07:15 - TRACE - goToLoginPage - Executed with success
+22-12-2020 09:07:16 - TRACE - fillcredentials - Executed with success
+22-12-2020 09:07:24 - TRACE - pressLoginButton - Executed with success
+22-12-2020 09:07:24 - INFO - loginDirectSales on Step 1 - Executed with success
+22-12-2020 09:07:26 - TRACE - homePageValidation - Executed with success
+22-12-2020 09:07:26 - INFO - loginSFDS - Step 1 - Executed with success
+22-12-2020 09:07:34 - TRACE - goToCompanyDetailsPage - Executed with success
+22-12-2020 09:07:35 - TRACE - companyPageValidation - Executed with success
+22-12-2020 09:07:35 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+22-12-2020 09:07:42 - TRACE - openQuickSaleOPTYScreen - Executed with success
+22-12-2020 09:07:48 - TRACE - quickSaleFormValidation - Succeeded in Step: 3
+22-12-2020 09:07:48 - INFO - startQuickSaleOPTY - Executed with success
+22-12-2020 09:07:48 - TRACE - validateQuickSaleFilledFields - Succeeded in Step: 4
+22-12-2020 09:07:48 - INFO - validateQuickSalePreFilledFields - Executed with success
+22-12-2020 09:07:49 - INFO - finishTest - Test Case: J1835004000_64_TC01_QuickSaleOpportunity_PreFilledFields completion
+############################# End Of Log File #################################

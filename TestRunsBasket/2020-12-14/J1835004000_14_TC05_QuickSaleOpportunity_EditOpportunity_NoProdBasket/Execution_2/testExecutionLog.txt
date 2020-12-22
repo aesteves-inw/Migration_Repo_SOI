@@ -1,0 +1,15 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: J1835004000_14_TC05_QuickSaleOpportunity_EditOpportunity_NoProdBasket
+Log Date: 14-12-2020 18:20:26
+Test Status: Failed
+###############################################################################
+14-12-2020 18:20:30 - INFO - startTest - Test Case: J1835004000_14_TC05_QuickSaleOpportunity_EditOpportunity_NoProdBasket initiation
+14-12-2020 18:20:32 - TRACE - goToLoginPage - Executed with success
+14-12-2020 18:20:33 - TRACE - fillcredentials - Executed with success
+14-12-2020 18:20:40 - TRACE - pressLoginButton - Executed with success
+14-12-2020 18:20:40 - INFO - loginDirectSales on Step 1 - Executed with success
+14-12-2020 18:20:40 - ERROR - loginSFDS - Step 1 - Executed with errors - java.lang.Exception: Login in Salesforce (Direct Sales) - Failed in Step: 1
+14-12-2020 18:20:40 - INFO - finishTest - Test Case: J1835004000_14_TC05_QuickSaleOpportunity_EditOpportunity_NoProdBasket completion
+############################# End Of Log File #################################

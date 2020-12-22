@@ -11,6 +11,7 @@ import navigation.NavigationStep;
 import opportunityDirectSales.OpportunityStep;
 import productBasketDirectSales.ProductBasketAction;
 import testLogBuilder.TestLog;
+import testLogger.TestLogger;
 import testReportComposition.TestStepReportStructure;
 
 public class J1835004000_14 {
@@ -33,7 +34,9 @@ public class J1835004000_14 {
 		}
 		catch(Exception e)
 		{
-			throw new Exception("SQ_J1835004000_14_Quick_Sale_Opportunity_CreateProdBasket - Test Case Failed");
+			//System.out.println(e);
+			TestLogger.logError(logStream, testName, "Test Failed", e.toString());
+			throw new Exception(testName+": Test Case Failed");
 		}
 	}
 	
@@ -79,7 +82,9 @@ public class J1835004000_14 {
 		}
 		catch(Exception e)
 		{
-			throw new Exception("SQ_J1835004000_14_QuickSaleOpportunity_CreateMoreThanOneProdBasket - Test Case Failed");
+			//System.out.println(e);
+			TestLogger.logError(logStream, testName, "Test Failed", e.toString());
+			throw new Exception(testName+": Test Case Failed");
 		}
 		
 	}
@@ -113,8 +118,9 @@ public class J1835004000_14 {
 		}
 		catch(Exception e)
 		{
-			System.out.println(e);
-			throw new Exception("J1835004000_14_TC03_StandardOpportunity_CreateProdBasket - Test Case Failed");
+			//System.out.println(e);
+			TestLogger.logError(logStream, testName, "Test Failed", e.toString());
+			throw new Exception(testName+": Test Case Failed");
 		}
 		
 		
@@ -168,7 +174,9 @@ public class J1835004000_14 {
 		}
 		catch(Exception e)
 		{
-			throw new Exception("J1835004000_14_TC04_StandardOpportunity_CreateMoreThanOneProdBasket - Test Case Failed");
+			//System.out.println(e);
+			TestLogger.logError(logStream, testName, "Test Failed", e.toString());
+			throw new Exception(testName+": Test Case Failed");
 		}
 		
 		
@@ -191,7 +199,9 @@ public class J1835004000_14 {
 		}
 		catch(Exception e)
 		{
-			throw new Exception("J1835004000_14_TC05_QuickSaleOpportunity_EditOpportunity_NoProdBasket - Test Failed");
+			//System.out.println(e);
+			TestLogger.logError(logStream, testName, "Test Failed", e.toString());
+			throw new Exception(testName+": Test Case Failed");
 		}
 		
 	}

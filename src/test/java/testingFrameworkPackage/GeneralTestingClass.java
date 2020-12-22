@@ -11,8 +11,7 @@ import org.testng.annotations.Test;
 import executionDriver.ExecDriverClass;
 import executionTools.ExecStructure;
 import executionTools.TestStructure;
-import homePageDirectSales.HomePageStep;
-import loginPageDirectSales.LoginPageStep;
+import testFrameworkLibrary.D02Models;
 import testLogBuilder.TestLog;
 import testReportComposition.TestReportTestData;
 import testReportComposition.TestStepReportStructure;
@@ -20,7 +19,7 @@ import testReportComposition.TestStepReportStructure;
 public class GeneralTestingClass extends ExecDriverClass
 {
 	
-	String testName = this.getClass().getName();
+	String testName = "GeneralTestingClass_D02_TC01_ToHaveAProductBasket";
 
 	String initialTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
 
@@ -47,15 +46,9 @@ public class GeneralTestingClass extends ExecDriverClass
 	}
 	
 	@Test
-	public void S01LoginSFDSForTestingFramework() throws Exception
-	{
-		stepsExecuted++;
-		LoginPageStep.loginSFDS(testExecStructure, logStream, driver, testName, stepsExecuted, "salesUser");
-		
-		stepsExecuted++;
-		HomePageStep.navigateToCompanyPage(testExecStructure, logStream, driver, testName, stepsExecuted);
-		
-		
+	public void ToHaveAProductBasket() throws Exception
+	{		
+		D02Models.ToHaveAProductBasket(testExecStructure, logStream, driver, testName, stepsExecuted);
 	}
 	
 	

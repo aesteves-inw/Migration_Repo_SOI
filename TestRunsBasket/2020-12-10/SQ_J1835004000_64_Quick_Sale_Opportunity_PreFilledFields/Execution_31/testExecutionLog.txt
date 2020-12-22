@@ -1,0 +1,23 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SQ_J1835004000_64_Quick_Sale_Opportunity_PreFilledFields
+Log Date: 10-12-2020 23:19:59
+Test Status: Failed
+###############################################################################
+10-12-2020 23:20:03 - INFO - startTest - Test Case: SQ_J1835004000_64_Quick_Sale_Opportunity_PreFilledFields initiation
+10-12-2020 23:20:05 - TRACE - goToLoginPage - Executed with success
+10-12-2020 23:20:06 - TRACE - fillcredentials - Executed with success
+10-12-2020 23:20:10 - TRACE - pressLoginButton - Executed with success
+10-12-2020 23:20:10 - INFO - loginDirectSales on Step 1 - Executed with success
+10-12-2020 23:20:11 - TRACE - homePageValidation - Executed with success
+10-12-2020 23:20:11 - INFO - loginSFDS - Step 1 - Executed with success
+10-12-2020 23:20:43 - ERROR - goToCompanyDetailsPage - Executed with errors - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element found by By.xpath: //h1 to have text "SOI_D02_Functional_Company". Current text: "Company" (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'INNOWAVE-383', ip: '192.168.0.164', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_251'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\source\simpleOrderingInt...}, goog:chromeOptions: {debuggerAddress: localhost:54460}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 50595518d5d954e58eb7f9296955e0b9
+10-12-2020 23:20:43 - ERROR - navigateToCompanyPage - Step 2 - Executed with errors - java.lang.Exception: goToCompanyDetailsPage - Executed with errors
+10-12-2020 23:20:44 - INFO - finishTest - Test Case: SQ_J1835004000_64_Quick_Sale_Opportunity_PreFilledFields completion
+############################# End Of Log File #################################

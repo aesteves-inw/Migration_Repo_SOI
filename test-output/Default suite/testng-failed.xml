@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="sq.J1835004000_64.SQ_J1835004000_64_QuickSaleOpportunity_OpportunityCreation">
+      <class name="d02.SOI_2206.SOI_2206_TC01_DS_ECS_Offerings_ECS_Pro_EnterpriseVoice">
         <methods>
-          <include name="afterTest"/>
+          <include name="beforeClass"/>
           <include name="testCase"/>
-          <include name="beforeTest"/>
+          <include name="afterClass"/>
         </methods>
-      </class> <!-- sq.J1835004000_64.SQ_J1835004000_64_QuickSaleOpportunity_OpportunityCreation -->
+      </class> <!-- d02.SOI_2206.SOI_2206_TC01_DS_ECS_Offerings_ECS_Pro_EnterpriseVoice -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

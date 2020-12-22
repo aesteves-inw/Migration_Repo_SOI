@@ -35,7 +35,6 @@ public class OpportunityStep {
 
 			if(validation==true)
 			{
-				
 				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
 				TestReporter.stepPassed(testReportStream, driver, testName, stepID, stepName, evidenceName);
 			}
@@ -51,6 +50,7 @@ public class OpportunityStep {
 			System.out.println(e);
 			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
 			TestReporter.stepFailed(testReportStream, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
 
 	}
@@ -90,6 +90,7 @@ public class OpportunityStep {
 			System.out.println(e);
 			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
 			TestReporter.stepFailed(testExecStructure, driver, testName, newStepCounter, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+newStepCounter);
 		}
 		
 	}
@@ -132,6 +133,7 @@ public class OpportunityStep {
 			System.out.println(e);
 			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
 			TestReporter.stepFailed(testExecStructure, driver, testName, stepsExecuted, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepsExecuted);
 		}
 		
 	}
@@ -174,6 +176,7 @@ public class OpportunityStep {
 			System.out.println(e);
 			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
 			TestReporter.stepFailed(testExecStructure, driver, testName, stepsExecuted, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepsExecuted);
 		}
 		
 	}

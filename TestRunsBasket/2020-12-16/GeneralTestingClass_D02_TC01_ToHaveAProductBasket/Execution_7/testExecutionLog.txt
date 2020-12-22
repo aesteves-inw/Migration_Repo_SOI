@@ -1,0 +1,33 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: GeneralTestingClass_D02_TC01_ToHaveAProductBasket
+Log Date: 16-12-2020 12:34:37
+Test Status: Passed
+###############################################################################
+16-12-2020 12:34:42 - INFO - startTest - Test Case: GeneralTestingClass_D02_TC01_ToHaveAProductBasket initiation
+16-12-2020 12:34:44 - TRACE - goToLoginPage - Executed with success
+16-12-2020 12:34:45 - TRACE - fillcredentials - Executed with success
+16-12-2020 12:34:50 - TRACE - pressLoginButton - Executed with success
+16-12-2020 12:34:50 - INFO - loginDirectSales on Step 1 - Executed with success
+16-12-2020 12:34:50 - TRACE - homePageValidation - Executed with success
+16-12-2020 12:34:50 - INFO - loginSFDS - Step 1 - Executed with success
+16-12-2020 12:34:56 - TRACE - goToCompanyDetailsPage - Executed with success
+16-12-2020 12:34:57 - TRACE - companyPageValidation - Executed with success
+16-12-2020 12:34:57 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+16-12-2020 12:35:04 - TRACE - openQuickSaleOPTYScreen - Executed with success
+16-12-2020 12:35:08 - TRACE - createQuickSaleOpty - Executed with success
+16-12-2020 12:35:13 - TRACE - saveOpportunity - Executed with success
+16-12-2020 12:35:13 - INFO - createQuickSaleOpty - Executed with success
+16-12-2020 12:35:14 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+16-12-2020 12:35:18 - INFO - goToOpportunityPage - Executed with success
+16-12-2020 12:35:20 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 3
+16-12-2020 12:35:20 - INFO - createQuickSaleOpportunity - Step 3 - Executed with success
+16-12-2020 12:35:22 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 4
+16-12-2020 12:35:24 - TRACE - clickNewProductBasketLink - Succeeded in Step 4
+16-12-2020 12:35:24 - TRACE - createProductBasket - Succeeded in Step 4
+16-12-2020 12:35:30 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 4
+16-12-2020 12:35:31 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 4
+16-12-2020 12:35:31 - INFO - createProductBasket - Executed with success
+16-12-2020 12:35:31 - INFO - finishTest - Test Case: GeneralTestingClass_D02_TC01_ToHaveAProductBasket completion
+############################# End Of Log File #################################

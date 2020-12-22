@@ -1,0 +1,20 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SQ_J1835004000_64_Quick_Sale_Opportunity_PreFilledFields
+Log Date: 10-12-2020 23:06:56
+Test Status: Failed
+###############################################################################
+10-12-2020 23:07:01 - INFO - startTest - Test Case: SQ_J1835004000_64_Quick_Sale_Opportunity_PreFilledFields initiation
+10-12-2020 23:07:02 - TRACE - goToLoginPage - Executed with success
+10-12-2020 23:07:03 - TRACE - fillcredentials - Executed with success
+10-12-2020 23:07:08 - TRACE - pressLoginButton - Executed with success
+10-12-2020 23:07:08 - INFO - loginDirectSales on Step 1 - Executed with success
+10-12-2020 23:07:08 - TRACE - homePageValidation - Executed with success
+10-12-2020 23:07:08 - INFO - loginSFDS - Step 1 - Executed with success
+10-12-2020 23:07:12 - TRACE - salesforceLoadingPage - Succeeded in Step 2
+10-12-2020 23:07:12 - TRACE - goToCompanyDetailsPage - Executed with success
+10-12-2020 23:07:12 - ERROR - companyPageValidation - Executed with errors - java.lang.Exception: Validation Failed on Step 2
+10-12-2020 23:07:12 - ERROR - navigateToCompanyPage - Step 2 - Executed with errors - java.lang.Exception: companyPageValidation - Executed with errors
+10-12-2020 23:07:13 - INFO - finishTest - Test Case: SQ_J1835004000_64_Quick_Sale_Opportunity_PreFilledFields completion
+############################# End Of Log File #################################

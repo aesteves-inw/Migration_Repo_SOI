@@ -1,0 +1,19 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: J1835004000_14_TC01_Quick_Sale_Opportunity_CreateProdBasket
+Log Date: 22-12-2020 00:31:12
+Test Status: Failed
+###############################################################################
+22-12-2020 00:32:58 - INFO - startTest - Test Case: J1835004000_14_TC01_Quick_Sale_Opportunity_CreateProdBasket initiation
+22-12-2020 00:32:58 - TRACE - goToLoginPage - Executed with success
+22-12-2020 00:33:00 - TRACE - fillcredentials - Executed with success
+22-12-2020 00:33:04 - TRACE - pressLoginButton - Executed with success
+22-12-2020 00:33:04 - INFO - loginDirectSales on Step 1 - Executed with success
+22-12-2020 00:33:04 - ERROR - loginSFDS - Step 1 - Executed with errors - java.lang.Exception: Login in Salesforce (Direct Sales) - Failed in Step: 1
+22-12-2020 00:33:06 - ERROR - J1835004000_14_TC01_Quick_Sale_Opportunity_CreateProdBasket - Test Failed - java.lang.Exception: Login in Salesforce (Direct Sales) - Failed in Step: 1
+22-12-2020 00:33:06 - ERROR - J1835004000_14_TC01_Quick_Sale_Opportunity_CreateProdBasket - Test Failed - java.lang.Exception: J1835004000_14_TC01_Quick_Sale_Opportunity_CreateProdBasket: Failed
+22-12-2020 00:33:06 - ERROR - J1835004000_14_TC01_Quick_Sale_Opportunity_CreateProdBasket - Test Failed - java.lang.Exception: J1835004000_14_TC01_Quick_Sale_Opportunity_CreateProdBasket: Failed
+22-12-2020 00:33:06 - ERROR - J1835004000_14_TC01_Quick_Sale_Opportunity_CreateProdBasket - Test Execution Failed - java.lang.Exception: J1835004000_14_TC01_Quick_Sale_Opportunity_CreateProdBasket: Test Case Failed
+22-12-2020 00:33:06 - INFO - finishTest - Test Case: J1835004000_14_TC01_Quick_Sale_Opportunity_CreateProdBasket completion
+############################# End Of Log File #################################

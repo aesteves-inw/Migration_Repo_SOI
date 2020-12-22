@@ -1,0 +1,15 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SQ_J1835004000_64_QuickSaleOpportunity_OpportunityCreation
+Log Date: 11-12-2020 16:09:13
+Test Status: Failed
+###############################################################################
+11-12-2020 16:09:18 - INFO - startTest - Test Case: SQ_J1835004000_64_QuickSaleOpportunity_OpportunityCreation initiation
+11-12-2020 16:09:20 - TRACE - goToLoginPage - Executed with success
+11-12-2020 16:09:21 - TRACE - fillcredentials - Executed with success
+11-12-2020 16:09:26 - TRACE - pressLoginButton - Executed with success
+11-12-2020 16:09:26 - INFO - loginDirectSales on Step 1 - Executed with success
+11-12-2020 16:09:26 - ERROR - loginSFDS - Step 1 - Executed with errors - java.lang.Exception: Login in Salesforce (Direct Sales) - Failed in Step: 1
+11-12-2020 16:09:28 - INFO - finishTest - Test Case: SQ_J1835004000_64_QuickSaleOpportunity_OpportunityCreation completion
+############################# End Of Log File #################################

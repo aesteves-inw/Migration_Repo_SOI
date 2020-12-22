@@ -1,0 +1,39 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SOI_2205_TC05_DS_ECS_Offerings_ECS_FullFiber
+Log Date: 21-12-2020 22:33:51
+Test Status: Passed
+###############################################################################
+21-12-2020 22:44:45 - INFO - startTest - Test Case: SOI_2205_TC05_DS_ECS_Offerings_ECS_FullFiber initiation
+21-12-2020 22:44:46 - TRACE - goToLoginPage - Executed with success
+21-12-2020 22:44:47 - TRACE - fillcredentials - Executed with success
+21-12-2020 22:44:52 - TRACE - pressLoginButton - Executed with success
+21-12-2020 22:44:52 - INFO - loginDirectSales on Step 1 - Executed with success
+21-12-2020 22:44:53 - TRACE - homePageValidation - Executed with success
+21-12-2020 22:44:53 - INFO - loginSFDS - Step 1 - Executed with success
+21-12-2020 22:44:59 - TRACE - goToCompanyDetailsPage - Executed with success
+21-12-2020 22:44:59 - TRACE - companyPageValidation - Executed with success
+21-12-2020 22:44:59 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+21-12-2020 22:45:01 - TRACE - openQuickSaleOPTYScreen - Executed with success
+21-12-2020 22:45:06 - TRACE - createQuickSaleOpty - Executed with success
+21-12-2020 22:45:10 - TRACE - saveOpportunity - Executed with success
+21-12-2020 22:45:10 - INFO - createQuickSaleOpty - Executed with success
+21-12-2020 22:45:11 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+21-12-2020 22:45:15 - INFO - goToOpportunityPage - Executed with success
+21-12-2020 22:45:17 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 3
+21-12-2020 22:45:17 - INFO - createQuickSaleOpportunity - Step 3 - Executed with success
+21-12-2020 22:45:18 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 4
+21-12-2020 22:45:21 - TRACE - clickNewProductBasketLink - Succeeded in Step 4
+21-12-2020 22:45:21 - TRACE - createProductBasket - Succeeded in Step 4
+21-12-2020 22:45:27 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 4
+21-12-2020 22:45:28 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 4
+21-12-2020 22:45:28 - INFO - createProductBasket - Executed with success
+21-12-2020 22:45:28 - TRACE - Product Basket: Open Add Product Menu - Succeeded in Step 5
+21-12-2020 22:45:29 - TRACE - addProductMenuValidation - Succeeded in Step: 5
+21-12-2020 22:45:29 - INFO - goToAddOferToBasketScreen - Executed with success
+21-12-2020 22:45:39 - TRACE - Add Offer to Basket: Pick Product - Enterprise Call & Surf FullFiber - Succeeded in Step 6
+21-12-2020 22:45:39 - TRACE - productOnProductBasketValidation - Succeeded in Step: 6
+21-12-2020 22:45:39 - INFO - addProductToProductBasket - Executed with success
+21-12-2020 22:45:39 - INFO - finishTest - Test Case: SOI_2205_TC05_DS_ECS_Offerings_ECS_FullFiber completion
+############################# End Of Log File #################################

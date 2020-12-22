@@ -1,0 +1,30 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SQ_J1835004000_64_QuickSaleOpportunity_OpportunityCreation
+Log Date: 14-12-2020 09:24:28
+Test Status: Failed
+###############################################################################
+14-12-2020 09:24:32 - INFO - startTest - Test Case: SQ_J1835004000_64_QuickSaleOpportunity_OpportunityCreation initiation
+14-12-2020 09:24:34 - TRACE - goToLoginPage - Executed with success
+14-12-2020 09:24:35 - TRACE - fillcredentials - Executed with success
+14-12-2020 09:24:40 - TRACE - pressLoginButton - Executed with success
+14-12-2020 09:24:40 - INFO - loginDirectSales on Step 1 - Executed with success
+14-12-2020 09:24:40 - TRACE - homePageValidation - Executed with success
+14-12-2020 09:24:40 - INFO - loginSFDS - Step 1 - Executed with success
+14-12-2020 09:24:46 - TRACE - goToCompanyDetailsPage - Executed with success
+14-12-2020 09:24:47 - TRACE - companyPageValidation - Executed with success
+14-12-2020 09:24:47 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+14-12-2020 09:24:48 - TRACE - openQuickSaleOPTYScreen - Executed with success
+14-12-2020 09:24:53 - TRACE - quickSaleFormValidation - Succeeded in Step: 3
+14-12-2020 09:24:53 - INFO - startQuickSaleOPTY - Executed with success
+14-12-2020 09:24:53 - TRACE - validateQuickSaleFilledFields - Succeeded in Step: 4
+14-12-2020 09:24:53 - INFO - validateQuickSalePreFilledFields - Executed with success
+14-12-2020 09:24:54 - TRACE - createQuickSaleOpty - Executed with success
+14-12-2020 09:24:58 - TRACE - saveOpportunity - Executed with success
+14-12-2020 09:25:19 - INFO - finishQuickSaleOPTYCreation - Executed with success
+14-12-2020 09:25:19 - ERROR - goToOpportunityRelatedMenuonCompany - Executed with errors - java.lang.Exception: Not possible to identify Test Case
+14-12-2020 09:25:19 - ERROR - goToOpportunityPage - Executed with errors - java.lang.Exception: goToOpportunityRelatedMenuonCompany - Executed with errors
+14-12-2020 09:25:19 - ERROR - navigateToOpportunityPage - Executed with errors - java.lang.Exception: goToOpportunityPage - Executed with errors
+14-12-2020 09:25:19 - INFO - finishTest - Test Case: SQ_J1835004000_64_QuickSaleOpportunity_OpportunityCreation completion
+############################# End Of Log File #################################

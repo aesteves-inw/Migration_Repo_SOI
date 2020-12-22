@@ -1,0 +1,37 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: J1835004000_14_TC03_StandardOpportunity_CreateProdBasket
+Log Date: 14-12-2020 16:12:23
+Test Status: Failed
+###############################################################################
+14-12-2020 16:12:27 - INFO - startTest - Test Case: J1835004000_14_TC03_StandardOpportunity_CreateProdBasket initiation
+14-12-2020 16:12:29 - TRACE - goToLoginPage - Executed with success
+14-12-2020 16:12:30 - TRACE - fillcredentials - Executed with success
+14-12-2020 16:12:34 - TRACE - pressLoginButton - Executed with success
+14-12-2020 16:12:34 - INFO - loginDirectSales on Step 1 - Executed with success
+14-12-2020 16:12:35 - TRACE - homePageValidation - Executed with success
+14-12-2020 16:12:35 - INFO - loginSFDS - Step 1 - Executed with success
+14-12-2020 16:12:43 - TRACE - goToCompanyDetailsPage - Executed with success
+14-12-2020 16:12:44 - TRACE - companyPageValidation - Executed with success
+14-12-2020 16:12:44 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+14-12-2020 16:12:47 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+14-12-2020 16:12:51 - TRACE - createStandardOpportunity - Succeeded in Step 3
+14-12-2020 16:12:52 - TRACE - fillOpportunityName - Succeeded in Step 3
+14-12-2020 16:13:13 - ERROR - fillCloseDate - Failed in Step 3 - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //a[@title='Prospecting'] (tried for 5 second(s) with 500 milliseconds interval)
+14-12-2020 16:13:13 - ERROR - fillStandardOpportunityFields - Failed in Step 3 - java.lang.Exception: fillCloseDate - Failed in Step 3
+14-12-2020 16:13:13 - ERROR - createStandardOpportunity - Executed with errors - java.lang.Exception: fillStandardOpportunityFields - Failed in Step 3
+14-12-2020 16:13:14 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 4
+14-12-2020 16:13:35 - ERROR - clickNewProductBasketLink - Failed in Step 4 - org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"link text","selector":"New Product Basket"}
+  (Session info: chrome=87.0.4280.88)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'INNOWAVE-383', ip: '192.168.0.164', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_251'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\source\simpleOrderingInt...}, goog:chromeOptions: {debuggerAddress: localhost:50993}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 5b671f0a2a8ae658801e06d4b957837f
+*** Element info: {Using=link text, value=New Product Basket}
+14-12-2020 16:13:35 - ERROR - createProductBasket - Failed in Step 4 - java.lang.Exception: clickNewProductBasketLink - Failed in Step 4
+14-12-2020 16:13:35 - ERROR - createProductBasket - Executed with errors - java.lang.Exception: createProductBasket - Failed in Step 4
+14-12-2020 16:13:35 - INFO - finishTest - Test Case: J1835004000_14_TC03_StandardOpportunity_CreateProdBasket completion
+############################# End Of Log File #################################

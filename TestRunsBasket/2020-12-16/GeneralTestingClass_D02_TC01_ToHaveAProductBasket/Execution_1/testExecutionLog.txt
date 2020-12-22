@@ -1,0 +1,37 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: GeneralTestingClass_D02_TC01_ToHaveAProductBasket
+Log Date: 16-12-2020 12:21:07
+Test Status: Passed
+###############################################################################
+16-12-2020 12:21:11 - INFO - startTest - Test Case: GeneralTestingClass_D02_TC01_ToHaveAProductBasket initiation
+16-12-2020 12:21:13 - TRACE - goToLoginPage - Executed with success
+16-12-2020 12:21:14 - TRACE - fillcredentials - Executed with success
+16-12-2020 12:21:19 - TRACE - pressLoginButton - Executed with success
+16-12-2020 12:21:19 - INFO - loginDirectSales on Step 1 - Executed with success
+16-12-2020 12:21:19 - TRACE - homePageValidation - Executed with success
+16-12-2020 12:21:19 - INFO - loginSFDS - Step 1 - Executed with success
+16-12-2020 12:21:25 - TRACE - goToCompanyDetailsPage - Executed with success
+16-12-2020 12:21:26 - TRACE - companyPageValidation - Executed with success
+16-12-2020 12:21:26 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+16-12-2020 12:21:27 - TRACE - openQuickSaleOPTYScreen - Executed with success
+16-12-2020 12:21:32 - TRACE - quickSaleFormValidation - Succeeded in Step: 3
+16-12-2020 12:21:32 - INFO - startQuickSaleOPTY - Executed with success
+16-12-2020 12:21:33 - TRACE - validateQuickSaleFilledFields - Succeeded in Step: 4
+16-12-2020 12:21:33 - INFO - validateQuickSalePreFilledFields - Executed with success
+16-12-2020 12:21:34 - TRACE - createQuickSaleOpty - Executed with success
+16-12-2020 12:21:38 - TRACE - saveOpportunity - Executed with success
+16-12-2020 12:21:58 - INFO - finishQuickSaleOPTYCreation - Executed with success
+16-12-2020 12:22:00 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+16-12-2020 12:22:04 - INFO - goToOpportunityPage - Executed with success
+16-12-2020 12:22:06 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 6
+16-12-2020 12:22:06 - INFO - navigateToOpportunityPage - Executed with success
+16-12-2020 12:22:08 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 7
+16-12-2020 12:22:10 - TRACE - clickNewProductBasketLink - Succeeded in Step 7
+16-12-2020 12:22:10 - TRACE - createProductBasket - Succeeded in Step 7
+16-12-2020 12:22:17 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 7
+16-12-2020 12:22:17 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 7
+16-12-2020 12:22:17 - INFO - createProductBasket - Executed with success
+16-12-2020 12:22:18 - INFO - finishTest - Test Case: GeneralTestingClass_D02_TC01_ToHaveAProductBasket completion
+############################# End Of Log File #################################

@@ -1,0 +1,25 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: GeneralTestingClass_D02_TC01_ToHaveAProductBasket
+Log Date: 16-12-2020 12:30:50
+Test Status: Failed
+###############################################################################
+16-12-2020 12:30:54 - INFO - startTest - Test Case: GeneralTestingClass_D02_TC01_ToHaveAProductBasket initiation
+16-12-2020 12:30:56 - TRACE - goToLoginPage - Executed with success
+16-12-2020 12:30:58 - TRACE - fillcredentials - Executed with success
+16-12-2020 12:31:02 - TRACE - pressLoginButton - Executed with success
+16-12-2020 12:31:02 - INFO - loginDirectSales on Step 1 - Executed with success
+16-12-2020 12:31:03 - TRACE - homePageValidation - Executed with success
+16-12-2020 12:31:03 - INFO - loginSFDS - Step 1 - Executed with success
+16-12-2020 12:31:08 - TRACE - goToCompanyDetailsPage - Executed with success
+16-12-2020 12:31:09 - TRACE - companyPageValidation - Executed with success
+16-12-2020 12:31:09 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+16-12-2020 12:31:12 - TRACE - openQuickSaleOPTYScreen - Executed with success
+16-12-2020 12:31:16 - TRACE - createQuickSaleOpty - Executed with success
+16-12-2020 12:31:20 - TRACE - saveOpportunity - Executed with success
+16-12-2020 12:31:20 - INFO - createQuickSaleOpty - Executed with success
+16-12-2020 12:31:20 - ERROR - createQuickSaleOpportunity - Step 3 - Executed with errors - java.lang.NullPointerException
+16-12-2020 12:31:20 - ERROR - GeneralTestingClass_D02_TC01_ToHaveAProductBasket - Test Failed on Pre Conditions Setup - java.lang.Exception: Company: Create Quick Sale Opportunity - Failed in Step: 3
+16-12-2020 12:31:20 - INFO - finishTest - Test Case: GeneralTestingClass_D02_TC01_ToHaveAProductBasket completion
+############################# End Of Log File #################################

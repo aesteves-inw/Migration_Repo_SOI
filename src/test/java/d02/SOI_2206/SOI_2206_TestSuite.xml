@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SOI-2206" parallel="false">
+  <test name="SOI_2206_TC01_DS_ECS_Offerings_ECS_Pro_EnterpriseVoice">
+    <classes>
+      <class name="d02.SOI_2206.SOI_2206_TC01_DS_ECS_Offerings_ECS_Pro_EnterpriseVoice"/>
+    </classes>
+  </test> <!-- Test -->
+    <test name="SOI_2206_TC02_DS_ECS_Offerings_ECS_Pro_PhoneLine">
+    <classes>
+      <class name="d02.SOI_2206.SOI_2206_TC02_DS_ECS_Offerings_ECS_Pro_PhoneLine"/>
+    </classes>
+  </test> <!-- Test -->
+    <test name="SOI_2206_TC03_DS_ECS_Offerings_ECS_ProPlus_EnterpriseVoice">
+    <classes>
+      <class name="d02.SOI_2206.SOI_2206_TC03_DS_ECS_Offerings_ECS_ProPlus_EnterpriseVoice"/>
+    </classes>
+  </test> <!-- Test -->
+    <test name="SOI_2206_TC04_DS_ECS_Offerings_ECS_ProPlus_PhoneLine">
+    <classes>
+      <class name="d02.SOI_2206.SOI_2206_TC04_DS_ECS_Offerings_ECS_ProPlus_PhoneLine"/>
+    </classes>
+  </test> <!-- Test -->
+    <test name="SOI_2206_TC05_DS_ECS_Offerings_ECS_FullFiber">
+    <classes>
+      <class name="d02.SOI_2206.SOI_2206_TC05_DS_ECS_Offerings_ECS_FullFiber"/>
+    </classes>
+  </test> <!-- Test -->
+    <test name="SOI_2206_TC06_DS_ECS_Offerings_ECS_FullFiberExtended">
+    <classes>
+      <class name="d02.SOI_2206.SOI_2206_TC06_DS_ECS_Offerings_ECS_FullFiberExtended"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

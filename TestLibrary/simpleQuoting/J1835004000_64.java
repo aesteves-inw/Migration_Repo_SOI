@@ -8,6 +8,7 @@ import companyDirectSales.CompanyStep;
 import homePageDirectSales.HomePageStep;
 import loginPageDirectSales.LoginPageStep;
 import testLogBuilder.TestLog;
+import testLogger.TestLogger;
 import testReportComposition.TestStepReportStructure;
 
 public class J1835004000_64 {
@@ -17,7 +18,6 @@ public class J1835004000_64 {
 	{
 		try
 		{
-
 			stepsExecuted++;
 
 			String userProfile="salesUser";
@@ -38,8 +38,9 @@ public class J1835004000_64 {
 		}
 		catch(Exception e)
 		{
-			System.out.println(e);
-			throw new Exception("Test Case Failed",e);
+			//System.out.println(e);
+			TestLogger.logError(logStream, testName, "Test Failed", e.toString());
+			throw new Exception(testName+": Failed");
 		}
 
 	}
@@ -65,16 +66,13 @@ public class J1835004000_64 {
 			
 			CompanyStep.navigateToOpportunityPage(testExecStructure, logStream, driver, newStepCounter, testName);
 
-			
-
 		}
 		catch(Exception e)
 		{
-			System.out.println(e);
-			throw new Exception("Test Case Failed",e);
+			//System.out.println(e);
+			TestLogger.logError(logStream, testName, "Test Failed", e.toString());
+			throw new Exception(testName+": Failed");
 		}
 	}
-
-	
 
 }

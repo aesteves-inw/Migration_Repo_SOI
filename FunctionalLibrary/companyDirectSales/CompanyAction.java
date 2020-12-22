@@ -39,6 +39,8 @@ public class CompanyAction {
 			fillQSOpportunityFields(logStream, driver, testName);
 
 			saveOpportunity(logStream, driver);
+			
+			
 
 			TestLogger.logInfo(logStream, "createQuickSaleOpty", logInfo);
 
@@ -261,7 +263,6 @@ public class CompanyAction {
 		}
 	}
 
-
 	public static void fillOpportunityName(List<TestLog> logStream, WebDriver driver, int stepsExecuted,
 			String testName) throws Exception 
 	{
@@ -380,7 +381,6 @@ public class CompanyAction {
 
 	}
 
-	
 	public static void standardOpportunityForD02(List<TestLog> logStream, WebDriver driver, String testName, int stepID) throws Exception 
 	{
 		String actionName="Standard Opportunity for SQ/D02";
@@ -402,6 +402,8 @@ public class CompanyAction {
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
 	}
+	
+	
 	
 	//MACD Order
 
@@ -715,6 +717,7 @@ public class CompanyAction {
 			else
 			{
 				validation=false;
+				TestLogger.logTrace(logStream, componentName, "Validation Failed on Step "+stepID);
 				throw new Exception("Validation Failed on Step "+stepID);
 			}
 

@@ -1,0 +1,34 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SQ_J1835004000_64_QuickSaleOpportunity_OpportunityCreation
+Log Date: 11-12-2020 16:11:08
+Test Status: Passed
+###############################################################################
+11-12-2020 16:11:12 - INFO - startTest - Test Case: SQ_J1835004000_64_QuickSaleOpportunity_OpportunityCreation initiation
+11-12-2020 16:11:14 - TRACE - goToLoginPage - Executed with success
+11-12-2020 16:11:16 - TRACE - fillcredentials - Executed with success
+11-12-2020 16:11:20 - TRACE - pressLoginButton - Executed with success
+11-12-2020 16:11:20 - INFO - loginDirectSales on Step 1 - Executed with success
+11-12-2020 16:11:21 - TRACE - homePageValidation - Executed with success
+11-12-2020 16:11:21 - INFO - loginSFDS - Step 1 - Executed with success
+11-12-2020 16:11:26 - TRACE - goToCompanyDetailsPage - Executed with success
+11-12-2020 16:11:28 - TRACE - companyPageValidation - Executed with success
+11-12-2020 16:11:28 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+11-12-2020 16:11:29 - TRACE - openQuickSaleOPTYScreen - Executed with success
+11-12-2020 16:11:33 - TRACE - quickSaleFormValidation - Succeeded in Step: 3
+11-12-2020 16:11:33 - INFO - startQuickSaleOPTY - Executed with success
+11-12-2020 16:11:34 - TRACE - validateQuickSaleFilledFields - Succeeded in Step: 4
+11-12-2020 16:11:34 - INFO - validateQuickSalePreFilledFields - Executed with success
+11-12-2020 16:11:35 - TRACE - createQuickSaleOpty - Executed with success
+11-12-2020 16:12:01 - TRACE - saveOpportunity - Executed with success
+11-12-2020 16:12:20 - INFO - finishQuickSaleOPTYCreation - Executed with success
+11-12-2020 16:12:32 - ERROR - finishQuickSaleOPTYCreation - Executed with errors - org.openqa.selenium.WebDriverException: chrome not reachable
+  (Session info: chrome=87.0.4280.88)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'INNOWAVE-383', ip: '192.168.0.164', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_251'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\source\simpleOrderingInt...}, goog:chromeOptions: {debuggerAddress: localhost:49419}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 7348168eadb265a1e8815d1c2a5e62b7
+11-12-2020 16:12:44 - INFO - finishTest - Test Case: SQ_J1835004000_64_QuickSaleOpportunity_OpportunityCreation completion
+############################# End Of Log File #################################
