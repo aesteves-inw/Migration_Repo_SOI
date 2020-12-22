@@ -5,7 +5,6 @@ import java.util.List;
 import org.openqa.selenium.WebDriver;
 
 import executionTools.BrowserActions;
-import objectMap.sfDirectSales.DirSalesOpportunity;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
 
