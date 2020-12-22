@@ -1,0 +1,42 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: J1835004000_18_TC01_Add_EnterpriseVoice_To_ProductBasket
+Log Date: 15-12-2020 15:22:41
+Test Status: Failed
+###############################################################################
+15-12-2020 15:22:45 - INFO - startTest - Test Case: J1835004000_18_TC01_Add_EnterpriseVoice_To_ProductBasket initiation
+15-12-2020 15:22:47 - TRACE - goToLoginPage - Executed with success
+15-12-2020 15:22:48 - TRACE - fillcredentials - Executed with success
+15-12-2020 15:22:53 - TRACE - pressLoginButton - Executed with success
+15-12-2020 15:22:53 - INFO - loginDirectSales on Step 1 - Executed with success
+15-12-2020 15:22:54 - TRACE - homePageValidation - Executed with success
+15-12-2020 15:22:54 - INFO - loginSFDS - Step 1 - Executed with success
+15-12-2020 15:23:00 - TRACE - goToCompanyDetailsPage - Executed with success
+15-12-2020 15:23:01 - TRACE - companyPageValidation - Executed with success
+15-12-2020 15:23:01 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+15-12-2020 15:23:03 - TRACE - openQuickSaleOPTYScreen - Executed with success
+15-12-2020 15:23:07 - TRACE - quickSaleFormValidation - Succeeded in Step: 3
+15-12-2020 15:23:07 - INFO - startQuickSaleOPTY - Executed with success
+15-12-2020 15:23:07 - TRACE - validateQuickSaleFilledFields - Succeeded in Step: 4
+15-12-2020 15:23:07 - INFO - validateQuickSalePreFilledFields - Executed with success
+15-12-2020 15:23:09 - TRACE - createQuickSaleOpty - Executed with success
+15-12-2020 15:23:13 - TRACE - saveOpportunity - Executed with success
+15-12-2020 15:23:33 - INFO - finishQuickSaleOPTYCreation - Executed with success
+15-12-2020 15:23:35 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+15-12-2020 15:23:38 - INFO - goToOpportunityPage - Executed with success
+15-12-2020 15:23:41 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 6
+15-12-2020 15:23:41 - INFO - navigateToOpportunityPage - Executed with success
+15-12-2020 15:23:43 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 7
+15-12-2020 15:23:45 - TRACE - clickNewProductBasketLink - Succeeded in Step 7
+15-12-2020 15:23:45 - TRACE - createProductBasket - Succeeded in Step 7
+15-12-2020 15:23:51 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 7
+15-12-2020 15:23:51 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 7
+15-12-2020 15:23:51 - INFO - createProductBasket - Executed with success
+15-12-2020 15:23:52 - TRACE - Product Basket: Open Add Product Menu - Succeeded in Step 8
+15-12-2020 15:24:13 - ERROR - goToAddOferToBasketScreen - Executed with errors - java.lang.Exception: Go To Add Offer to Basket Screen - Failed in Step: 8
+15-12-2020 15:24:28 - TRACE - Add Offer to Basket: Pick Product - Enterprise Voice - Succeeded in Step 9
+15-12-2020 15:24:28 - TRACE - productOnProductBasketValidation - Succeeded in Step: 9
+15-12-2020 15:24:28 - INFO - addProductToProductBasket - Executed with success
+15-12-2020 15:24:28 - INFO - finishTest - Test Case: J1835004000_18_TC01_Add_EnterpriseVoice_To_ProductBasket completion
+############################# End Of Log File #################################

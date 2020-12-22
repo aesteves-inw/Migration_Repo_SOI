@@ -1,0 +1,18 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SOI_2206_TC06_DS_ECS_Offerings_ECS_FullFiberExtended
+Log Date: 17-12-2020 23:59:01
+Test Status: Failed
+###############################################################################
+18-12-2020 00:30:40 - INFO - startTest - Test Case: SOI_2206_TC06_DS_ECS_Offerings_ECS_FullFiberExtended initiation
+18-12-2020 00:30:41 - TRACE - goToLoginPage - Executed with success
+18-12-2020 00:30:42 - TRACE - fillcredentials - Executed with success
+18-12-2020 00:30:46 - TRACE - pressLoginButton - Executed with success
+18-12-2020 00:30:46 - INFO - loginDirectSales on Step 1 - Executed with success
+18-12-2020 00:30:47 - ERROR - loginSFDS - Step 1 - Executed with errors - java.lang.Exception: Login in Salesforce (Direct Sales) - Failed in Step: 1
+18-12-2020 00:30:47 - ERROR - SOI_2206_TC06_DS_ECS_Offerings_ECS_FullFiberExtended - Test Failed on Pre Conditions Setup - java.lang.Exception: Login in Salesforce (Direct Sales) - Failed in Step: 1
+18-12-2020 00:30:47 - ERROR - SOI_2206_TC06_DS_ECS_Offerings_ECS_FullFiberExtended - Test Failed - java.lang.Exception: SOI_2206_TC06_DS_ECS_Offerings_ECS_FullFiberExtended: Test Case Failed on Test Model - ToHaveAProductBasket
+18-12-2020 00:30:47 - ERROR - SOI_2206_TC06_DS_ECS_Offerings_ECS_FullFiberExtended - Test Execution Failed - java.lang.Exception: SOI_2206_TC06_DS_ECS_Offerings_ECS_FullFiberExtended: Failed
+18-12-2020 00:30:47 - INFO - finishTest - Test Case: SOI_2206_TC06_DS_ECS_Offerings_ECS_FullFiberExtended completion
+############################# End Of Log File #################################

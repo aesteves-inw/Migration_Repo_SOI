@@ -1,0 +1,18 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SOI_2206_TC02_DS_ECS_Offerings_ECS_Pro_PhoneLine
+Log Date: 17-12-2020 23:22:46
+Test Status: Failed
+###############################################################################
+17-12-2020 23:45:46 - INFO - startTest - Test Case: SOI_2206_TC02_DS_ECS_Offerings_ECS_Pro_PhoneLine initiation
+17-12-2020 23:45:47 - TRACE - goToLoginPage - Executed with success
+17-12-2020 23:45:48 - TRACE - fillcredentials - Executed with success
+17-12-2020 23:45:52 - TRACE - pressLoginButton - Executed with success
+17-12-2020 23:45:52 - INFO - loginDirectSales on Step 1 - Executed with success
+17-12-2020 23:45:52 - ERROR - loginSFDS - Step 1 - Executed with errors - java.lang.Exception: Login in Salesforce (Direct Sales) - Failed in Step: 1
+17-12-2020 23:45:53 - ERROR - SOI_2206_TC02_DS_ECS_Offerings_ECS_Pro_PhoneLine - Test Failed on Pre Conditions Setup - java.lang.Exception: Login in Salesforce (Direct Sales) - Failed in Step: 1
+17-12-2020 23:45:53 - ERROR - SOI_2206_TC02_DS_ECS_Offerings_ECS_Pro_PhoneLine - Test Failed - java.lang.Exception: SOI_2206_TC02_DS_ECS_Offerings_ECS_Pro_PhoneLine: Test Case Failed on Test Model - ToHaveAProductBasket
+17-12-2020 23:45:53 - ERROR - SOI_2206_TC02_DS_ECS_Offerings_ECS_Pro_PhoneLine - Test Execution Failed - java.lang.Exception: SOI_2206_TC02_DS_ECS_Offerings_ECS_Pro_PhoneLine: Failed
+17-12-2020 23:45:53 - INFO - finishTest - Test Case: SOI_2206_TC02_DS_ECS_Offerings_ECS_Pro_PhoneLine completion
+############################# End Of Log File #################################

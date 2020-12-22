@@ -1,0 +1,18 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SOI_2206_TC01_DS_ECS_Offerings_ECS_Pro_EnterpriseVoice
+Log Date: 17-12-2020 23:22:46
+Test Status: Failed
+###############################################################################
+17-12-2020 23:32:57 - INFO - startTest - Test Case: SOI_2206_TC01_DS_ECS_Offerings_ECS_Pro_EnterpriseVoice initiation
+17-12-2020 23:33:00 - TRACE - goToLoginPage - Executed with success
+17-12-2020 23:33:01 - TRACE - fillcredentials - Executed with success
+17-12-2020 23:33:07 - TRACE - pressLoginButton - Executed with success
+17-12-2020 23:33:07 - INFO - loginDirectSales on Step 1 - Executed with success
+17-12-2020 23:33:07 - ERROR - loginSFDS - Step 1 - Executed with errors - java.lang.Exception: Login in Salesforce (Direct Sales) - Failed in Step: 1
+17-12-2020 23:33:08 - ERROR - SOI_2206_TC01_DS_ECS_Offerings_ECS_Pro_EnterpriseVoice - Test Failed on Pre Conditions Setup - java.lang.Exception: Login in Salesforce (Direct Sales) - Failed in Step: 1
+17-12-2020 23:33:08 - ERROR - SOI_2206_TC01_DS_ECS_Offerings_ECS_Pro_EnterpriseVoice - Test Failed - java.lang.Exception: SOI_2206_TC01_DS_ECS_Offerings_ECS_Pro_EnterpriseVoice: Test Case Failed on Test Model - ToHaveAProductBasket
+17-12-2020 23:33:08 - ERROR - SOI_2206_TC01_DS_ECS_Offerings_ECS_Pro_EnterpriseVoice - Test Execution Failed - java.lang.Exception: SOI_2206_TC01_DS_ECS_Offerings_ECS_Pro_EnterpriseVoice: Failed
+17-12-2020 23:33:08 - INFO - finishTest - Test Case: SOI_2206_TC01_DS_ECS_Offerings_ECS_Pro_EnterpriseVoice completion
+############################# End Of Log File #################################

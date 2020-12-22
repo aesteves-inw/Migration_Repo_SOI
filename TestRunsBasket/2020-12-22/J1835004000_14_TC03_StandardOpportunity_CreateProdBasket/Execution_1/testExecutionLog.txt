@@ -1,0 +1,39 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: J1835004000_14_TC03_StandardOpportunity_CreateProdBasket
+Log Date: 22-12-2020 00:31:12
+Test Status: Passed
+###############################################################################
+22-12-2020 00:34:57 - INFO - startTest - Test Case: J1835004000_14_TC03_StandardOpportunity_CreateProdBasket initiation
+22-12-2020 00:34:57 - TRACE - goToLoginPage - Executed with success
+22-12-2020 00:34:59 - TRACE - fillcredentials - Executed with success
+22-12-2020 00:35:04 - TRACE - pressLoginButton - Executed with success
+22-12-2020 00:35:04 - INFO - loginDirectSales on Step 1 - Executed with success
+22-12-2020 00:35:05 - TRACE - homePageValidation - Executed with success
+22-12-2020 00:35:05 - INFO - loginSFDS - Step 1 - Executed with success
+22-12-2020 00:35:11 - TRACE - goToCompanyDetailsPage - Executed with success
+22-12-2020 00:35:12 - TRACE - companyPageValidation - Executed with success
+22-12-2020 00:35:12 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+22-12-2020 00:35:14 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+22-12-2020 00:35:18 - TRACE - createStandardOpportunity - Succeeded in Step 3
+22-12-2020 00:35:20 - TRACE - fillOpportunityName - Succeeded in Step 3
+22-12-2020 00:35:21 - TRACE - fillCloseDate - Succeeded in Step 3
+22-12-2020 00:35:22 - TRACE - fillStage - Succeeded in Step 3
+22-12-2020 00:35:22 - TRACE - fillForecastCategory - Succeeded in Step 3
+22-12-2020 00:35:23 - TRACE - fillTermsAndConditions - Succeeded in Step 3
+22-12-2020 00:35:23 - TRACE - fillStandardOpportunityFields - Succeeded in Step 3
+22-12-2020 00:35:23 - TRACE - saveStandardOpportunity - Succeeded in Step 3
+22-12-2020 00:35:31 - TRACE - Standard Opportunity for SQ/D02 - Succeeded in Step 3
+22-12-2020 00:35:32 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+22-12-2020 00:35:35 - INFO - goToOpportunityPage - Executed with success
+22-12-2020 00:35:37 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 3
+22-12-2020 00:35:37 - INFO - createStandardOpportunity - Executed with success
+22-12-2020 00:35:39 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 4
+22-12-2020 00:35:42 - TRACE - clickNewProductBasketLink - Succeeded in Step 4
+22-12-2020 00:35:42 - TRACE - createProductBasket - Succeeded in Step 4
+22-12-2020 00:35:48 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 4
+22-12-2020 00:35:49 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 4
+22-12-2020 00:35:49 - INFO - createProductBasket - Executed with success
+22-12-2020 00:35:50 - INFO - finishTest - Test Case: J1835004000_14_TC03_StandardOpportunity_CreateProdBasket completion
+############################# End Of Log File #################################

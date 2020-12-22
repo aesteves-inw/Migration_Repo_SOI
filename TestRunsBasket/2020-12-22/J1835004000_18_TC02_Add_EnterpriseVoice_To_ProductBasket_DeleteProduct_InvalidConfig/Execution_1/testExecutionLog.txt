@@ -1,0 +1,47 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: J1835004000_18_TC02_Add_EnterpriseVoice_To_ProductBasket_DeleteProduct_InvalidConfig
+Log Date: 22-12-2020 00:31:12
+Test Status: Passed
+###############################################################################
+22-12-2020 00:39:44 - INFO - startTest - Test Case: J1835004000_18_TC02_Add_EnterpriseVoice_To_ProductBasket_DeleteProduct_InvalidConfig initiation
+22-12-2020 00:39:45 - TRACE - goToLoginPage - Executed with success
+22-12-2020 00:39:46 - TRACE - fillcredentials - Executed with success
+22-12-2020 00:39:50 - TRACE - pressLoginButton - Executed with success
+22-12-2020 00:39:50 - INFO - loginDirectSales on Step 1 - Executed with success
+22-12-2020 00:39:51 - TRACE - homePageValidation - Executed with success
+22-12-2020 00:39:51 - INFO - loginSFDS - Step 1 - Executed with success
+22-12-2020 00:39:56 - TRACE - goToCompanyDetailsPage - Executed with success
+22-12-2020 00:39:57 - TRACE - companyPageValidation - Executed with success
+22-12-2020 00:39:57 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+22-12-2020 00:39:58 - TRACE - openQuickSaleOPTYScreen - Executed with success
+22-12-2020 00:40:03 - TRACE - quickSaleFormValidation - Succeeded in Step: 3
+22-12-2020 00:40:03 - INFO - startQuickSaleOPTY - Executed with success
+22-12-2020 00:40:04 - TRACE - validateQuickSaleFilledFields - Succeeded in Step: 4
+22-12-2020 00:40:04 - INFO - validateQuickSalePreFilledFields - Executed with success
+22-12-2020 00:40:05 - TRACE - createQuickSaleOpty - Executed with success
+22-12-2020 00:40:10 - TRACE - saveOpportunity - Executed with success
+22-12-2020 00:40:30 - INFO - finishQuickSaleOPTYCreation - Executed with success
+22-12-2020 00:40:32 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+22-12-2020 00:40:37 - INFO - goToOpportunityPage - Executed with success
+22-12-2020 00:40:39 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 6
+22-12-2020 00:40:39 - INFO - navigateToOpportunityPage - Executed with success
+22-12-2020 00:40:41 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 7
+22-12-2020 00:40:43 - TRACE - clickNewProductBasketLink - Succeeded in Step 7
+22-12-2020 00:40:43 - TRACE - createProductBasket - Succeeded in Step 7
+22-12-2020 00:40:49 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 7
+22-12-2020 00:40:50 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 7
+22-12-2020 00:40:50 - INFO - createProductBasket - Executed with success
+22-12-2020 00:40:50 - TRACE - Product Basket: Open Add Product Menu - Succeeded in Step 8
+22-12-2020 00:40:51 - TRACE - addProductMenuValidation - Succeeded in Step: 8
+22-12-2020 00:40:51 - INFO - goToAddOferToBasketScreen - Executed with success
+22-12-2020 00:40:57 - TRACE - Add Offer to Basket: Pick Product - Enterprise Voice - Succeeded in Step 9
+22-12-2020 00:40:57 - TRACE - productOnProductBasketValidation - Succeeded in Step: 9
+22-12-2020 00:40:57 - INFO - addProductToProductBasket - Executed with success
+22-12-2020 00:40:58 - TRACE - selectLineItem - Succeeded in Step 10
+22-12-2020 00:41:04 - TRACE - deleteLineItem - Succeeded in Step 10
+22-12-2020 00:41:24 - TRACE - productOnProductBasketNegativeValidation - Succeeded in Step: 10
+22-12-2020 00:41:24 - INFO - deletePBLineItem - Executed with success
+22-12-2020 00:41:24 - INFO - finishTest - Test Case: J1835004000_18_TC02_Add_EnterpriseVoice_To_ProductBasket_DeleteProduct_InvalidConfig completion
+############################# End Of Log File #################################

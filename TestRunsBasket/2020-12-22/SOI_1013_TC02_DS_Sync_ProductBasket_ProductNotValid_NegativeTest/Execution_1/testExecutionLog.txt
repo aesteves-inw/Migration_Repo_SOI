@@ -1,0 +1,46 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SOI_1013_TC02_DS_Sync_ProductBasket_ProductNotValid_NegativeTest
+Log Date: 22-12-2020 00:31:12
+Test Status: Passed
+###############################################################################
+22-12-2020 00:41:32 - INFO - startTest - Test Case: SOI_1013_TC02_DS_Sync_ProductBasket_ProductNotValid_NegativeTest initiation
+22-12-2020 00:41:32 - TRACE - goToLoginPage - Executed with success
+22-12-2020 00:41:33 - TRACE - fillcredentials - Executed with success
+22-12-2020 00:41:38 - TRACE - pressLoginButton - Executed with success
+22-12-2020 00:41:38 - INFO - loginDirectSales on Step 1 - Executed with success
+22-12-2020 00:41:38 - TRACE - homePageValidation - Executed with success
+22-12-2020 00:41:38 - INFO - loginSFDS - Step 1 - Executed with success
+22-12-2020 00:41:43 - TRACE - goToCompanyDetailsPage - Executed with success
+22-12-2020 00:41:44 - TRACE - companyPageValidation - Executed with success
+22-12-2020 00:41:44 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+22-12-2020 00:41:46 - TRACE - openQuickSaleOPTYScreen - Executed with success
+22-12-2020 00:41:50 - TRACE - quickSaleFormValidation - Succeeded in Step: 3
+22-12-2020 00:41:50 - INFO - startQuickSaleOPTY - Executed with success
+22-12-2020 00:41:50 - TRACE - validateQuickSaleFilledFields - Succeeded in Step: 4
+22-12-2020 00:41:50 - INFO - validateQuickSalePreFilledFields - Executed with success
+22-12-2020 00:41:52 - TRACE - createQuickSaleOpty - Executed with success
+22-12-2020 00:41:56 - TRACE - saveOpportunity - Executed with success
+22-12-2020 00:42:16 - INFO - finishQuickSaleOPTYCreation - Executed with success
+22-12-2020 00:42:18 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+22-12-2020 00:42:22 - INFO - goToOpportunityPage - Executed with success
+22-12-2020 00:42:24 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 6
+22-12-2020 00:42:24 - INFO - navigateToOpportunityPage - Executed with success
+22-12-2020 00:42:27 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 7
+22-12-2020 00:42:28 - TRACE - clickNewProductBasketLink - Succeeded in Step 7
+22-12-2020 00:42:28 - TRACE - createProductBasket - Succeeded in Step 7
+22-12-2020 00:42:35 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 7
+22-12-2020 00:42:36 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 7
+22-12-2020 00:42:36 - INFO - createProductBasket - Executed with success
+22-12-2020 00:42:37 - TRACE - Product Basket: Open Add Product Menu - Succeeded in Step 8
+22-12-2020 00:42:37 - TRACE - addProductMenuValidation - Succeeded in Step: 8
+22-12-2020 00:42:37 - INFO - goToAddOferToBasketScreen - Executed with success
+22-12-2020 00:42:43 - TRACE - Add Offer to Basket: Pick Product - Enterprise Voice - Succeeded in Step 9
+22-12-2020 00:42:43 - TRACE - productOnProductBasketValidation - Succeeded in Step: 9
+22-12-2020 00:42:43 - INFO - addProductToProductBasket - Executed with success
+22-12-2020 00:42:44 - TRACE - syncProductBasket - Succeeded in Step 10
+22-12-2020 00:42:44 - TRACE - syncProductBasketNegVal - Succeeded in Step: 10
+22-12-2020 00:42:44 - INFO - syncProductBasketNegVal - Executed with success
+22-12-2020 00:42:44 - INFO - finishTest - Test Case: SOI_1013_TC02_DS_Sync_ProductBasket_ProductNotValid_NegativeTest completion
+############################# End Of Log File #################################

@@ -1,0 +1,50 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SOI_1013_TC03_DS_Sync_ProductBasket_EmptyProduct_NegativeTest
+Log Date: 15-12-2020 14:40:43
+Test Status: Failed
+###############################################################################
+15-12-2020 14:40:48 - INFO - startTest - Test Case: SOI_1013_TC03_DS_Sync_ProductBasket_EmptyProduct_NegativeTest initiation
+15-12-2020 14:40:51 - TRACE - goToLoginPage - Executed with success
+15-12-2020 14:40:52 - TRACE - fillcredentials - Executed with success
+15-12-2020 14:40:57 - TRACE - pressLoginButton - Executed with success
+15-12-2020 14:40:57 - INFO - loginDirectSales on Step 1 - Executed with success
+15-12-2020 14:40:58 - TRACE - homePageValidation - Executed with success
+15-12-2020 14:40:58 - INFO - loginSFDS - Step 1 - Executed with success
+15-12-2020 14:41:03 - TRACE - goToCompanyDetailsPage - Executed with success
+15-12-2020 14:41:04 - TRACE - companyPageValidation - Executed with success
+15-12-2020 14:41:04 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+15-12-2020 14:41:07 - TRACE - openQuickSaleOPTYScreen - Executed with success
+15-12-2020 14:41:11 - TRACE - quickSaleFormValidation - Succeeded in Step: 3
+15-12-2020 14:41:11 - INFO - startQuickSaleOPTY - Executed with success
+15-12-2020 14:41:11 - TRACE - validateQuickSaleFilledFields - Succeeded in Step: 4
+15-12-2020 14:41:11 - INFO - validateQuickSalePreFilledFields - Executed with success
+15-12-2020 14:41:12 - TRACE - createQuickSaleOpty - Executed with success
+15-12-2020 14:41:17 - TRACE - saveOpportunity - Executed with success
+15-12-2020 14:41:37 - INFO - finishQuickSaleOPTYCreation - Executed with success
+15-12-2020 14:41:39 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+15-12-2020 14:41:42 - INFO - goToOpportunityPage - Executed with success
+15-12-2020 14:41:44 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 6
+15-12-2020 14:41:44 - INFO - navigateToOpportunityPage - Executed with success
+15-12-2020 14:41:46 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 7
+15-12-2020 14:41:48 - TRACE - clickNewProductBasketLink - Succeeded in Step 7
+15-12-2020 14:41:48 - TRACE - createProductBasket - Succeeded in Step 7
+15-12-2020 14:41:54 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 7
+15-12-2020 14:41:55 - INFO - createProductBasket - Executed with success
+15-12-2020 14:41:55 - ERROR - goToProductBasketRelatedMenu - Failed in Step 8 - java.lang.ArrayIndexOutOfBoundsException: 6
+15-12-2020 14:41:55 - ERROR - createProductBasket - Failed in Step 8 - java.lang.Exception: goToProductBasketRelatedMenu - Failed in Step 8
+15-12-2020 14:41:55 - ERROR - createProductBasket - Executed with errors - java.lang.Exception: createProductBasket - Failed in Step 8
+15-12-2020 14:41:56 - TRACE - Product Basket: Change to default frame - Succeeded in Step 8
+15-12-2020 14:42:16 - ERROR - syncProductBasket - Failed in Step 9 - org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[1]/span/div/div[2]/div/div[2]/div[2]/button/span[2]"}
+  (Session info: chrome=87.0.4280.88)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'INNOWAVE-383', ip: '192.168.0.164', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_251'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\source\simpleOrderingInt...}, goog:chromeOptions: {debuggerAddress: localhost:58799}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 8e9c98584b3cfcf3ee4dc3bc5c39b2a8
+*** Element info: {Using=xpath, value=/html/body/div[1]/span/div/div[2]/div/div[2]/div[2]/button/span[2]}
+15-12-2020 14:42:16 - ERROR - syncProductBasketNegVal - Executed with errors - java.lang.Exception: syncProductBasket - Failed in Step 9
+15-12-2020 14:42:16 - INFO - finishTest - Test Case: SOI_1013_TC03_DS_Sync_ProductBasket_EmptyProduct_NegativeTest completion
+############################# End Of Log File #################################

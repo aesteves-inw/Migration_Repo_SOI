@@ -1,0 +1,42 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SOI_2206_TC04_DS_ECS_Offerings_ECS_ProPlus_PhoneLine
+Log Date: 18-12-2020 16:40:10
+Test Status: Passed
+###############################################################################
+18-12-2020 16:40:20 - INFO - startTest - Test Case: SOI_2206_TC04_DS_ECS_Offerings_ECS_ProPlus_PhoneLine initiation
+18-12-2020 16:40:23 - TRACE - goToLoginPage - Executed with success
+18-12-2020 16:40:25 - TRACE - fillcredentials - Executed with success
+18-12-2020 16:40:30 - TRACE - pressLoginButton - Executed with success
+18-12-2020 16:40:30 - INFO - loginDirectSales on Step 1 - Executed with success
+18-12-2020 16:40:32 - TRACE - homePageValidation - Executed with success
+18-12-2020 16:40:32 - INFO - loginSFDS - Step 1 - Executed with success
+18-12-2020 16:40:38 - TRACE - goToCompanyDetailsPage - Executed with success
+18-12-2020 16:40:39 - TRACE - companyPageValidation - Executed with success
+18-12-2020 16:40:39 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+18-12-2020 16:40:41 - TRACE - openQuickSaleOPTYScreen - Executed with success
+18-12-2020 16:40:47 - TRACE - createQuickSaleOpty - Executed with success
+18-12-2020 16:40:52 - TRACE - saveOpportunity - Executed with success
+18-12-2020 16:40:52 - INFO - createQuickSaleOpty - Executed with success
+18-12-2020 16:40:55 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+18-12-2020 16:41:03 - INFO - goToOpportunityPage - Executed with success
+18-12-2020 16:41:07 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 3
+18-12-2020 16:41:07 - INFO - createQuickSaleOpportunity - Step 3 - Executed with success
+18-12-2020 16:41:10 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 4
+18-12-2020 16:41:13 - TRACE - clickNewProductBasketLink - Succeeded in Step 4
+18-12-2020 16:41:13 - TRACE - createProductBasket - Succeeded in Step 4
+18-12-2020 16:41:22 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 4
+18-12-2020 16:41:23 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 4
+18-12-2020 16:41:23 - INFO - createProductBasket - Executed with success
+18-12-2020 16:41:24 - TRACE - Product Basket: Open Add Product Menu - Succeeded in Step 5
+18-12-2020 16:41:25 - TRACE - addProductMenuValidation - Succeeded in Step: 5
+18-12-2020 16:41:25 - INFO - goToAddOferToBasketScreen - Executed with success
+18-12-2020 16:41:48 - TRACE - Add Offer to Basket: Pick Product - Enterprise Call & Surf Pro+ with Phone Line - Succeeded in Step 6
+18-12-2020 16:41:48 - TRACE - productOnProductBasketValidation - Succeeded in Step: 6
+18-12-2020 16:41:48 - INFO - addProductToProductBasket - Executed with success
+18-12-2020 16:41:53 - TRACE - expandingECS - Succeeded in Step 7
+18-12-2020 16:41:54 - TRACE - validateECSProPlusPhoneLine - Succeeded in Step: 7
+18-12-2020 16:41:54 - INFO - expandECSPackage - Executed with success
+18-12-2020 16:41:55 - INFO - finishTest - Test Case: SOI_2206_TC04_DS_ECS_Offerings_ECS_ProPlus_PhoneLine completion
+############################# End Of Log File #################################

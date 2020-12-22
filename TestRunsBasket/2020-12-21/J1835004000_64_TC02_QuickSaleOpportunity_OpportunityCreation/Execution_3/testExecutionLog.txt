@@ -1,0 +1,26 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: J1835004000_64_TC02_QuickSaleOpportunity_OpportunityCreation
+Log Date: 21-12-2020 23:12:47
+Test Status: Failed
+###############################################################################
+21-12-2020 23:13:26 - INFO - startTest - Test Case: J1835004000_64_TC02_QuickSaleOpportunity_OpportunityCreation initiation
+21-12-2020 23:13:27 - TRACE - goToLoginPage - Executed with success
+21-12-2020 23:13:28 - TRACE - fillcredentials - Executed with success
+21-12-2020 23:13:34 - TRACE - pressLoginButton - Executed with success
+21-12-2020 23:13:34 - INFO - loginDirectSales on Step 1 - Executed with success
+21-12-2020 23:13:35 - TRACE - homePageValidation - Executed with success
+21-12-2020 23:13:35 - INFO - loginSFDS - Step 1 - Executed with success
+21-12-2020 23:13:41 - TRACE - goToCompanyDetailsPage - Executed with success
+21-12-2020 23:13:42 - TRACE - companyPageValidation - Executed with success
+21-12-2020 23:13:42 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+21-12-2020 23:13:44 - TRACE - openQuickSaleOPTYScreen - Executed with success
+21-12-2020 23:13:48 - TRACE - quickSaleFormValidation - Succeeded in Step: 3
+21-12-2020 23:13:48 - INFO - startQuickSaleOPTY - Executed with success
+21-12-2020 23:13:49 - ERROR - validateQuickSalePreFilledFields - Executed with errors - java.lang.Exception: Validate the pre filled fields - Failed in Step: 4
+21-12-2020 23:13:49 - ERROR - J1835004000_64_TC02_QuickSaleOpportunity_OpportunityCreation - Test Failed - java.lang.Exception: Validate the pre filled fields - Failed in Step: 4
+21-12-2020 23:13:49 - ERROR - J1835004000_64_TC02_QuickSaleOpportunity_OpportunityCreation - Test Failed - java.lang.Exception: J1835004000_64_TC02_QuickSaleOpportunity_OpportunityCreation: Failed
+21-12-2020 23:13:49 - ERROR - J1835004000_64_TC02_QuickSaleOpportunity_OpportunityCreation - Test Execution Failed - java.lang.Exception: J1835004000_64_TC02_QuickSaleOpportunity_OpportunityCreation: Failed
+21-12-2020 23:13:49 - INFO - finishTest - Test Case: J1835004000_64_TC02_QuickSaleOpportunity_OpportunityCreation completion
+############################# End Of Log File #################################

@@ -1,0 +1,19 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SOI_1013_TC03_DS_Sync_ProductBasket_EmptyProduct_NegativeTest
+Log Date: 15-12-2020 15:04:58
+Test Status: Failed
+###############################################################################
+15-12-2020 15:05:02 - INFO - startTest - Test Case: SOI_1013_TC03_DS_Sync_ProductBasket_EmptyProduct_NegativeTest initiation
+15-12-2020 15:05:04 - TRACE - goToLoginPage - Executed with success
+15-12-2020 15:05:05 - TRACE - fillcredentials - Executed with success
+15-12-2020 15:05:10 - TRACE - pressLoginButton - Executed with success
+15-12-2020 15:05:10 - INFO - loginDirectSales on Step 1 - Executed with success
+15-12-2020 15:05:10 - ERROR - loginSFDS - Step 1 - Executed with errors - java.lang.Exception: Login in Salesforce (Direct Sales) - Failed in Step: 1
+15-12-2020 15:05:12 - ERROR - SOI_1013_TC03_DS_Sync_ProductBasket_EmptyProduct_NegativeTest - Test Failed - java.lang.Exception: Login in Salesforce (Direct Sales) - Failed in Step: 1
+15-12-2020 15:05:12 - ERROR - SOI_1013_TC03_DS_Sync_ProductBasket_EmptyProduct_NegativeTest - Test Failed - java.lang.Exception: SOI_1013_TC03_DS_Sync_ProductBasket_EmptyProduct_NegativeTest: Failed
+15-12-2020 15:05:12 - ERROR - SOI_1013_TC03_DS_Sync_ProductBasket_EmptyProduct_NegativeTest - Test Failed - java.lang.Exception: SOI_1013_TC03_DS_Sync_ProductBasket_EmptyProduct_NegativeTest: Failed
+15-12-2020 15:05:12 - ERROR - SOI_1013_TC03_DS_Sync_ProductBasket_EmptyProduct_NegativeTest - Test Failed - java.lang.Exception: SOI_1013_TC03_DS_Sync_ProductBasket_EmptyProduct_NegativeTest: Test Case Failed
+15-12-2020 15:05:12 - INFO - finishTest - Test Case: SOI_1013_TC03_DS_Sync_ProductBasket_EmptyProduct_NegativeTest completion
+############################# End Of Log File #################################

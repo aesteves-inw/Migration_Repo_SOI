@@ -1,0 +1,26 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: testingFrameworkPackage.GeneralTestingClass
+Log Date: 16-12-2020 12:15:50
+Test Status: Failed
+###############################################################################
+16-12-2020 12:15:55 - INFO - startTest - Test Case: testingFrameworkPackage.GeneralTestingClass initiation
+16-12-2020 12:15:56 - TRACE - goToLoginPage - Executed with success
+16-12-2020 12:15:58 - TRACE - fillcredentials - Executed with success
+16-12-2020 12:16:02 - TRACE - pressLoginButton - Executed with success
+16-12-2020 12:16:02 - INFO - loginDirectSales on Step 1 - Executed with success
+16-12-2020 12:16:03 - TRACE - homePageValidation - Executed with success
+16-12-2020 12:16:03 - INFO - loginSFDS - Step 1 - Executed with success
+16-12-2020 12:16:09 - TRACE - goToCompanyDetailsPage - Executed with success
+16-12-2020 12:16:10 - TRACE - companyPageValidation - Executed with success
+16-12-2020 12:16:10 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+16-12-2020 12:16:14 - TRACE - openQuickSaleOPTYScreen - Executed with success
+16-12-2020 12:16:17 - TRACE - quickSaleFormValidation - Succeeded in Step: 3
+16-12-2020 12:16:17 - INFO - startQuickSaleOPTY - Executed with success
+16-12-2020 12:16:18 - TRACE - validateQuickSaleFilledFields - Succeeded in Step: 4
+16-12-2020 12:16:18 - INFO - validateQuickSalePreFilledFields - Executed with success
+16-12-2020 12:16:19 - ERROR - finishQuickSaleOPTYCreation - Executed with errors - java.lang.ArrayIndexOutOfBoundsException: 1
+16-12-2020 12:16:19 - ERROR - testingFrameworkPackage.GeneralTestingClass - Test Failed on Pre Conditions Setup - java.lang.Exception: Fill Mandatory Fields and Press Save Button - Failed in Step: 5
+16-12-2020 12:16:19 - INFO - finishTest - Test Case: testingFrameworkPackage.GeneralTestingClass completion
+############################# End Of Log File #################################

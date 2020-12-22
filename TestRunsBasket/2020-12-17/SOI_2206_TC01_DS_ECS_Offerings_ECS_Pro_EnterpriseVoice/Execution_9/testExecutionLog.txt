@@ -1,0 +1,52 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SOI_2206_TC01_DS_ECS_Offerings_ECS_Pro_EnterpriseVoice
+Log Date: 17-12-2020 14:24:59
+Test Status: Failed
+###############################################################################
+17-12-2020 14:25:03 - INFO - startTest - Test Case: SOI_2206_TC01_DS_ECS_Offerings_ECS_Pro_EnterpriseVoice initiation
+17-12-2020 14:25:04 - TRACE - goToLoginPage - Executed with success
+17-12-2020 14:25:06 - TRACE - fillcredentials - Executed with success
+17-12-2020 14:25:10 - TRACE - pressLoginButton - Executed with success
+17-12-2020 14:25:10 - INFO - loginDirectSales on Step 1 - Executed with success
+17-12-2020 14:25:11 - TRACE - homePageValidation - Executed with success
+17-12-2020 14:25:11 - INFO - loginSFDS - Step 1 - Executed with success
+17-12-2020 14:25:15 - TRACE - goToCompanyDetailsPage - Executed with success
+17-12-2020 14:25:17 - TRACE - companyPageValidation - Executed with success
+17-12-2020 14:25:17 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+17-12-2020 14:25:19 - TRACE - openQuickSaleOPTYScreen - Executed with success
+17-12-2020 14:25:22 - TRACE - createQuickSaleOpty - Executed with success
+17-12-2020 14:25:25 - TRACE - saveOpportunity - Executed with success
+17-12-2020 14:25:25 - INFO - createQuickSaleOpty - Executed with success
+17-12-2020 14:25:27 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+17-12-2020 14:25:30 - INFO - goToOpportunityPage - Executed with success
+17-12-2020 14:25:32 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 3
+17-12-2020 14:25:32 - INFO - createQuickSaleOpportunity - Step 3 - Executed with success
+17-12-2020 14:25:33 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 4
+17-12-2020 14:25:35 - TRACE - clickNewProductBasketLink - Succeeded in Step 4
+17-12-2020 14:25:35 - TRACE - createProductBasket - Succeeded in Step 4
+17-12-2020 14:25:41 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 4
+17-12-2020 14:25:42 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 4
+17-12-2020 14:25:42 - INFO - createProductBasket - Executed with success
+17-12-2020 14:25:43 - TRACE - Product Basket: Open Add Product Menu - Succeeded in Step 5
+17-12-2020 14:25:43 - TRACE - addProductMenuValidation - Succeeded in Step: 5
+17-12-2020 14:25:43 - INFO - goToAddOferToBasketScreen - Executed with success
+17-12-2020 14:25:52 - TRACE - Add Offer to Basket: Pick Product - Enterprise Call & Surf Pro with Enterprise Voice - Succeeded in Step 6
+17-12-2020 14:25:52 - TRACE - productOnProductBasketValidation - Succeeded in Step: 6
+17-12-2020 14:25:52 - INFO - addProductToProductBasket - Executed with success
+17-12-2020 14:25:53 - TRACE - expandingECS - Succeeded in Step 7
+17-12-2020 14:25:53 - ERROR - validateECSProEV - Failed in Step 7 - org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=87.0.4280.88)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'INNOWAVE-383', ip: '192.168.0.164', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_251'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\source\simpleOrderingInt...}, goog:chromeOptions: {debuggerAddress: localhost:64084}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 2d6e0ffdfb95308a545cdbdb813480d3
+17-12-2020 14:25:53 - ERROR - expandedECSPackValidation - Failed in Step 7 - java.lang.Exception: validateECSProEV - Failed in Step: 7
+17-12-2020 14:25:53 - ERROR - expandECSPackage - Executed with errors - java.lang.Exception: expandedECSPackValidation - Failed in Step: 7
+17-12-2020 14:25:54 - ERROR - SOI_2206_TC01_DS_ECS_Offerings_ECS_Pro_EnterpriseVoice - Test Failed - java.lang.Exception: Expanding ECS Package on Product Basket - Failed in Step: 7
+17-12-2020 14:25:54 - ERROR - SOI_2206_TC01_DS_ECS_Offerings_ECS_Pro_EnterpriseVoice - Test Execution Failed - java.lang.Exception: SOI_2206_TC01_DS_ECS_Offerings_ECS_Pro_EnterpriseVoice: Failed
+17-12-2020 14:25:54 - INFO - finishTest - Test Case: SOI_2206_TC01_DS_ECS_Offerings_ECS_Pro_EnterpriseVoice completion
+############################# End Of Log File #################################

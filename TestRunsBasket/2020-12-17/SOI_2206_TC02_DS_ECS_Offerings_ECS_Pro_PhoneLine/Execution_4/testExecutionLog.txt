@@ -1,0 +1,52 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SOI_2206_TC02_DS_ECS_Offerings_ECS_Pro_PhoneLine
+Log Date: 17-12-2020 16:08:20
+Test Status: Failed
+###############################################################################
+17-12-2020 16:08:26 - INFO - startTest - Test Case: SOI_2206_TC02_DS_ECS_Offerings_ECS_Pro_PhoneLine initiation
+17-12-2020 16:08:27 - TRACE - goToLoginPage - Executed with success
+17-12-2020 16:08:29 - TRACE - fillcredentials - Executed with success
+17-12-2020 16:08:33 - TRACE - pressLoginButton - Executed with success
+17-12-2020 16:08:33 - INFO - loginDirectSales on Step 1 - Executed with success
+17-12-2020 16:08:34 - TRACE - homePageValidation - Executed with success
+17-12-2020 16:08:34 - INFO - loginSFDS - Step 1 - Executed with success
+17-12-2020 16:08:39 - TRACE - goToCompanyDetailsPage - Executed with success
+17-12-2020 16:08:40 - TRACE - companyPageValidation - Executed with success
+17-12-2020 16:08:40 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+17-12-2020 16:08:41 - TRACE - openQuickSaleOPTYScreen - Executed with success
+17-12-2020 16:08:45 - TRACE - createQuickSaleOpty - Executed with success
+17-12-2020 16:08:48 - TRACE - saveOpportunity - Executed with success
+17-12-2020 16:08:48 - INFO - createQuickSaleOpty - Executed with success
+17-12-2020 16:08:50 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+17-12-2020 16:08:53 - INFO - goToOpportunityPage - Executed with success
+17-12-2020 16:08:55 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 3
+17-12-2020 16:08:55 - INFO - createQuickSaleOpportunity - Step 3 - Executed with success
+17-12-2020 16:08:57 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 4
+17-12-2020 16:08:58 - TRACE - clickNewProductBasketLink - Succeeded in Step 4
+17-12-2020 16:08:58 - TRACE - createProductBasket - Succeeded in Step 4
+17-12-2020 16:09:04 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 4
+17-12-2020 16:09:05 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 4
+17-12-2020 16:09:05 - INFO - createProductBasket - Executed with success
+17-12-2020 16:09:06 - TRACE - Product Basket: Open Add Product Menu - Succeeded in Step 5
+17-12-2020 16:09:06 - TRACE - addProductMenuValidation - Succeeded in Step: 5
+17-12-2020 16:09:06 - INFO - goToAddOferToBasketScreen - Executed with success
+17-12-2020 16:09:15 - TRACE - Add Offer to Basket: Pick Product - Enterprise Call & Surf Pro with Phone Line - Succeeded in Step 6
+17-12-2020 16:09:15 - TRACE - productOnProductBasketValidation - Succeeded in Step: 6
+17-12-2020 16:09:15 - INFO - addProductToProductBasket - Executed with success
+17-12-2020 16:09:16 - TRACE - expandingECS - Succeeded in Step 7
+17-12-2020 16:09:36 - ERROR - expandedECSPackValidation - Failed in Step 7 - org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//li[text()='Enterprise Call & Surf Pro with Phone Line']"}
+  (Session info: chrome=87.0.4280.88)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'INNOWAVE-383', ip: '192.168.0.164', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_251'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\source\simpleOrderingInt...}, goog:chromeOptions: {debuggerAddress: localhost:58383}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 63ce09dc8d60df089aaa65dac3a60123
+*** Element info: {Using=xpath, value=//li[text()='Enterprise Call & Surf Pro with Phone Line']}
+17-12-2020 16:09:36 - ERROR - expandECSPackage - Executed with errors - java.lang.Exception: expandedECSPackValidation - Failed in Step: 7
+17-12-2020 16:09:36 - ERROR - SOI_2206_TC02_DS_ECS_Offerings_ECS_Pro_PhoneLine - Test Failed - java.lang.Exception: Expanding ECS Package on Product Basket - Failed in Step: 7
+17-12-2020 16:09:36 - ERROR - SOI_2206_TC02_DS_ECS_Offerings_ECS_Pro_PhoneLine - Test Execution Failed - java.lang.Exception: SOI_2206_TC02_DS_ECS_Offerings_ECS_Pro_PhoneLine: Failed
+17-12-2020 16:09:36 - INFO - finishTest - Test Case: SOI_2206_TC02_DS_ECS_Offerings_ECS_Pro_PhoneLine completion
+############################# End Of Log File #################################

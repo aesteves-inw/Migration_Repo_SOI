@@ -1,0 +1,23 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SOI_2206_TC01_DS_ECS_Offerings_ECS_Pro_EnterpriseVoice
+Log Date: 17-12-2020 16:17:37
+Test Status: Failed
+###############################################################################
+17-12-2020 16:17:42 - INFO - startTest - Test Case: SOI_2206_TC01_DS_ECS_Offerings_ECS_Pro_EnterpriseVoice initiation
+17-12-2020 16:17:43 - TRACE - goToLoginPage - Executed with success
+17-12-2020 16:17:44 - TRACE - fillcredentials - Executed with success
+17-12-2020 16:17:49 - TRACE - pressLoginButton - Executed with success
+17-12-2020 16:17:49 - INFO - loginDirectSales on Step 1 - Executed with success
+17-12-2020 16:17:50 - TRACE - homePageValidation - Executed with success
+17-12-2020 16:17:50 - INFO - loginSFDS - Step 1 - Executed with success
+17-12-2020 16:17:54 - TRACE - goToCompanyDetailsPage - Executed with success
+17-12-2020 16:17:54 - TRACE - companyPageValidation - Validation Failed on Step 2
+17-12-2020 16:17:54 - ERROR - companyPageValidation - Executed with errors - java.lang.Exception: Validation Failed on Step 2
+17-12-2020 16:17:54 - ERROR - navigateToCompanyPage - Step 2 - Executed with errors - java.lang.Exception: companyPageValidation - Executed with errors
+17-12-2020 16:17:55 - ERROR - SOI_2206_TC01_DS_ECS_Offerings_ECS_Pro_EnterpriseVoice - Test Failed on Pre Conditions Setup - java.lang.Exception: Navigate to Company Details Page (Direct Sales) - Failed in Step: 2
+17-12-2020 16:17:55 - ERROR - SOI_2206_TC01_DS_ECS_Offerings_ECS_Pro_EnterpriseVoice - Test Failed - java.lang.Exception: SOI_2206_TC01_DS_ECS_Offerings_ECS_Pro_EnterpriseVoice: Test Case Failed on Test Model - ToHaveAProductBasket
+17-12-2020 16:17:55 - ERROR - SOI_2206_TC01_DS_ECS_Offerings_ECS_Pro_EnterpriseVoice - Test Execution Failed - java.lang.Exception: SOI_2206_TC01_DS_ECS_Offerings_ECS_Pro_EnterpriseVoice: Failed
+17-12-2020 16:17:55 - INFO - finishTest - Test Case: SOI_2206_TC01_DS_ECS_Offerings_ECS_Pro_EnterpriseVoice completion
+############################# End Of Log File #################################
