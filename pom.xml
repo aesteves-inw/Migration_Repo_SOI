@@ -2,11 +2,11 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.prx.simpleOrdering.testAutomation</groupId>
-	<artifactId>simpleOrdering</artifactId>
+	<groupId>com.prx.simpleOrderingIntake.testAutomation</groupId>
+	<artifactId>simpleOrderingIntake</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Simple Ordering</name>
-	<description>Test Automation for Simple Ordering project</description>
+	<description>Test Automation for Simple Ordering Intake project</description>
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
