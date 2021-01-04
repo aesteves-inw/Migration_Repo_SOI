@@ -167,9 +167,8 @@ public class CompanyAction {
 			stageValidation=driver.findElement(By.xpath(DirSalesOpportunity.stageText)).getText().toString();
 
 			closeDateValidation=driver.findElement(By.xpath(DirSalesOpportunity.closeDateInput)).getAttribute("value");
-
-
-			if(forecastCategoryValidation.contains("Committed") && stageValidation.contains("Prospecting") && closeDateValidation.contains(ExecStructure.formattedDate("dd/MM/YYYY")))
+			
+			if(forecastCategoryValidation.contains("Committed") && stageValidation.contains("Prospecting") && ExecStructure.formattedDate("dd/MM/YYYY").contains(closeDateValidation))
 			{
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepsExecuted);
 				System.out.println(actionName+" - Succeeded in Step: "+stepsExecuted);

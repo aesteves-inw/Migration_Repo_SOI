@@ -1,10 +1,8 @@
 package objectMap.sfPartnersCommunity;
 
-import constants.Constants;
-
 public class PartComAgreements {
 	
-	private String PC = Constants.partnersCommunity;
+	//private String PC = Constants.partnersCommunity;
 	
 	
 	// ..:: Agreements Page ::..
