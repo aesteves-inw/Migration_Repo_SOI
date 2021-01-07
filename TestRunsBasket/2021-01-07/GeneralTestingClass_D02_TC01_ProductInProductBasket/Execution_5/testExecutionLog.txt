@@ -1,0 +1,18 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket
+Log Date: 07-01-2021 14:06:26
+Test Status: Passed
+###############################################################################
+07-01-2021 14:06:34 - INFO - startTest - Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket initiation
+07-01-2021 14:06:37 - TRACE - goToLoginPage - Executed with success
+07-01-2021 14:06:40 - TRACE - fillcredentials - Executed with success
+07-01-2021 14:06:51 - TRACE - pressLoginButton - Executed with success
+07-01-2021 14:06:51 - INFO - loginDirectSales on Step 1 - Executed with success
+07-01-2021 14:07:15 - ERROR - homePageValidation - Executed with errors - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: /html/body/div[5]/div[1]/section/header/div[3]/one-appnav/div/div/div/nav/one-app-launcher-header/button/div (tried for 20 second(s) with 500 milliseconds interval)
+07-01-2021 14:07:15 - ERROR - loginSFDS - Step 1 - Executed with errors - java.lang.Exception: homePageValidation - Executed with errors
+07-01-2021 14:07:16 - ERROR - Voice Continuity - Test Failed on Pre Conditions Setup - java.lang.NullPointerException
+07-01-2021 14:07:16 - ERROR - Voice Continuity - Test Failed on Pre Conditions Setup - java.lang.Exception: Voice Continuity: Test Case Failed on Test Model - ToHaveAProductBasket
+07-01-2021 14:07:16 - INFO - finishTest - Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket completion
+############################# End Of Log File #################################

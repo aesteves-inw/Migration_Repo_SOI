@@ -3,8 +3,9 @@ package editProductConfigurationScreenDirectSales;
 import java.util.List;
 
 import org.openqa.selenium.WebDriver;
-
 import executionTools.TestExecutionReport;
+import productBasketDirectSales.ProductBasketAction;
+import productConfigurationCloudSense.PhoneLine;
 import productConfigurationCloudSense.VoiceContinuity;
 import testExecutionData.ProductConfigurationD02;
 import testLogBuilder.TestLog;
@@ -20,7 +21,7 @@ public class EProdConfigStep
 			List<TestLog> logStream, WebDriver driver, String testName, String productName, String configurationIndex) throws Exception 
 	{
 		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
-		
+
 		String stepName="Product Configuration: "+productName;
 
 		String stepNameMin="configureVoiceContinuity";
@@ -29,7 +30,7 @@ public class EProdConfigStep
 
 
 		boolean validation;
-		
+
 		String[] configuration=ProductConfigurationD02.getD02ConfigurationToApply(productName, configurationIndex);
 
 		try
@@ -58,7 +59,94 @@ public class EProdConfigStep
 			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
 
+
+	}
+
+	public static void finsihConfiguration(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName) throws Exception
+	{
+		
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);		
+		
+		String stepName="Edit Product Configuration 'Screen': Finish Configuration";
+
+		String stepNameMin="finsihConfiguration";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);	
+
+		boolean validation;
+
+		try
+		{
+			EProdConfigAction.finishConfiguration(logStream, driver, stepID);
+
+			validation = ProductBasketAction.productBasketScreenValidation(logStream, driver, stepID);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+	}
+
+
+	public static void configurePhoneLine(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream,
+			WebDriver driver, String testName, String productName, String configurationIndex) throws Exception 
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+
+		String stepName="Product Configuration: "+productName;
+
+		String stepNameMin="configureVoiceContinuity";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		String[] configuration=ProductConfigurationD02.getD02ConfigurationToApply(productName, configurationIndex);
+
+		try
+		{
+			PhoneLine.configurationOfPhoneLine(logStream, driver, stepID, configuration, testName);
+
+			validation = PhoneLine.validationOfPLConfiguration(logStream, driver, stepID, configuration);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+
 		
 	}
-	
+
 }

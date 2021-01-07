@@ -3,7 +3,6 @@ package productConfigurationCloudSense;
 import java.util.List;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -70,6 +69,8 @@ public class VoiceContinuity
 		return voiceContinuityFlavour;
 	}
 
+	
+	
 	
 
 	public static void configurationOfVoiceContinuity(List<TestLog> logStream, WebDriver driver, int stepID, String[] configuration, String testName) throws Exception

@@ -1,0 +1,48 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket
+Log Date: 07-01-2021 14:23:53
+Test Status: Failed
+###############################################################################
+07-01-2021 14:23:59 - INFO - startTest - Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket initiation
+07-01-2021 14:24:03 - TRACE - goToLoginPage - Executed with success
+07-01-2021 14:24:06 - TRACE - fillcredentials - Executed with success
+07-01-2021 14:24:14 - TRACE - pressLoginButton - Executed with success
+07-01-2021 14:24:14 - INFO - loginDirectSales on Step 1 - Executed with success
+07-01-2021 14:24:18 - TRACE - homePageValidation - Executed with success
+07-01-2021 14:24:18 - INFO - loginSFDS - Step 1 - Executed with success
+07-01-2021 14:24:28 - TRACE - goToCompanyDetailsPage - Executed with success
+07-01-2021 14:24:31 - TRACE - companyPageValidation - Executed with success
+07-01-2021 14:24:31 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+07-01-2021 14:24:35 - TRACE - openQuickSaleOPTYScreen - Executed with success
+07-01-2021 14:24:44 - TRACE - createQuickSaleOpty - Executed with success
+07-01-2021 14:24:51 - TRACE - saveOpportunity - Executed with success
+07-01-2021 14:24:51 - INFO - createQuickSaleOpty - Executed with success
+07-01-2021 14:24:55 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+07-01-2021 14:25:03 - INFO - goToOpportunityPage - Executed with success
+07-01-2021 14:25:07 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 3
+07-01-2021 14:25:07 - INFO - createQuickSaleOpportunity - Step 3 - Executed with success
+07-01-2021 14:25:11 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 4
+07-01-2021 14:25:15 - TRACE - clickNewProductBasketLink - Succeeded in Step 4
+07-01-2021 14:25:15 - TRACE - createProductBasket - Succeeded in Step 4
+07-01-2021 14:25:23 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 4
+07-01-2021 14:25:24 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 4
+07-01-2021 14:25:24 - INFO - createProductBasket - Executed with success
+07-01-2021 14:25:25 - TRACE - Product Basket: Open Add Product Menu - Succeeded in Step 5
+07-01-2021 14:25:26 - TRACE - addProductMenuValidation - Succeeded in Step: 5
+07-01-2021 14:25:26 - INFO - goToAddOferToBasketScreen - Executed with success
+07-01-2021 14:25:34 - TRACE - Add Offer to Basket: Pick Product - Voice Continuity - Succeeded in Step 6
+07-01-2021 14:25:34 - TRACE - productOnProductBasketValidation - Succeeded in Step: 6
+07-01-2021 14:25:34 - INFO - addProductToProductBasket - Executed with success
+07-01-2021 14:25:42 - TRACE - goToEditProductConfiguration - Succeeded in Step 7
+07-01-2021 14:25:44 - TRACE - Change to Edit Prodcut Configuration iframe - Succeeded in Step 7
+07-01-2021 14:25:44 - INFO - goToEditProductConfigurationScreen - Executed with success
+07-01-2021 14:25:45 - TRACE - VC Contract Type - Config: New - Succeeded in Step 8
+07-01-2021 14:25:46 - ERROR - VC - Internal Comments Field - Failed in Step 8 - java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+07-01-2021 14:25:46 - ERROR - Contract Information On VoiceContinuity - Failed in Step 8 - java.lang.Exception: VC - Internal Comments Field - Failed in Step 8
+07-01-2021 14:25:46 - ERROR - configurationOfVoiceContinuity - Failed in Step 8 - java.lang.Exception: Contract Information On VoiceContinuity - Failed in Step 8
+07-01-2021 14:25:46 - ERROR - configureVoiceContinuity - Executed with errors - java.lang.Exception: configurationOfVoiceContinuity - Failed in Step 8
+07-01-2021 14:25:46 - ERROR - GeneralTestingClass_D02_TC01_ProductInProductBasket - Test Failed on Pre Conditions Setup - java.lang.Exception: Product Configuration: Voice Continuity - Failed in Step: 8
+07-01-2021 14:25:46 - INFO - finishTest - Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket completion
+############################# End Of Log File #################################

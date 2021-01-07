@@ -17,6 +17,7 @@ import testReportComposition.TestStepReportStructure;
 
 public class D02Models 
 {
+	// Product Basket Level	
 	public static void ToHaveAProductBasket(
 			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver, String testName
 			) throws Exception {
@@ -64,9 +65,9 @@ public class D02Models
 	}
 
 	
+	// Stand-Alone Products: Product Configuration - PI/PL/EV/VC
 	public static void ConfigureVoiceContinuity(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver, String testName, String productName, String configurationIndex) throws Exception
 	{
-		
 		
 		try
 		{
@@ -75,6 +76,8 @@ public class D02Models
 			ProductBasketStep.goToEditProductConfigurationScreen(testExecStructure, logStream, driver, testName, productName);
 			
 			EProdConfigStep.configureVoiceContinuity(testExecStructure, logStream, driver, testName, productName, configurationIndex);
+			
+			EProdConfigStep.finsihConfiguration(testExecStructure, logStream, driver, testName);
 
 		}
 		catch(Exception e)
@@ -85,5 +88,30 @@ public class D02Models
 		}
 	}
 	
+	public static void ConfigurePhoneLine(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver, String testName, String productName, String configurationIndex) throws Exception
+	{
+		
+		try
+		{
+			ProductInProductBasket(testExecStructure, logStream, driver, testName, productName);
+			
+			ProductBasketStep.goToEditProductConfigurationScreen(testExecStructure, logStream, driver, testName, productName);
+			
+			EProdConfigStep.configurePhoneLine(testExecStructure, logStream, driver, testName, productName, configurationIndex);
+			
+			EProdConfigStep.finsihConfiguration(testExecStructure, logStream, driver, testName);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, testName, "Test Failed on Pre Conditions Setup", e.toString());
+			throw new Exception(testName+": Test Case Failed on Test Model - ProductConfiguration with "+productName);
+		}
+	}
+
+
 	
+	// ECS Products: Product Configuration
+
 }

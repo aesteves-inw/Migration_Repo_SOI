@@ -3,6 +3,10 @@ package objectMap.sfDirectSales;
 public class DirSalesEditProductConfiguration {
 	
 	
+
+
+	public static String footerEditProductConfigurationScreen = "//div[@class='screen-footer']";
+
 	public static String iFrameEditProductConfiguration="//*[@id='EditProductDialog']/iframe";
 	
 	public static String bannerEditProductConfiguration="//*[@id='configurationContainer']/div/div/div[1]";
@@ -10,6 +14,10 @@ public class DirSalesEditProductConfiguration {
 	public static String productConfigurationLabel="//p[text()='Product Configuration']";
 	
 	public static String editProductScreenContainer="//*[@id='configurationContainer']/div/div/div[2]";
+	
+	public static String buttonFinish="//button[@data-cs-group='Finish']";
+	
+	public static String buttonCancel="//button[@data-cs-group='Cancel']";
 	
 	
 	//PROFESSIONAL INTERNET
