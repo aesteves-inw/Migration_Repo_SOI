@@ -49,8 +49,6 @@ public class SOI_1013_TC02_DS_Sync_ProductBasket_ProductNotValid_NegativeTest {
 		TestStructure.startTest(logStream,testName);
 		
 	}
-
-	
 	@Test
 	public void testCase() throws Exception
 	{

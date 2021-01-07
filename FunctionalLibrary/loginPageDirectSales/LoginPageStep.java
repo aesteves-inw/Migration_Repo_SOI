@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.openqa.selenium.WebDriver;
 
+import executionTools.TestExecutionReport;
 import homePageDirectSales.HomePageAction;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
@@ -13,8 +14,10 @@ import testReporter.TestReporter;
 
 public class LoginPageStep {
 	
-	public static void loginSFDS(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, String testName, int stepID, String userProfile) throws Exception
+	public static void loginSFDS(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, String testName, String userProfile) throws Exception
 	{	
+		
+		int stepID=TestExecutionReport.stepOfTestStep(testReportStream);
 		
 		String stepName="Login in Salesforce (Direct Sales)";
 
@@ -34,6 +37,8 @@ public class LoginPageStep {
 			
 			validation=HomePageAction.homePageValidation(logStream, driver);
 			
+			System.out.println("validation result on Login: "+validation);
+			
 			if (validation==true) 
 			{
 				TestLogger.logInfo(logStream, componentOfTheLog, TestLogger.logInfo);
@@ -52,5 +57,6 @@ public class LoginPageStep {
 			throw new Exception (stepName+" - Failed in Step: "+stepID, e);
 		}
 	}
-
+	
+	
 }

@@ -19,7 +19,7 @@ import testReportComposition.TestStepReportStructure;
 public class GeneralTestingClass extends ExecDriverClass
 {
 	
-	String testName = "GeneralTestingClass_D02_TC01_ToHaveAProductBasket";
+	String testName = "GeneralTestingClass_D02_TC01_ProductInProductBasket";
 
 	String initialTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
 
@@ -46,9 +46,13 @@ public class GeneralTestingClass extends ExecDriverClass
 	}
 	
 	@Test
-	public void ToHaveAProductBasket() throws Exception
+	public void ProductInProductBasket() throws Exception
 	{		
-		D02Models.ToHaveAProductBasket(testExecStructure, logStream, driver, testName, stepsExecuted);
+		String productName="Voice Continuity";
+		
+		String configurationIndex="configurationByDefault";
+		
+		D02Models.ConfigureVoiceContinuity(testExecStructure, logStream, driver, testName, productName, configurationIndex);
 	}
 	
 	

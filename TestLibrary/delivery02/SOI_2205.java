@@ -20,19 +20,12 @@ public class SOI_2205
 	{
 		try
 		{
-			int newStepCounter;
 			
-			D02Models.ToHaveAProductBasket(testExecStructure, logStream, driver, testName, stepsExecuted);
+			D02Models.ToHaveAProductBasket(testExecStructure, logStream, driver, testName);
+					
+			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, testName);
 			
-			newStepCounter = testExecStructure.size();
-			
-			newStepCounter++;
-			
-			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, newStepCounter, testName);
-			
-			newStepCounter++;
-			
-			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, newStepCounter, testName, "Enterprise Call & Surf Pro with Enterprise Voice");
+			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, "Enterprise Call & Surf Pro with Enterprise Voice");
 			
 		}
 		catch(Exception e)
@@ -49,19 +42,13 @@ public class SOI_2205
 	{
 		try
 		{
-			int newStepCounter;
 			
-			D02Models.ToHaveAProductBasket(testExecStructure, logStream, driver, testName, stepsExecuted);
 			
-			newStepCounter = testExecStructure.size();
+			D02Models.ToHaveAProductBasket(testExecStructure, logStream, driver, testName);
+					
+			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, testName);
 			
-			newStepCounter++;
-			
-			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, newStepCounter, testName);
-			
-			newStepCounter++;
-			
-			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, newStepCounter, testName, "Enterprise Call & Surf Pro with Phone Line");
+			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, "Enterprise Call & Surf Pro with Phone Line");
             
            
 			
@@ -80,19 +67,12 @@ public class SOI_2205
 	{
 		try
 		{
-			int newStepCounter;
 			
-			D02Models.ToHaveAProductBasket(testExecStructure, logStream, driver, testName, stepsExecuted);
+			D02Models.ToHaveAProductBasket(testExecStructure, logStream, driver, testName);
 			
-			newStepCounter = testExecStructure.size();
-			
-			newStepCounter++;
-			
-			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, newStepCounter, testName);
-			
-			newStepCounter++;
-			
-			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, newStepCounter, testName, "Enterprise Call & Surf Pro+ with Enterprise Voice");
+			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, testName);
+						
+			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, "Enterprise Call & Surf Pro+ with Enterprise Voice");
             
            
 			
@@ -111,19 +91,13 @@ public class SOI_2205
 	{
 		try
 		{
-			int newStepCounter;
 			
-			D02Models.ToHaveAProductBasket(testExecStructure, logStream, driver, testName, stepsExecuted);
 			
-			newStepCounter = testExecStructure.size();
+			D02Models.ToHaveAProductBasket(testExecStructure, logStream, driver, testName);
 			
-			newStepCounter++;
+			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, testName);
 			
-			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, newStepCounter, testName);
-			
-			newStepCounter++;
-			
-			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, newStepCounter, testName, "Enterprise Call & Surf Pro+ with Phone Line");
+			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, "Enterprise Call & Surf Pro+ with Phone Line");
             
            
 			
@@ -141,19 +115,13 @@ public class SOI_2205
 	{
 		try
 		{
-			int newStepCounter;
 			
-			D02Models.ToHaveAProductBasket(testExecStructure, logStream, driver, testName, stepsExecuted);
 			
-			newStepCounter = testExecStructure.size();
+			D02Models.ToHaveAProductBasket(testExecStructure, logStream, driver, testName);
 			
-			newStepCounter++;
+			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, testName);
 			
-			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, newStepCounter, testName);
-			
-			newStepCounter++;
-			
-			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, newStepCounter, testName, "Enterprise Call & Surf FullFiber");
+			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, "Enterprise Call & Surf FullFiber");
             
            
 			
@@ -172,19 +140,12 @@ public class SOI_2205
 	{
 		try
 		{
-			int newStepCounter;
 			
-			D02Models.ToHaveAProductBasket(testExecStructure, logStream, driver, testName, stepsExecuted);
+			D02Models.ToHaveAProductBasket(testExecStructure, logStream, driver, testName);
 			
-			newStepCounter = testExecStructure.size();
+			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, testName);
 			
-			newStepCounter++;
-			
-			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, newStepCounter, testName);
-			
-			newStepCounter++;
-			
-			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, newStepCounter, testName, "Enterprise Call & Surf FullFiber Extended");
+			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, "Enterprise Call & Surf FullFiber Extended");
             
            
 			

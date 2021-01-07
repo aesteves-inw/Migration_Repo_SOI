@@ -48,19 +48,13 @@ public class J1835004000_18 {
 	{
 		try
 		{
-			int newStepCounter;
+			
 			
 			J1835004000_14.J1835004000_14_TC01_Quick_Sale_Opportunity_CreateProdBasket(testExecStructure, logStream, driver, testName, stepsExecuted);
 			
-			newStepCounter = testExecStructure.size();
-			
-			newStepCounter++;
-			
-			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, newStepCounter, testName);
-			
-			newStepCounter++;
-			
-			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, newStepCounter, testName, "Enterprise Voice");
+			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, testName);
+						
+			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, "Enterprise Voice");
             
 			
 		}

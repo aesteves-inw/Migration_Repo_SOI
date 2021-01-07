@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import executionTools.TestExecutionReport;
 import objectMap.sfDirectSales.DirSalesOpportunity;
 import opportunityDirectSales.OpportunityAction;
 import testLogBuilder.TestLog;
@@ -16,33 +17,35 @@ import testReportComposition.TestStepReportStructure;
 import testReporter.TestReporter;
 
 public class CompanyStep {
-	
-	public static void createQuickSaleOpportunity(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, String testName, int stepID) throws Exception
+
+	public static void createQuickSaleOpportunity(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, String testName) throws Exception
 	{
-		
-		
-		
+
+		int stepID;
+
+		stepID=TestExecutionReport.stepOfTestStep(testReportStream);
+
 		String stepName="Company: Create Quick Sale Opportunity";
 
 		String stepNameMin="createQuickSaleOpportunity";
 
 		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);
-		
+
 		String componentOfTheLog=stepNameMin+" - Step "+stepID;
-		
-		
+
+
 		boolean validation;
-		
-		
+
+
 		try
 		{
-			
+
 			CompanyAction.createQuickSaleOpty(logStream, driver, testName);
-			
+
 			CompanyNavigation.goToOpportunityPage(logStream, driver, testName);
-			
+
 			validation=OpportunityAction.opportunityScreenValidation(logStream, driver, stepID);
-			
+
 			if (validation==true) 
 			{
 				TestLogger.logInfo(logStream, componentOfTheLog, TestLogger.logInfo);
@@ -59,12 +62,12 @@ public class CompanyStep {
 			TestReporter.stepFailed(testReportStream, driver, testName, stepID, stepName, evidenceName);
 			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
-		
+
 	}
 
 	public static void startQuickSaleOPTY(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, int stepID, String testName) throws Exception
 	{
-		
+
 		String stepName="Start Quick Sale Opportunity";
 
 		String stepNameMin="startQuickSaleOPTY";
@@ -77,7 +80,7 @@ public class CompanyStep {
 		try
 		{
 			CompanyAction.openQuickSaleOPTYScreen(logStream, driver, testName);
-			
+
 			new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesOpportunity.quickSaleOptyForm)));
 
 			validation = CompanyAction.quickSaleFormValidation(logStream, driver, stepID);
@@ -103,10 +106,10 @@ public class CompanyStep {
 		}
 
 	}
-	
+
 	public static void validateQuickSalePreFilledFields(List<TestStepReportStructure> testExecStructure,
 			List<TestLog> logStream, WebDriver driver, int stepsExecuted, String testName) throws Exception {
-		
+
 		String stepName="Validate the pre filled fields";
 
 		String stepNameMin="validateQuickSalePreFilledFields";
@@ -118,7 +121,7 @@ public class CompanyStep {
 
 		try
 		{
-			
+
 			validation = CompanyAction.validateQuickSaleFilledFields(logStream, driver, stepsExecuted);
 
 			if(validation==true)
@@ -140,12 +143,12 @@ public class CompanyStep {
 			TestReporter.stepFailed(testExecStructure, driver, testName, stepsExecuted, stepName, evidenceName);
 			throw new Exception (stepName+" - Failed in Step: "+stepsExecuted);
 		}
-		
+
 	}
 
 	public static void finishQuickSaleOPTYCreation(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, int stepID, String testName) throws Exception
 	{
-		
+
 		String stepName="Fill Mandatory Fields and Press Save Button";
 
 		String stepNameMin="finishQuickSaleOPTYCreation";
@@ -158,9 +161,9 @@ public class CompanyStep {
 		try
 		{
 			CompanyAction.fillQSOpportunityFields(logStream, driver, testName);
-			
+
 			CompanyAction.saveOpportunity(logStream, driver);
-			
+
 
 			validation = !(CompanyAction.quickSaleFormValidation(logStream, driver, stepID));
 
@@ -226,7 +229,7 @@ public class CompanyStep {
 
 	public static void createStandardOpportunityForD02(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, int stepID, String testName) throws Exception
 	{
-		
+
 		String stepName="Create Standard Opportunity";
 
 		String stepNameMin="createStandardOpportunity";
@@ -239,13 +242,13 @@ public class CompanyStep {
 		try
 		{
 			CompanyAction.createStandardOpportunity(logStream, driver, testName, stepID);
-			
+
 			CompanyAction.fillStandardOpportunityFields(logStream, driver, testName, stepID);
-			
+
 			CompanyAction.saveStandardOpportunity(logStream, driver, testName, stepID);
-			
+
 			CompanyAction.standardOpportunityForD02(logStream, driver, testName, stepID);
-			
+
 			CompanyNavigation.goToOpportunityPage(logStream, driver, testName);
 
 			validation = OpportunityAction.opportunityScreenValidation(logStream, driver, stepID);
@@ -271,5 +274,5 @@ public class CompanyStep {
 		}
 
 	}
-	
+
 }

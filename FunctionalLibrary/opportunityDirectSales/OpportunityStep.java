@@ -5,6 +5,7 @@ import java.util.List;
 import org.openqa.selenium.WebDriver;
 
 import executionTools.BrowserActions;
+import executionTools.TestExecutionReport;
 import productBasketDirectSales.ProductBasketAction;
 import testExecutionData.TestCasesData;
 import testLogBuilder.TestLog;
@@ -15,8 +16,11 @@ import testReporter.TestReporter;
 
 public class OpportunityStep {
 	
-	public static void createProductBasket(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, int stepID, String testName) throws Exception
+	public static void createProductBasket(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, String testName) throws Exception
 	{
+		int stepID;
+		
+		stepID=TestExecutionReport.stepOfTestStep(testReportStream);
 		
 		String stepName="Create Product Basket";
 

@@ -27,6 +27,7 @@ public class HomePageAction {
 		try
 		{
 			
+			
 			if(homePageURL.equalsIgnoreCase(homePageURLValidation) && homePageTitle.equalsIgnoreCase(homePageTitleValidation))
 			{
 				TestLogger.logTrace(logStream, componentName, TestLogger.logInfo);

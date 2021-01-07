@@ -5,6 +5,7 @@ import java.util.List;
 import org.openqa.selenium.WebDriver;
 
 import companyDirectSales.CompanyAction;
+import executionTools.TestExecutionReport;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
 import testReportComposition.ReportStructure;
@@ -12,29 +13,32 @@ import testReportComposition.TestStepReportStructure;
 import testReporter.TestReporter;
 
 public class HomePageStep {
-	
-	public static void navigateToCompanyPage(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, String testName, int stepID) throws Exception
+
+	public static void navigateToCompanyPage(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, String testName) throws Exception
 	{
-		
+		int stepID;
+
+		stepID=TestExecutionReport.stepOfTestStep(testReportStream);
+
 		String stepName="Navigate to Company Details Page (Direct Sales)";
 
 		String stepNameMin="navigateToCompanyPage";
 
 		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);
-		
+
 		String componentOfTheLog=stepNameMin+" - Step "+stepID;
-		
-		
+
+
 		boolean validation;
-		
-				
+
+
 		try
 		{
-			
+
 			HomePageNavigation.goToDefaultCompanyDetailsPage(logStream, driver, stepID);
-			
+
 			validation=CompanyAction.companyPageValidation(logStream, driver, stepID);
-			
+
 			if (validation==true) 
 			{
 				TestLogger.logInfo(logStream, componentOfTheLog, TestLogger.logInfo);

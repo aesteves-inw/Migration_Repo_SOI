@@ -1,0 +1,42 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket
+Log Date: 06-01-2021 16:17:48
+Test Status: Passed
+###############################################################################
+06-01-2021 16:17:58 - INFO - startTest - Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket initiation
+06-01-2021 16:18:03 - TRACE - goToLoginPage - Executed with success
+06-01-2021 16:18:06 - TRACE - fillcredentials - Executed with success
+06-01-2021 16:18:16 - TRACE - pressLoginButton - Executed with success
+06-01-2021 16:18:16 - INFO - loginDirectSales on Step 1 - Executed with success
+06-01-2021 16:18:20 - TRACE - homePageValidation - Executed with success
+06-01-2021 16:18:20 - INFO - loginSFDS - Step 1 - Executed with success
+06-01-2021 16:18:29 - TRACE - goToCompanyDetailsPage - Executed with success
+06-01-2021 16:18:32 - TRACE - companyPageValidation - Executed with success
+06-01-2021 16:18:32 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+06-01-2021 16:18:37 - TRACE - openQuickSaleOPTYScreen - Executed with success
+06-01-2021 16:18:46 - TRACE - createQuickSaleOpty - Executed with success
+06-01-2021 16:18:53 - TRACE - saveOpportunity - Executed with success
+06-01-2021 16:18:53 - INFO - createQuickSaleOpty - Executed with success
+06-01-2021 16:18:57 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+06-01-2021 16:19:04 - INFO - goToOpportunityPage - Executed with success
+06-01-2021 16:19:08 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 3
+06-01-2021 16:19:08 - INFO - createQuickSaleOpportunity - Step 3 - Executed with success
+06-01-2021 16:19:15 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 4
+06-01-2021 16:19:16 - TRACE - clickNewProductBasketLink - Succeeded in Step 4
+06-01-2021 16:19:16 - TRACE - createProductBasket - Succeeded in Step 4
+06-01-2021 16:19:25 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 4
+06-01-2021 16:19:26 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 4
+06-01-2021 16:19:26 - INFO - createProductBasket - Executed with success
+06-01-2021 16:19:26 - TRACE - Product Basket: Open Add Product Menu - Succeeded in Step 5
+06-01-2021 16:19:27 - TRACE - addProductMenuValidation - Succeeded in Step: 5
+06-01-2021 16:19:27 - INFO - goToAddOferToBasketScreen - Executed with success
+06-01-2021 16:19:34 - TRACE - Add Offer to Basket: Pick Product - Voice Continuity - Succeeded in Step 6
+06-01-2021 16:19:34 - TRACE - productOnProductBasketValidation - Succeeded in Step: 6
+06-01-2021 16:19:34 - INFO - addProductToProductBasket - Executed with success
+06-01-2021 16:19:42 - TRACE - goToEditProductConfiguration - Succeeded in Step 7
+06-01-2021 16:19:42 - TRACE - Change to Edit Prodcut Configuration iframe - Succeeded in Step 7
+06-01-2021 16:19:44 - INFO - step - Executed with success
+06-01-2021 16:19:45 - INFO - finishTest - Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket completion
+############################# End Of Log File #################################

@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import executionTools.BrowserActions;
+import objectMap.sfDirectSales.DirSalesEditProductConfiguration;
 import objectMap.sfDirectSales.DirSalesProductBasket;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
@@ -208,6 +209,40 @@ public class ProductBasketAction {
 
 	}
 
+	public static void goToEditProductConfiguration(List<TestLog> logStream, WebDriver driver, int stepID, String productName) throws Exception
+	{
+		String actionName="goToEditProductConfiguration";
+
+
+		try
+		{
+			WebElement productBasketTable=driver.findElement(By.xpath(DirSalesProductBasket.productBasketTable));
+			
+			List<WebElement> productBasketLineItem=productBasketTable.findElements(By.tagName("li"));
+			
+			
+			for(WebElement we : productBasketLineItem)
+			{
+				if(we.getText().contains(productName))
+				{
+					we.findElement(By.xpath(DirSalesProductBasket.editProductConfigurationButton)).click();
+					
+					break;
+				}
+			}
+			
+			new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesEditProductConfiguration.iFrameEditProductConfiguration)));		
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+	}
 
 	//Validation Actions
 

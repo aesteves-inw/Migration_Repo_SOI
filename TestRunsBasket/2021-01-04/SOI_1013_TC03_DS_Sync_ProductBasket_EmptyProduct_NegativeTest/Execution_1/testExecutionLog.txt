@@ -1,0 +1,27 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SOI_1013_TC03_DS_Sync_ProductBasket_EmptyProduct_NegativeTest
+Log Date: 04-01-2021 09:07:45
+Test Status: Failed
+###############################################################################
+04-01-2021 09:09:26 - INFO - startTest - Test Case: SOI_1013_TC03_DS_Sync_ProductBasket_EmptyProduct_NegativeTest initiation
+04-01-2021 09:09:27 - TRACE - goToLoginPage - Executed with success
+04-01-2021 09:09:31 - TRACE - fillcredentials - Executed with success
+04-01-2021 09:09:44 - TRACE - pressLoginButton - Executed with success
+04-01-2021 09:09:44 - INFO - loginDirectSales on Step 1 - Executed with success
+04-01-2021 09:09:47 - TRACE - homePageValidation - Executed with success
+04-01-2021 09:09:47 - INFO - loginSFDS - Step 1 - Executed with success
+04-01-2021 09:09:56 - TRACE - goToCompanyDetailsPage - Executed with success
+04-01-2021 09:09:59 - TRACE - companyPageValidation - Executed with success
+04-01-2021 09:09:59 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+04-01-2021 09:10:03 - TRACE - openQuickSaleOPTYScreen - Executed with success
+04-01-2021 09:10:12 - TRACE - quickSaleFormValidation - Succeeded in Step: 3
+04-01-2021 09:10:12 - INFO - startQuickSaleOPTY - Executed with success
+04-01-2021 09:10:13 - ERROR - validateQuickSalePreFilledFields - Executed with errors - java.lang.Exception: Validate the pre filled fields - Failed in Step: 4
+04-01-2021 09:10:14 - ERROR - SOI_1013_TC03_DS_Sync_ProductBasket_EmptyProduct_NegativeTest - Test Failed - java.lang.Exception: Validate the pre filled fields - Failed in Step: 4
+04-01-2021 09:10:14 - ERROR - SOI_1013_TC03_DS_Sync_ProductBasket_EmptyProduct_NegativeTest - Test Failed - java.lang.Exception: SOI_1013_TC03_DS_Sync_ProductBasket_EmptyProduct_NegativeTest: Failed
+04-01-2021 09:10:14 - ERROR - SOI_1013_TC03_DS_Sync_ProductBasket_EmptyProduct_NegativeTest - Test Failed - java.lang.Exception: SOI_1013_TC03_DS_Sync_ProductBasket_EmptyProduct_NegativeTest: Failed
+04-01-2021 09:10:14 - ERROR - SOI_1013_TC03_DS_Sync_ProductBasket_EmptyProduct_NegativeTest - Test Failed - java.lang.Exception: SOI_1013_TC03_DS_Sync_ProductBasket_EmptyProduct_NegativeTest: Test Case Failed
+04-01-2021 09:10:14 - INFO - finishTest - Test Case: SOI_1013_TC03_DS_Sync_ProductBasket_EmptyProduct_NegativeTest completion
+############################# End Of Log File #################################
