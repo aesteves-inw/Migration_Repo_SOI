@@ -21,8 +21,7 @@ public class TestStructure {
 		
 		ExecStructure.createReportStructure(testName);
 	}
-	
-	
+
 	public static void finishTest(String testName, String initialTestDate, long startTime, List<TestStepReportStructure> testExecStructure, List<TestReportTestData> testData, WebDriver driver, List<TestLog> logstream)
 	{
 		String finalTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
@@ -43,5 +42,8 @@ public class TestStructure {
 		
 		
 	}
+
+	
+
 
 }

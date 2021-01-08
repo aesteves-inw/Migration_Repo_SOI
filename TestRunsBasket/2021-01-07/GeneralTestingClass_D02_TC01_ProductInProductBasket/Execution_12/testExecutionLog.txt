@@ -1,0 +1,36 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket
+Log Date: 07-01-2021 14:19:40
+Test Status: Failed
+###############################################################################
+07-01-2021 14:19:46 - INFO - startTest - Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket initiation
+07-01-2021 14:19:49 - TRACE - goToLoginPage - Executed with success
+07-01-2021 14:19:52 - TRACE - fillcredentials - Executed with success
+07-01-2021 14:20:01 - TRACE - pressLoginButton - Executed with success
+07-01-2021 14:20:01 - INFO - loginDirectSales on Step 1 - Executed with success
+07-01-2021 14:20:05 - TRACE - homePageValidation - Executed with success
+07-01-2021 14:20:05 - INFO - loginSFDS - Step 1 - Executed with success
+07-01-2021 14:20:14 - TRACE - goToCompanyDetailsPage - Executed with success
+07-01-2021 14:20:18 - TRACE - companyPageValidation - Executed with success
+07-01-2021 14:20:18 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+07-01-2021 14:20:20 - TRACE - openQuickSaleOPTYScreen - Executed with success
+07-01-2021 14:20:32 - TRACE - createQuickSaleOpty - Executed with success
+07-01-2021 14:20:39 - TRACE - saveOpportunity - Executed with success
+07-01-2021 14:20:39 - INFO - createQuickSaleOpty - Executed with success
+07-01-2021 14:20:43 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+07-01-2021 14:20:52 - INFO - goToOpportunityPage - Executed with success
+07-01-2021 14:20:56 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 3
+07-01-2021 14:20:56 - INFO - createQuickSaleOpportunity - Step 3 - Executed with success
+07-01-2021 14:21:01 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 4
+07-01-2021 14:21:05 - TRACE - clickNewProductBasketLink - Succeeded in Step 4
+07-01-2021 14:21:05 - TRACE - createProductBasket - Succeeded in Step 4
+07-01-2021 14:21:46 - ERROR - Product Basket: Change to Product Basket iframe - Failed in Step 4 - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //*[starts-with(@id,'brandBand_')]/div/div/div[3]/div/force-aloha-page/div/iframe (tried for 30 second(s) with 500 milliseconds interval)
+07-01-2021 14:21:46 - ERROR - Product Basket: Validation of Product Basket Screen - Failed in Step 4 - java.lang.Exception: Product Basket: Change to Product Basket iframe - Failed in Step 4
+07-01-2021 14:21:46 - ERROR - createProductBasket - Executed with errors - java.lang.Exception: Product Basket: Validation of Product Basket Screen - Failed in Step: 4
+07-01-2021 14:21:46 - ERROR - GeneralTestingClass_D02_TC01_ProductInProductBasket - Test Failed on Pre Conditions Setup - java.lang.Exception: Create Product Basket - Failed in Step: 4
+07-01-2021 14:21:46 - ERROR - GeneralTestingClass_D02_TC01_ProductInProductBasket - Test Failed on Pre Conditions Setup - java.lang.Exception: GeneralTestingClass_D02_TC01_ProductInProductBasket: Test Case Failed on Test Model - ToHaveAProductBasket
+07-01-2021 14:21:46 - ERROR - GeneralTestingClass_D02_TC01_ProductInProductBasket - Test Failed on Pre Conditions Setup - java.lang.Exception: GeneralTestingClass_D02_TC01_ProductInProductBasket: Test Case Failed on Test Model - ProductConfiguration with Voice Continuity
+07-01-2021 14:21:46 - INFO - finishTest - Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket completion
+############################# End Of Log File #################################

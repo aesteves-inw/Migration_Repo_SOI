@@ -20,15 +20,10 @@ public class J1835004000_14 {
 	{
 		try
 		{
-			int newStepCounter;
 			
 			J1835004000_64.J1835004000_64_TC02_QuickSaleOpportunity_OpportunityCreation(testExecStructure, logStream, driver, testName, stepsExecuted);
 			
-			newStepCounter = testExecStructure.size();
-			
-			newStepCounter++;
-			
-			OpportunityStep.createProductBasket(testExecStructure, logStream, driver, newStepCounter, testName);
+			OpportunityStep.createProductBasket(testExecStructure, logStream, driver, testName);
 			
 			
 		}
@@ -56,7 +51,7 @@ public class J1835004000_14 {
 			
 			newStepCounter++;
 			
-			OpportunityStep.createProductBasket(testExecStructure, logStream, driver, newStepCounter, testName);
+			OpportunityStep.createProductBasket(testExecStructure, logStream, driver, testName);
 			
 			ProductBasketAction.changeToDefaultiFrame(logStream, driver, newStepCounter);
 			
@@ -66,7 +61,7 @@ public class J1835004000_14 {
 			
 			newStepCounter++;
 			
-			OpportunityStep.createProductBasket(testExecStructure, logStream, driver, newStepCounter, testName);
+			OpportunityStep.createProductBasket(testExecStructure, logStream, driver, testName);
 			
 			ProductBasketAction.changeToDefaultiFrame(logStream, driver, newStepCounter);
 			
@@ -99,11 +94,11 @@ public class J1835004000_14 {
 
 			String userProfile="salesUser";
 
-			LoginPageStep.loginSFDS(testExecStructure, logStream, driver, testName, stepsExecuted, userProfile);
+			LoginPageStep.loginSFDS(testExecStructure, logStream, driver, testName, userProfile);
 
 			stepsExecuted++;
 
-			HomePageStep.navigateToCompanyPage(testExecStructure, logStream, driver, testName, stepsExecuted);
+			HomePageStep.navigateToCompanyPage(testExecStructure, logStream, driver, testName);
 
 			stepsExecuted++;
 			
@@ -111,7 +106,7 @@ public class J1835004000_14 {
 			
 			stepsExecuted++;
 			
-			OpportunityStep.createProductBasket(testExecStructure, logStream, driver, stepsExecuted, testName);
+			OpportunityStep.createProductBasket(testExecStructure, logStream, driver, testName);
 			
 			
 			
@@ -136,11 +131,11 @@ public class J1835004000_14 {
 
 			String userProfile="salesUser";
 
-			LoginPageStep.loginSFDS(testExecStructure, logStream, driver, testName, stepsExecuted, userProfile);
+			LoginPageStep.loginSFDS(testExecStructure, logStream, driver, testName, userProfile);
 
 			stepsExecuted++;
 
-			HomePageStep.navigateToCompanyPage(testExecStructure, logStream, driver, testName, stepsExecuted);
+			HomePageStep.navigateToCompanyPage(testExecStructure, logStream, driver, testName);
 
 			stepsExecuted++;
 			
@@ -150,7 +145,7 @@ public class J1835004000_14 {
 			
 			stepsExecuted++;
 			
-			OpportunityStep.createProductBasket(testExecStructure, logStream, driver, stepsExecuted, testName);
+			OpportunityStep.createProductBasket(testExecStructure, logStream, driver, testName);
 				
 			ProductBasketAction.changeToDefaultiFrame(logStream, driver, stepsExecuted);
 			
@@ -160,7 +155,7 @@ public class J1835004000_14 {
 			
 			stepsExecuted++;
 			
-			OpportunityStep.createProductBasket(testExecStructure, logStream, driver, stepsExecuted, testName);
+			OpportunityStep.createProductBasket(testExecStructure, logStream, driver, testName);
 			
 			ProductBasketAction.changeToDefaultiFrame(logStream, driver, stepsExecuted);
 			

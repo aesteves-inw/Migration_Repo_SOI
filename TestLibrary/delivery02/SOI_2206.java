@@ -22,23 +22,14 @@ public class SOI_2206
 		
 		try
 		{
-			int newStepCounter;
 			
-			D02Models.ToHaveAProductBasket(testExecStructure, logStream, driver, testName, stepsExecuted);
+			D02Models.ToHaveAProductBasket(testExecStructure, logStream, driver, testName);
+						
+			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, testName);
 			
-			newStepCounter = testExecStructure.size();
+			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, productName);
 			
-			newStepCounter++;
-			
-			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, newStepCounter, testName);
-			
-			newStepCounter++;
-			
-			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, newStepCounter, testName, productName);
-			
-			newStepCounter++;
-			
-			ProductBasketStep.expandECSPackage(testExecStructure, logStream, driver, newStepCounter, testName, productName);
+			ProductBasketStep.expandECSPackage(testExecStructure, logStream, driver, testName, productName);
 			
 		}
 		catch(Exception e)
@@ -57,23 +48,15 @@ public class SOI_2206
 		
 		try
 		{
-			int newStepCounter;
 			
-			D02Models.ToHaveAProductBasket(testExecStructure, logStream, driver, testName, stepsExecuted);
 			
-			newStepCounter = testExecStructure.size();
+			D02Models.ToHaveAProductBasket(testExecStructure, logStream, driver, testName);
 			
-			newStepCounter++;
+			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, testName);
+					
+			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, productName);
 			
-			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, newStepCounter, testName);
-			
-			newStepCounter++;
-			
-			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, newStepCounter, testName, productName);
-			
-			newStepCounter++;
-			
-			ProductBasketStep.expandECSPackage(testExecStructure, logStream, driver, newStepCounter, testName, productName);
+			ProductBasketStep.expandECSPackage(testExecStructure, logStream, driver, testName, productName);
 			
 		}
 		catch(Exception e)
@@ -93,23 +76,14 @@ public class SOI_2206
 		
 		try
 		{
-			int newStepCounter;
 			
-			D02Models.ToHaveAProductBasket(testExecStructure, logStream, driver, testName, stepsExecuted);
+			D02Models.ToHaveAProductBasket(testExecStructure, logStream, driver, testName);
 			
-			newStepCounter = testExecStructure.size();
+			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, testName);
+						
+			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, productName);
 			
-			newStepCounter++;
-			
-			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, newStepCounter, testName);
-			
-			newStepCounter++;
-			
-			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, newStepCounter, testName, productName);
-			
-			newStepCounter++;
-			
-			ProductBasketStep.expandECSPackage(testExecStructure, logStream, driver, newStepCounter, testName, productName);
+			ProductBasketStep.expandECSPackage(testExecStructure, logStream, driver, testName, productName);
 			
 		}
 		catch(Exception e)
@@ -129,23 +103,15 @@ public class SOI_2206
 		
 		try
 		{
-			int newStepCounter;
 			
-			D02Models.ToHaveAProductBasket(testExecStructure, logStream, driver, testName, stepsExecuted);
 			
-			newStepCounter = testExecStructure.size();
+			D02Models.ToHaveAProductBasket(testExecStructure, logStream, driver, testName);
+						
+			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, testName);
 			
-			newStepCounter++;
+			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, productName);
 			
-			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, newStepCounter, testName);
-			
-			newStepCounter++;
-			
-			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, newStepCounter, testName, productName);
-			
-			newStepCounter++;
-			
-			ProductBasketStep.expandECSPackage(testExecStructure, logStream, driver, newStepCounter, testName, productName);
+			ProductBasketStep.expandECSPackage(testExecStructure, logStream, driver, testName, productName);
 			
 		}
 		catch(Exception e)
@@ -164,23 +130,14 @@ public class SOI_2206
 		
 		try
 		{
-			int newStepCounter;
 			
-			D02Models.ToHaveAProductBasket(testExecStructure, logStream, driver, testName, stepsExecuted);
+			D02Models.ToHaveAProductBasket(testExecStructure, logStream, driver, testName);
+						
+			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, testName);
 			
-			newStepCounter = testExecStructure.size();
+			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, productName);
 			
-			newStepCounter++;
-			
-			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, newStepCounter, testName);
-			
-			newStepCounter++;
-			
-			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, newStepCounter, testName, productName);
-			
-			newStepCounter++;
-			
-			ProductBasketStep.expandECSPackage(testExecStructure, logStream, driver, newStepCounter, testName, productName);
+			ProductBasketStep.expandECSPackage(testExecStructure, logStream, driver, testName, productName);
 			
 		}
 		catch(Exception e)
@@ -200,23 +157,13 @@ public class SOI_2206
 		
 		try
 		{
-			int newStepCounter;
+			D02Models.ToHaveAProductBasket(testExecStructure, logStream, driver, testName);
 			
-			D02Models.ToHaveAProductBasket(testExecStructure, logStream, driver, testName, stepsExecuted);
+			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, testName);
 			
-			newStepCounter = testExecStructure.size();
+			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, productName);
 			
-			newStepCounter++;
-			
-			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, newStepCounter, testName);
-			
-			newStepCounter++;
-			
-			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, newStepCounter, testName, productName);
-			
-			newStepCounter++;
-			
-			ProductBasketStep.expandECSPackage(testExecStructure, logStream, driver, newStepCounter, testName, productName);
+			ProductBasketStep.expandECSPackage(testExecStructure, logStream, driver, testName, productName);
 			
 		}
 		catch(Exception e)

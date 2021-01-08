@@ -1,0 +1,25 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: J1835004000_64_TC01_QuickSaleOpportunity_PreFilledFields
+Log Date: 04-01-2021 09:24:33
+Test Status: Failed
+###############################################################################
+04-01-2021 09:24:40 - INFO - startTest - Test Case: J1835004000_64_TC01_QuickSaleOpportunity_PreFilledFields initiation
+04-01-2021 09:24:44 - TRACE - goToLoginPage - Executed with success
+04-01-2021 09:24:46 - TRACE - fillcredentials - Executed with success
+04-01-2021 09:24:56 - TRACE - pressLoginButton - Executed with success
+04-01-2021 09:24:56 - INFO - loginDirectSales on Step 1 - Executed with success
+04-01-2021 09:25:00 - TRACE - homePageValidation - Executed with success
+04-01-2021 09:25:00 - INFO - loginSFDS - Step 1 - Executed with success
+04-01-2021 09:25:14 - TRACE - goToCompanyDetailsPage - Executed with success
+04-01-2021 09:25:17 - TRACE - companyPageValidation - Executed with success
+04-01-2021 09:25:17 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+04-01-2021 09:25:20 - TRACE - openQuickSaleOPTYScreen - Executed with success
+04-01-2021 09:25:29 - TRACE - quickSaleFormValidation - Succeeded in Step: 3
+04-01-2021 09:25:29 - INFO - startQuickSaleOPTY - Executed with success
+04-01-2021 09:25:30 - ERROR - validateQuickSalePreFilledFields - Executed with errors - java.lang.Exception: Validate the pre filled fields - Failed in Step: 4
+04-01-2021 09:25:31 - ERROR - J1835004000_64_TC01_QuickSaleOpportunity_PreFilledFields - Test Failed - java.lang.Exception: Validate the pre filled fields - Failed in Step: 4
+04-01-2021 09:25:31 - ERROR - J1835004000_64_TC01_QuickSaleOpportunity_PreFilledFields - Test Execution Failed - java.lang.Exception: J1835004000_64_TC01_QuickSaleOpportunity_PreFilledFields: Failed
+04-01-2021 09:25:31 - INFO - finishTest - Test Case: J1835004000_64_TC01_QuickSaleOpportunity_PreFilledFields completion
+############################# End Of Log File #################################

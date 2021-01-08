@@ -28,7 +28,6 @@ public class TestCasesData {
 		return tcindex;
 	}
 	
-	
 	public static String[] getSalesforceUser(String user) throws Exception
 	{
 		
@@ -68,7 +67,6 @@ public class TestCasesData {
 		}
 	}
 
-	
 	public static String getOPTYName(String testClassName)
 	{
 		String optyName=ExecStructure.getTestExecutionString(testClassName);

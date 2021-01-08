@@ -1,0 +1,54 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket
+Log Date: 07-01-2021 14:28:28
+Test Status: Failed
+###############################################################################
+07-01-2021 14:28:35 - INFO - startTest - Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket initiation
+07-01-2021 14:28:38 - TRACE - goToLoginPage - Executed with success
+07-01-2021 14:28:42 - TRACE - fillcredentials - Executed with success
+07-01-2021 14:28:51 - TRACE - pressLoginButton - Executed with success
+07-01-2021 14:28:51 - INFO - loginDirectSales on Step 1 - Executed with success
+07-01-2021 14:28:55 - TRACE - homePageValidation - Executed with success
+07-01-2021 14:28:55 - INFO - loginSFDS - Step 1 - Executed with success
+07-01-2021 14:29:05 - TRACE - goToCompanyDetailsPage - Executed with success
+07-01-2021 14:29:08 - TRACE - companyPageValidation - Executed with success
+07-01-2021 14:29:08 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+07-01-2021 14:29:13 - TRACE - openQuickSaleOPTYScreen - Executed with success
+07-01-2021 14:29:22 - TRACE - createQuickSaleOpty - Executed with success
+07-01-2021 14:29:30 - TRACE - saveOpportunity - Executed with success
+07-01-2021 14:29:30 - INFO - createQuickSaleOpty - Executed with success
+07-01-2021 14:29:33 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+07-01-2021 14:29:42 - INFO - goToOpportunityPage - Executed with success
+07-01-2021 14:29:46 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 3
+07-01-2021 14:29:46 - INFO - createQuickSaleOpportunity - Step 3 - Executed with success
+07-01-2021 14:29:51 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 4
+07-01-2021 14:29:55 - TRACE - clickNewProductBasketLink - Succeeded in Step 4
+07-01-2021 14:29:55 - TRACE - createProductBasket - Succeeded in Step 4
+07-01-2021 14:30:03 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 4
+07-01-2021 14:30:04 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 4
+07-01-2021 14:30:04 - INFO - createProductBasket - Executed with success
+07-01-2021 14:30:05 - TRACE - Product Basket: Open Add Product Menu - Succeeded in Step 5
+07-01-2021 14:30:06 - TRACE - addProductMenuValidation - Succeeded in Step: 5
+07-01-2021 14:30:06 - INFO - goToAddOferToBasketScreen - Executed with success
+07-01-2021 14:30:13 - TRACE - Add Offer to Basket: Pick Product - Voice Continuity - Succeeded in Step 6
+07-01-2021 14:30:13 - TRACE - productOnProductBasketValidation - Succeeded in Step: 6
+07-01-2021 14:30:13 - INFO - addProductToProductBasket - Executed with success
+07-01-2021 14:30:20 - TRACE - goToEditProductConfiguration - Succeeded in Step 7
+07-01-2021 14:30:21 - TRACE - Change to Edit Prodcut Configuration iframe - Succeeded in Step 7
+07-01-2021 14:30:22 - INFO - goToEditProductConfigurationScreen - Executed with success
+07-01-2021 14:30:22 - TRACE - VC Contract Type - Config: New - Succeeded in Step 8
+07-01-2021 14:30:24 - TRACE - VC - Internal Comments Field - Succeeded in Step 8
+07-01-2021 14:30:24 - TRACE - Contract Information On VoiceContinuity - Succeeded in Step 8
+07-01-2021 14:30:44 - ERROR - VC Voice Installation Status Config: Phone Line - Failed in Step 8 - org.openqa.selenium.NoSuchElementException: Cannot locate option with value: Phone Line
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'INNOWAVE-383', ip: '192.168.0.164', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: driver.version: unknown
+07-01-2021 14:30:44 - ERROR - ProductConfiguration On VoiceContinuity - Failed in Step 8 - java.lang.Exception: VC Voice Installation Status Config: Phone Line - Failed in Step 8
+07-01-2021 14:30:44 - ERROR - configurationOfVoiceContinuity - Failed in Step 8 - java.lang.Exception: ProductConfiguration On VoiceContinuity - Failed in Step 8
+07-01-2021 14:30:44 - ERROR - configureVoiceContinuity - Executed with errors - java.lang.Exception: configurationOfVoiceContinuity - Failed in Step 8
+07-01-2021 14:30:45 - ERROR - GeneralTestingClass_D02_TC01_ProductInProductBasket - Test Failed on Pre Conditions Setup - java.lang.Exception: Product Configuration: Voice Continuity - Failed in Step: 8
+07-01-2021 14:30:45 - INFO - finishTest - Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket completion
+############################# End Of Log File #################################
