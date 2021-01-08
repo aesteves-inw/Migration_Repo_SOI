@@ -48,11 +48,11 @@ public class GeneralTestingClass extends ExecDriverClass
 	@Test
 	public void ProductInProductBasket() throws Exception
 	{		
-		String productName="Voice Continuity";
+		
 		
 		String configurationIndex="configurationByDefault";
 		
-		D02Models.ConfigureVoiceContinuity(testExecStructure, logStream, driver, testName, productName, configurationIndex);
+		D02Models.ConfigureVoiceContinuity(testExecStructure, logStream, driver, testName, configurationIndex);
 	}
 	
 	

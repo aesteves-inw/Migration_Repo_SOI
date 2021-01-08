@@ -15,72 +15,83 @@ import testExecutionData.TestCasesData;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
 
-public class PhoneLine {
-
-
-	//07-01-2021 - Methods to retrieve attributes for configuration of Phone Line.
-	static String getContractType(String[] configuration)
+public class ProfessionalInternet 
+{
+	//08-01-2021 - Methods to retrieve attributes for configuration of ProfessionalInternet.
+	
+	private static String getContractType(String[] configuration)
 	{
-		String contractType=configuration[0];
+		String ContractType=configuration[0];
 
-		return contractType;
+		return ContractType;
 	}
-
-	static String getExistingLine(String[] configuration)
+	
+	private static String getContractDuration(String[] configuration)
 	{
-		String existingLine=configuration[1];
+		String ContractDuration=configuration[0];
 
-		return existingLine;
+		return ContractDuration;
 	}
-
-	static String getOCKID(String[] configuration)
+	
+	private static String getOCKID(String[] configuration)
 	{
-		String OCKID=configuration[2];
+		String OCKID=configuration[0];
 
 		return OCKID;
 	}
-
-	static String getOCKResult(String[] configuration)
+	
+	private static String getOCKResult(String[] configuration)
 	{
-		String OCKResult=configuration[3];
+		String OCKResult=configuration[0];
 
 		return OCKResult;
 	}
-
-	static String getInternetInstallationType(String[] configuration)
+	
+	private static String getPhoneLineInstallationType(String[] configuration)
 	{
-		String InternetInstallationType=configuration[4];
+		String PhoneLineInstallationType=configuration[0];
 
-		return InternetInstallationType;
+		return PhoneLineInstallationType;
 	}
-
-	static String getSelectInternetSubscription(String[] configuration)
+	
+	private static String getPhoneLineConfiguration(String[] configuration)
 	{
-		String SelectInternetSubscription=configuration[5];
+		String PhoneLineConfiguration=configuration[0];
 
-		return SelectInternetSubscription;
+		return PhoneLineConfiguration;
 	}
-
-	static String getExistingConnectivityID(String[] configuration)
+	
+	private static String getExistingPhoneLineID(String[] configuration)
 	{
-		String ExistingConnectivityID=configuration[6];
+		String ExistingPhoneLineID=configuration[0];
 
-		return ExistingConnectivityID;
+		return ExistingPhoneLineID;
 	}
-
-	static String getTechnology(String[] configuration)
+	
+	private static String getInternetSubscription(String[] configuration)
 	{
-		String Technology=configuration[7];
+		String InternetSubscription=configuration[0];
 
-		return Technology;
+		return InternetSubscription;
 	}
+	
+	private static String getWifiAccess(String[] configuration)
+	{
+		String WifiAccess=configuration[0];
 
-
-
+		return WifiAccess;
+	}
+	
+	
+	
+	
+	
+	
 	// OVERALL CONFIGURATION OF PRODUCT
-	public static void configurationOfPhoneLine(List<TestLog> logStream, WebDriver driver, int stepID, String[] configuration, String testName) throws Exception
+	public static void configurationOfProfessionalInternet(List<TestLog> logStream, WebDriver driver, int stepID,
+			String[] configuration, String testName) throws Exception 
 	{
-		String actionName="configurationOfPhoneLine";
+		String actionName="configurationOfProfessionalInternet";
 
 
 		try
@@ -89,9 +100,10 @@ public class PhoneLine {
 
 			installationAddressOCKCheckFields(logStream, driver, stepID, configuration, testName);
 
-			includedInternetFields(logStream, driver, stepID, configuration, testName);
+			includedPhoneLineFields(logStream, driver, stepID, configuration, testName);
 
-			productSelectionFields(logStream, driver, stepID, configuration, testName);
+			subscriptionSelectionFields(logStream, driver, stepID, configuration, testName);
+			
 
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
@@ -107,11 +119,12 @@ public class PhoneLine {
 	}
 
 	
+	
 	//CONTRACT INFORMATION
 	private static void contractInformationFields(List<TestLog> logStream, WebDriver driver, int stepID,
 			String[] configuration, String testName) throws Exception 
 	{
-		String actionName="Contract Information On Phone Line";
+		String actionName="Contract Information On Professional Internet";
 
 
 		try
@@ -120,9 +133,15 @@ public class PhoneLine {
 
 			fieldRequestedInstallationDate(logStream, driver, stepID, configuration);
 
-			fieldExistingLine(logStream, driver, stepID, configuration);
+			fieldContractDuration(logStream, driver, stepID, configuration);
 
 			fieldRemarks(logStream, driver, stepID, configuration, testName);
+			
+			
+			if(getContractType(configuration).equalsIgnoreCase("new") == false)
+			{
+				fieldExistingConnectivity(logStream, driver, stepID, configuration, testName);
+			}
 
 			fieldInternalComments(logStream, driver, stepID, configuration, testName);
 
@@ -137,7 +156,7 @@ public class PhoneLine {
 			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
-
+		
 	}
 
 	private static void fieldContractType(List<TestLog> logStream, WebDriver driver, int stepID,
@@ -145,7 +164,7 @@ public class PhoneLine {
 	{
 		String contractType = getContractType(configuration);
 
-		String actionName="PL Contract Type - Config: "+contractType;
+		String actionName="PI Contract Type - Config: "+contractType;
 
 
 		try
@@ -163,7 +182,7 @@ public class PhoneLine {
 			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
-
+		
 	}
 
 	private static void fieldRequestedInstallationDate(List<TestLog> logStream, WebDriver driver, int stepID,
@@ -171,7 +190,7 @@ public class PhoneLine {
 	{
 		String dateToInput=ExecStructure.tomorrowFormattedDate();
 
-		String actionName="PL Desired Installation Date - Config: "+dateToInput;
+		String actionName="PI Desired Installation Date - Config: "+dateToInput;
 
 
 		try
@@ -192,25 +211,22 @@ public class PhoneLine {
 			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
-
+		
 	}
 
-	private static void fieldExistingLine(List<TestLog> logStream, WebDriver driver, int stepID,
+	private static void fieldContractDuration(List<TestLog> logStream, WebDriver driver, int stepID,
 			String[] configuration) throws Exception 
 	{
-		String existingLine=getExistingLine(configuration);
+		String contractDuration = getContractDuration(configuration);
 
-		String actionName="PL Existing Line - Config: "+existingLine;
+		String actionName="PI Contract Type - Config: "+contractDuration;
 
 
 		try
 		{
-			WebElement inputExistingLine = new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.id("Details:Contract_Information:existingLine_0")));
+			Select comboContractType = new Select(driver.findElement(By.id("Details:Contract_Information:contractDuration_0")));
 
-			inputExistingLine.clear();
-
-			inputExistingLine.sendKeys(existingLine);
-
+			comboContractType.selectByVisibleText(contractDuration);
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
@@ -221,14 +237,15 @@ public class PhoneLine {
 			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
-
+		
 	}
 
-	private static void fieldRemarks(List<TestLog> logStream, WebDriver driver, int stepID, String[] configuration, String testName) throws Exception 
+	private static void fieldRemarks(List<TestLog> logStream, WebDriver driver, int stepID, String[] configuration,
+			String testName) throws Exception 
 	{
 		String remarksText=TestCasesData.getOPTYName(testName);
 
-		String actionName="PL Remarks - Config: "+remarksText;
+		String actionName="PI Remarks - Config: "+remarksText;
 
 
 		try
@@ -249,7 +266,14 @@ public class PhoneLine {
 			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
+		
+	}
 
+	private static void fieldExistingConnectivity(List<TestLog> logStream, WebDriver driver, int stepID,
+			String[] configuration, String testName) 
+	{
+		
+		
 	}
 
 	private static void fieldInternalComments(List<TestLog> logStream, WebDriver driver, int stepID,
@@ -257,7 +281,7 @@ public class PhoneLine {
 	{
 		String remarksText=TestCasesData.getOPTYName(testName);
 
-		String actionName="PL Internal Comments - Config: "+remarksText;
+		String actionName="PI Internal Comments - Config: "+remarksText;
 
 
 		try
@@ -278,15 +302,16 @@ public class PhoneLine {
 			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
-
+		
 	}
 
-
+	
+	
 	// INSTALLATION ADDRESS & OCK CHECK
 	private static void installationAddressOCKCheckFields(List<TestLog> logStream, WebDriver driver, int stepID,
 			String[] configuration, String testName) throws Exception 
 	{
-		String actionName="Installation Address & OCKCheck On Phone Line";
+		String actionName="Installation Address & OCKCheck On Professional Internet";
 
 
 		try
@@ -307,13 +332,14 @@ public class PhoneLine {
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
 
+		
 	}
 
 	private static void fieldOCKId(List<TestLog> logStream, WebDriver driver, int stepID, String[] configuration) throws Exception 
 	{
 		String ockID = getOCKID(configuration);
 
-		String actionName="PL OCK Id field - Config: "+ockID;
+		String actionName="PI OCK Id field - Config: "+ockID;
 
 
 		try
@@ -334,14 +360,14 @@ public class PhoneLine {
 			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
-
+		
 	}
 
 	private static void fieldOCKResult(List<TestLog> logStream, WebDriver driver, int stepID, String[] configuration) throws Exception 
 	{
-		String OCKResult = getContractType(configuration);
+		String OCKResult = getOCKResult(configuration);
 
-		String actionName="PL OCK Result Field - Config: "+OCKResult;
+		String actionName="PI OCK Result Field - Config: "+OCKResult;
 
 
 		try
@@ -359,30 +385,32 @@ public class PhoneLine {
 			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
-
+		
 	}
 
-	
-	// INCLUDED INTERNET
-	private static void includedInternetFields(List<TestLog> logStream, WebDriver driver, int stepID,
+
+
+	// INCLUDED PHONE LINE
+	private static void includedPhoneLineFields(List<TestLog> logStream, WebDriver driver, int stepID,
 			String[] configuration, String testName) throws Exception 
 	{
-		String actionName="Included Internet On Phone Line";
+		String actionName="Included Phone Line on Professional Internet";
 
-		String internetInstallationType = getInternetInstallationType(configuration);
+		String phoneLineInstallationType=getPhoneLineInstallationType(configuration);
 
 		try
 		{
-			fieldInternetInstallationType(logStream, driver, stepID, configuration);
+			fieldPhoneLineInstallationType(logStream, driver, stepID, configuration);
+			
+			if(phoneLineInstallationType.equalsIgnoreCase("new"))
+			{
+				fieldPhoneLineConfiguration(logStream, driver, stepID, configuration);
+			}
+			else if(phoneLineInstallationType.equalsIgnoreCase("existing"))
+			{
+				fieldExistingPhoneLineID(logStream, driver, stepID, configuration);
+			}
 
-			if(internetInstallationType.equalsIgnoreCase("existing"))
-			{
-				fieldExistingConnectivityID(logStream, driver, stepID, configuration);
-			}
-			else if(internetInstallationType.equalsIgnoreCase("new"))
-			{
-				fieldSelectInternetSubscription(logStream, driver, stepID, configuration);
-			}
 
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
@@ -395,21 +423,22 @@ public class PhoneLine {
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
 
+		
 	}
-
-	private static void fieldInternetInstallationType(List<TestLog> logStream, WebDriver driver, int stepID,
+	
+	private static void fieldPhoneLineInstallationType(List<TestLog> logStream, WebDriver driver, int stepID,
 			String[] configuration) throws Exception 
 	{
-		String internetInstallationType = getInternetInstallationType(configuration);
+		String phoneLineInstallationType = getPhoneLineInstallationType(configuration);
 
-		String actionName="PL Internet Installation Type - Config: "+internetInstallationType;
+		String actionName="PI Phone Line Installation Type - Config: "+phoneLineInstallationType;
 
 
 		try
 		{
-			Select comboInternetInstallationType = new Select(driver.findElement(By.id("Details:Included_Internet:internet_Installation_Type_0")));
+			Select comboInternetInstallationType = new Select(driver.findElement(By.id("Details:Included_Phone_Line:installationType_0")));
 
-			comboInternetInstallationType.selectByVisibleText(internetInstallationType);
+			comboInternetInstallationType.selectByVisibleText(phoneLineInstallationType);
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
@@ -420,20 +449,20 @@ public class PhoneLine {
 			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
-
+		
 	}
 
-	private static void fieldSelectInternetSubscription(List<TestLog> logStream, WebDriver driver, int stepID,
+	private static void fieldPhoneLineConfiguration(List<TestLog> logStream, WebDriver driver, int stepID,
 			String[] configuration) throws Exception 
 	{
-		String selectInternetSubscription = getSelectInternetSubscription(configuration);
+		String selectInternetSubscription = getPhoneLineConfiguration(configuration);
 
-		String actionName="PL Select Internet Subscription - Config: "+selectInternetSubscription;
+		String actionName="PI Phone Line Configuration - Config: "+selectInternetSubscription;
 
 
 		try
 		{
-			WebElement selectBoxInternetSubscription = new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.id("s2id_Details:Included_Internet:internetSelection_0")));
+			WebElement selectBoxInternetSubscription = new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.id("s2id_Details:Included_Phone_Line:phoneLineSelection_0")));
 			
 			selectBoxInternetSubscription.click();
 			
@@ -451,24 +480,24 @@ public class PhoneLine {
 			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
-
+		
 	}
 
-	private static void fieldExistingConnectivityID(List<TestLog> logStream, WebDriver driver, int stepID,
+	private static void fieldExistingPhoneLineID(List<TestLog> logStream, WebDriver driver, int stepID,
 			String[] configuration) throws Exception 
 	{
-		String existingConnectivityID = getExistingConnectivityID(configuration);
+		String existingPhoneLineID = getExistingPhoneLineID(configuration);
 
-		String actionName="PL Existing Connectivity ID - Config: "+existingConnectivityID;
+		String actionName="PI Existing Phone Line ID - Config: "+existingPhoneLineID;
 
 
 		try
 		{
-			WebElement inputExistingConnectivityID = new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.id("Details:Installation_Address___OCK_check:OCKID_0")));
+			WebElement inputExistingPhoneLineID = new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.id("Details:Included_Phone_Line:phoneLineId_0")));
 
-			inputExistingConnectivityID.clear();
+			inputExistingPhoneLineID.clear();
 
-			inputExistingConnectivityID.sendKeys(existingConnectivityID);
+			inputExistingPhoneLineID.sendKeys(existingPhoneLineID);
 
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
@@ -480,22 +509,24 @@ public class PhoneLine {
 			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
-
+		
 	}
 
+
 	
-	//PRODUCT SELECTION
-	private static void productSelectionFields(List<TestLog> logStream, WebDriver driver, int stepID,
+	// SUBSCRIPTION SELECTION
+	private static void subscriptionSelectionFields(List<TestLog> logStream, WebDriver driver, int stepID,
 			String[] configuration, String testName) throws Exception 
 	{
-		String actionName="Product Selection Fields On Phone Line";
+		String actionName="Subscription Selection On Professional Internet";
 
 
 		try
 		{
-			fieldTechnology(logStream, driver, stepID, configuration);
-
-
+			fieldInternetSubscription(logStream, driver, stepID, configuration);
+			
+			fieldWifiAccess(logStream, driver, stepID, configuration);
+			
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
@@ -506,29 +537,30 @@ public class PhoneLine {
 			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
-
+		
 	}
 
-	private static void fieldTechnology(List<TestLog> logStream, WebDriver driver, int stepID, String[] configuration) throws Exception 
+	private static void fieldInternetSubscription(List<TestLog> logStream, WebDriver driver, int stepID,
+			String[] configuration) throws Exception 
 	{
-		String technology = getTechnology(configuration);
+		String selectInternetSubscription = getInternetSubscription(configuration);
 
-		String actionName="PL Existing Connectivity ID - Config: "+technology;
+		String actionName="PI Internet Subscription - Config: "+selectInternetSubscription;
 
 
 		try
 		{
-			String technologyVal=driver.findElement(By.id("s2id_Details:Product_Selection:PriceItem_0")).getAttribute("value");
+			WebElement selectBoxInternetSubscription = new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.id("s2id_Details:Subscription_Selection:PriceItem_0")));
 			
-			if (technology.contains(technologyVal))
-			{
-				TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
-			}
-			else
-			{
-				throw new Exception (actionName+" - Failed in Step "+stepID);
-			}
-
+			selectBoxInternetSubscription.click();
+			
+			WebElement listOfSubscriptionsInProductBasket = new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='select2-results']/ul[1]")));
+			
+			listOfSubscriptionsInProductBasket.findElement(By.xpath("//div[@title="+selectInternetSubscription+"]")).click();
+			
+			
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+			
 		}
 		catch(Exception e)
 		{
@@ -536,35 +568,67 @@ public class PhoneLine {
 			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
+		
 	}
+	
+	private static void fieldWifiAccess(List<TestLog> logStream, WebDriver driver, int stepID, String[] configuration) throws Exception 
+	{
+		String wifiAccess = getWifiAccess(configuration);
 
+		String actionName="PI Wi-Fi Access - Config: "+wifiAccess;
+		
+		try
+		{
+			if(wifiAccess.contains("y") || wifiAccess.contains("Y"))
+			{
+				WebElement wiFiCheckBox = new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.id("Details:Subscription_Selection:WifiAccess_0")));
+			
+				WebElement checkBox = new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(wiFiCheckBox.findElement(By.xpath("//span[@class='checkbox-style']"))));
+			
+				checkBox.click();
+				
+			}
+			
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+		
+	}
 	
 	
-	// VALIDATION OF PHONE LINE CONFIGURATION JOURNEY
 	
-	public static boolean validationOfPLConfiguration(List<TestLog> logStream, WebDriver driver, int stepID,
+	// VALIDATION OF PROFESSIONAL INTERNET CONFIGURATION JOURNEY
+
+	public static boolean validationOfPIConfiguration(List<TestLog> logStream, WebDriver driver, int stepID,
 			String[] configuration) throws Exception 
 	{
-		String actionName="Validation of Phone Line configuration (By Default Test Data)";
-		
+
+		String actionName="Validation of Professional Internet configuration";
+
 		int i=0;
-		
+
 		try
 		{
 			WebElement editProductConfigScreenVal = driver.findElement(By.xpath(DirSalesEditProductConfiguration.editProductScreenContainer));
-			
+
 			String editProductConfigScreenValText=editProductConfigScreenVal.getText().toString();
-			
-			
+
+
 			for(String par:configuration)
 			{
 				if(editProductConfigScreenValText.contains(par))
 				{
 					++i;
 				}
-				
+
 			}
-			
+
 			if(i >= 5)
 			{
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
@@ -574,7 +638,7 @@ public class PhoneLine {
 			{
 				return false;
 			}
-	
+
 		}
 		catch(Exception e)
 		{
@@ -584,8 +648,6 @@ public class PhoneLine {
 		}
 	}
 
-
-
-
-
+	
+	
 }

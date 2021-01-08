@@ -72,7 +72,7 @@ public class VoiceContinuity
 	
 	
 	
-
+	// OVERALL CONFIGURATION OF PRODUCT
 	public static void configurationOfVoiceContinuity(List<TestLog> logStream, WebDriver driver, int stepID, String[] configuration, String testName) throws Exception
 	{
 		String actionName="configurationOfVoiceContinuity";
@@ -97,6 +97,8 @@ public class VoiceContinuity
 
 	}
 
+	
+	//CONTRACT INFORMATION
 	private static void contractInformationFields(List<TestLog> logStream, WebDriver driver, int stepID,
 			String[] configuration, String testName) throws Exception 
 	{
@@ -207,6 +209,8 @@ public class VoiceContinuity
 
 	}
 
+	
+	//PRODUCT CONFIGURATION
 	private static void productConfigurationFields(List<TestLog> logStream, WebDriver driver, int stepID,
 			String[] configuration) throws Exception 
 	{
@@ -417,6 +421,8 @@ public class VoiceContinuity
 
 	}
 
+	
+	// VALIDATION OF VOICE CONTINUITY CONFIGURATION JOURNEY
 	public static boolean validationOfVCConfiguration(List<TestLog> logStream, WebDriver driver, int stepID,
 			String[] configuration) throws Exception 
 	{

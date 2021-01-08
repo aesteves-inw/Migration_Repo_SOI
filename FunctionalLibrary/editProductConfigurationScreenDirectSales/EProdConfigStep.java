@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import executionTools.TestExecutionReport;
 import productBasketDirectSales.ProductBasketAction;
 import productConfigurationCloudSense.PhoneLine;
+import productConfigurationCloudSense.ProfessionalInternet;
 import productConfigurationCloudSense.VoiceContinuity;
 import testExecutionData.ProductConfigurationD02;
 import testLogBuilder.TestLog;
@@ -111,7 +112,7 @@ public class EProdConfigStep
 
 		String stepName="Product Configuration: "+productName;
 
-		String stepNameMin="configureVoiceContinuity";
+		String stepNameMin="configurePhoneLine";
 
 		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
 
@@ -125,6 +126,51 @@ public class EProdConfigStep
 			PhoneLine.configurationOfPhoneLine(logStream, driver, stepID, configuration, testName);
 
 			validation = PhoneLine.validationOfPLConfiguration(logStream, driver, stepID, configuration);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+
+		
+	}
+
+	public static void configureProfessionalInternet(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName, String productName, String configurationIndex) throws Exception 
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+
+		String stepName="Product Configuration: "+productName;
+
+		String stepNameMin="configureProfessionalInternet";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		String[] configuration=ProductConfigurationD02.getD02ConfigurationToApply(productName, configurationIndex);
+
+		try
+		{
+			ProfessionalInternet.configurationOfProfessionalInternet(logStream, driver, stepID, configuration, testName);
+
+			validation = ProfessionalInternet.validationOfPIConfiguration(logStream, driver, stepID, configuration);
 
 			if(validation==true)
 			{

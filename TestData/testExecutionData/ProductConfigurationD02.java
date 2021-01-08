@@ -45,19 +45,21 @@ public class ProductConfigurationD02 {
 		switch(product)
 		{
 		case "Professional Internet":
-			throw new Exception("Configuration Not Built");
+			dataFromExcel=ExcelDataFetch.searchDT(5, configurationIndex);
+			configuration=convertConfiguration(dataFromExcel);
+			break;
 		case "Voice Continuity":
 			dataFromExcel=ExcelDataFetch.searchDT(6, configurationIndex);
 			configuration=convertConfiguration(dataFromExcel);
 			break;
 		case "Phone Line":
-			throw new Exception("Configuration Not Built");
+			dataFromExcel=ExcelDataFetch.searchDT(6, configurationIndex);
+			configuration=convertConfiguration(dataFromExcel);
+			break;
 		default:
 			throw new Exception("Product not found");
 		}
-
-
-
+		
 		return configuration;
 	}
 
