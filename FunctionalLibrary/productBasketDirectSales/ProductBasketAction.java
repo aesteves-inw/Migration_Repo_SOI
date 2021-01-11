@@ -244,6 +244,7 @@ public class ProductBasketAction {
 		}
 	}
 
+	
 	//Validation Actions
 
 	public static boolean productBasketScreenValidation(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
@@ -334,6 +335,38 @@ public class ProductBasketAction {
 		}
 	}
 
+	public static boolean syncProductBasketPosVal(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
+	{
+		String actionName="syncProductBasketPosVal";
+
+		try
+		{
+			new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesProductBasket.buttonGoToAgreement)));
+			
+			boolean isFlagChecked = driver.findElement(By.xpath(DirSalesProductBasket.syncWithPBFlag)).isSelected();
+			
+			System.out.println("SyncProductBasketPositive Validation: "+isFlagChecked);
+
+			if (BrowserActions.isElementPresent(driver, DirSalesProductBasket.buttonGoToAgreement) && isFlagChecked)
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+		
+	}
+	
 	public static boolean syncProductBasketNegVal(List<TestLog> logStream, WebDriver driver, int newStepCounter) throws Exception 
 	{
 
@@ -366,8 +399,6 @@ public class ProductBasketAction {
 		String actionName="expandedECSPackValidation";
 
 		boolean result;
-		
-	
 
 		try
 		{
@@ -626,6 +657,8 @@ public class ProductBasketAction {
 			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
 		}
 	}
+
+	
 
 
 }

@@ -19,9 +19,9 @@ public class OpportunityNavigation {
 		try
 		{
 			String editScreenURL="https://proximus--prxitt.lightning.force.com/lightning/r/Opportunity/"+opportunityID+"/edit?navigationLocation=DETAIL&backgroundContext=%2Flightning%2Fr%2FOpportunity%2F"+opportunityID+"%2Fview&count=1";
-			
+
 			BrowserActions.goToByURL(driver, editScreenURL);
-			
+
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepsExecuted);
 
 		}
@@ -31,9 +31,29 @@ public class OpportunityNavigation {
 			TestLogger.logError(logStream, actionName, "Failed in Step "+stepsExecuted, e.toString());
 			throw new Exception (actionName+" - Failed in Step "+stepsExecuted,e);
 		}
-		
+
 	}
-	
-	
+
+	public static void goToOrdersRelatedViewMenu(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
+	{
+		String actionName="goToOrdersRelatedViewMenu";
+
+
+		try
+		{
+			String optyURL=driver.getCurrentUrl();
+			
+			
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+	}
 
 }

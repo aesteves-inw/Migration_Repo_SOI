@@ -74,6 +74,29 @@ public class TestCasesData {
 		return optyName;
 	}
 
+	public static String getIDByURL(String urlOfElement)
+	{
+		// Debug of data passing
+		//int c=0;
+		
+		String idToReturn;
+		
+		//optyURL="https://proximus--prxitt.lightning.force.com/lightning/r/Opportunity/0063M000002X6MuQAK/view";
+		
+		String[] urlToValidate=urlOfElement.split("/");
+		
+		/* Debug of data passing
+		for(String s:urlToValidate)
+		{
+			System.out.println("Componente do endereço: "+c+" - "+s);
+			c++;
+		}
+		*/
+		idToReturn=urlToValidate[6];
+		
+		return idToReturn;
+	}
+
 }
 
 

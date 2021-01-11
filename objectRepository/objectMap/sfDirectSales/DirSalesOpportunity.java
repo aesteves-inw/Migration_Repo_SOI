@@ -114,7 +114,12 @@ public class DirSalesOpportunity {
 	public static String editHeader="//h2[contains(.,'Edit')]";
 
 	public static String editOpportunityErrors="//div[@class='pageLevelErrors']";
+	
+	public static String saveEditButton="//button[@name='SaveEdit']";
 
+	public static String cancelEditButton="//button[@name='CancelEdit']";
+	
+	public static String editConfirmationMessage="//span[@class='toastMessage slds-text-heading--small forceActionsText'][contains(.,'was saved')]";
 
 
 	//Close This Opportunity Menu
