@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.openqa.selenium.WebDriver;
 import addOfferToBasketDirectSales.AddOfferToBasketAction;
+import agreementDirectSales.AgreementAction;
 import editProductConfigurationScreenDirectSales.EProdConfigAction;
 import executionTools.TestExecutionReport;
 import testLogBuilder.TestLog;
@@ -55,6 +56,46 @@ public class ProductBasketStep
 			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
 
+	}
+	
+	public static void syncProductBasket(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, String testName) throws Exception
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testReportStream);
+		
+		String stepName="Sync Product Basket (Positive Validation)";
+
+		String stepNameMin="syncProductBasketPosVal";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			ProductBasketAction.syncProductBasket(logStream, driver, stepID);
+
+			validation = ProductBasketAction.syncProductBasketPosVal(logStream, driver, stepID);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testReportStream, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testReportStream, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
 	}
 	
 	public static void syncProductBasketNegVal(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream,
@@ -225,6 +266,48 @@ public class ProductBasketStep
 		}
 		
 	}
+
+	public static void goToAgreementScreen(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, String testName) throws Exception
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testReportStream);
+		
+		String stepName="Product Basket: Go To Agreement Screen (After Sync)";
+
+		String stepNameMin="goToAgreementScreen";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			ProductBasketNavigation.goToAgreement(logStream, driver, stepID);
+
+			validation = AgreementAction.agreementScreenValidation(logStream, driver, stepID);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testReportStream, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testReportStream, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+	}
+
+	
 
 
 }

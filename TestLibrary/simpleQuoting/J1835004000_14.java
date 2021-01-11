@@ -4,12 +4,15 @@ import java.util.List;
 
 import org.openqa.selenium.WebDriver;
 
+import addOfferToBasketDirectSales.AddOfferToBasketStep;
 import companyDirectSales.CompanyStep;
+import editProductConfigurationScreenDirectSales.EProdConfigStep;
 import homePageDirectSales.HomePageStep;
 import loginPageDirectSales.LoginPageStep;
 import navigation.NavigationStep;
 import opportunityDirectSales.OpportunityStep;
 import productBasketDirectSales.ProductBasketAction;
+import productBasketDirectSales.ProductBasketStep;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
 import testReportComposition.TestStepReportStructure;
@@ -57,7 +60,7 @@ public class J1835004000_14 {
 			
 			newStepCounter++;
 			
-			NavigationStep.goToOpportunityByURL(testExecStructure, logStream, driver, newStepCounter, testName, optyURL);
+			NavigationStep.goToOpportunityByURL(testExecStructure, logStream, driver, testName, optyURL);
 			
 			newStepCounter++;
 			
@@ -67,7 +70,7 @@ public class J1835004000_14 {
 			
 			newStepCounter++;
 			
-			NavigationStep.goToOpportunityByURL(testExecStructure, logStream, driver, newStepCounter, testName, optyURL);
+			NavigationStep.goToOpportunityByURL(testExecStructure, logStream, driver, testName, optyURL);
 			
 			newStepCounter++;
 			
@@ -151,7 +154,7 @@ public class J1835004000_14 {
 			
 			stepsExecuted++;
 			
-			NavigationStep.goToOpportunityByURL(testExecStructure, logStream, driver, stepsExecuted, testName, optyURL);
+			NavigationStep.goToOpportunityByURL(testExecStructure, logStream, driver, testName, optyURL);
 			
 			stepsExecuted++;
 			
@@ -161,7 +164,7 @@ public class J1835004000_14 {
 			
 			stepsExecuted++;
 			
-			NavigationStep.goToOpportunityByURL(testExecStructure, logStream, driver, stepsExecuted, testName, optyURL);
+			NavigationStep.goToOpportunityByURL(testExecStructure, logStream, driver, testName, optyURL);
 			
 			stepsExecuted++;
 			
@@ -197,6 +200,53 @@ public class J1835004000_14 {
 			//System.out.println(e);
 			TestLogger.logError(logStream, testName, "Test Failed", e.toString());
 			throw new Exception(testName+": Test Case Failed");
+		}
+		
+	}
+
+	public static void J1835004000_14_TC06_QuickSaleOpportunity_EditOpportunity_WithProdBasket(
+			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver, String testName,
+			int stepsExecuted) 
+	{
+		String productName = "Voice Continuity";
+		
+		String configurationIndex="configurationByDefault";
+		
+		try
+		{
+			String userProfile="salesUser";
+
+			LoginPageStep.loginSFDS(testExecStructure, logStream, driver, testName, userProfile);
+
+			HomePageStep.navigateToCompanyPage(testExecStructure, logStream, driver, testName);
+
+			CompanyStep.createQuickSaleOpportunity(testExecStructure, logStream, driver, testName);
+			
+			String optyURL=driver.getCurrentUrl();
+
+			OpportunityStep.createProductBasket(testExecStructure, logStream, driver, testName);
+			
+			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, testName);
+			
+			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, productName);
+			
+			ProductBasketStep.goToEditProductConfigurationScreen(testExecStructure, logStream, driver, testName, productName);
+			
+			EProdConfigStep.configureVoiceContinuity(testExecStructure, logStream, driver, testName, productName, configurationIndex);
+			
+			EProdConfigStep.finsihConfiguration(testExecStructure, logStream, driver, testName);
+			
+			ProductBasketStep.syncProductBasket(testExecStructure, logStream, driver, testName);
+			
+			NavigationStep.goToOpportunityByURL(testExecStructure, logStream, driver, testName, optyURL);
+			
+			
+			
+
+		}
+		catch(Exception e)
+		{
+			
 		}
 		
 	}

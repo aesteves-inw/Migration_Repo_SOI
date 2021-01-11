@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import productBasketDirectSales.ProductBasketStep;
 import simpleQuoting.J1835004000_14;
 import simpleQuoting.J1835004000_18;
+import testFrameworkLibrary.D02Models;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
 import testReportComposition.TestStepReportStructure;
@@ -60,7 +61,32 @@ public class SOI_1013 {
 		}
 		catch(Exception e)
 		{
-			//System.out.println(e);
+			System.out.println(e);
+			TestLogger.logError(logStream, testName, "Test Failed", e.toString());
+			throw new Exception(testName+": Test Case Failed");
+		}
+		
+	}
+
+
+	public static void SOI_1013_TC01_DS_Sync_ProductBasket_CloudSense(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, int stepsExecuted, String testName) throws Exception 
+	{
+		String configurationIndex="configurationByDefault";
+		
+		String productName ="Voice Continuity";
+		
+		try
+		{
+			D02Models.ConfigureStandAloneProduct(testExecStructure, logStream, driver, testName, productName, configurationIndex);
+			
+			ProductBasketStep.syncProductBasket(testExecStructure, logStream, driver, testName);
+			
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
 			TestLogger.logError(logStream, testName, "Test Failed", e.toString());
 			throw new Exception(testName+": Test Case Failed");
 		}

@@ -21,7 +21,7 @@ public class DirSalesAgreement{
 	
 	public static String detailsAgreement="//div[@class='slds-tabs_default']";
 	
-	public static String nameAgreement="//span[contains(.,'Agreement Name')]";
+	public static String nameAgreement="//span[contains(.,'Agreement Documents Name')]";
 	
 	
 	
@@ -67,5 +67,18 @@ public class DirSalesAgreement{
 	public static String successMessage="//div[contains(.,'1 file was added to Agreement.')]";
 	
 	public static String errorMessage="//div[contains(.,'1 file is already in Agreement.')]";
-
+	
+	
+	
+	//Agreement Collection in 09-01-2021 for D02 E2E Flow
+	
+	public static String buttonGenerateProposalDocument="//button[@name='csclm__Agreement__c.PRX_CS_Generate_Proposal_Document']";
+	
+	public static String buttonDigitalSignature="//button[contains(.,'Digital Signature')]";
+	
+	public static String buttonEdit="//button[@name='Edit']";
+	
+	public static String proposalDocumentConfirmationMessage="//span[@class='toastMessage forceActionsText'][text()='The document is being processed in the background. Please refresh your page in a few moments if you want to view the document']";
+	
+	public static String generatedDocument="//span[contains(.,'AgreementSQ')][contains(.,'.pdf')]";
 }

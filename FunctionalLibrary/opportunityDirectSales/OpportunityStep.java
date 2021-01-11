@@ -142,7 +142,6 @@ public class OpportunityStep {
 		
 	}
 
-
 	public static void editOpportunityNameNegVal(List<TestStepReportStructure> testExecStructure,
 			List<TestLog> logStream, WebDriver driver, String testName, int stepsExecuted) throws Exception 
 	{
@@ -185,6 +184,50 @@ public class OpportunityStep {
 		
 	}
 
+	public static void closeWinOPTY(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream,
+			WebDriver driver, String testName) throws Exception 
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+		
+		String stepName="Opportunity: Close Won Opportunity";
+
+		String stepNameMin="closeWinOPTY";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			OpportunityAction.closeWonOpportunity(logStream, driver, stepID, testName);
+
+			validation = OpportunityAction.closeWonOpportunityValidation(logStream, driver, stepID, testName);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+		
+	}
+	
+	
+	
 	
 }
 
