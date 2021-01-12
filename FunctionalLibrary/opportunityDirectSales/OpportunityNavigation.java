@@ -1,10 +1,15 @@
 package opportunityDirectSales;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import executionTools.BrowserActions;
+import fetchDataFromExcelFiles.ExcelDataFetch;
+import testExecutionData.TestCasesData;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
 
@@ -43,6 +48,12 @@ public class OpportunityNavigation {
 		{
 			String optyURL=driver.getCurrentUrl();
 			
+			String optyID=TestCasesData.getIDByURL(optyURL);
+					
+			String urlOrdersRelatedViewMenu=ExcelDataFetch.searchDT(0, "DirectSalesOrdersURLString1")+optyID+ExcelDataFetch.searchDT(0, "DirectSalesOrdersURLString2");
+			
+			
+			BrowserActions.goToByURL(driver, urlOrdersRelatedViewMenu);
 			
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
@@ -55,5 +66,30 @@ public class OpportunityNavigation {
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
 	}
+	
+	public static void pickOrderFromListD02(List<TestLog> logStream, WebDriver driver, int stepID, String prodBasketName) throws Exception
+	{
+		 String actionName="pickOrderFromOrderListView";
 
+
+			try
+			{
+				WebElement linkToOrder = driver.findElement(By.linkText(prodBasketName));
+				
+				linkToOrder.click();
+				
+				driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+				
+
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+			}
+			catch(Exception e)
+			{
+				System.out.println(e);
+				TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+				throw new Exception (actionName+" - Failed in Step "+stepID,e);
+			}
+
+	}
 }

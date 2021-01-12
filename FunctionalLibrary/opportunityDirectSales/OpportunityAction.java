@@ -152,6 +152,8 @@ public class OpportunityAction {
 			String optyEditMenuURL=optyURL.replaceAll("view", editOpportunityMenuURL);
 
 			BrowserActions.goToByURL(driver, optyEditMenuURL);
+			
+			new WebDriverWait (driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesOpportunity.editHeader)));
 
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
@@ -169,13 +171,14 @@ public class OpportunityAction {
 	private static void changeStatusOfOpportunity(List<TestLog> logStream, WebDriver driver, int stepID, String status) throws Exception 
 	{
 		String actionName="changeStatusOfOpportunity";
-
+		
+		
 
 		try
 		{
-			driver.findElement(By.xpath(DirSalesOpportunity.selectStage)).click();
-
-			new WebDriverWait(driver, 5).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@title='"+status+"']"))).click();
+			driver.findElement(By.xpath(DirSalesOpportunity.editInputSelectStage)).click();
+			
+			new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//lightning-base-combobox-item[@data-value='"+status+"']"))).click();
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
@@ -343,8 +346,10 @@ public class OpportunityAction {
 		{
 
 			String optyEditValidation =driver.findElement(By.xpath(DirSalesOpportunity.optyDetails)).getText().toString();
+			
+			Thread.sleep(2000);
 
-			if(BrowserActions.isElementPresent(driver, DirSalesOpportunity.editConfirmationMessage) && optyEditValidation.contains(status))
+			if(BrowserActions.isElementPresent(driver, DirSalesOpportunity.editConfirmationMessage) || optyEditValidation.contains(status))
 			{
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
 				return true;

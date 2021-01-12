@@ -1,3 +1,6 @@
-2021/01/09-23:15:54.267 87b4 Reusing MANIFEST C:\source\simpleOrderingIntake\Selenium_Support\Default\Local Storage\leveldb/MANIFEST-000001
-2021/01/09-23:15:54.267 87b4 Recovering log #61
-2021/01/09-23:15:54.268 87b4 Reusing old log C:\source\simpleOrderingIntake\Selenium_Support\Default\Local Storage\leveldb/000061.log 
+2021/01/11-16:45:13.268 2bf0 Reusing MANIFEST C:\source\simpleOrderingIntake\Selenium_Support\Default\Local Storage\leveldb/MANIFEST-000001
+2021/01/11-16:45:13.269 2bf0 Recovering log #61
+2021/01/11-16:45:13.271 2bf0 Reusing old log C:\source\simpleOrderingIntake\Selenium_Support\Default\Local Storage\leveldb/000061.log 
+2021/01/11-16:46:27.474 1e68 Level-0 table #64: started
+2021/01/11-16:46:27.516 1e68 Level-0 table #64: 13643 bytes OK
+2021/01/11-16:46:27.524 1e68 Delete type=0 #61

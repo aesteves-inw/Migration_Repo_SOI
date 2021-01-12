@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-01-09T23:21:39Z" name="Default suite" finished-at="2021-01-09T23:24:33Z" duration-ms="174160">
+  <suite started-at="2021-01-11T18:30:57Z" name="Default suite" finished-at="2021-01-11T18:34:41Z" duration-ms="224283">
     <groups>
     </groups>
-    <test started-at="2021-01-09T23:21:39Z" name="Default test" finished-at="2021-01-09T23:24:33Z" duration-ms="174160">
+    <test started-at="2021-01-11T18:30:57Z" name="Default test" finished-at="2021-01-11T18:34:41Z" duration-ms="224283">
       <class name="testingFrameworkPackage.GeneralTestingClass">
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:testingFrameworkPackage.GeneralTestingClass@5117dd67]" started-at="2021-01-09T23:21:39Z" name="beforeClass" finished-at="2021-01-09T23:21:45Z" duration-ms="5333" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:testingFrameworkPackage.GeneralTestingClass@5117dd67]" started-at="2021-01-11T18:30:57Z" name="beforeClass" finished-at="2021-01-11T18:31:04Z" duration-ms="6845" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="ProductInProductBasket()[pri:0, instance:testingFrameworkPackage.GeneralTestingClass@5117dd67]" started-at="2021-01-09T23:21:45Z" name="ProductInProductBasket" finished-at="2021-01-09T23:24:30Z" duration-ms="164898" status="FAIL">
+        <test-method signature="ProductInProductBasket()[pri:0, instance:testingFrameworkPackage.GeneralTestingClass@5117dd67]" started-at="2021-01-11T18:31:04Z" name="ProductInProductBasket" finished-at="2021-01-11T18:34:37Z" duration-ms="213223" status="FAIL">
           <exception class="java.lang.Exception">
             <message>
               <![CDATA[GeneralTestingClass_D02_TC01_ProductInProductBasket: Test Case Failed on Test Model - E2E Flow in D02 with Voice Continuity]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.Exception: GeneralTestingClass_D02_TC01_ProductInProductBasket: Test Case Failed on Test Model - E2E Flow in D02 with Voice Continuity
-at testFrameworkLibrary.D02Models.E2FFlowForD02(D02Models.java:260)
-at testingFrameworkPackage.GeneralTestingClass.ProductInProductBasket(GeneralTestingClass.java:59)
+at testFrameworkLibrary.D02Models.E2FFlowForD02(D02Models.java:267)
+at testingFrameworkPackage.GeneralTestingClass.ProductInProductBasket(GeneralTestingClass.java:57)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -51,7 +51,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ProductInProductBasket -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:testingFrameworkPackage.GeneralTestingClass@5117dd67]" started-at="2021-01-09T23:24:30Z" name="afterClass" finished-at="2021-01-09T23:24:33Z" duration-ms="3868" status="PASS">
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:testingFrameworkPackage.GeneralTestingClass@5117dd67]" started-at="2021-01-11T18:34:37Z" name="afterClass" finished-at="2021-01-11T18:34:41Z" duration-ms="4150" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->

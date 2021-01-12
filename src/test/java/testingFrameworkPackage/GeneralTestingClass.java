@@ -54,8 +54,6 @@ public class GeneralTestingClass extends ExecDriverClass
 		
 		String product ="Voice Continuity";
 		
-		//D02Models.ConfigureVoiceContinuity(testExecStructure, logStream, driver, testName, configurationIndex);
-		
 		D02Models.E2FFlowForD02(testExecStructure, logStream, driver, testName, product, configurationIndex);
 	}
 	

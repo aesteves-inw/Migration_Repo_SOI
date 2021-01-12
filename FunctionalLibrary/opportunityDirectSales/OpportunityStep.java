@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 import executionTools.BrowserActions;
 import executionTools.TestExecutionReport;
+import orderDirectSales.OrderAction;
 import productBasketDirectSales.ProductBasketAction;
 import testExecutionData.TestCasesData;
 import testLogBuilder.TestLog;
@@ -203,6 +204,50 @@ public class OpportunityStep {
 			OpportunityAction.closeWonOpportunity(logStream, driver, stepID, testName);
 
 			validation = OpportunityAction.closeWonOpportunityValidation(logStream, driver, stepID, testName);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+		
+	}
+
+	public static void goToOrderScreen(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream,
+			WebDriver driver, String testName, String productBasketName) throws Exception 
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+		
+		String stepName="Opportunity: Go to Order Screen";
+
+		String stepNameMin="goToOrderScreen";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			OpportunityNavigation.goToOrdersRelatedViewMenu(logStream, driver, stepID);
+			
+			OpportunityNavigation.pickOrderFromListD02(logStream, driver, stepID, productBasketName);			
+			
+			validation = OrderAction.orderScreenValidation(logStream, driver, stepID);
 
 			if(validation==true)
 			{
