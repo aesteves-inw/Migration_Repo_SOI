@@ -243,6 +243,8 @@ public class OpportunityStep {
 
 		try
 		{
+			BrowserActions.refreshPage(driver);
+			
 			OpportunityNavigation.goToOrdersRelatedViewMenu(logStream, driver, stepID);
 			
 			OpportunityNavigation.pickOrderFromListD02(logStream, driver, stepID, productBasketName);			

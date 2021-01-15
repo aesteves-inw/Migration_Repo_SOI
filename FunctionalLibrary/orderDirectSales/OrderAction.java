@@ -2,7 +2,10 @@ package orderDirectSales;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import executionTools.BrowserActions;
 import objectMap.sfDirectSales.DirSalesOrder;
@@ -19,6 +22,8 @@ public class OrderAction
 					{
 						if(BrowserActions.isElementPresent(driver, DirSalesOrder.orderDetails))
 						{
+							new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("DirSalesOrder.orderDetails")));
+							
 							TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
 							return true;
 						}

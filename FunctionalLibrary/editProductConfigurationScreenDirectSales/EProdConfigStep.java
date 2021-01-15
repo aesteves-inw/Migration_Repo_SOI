@@ -5,6 +5,7 @@ import java.util.List;
 import org.openqa.selenium.WebDriver;
 import executionTools.TestExecutionReport;
 import productBasketDirectSales.ProductBasketAction;
+import productConfigurationCloudSense.NonQuotableProducts;
 import productConfigurationCloudSense.PhoneLine;
 import productConfigurationCloudSense.ProfessionalInternet;
 import productConfigurationCloudSense.VoiceContinuity;
@@ -104,7 +105,6 @@ public class EProdConfigStep
 		}
 	}
 
-
 	public static void configurePhoneLine(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream,
 			WebDriver driver, String testName, String productName, String configurationIndex) throws Exception 
 	{
@@ -192,6 +192,48 @@ public class EProdConfigStep
 			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
 
+		
+	}
+
+	public static void configureNonQuotableProduct(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName, String configurationProduct) throws Exception 
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+		
+		String stepName="Configure Non Quotable Product: "+configurationProduct;
+
+		String stepNameMin="configureNonQuotableProductStep";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			NonQuotableProducts.configurationOfNonQuotableProduct(logStream, driver, stepID, configurationProduct);
+
+			validation = NonQuotableProducts.validationOfNQPConfiguration(logStream, driver, stepID, configurationProduct);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
 		
 	}
 

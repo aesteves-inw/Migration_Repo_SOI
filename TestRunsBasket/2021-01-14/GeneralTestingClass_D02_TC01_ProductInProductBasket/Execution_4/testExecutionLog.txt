@@ -1,0 +1,85 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket
+Log Date: 14-01-2021 09:44:57
+Test Status: Passed
+###############################################################################
+14-01-2021 09:45:02 - INFO - startTest - Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket initiation
+14-01-2021 09:45:03 - TRACE - goToLoginPage - Executed with success
+14-01-2021 09:45:04 - TRACE - fillcredentials - Executed with success
+14-01-2021 09:45:09 - TRACE - pressLoginButton - Executed with success
+14-01-2021 09:45:09 - INFO - loginDirectSales on Step 1 - Executed with success
+14-01-2021 09:45:10 - TRACE - homePageValidation - Executed with success
+14-01-2021 09:45:10 - INFO - loginSFDS - Step 1 - Executed with success
+14-01-2021 09:45:15 - TRACE - goToCompanyDetailsPage - Executed with success
+14-01-2021 09:45:15 - TRACE - companyPageValidation - Executed with success
+14-01-2021 09:45:15 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+14-01-2021 09:45:17 - TRACE - openQuickSaleOPTYScreen - Executed with success
+14-01-2021 09:45:21 - TRACE - createQuickSaleOpty - Executed with success
+14-01-2021 09:45:25 - TRACE - saveOpportunity - Executed with success
+14-01-2021 09:45:25 - INFO - createQuickSaleOpty - Executed with success
+14-01-2021 09:45:26 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+14-01-2021 09:45:30 - INFO - goToOpportunityPage - Executed with success
+14-01-2021 09:45:32 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 3
+14-01-2021 09:45:32 - INFO - createQuickSaleOpportunity - Step 3 - Executed with success
+14-01-2021 09:45:34 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 4
+14-01-2021 09:45:36 - TRACE - clickNewProductBasketLink - Succeeded in Step 4
+14-01-2021 09:45:36 - TRACE - createProductBasket - Succeeded in Step 4
+14-01-2021 09:45:42 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 4
+14-01-2021 09:45:43 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 4
+14-01-2021 09:45:43 - INFO - createProductBasket - Executed with success
+14-01-2021 09:45:43 - DEBUG - productBasketName - productBasketName value: New Basket 2021-01-14 09:45:37
+14-01-2021 09:45:43 - TRACE - Product Basket: Open Add Product Menu - Succeeded in Step 5
+14-01-2021 09:45:44 - TRACE - addProductMenuValidation - Succeeded in Step: 5
+14-01-2021 09:45:44 - INFO - goToAddOferToBasketScreen - Executed with success
+14-01-2021 09:45:49 - TRACE - Add Offer to Basket: Pick Product - Voice Continuity - Succeeded in Step 6
+14-01-2021 09:45:49 - TRACE - productOnProductBasketValidation - Succeeded in Step: 6
+14-01-2021 09:45:49 - INFO - addProductToProductBasket - Executed with success
+14-01-2021 09:45:54 - TRACE - goToEditProductConfiguration - Succeeded in Step 7
+14-01-2021 09:45:54 - TRACE - Change to Edit Prodcut Configuration iframe - Succeeded in Step 7
+14-01-2021 09:45:55 - INFO - goToEditProductConfigurationScreen - Executed with success
+14-01-2021 09:45:55 - TRACE - VC Contract Type - Config: New - Succeeded in Step 8
+14-01-2021 09:45:56 - TRACE - VC Desired Installation Date - Config: 15/01/2021 - Succeeded in Step 8
+14-01-2021 09:45:56 - TRACE - VC - Internal Comments Field - Succeeded in Step 8
+14-01-2021 09:45:56 - TRACE - Contract Information On VoiceContinuity - Succeeded in Step 8
+14-01-2021 09:45:57 - TRACE - VC Voice Installation Status Config: Existing - Succeeded in Step 8
+14-01-2021 09:45:58 - TRACE - VC - Line Identifier Config: 475153060 - Succeeded in Step 8
+14-01-2021 09:45:58 - TRACE - VC - Voice Product Selection Config: Phone Line - Succeeded in Step 8
+14-01-2021 09:45:59 - TRACE - VC - Voice Continuity Flavour Config - Succeeded in Step 8
+14-01-2021 09:45:59 - TRACE - ProductConfiguration On VoiceContinuity - Succeeded in Step 8
+14-01-2021 09:45:59 - TRACE - configurationOfVoiceContinuity - Succeeded in Step 8
+14-01-2021 09:45:59 - TRACE - Validation of Voice Continuity configuration (By Default Test Data) - Succeeded in Step: 8
+14-01-2021 09:45:59 - INFO - configureVoiceContinuity - Executed with success
+14-01-2021 09:46:04 - TRACE - Finish Configuration on 'Edit Product Configuration' Screen - Succeeded in Step 9
+14-01-2021 09:46:05 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 9
+14-01-2021 09:46:05 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 9
+14-01-2021 09:46:05 - INFO - finsihConfiguration - Executed with success
+14-01-2021 09:46:06 - TRACE - syncProductBasket - Succeeded in Step 10
+14-01-2021 09:46:11 - TRACE - syncProductBasketPosVal - Succeeded in Step: 10
+14-01-2021 09:46:11 - INFO - syncProductBasketPosVal - Executed with success
+14-01-2021 09:46:11 - TRACE - Product Basket: Change to default frame - Succeeded in Step 11
+14-01-2021 09:46:13 - TRACE - Product Basket: Go To Agreement (After Sync) - Succeeded in Step 11
+14-01-2021 09:46:13 - TRACE - agreementScreenValidation - Succeeded in Step: 11
+14-01-2021 09:46:13 - INFO - goToAgreementScreen - Executed with success
+14-01-2021 09:46:44 - TRACE - generateDocumentProposal - Succeeded in Step 12
+14-01-2021 09:46:48 - TRACE - generateDocumentProposalValidation - Succeeded in Step: 12
+14-01-2021 09:46:48 - INFO - generateDocumentProposal - Executed with success
+14-01-2021 09:46:50 - TRACE - goToOPTYByURL - Succeeded in Step 13
+14-01-2021 09:46:52 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 13
+14-01-2021 09:46:52 - INFO - goToOpportunityByURL - Executed with success
+14-01-2021 09:46:56 - TRACE - openEditOpportunityMenu - Succeeded in Step 14
+14-01-2021 09:46:58 - TRACE - changeStatusOfOpportunity - Succeeded in Step 14
+14-01-2021 09:47:05 - TRACE - saveChangesOnEditOpportunityScreen - Succeeded in Step 14
+14-01-2021 09:47:05 - TRACE - closeWonOpportunity - Succeeded in Step 14
+14-01-2021 09:47:07 - TRACE - closeWonOpportunityValidation - Succeeded in Step: 14
+14-01-2021 09:47:07 - INFO - closeWinOPTY - Executed with success
+14-01-2021 09:47:20 - TRACE - goToOPTYByURL - Succeeded in Step 15
+14-01-2021 09:47:21 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 15
+14-01-2021 09:47:21 - INFO - goToOpportunityByURL - Executed with success
+14-01-2021 09:47:25 - TRACE - goToOrdersRelatedViewMenu - Succeeded in Step 16
+14-01-2021 09:47:28 - TRACE - pickOrderFromOrderListView - Succeeded in Step 16
+14-01-2021 09:47:30 - TRACE - orderScreenValidation - Succeeded in Step: 16
+14-01-2021 09:47:30 - INFO - goToOrderScreen - Executed with success
+14-01-2021 09:47:31 - INFO - finishTest - Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket completion
+############################# End Of Log File #################################

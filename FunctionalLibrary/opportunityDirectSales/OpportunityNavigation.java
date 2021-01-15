@@ -1,13 +1,9 @@
 package opportunityDirectSales;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-
 import executionTools.BrowserActions;
+import executionTools.TestObjectTools;
 import fetchDataFromExcelFiles.ExcelDataFetch;
 import testExecutionData.TestCasesData;
 import testLogBuilder.TestLog;
@@ -74,11 +70,13 @@ public class OpportunityNavigation {
 
 			try
 			{
-				WebElement linkToOrder = driver.findElement(By.linkText(prodBasketName));
+				String orderRecordID= TestObjectTools.getDataRecordID(driver, prodBasketName);
+
+				String orderURL="https://proximus--prxitt.lightning.force.com/lightning/r/csord__Order__c/"+orderRecordID+"/view";
+
+				BrowserActions.goToByURL(driver, orderURL);
 				
-				linkToOrder.click();
 				
-				driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 				
 
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);

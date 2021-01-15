@@ -178,8 +178,14 @@ public class OpportunityAction {
 		{
 			driver.findElement(By.xpath(DirSalesOpportunity.editInputSelectStage)).click();
 			
-			new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//lightning-base-combobox-item[@data-value='"+status+"']"))).click();
+			//WebElement statusElement = new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//lightning-base-combobox-item[@data-value='"+status+"']/span[@class='slds-media__figure slds-listbox__option-icon']")));
 
+			//statusElement.click();
+			
+			WebElement statusClosedWon = BrowserActions.getElementByJSQuery(driver, "return document.querySelector('records-lwc-detail-panel').shadowRoot.querySelector('records-base-record-form').shadowRoot.querySelector('records-lwc-record-layout').shadowRoot.querySelector('forcegenerated-detailpanel_opportunity___012000000000000aaa___full___edit___recordlayout2').shadowRoot.querySelector('sfa-input-stage-name').shadowRoot.querySelector('force-record-picklist').shadowRoot.querySelector('force-form-picklist').shadowRoot.querySelector('lightning-picklist').shadowRoot.querySelector('lightning-combobox').shadowRoot.querySelector('lightning-base-combobox').shadowRoot.querySelectorAll('lightning-base-combobox-item')[7].shadowRoot.querySelector('span.slds-media__figure.slds-listbox__option-icon')");
+			
+			BrowserActions.jsClick(driver, statusClosedWon);
+			
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
 
