@@ -1,0 +1,46 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: GeneralTestingClass_D03_TC01_D03E2EFlow
+Log Date: 15-01-2021 09:16:57
+Test Status: Failed
+###############################################################################
+15-01-2021 09:17:04 - INFO - startTest - Test Case: GeneralTestingClass_D03_TC01_D03E2EFlow initiation
+15-01-2021 09:17:06 - TRACE - goToLoginPage - Executed with success
+15-01-2021 09:17:08 - TRACE - fillcredentials - Executed with success
+15-01-2021 09:17:14 - TRACE - pressLoginButton - Executed with success
+15-01-2021 09:17:14 - INFO - loginDirectSales on Step 1 - Executed with success
+15-01-2021 09:17:15 - TRACE - homePageValidation - Executed with success
+15-01-2021 09:17:15 - INFO - loginSFDS - Step 1 - Executed with success
+15-01-2021 09:17:22 - TRACE - goToCompanyDetailsPage - Executed with success
+15-01-2021 09:17:23 - TRACE - companyPageValidation - Executed with success
+15-01-2021 09:17:23 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+15-01-2021 09:17:26 - TRACE - openQuickSaleOPTYScreen - Executed with success
+15-01-2021 09:17:32 - TRACE - createQuickSaleOpty - Executed with success
+15-01-2021 09:17:37 - TRACE - saveOpportunity - Executed with success
+15-01-2021 09:17:37 - INFO - createQuickSaleOpty - Executed with success
+15-01-2021 09:17:39 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+15-01-2021 09:17:42 - INFO - goToOpportunityPage - Executed with success
+15-01-2021 09:17:46 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 3
+15-01-2021 09:17:46 - INFO - createQuickSaleOpportunity - Step 3 - Executed with success
+15-01-2021 09:17:48 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 4
+15-01-2021 09:17:50 - TRACE - clickNewProductBasketLink - Succeeded in Step 4
+15-01-2021 09:17:50 - TRACE - createProductBasket - Succeeded in Step 4
+15-01-2021 09:17:57 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 4
+15-01-2021 09:17:58 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 4
+15-01-2021 09:17:58 - INFO - createProductBasket - Executed with success
+15-01-2021 09:17:59 - TRACE - Product Basket: Open Add Product Menu - Succeeded in Step 5
+15-01-2021 09:18:00 - TRACE - addProductMenuValidation - Succeeded in Step: 5
+15-01-2021 09:18:00 - INFO - goToAddOferToBasketScreen - Executed with success
+15-01-2021 09:18:05 - TRACE - Add Offer to Basket: Pick Product - External Quoted - Succeeded in Step 6
+15-01-2021 09:18:05 - TRACE - productOnProductBasketValidation - Succeeded in Step: 6
+15-01-2021 09:18:05 - INFO - addProductToProductBasket - Executed with success
+15-01-2021 09:18:10 - TRACE - goToEditProductConfiguration - Succeeded in Step 7
+15-01-2021 09:18:10 - TRACE - Change to Edit Prodcut Configuration iframe - Succeeded in Step 7
+15-01-2021 09:18:11 - INFO - goToEditProductConfigurationScreen - Executed with success
+15-01-2021 09:18:32 - ERROR - NQP: Configuration of productPABX - Failed in Step 8 - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@title='productPABX'] (tried for 15 second(s) with 500 milliseconds interval)
+15-01-2021 09:18:32 - ERROR - configurationOfNonQuotableProduct - Failed in Step 8 - java.lang.Exception: NQP: Configuration of productPABX - Failed in Step 8
+15-01-2021 09:18:32 - ERROR - configureNonQuotableProductStep - Executed with errors - java.lang.Exception: configurationOfNonQuotableProduct - Failed in Step 8
+15-01-2021 09:18:33 - ERROR - GeneralTestingClass_D03_TC01_D03E2EFlow - Test Failed on Pre Conditions Setup - java.lang.Exception: Configure Non Quotable Product: productPABX - Failed in Step: 8
+15-01-2021 09:18:33 - INFO - finishTest - Test Case: GeneralTestingClass_D03_TC01_D03E2EFlow completion
+############################# End Of Log File #################################

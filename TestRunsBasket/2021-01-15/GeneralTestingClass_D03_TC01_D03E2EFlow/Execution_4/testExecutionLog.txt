@@ -1,0 +1,54 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: GeneralTestingClass_D03_TC01_D03E2EFlow
+Log Date: 15-01-2021 09:29:52
+Test Status: Failed
+###############################################################################
+15-01-2021 09:29:57 - INFO - startTest - Test Case: GeneralTestingClass_D03_TC01_D03E2EFlow initiation
+15-01-2021 09:29:59 - TRACE - goToLoginPage - Executed with success
+15-01-2021 09:30:01 - TRACE - fillcredentials - Executed with success
+15-01-2021 09:30:07 - TRACE - pressLoginButton - Executed with success
+15-01-2021 09:30:07 - INFO - loginDirectSales on Step 1 - Executed with success
+15-01-2021 09:30:09 - TRACE - homePageValidation - Executed with success
+15-01-2021 09:30:09 - INFO - loginSFDS - Step 1 - Executed with success
+15-01-2021 09:30:13 - TRACE - goToCompanyDetailsPage - Executed with success
+15-01-2021 09:30:15 - TRACE - companyPageValidation - Executed with success
+15-01-2021 09:30:15 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+15-01-2021 09:30:17 - TRACE - openQuickSaleOPTYScreen - Executed with success
+15-01-2021 09:30:22 - TRACE - createQuickSaleOpty - Executed with success
+15-01-2021 09:30:27 - TRACE - saveOpportunity - Executed with success
+15-01-2021 09:30:27 - INFO - createQuickSaleOpty - Executed with success
+15-01-2021 09:30:29 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+15-01-2021 09:30:33 - INFO - goToOpportunityPage - Executed with success
+15-01-2021 09:30:35 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 3
+15-01-2021 09:30:35 - INFO - createQuickSaleOpportunity - Step 3 - Executed with success
+15-01-2021 09:30:37 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 4
+15-01-2021 09:30:40 - TRACE - clickNewProductBasketLink - Succeeded in Step 4
+15-01-2021 09:30:40 - TRACE - createProductBasket - Succeeded in Step 4
+15-01-2021 09:30:47 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 4
+15-01-2021 09:30:48 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 4
+15-01-2021 09:30:48 - INFO - createProductBasket - Executed with success
+15-01-2021 09:30:48 - TRACE - Product Basket: Open Add Product Menu - Succeeded in Step 5
+15-01-2021 09:30:49 - TRACE - addProductMenuValidation - Succeeded in Step: 5
+15-01-2021 09:30:49 - INFO - goToAddOferToBasketScreen - Executed with success
+15-01-2021 09:30:54 - TRACE - Add Offer to Basket: Pick Product - External Quoted - Succeeded in Step 6
+15-01-2021 09:30:54 - TRACE - productOnProductBasketValidation - Succeeded in Step: 6
+15-01-2021 09:30:54 - INFO - addProductToProductBasket - Executed with success
+15-01-2021 09:30:59 - TRACE - goToEditProductConfiguration - Succeeded in Step 7
+15-01-2021 09:30:59 - TRACE - Change to Edit Prodcut Configuration iframe - Succeeded in Step 7
+15-01-2021 09:30:59 - INFO - goToEditProductConfigurationScreen - Executed with success
+15-01-2021 09:31:20 - ERROR - NQP: Configuration of null - Failed in Step 8 - org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@title='null']"}
+  (Session info: chrome=87.0.4280.141)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'INNOWAVE-383', ip: '192.168.0.164', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.141, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\source\simpleOrderingInt...}, goog:chromeOptions: {debuggerAddress: localhost:51502}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 101d34936cbcc0f0336482c64bac2f97
+*** Element info: {Using=xpath, value=//div[@title='null']}
+15-01-2021 09:31:20 - ERROR - configurationOfNonQuotableProduct - Failed in Step 8 - java.lang.Exception: NQP: Configuration of null - Failed in Step 8
+15-01-2021 09:31:20 - ERROR - configureNonQuotableProductStep - Executed with errors - java.lang.Exception: configurationOfNonQuotableProduct - Failed in Step 8
+15-01-2021 09:31:21 - ERROR - GeneralTestingClass_D03_TC01_D03E2EFlow - Test Failed on Pre Conditions Setup - java.lang.Exception: Configure Non Quotable Product: productPABX - Failed in Step: 8
+15-01-2021 09:31:21 - INFO - finishTest - Test Case: GeneralTestingClass_D03_TC01_D03E2EFlow completion
+############################# End Of Log File #################################
