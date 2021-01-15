@@ -48,9 +48,19 @@ public class DirSalesProductBasket {
 		
 		public static String errorMessagePB="//div[@class='toast ng-scope toast-error']";
 		
+		public static String successMessageSyncPB="//div[@class='toast ng-scope toast-success']";
+		
 		public static String syncWithPBFlag="//input[@aria-labelledby='csbb__Synchronised_With_Opportunity__c']";
 		
 		public static String selectLineItemCheckBox="//button[@type='button'][@class='bt-btn btn-checkbox ng-scope']";
 		
 		public static String expandPackageButton="//button[@aria-label='Expand package']";
+		
+		public static String buttonGoToAgreement="//button[@aria-label='Go to Agreement']";
+		
+		public static String inputProductBasketName="//input[@aria-labelledby='Name'][@type='text']";
+		
+		public static String buttonDiscountManagement="//button[@aria-label='Discount Management']";
+		
+		public static String buttonOrderEnrichment="//button[@aria-label='Order Enrichment']";
 }

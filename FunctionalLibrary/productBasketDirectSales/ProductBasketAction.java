@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import executionTools.BrowserActions;
+import objectMap.sfDirectSales.DirSalesEditProductConfiguration;
 import objectMap.sfDirectSales.DirSalesProductBasket;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
@@ -208,7 +209,85 @@ public class ProductBasketAction {
 
 	}
 
+	public static void goToEditProductConfiguration(List<TestLog> logStream, WebDriver driver, int stepID, String productName) throws Exception
+	{
+		String actionName="goToEditProductConfiguration";
 
+
+		try
+		{
+			WebElement productBasketTable=driver.findElement(By.xpath(DirSalesProductBasket.productBasketTable));
+			
+			List<WebElement> productBasketLineItem=productBasketTable.findElements(By.tagName("li"));
+			
+			
+			for(WebElement we : productBasketLineItem)
+			{
+				if(we.getText().contains(productName))
+				{
+					we.findElement(By.xpath(DirSalesProductBasket.editProductConfigurationButton)).click();
+					
+					break;
+				}
+			}
+			
+			new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesEditProductConfiguration.iFrameEditProductConfiguration)));		
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+	}
+
+	public static void goToDiscountManagementConsole(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
+	{
+		String actionName="goToDiscountManagementConsole";
+
+
+		try
+		{
+			driver.findElement(By.xpath(DirSalesProductBasket.buttonDiscountManagement)).click();
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+		
+	}
+
+	public static void goToOrderEnrichmentConsole(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
+	{
+		String actionName="goToOrderEnrichmentConsole";
+
+
+		try
+		{
+			driver.findElement(By.xpath(DirSalesProductBasket.buttonOrderEnrichment)).click();
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+		
+	}
+	
+	
+	
 	//Validation Actions
 
 	public static boolean productBasketScreenValidation(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
@@ -299,6 +378,38 @@ public class ProductBasketAction {
 		}
 	}
 
+	public static boolean syncProductBasketPosVal(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
+	{
+		String actionName="syncProductBasketPosVal";
+
+		try
+		{
+			new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesProductBasket.buttonGoToAgreement)));
+			
+			boolean isFlagChecked = driver.findElement(By.xpath(DirSalesProductBasket.syncWithPBFlag)).isSelected();
+			
+			System.out.println("SyncProductBasketPositive Validation: "+isFlagChecked);
+
+			if (BrowserActions.isElementPresent(driver, DirSalesProductBasket.buttonGoToAgreement) && isFlagChecked)
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+		
+	}
+	
 	public static boolean syncProductBasketNegVal(List<TestLog> logStream, WebDriver driver, int newStepCounter) throws Exception 
 	{
 
@@ -331,8 +442,6 @@ public class ProductBasketAction {
 		String actionName="expandedECSPackValidation";
 
 		boolean result;
-		
-	
 
 		try
 		{
@@ -591,6 +700,12 @@ public class ProductBasketAction {
 			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
 		}
 	}
+
+	
+
+
+
+	
 
 
 }
