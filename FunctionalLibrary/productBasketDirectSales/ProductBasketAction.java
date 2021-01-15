@@ -244,7 +244,6 @@ public class ProductBasketAction {
 		}
 	}
 
-
 	public static void goToDiscountManagementConsole(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
 	{
 		String actionName="goToDiscountManagementConsole";
