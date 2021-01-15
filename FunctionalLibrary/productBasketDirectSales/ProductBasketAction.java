@@ -243,7 +243,7 @@ public class ProductBasketAction {
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
 	}
-<<<<<<< HEAD
+
 
 	public static void goToDiscountManagementConsole(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
 	{
@@ -701,15 +701,5 @@ public class ProductBasketAction {
 			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
 		}
 	}
-
-	
-
-<<<<<<< HEAD
-
-
-	
-
-=======
->>>>>>> e20509cefdd3c7d5ef637396277ccc7ca808a805
 
 }

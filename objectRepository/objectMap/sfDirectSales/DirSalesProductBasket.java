@@ -59,11 +59,10 @@ public class DirSalesProductBasket {
 		public static String buttonGoToAgreement="//button[@aria-label='Go to Agreement']";
 		
 		public static String inputProductBasketName="//input[@aria-labelledby='Name'][@type='text']";
-<<<<<<< HEAD
+
 		
 		public static String buttonDiscountManagement="//button[@aria-label='Discount Management']";
 		
 		public static String buttonOrderEnrichment="//button[@aria-label='Order Enrichment']";
-=======
->>>>>>> e20509cefdd3c7d5ef637396277ccc7ca808a805
+
 }
