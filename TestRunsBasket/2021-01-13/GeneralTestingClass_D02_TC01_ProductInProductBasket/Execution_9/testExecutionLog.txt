@@ -1,0 +1,36 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket
+Log Date: 13-01-2021 16:32:41
+Test Status: Failed
+###############################################################################
+13-01-2021 16:32:47 - INFO - startTest - Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket initiation
+13-01-2021 16:32:50 - TRACE - goToLoginPage - Executed with success
+13-01-2021 16:32:52 - TRACE - fillcredentials - Executed with success
+13-01-2021 16:32:58 - TRACE - pressLoginButton - Executed with success
+13-01-2021 16:32:58 - INFO - loginDirectSales on Step 1 - Executed with success
+13-01-2021 16:33:01 - TRACE - homePageValidation - Executed with success
+13-01-2021 16:33:01 - INFO - loginSFDS - Step 1 - Executed with success
+13-01-2021 16:33:05 - TRACE - goToOPTYByURL - Succeeded in Step 2
+13-01-2021 16:33:08 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 2
+13-01-2021 16:33:08 - INFO - goToOpportunityByURL - Executed with success
+13-01-2021 16:33:15 - TRACE - openEditOpportunityMenu - Succeeded in Step 3
+13-01-2021 16:33:18 - TRACE - changeStatusOfOpportunity - Succeeded in Step 3
+13-01-2021 16:33:28 - TRACE - saveChangesOnEditOpportunityScreen - Succeeded in Step 3
+13-01-2021 16:33:28 - TRACE - closeWonOpportunity - Succeeded in Step 3
+13-01-2021 16:33:30 - TRACE - closeWonOpportunityValidation - Succeeded in Step: 3
+13-01-2021 16:33:30 - INFO - closeWinOPTY - Executed with success
+13-01-2021 16:33:32 - TRACE - goToOrdersRelatedViewMenu - Succeeded in Step 4
+13-01-2021 16:33:53 - ERROR - pickOrderFromOrderListView - Failed in Step 4 - org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"link text","selector":"New Basket 2021-01-13 15:41:03"}
+  (Session info: chrome=87.0.4280.88)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'INNOWAVE-383', ip: '192.168.0.164', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\source\simpleOrderingInt...}, goog:chromeOptions: {debuggerAddress: localhost:51635}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 7ae0954bb941170b29332d5e73dbf5b3
+*** Element info: {Using=link text, value=New Basket 2021-01-13 15:41:03}
+13-01-2021 16:33:53 - ERROR - goToOrderScreen - Executed with errors - java.lang.Exception: pickOrderFromOrderListView - Failed in Step 4
+13-01-2021 16:33:54 - INFO - finishTest - Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket completion
+############################# End Of Log File #################################

@@ -1,0 +1,25 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket
+Log Date: 13-01-2021 16:35:53
+Test Status: Passed
+###############################################################################
+13-01-2021 16:35:59 - INFO - startTest - Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket initiation
+13-01-2021 16:36:02 - TRACE - goToLoginPage - Executed with success
+13-01-2021 16:36:04 - TRACE - fillcredentials - Executed with success
+13-01-2021 16:36:12 - TRACE - pressLoginButton - Executed with success
+13-01-2021 16:36:12 - INFO - loginDirectSales on Step 1 - Executed with success
+13-01-2021 16:36:14 - TRACE - homePageValidation - Executed with success
+13-01-2021 16:36:14 - INFO - loginSFDS - Step 1 - Executed with success
+13-01-2021 16:36:19 - TRACE - goToOPTYByURL - Succeeded in Step 2
+13-01-2021 16:36:22 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 2
+13-01-2021 16:36:22 - INFO - goToOpportunityByURL - Executed with success
+13-01-2021 16:36:30 - TRACE - openEditOpportunityMenu - Succeeded in Step 3
+13-01-2021 16:36:33 - TRACE - changeStatusOfOpportunity - Succeeded in Step 3
+13-01-2021 16:36:41 - TRACE - saveChangesOnEditOpportunityScreen - Succeeded in Step 3
+13-01-2021 16:36:41 - TRACE - closeWonOpportunity - Succeeded in Step 3
+13-01-2021 16:36:44 - TRACE - closeWonOpportunityValidation - Succeeded in Step: 3
+13-01-2021 16:36:44 - INFO - closeWinOPTY - Executed with success
+13-01-2021 16:36:44 - INFO - finishTest - Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket completion
+############################# End Of Log File #################################

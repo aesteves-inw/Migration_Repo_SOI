@@ -1,0 +1,24 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket
+Log Date: 13-01-2021 16:43:26
+Test Status: Failed
+###############################################################################
+13-01-2021 16:43:33 - INFO - startTest - Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket initiation
+13-01-2021 16:43:35 - TRACE - goToLoginPage - Executed with success
+13-01-2021 16:43:38 - TRACE - fillcredentials - Executed with success
+13-01-2021 16:43:45 - TRACE - pressLoginButton - Executed with success
+13-01-2021 16:43:45 - INFO - loginDirectSales on Step 1 - Executed with success
+13-01-2021 16:43:46 - TRACE - homePageValidation - Executed with success
+13-01-2021 16:43:46 - INFO - loginSFDS - Step 1 - Executed with success
+13-01-2021 16:43:53 - TRACE - goToOPTYByURL - Succeeded in Step 2
+13-01-2021 16:43:56 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 2
+13-01-2021 16:43:56 - INFO - goToOpportunityByURL - Executed with success
+13-01-2021 16:44:04 - TRACE - openEditOpportunityMenu - Succeeded in Step 3
+13-01-2021 16:44:07 - TRACE - changeStatusOfOpportunity - Succeeded in Step 3
+13-01-2021 16:44:28 - ERROR - saveChangesOnEditOpportunityScreen - Failed in Step 3 - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //span[@class='toastMessage slds-text-heading--small forceActionsText'][contains(.,'was saved')] (tried for 10 second(s) with 500 milliseconds interval)
+13-01-2021 16:44:28 - ERROR - closeWonOpportunity - Failed in Step 3 - java.lang.Exception: saveChangesOnEditOpportunityScreen - Failed in Step 3
+13-01-2021 16:44:28 - ERROR - closeWinOPTY - Executed with errors - java.lang.Exception: closeWonOpportunity - Failed in Step 3
+13-01-2021 16:44:28 - INFO - finishTest - Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket completion
+############################# End Of Log File #################################

@@ -1,0 +1,81 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket
+Log Date: 11-01-2021 16:40:20
+Test Status: Failed
+###############################################################################
+11-01-2021 16:40:31 - INFO - startTest - Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket initiation
+11-01-2021 16:40:34 - TRACE - goToLoginPage - Executed with success
+11-01-2021 16:40:37 - TRACE - fillcredentials - Executed with success
+11-01-2021 16:40:45 - TRACE - pressLoginButton - Executed with success
+11-01-2021 16:40:45 - INFO - loginDirectSales on Step 1 - Executed with success
+11-01-2021 16:40:49 - TRACE - homePageValidation - Executed with success
+11-01-2021 16:40:49 - INFO - loginSFDS - Step 1 - Executed with success
+11-01-2021 16:40:59 - TRACE - goToCompanyDetailsPage - Executed with success
+11-01-2021 16:41:03 - TRACE - companyPageValidation - Executed with success
+11-01-2021 16:41:03 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+11-01-2021 16:41:08 - TRACE - openQuickSaleOPTYScreen - Executed with success
+11-01-2021 16:41:18 - TRACE - createQuickSaleOpty - Executed with success
+11-01-2021 16:41:25 - TRACE - saveOpportunity - Executed with success
+11-01-2021 16:41:25 - INFO - createQuickSaleOpty - Executed with success
+11-01-2021 16:41:28 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+11-01-2021 16:41:36 - INFO - goToOpportunityPage - Executed with success
+11-01-2021 16:41:41 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 3
+11-01-2021 16:41:41 - INFO - createQuickSaleOpportunity - Step 3 - Executed with success
+11-01-2021 16:41:46 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 4
+11-01-2021 16:41:50 - TRACE - clickNewProductBasketLink - Succeeded in Step 4
+11-01-2021 16:41:50 - TRACE - createProductBasket - Succeeded in Step 4
+11-01-2021 16:41:59 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 4
+11-01-2021 16:42:00 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 4
+11-01-2021 16:42:00 - INFO - createProductBasket - Executed with success
+11-01-2021 16:42:01 - TRACE - Product Basket: Open Add Product Menu - Succeeded in Step 5
+11-01-2021 16:42:02 - TRACE - addProductMenuValidation - Succeeded in Step: 5
+11-01-2021 16:42:02 - INFO - goToAddOferToBasketScreen - Executed with success
+11-01-2021 16:42:08 - TRACE - Add Offer to Basket: Pick Product - Voice Continuity - Succeeded in Step 6
+11-01-2021 16:42:08 - TRACE - productOnProductBasketValidation - Succeeded in Step: 6
+11-01-2021 16:42:08 - INFO - addProductToProductBasket - Executed with success
+11-01-2021 16:42:15 - TRACE - goToEditProductConfiguration - Succeeded in Step 7
+11-01-2021 16:42:15 - TRACE - Change to Edit Prodcut Configuration iframe - Succeeded in Step 7
+11-01-2021 16:42:16 - INFO - goToEditProductConfigurationScreen - Executed with success
+11-01-2021 16:42:17 - TRACE - VC Contract Type - Config: New - Succeeded in Step 8
+11-01-2021 16:42:18 - TRACE - VC Desired Installation Date - Config: 12/01/2021 - Succeeded in Step 8
+11-01-2021 16:42:19 - TRACE - VC - Internal Comments Field - Succeeded in Step 8
+11-01-2021 16:42:19 - TRACE - Contract Information On VoiceContinuity - Succeeded in Step 8
+11-01-2021 16:42:20 - TRACE - VC Voice Installation Status Config: Existing - Succeeded in Step 8
+11-01-2021 16:42:21 - TRACE - VC - Line Identifier Config: 475153060 - Succeeded in Step 8
+11-01-2021 16:42:22 - TRACE - VC - Voice Product Selection Config: Phone Line - Succeeded in Step 8
+11-01-2021 16:42:24 - TRACE - VC - Voice Continuity Flavour Config - Succeeded in Step 8
+11-01-2021 16:42:24 - TRACE - ProductConfiguration On VoiceContinuity - Succeeded in Step 8
+11-01-2021 16:42:24 - TRACE - configurationOfVoiceContinuity - Succeeded in Step 8
+11-01-2021 16:42:25 - TRACE - Validation of Voice Continuity configuration (By Default Test Data) - Succeeded in Step: 8
+11-01-2021 16:42:25 - INFO - configureVoiceContinuity - Executed with success
+11-01-2021 16:42:32 - TRACE - Finish Configuration on 'Edit Product Configuration' Screen - Succeeded in Step 9
+11-01-2021 16:42:32 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 9
+11-01-2021 16:42:32 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 9
+11-01-2021 16:42:32 - INFO - finsihConfiguration - Executed with success
+11-01-2021 16:42:33 - TRACE - syncProductBasket - Succeeded in Step 10
+11-01-2021 16:42:38 - TRACE - syncProductBasketPosVal - Succeeded in Step: 10
+11-01-2021 16:42:38 - INFO - syncProductBasketPosVal - Executed with success
+11-01-2021 16:42:39 - TRACE - Product Basket: Change to default frame - Succeeded in Step 11
+11-01-2021 16:42:42 - TRACE - Product Basket: Go To Agreement (After Sync) - Succeeded in Step 11
+11-01-2021 16:42:43 - TRACE - agreementScreenValidation - Succeeded in Step: 11
+11-01-2021 16:42:43 - INFO - goToAgreementScreen - Executed with success
+11-01-2021 16:43:14 - TRACE - generateDocumentProposal - Succeeded in Step 12
+11-01-2021 16:43:22 - TRACE - generateDocumentProposalValidation - Succeeded in Step: 12
+11-01-2021 16:43:22 - INFO - generateDocumentProposal - Executed with success
+11-01-2021 16:43:27 - TRACE - goToOPTYByURL - Succeeded in Step 13
+11-01-2021 16:43:31 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 13
+11-01-2021 16:43:31 - INFO - goToOpportunityByURL - Executed with success
+11-01-2021 16:43:39 - TRACE - openEditOpportunityMenu - Succeeded in Step 14
+11-01-2021 16:43:47 - ERROR - changeStatusOfOpportunity - Failed in Step 14 - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //lightning-base-combobox-item[@data-value='Closed Won'] (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'INNOWAVE-383', ip: '192.168.0.164', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\source\simpleOrderingInt...}, goog:chromeOptions: {debuggerAddress: localhost:57620}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: df323b78a694afdb5de086db9a6a6efd
+11-01-2021 16:43:47 - ERROR - closeWonOpportunity - Failed in Step 14 - java.lang.Exception: changeStatusOfOpportunity - Failed in Step 14
+11-01-2021 16:43:47 - ERROR - closeWinOPTY - Executed with errors - java.lang.Exception: closeWonOpportunity - Failed in Step 14
+11-01-2021 16:43:48 - ERROR - GeneralTestingClass_D02_TC01_ProductInProductBasket - Test Failed on Pre Conditions Setup - java.lang.Exception: Opportunity: Close Won Opportunity - Failed in Step: 14
+11-01-2021 16:43:48 - INFO - finishTest - Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket completion
+############################# End Of Log File #################################

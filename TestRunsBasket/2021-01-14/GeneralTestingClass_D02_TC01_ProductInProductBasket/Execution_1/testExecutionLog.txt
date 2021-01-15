@@ -1,0 +1,18 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket
+Log Date: 14-01-2021 09:30:08
+Test Status: Passed
+###############################################################################
+14-01-2021 09:30:13 - INFO - startTest - Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket initiation
+14-01-2021 09:30:16 - TRACE - goToLoginPage - Executed with success
+14-01-2021 09:30:18 - TRACE - fillcredentials - Executed with success
+14-01-2021 09:30:25 - TRACE - pressLoginButton - Executed with success
+14-01-2021 09:30:25 - INFO - loginDirectSales on Step 1 - Executed with success
+14-01-2021 09:30:27 - TRACE - homePageValidation - Executed with success
+14-01-2021 09:30:27 - INFO - loginSFDS - Step 1 - Executed with success
+14-01-2021 09:30:29 - ERROR - loginSFDS - Step 1 - Executed with errors - java.lang.NullPointerException
+14-01-2021 09:30:30 - ERROR - Voice Continuity - Test Failed on Pre Conditions Setup - java.lang.NullPointerException
+14-01-2021 09:30:30 - INFO - finishTest - Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket completion
+############################# End Of Log File #################################

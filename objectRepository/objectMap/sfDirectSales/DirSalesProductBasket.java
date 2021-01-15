@@ -57,4 +57,6 @@ public class DirSalesProductBasket {
 		public static String expandPackageButton="//button[@aria-label='Expand package']";
 		
 		public static String buttonGoToAgreement="//button[@aria-label='Go to Agreement']";
+		
+		public static String inputProductBasketName="//input[@aria-labelledby='Name'][@type='text']";
 }

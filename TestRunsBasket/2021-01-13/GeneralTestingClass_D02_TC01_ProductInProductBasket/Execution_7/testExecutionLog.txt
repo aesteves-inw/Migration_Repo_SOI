@@ -1,0 +1,31 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket
+Log Date: 13-01-2021 16:28:08
+Test Status: Failed
+###############################################################################
+13-01-2021 16:28:14 - INFO - startTest - Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket initiation
+13-01-2021 16:28:16 - TRACE - goToLoginPage - Executed with success
+13-01-2021 16:28:18 - TRACE - fillcredentials - Executed with success
+13-01-2021 16:28:25 - TRACE - pressLoginButton - Executed with success
+13-01-2021 16:28:25 - INFO - loginDirectSales on Step 1 - Executed with success
+13-01-2021 16:28:28 - TRACE - homePageValidation - Executed with success
+13-01-2021 16:28:28 - INFO - loginSFDS - Step 1 - Executed with success
+13-01-2021 16:28:32 - TRACE - goToOPTYByURL - Succeeded in Step 2
+13-01-2021 16:28:35 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 2
+13-01-2021 16:28:35 - INFO - goToOpportunityByURL - Executed with success
+13-01-2021 16:28:42 - TRACE - openEditOpportunityMenu - Succeeded in Step 3
+13-01-2021 16:29:04 - ERROR - changeStatusOfOpportunity - Failed in Step 3 - org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[4]/div[2]/div[2]/div[2]/div/div[2]/div/div/div/records-lwc-detail-panel/records-base-record-form/div/div/div/div/records-record-layout-event-broker/slot/records-lwc-record-layout/forcegenerated-detailpanel_opportunity___012000000000000aaa___full___edit___recordlayout2/force-record-layout-block/slot/force-record-layout-section[1]/div/div/div/slot/force-record-layout-row[3]/slot/force-record-layout-item[2]/div/span/slot/slot/sfa-input-stage-name/force-record-picklist/force-form-picklist/lightning-picklist/lightning-combobox/div/lightning-base-combobox/div/div[2]/lightning-base-combobox-item[8]/span[1]"}
+  (Session info: chrome=87.0.4280.88)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'INNOWAVE-383', ip: '192.168.0.164', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\source\simpleOrderingInt...}, goog:chromeOptions: {debuggerAddress: localhost:65497}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: c77f847f6515bf5324aeeb267bae3a64
+*** Element info: {Using=xpath, value=/html/body/div[4]/div[2]/div[2]/div[2]/div/div[2]/div/div/div/records-lwc-detail-panel/records-base-record-form/div/div/div/div/records-record-layout-event-broker/slot/records-lwc-record-layout/forcegenerated-detailpanel_opportunity___012000000000000aaa___full___edit___recordlayout2/force-record-layout-block/slot/force-record-layout-section[1]/div/div/div/slot/force-record-layout-row[3]/slot/force-record-layout-item[2]/div/span/slot/slot/sfa-input-stage-name/force-record-picklist/force-form-picklist/lightning-picklist/lightning-combobox/div/lightning-base-combobox/div/div[2]/lightning-base-combobox-item[8]/span[1]}
+13-01-2021 16:29:04 - ERROR - closeWonOpportunity - Failed in Step 3 - java.lang.Exception: changeStatusOfOpportunity - Failed in Step 3
+13-01-2021 16:29:04 - ERROR - closeWinOPTY - Executed with errors - java.lang.Exception: closeWonOpportunity - Failed in Step 3
+13-01-2021 16:29:04 - INFO - finishTest - Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket completion
+############################# End Of Log File #################################

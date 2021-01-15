@@ -1,0 +1,46 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: GeneralTestingClass_D03_TC01_D03E2EFlow
+Log Date: 15-01-2021 09:14:14
+Test Status: Failed
+###############################################################################
+15-01-2021 09:14:20 - INFO - startTest - Test Case: GeneralTestingClass_D03_TC01_D03E2EFlow initiation
+15-01-2021 09:14:23 - TRACE - goToLoginPage - Executed with success
+15-01-2021 09:14:25 - TRACE - fillcredentials - Executed with success
+15-01-2021 09:14:31 - TRACE - pressLoginButton - Executed with success
+15-01-2021 09:14:31 - INFO - loginDirectSales on Step 1 - Executed with success
+15-01-2021 09:14:32 - TRACE - homePageValidation - Executed with success
+15-01-2021 09:14:32 - INFO - loginSFDS - Step 1 - Executed with success
+15-01-2021 09:14:39 - TRACE - goToCompanyDetailsPage - Executed with success
+15-01-2021 09:14:41 - TRACE - companyPageValidation - Executed with success
+15-01-2021 09:14:41 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+15-01-2021 09:14:43 - TRACE - openQuickSaleOPTYScreen - Executed with success
+15-01-2021 09:14:49 - TRACE - createQuickSaleOpty - Executed with success
+15-01-2021 09:14:56 - TRACE - saveOpportunity - Executed with success
+15-01-2021 09:14:56 - INFO - createQuickSaleOpty - Executed with success
+15-01-2021 09:14:57 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+15-01-2021 09:15:01 - INFO - goToOpportunityPage - Executed with success
+15-01-2021 09:15:05 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 3
+15-01-2021 09:15:05 - INFO - createQuickSaleOpportunity - Step 3 - Executed with success
+15-01-2021 09:15:08 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 4
+15-01-2021 09:15:10 - TRACE - clickNewProductBasketLink - Succeeded in Step 4
+15-01-2021 09:15:10 - TRACE - createProductBasket - Succeeded in Step 4
+15-01-2021 09:15:17 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 4
+15-01-2021 09:15:18 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 4
+15-01-2021 09:15:18 - INFO - createProductBasket - Executed with success
+15-01-2021 09:15:19 - TRACE - Product Basket: Open Add Product Menu - Succeeded in Step 5
+15-01-2021 09:15:20 - TRACE - addProductMenuValidation - Succeeded in Step: 5
+15-01-2021 09:15:20 - INFO - goToAddOferToBasketScreen - Executed with success
+15-01-2021 09:15:26 - TRACE - Add Offer to Basket: Pick Product - External Quoted - Succeeded in Step 6
+15-01-2021 09:15:26 - TRACE - productOnProductBasketValidation - Succeeded in Step: 6
+15-01-2021 09:15:26 - INFO - addProductToProductBasket - Executed with success
+15-01-2021 09:15:32 - TRACE - goToEditProductConfiguration - Succeeded in Step 7
+15-01-2021 09:15:32 - TRACE - Change to Edit Prodcut Configuration iframe - Succeeded in Step 7
+15-01-2021 09:15:32 - INFO - goToEditProductConfigurationScreen - Executed with success
+15-01-2021 09:15:53 - ERROR - NQP: Configuration of productPABX - Failed in Step 8 - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //div[@title='productPABX'] (tried for 15 second(s) with 500 milliseconds interval)
+15-01-2021 09:15:53 - ERROR - configurationOfNonQuotableProduct - Failed in Step 8 - java.lang.Exception: NQP: Configuration of productPABX - Failed in Step 8
+15-01-2021 09:15:53 - ERROR - configureNonQuotableProductStep - Executed with errors - java.lang.Exception: configurationOfNonQuotableProduct - Failed in Step 8
+15-01-2021 09:15:54 - ERROR - GeneralTestingClass_D03_TC01_D03E2EFlow - Test Failed on Pre Conditions Setup - java.lang.Exception: Configure Non Quotable Product: productPABX - Failed in Step: 8
+15-01-2021 09:15:54 - INFO - finishTest - Test Case: GeneralTestingClass_D03_TC01_D03E2EFlow completion
+############################# End Of Log File #################################

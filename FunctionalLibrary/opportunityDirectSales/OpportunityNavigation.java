@@ -1,10 +1,11 @@
 package opportunityDirectSales;
 
 import java.util.List;
-
 import org.openqa.selenium.WebDriver;
-
 import executionTools.BrowserActions;
+import executionTools.TestObjectTools;
+import fetchDataFromExcelFiles.ExcelDataFetch;
+import testExecutionData.TestCasesData;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
 
@@ -43,6 +44,12 @@ public class OpportunityNavigation {
 		{
 			String optyURL=driver.getCurrentUrl();
 			
+			String optyID=TestCasesData.getIDByURL(optyURL);
+					
+			String urlOrdersRelatedViewMenu=ExcelDataFetch.searchDT(0, "DirectSalesOrdersURLString1")+optyID+ExcelDataFetch.searchDT(0, "DirectSalesOrdersURLString2");
+			
+			
+			BrowserActions.goToByURL(driver, urlOrdersRelatedViewMenu);
 			
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
@@ -55,5 +62,32 @@ public class OpportunityNavigation {
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
 	}
+	
+	public static void pickOrderFromListD02(List<TestLog> logStream, WebDriver driver, int stepID, String prodBasketName) throws Exception
+	{
+		 String actionName="pickOrderFromOrderListView";
 
+
+			try
+			{
+				String orderRecordID= TestObjectTools.getDataRecordID(driver, prodBasketName);
+
+				String orderURL="https://proximus--prxitt.lightning.force.com/lightning/r/csord__Order__c/"+orderRecordID+"/view";
+
+				BrowserActions.goToByURL(driver, orderURL);
+				
+				
+				
+
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+			}
+			catch(Exception e)
+			{
+				System.out.println(e);
+				TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+				throw new Exception (actionName+" - Failed in Step "+stepID,e);
+			}
+
+	}
 }

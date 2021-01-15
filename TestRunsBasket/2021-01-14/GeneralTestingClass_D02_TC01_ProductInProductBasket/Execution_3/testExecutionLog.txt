@@ -1,0 +1,16 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket
+Log Date: 14-01-2021 09:39:29
+Test Status: Failed
+###############################################################################
+14-01-2021 09:39:33 - INFO - startTest - Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket initiation
+14-01-2021 09:39:35 - TRACE - goToLoginPage - Executed with success
+14-01-2021 09:39:35 - TRACE - fillcredentials - Executed with success
+14-01-2021 09:39:40 - TRACE - pressLoginButton - Executed with success
+14-01-2021 09:39:40 - INFO - loginDirectSales on Step 1 - Executed with success
+14-01-2021 09:39:41 - ERROR - loginSFDS - Step 1 - Executed with errors - java.lang.Exception: Login in Salesforce (Direct Sales) - Failed in Step: 1
+14-01-2021 09:39:43 - ERROR - GeneralTestingClass_D02_TC01_ProductInProductBasket - Test Failed on Pre Conditions Setup - java.lang.Exception: Login in Salesforce (Direct Sales) - Failed in Step: 1
+14-01-2021 09:39:43 - INFO - finishTest - Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket completion
+############################# End Of Log File #################################
