@@ -2,7 +2,7 @@ package objectMap.sfPartnersCommunity;
 
 public class PartComAgreements {
 	
-	//private String PC = Constants.partnersCommunity;
+	
 	
 	
 	// ..:: Agreements Page ::..
