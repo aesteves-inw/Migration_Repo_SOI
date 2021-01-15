@@ -22,11 +22,11 @@ public class J1835004000_64 {
 
 			String userProfile="salesUser";
 
-			LoginPageStep.loginSFDS(testExecStructure, logStream, driver, testName, stepsExecuted, userProfile);
+			LoginPageStep.loginSFDS(testExecStructure, logStream, driver, testName, userProfile);
 
 			stepsExecuted++;
 
-			HomePageStep.navigateToCompanyPage(testExecStructure, logStream, driver, testName, stepsExecuted);
+			HomePageStep.navigateToCompanyPage(testExecStructure, logStream, driver, testName);
 
 			stepsExecuted++;
 

@@ -1,0 +1,71 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket
+Log Date: 09-01-2021 22:52:41
+Test Status: Failed
+###############################################################################
+09-01-2021 22:52:46 - INFO - startTest - Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket initiation
+09-01-2021 22:52:48 - TRACE - goToLoginPage - Executed with success
+09-01-2021 22:52:49 - TRACE - fillcredentials - Executed with success
+09-01-2021 22:52:56 - TRACE - pressLoginButton - Executed with success
+09-01-2021 22:52:56 - INFO - loginDirectSales on Step 1 - Executed with success
+09-01-2021 22:52:59 - TRACE - homePageValidation - Executed with success
+09-01-2021 22:52:59 - INFO - loginSFDS - Step 1 - Executed with success
+09-01-2021 22:53:05 - TRACE - goToCompanyDetailsPage - Executed with success
+09-01-2021 22:53:07 - TRACE - companyPageValidation - Executed with success
+09-01-2021 22:53:07 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+09-01-2021 22:53:10 - TRACE - openQuickSaleOPTYScreen - Executed with success
+09-01-2021 22:53:16 - TRACE - createQuickSaleOpty - Executed with success
+09-01-2021 22:53:22 - TRACE - saveOpportunity - Executed with success
+09-01-2021 22:53:22 - INFO - createQuickSaleOpty - Executed with success
+09-01-2021 22:53:24 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+09-01-2021 22:53:28 - INFO - goToOpportunityPage - Executed with success
+09-01-2021 22:53:32 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 3
+09-01-2021 22:53:32 - INFO - createQuickSaleOpportunity - Step 3 - Executed with success
+09-01-2021 22:53:35 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 4
+09-01-2021 22:53:37 - TRACE - clickNewProductBasketLink - Succeeded in Step 4
+09-01-2021 22:53:37 - TRACE - createProductBasket - Succeeded in Step 4
+09-01-2021 22:53:44 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 4
+09-01-2021 22:53:45 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 4
+09-01-2021 22:53:45 - INFO - createProductBasket - Executed with success
+09-01-2021 22:53:46 - TRACE - Product Basket: Open Add Product Menu - Succeeded in Step 5
+09-01-2021 22:53:46 - TRACE - addProductMenuValidation - Succeeded in Step: 5
+09-01-2021 22:53:46 - INFO - goToAddOferToBasketScreen - Executed with success
+09-01-2021 22:53:52 - TRACE - Add Offer to Basket: Pick Product - Voice Continuity - Succeeded in Step 6
+09-01-2021 22:53:52 - TRACE - productOnProductBasketValidation - Succeeded in Step: 6
+09-01-2021 22:53:52 - INFO - addProductToProductBasket - Executed with success
+09-01-2021 22:53:57 - TRACE - goToEditProductConfiguration - Succeeded in Step 7
+09-01-2021 22:53:57 - TRACE - Change to Edit Prodcut Configuration iframe - Succeeded in Step 7
+09-01-2021 22:53:58 - INFO - goToEditProductConfigurationScreen - Executed with success
+09-01-2021 22:53:59 - TRACE - VC Contract Type - Config: New - Succeeded in Step 8
+09-01-2021 22:53:59 - TRACE - VC Desired Installation Date - Config: 10/01/2021 - Succeeded in Step 8
+09-01-2021 22:54:00 - TRACE - VC - Internal Comments Field - Succeeded in Step 8
+09-01-2021 22:54:00 - TRACE - Contract Information On VoiceContinuity - Succeeded in Step 8
+09-01-2021 22:54:01 - TRACE - VC Voice Installation Status Config: Existing - Succeeded in Step 8
+09-01-2021 22:54:02 - TRACE - VC - Line Identifier Config: 475153060 - Succeeded in Step 8
+09-01-2021 22:54:02 - TRACE - VC - Voice Product Selection Config: Phone Line - Succeeded in Step 8
+09-01-2021 22:54:04 - TRACE - VC - Voice Continuity Flavour Config - Succeeded in Step 8
+09-01-2021 22:54:04 - TRACE - ProductConfiguration On VoiceContinuity - Succeeded in Step 8
+09-01-2021 22:54:04 - TRACE - configurationOfVoiceContinuity - Succeeded in Step 8
+09-01-2021 22:54:04 - TRACE - Validation of Voice Continuity configuration (By Default Test Data) - Succeeded in Step: 8
+09-01-2021 22:54:04 - INFO - configureVoiceContinuity - Executed with success
+09-01-2021 22:54:10 - TRACE - Finish Configuration on 'Edit Product Configuration' Screen - Succeeded in Step 9
+09-01-2021 22:54:10 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 9
+09-01-2021 22:54:11 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 9
+09-01-2021 22:54:11 - INFO - finsihConfiguration - Executed with success
+09-01-2021 22:54:11 - TRACE - syncProductBasket - Succeeded in Step 10
+09-01-2021 22:54:16 - TRACE - syncProductBasketPosVal - Succeeded in Step: 10
+09-01-2021 22:54:16 - INFO - syncProductBasketNegVal - Executed with success
+09-01-2021 22:54:19 - ERROR - Product Basket: Go To Agreement (After Sync) - Failed in Step 11 - org.openqa.selenium.WebDriverException: target frame detached
+  (Session info: chrome=87.0.4280.88)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'INNOWAVE-383', ip: '192.168.0.164', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\source\simpleOrderingInt...}, goog:chromeOptions: {debuggerAddress: localhost:63590}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 7268c05df3dadc4b45eebb89f86661b9
+*** Element info: {Using=xpath, value=//div[@class='slds-tabs_default']}
+09-01-2021 22:54:19 - ERROR - goToAgreementScreen - Executed with errors - java.lang.Exception: Product Basket: Go To Agreement (After Sync) - Failed in Step 11
+09-01-2021 22:54:19 - ERROR - GeneralTestingClass_D02_TC01_ProductInProductBasket - Test Failed on Pre Conditions Setup - java.lang.Exception: Product Basket: Go To Agreement Screen (After Sync) - Failed in Step: 11
+09-01-2021 22:54:19 - INFO - finishTest - Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket completion
+############################# End Of Log File #################################

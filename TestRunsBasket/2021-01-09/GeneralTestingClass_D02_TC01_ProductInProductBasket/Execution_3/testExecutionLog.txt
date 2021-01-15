@@ -1,0 +1,61 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket
+Log Date: 09-01-2021 22:37:37
+Test Status: Failed
+###############################################################################
+09-01-2021 22:37:42 - INFO - startTest - Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket initiation
+09-01-2021 22:37:45 - TRACE - goToLoginPage - Executed with success
+09-01-2021 22:37:47 - TRACE - fillcredentials - Executed with success
+09-01-2021 22:37:53 - TRACE - pressLoginButton - Executed with success
+09-01-2021 22:37:53 - INFO - loginDirectSales on Step 1 - Executed with success
+09-01-2021 22:37:56 - TRACE - homePageValidation - Executed with success
+09-01-2021 22:37:56 - INFO - loginSFDS - Step 1 - Executed with success
+09-01-2021 22:38:02 - TRACE - goToCompanyDetailsPage - Executed with success
+09-01-2021 22:38:02 - TRACE - companyPageValidation - Executed with success
+09-01-2021 22:38:02 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+09-01-2021 22:38:06 - TRACE - openQuickSaleOPTYScreen - Executed with success
+09-01-2021 22:38:12 - TRACE - createQuickSaleOpty - Executed with success
+09-01-2021 22:38:16 - TRACE - saveOpportunity - Executed with success
+09-01-2021 22:38:16 - INFO - createQuickSaleOpty - Executed with success
+09-01-2021 22:38:19 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+09-01-2021 22:38:22 - INFO - goToOpportunityPage - Executed with success
+09-01-2021 22:38:26 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 3
+09-01-2021 22:38:26 - INFO - createQuickSaleOpportunity - Step 3 - Executed with success
+09-01-2021 22:38:29 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 4
+09-01-2021 22:38:31 - TRACE - clickNewProductBasketLink - Succeeded in Step 4
+09-01-2021 22:38:31 - TRACE - createProductBasket - Succeeded in Step 4
+09-01-2021 22:38:38 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 4
+09-01-2021 22:38:39 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 4
+09-01-2021 22:38:39 - INFO - createProductBasket - Executed with success
+09-01-2021 22:38:40 - TRACE - Product Basket: Open Add Product Menu - Succeeded in Step 5
+09-01-2021 22:38:40 - TRACE - addProductMenuValidation - Succeeded in Step: 5
+09-01-2021 22:38:40 - INFO - goToAddOferToBasketScreen - Executed with success
+09-01-2021 22:38:46 - TRACE - Add Offer to Basket: Pick Product - Voice Continuity - Succeeded in Step 6
+09-01-2021 22:38:46 - TRACE - productOnProductBasketValidation - Succeeded in Step: 6
+09-01-2021 22:38:46 - INFO - addProductToProductBasket - Executed with success
+09-01-2021 22:38:51 - TRACE - goToEditProductConfiguration - Succeeded in Step 7
+09-01-2021 22:38:51 - TRACE - Change to Edit Prodcut Configuration iframe - Succeeded in Step 7
+09-01-2021 22:38:52 - INFO - goToEditProductConfigurationScreen - Executed with success
+09-01-2021 22:38:53 - TRACE - VC Contract Type - Config: New - Succeeded in Step 8
+09-01-2021 22:38:53 - TRACE - VC Desired Installation Date - Config: 10/01/2021 - Succeeded in Step 8
+09-01-2021 22:38:53 - TRACE - VC - Internal Comments Field - Succeeded in Step 8
+09-01-2021 22:38:53 - TRACE - Contract Information On VoiceContinuity - Succeeded in Step 8
+09-01-2021 22:38:54 - TRACE - VC Voice Installation Status Config: Existing - Succeeded in Step 8
+09-01-2021 22:38:56 - TRACE - VC - Line Identifier Config: 475153060 - Succeeded in Step 8
+09-01-2021 22:38:56 - TRACE - VC - Voice Product Selection Config: Phone Line - Succeeded in Step 8
+09-01-2021 22:38:58 - TRACE - VC - Voice Continuity Flavour Config - Succeeded in Step 8
+09-01-2021 22:38:58 - TRACE - ProductConfiguration On VoiceContinuity - Succeeded in Step 8
+09-01-2021 22:38:58 - TRACE - configurationOfVoiceContinuity - Succeeded in Step 8
+09-01-2021 22:38:58 - TRACE - Validation of Voice Continuity configuration (By Default Test Data) - Succeeded in Step: 8
+09-01-2021 22:38:58 - INFO - configureVoiceContinuity - Executed with success
+09-01-2021 22:39:04 - TRACE - Finish Configuration on 'Edit Product Configuration' Screen - Succeeded in Step 9
+09-01-2021 22:39:05 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 9
+09-01-2021 22:39:05 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 9
+09-01-2021 22:39:05 - INFO - finsihConfiguration - Executed with success
+09-01-2021 22:39:05 - TRACE - syncProductBasket - Succeeded in Step 10
+09-01-2021 22:39:09 - ERROR - syncProductBasketNegVal - Executed with errors - java.lang.Exception: Sync Product Basket (Negative Validation) - Failed in Step: 10
+09-01-2021 22:39:09 - ERROR - GeneralTestingClass_D02_TC01_ProductInProductBasket - Test Failed on Pre Conditions Setup - java.lang.Exception: Sync Product Basket (Negative Validation) - Failed in Step: 10
+09-01-2021 22:39:09 - INFO - finishTest - Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket completion
+############################# End Of Log File #################################

@@ -1,0 +1,23 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket
+Log Date: 13-01-2021 16:54:22
+Test Status: Passed
+###############################################################################
+13-01-2021 16:54:28 - INFO - startTest - Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket initiation
+13-01-2021 16:54:31 - TRACE - goToLoginPage - Executed with success
+13-01-2021 16:54:33 - TRACE - fillcredentials - Executed with success
+13-01-2021 16:54:40 - TRACE - pressLoginButton - Executed with success
+13-01-2021 16:54:40 - INFO - loginDirectSales on Step 1 - Executed with success
+13-01-2021 16:54:43 - TRACE - homePageValidation - Executed with success
+13-01-2021 16:54:43 - INFO - loginSFDS - Step 1 - Executed with success
+13-01-2021 16:54:47 - TRACE - goToOPTYByURL - Succeeded in Step 2
+13-01-2021 16:54:51 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 2
+13-01-2021 16:54:51 - INFO - goToOpportunityByURL - Executed with success
+13-01-2021 16:54:57 - TRACE - goToOrdersRelatedViewMenu - Succeeded in Step 3
+13-01-2021 16:55:03 - TRACE - pickOrderFromOrderListView - Succeeded in Step 3
+13-01-2021 16:55:07 - TRACE - orderScreenValidation - Succeeded in Step: 3
+13-01-2021 16:55:07 - INFO - goToOrderScreen - Executed with success
+13-01-2021 16:55:08 - INFO - finishTest - Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket completion
+############################# End Of Log File #################################

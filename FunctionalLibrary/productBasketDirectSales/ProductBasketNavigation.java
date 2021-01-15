@@ -8,16 +8,22 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+<<<<<<< HEAD
 import executionTools.BrowserActions;
 import fetchDataFromExcelFiles.ExcelDataFetch;
 import objectMap.sfDirectSales.DirSalesAgreement;
 import objectMap.sfDirectSales.DirSalesProductBasket;
 import testExecutionData.TestCasesData;
+=======
+import objectMap.sfDirectSales.DirSalesAgreement;
+import objectMap.sfDirectSales.DirSalesProductBasket;
+>>>>>>> e20509cefdd3c7d5ef637396277ccc7ca808a805
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
 
 public class ProductBasketNavigation 
 {
+<<<<<<< HEAD
 	
 	private static boolean validateProductBasketScreenURL(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
 	{
@@ -55,6 +61,8 @@ public class ProductBasketNavigation
 		}
 	}
 	
+=======
+>>>>>>> e20509cefdd3c7d5ef637396277ccc7ca808a805
 	public static void goToAgreement(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
 	{
 		
@@ -83,6 +91,7 @@ public class ProductBasketNavigation
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
 	}
+<<<<<<< HEAD
 
 	public static void goToDiscountConsoleByID(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
 	{
@@ -158,4 +167,6 @@ public class ProductBasketNavigation
 		}
 	}
 	
+=======
+>>>>>>> e20509cefdd3c7d5ef637396277ccc7ca808a805
 }

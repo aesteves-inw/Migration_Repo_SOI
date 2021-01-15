@@ -1,26 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [J1835004000-64 User Story]">
-  <test thread-count="5" name="J1835004000_64_TC01_QuickSaleOpportunity_PreFilledFields(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="sq.J1835004000_64.J1835004000_64_TC01_QuickSaleOpportunity_PreFilledFields">
+      <class name="testingFrameworkPackage.GeneralTestingClassD03">
         <methods>
-          <include name="afterClass"/>
-          <include name="testCase"/>
-          <include name="beforeClass"/>
-        </methods>
-      </class> <!-- sq.J1835004000_64.J1835004000_64_TC01_QuickSaleOpportunity_PreFilledFields -->
-    </classes>
-  </test> <!-- J1835004000_64_TC01_QuickSaleOpportunity_PreFilledFields(failed) -->
-  <test thread-count="5" name="J1835004000_64_TC02_QuickSaleOpportunity_OpportunityCreation(failed)">
-    <classes>
-      <class name="sq.J1835004000_64.J1835004000_64_TC02_QuickSaleOpportunity_OpportunityCreation">
-        <methods>
+          <include name="ProductInProductBasket"/>
           <include name="beforeClass"/>
           <include name="afterClass"/>
-          <include name="testCase"/>
         </methods>
-      </class> <!-- sq.J1835004000_64.J1835004000_64_TC02_QuickSaleOpportunity_OpportunityCreation -->
+      </class> <!-- testingFrameworkPackage.GeneralTestingClassD03 -->
     </classes>
-  </test> <!-- J1835004000_64_TC02_QuickSaleOpportunity_OpportunityCreation(failed) -->
-</suite> <!-- Failed suite [J1835004000-64 User Story] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

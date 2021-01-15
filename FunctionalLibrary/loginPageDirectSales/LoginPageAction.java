@@ -88,7 +88,7 @@ public class LoginPageAction {
 
 	private static void pressLoginButton(List<TestLog> logStream, WebDriver driver) throws Exception 
 	{
-		WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
 		
 		String componentName="pressLoginButton";
 		

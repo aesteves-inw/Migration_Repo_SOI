@@ -114,8 +114,14 @@ public class DirSalesOpportunity {
 	public static String editHeader="//h2[contains(.,'Edit')]";
 
 	public static String editOpportunityErrors="//div[@class='pageLevelErrors']";
+	
+	public static String saveEditButton="//button[@name='SaveEdit']";
 
+	public static String cancelEditButton="//button[@name='CancelEdit']";
+	
+	public static String editConfirmationMessage="//span[@class='toastMessage slds-text-heading--small forceActionsText'][contains(.,'was saved')]";
 
+	public static String editInputSelectStage="/html/body/div[4]/div[2]/div/div[2]/div/div[2]/div/div/div/records-lwc-detail-panel/records-base-record-form/div/div/div/div/records-record-layout-event-broker/slot/records-lwc-record-layout/forcegenerated-detailpanel_opportunity___012000000000000aaa___full___edit___recordlayout2/force-record-layout-block/slot/force-record-layout-section[1]/div/div/div/slot/force-record-layout-row[3]/slot/force-record-layout-item[2]/div/span/slot/slot/sfa-input-stage-name/force-record-picklist/force-form-picklist/lightning-picklist/lightning-combobox/div/lightning-base-combobox/div/div[1]/input";
 
 	//Close This Opportunity Menu
 

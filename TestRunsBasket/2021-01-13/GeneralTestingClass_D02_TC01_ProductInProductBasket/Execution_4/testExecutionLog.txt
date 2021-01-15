@@ -1,0 +1,28 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket
+Log Date: 13-01-2021 16:20:33
+Test Status: Failed
+###############################################################################
+13-01-2021 16:20:39 - INFO - startTest - Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket initiation
+13-01-2021 16:20:42 - TRACE - goToLoginPage - Executed with success
+13-01-2021 16:20:44 - TRACE - fillcredentials - Executed with success
+13-01-2021 16:20:51 - TRACE - pressLoginButton - Executed with success
+13-01-2021 16:20:51 - INFO - loginDirectSales on Step 1 - Executed with success
+13-01-2021 16:20:53 - TRACE - homePageValidation - Executed with success
+13-01-2021 16:20:53 - INFO - loginSFDS - Step 1 - Executed with success
+13-01-2021 16:20:57 - TRACE - goToOPTYByURL - Succeeded in Step 2
+13-01-2021 16:21:01 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 2
+13-01-2021 16:21:01 - INFO - goToOpportunityByURL - Executed with success
+13-01-2021 16:21:09 - TRACE - openEditOpportunityMenu - Succeeded in Step 3
+13-01-2021 16:21:20 - ERROR - changeStatusOfOpportunity - Failed in Step 3 - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //lightning-base-combobox-item[@data-value='Closed Won']/span[@class='slds-media__figure slds-listbox__option-icon'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'INNOWAVE-383', ip: '192.168.0.164', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\source\simpleOrderingInt...}, goog:chromeOptions: {debuggerAddress: localhost:61809}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 17e9e52082238e3b9f81c6ebf5fcaaeb
+13-01-2021 16:21:20 - ERROR - closeWonOpportunity - Failed in Step 3 - java.lang.Exception: changeStatusOfOpportunity - Failed in Step 3
+13-01-2021 16:21:20 - ERROR - closeWinOPTY - Executed with errors - java.lang.Exception: closeWonOpportunity - Failed in Step 3
+13-01-2021 16:21:20 - INFO - finishTest - Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket completion
+############################# End Of Log File #################################

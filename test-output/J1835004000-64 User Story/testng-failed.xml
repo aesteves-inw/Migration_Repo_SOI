@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [J1835004000-64 User Story]">
+<suite name="Failed suite [J1835004000-64 User Story]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="J1835004000_64_TC01_QuickSaleOpportunity_PreFilledFields(failed)">
     <classes>
       <class name="sq.J1835004000_64.J1835004000_64_TC01_QuickSaleOpportunity_PreFilledFields">

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.openqa.selenium.WebDriver;
 
+import executionTools.TestExecutionReport;
 import opportunityDirectSales.OpportunityAction;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
@@ -12,10 +13,11 @@ import testReportComposition.TestStepReportStructure;
 import testReporter.TestReporter;
 
 public class NavigationStep {
-	
-	public static void goToOpportunityByURL(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, int stepID, String testName, String optyURL) throws Exception
+
+	public static void goToOpportunityByURL(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, String testName, String optyURL) throws Exception
 	{
-		
+		int stepID=TestExecutionReport.stepOfTestStep(testReportStream);
+
 		String stepName="Go To Opportunity By URL";
 
 		String stepNameMin="goToOpportunityByURL";
@@ -51,5 +53,6 @@ public class NavigationStep {
 			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
 
+	}
 }
-}
+
