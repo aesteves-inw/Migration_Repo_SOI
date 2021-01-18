@@ -18,15 +18,15 @@ public class ExecDriverClass {
 	{
 		WebDriver driver;
 		
-		System.setProperty("webdriver.chrome.driver", BrowserData.ChromeDriverPath);
+		System.setProperty("webdriver.chrome.driver", "C:\\source\\chromedriver.exe");
 
 		ChromeOptions chromeProfile = new ChromeOptions(); 
 
 		//chromeProfile.addArguments("--window-size=1980,1080");
 		
-		//chromeProfile.addArguments("--start-maximized"); 
+		chromeProfile.addArguments("--start-maximized"); 
 		
-		chromeProfile.addArguments("--start-fullscreen");
+		//chromeProfile.addArguments("--start-fullscreen");
 
 		chromeProfile.addArguments("chrome.switches","--disable-extensions");
 

@@ -16,9 +16,11 @@ public class HomePageAction {
 
 		String homePageURLValidation, homePageURL, homePageTitle, homePageTitleValidation;
 
-		homePageURLValidation=driver.getCurrentUrl();
+		//18-01-2021 - Switched to "TRY" statement
+		
+		//homePageURLValidation=driver.getCurrentUrl();
 
-		homePageTitleValidation=driver.getTitle();
+		//homePageTitleValidation=driver.getTitle();
 
 		homePageURL=ExcelDataFetch.searchDT(0, "DirectSalesHomePage");
 
@@ -27,6 +29,11 @@ public class HomePageAction {
 		try
 		{
 			
+			Thread.sleep(5000);
+			
+			homePageURLValidation=driver.getCurrentUrl();
+
+			homePageTitleValidation=driver.getTitle();
 			
 			if(homePageURL.equalsIgnoreCase(homePageURLValidation) && homePageTitle.equalsIgnoreCase(homePageTitleValidation))
 			{
