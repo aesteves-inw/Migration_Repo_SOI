@@ -288,6 +288,7 @@ public class ProductBasketAction {
 	
 	
 
+	
 	//Validation Actions
 
 	public static boolean productBasketScreenValidation(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
