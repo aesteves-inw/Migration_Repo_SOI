@@ -1,0 +1,33 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: GeneralTestingClassPC_D02_TC01_ProductInProductBasket
+Log Date: 19-01-2021 17:35:40
+Test Status: Failed
+###############################################################################
+19-01-2021 17:35:45 - INFO - startTest - Test Case: GeneralTestingClassPC_D02_TC01_ProductInProductBasket initiation
+19-01-2021 17:35:47 - TRACE - goToLoginPage - Executed with success
+19-01-2021 17:35:48 - TRACE - fillcredentials - Executed with success
+19-01-2021 17:35:51 - TRACE - pressLoginButton - Executed with success
+19-01-2021 17:35:51 - TRACE - loginPartnersCommunity - Succeeded in Step 1
+19-01-2021 17:35:54 - TRACE - HomePageValidation - Succeeded in Step: 1
+19-01-2021 17:35:54 - INFO - LoginPartnersCommunity - Executed with success
+19-01-2021 17:36:01 - TRACE - Home Page: Go To Company Page By URL - Succeeded in Step 2
+19-01-2021 17:36:01 - TRACE - CompanyPageValidation - Succeeded in Step: 2
+19-01-2021 17:36:01 - INFO - NavigateToCompanyPage - Executed with success
+19-01-2021 17:36:03 - TRACE - goToQuickSaleOpportunityScreen - Succeeded in Step 3
+19-01-2021 17:36:04 - TRACE - fillFieldsForQuickSale - Succeeded in Step 3
+19-01-2021 17:36:31 - TRACE - saveQuickSaleOPTY - Succeeded in Step 3
+19-01-2021 17:36:31 - TRACE - createQuickSaleOPTY - Succeeded in Step 3
+19-01-2021 17:36:33 - TRACE - goToByURL - Succeeded in Step 3
+19-01-2021 17:36:37 - TRACE - goToByURL - Succeeded in Step 3
+19-01-2021 17:36:40 - TRACE - goToOpportunityPage - Succeeded in Step 3
+19-01-2021 17:36:40 - TRACE - opportunityPageValidation - Succeeded in Step: 3
+19-01-2021 17:36:40 - INFO - createQuickSaleOPTY - Executed with success
+19-01-2021 17:36:40 - TRACE - clickNewBasketButtonOnOPTY - Succeeded in Step 4
+19-01-2021 17:36:48 - TRACE - Product Basket: Change to Product Basket iframe in Partners Community - Succeeded in Step 4
+19-01-2021 17:36:48 - TRACE - createProductBasket - Succeeded in Step 4
+19-01-2021 17:36:48 - ERROR - createProductBasketPC - Executed with errors - java.lang.Exception: Opportunity: Create Product Basket in PC - Failed in Step: 4
+19-01-2021 17:36:48 - ERROR - GeneralTestingClassPC_D02_TC01_ProductInProductBasket - Test Failed on Pre Conditions Setup - java.lang.Exception: Opportunity: Create Product Basket in PC - Failed in Step: 4
+19-01-2021 17:36:48 - INFO - finishTest - Test Case: GeneralTestingClassPC_D02_TC01_ProductInProductBasket completion
+############################# End Of Log File #################################

@@ -1,0 +1,19 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: GeneralTestingClassPC_D02_TC01_ProductInProductBasket
+Log Date: 19-01-2021 15:50:04
+Test Status: Passed
+###############################################################################
+19-01-2021 15:50:09 - INFO - startTest - Test Case: GeneralTestingClassPC_D02_TC01_ProductInProductBasket initiation
+19-01-2021 15:50:11 - TRACE - goToLoginPage - Executed with success
+19-01-2021 15:50:12 - TRACE - fillcredentials - Executed with success
+19-01-2021 15:50:14 - TRACE - pressLoginButton - Executed with success
+19-01-2021 15:50:14 - TRACE - loginPartnersCommunity - Succeeded in Step 1
+19-01-2021 15:50:17 - TRACE - HomePageValidation - Succeeded in Step: 1
+19-01-2021 15:50:17 - INFO - LoginPartnersCommunity - Executed with success
+19-01-2021 15:50:22 - TRACE - Home Page: Go To Company Page By URL - Succeeded in Step 2
+19-01-2021 15:50:22 - TRACE - CompanyPageValidation - Succeeded in Step: 2
+19-01-2021 15:50:22 - INFO - NavigateToCompanyPage - Executed with success
+19-01-2021 15:50:23 - INFO - finishTest - Test Case: GeneralTestingClassPC_D02_TC01_ProductInProductBasket completion
+############################# End Of Log File #################################

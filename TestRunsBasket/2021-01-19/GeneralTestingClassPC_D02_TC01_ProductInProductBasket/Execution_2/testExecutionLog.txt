@@ -1,0 +1,20 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: GeneralTestingClassPC_D02_TC01_ProductInProductBasket
+Log Date: 19-01-2021 15:13:41
+Test Status: Failed
+###############################################################################
+19-01-2021 15:13:46 - INFO - startTest - Test Case: GeneralTestingClassPC_D02_TC01_ProductInProductBasket initiation
+19-01-2021 15:13:48 - TRACE - goToLoginPage - Executed with success
+19-01-2021 15:13:49 - TRACE - fillcredentials - Executed with success
+19-01-2021 15:13:52 - TRACE - pressLoginButton - Executed with success
+19-01-2021 15:13:52 - TRACE - loginPartnersCommunity - Succeeded in Step 1
+19-01-2021 15:13:54 - TRACE - HomePageValidation - Succeeded in Step: 1
+19-01-2021 15:13:54 - INFO - LoginPartnersCommunity - Executed with success
+19-01-2021 15:13:57 - TRACE - Home Page: Go To Company Page By URL - Succeeded in Step 2
+19-01-2021 15:13:57 - ERROR - CompanyPageValidation - Failed in Step 2 - java.lang.NullPointerException
+19-01-2021 15:13:57 - ERROR - NavigateToCompanyPage - Executed with errors - java.lang.Exception: CompanyPageValidation - Failed in Step: 2
+19-01-2021 15:13:58 - ERROR - GeneralTestingClassPC_D02_TC01_ProductInProductBasket - Test Failed on Pre Conditions Setup - java.lang.Exception: Home Page: Navigate To Company Page - Failed in Step: 2
+19-01-2021 15:13:58 - INFO - finishTest - Test Case: GeneralTestingClassPC_D02_TC01_ProductInProductBasket completion
+############################# End Of Log File #################################
