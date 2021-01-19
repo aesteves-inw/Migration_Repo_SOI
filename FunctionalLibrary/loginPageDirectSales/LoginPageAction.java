@@ -10,6 +10,7 @@ import executionTools.BrowserActions;
 import fetchDataFromExcelFiles.ExcelDataFetch;
 import objectMap.sfDirectSales.DirSalesHomePage;
 import objectMap.sfDirectSales.DirSalesLoginPage;
+import objectMap.sfPartnersCommunity.PartComHomePage;
 import testExecutionData.TestCasesData;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
@@ -109,6 +110,7 @@ public class LoginPageAction {
 		}
 		
 	}
+	
 
 	
 	

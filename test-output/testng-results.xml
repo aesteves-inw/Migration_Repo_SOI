@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-01-15T09:34:17Z" name="Default suite" finished-at="2021-01-15T09:35:30Z" duration-ms="73943">
+  <suite name="Default suite" duration-ms="12900" started-at="2021-01-19T12:23:26Z" finished-at="2021-01-19T12:23:39Z">
     <groups>
     </groups>
-    <test started-at="2021-01-15T09:34:17Z" name="Default test" finished-at="2021-01-15T09:35:30Z" duration-ms="73943">
+    <test name="Default test" duration-ms="12900" started-at="2021-01-19T12:23:26Z" finished-at="2021-01-19T12:23:39Z">
       <class name="testingFrameworkPackage.GeneralTestingClassD03">
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:testingFrameworkPackage.GeneralTestingClassD03@27d5a580]" started-at="2021-01-15T09:34:17Z" name="beforeClass" finished-at="2021-01-15T09:34:21Z" duration-ms="4841" status="PASS">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:testingFrameworkPackage.GeneralTestingClassD03@47c62251]" name="beforeClass" is-config="true" duration-ms="4114" started-at="2021-01-19T12:23:26Z" finished-at="2021-01-19T12:23:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="ProductInProductBasket()[pri:0, instance:testingFrameworkPackage.GeneralTestingClassD03@27d5a580]" started-at="2021-01-15T09:34:21Z" name="ProductInProductBasket" finished-at="2021-01-15T09:35:27Z" duration-ms="65559" status="PASS">
+        <test-method status="PASS" signature="ProductInProductBasket()[pri:0, instance:testingFrameworkPackage.GeneralTestingClassD03@47c62251]" name="ProductInProductBasket" duration-ms="5952" started-at="2021-01-19T12:23:31Z" finished-at="2021-01-19T12:23:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ProductInProductBasket -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:testingFrameworkPackage.GeneralTestingClassD03@27d5a580]" started-at="2021-01-15T09:35:27Z" name="afterClass" finished-at="2021-01-15T09:35:30Z" duration-ms="3493" status="PASS">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:testingFrameworkPackage.GeneralTestingClassD03@47c62251]" name="afterClass" is-config="true" duration-ms="2815" started-at="2021-01-19T12:23:37Z" finished-at="2021-01-19T12:23:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->

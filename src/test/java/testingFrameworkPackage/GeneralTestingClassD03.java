@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 import executionDriver.ExecDriverClass;
 import executionTools.ExecStructure;
 import executionTools.TestStructure;
+import loginPageDirectSales.LoginPageAction;
 import testFrameworkLibrary.D02Models;
 import testFrameworkLibrary.D03Models;
 import testLogBuilder.TestLog;
@@ -48,13 +49,7 @@ public class GeneralTestingClassD03
 	@Test
 	public void ProductInProductBasket() throws Exception
 	{		
-		
-		
-		String product="External Quoted";
-		
-		String configurationProduct ="productPABX";
-		
-		D03Models.E2FFlowForD03(testExecStructure, logStream, driver, testName, product, configurationProduct);
+
 	}
 	
 	
