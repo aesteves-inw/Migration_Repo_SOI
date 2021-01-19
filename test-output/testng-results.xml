@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-01-15T09:34:17Z" name="Default suite" finished-at="2021-01-15T09:35:30Z" duration-ms="73943">
+  <suite started-at="2021-01-19T17:46:33Z" name="Default suite" finished-at="2021-01-19T17:47:44Z" duration-ms="71623">
     <groups>
     </groups>
-    <test started-at="2021-01-15T09:34:17Z" name="Default test" finished-at="2021-01-15T09:35:30Z" duration-ms="73943">
-      <class name="testingFrameworkPackage.GeneralTestingClassD03">
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:testingFrameworkPackage.GeneralTestingClassD03@27d5a580]" started-at="2021-01-15T09:34:17Z" name="beforeClass" finished-at="2021-01-15T09:34:21Z" duration-ms="4841" status="PASS">
+    <test started-at="2021-01-19T17:46:33Z" name="Default test" finished-at="2021-01-19T17:47:44Z" duration-ms="71623">
+      <class name="testingFrameworkPackage.GeneralTestingClassD02PC">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:testingFrameworkPackage.GeneralTestingClassD02PC@27d5a580]" started-at="2021-01-19T17:46:33Z" name="beforeClass" finished-at="2021-01-19T17:46:37Z" duration-ms="4733" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="ProductInProductBasket()[pri:0, instance:testingFrameworkPackage.GeneralTestingClassD03@27d5a580]" started-at="2021-01-15T09:34:21Z" name="ProductInProductBasket" finished-at="2021-01-15T09:35:27Z" duration-ms="65559" status="PASS">
+        <test-method signature="ProductInProductBasket()[pri:0, instance:testingFrameworkPackage.GeneralTestingClassD02PC@27d5a580]" started-at="2021-01-19T17:46:37Z" name="ProductInProductBasket" finished-at="2021-01-19T17:47:41Z" duration-ms="63492" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ProductInProductBasket -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:testingFrameworkPackage.GeneralTestingClassD03@27d5a580]" started-at="2021-01-15T09:35:27Z" name="afterClass" finished-at="2021-01-15T09:35:30Z" duration-ms="3493" status="PASS">
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:testingFrameworkPackage.GeneralTestingClassD02PC@27d5a580]" started-at="2021-01-19T17:47:41Z" name="afterClass" finished-at="2021-01-19T17:47:44Z" duration-ms="3356" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-      </class> <!-- testingFrameworkPackage.GeneralTestingClassD03 -->
+      </class> <!-- testingFrameworkPackage.GeneralTestingClassD02PC -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

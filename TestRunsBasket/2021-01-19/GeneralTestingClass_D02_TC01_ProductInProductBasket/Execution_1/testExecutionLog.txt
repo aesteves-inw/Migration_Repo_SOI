@@ -1,0 +1,16 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket
+Log Date: 19-01-2021 15:19:11
+Test Status: Failed
+###############################################################################
+19-01-2021 15:19:16 - INFO - startTest - Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket initiation
+19-01-2021 15:19:18 - TRACE - goToLoginPage - Executed with success
+19-01-2021 15:19:19 - TRACE - fillcredentials - Executed with success
+19-01-2021 15:20:00 - ERROR - pressLoginButton - Executed with errors - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class='comm-navigation forceCommunityGlobalNavigation'] (tried for 30 second(s) with 500 milliseconds interval)
+19-01-2021 15:20:00 - ERROR - loginPartnersCommunity - Failed in Step 1 - java.lang.Exception: pressLoginButton - Executed with errors
+19-01-2021 15:20:00 - ERROR - loginSFDS - Step 1 - Executed with errors - java.lang.Exception: loginPartnersCommunity - Failed in Step 1
+19-01-2021 15:20:00 - ERROR - GeneralTestingClass_D02_TC01_ProductInProductBasket - Test Failed on Pre Conditions Setup - java.lang.Exception: Login in Salesforce (Direct Sales) - Failed in Step: 1
+19-01-2021 15:20:00 - INFO - finishTest - Test Case: GeneralTestingClass_D02_TC01_ProductInProductBasket completion
+############################# End Of Log File #################################

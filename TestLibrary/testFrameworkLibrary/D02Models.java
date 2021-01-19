@@ -281,7 +281,6 @@ public class D02Models
 		}
 	}
 
-	
 	public static void ToDebugE2EFlow(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver, String testName) throws Exception
 	{
 		String userProfile="salesUser";

@@ -19,6 +19,7 @@ public class LoginPageAction {
 	public static void loginDirectSales(List<TestLog> logStream, WebDriver driver, int stepID, String user) throws Exception
 	{
 		String componentName="loginDirectSales";
+		
 		String locatedcomponentName=componentName+" on Step "+stepID;
 		
 		try
@@ -61,7 +62,7 @@ public class LoginPageAction {
 		
 	}
 
-	private static void fillcredentials(List<TestLog> logStream, WebDriver driver, String user) throws Exception 
+	public static void fillcredentials(List<TestLog> logStream, WebDriver driver, String user) throws Exception 
 	{
 		String componentName="fillcredentials";
 		

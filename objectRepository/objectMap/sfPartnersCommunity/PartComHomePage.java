@@ -12,8 +12,6 @@ public class PartComHomePage {
 	
 	public static String dashboard="//section[@role='tabpanel']";
 	
-	public static String headerLinkCompany="//a[@title='Company']";
-	
 	
 	
 	

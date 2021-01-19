@@ -21,7 +21,6 @@ import testLogger.TestLogger;
 public class ProductBasketNavigation 
 {
 
-	
 	private static boolean validateProductBasketScreenURL(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
 	{
 		String actionName="Product Basket: Validate Product Basket URL";
@@ -162,4 +161,7 @@ public class ProductBasketNavigation
 		}
 	}
 
+	
+	
+	
 }

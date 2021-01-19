@@ -1,0 +1,19 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: GeneralTestingClassPC_D02_TC01_ProductInProductBasket
+Log Date: 19-01-2021 15:42:44
+Test Status: Failed
+###############################################################################
+19-01-2021 15:42:49 - INFO - startTest - Test Case: GeneralTestingClassPC_D02_TC01_ProductInProductBasket initiation
+19-01-2021 15:42:51 - TRACE - goToLoginPage - Executed with success
+19-01-2021 15:42:51 - TRACE - fillcredentials - Executed with success
+19-01-2021 15:42:54 - TRACE - pressLoginButton - Executed with success
+19-01-2021 15:42:54 - TRACE - loginPartnersCommunity - Succeeded in Step 1
+19-01-2021 15:42:57 - TRACE - HomePageValidation - Succeeded in Step: 1
+19-01-2021 15:42:57 - INFO - LoginPartnersCommunity - Executed with success
+19-01-2021 15:43:21 - ERROR - Home Page: Go To Company Page By URL - Failed in Step 2 - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@role='list'] (tried for 15 second(s) with 500 milliseconds interval)
+19-01-2021 15:43:21 - ERROR - NavigateToCompanyPage - Executed with errors - java.lang.Exception: Home Page: Go To Company Page By URL - Failed in Step 2
+19-01-2021 15:43:22 - ERROR - GeneralTestingClassPC_D02_TC01_ProductInProductBasket - Test Failed on Pre Conditions Setup - java.lang.Exception: Home Page: Navigate To Company Page - Failed in Step: 2
+19-01-2021 15:43:22 - INFO - finishTest - Test Case: GeneralTestingClassPC_D02_TC01_ProductInProductBasket completion
+############################# End Of Log File #################################
