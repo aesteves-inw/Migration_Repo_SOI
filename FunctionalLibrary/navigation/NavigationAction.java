@@ -31,5 +31,27 @@ public class NavigationAction {
 		
 		
 	}
+	
+	public static void goToByURL(List<TestLog> logStream, WebDriver driver, int stepID, String optyURL) throws Exception 
+	{
+		String actionName="goToByURL";
+
+
+		try
+		{
+			BrowserActions.goToByURL(driver, optyURL);
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+		
+		
+	}
 
 }

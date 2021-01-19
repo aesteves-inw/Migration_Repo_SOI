@@ -16,7 +16,7 @@ import testLogBuilder.TestLog;
 import testReportComposition.TestReportTestData;
 import testReportComposition.TestStepReportStructure;
 
-public class GeneralTestingClassD02 extends ExecDriverClass
+public class GeneralTestingClassD02
 {
 	
 	String testName = "GeneralTestingClass_D02_TC01_ProductInProductBasket";
