@@ -1,0 +1,19 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SOI_3566_TC01_DS_ProductModellingSingleProducts
+Log Date: 20-01-2021 16:48:58
+Test Status: Failed
+###############################################################################
+20-01-2021 16:49:02 - INFO - startTest - Test Case: SOI_3566_TC01_DS_ProductModellingSingleProducts initiation
+20-01-2021 16:49:04 - TRACE - goToLoginPage - Executed with success
+20-01-2021 16:49:06 - TRACE - fillcredentials - Executed with success
+20-01-2021 16:49:10 - TRACE - pressLoginButton - Executed with success
+20-01-2021 16:49:10 - INFO - loginDirectSales on Step 1 - Executed with success
+20-01-2021 16:49:10 - ERROR - loginSFDS - Step 1 - Executed with errors - java.lang.Exception: Login in Salesforce (Direct Sales) - Failed in Step: 1
+20-01-2021 16:49:11 - ERROR - SOI_3566_TC01_DS_ProductModellingSingleProducts - Test Failed on Pre Conditions Setup - java.lang.Exception: Login in Salesforce (Direct Sales) - Failed in Step: 1
+20-01-2021 16:49:11 - ERROR - SOI_3566_TC01_DS_ProductModellingSingleProducts - Test Failed on Pre Conditions Setup - java.lang.Exception: SOI_3566_TC01_DS_ProductModellingSingleProducts: Test Case Failed on Test Model - ToHaveAProductBasket
+20-01-2021 16:49:11 - ERROR - SOI_3566_TC01_DS_ProductModellingSingleProducts - Test Failed - java.lang.Exception: SOI_3566_TC01_DS_ProductModellingSingleProducts: Test Case Failed on Test Model - ProductConfiguration with PABX
+20-01-2021 16:49:11 - ERROR - SOI_3566_TC01_DS_ProductModellingSingleProducts - Test Execution Failed - java.lang.Exception: SOI_3566_TC01_DS_ProductModellingSingleProducts: - Test Case Failed
+20-01-2021 16:49:11 - INFO - finishTest - Test Case: SOI_3566_TC01_DS_ProductModellingSingleProducts completion
+############################# End Of Log File #################################
