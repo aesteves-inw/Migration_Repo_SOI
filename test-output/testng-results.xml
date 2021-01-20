@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-01-19T17:46:33Z" name="Default suite" finished-at="2021-01-19T17:47:44Z" duration-ms="71623">
+  <suite started-at="2021-01-20T16:53:21Z" name="Default suite" finished-at="2021-01-20T16:54:30Z" duration-ms="69120">
     <groups>
     </groups>
-    <test started-at="2021-01-19T17:46:33Z" name="Default test" finished-at="2021-01-19T17:47:44Z" duration-ms="71623">
-      <class name="testingFrameworkPackage.GeneralTestingClassD02PC">
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:testingFrameworkPackage.GeneralTestingClassD02PC@27d5a580]" started-at="2021-01-19T17:46:33Z" name="beforeClass" finished-at="2021-01-19T17:46:37Z" duration-ms="4733" status="PASS">
+    <test started-at="2021-01-20T16:53:21Z" name="Default test" finished-at="2021-01-20T16:54:30Z" duration-ms="69120">
+      <class name="d03.SOI_3566.SOI_3566_TC01_DS_ProductModellingSingleProducts">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:d03.SOI_3566.SOI_3566_TC01_DS_ProductModellingSingleProducts@27d5a580]" started-at="2021-01-20T16:53:21Z" name="beforeClass" finished-at="2021-01-20T16:53:26Z" duration-ms="4715" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="ProductInProductBasket()[pri:0, instance:testingFrameworkPackage.GeneralTestingClassD02PC@27d5a580]" started-at="2021-01-19T17:46:37Z" name="ProductInProductBasket" finished-at="2021-01-19T17:47:41Z" duration-ms="63492" status="PASS">
+        <test-method signature="testCase()[pri:0, instance:d03.SOI_3566.SOI_3566_TC01_DS_ProductModellingSingleProducts@27d5a580]" started-at="2021-01-20T16:53:26Z" name="testCase" finished-at="2021-01-20T16:54:27Z" duration-ms="61212" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ProductInProductBasket -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:testingFrameworkPackage.GeneralTestingClassD02PC@27d5a580]" started-at="2021-01-19T17:47:41Z" name="afterClass" finished-at="2021-01-19T17:47:44Z" duration-ms="3356" status="PASS">
+        </test-method> <!-- testCase -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:d03.SOI_3566.SOI_3566_TC01_DS_ProductModellingSingleProducts@27d5a580]" started-at="2021-01-20T16:54:27Z" name="afterClass" finished-at="2021-01-20T16:54:30Z" duration-ms="3155" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-      </class> <!-- testingFrameworkPackage.GeneralTestingClassD02PC -->
+      </class> <!-- d03.SOI_3566.SOI_3566_TC01_DS_ProductModellingSingleProducts -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

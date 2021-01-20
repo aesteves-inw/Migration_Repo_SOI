@@ -1,0 +1,32 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SOI_2205_TC08_PC_ECS_Offerings_ECS_Pro_EnterpriseVoice
+Log Date: 20-01-2021 10:48:32
+Test Status: Failed
+###############################################################################
+20-01-2021 10:48:37 - INFO - startTest - Test Case: SOI_2205_TC08_PC_ECS_Offerings_ECS_Pro_EnterpriseVoice initiation
+20-01-2021 10:48:40 - TRACE - goToLoginPage - Executed with success
+20-01-2021 10:48:41 - TRACE - fillcredentials - Executed with success
+20-01-2021 10:48:45 - TRACE - pressLoginButton - Executed with success
+20-01-2021 10:48:45 - TRACE - loginPartnersCommunity - Succeeded in Step 1
+20-01-2021 10:48:48 - TRACE - HomePageValidation - Succeeded in Step: 1
+20-01-2021 10:48:48 - INFO - LoginPartnersCommunity - Executed with success
+20-01-2021 10:48:55 - TRACE - Home Page: Go To Company Page By URL - Succeeded in Step 2
+20-01-2021 10:48:55 - TRACE - CompanyPageValidation - Succeeded in Step: 2
+20-01-2021 10:48:55 - INFO - NavigateToCompanyPage - Executed with success
+20-01-2021 10:48:58 - TRACE - goToQuickSaleOpportunityScreen - Succeeded in Step 3
+20-01-2021 10:48:58 - TRACE - fillFieldsForQuickSale - Succeeded in Step 3
+20-01-2021 10:49:09 - ERROR - saveQuickSaleOPTY - Failed in Step 3 - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to no longer be visible: By.xpath: //h2[text()='Quick Sale'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'INNOWAVE-383', ip: '192.168.0.164', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.141, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\source\simpleOrderingInt...}, goog:chromeOptions: {debuggerAddress: localhost:62564}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: f1e1d53007c73ed036cb90f5f7131858
+20-01-2021 10:49:09 - ERROR - createQuickSaleOPTY - Failed in Step 3 - java.lang.Exception: saveQuickSaleOPTY - Failed in Step 3
+20-01-2021 10:49:09 - ERROR - createQuickSaleOPTY - Executed with errors - java.lang.Exception: createQuickSaleOPTY - Failed in Step 3
+20-01-2021 10:49:09 - ERROR - SOI_2205_TC08_PC_ECS_Offerings_ECS_Pro_EnterpriseVoice - Test Failed on Pre Conditions Setup - java.lang.Exception: Company: Create Quick Sale OPTY (Partners Community) - Failed in Step: 3
+20-01-2021 10:49:09 - ERROR - SOI_2205_TC08_PC_ECS_Offerings_ECS_Pro_EnterpriseVoice - Test Failed - java.lang.Exception: SOI_2205_TC08_PC_ECS_Offerings_ECS_Pro_EnterpriseVoice: Test Case Failed on Test Model - PartnersCommunity
+20-01-2021 10:49:09 - ERROR - SOI_2205_TC08_PC_ECS_Offerings_ECS_Pro_EnterpriseVoice - Test Execution Failed - java.lang.Exception: SOI_2205_TC08_PC_ECS_Offerings_ECS_Pro_EnterpriseVoice: Failed
+20-01-2021 10:49:09 - INFO - finishTest - Test Case: SOI_2205_TC08_PC_ECS_Offerings_ECS_Pro_EnterpriseVoice completion
+############################# End Of Log File #################################

@@ -18,7 +18,7 @@ import testReporter.TestReporter;
 
 public class EProdConfigStep 
 {
-
+	// D02 Products
 	public static void configureVoiceContinuity(List<TestStepReportStructure> testExecStructure,
 			List<TestLog> logStream, WebDriver driver, String testName, String productName, String configurationIndex) throws Exception 
 	{
@@ -195,6 +195,7 @@ public class EProdConfigStep
 		
 	}
 
+	// D03 Products
 	public static void configureNonQuotableProduct(List<TestStepReportStructure> testExecStructure,
 			List<TestLog> logStream, WebDriver driver, String testName, String configurationProduct) throws Exception 
 	{
@@ -237,4 +238,48 @@ public class EProdConfigStep
 		
 	}
 
+	
+	public static void validateD03ProductConfiguration(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName, String productName) throws Exception 
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+		
+		
+		String stepName="Product Configuration: D03 Product Validation";
+
+		String stepNameMin="validateD03ProductConfiguration";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			
+			validation = NonQuotableProducts.validationOfNQPConfiguration(logStream, driver, stepID, productName);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+		
+	}
+
+	
 }

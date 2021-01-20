@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testingFrameworkPackage.GeneralTestingClassD02PC">
+      <class name="d03.SOI_3566.SOI_3566_TC01_DS_ProductModellingSingleProducts">
         <methods>
-          <include name="afterClass"/>
-          <include name="ProductInProductBasket"/>
           <include name="beforeClass"/>
+          <include name="testCase"/>
+          <include name="afterClass"/>
         </methods>
-      </class> <!-- testingFrameworkPackage.GeneralTestingClassD02PC -->
+      </class> <!-- d03.SOI_3566.SOI_3566_TC01_DS_ProductModellingSingleProducts -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

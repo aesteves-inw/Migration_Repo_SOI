@@ -266,7 +266,52 @@ public class ProductBasketStep
 		}
 		
 	}
+	
+	public static void goToEditProductConfigurationScreenForD03(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName, String productName) throws Exception 
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+		
+		String stepName="Go To Edit Product Configuration Screen For D03 Product - "+productName;
 
+		String stepNameMin="goToEditProductConfigurationScreenForD03";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			ProductBasketAction.goToEditProductConfiguration(logStream, driver, stepID, productName);
+			
+			EProdConfigAction.changeToEditProductConfigurationiFrame(logStream, driver, stepID);
+
+			validation = EProdConfigAction.editProductConfigurationForD03(logStream, driver, stepID);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+		
+	}
+	
+	
 	public static void goToAgreementScreen(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, String testName) throws Exception
 	{
 		int stepID=TestExecutionReport.stepOfTestStep(testReportStream);

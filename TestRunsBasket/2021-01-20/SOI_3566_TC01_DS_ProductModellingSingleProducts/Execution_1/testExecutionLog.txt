@@ -1,0 +1,53 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SOI_3566_TC01_DS_ProductModellingSingleProducts
+Log Date: 20-01-2021 16:39:17
+Test Status: Failed
+###############################################################################
+20-01-2021 16:39:22 - INFO - startTest - Test Case: SOI_3566_TC01_DS_ProductModellingSingleProducts initiation
+20-01-2021 16:39:24 - TRACE - goToLoginPage - Executed with success
+20-01-2021 16:39:26 - TRACE - fillcredentials - Executed with success
+20-01-2021 16:39:31 - TRACE - pressLoginButton - Executed with success
+20-01-2021 16:39:31 - INFO - loginDirectSales on Step 1 - Executed with success
+20-01-2021 16:39:32 - TRACE - homePageValidation - Executed with success
+20-01-2021 16:39:32 - INFO - loginSFDS - Step 1 - Executed with success
+20-01-2021 16:39:37 - TRACE - goToCompanyDetailsPage - Executed with success
+20-01-2021 16:39:39 - TRACE - companyPageValidation - Executed with success
+20-01-2021 16:39:39 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+20-01-2021 16:39:41 - TRACE - openQuickSaleOPTYScreen - Executed with success
+20-01-2021 16:39:45 - TRACE - createQuickSaleOpty - Executed with success
+20-01-2021 16:39:49 - TRACE - saveOpportunity - Executed with success
+20-01-2021 16:39:49 - INFO - createQuickSaleOpty - Executed with success
+20-01-2021 16:39:50 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+20-01-2021 16:39:54 - INFO - goToOpportunityPage - Executed with success
+20-01-2021 16:39:55 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 3
+20-01-2021 16:39:55 - INFO - createQuickSaleOpportunity - Step 3 - Executed with success
+20-01-2021 16:39:57 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 4
+20-01-2021 16:39:59 - TRACE - clickNewProductBasketLink - Succeeded in Step 4
+20-01-2021 16:39:59 - TRACE - createProductBasket - Succeeded in Step 4
+20-01-2021 16:40:06 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 4
+20-01-2021 16:40:07 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 4
+20-01-2021 16:40:07 - INFO - createProductBasket - Executed with success
+20-01-2021 16:40:07 - TRACE - Product Basket: Open Add Product Menu - Succeeded in Step 5
+20-01-2021 16:40:08 - TRACE - addProductMenuValidation - Succeeded in Step: 5
+20-01-2021 16:40:08 - INFO - goToAddOferToBasketScreen - Executed with success
+20-01-2021 16:40:14 - TRACE - Add Offer to Basket: Pick Product - PABX - Succeeded in Step 6
+20-01-2021 16:40:14 - TRACE - productOnProductBasketValidation - Succeeded in Step: 6
+20-01-2021 16:40:14 - INFO - addProductToProductBasket - Executed with success
+20-01-2021 16:40:19 - TRACE - goToEditProductConfiguration - Succeeded in Step 7
+20-01-2021 16:40:19 - TRACE - Change to Edit Prodcut Configuration iframe - Succeeded in Step 7
+20-01-2021 16:40:39 - ERROR - Product Basket: Edit Product Configuration Screen Validation (By Test Name) - Failed in Step 7 - org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//h1[@title='PABX']"}
+  (Session info: chrome=87.0.4280.141)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'INNOWAVE-383', ip: '192.168.0.164', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.141, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\source\simpleOrderingInt...}, goog:chromeOptions: {debuggerAddress: localhost:65160}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 67a90480842f988eb74c0632a66dd1ae
+*** Element info: {Using=xpath, value=//h1[@title='PABX']}
+20-01-2021 16:40:39 - ERROR - goToEditProductConfigurationScreen - Executed with errors - java.lang.Exception: Product Basket: Edit Product Configuration Screen Validation (By Test Name) - Failed in Step: 7
+20-01-2021 16:40:40 - ERROR - SOI_3566_TC01_DS_ProductModellingSingleProducts - Test Failed - java.lang.Exception: Go To Edit Product Configuration Screen - PABX - Failed in Step: 7
+20-01-2021 16:40:40 - ERROR - SOI_3566_TC01_DS_ProductModellingSingleProducts - Test Execution Failed - java.lang.Exception: SOI_3566_TC01_DS_ProductModellingSingleProducts: - Test Case Failed
+20-01-2021 16:40:40 - INFO - finishTest - Test Case: SOI_3566_TC01_DS_ProductModellingSingleProducts completion
+############################# End Of Log File #################################
