@@ -1,0 +1,39 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SOI_2205_TC08_PC_ECS_Offerings_ECS_Pro_EnterpriseVoice
+Log Date: 20-01-2021 10:51:46
+Test Status: Passed
+###############################################################################
+20-01-2021 10:51:51 - INFO - startTest - Test Case: SOI_2205_TC08_PC_ECS_Offerings_ECS_Pro_EnterpriseVoice initiation
+20-01-2021 10:51:53 - TRACE - goToLoginPage - Executed with success
+20-01-2021 10:51:54 - TRACE - fillcredentials - Executed with success
+20-01-2021 10:51:57 - TRACE - pressLoginButton - Executed with success
+20-01-2021 10:51:57 - TRACE - loginPartnersCommunity - Succeeded in Step 1
+20-01-2021 10:52:00 - TRACE - HomePageValidation - Succeeded in Step: 1
+20-01-2021 10:52:00 - INFO - LoginPartnersCommunity - Executed with success
+20-01-2021 10:52:07 - TRACE - Home Page: Go To Company Page By URL - Succeeded in Step 2
+20-01-2021 10:52:08 - TRACE - CompanyPageValidation - Succeeded in Step: 2
+20-01-2021 10:52:08 - INFO - NavigateToCompanyPage - Executed with success
+20-01-2021 10:52:09 - TRACE - goToQuickSaleOpportunityScreen - Succeeded in Step 3
+20-01-2021 10:52:11 - TRACE - fillFieldsForQuickSale - Succeeded in Step 3
+20-01-2021 10:52:20 - TRACE - saveQuickSaleOPTY - Succeeded in Step 3
+20-01-2021 10:52:20 - TRACE - createQuickSaleOPTY - Succeeded in Step 3
+20-01-2021 10:52:23 - TRACE - goToByURL - Succeeded in Step 3
+20-01-2021 10:52:28 - TRACE - goToByURL - Succeeded in Step 3
+20-01-2021 10:52:32 - TRACE - goToOpportunityPage - Succeeded in Step 3
+20-01-2021 10:52:32 - TRACE - opportunityPageValidation - Succeeded in Step: 3
+20-01-2021 10:52:32 - INFO - createQuickSaleOPTY - Executed with success
+20-01-2021 10:52:32 - TRACE - clickNewBasketButtonOnOPTY - Succeeded in Step 4
+20-01-2021 10:52:32 - TRACE - createProductBasket - Succeeded in Step 4
+20-01-2021 10:52:39 - TRACE - Product Basket: Change to Product Basket iframe in Partners Community - Succeeded in Step 4
+20-01-2021 10:52:40 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 4
+20-01-2021 10:52:40 - INFO - createProductBasketPC - Executed with success
+20-01-2021 10:52:41 - TRACE - Product Basket: Open Add Product Menu - Succeeded in Step 5
+20-01-2021 10:52:42 - TRACE - addProductMenuValidation - Succeeded in Step: 5
+20-01-2021 10:52:42 - INFO - goToAddOferToBasketScreen - Executed with success
+20-01-2021 10:52:58 - TRACE - Add Offer to Basket: Pick Product - Enterprise Call & Surf FullFiber Extended - Succeeded in Step 6
+20-01-2021 10:52:58 - TRACE - productOnProductBasketValidation - Succeeded in Step: 6
+20-01-2021 10:52:58 - INFO - addProductToProductBasket - Executed with success
+20-01-2021 10:52:58 - INFO - finishTest - Test Case: SOI_2205_TC08_PC_ECS_Offerings_ECS_Pro_EnterpriseVoice completion
+############################# End Of Log File #################################
