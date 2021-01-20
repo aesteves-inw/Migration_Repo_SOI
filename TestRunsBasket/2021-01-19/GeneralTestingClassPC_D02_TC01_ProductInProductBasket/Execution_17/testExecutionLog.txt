@@ -1,0 +1,33 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: GeneralTestingClassPC_D02_TC01_ProductInProductBasket
+Log Date: 19-01-2021 17:59:10
+Test Status: Passed
+###############################################################################
+19-01-2021 17:59:15 - INFO - startTest - Test Case: GeneralTestingClassPC_D02_TC01_ProductInProductBasket initiation
+19-01-2021 17:59:17 - TRACE - goToLoginPage - Executed with success
+19-01-2021 17:59:18 - TRACE - fillcredentials - Executed with success
+19-01-2021 17:59:21 - TRACE - pressLoginButton - Executed with success
+19-01-2021 17:59:21 - TRACE - loginPartnersCommunity - Succeeded in Step 1
+19-01-2021 17:59:24 - TRACE - HomePageValidation - Succeeded in Step: 1
+19-01-2021 17:59:24 - INFO - LoginPartnersCommunity - Executed with success
+19-01-2021 17:59:31 - TRACE - Home Page: Go To Company Page By URL - Succeeded in Step 2
+19-01-2021 17:59:31 - TRACE - CompanyPageValidation - Succeeded in Step: 2
+19-01-2021 17:59:31 - INFO - NavigateToCompanyPage - Executed with success
+19-01-2021 17:59:34 - TRACE - goToQuickSaleOpportunityScreen - Succeeded in Step 3
+19-01-2021 17:59:34 - TRACE - fillFieldsForQuickSale - Succeeded in Step 3
+19-01-2021 18:00:02 - TRACE - saveQuickSaleOPTY - Succeeded in Step 3
+19-01-2021 18:00:02 - TRACE - createQuickSaleOPTY - Succeeded in Step 3
+19-01-2021 18:00:05 - TRACE - goToByURL - Succeeded in Step 3
+19-01-2021 18:00:09 - TRACE - goToByURL - Succeeded in Step 3
+19-01-2021 18:00:12 - TRACE - goToOpportunityPage - Succeeded in Step 3
+19-01-2021 18:00:12 - TRACE - opportunityPageValidation - Succeeded in Step: 3
+19-01-2021 18:00:12 - INFO - createQuickSaleOPTY - Executed with success
+19-01-2021 18:00:13 - TRACE - clickNewBasketButtonOnOPTY - Succeeded in Step 4
+19-01-2021 18:00:13 - TRACE - createProductBasket - Succeeded in Step 4
+19-01-2021 18:00:20 - TRACE - Product Basket: Change to Product Basket iframe in Partners Community - Succeeded in Step 4
+19-01-2021 18:00:21 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 4
+19-01-2021 18:00:21 - INFO - createProductBasketPC - Executed with success
+19-01-2021 18:00:21 - INFO - finishTest - Test Case: GeneralTestingClassPC_D02_TC01_ProductInProductBasket completion
+############################# End Of Log File #################################

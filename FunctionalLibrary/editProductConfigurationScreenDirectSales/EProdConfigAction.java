@@ -14,6 +14,8 @@ import testLogger.TestLogger;
 import executionTools.*;
 
 public class EProdConfigAction {
+	
+	//Operational Action
 
 	public static void changeToEditProductConfigurationiFrame(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
 	{
@@ -99,10 +101,13 @@ public class EProdConfigAction {
 		}
 	}
 	
+	
+	//Validation Action
+	
 	public static boolean editProductConfiguration(List<TestLog> logStream, WebDriver driver, int stepID,
 			String productName) throws Exception 
 	{
-		String actionName="Product Basket: Edit Product Configuration Screen Validation (By Test Name)";
+		String actionName="Product Basket: Edit Product Configuration Screen Validation";
 
 		try
 		{
@@ -133,5 +138,41 @@ public class EProdConfigAction {
 		}
 	}
 
+
+	public static boolean editProductConfigurationForD03(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
+	{
+		String actionName="Product Basket: Edit Product Configuration Screen Validation";
+		
+		String productName="External Quoted";
+
+		try
+		{
+			WebElement productToBeConfigured=driver.findElement(By.xpath("//h1[@title='"+productName+"']"));
+
+			String productToBeConfiguredValidation=productToBeConfigured.getText().toString();
+
+			if(
+					BrowserActions.isElementPresent(driver, DirSalesEditProductConfiguration.bannerEditProductConfiguration) &&
+					BrowserActions.isElementPresent(driver, DirSalesEditProductConfiguration.productConfigurationLabel) &&
+					productToBeConfigured.isDisplayed() && productToBeConfiguredValidation.contains(productName)
+					)
+			{
+				System.out.println(actionName+" - Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
+	
 
 }

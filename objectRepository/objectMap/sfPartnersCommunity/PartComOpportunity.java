@@ -48,7 +48,7 @@ public class PartComOpportunity {
 	
 	public static String optyHeader="/html/body/div[4]/div[2]/div/div[2]/div[1]/div/div[1]/header/div[2]";
 	
-	public static String optyDetails="//div[@role='list']";
+	public static String optyDetails="//div[@class='forceCommunityRecordDetail']";
 	
 	public static String followButton="//span[@title='Follow']";
 	
@@ -56,7 +56,7 @@ public class PartComOpportunity {
 	
 	public static String editButton="//li/a/div[@title='Edit']";
 	
-	
+	public static String buttonNewBasketButton="//button[@data-aura-class='cPRX_CS_NewBasketOpportunity']";
 	
 	
 	
@@ -92,4 +92,7 @@ public class PartComOpportunity {
 	//  --- Products ---
 	
 	public static String ordersArea="//article[contains(.,'Orders')]";
+	
+	
+	
 }

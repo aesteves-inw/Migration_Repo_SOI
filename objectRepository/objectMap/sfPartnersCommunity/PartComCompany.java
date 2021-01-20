@@ -27,9 +27,7 @@ public class PartComCompany {
 	
 	public static String relListNewOPTYButton="//article[contains(.,'Opportunities')]//div[@title='New']";
 	
-	public static String relListAgreementsLink="//article[contains(.,'Agreements')]//span[@title='Agreements']";
-	
-	public static String companyDetails="//div[@role='list']";
+	public static String companyDetails="//div[@class='forceCommunityRecordDetail']";
 	
 	
 	
@@ -45,5 +43,13 @@ public class PartComCompany {
 	
 	// ..:: MACD Order ::..
 	public static String linkMACDOrder="//article[contains(.,'Orders')]//tr/th/div/a";
-
+	
+	
+	
+	//19-01-2021
+	public static String buttonQuickButton="//div[@title='Quick Sale']";
+	
+	public static String headerQuickSale="//h2[text()='Quick Sale']";
+	
+	public static String buttonSaveQuickSale="//div[@class='modal-footer slds-modal__footer']//span[text()='Save']";
 }
