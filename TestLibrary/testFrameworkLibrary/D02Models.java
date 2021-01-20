@@ -8,12 +8,16 @@ import org.openqa.selenium.WebDriver;
 import addOfferToBasketDirectSales.AddOfferToBasketStep;
 import agreementDirectSales.AgreementStep;
 import companyDirectSales.CompanyStep;
+import companyPartCom.CompanyPCStep;
 import editProductConfigurationScreenDirectSales.EProdConfigStep;
 import homePageDirectSales.HomePageStep;
+import homePagePartCom.HomePagePCStep;
 import loginPageDirectSales.LoginPageStep;
+import loginPagePartCom.LoginPagePCStep;
 import navigation.NavigationStep;
 import objectMap.sfDirectSales.DirSalesProductBasket;
 import opportunityDirectSales.OpportunityStep;
+import opportunityPartCom.OpportunityPCStep;
 import productBasketDirectSales.ProductBasketStep;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
@@ -65,6 +69,29 @@ public class D02Models
 			System.out.println(e);
 			TestLogger.logError(logStream, testName, "Test Failed on Pre Conditions Setup", e.toString());
 			throw new Exception(testName+": Test Case Failed on Test Model - ProductConfiguration with "+productName);
+		}
+	}
+
+	public static void ToHaveAProductBasketInPC(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver, String testName) throws Exception
+	{
+		String user="farmerUser";
+		
+		try
+		{
+			LoginPagePCStep.LoginPartnersCommunity(testExecStructure, logStream, driver, testName, user);
+
+			HomePagePCStep.NavigateToCompanyPage(testExecStructure, logStream, driver, testName);
+			
+			CompanyPCStep.createQuickSaleOPTY(testExecStructure, logStream, driver, testName);
+			
+			OpportunityPCStep.createProductBasket(testExecStructure, logStream, driver, testName);
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, testName, "Test Failed on Pre Conditions Setup", e.toString());
+			throw new Exception(testName+": Test Case Failed on Test Model - PartnersCommunity");
 		}
 	}
 
@@ -213,6 +240,7 @@ public class D02Models
 			throw new Exception(testName+": Test Case Failed on Test Model - AddAndConfigureNewProduct with "+productName);
 		}
 	}
+	
 	
 	
 	//Generic E2E Flow in D02

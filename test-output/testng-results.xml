@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-01-19T17:46:33Z" name="Default suite" finished-at="2021-01-19T17:47:44Z" duration-ms="71623">
+  <suite started-at="2021-01-20T10:51:46Z" name="Default suite" finished-at="2021-01-20T10:53:02Z" duration-ms="75819">
     <groups>
     </groups>
-    <test started-at="2021-01-19T17:46:33Z" name="Default test" finished-at="2021-01-19T17:47:44Z" duration-ms="71623">
-      <class name="testingFrameworkPackage.GeneralTestingClassD02PC">
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:testingFrameworkPackage.GeneralTestingClassD02PC@27d5a580]" started-at="2021-01-19T17:46:33Z" name="beforeClass" finished-at="2021-01-19T17:46:37Z" duration-ms="4733" status="PASS">
+    <test started-at="2021-01-20T10:51:46Z" name="Default test" finished-at="2021-01-20T10:53:02Z" duration-ms="75819">
+      <class name="d02.SOI_2205.SOI_2205_TC08_PC_ECS_Offerings_ECS_Pro_EnterpriseVoice">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:d02.SOI_2205.SOI_2205_TC08_PC_ECS_Offerings_ECS_Pro_EnterpriseVoice@198d6542]" started-at="2021-01-20T10:51:46Z" name="beforeClass" finished-at="2021-01-20T10:51:51Z" duration-ms="4549" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="ProductInProductBasket()[pri:0, instance:testingFrameworkPackage.GeneralTestingClassD02PC@27d5a580]" started-at="2021-01-19T17:46:37Z" name="ProductInProductBasket" finished-at="2021-01-19T17:47:41Z" duration-ms="63492" status="PASS">
+        <test-method signature="testCase()[pri:0, instance:d02.SOI_2205.SOI_2205_TC08_PC_ECS_Offerings_ECS_Pro_EnterpriseVoice@198d6542]" started-at="2021-01-20T10:51:51Z" name="testCase" finished-at="2021-01-20T10:52:58Z" duration-ms="67786" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ProductInProductBasket -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:testingFrameworkPackage.GeneralTestingClassD02PC@27d5a580]" started-at="2021-01-19T17:47:41Z" name="afterClass" finished-at="2021-01-19T17:47:44Z" duration-ms="3356" status="PASS">
+        </test-method> <!-- testCase -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:d02.SOI_2205.SOI_2205_TC08_PC_ECS_Offerings_ECS_Pro_EnterpriseVoice@198d6542]" started-at="2021-01-20T10:52:58Z" name="afterClass" finished-at="2021-01-20T10:53:02Z" duration-ms="3439" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-      </class> <!-- testingFrameworkPackage.GeneralTestingClassD02PC -->
+      </class> <!-- d02.SOI_2205.SOI_2205_TC08_PC_ECS_Offerings_ECS_Pro_EnterpriseVoice -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

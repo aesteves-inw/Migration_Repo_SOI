@@ -3,6 +3,7 @@ package companyPartCom;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -96,9 +97,11 @@ public class CompanyPCAction
 
 		try
 		{
-			driver.findElement(By.xpath(PartComCompany.buttonSaveQuickSale)).click();
+			WebElement buttonSaveQuickSale = driver.findElement(By.xpath(PartComCompany.buttonSaveQuickSale));
 			
-			new WebDriverWait(driver, 10).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(PartComCompany.headerQuickSale)));
+			buttonSaveQuickSale.click();
+			
+			new WebDriverWait(driver, 15).until(ExpectedConditions.invisibilityOf(buttonSaveQuickSale));
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
