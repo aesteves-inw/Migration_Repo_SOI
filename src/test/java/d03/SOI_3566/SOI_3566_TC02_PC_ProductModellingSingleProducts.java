@@ -49,7 +49,7 @@ public class SOI_3566_TC02_PC_ProductModellingSingleProducts
 	{
 		try
 		{
-			SOI_3566.SOI_3566_TC02_PC_ProductModellingSingleProducts (testExecStructure, logStream, testName, driver);
+			SOI_3566.SOI_3566_TC02_PC_ProductModellingSingleProducts(testExecStructure, logStream, testName, driver);
 		}
 		catch(Exception e)
 		{

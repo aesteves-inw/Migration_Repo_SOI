@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-01-20T16:53:21Z" name="Default suite" finished-at="2021-01-20T16:54:30Z" duration-ms="69120">
+  <suite started-at="2021-01-21T11:36:10Z" name="Default suite" finished-at="2021-01-21T11:37:27Z" duration-ms="77267">
     <groups>
     </groups>
-    <test started-at="2021-01-20T16:53:21Z" name="Default test" finished-at="2021-01-20T16:54:30Z" duration-ms="69120">
+    <test started-at="2021-01-21T11:36:10Z" name="Default test" finished-at="2021-01-21T11:37:27Z" duration-ms="77267">
       <class name="d03.SOI_3566.SOI_3566_TC01_DS_ProductModellingSingleProducts">
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:d03.SOI_3566.SOI_3566_TC01_DS_ProductModellingSingleProducts@27d5a580]" started-at="2021-01-20T16:53:21Z" name="beforeClass" finished-at="2021-01-20T16:53:26Z" duration-ms="4715" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:d03.SOI_3566.SOI_3566_TC01_DS_ProductModellingSingleProducts@27d5a580]" started-at="2021-01-21T11:36:10Z" name="beforeClass" finished-at="2021-01-21T11:36:15Z" duration-ms="4988" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="testCase()[pri:0, instance:d03.SOI_3566.SOI_3566_TC01_DS_ProductModellingSingleProducts@27d5a580]" started-at="2021-01-20T16:53:26Z" name="testCase" finished-at="2021-01-20T16:54:27Z" duration-ms="61212" status="PASS">
+        <test-method signature="testCase()[pri:0, instance:d03.SOI_3566.SOI_3566_TC01_DS_ProductModellingSingleProducts@27d5a580]" started-at="2021-01-21T11:36:15Z" name="testCase" finished-at="2021-01-21T11:37:24Z" duration-ms="69042" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCase -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:d03.SOI_3566.SOI_3566_TC01_DS_ProductModellingSingleProducts@27d5a580]" started-at="2021-01-20T16:54:27Z" name="afterClass" finished-at="2021-01-20T16:54:30Z" duration-ms="3155" status="PASS">
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:d03.SOI_3566.SOI_3566_TC01_DS_ProductModellingSingleProducts@27d5a580]" started-at="2021-01-21T11:37:24Z" name="afterClass" finished-at="2021-01-21T11:37:27Z" duration-ms="3192" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
