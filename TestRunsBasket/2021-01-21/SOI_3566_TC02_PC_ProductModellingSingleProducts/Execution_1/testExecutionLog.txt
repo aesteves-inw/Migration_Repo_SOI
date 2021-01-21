@@ -1,0 +1,45 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SOI_3566_TC02_PC_ProductModellingSingleProducts
+Log Date: 21-01-2021 10:49:44
+Test Status: Failed
+###############################################################################
+21-01-2021 10:49:50 - INFO - startTest - Test Case: SOI_3566_TC02_PC_ProductModellingSingleProducts initiation
+21-01-2021 10:49:52 - TRACE - goToLoginPage - Executed with success
+21-01-2021 10:49:53 - TRACE - fillcredentials - Executed with success
+21-01-2021 10:49:57 - TRACE - pressLoginButton - Executed with success
+21-01-2021 10:49:57 - TRACE - loginPartnersCommunity - Succeeded in Step 1
+21-01-2021 10:50:00 - TRACE - HomePageValidation - Succeeded in Step: 1
+21-01-2021 10:50:00 - INFO - LoginPartnersCommunity - Executed with success
+21-01-2021 10:50:07 - TRACE - Home Page: Go To Company Page By URL - Succeeded in Step 2
+21-01-2021 10:50:07 - TRACE - CompanyPageValidation - Succeeded in Step: 2
+21-01-2021 10:50:07 - INFO - NavigateToCompanyPage - Executed with success
+21-01-2021 10:50:10 - TRACE - goToQuickSaleOpportunityScreen - Succeeded in Step 3
+21-01-2021 10:50:10 - TRACE - fillFieldsForQuickSale - Succeeded in Step 3
+21-01-2021 10:50:19 - TRACE - saveQuickSaleOPTY - Succeeded in Step 3
+21-01-2021 10:50:19 - TRACE - createQuickSaleOPTY - Succeeded in Step 3
+21-01-2021 10:50:22 - TRACE - goToByURL - Succeeded in Step 3
+21-01-2021 10:50:25 - TRACE - goToByURL - Succeeded in Step 3
+21-01-2021 10:50:29 - TRACE - goToOpportunityPage - Succeeded in Step 3
+21-01-2021 10:50:29 - TRACE - opportunityPageValidation - Succeeded in Step: 3
+21-01-2021 10:50:29 - INFO - createQuickSaleOPTY - Executed with success
+21-01-2021 10:50:30 - TRACE - clickNewBasketButtonOnOPTY - Succeeded in Step 4
+21-01-2021 10:50:30 - TRACE - createProductBasket - Succeeded in Step 4
+21-01-2021 10:50:37 - TRACE - Product Basket: Change to Product Basket iframe in Partners Community - Succeeded in Step 4
+21-01-2021 10:50:38 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 4
+21-01-2021 10:50:38 - INFO - createProductBasketPC - Executed with success
+21-01-2021 10:50:59 - ERROR - Add Offer to Basket: Pick Product - PABX - Failed in Step 5 - org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"link text","selector":"PABX"}
+  (Session info: chrome=87.0.4280.141)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'INNOWAVE-383', ip: '192.168.0.164', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.141, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\source\simpleOrderingInt...}, goog:chromeOptions: {debuggerAddress: localhost:54110}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: dcedaa83189020726b8d9d21884bbb91
+*** Element info: {Using=link text, value=PABX}
+21-01-2021 10:50:59 - ERROR - addProductToProductBasket - Executed with errors - java.lang.Exception: Add Offer to Basket: Pick Product - PABX - Failed in Step 5
+21-01-2021 10:50:59 - ERROR - SOI_3566_TC02_PC_ProductModellingSingleProducts - Test Failed - java.lang.Exception: Add Offer to Basket: PABX - Failed in Step: 5
+21-01-2021 10:50:59 - ERROR - SOI_3566_TC02_PC_ProductModellingSingleProducts - Test Execution Failed - java.lang.Exception: SOI_3566_TC02_PC_ProductModellingSingleProducts: - Test Case Failed
+21-01-2021 10:50:59 - INFO - finishTest - Test Case: SOI_3566_TC02_PC_ProductModellingSingleProducts completion
+############################# End Of Log File #################################

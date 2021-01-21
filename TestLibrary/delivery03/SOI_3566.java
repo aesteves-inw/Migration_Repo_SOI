@@ -49,13 +49,15 @@ public class SOI_3566 {
 		{
 			D02Models.ToHaveAProductBasketInPC(testExecStructure, logStream, driver, testName);
 			
+			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, testName);
+			
 			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, productName);
             
 			ProductBasketStep.goToEditProductConfigurationScreenForD03(testExecStructure, logStream, driver, testName, productName);
 			
 			EProdConfigStep.validateD03ProductConfiguration(testExecStructure, logStream, driver, testName, productName);
 			
-			EProdConfigStep.finsihConfiguration(testExecStructure, logStream, driver, testName);
+			EProdConfigStep.finsihConfigurationInPC(testExecStructure, logStream, driver, testName);
 			
 			
 		}
