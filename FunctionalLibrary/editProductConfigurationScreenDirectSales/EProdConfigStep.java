@@ -5,6 +5,7 @@ import java.util.List;
 import org.openqa.selenium.WebDriver;
 import executionTools.TestExecutionReport;
 import productBasketDirectSales.ProductBasketAction;
+import productBasketPartCom.ProductBasketPCAction;
 import productConfigurationCloudSense.NonQuotableProducts;
 import productConfigurationCloudSense.PhoneLine;
 import productConfigurationCloudSense.ProfessionalInternet;
@@ -83,6 +84,47 @@ public class EProdConfigStep
 			EProdConfigAction.finishConfiguration(logStream, driver, stepID);
 
 			validation = ProductBasketAction.productBasketScreenValidation(logStream, driver, stepID);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+	}
+	
+	public static void finsihConfigurationInPC(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName) throws Exception
+	{
+		
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);		
+		
+		String stepName="Edit Product Configuration 'Screen': Finish Configuration";
+
+		String stepNameMin="finsihConfiguration";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);	
+
+		boolean validation;
+
+		try
+		{
+			EProdConfigAction.finishConfiguration(logStream, driver, stepID);
+
+			validation = ProductBasketPCAction.validateProductBasketScreen(logStream, stepID, driver);
 
 			if(validation==true)
 			{
