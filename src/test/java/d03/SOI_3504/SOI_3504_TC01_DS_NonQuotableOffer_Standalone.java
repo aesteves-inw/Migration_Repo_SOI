@@ -8,7 +8,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import delivery02.SOI_1013;
 import delivery03.SOI_3504;
 import executionDriver.ExecDriverClass;
 import executionTools.BrowserActions;
