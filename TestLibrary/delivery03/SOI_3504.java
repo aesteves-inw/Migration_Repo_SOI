@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import addOfferToBasketDirectSales.AddOfferToBasketStep;
 import editProductConfigurationScreenDirectSales.EProdConfigStep;
 import productBasketDirectSales.ProductBasketStep;
+import productConfigurationCloudSense.NonQuotableProducts;
 import testFrameworkLibrary.D02Models;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
@@ -86,12 +87,18 @@ public class SOI_3504 {
 	{
 
 		String productName ="PABX";
+		
+		String configurationIndex="productPABX";
 
 		try
 		{
-			D02Models.ProductInProductBasket(testExecStructure, logStream, driver, testName, productName);
-
-			ProductBasketStep.goToEditProductConfigurationScreenForD03(testExecStructure, logStream, driver, testName, productName);
+			D02Models.ToHaveAProductBasketInPC(testExecStructure, logStream, driver, testName);
+			
+			D02Models.AddAndConfigureNewProduct(testExecStructure, logStream, driver, testName, productName, configurationIndex);
+			
+			NonQuotableProducts.configurationOfNonQuotableProduct(logStream, driver, stepsExecuted, productName);
+			
+			//ProductBasketStep.goToEditProductConfigurationScreenForD03(testExecStructure, logStream, driver, testName, productName);
 
 			EProdConfigStep.validateD03ProductConfiguration(testExecStructure, logStream, driver, testName, productName);
 

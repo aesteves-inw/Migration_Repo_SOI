@@ -18,7 +18,7 @@ public class ExecDriverClass {
 	{
 		WebDriver driver;
 		
-		System.setProperty("webdriver.chrome.driver", "C:\\source\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\steve\\git\\simpleOrderingIntake\\lib\\chromedriver.exe");
 
 		ChromeOptions chromeProfile = new ChromeOptions(); 
 
