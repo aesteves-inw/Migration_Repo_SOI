@@ -37,8 +37,6 @@ public class LoginPageStep {
 			
 			validation=HomePageAction.homePageValidation(logStream, driver);
 			
-			System.out.println("validation result on Login: "+validation);
-			
 			if (validation==true) 
 			{
 				TestLogger.logInfo(logStream, componentOfTheLog, TestLogger.logInfo);
