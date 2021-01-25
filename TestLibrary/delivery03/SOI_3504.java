@@ -92,17 +92,18 @@ public class SOI_3504 {
 
 		try
 		{
+			
 			D02Models.ToHaveAProductBasketInPC(testExecStructure, logStream, driver, testName);
 			
-			D02Models.AddAndConfigureNewProduct(testExecStructure, logStream, driver, testName, productName, configurationIndex);
+			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, testName);
 			
-			NonQuotableProducts.configurationOfNonQuotableProduct(logStream, driver, stepsExecuted, productName);
+			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, productName);
+            
+			ProductBasketStep.goToEditProductConfigurationScreenForD03(testExecStructure, logStream, driver, testName, productName);
 			
-			//ProductBasketStep.goToEditProductConfigurationScreenForD03(testExecStructure, logStream, driver, testName, productName);
-
 			EProdConfigStep.validateD03ProductConfiguration(testExecStructure, logStream, driver, testName, productName);
-
-			EProdConfigStep.finsihConfiguration(testExecStructure, logStream, driver, testName);
+			
+			EProdConfigStep.finsihConfigurationInPC(testExecStructure, logStream, driver, testName);
 
 
 		}
