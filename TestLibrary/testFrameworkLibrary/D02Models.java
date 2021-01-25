@@ -192,6 +192,9 @@ public class D02Models
 			case "Professional Internet":
 				EProdConfigStep.configureProfessionalInternet(testExecStructure, logStream, driver, testName, productName, configurationIndex);
 				break;
+			case "PABX":
+				EProdConfigStep.configureNonQuotableProduct(testExecStructure, logStream, driver, testName, configurationIndex);
+				break;
 			default:
 				throw new Exception("Product Invalid in Test Data File");
 			}
@@ -225,6 +228,9 @@ public class D02Models
 				break;
 			case "Professional Internet":
 				EProdConfigStep.configureProfessionalInternet(testExecStructure, logStream, driver, testName, productName, configurationIndex);
+				break;
+			case "PABX":
+				EProdConfigStep.configureNonQuotableProduct(testExecStructure, logStream, driver, testName, configurationIndex);
 				break;
 			default:
 				throw new Exception("Product Invalid in Test Data File");
