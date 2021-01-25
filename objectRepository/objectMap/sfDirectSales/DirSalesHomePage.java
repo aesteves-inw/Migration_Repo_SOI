@@ -13,7 +13,8 @@ public class DirSalesHomePage {
 	public static String sfApplication = "/html/body/div[5]/div[1]/section/header/div[3]/one-appnav/div/div/div/span/span";
 	
 	public static String opportunitiesHeaderButton = "//a[@title='Opportunities']";
-	// public static String
+	
+	public static String homePageDetails="//*[@data-aura-class='homeDesktopTemplate']";
 	
 }
 

@@ -2,8 +2,13 @@ package homePageDirectSales;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import fetchDataFromExcelFiles.ExcelDataFetch;
+import objectMap.sfDirectSales.DirSalesHomePage;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
 
@@ -16,17 +21,20 @@ public class HomePageAction {
 
 		String homePageURLValidation, homePageURL, homePageTitle, homePageTitleValidation;
 
-		homePageURLValidation=driver.getCurrentUrl();
-
-		homePageTitleValidation=driver.getTitle();
-
 		homePageURL=ExcelDataFetch.searchDT(0, "DirectSalesHomePage");
 
 		homePageTitle=ExcelDataFetch.searchDT(0, "DirectSalesHomePageTitle");
 
 		try
 		{
+			// 25/01 - Applied fix for login issue
+			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesHomePage.homePageDetails)));
 			
+			homePageURLValidation=driver.getCurrentUrl();
+
+			homePageTitleValidation=driver.getTitle();
+			
+			//End of fix for login issue
 			
 			if(homePageURL.equalsIgnoreCase(homePageURLValidation) && homePageTitle.equalsIgnoreCase(homePageTitleValidation))
 			{
