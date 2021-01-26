@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import browserManagement.BrowserData;
+import executionTools.ExecStructure;
 
 
 public class ExecDriverClass {
@@ -18,7 +19,7 @@ public class ExecDriverClass {
 	{
 		WebDriver driver;
 		
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\steve\\git\\simpleOrderingIntake\\lib\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", ExecStructure.workingDir+"\\lib\\chromedriver.exe");
 
 		ChromeOptions chromeProfile = new ChromeOptions(); 
 
