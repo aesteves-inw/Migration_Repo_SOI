@@ -148,6 +148,8 @@ public class SOI_3504 {
 			EProdConfigStep.validateD03ProductConfiguration(testExecStructure, logStream, driver, testName, productName);
 
 			EProdConfigStep.finsihConfigurationInPC(testExecStructure, logStream, driver, testName);
+			
+			D02Models.AddAndConfigureNewProduct(testExecStructure, logStream, driver, testName, productName2, configurationIndex2);
 
 		}
 		catch(Exception e)
