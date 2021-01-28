@@ -218,6 +218,8 @@ public class D02Models
 			
 			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, productName);
 			
+			ProductBasketStep.goToEditProductConfigurationScreen(testExecStructure, logStream, driver, testName, productName);
+			
 			switch(productName)
 			{
 			case "Voice Continuity":
@@ -247,6 +249,45 @@ public class D02Models
 		}
 	}
 	
+	
+	public static void AddAndConfigureNewProductInPC(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver, String testName, String productName, String configurationIndex) throws Exception
+	{
+		try
+		{			
+			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, testName);
+			
+			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, productName);
+			
+			ProductBasketStep.goToEditProductConfigurationScreen(testExecStructure, logStream, driver, testName, productName);
+			
+			switch(productName)
+			{
+			case "Voice Continuity":
+				EProdConfigStep.configureVoiceContinuity(testExecStructure, logStream, driver, testName, productName, configurationIndex);
+				break;
+			case "Phone Line":
+				EProdConfigStep.configurePhoneLine(testExecStructure, logStream, driver, testName, productName, configurationIndex);
+				break;
+			case "Professional Internet":
+				EProdConfigStep.configureProfessionalInternet(testExecStructure, logStream, driver, testName, productName, configurationIndex);
+				break;
+			case "PABX":
+				EProdConfigStep.configureNonQuotableProduct(testExecStructure, logStream, driver, testName, configurationIndex);
+				break;
+			default:
+				throw new Exception("Product Invalid in Test Data File");
+			}
+			
+			EProdConfigStep.finsihConfigurationInPC(testExecStructure, logStream, driver, testName);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, testName, "Test Failed on Pre Conditions Setup", e.toString());
+			throw new Exception(testName+": Test Case Failed on Test Model - AddAndConfigureNewProduct with "+productName);
+		}
+	}
 	
 	
 	//Generic E2E Flow in D02

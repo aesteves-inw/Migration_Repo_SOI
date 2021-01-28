@@ -64,5 +64,7 @@ public class DirSalesProductBasket {
 		public static String buttonDiscountManagement="//button[@aria-label='Discount Management']";
 		
 		public static String buttonOrderEnrichment="//button[@aria-label='Order Enrichment']";
+		
+		public static String lineItemsProductBasketTable="//*[@role='gridcell']";
 
 }

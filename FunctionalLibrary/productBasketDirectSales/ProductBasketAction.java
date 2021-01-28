@@ -331,9 +331,11 @@ public class ProductBasketAction {
 		String actionName="productOnProductBasketValidation";
 
 		try
-		{
+		{		
 			WebElement productBasketTable=driver.findElement(By.xpath(DirSalesProductBasket.productBasketTable));
-
+			
+			new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfAllElements(productBasketTable.findElements(By.xpath("li/div/div/div/div/div[2][contains(.,'"+productName+"')]"))));
+					
 			String productBasketLineItemValidation=productBasketTable.getText().toString();
 
 			if(productBasketLineItemValidation.contains(productName))
