@@ -53,7 +53,7 @@ public class ProductConfigurationD02 {
 			configuration=convertConfiguration(dataFromExcel);
 			break;
 		case "Phone Line":
-			dataFromExcel=ExcelDataFetch.searchDT(6, configurationIndex);
+			dataFromExcel=ExcelDataFetch.searchDT(7, configurationIndex);
 			configuration=convertConfiguration(dataFromExcel);
 			break;
 		default:
