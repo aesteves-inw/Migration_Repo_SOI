@@ -1,4 +1,6 @@
 package executionDriver;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 
 import org.openqa.selenium.Cookie;
@@ -8,6 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import browserManagement.BrowserData;
 import executionTools.ExecStructure;
+import testDataFiles.TestDataFiles;
 
 
 public class ExecDriverClass {
@@ -20,6 +23,10 @@ public class ExecDriverClass {
 		WebDriver driver;
 		
 		System.setProperty("webdriver.chrome.driver", ExecStructure.workingDir+"\\lib\\chromedriver.exe");
+		
+		Map<String, Object> prefs = new HashMap<String, Object>();
+		
+		prefs.put("download.default_directory", TestDataFiles.externalFilesRepository);
 
 		ChromeOptions chromeProfile = new ChromeOptions(); 
 
@@ -42,6 +49,8 @@ public class ExecDriverClass {
 		chromeProfile.addArguments("browser.helperApps.neverAsk.saveToDisk", "application/pdf");
 
 		chromeProfile.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+		
+		chromeProfile.setExperimentalOption("prefs", prefs);
 
 		driver = new ChromeDriver(chromeProfile); 
 

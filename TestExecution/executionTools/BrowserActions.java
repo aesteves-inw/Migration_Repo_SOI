@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.text.PDFTextStripper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
@@ -14,6 +16,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import testDataFiles.TestDataFiles;
 
 
 public class BrowserActions {
@@ -281,7 +285,65 @@ public class BrowserActions {
 	}
 
 
+	
+	//PDF Validation
+	public static boolean pdfPositiveValidation(String fileLocation, String textToValidate) throws Exception
+	{
+		int Counter=0; 
+		
+		File file = new File(fileLocation);
+
+		PDDocument document = PDDocument.load(file);
+
+		PDFTextStripper pdfStripper = new PDFTextStripper();
+
+		String text = pdfStripper.getText(document);
+
+		if(text.contains(textToValidate))
+		{
+			Counter++;
+		}
+		
+		if(Counter>0)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+		
+	}
+	
+	public static boolean pdfNegativeValidation(String fileLocation, String textToValidate) throws Exception
+	{
+		int Counter=0; 
+		
+		File file = new File(fileLocation);
+
+		PDDocument document = PDDocument.load(file);
+
+		PDFTextStripper pdfStripper = new PDFTextStripper();
+
+		String text = pdfStripper.getText(document);
+
+		if(text.contains(textToValidate))
+		{
+			Counter++;
+		}
+		
+		if(Counter==0)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+		
+	}
 
 
 
+	
 }

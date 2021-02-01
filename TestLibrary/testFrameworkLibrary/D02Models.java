@@ -19,6 +19,7 @@ import objectMap.sfDirectSales.DirSalesProductBasket;
 import opportunityDirectSales.OpportunityStep;
 import opportunityPartCom.OpportunityPCStep;
 import productBasketDirectSales.ProductBasketStep;
+import productsDirectSales.ProductsStep;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
 import testReportComposition.TestStepReportStructure;
@@ -95,6 +96,29 @@ public class D02Models
 		}
 	}
 
+	public static void SyncProductBasketWithSalesforceValidation(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver, String testName, String optyURL, String[] productsList) throws Exception
+	{
+		String actionName="SyncProductBasketWithSalesforceValidation";
+		
+		try
+		{
+			ProductBasketStep.syncProductBasket(testExecStructure, logStream, driver, testName);
+			
+			ProductBasketStep.goToOpportunityScreenByURL(testExecStructure, logStream, driver, testName, optyURL);
+					
+			OpportunityStep.goToProductsRelatedView(testExecStructure, logStream, driver, testName, optyURL);
+			
+			ProductsStep.opportunitySyncedWithBasketMultiProd(testExecStructure, logStream, driver, testName, productsList);
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, testName, "Test Failed on Model: "+actionName, e.toString());
+			throw new Exception(testName+": Test Case Failed on Test Model:"+actionName);
+		}
+	}
 	
 	// Stand-Alone Products: Product Configuration - PI/PL/EV/VC
 	public static void ConfigureVoiceContinuity(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver, String testName, String configurationIndex) throws Exception
@@ -218,6 +242,8 @@ public class D02Models
 			
 			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, productName);
 			
+			Thread.sleep(2000);
+			
 			ProductBasketStep.goToEditProductConfigurationScreen(testExecStructure, logStream, driver, testName, productName);
 			
 			switch(productName)
@@ -334,7 +360,6 @@ public class D02Models
 			NavigationStep.goToOpportunityByURL(testExecStructure, logStream, driver, testName, optyURL);
 			
 			OpportunityStep.closeWinOPTY(testExecStructure, logStream, driver, testName);
-			
 			
 			// 14/01 - Workaround for Opportunity Page Refresh after Close Won and before going to OrderScreen
 			

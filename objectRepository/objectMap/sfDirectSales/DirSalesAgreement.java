@@ -81,4 +81,26 @@ public class DirSalesAgreement{
 	public static String proposalDocumentConfirmationMessage="//span[@class='toastMessage forceActionsText'][text()='The document is being processed in the background. Please refresh your page in a few moments if you want to view the document']";
 	
 	public static String generatedDocument="//span[contains(.,'AgreementSQ')][contains(.,'.pdf')]";
+	
+	
+	
+	//AddFilesRelatedListView - 28/01
+	
+	public static String addFilesButton="//div[@title='Add Files']";
+	
+	public static String titleSelectFiles="//h2[text()='Select Files']";
+	
+	public static String listFilesContent="//*[@class='listContent']";
+	
+	public static String tableOfListFiles="//ul[@class='results']";
+	
+	public static String filesTableCheckBoxes="//span[@class='slds-checkbox--faux']";
+	
+	public static String finalAddButton="//button/span[text()='Add (1)']";
+	
+	public static String filesTitle="//h1[@title='Files']";
+	
+	public static String titleUploadFiles="//h2[text()='Upload Files']";
+	
+	public static String buttonDoneUploadFiles="//button/span[text()='Done']";
 }

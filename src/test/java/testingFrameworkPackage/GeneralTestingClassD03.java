@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 import executionDriver.ExecDriverClass;
 import executionTools.ExecStructure;
 import executionTools.TestStructure;
+import testFrameworkLibrary.D03Models;
 import testLogBuilder.TestLog;
 import testReportComposition.TestReportTestData;
 import testReportComposition.TestStepReportStructure;
@@ -44,9 +45,9 @@ public class GeneralTestingClassD03
 	}
 	
 	@Test
-	public void ProductInProductBasket() throws Exception
+	public void GeneralTestingClass_D03_TC01_D03E2EFlow() throws Exception
 	{		
-
+		D03Models.E2FFlowForD03(testExecStructure, logStream, driver, testName);
 	}
 	
 	
