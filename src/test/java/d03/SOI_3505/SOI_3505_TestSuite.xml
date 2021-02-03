@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SOI-3505 User Story" parallel="false">
+  <test name="SOI_3505_TC01_DS_SyncProcessForNonQuotableProducts">
+    <classes>
+      <class name="d03.SOI_3505.SOI_3505_TC01_DS_SyncProcessForNonQuotableProducts"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="SOI_3505_TC02_DS_SyncProcessForNonQuotableProducts_NonQuotable_Quo_StandAlone">
+    <classes>
+      <class name="d03.SOI_3505.SOI_3505_TC02_DS_SyncProcessForNonQuotableProducts_NonQuotable_Quo_StandAlone"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="SOI_3505_TC04_DS_SyncProcessForNonQuotableProducts_BasketSynched_AddNonQuotable">
+    <classes>
+      <class name="d03.SOI_3505.SOI_3505_TC04_DS_SyncProcessForNonQuotableProducts_BasketSynched_AddNonQuotable"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="SOI_3505_TC05_DS_SyncProcessForNonQuotableProducts_BasketSynched_AddQuotable">
+    <classes>
+      <class name="d03.SOI_3505.SOI_3505_TC05_DS_SyncProcessForNonQuotableProducts_BasketSynched_AddQuotable"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="SOI_3505_TC06_PC_SyncProcessForNonQuotableProducts ">
+    <classes>
+      <class name="d03.SOI_3505.SOI_3505_TC06_PC_SyncProcessForNonQuotableProducts"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="SOI_3505_TC07_PC_SyncProcessForNonQuotableProducts_NonQuotable_Quo_StandAlone">
+    <classes>
+      <class name="d03.SOI_3505.SOI_3505_TC07_PC_SyncProcessForNonQuotableProducts_NonQuotable_Quo_StandAlone"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="SOI_3505_TC09_PC_SyncProcessForNonQuotableProducts_BasketSynched_AddNonQuotable">
+    <classes>
+      <class name="d03.SOI_3505.SOI_3505_TC09_PC_SyncProcessForNonQuotableProducts_BasketSynched_AddNonQuotable"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="SOI_3505_TC10_PC_SyncProcessForNonQuotableProducts_BasketSynched_AddQuotable">
+    <classes>
+      <class name="d03.SOI_3505.SOI_3505_TC10_PC_SyncProcessForNonQuotableProducts_BasketSynched_AddQuotable"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- SOI-3505 User Story -->

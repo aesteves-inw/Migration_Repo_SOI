@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SOI-3504 User Story" parallel="false">
+  <test name="SOI_3504_TC01_DS_NonQuotableOffer_Standalone">
+    <classes>
+      <class name="d03.SOI_3504.SOI_3504_TC01_DS_NonQuotableOffer_Standalone"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="SOI_3504_TC02_DS_NonQuotableOffer_NonQuotableQuotable">
+    <classes>
+      <class name="d03.SOI_3504.SOI_3504_TC02_DS_NonQuotableOffer_NonQuotableQuotable"/>
+    </classes>
+  </test> <!-- Test -->
+    <test name="SOI_3504_TC03_PC_NonQuotableOffer_Standalone">
+    <classes>
+      <class name="d03.SOI_3504.SOI_3504_TC03_PC_NonQuotableOffer_Standalone"/>
+    </classes>
+  </test> <!-- Test -->
+    <test name="SOI_3504_TC04_PC_NonQuotableOffer_NonQuotableQuotable">
+    <classes>
+      <class name="d03.SOI_3504.SOI_3504_TC04_PC_NonQuotableOffer_NonQuotableQuotable"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- SOI-3504 User Story -->

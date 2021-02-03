@@ -1,30 +1,29 @@
-package opportunityPartCom;
+package agreementPartCom;
 
 import java.util.List;
 
 import org.openqa.selenium.WebDriver;
 
+import agreementDirectSales.AgreementAction;
 import executionTools.TestExecutionReport;
-import productBasketPartCom.ProductBasketPCAction;
-import productsPartCom.ProductsPCAction;
+import generatedProposal.GeneratedProposalAction;
+import testExecutionData.TestCasesData;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
 import testReportComposition.ReportStructure;
 import testReportComposition.TestStepReportStructure;
 import testReporter.TestReporter;
 
-public class OpportunityPCStep 
-{
+public class AgreementPCStep {
 
-	public static void createProductBasket(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream,
-			WebDriver driver, String testName) throws Exception 
+	public static void generateDocumentProposal(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName) throws Exception 
 	{
 		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
 		
-		
-		String stepName="Opportunity: Create Product Basket in PC";
+		String stepName="Agreement: Generate Document Proposal in PartCom";
 
-		String stepNameMin="createProductBasketPC";
+		String stepNameMin="generateDocumentProposal";
 
 		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
 
@@ -33,9 +32,9 @@ public class OpportunityPCStep
 
 		try
 		{
-			OpportunityPCAction.createProductBasket(logStream, stepID, driver);
+			AgreementPCAction.generateDocument(logStream, driver, stepID);
 
-			validation = ProductBasketPCAction.validateProductBasketScreen(logStream, stepID, driver);
+			validation = AgreementAction.generateDocumentProposalValidation(logStream, driver, stepID);
 
 			if(validation==true)
 			{
@@ -59,25 +58,29 @@ public class OpportunityPCStep
 		
 	}
 
-	public static void goToProductsRelatedViewList(List<TestStepReportStructure> testExecStructure,
-			List<TestLog> logStream, WebDriver driver, String testName, String optyURL) throws Exception 
+	public static void validateProposalForNonQuotableProductsInPC(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName, String product) throws Exception 
 	{
 		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
 		
-		String stepName="Opportunity: Go To Products Related View List";
+		String stepName="Agreement: validate Proposal For NonQuotable Products In PC";
 
-		String stepNameMin="goToProductsRelatedViewList";
+		String stepNameMin="validateProposalForNonQuotableProductsInPC";
 
 		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
 
 
 		boolean validation;
 
+		String agreementID = TestCasesData.getIDByURL(driver.getCurrentUrl());
+				
 		try
 		{
-			OpportunityPCNavigation.goToProductsRelatedViewList(logStream, driver, stepID, optyURL);
+			AgreementPCNavigation.goToFilesRelatedList(logStream, driver, stepID, agreementID);
+			
+			AgreementPCNavigation.downloadfile(logStream, driver, stepID, agreementID);
 
-			validation = ProductsPCAction.productsListViewScreenValidationInPC(logStream, driver, stepID);
+			validation = GeneratedProposalAction.validationOfNonQuotableProducts(logStream, driver, stepID, product, agreementID);
 
 			if(validation==true)
 			{
@@ -100,5 +103,5 @@ public class OpportunityPCStep
 		}
 		
 	}
-	
+
 }

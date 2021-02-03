@@ -88,8 +88,11 @@ public class AgreementAction
 	public static boolean agreementScreenValidation(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
 	{
 		String actionName="agreementScreenValidation";
+		
 		try
 		{
+			new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesAgreement.detailsAgreement)));
+			
 			if(BrowserActions.isElementPresent(driver, DirSalesAgreement.headerAgreementPage)&&BrowserActions.isElementPresent(driver, DirSalesAgreement.detailsAgreement))
 			{
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
@@ -191,5 +194,5 @@ public class AgreementAction
 
 	 
 
-
+	
 }

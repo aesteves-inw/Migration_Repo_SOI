@@ -19,5 +19,49 @@ import testReportComposition.TestStepReportStructure;
 
 public class SOI_3505_TC10_PC_SyncProcessForNonQuotableProducts_BasketSynched_AddQuotable 
 {
+	String testName = "SOI_3505_TC10_PC_SyncProcessForNonQuotableProducts_BasketSynched_AddQuotable";
+
+	String initialTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
+
+	long startTime=System.nanoTime();
+
+	List<TestStepReportStructure> testExecStructure = new ArrayList<TestStepReportStructure>();
+
+	List<TestReportTestData> testData = new ArrayList<TestReportTestData>();
+
+	List<TestLog> logStream = new ArrayList<TestLog>();
+
+	WebDriver driver;
 	
+
+	@BeforeClass
+	public void beforeClass() 
+	{
+		driver = ExecDriverClass.setupDriver();
+		
+		TestStructure.startTest(logStream,testName);
+		
+	}
+
+	
+	@Test
+	public void testCase() throws Exception
+	{ 
+		try
+		{
+			SOI_3505.SOI_3505_TC10_PC_SyncProcessForNonQuotableProducts_BasketSynched_AddQuotable(testExecStructure, logStream, driver, testName);
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, testName, "Test Execution Failed", e.toString());
+			throw new Exception (testName+" - Failed: ",e);
+		}
+	}
+
+		@AfterClass
+	public void afterClass() 
+	{
+		TestStructure.finishTest(testName, initialTestDate, startTime, testExecStructure, testData, driver, logStream);
+	}
 }

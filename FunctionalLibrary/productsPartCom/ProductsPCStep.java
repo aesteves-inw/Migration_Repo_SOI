@@ -1,27 +1,25 @@
-package productBasketPartCom;
+package productsPartCom;
 
 import java.util.List;
 
 import org.openqa.selenium.WebDriver;
 
 import executionTools.TestExecutionReport;
-import opportunityPartCom.OpportunityPCAction;
-import productBasketDirectSales.ProductBasketAction;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
 import testReportComposition.ReportStructure;
 import testReportComposition.TestStepReportStructure;
 import testReporter.TestReporter;
 
-public class ProductBasketPCStep 
+public class ProductsPCStep 
 {
-	public static void goToOPTYSreenByURL(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, String testName, String optyURL) throws Exception
+	public static void productValidationAfterSyncProcess(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, String testName, String[] productList) throws Exception
 	{
 		int stepID=TestExecutionReport.stepOfTestStep(testReportStream);
 		
-		String stepName="Product Basket: Go To OPTY Sreen By URL";
+		String stepName="Products: Products tValidation After Sync Process";
 
-		String stepNameMin="goToOPTYSreenByURL";
+		String stepNameMin="productValidationAfterSyncProcess";
 
 		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
 
@@ -30,12 +28,9 @@ public class ProductBasketPCStep
 
 		try
 		{
-			ProductBasketAction.changeToDefaultiFrame(logStream, driver, stepID);
-			
-			ProductBasketPCNavigation.goToOptyByURL(logStream, driver, stepID, optyURL);
 
-			validation = OpportunityPCAction.opportunityPageValidation(logStream, testName, stepID, driver);
-
+			validation = ProductsPCAction.productsAddedBySyncProcessInPC(logStream, driver, stepID, productList);
+					
 			if(validation==true)
 			{
 				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
@@ -58,4 +53,3 @@ public class ProductBasketPCStep
 
 	}
 }
-
