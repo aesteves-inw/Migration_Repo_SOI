@@ -6,8 +6,11 @@ import org.openqa.selenium.WebDriver;
 
 import executionTools.BrowserActions;
 import executionTools.TestExecutionReport;
+import fetchDataFromExcelFiles.ExcelDataFetch;
+import navigation.NavigationAction;
 import orderDirectSales.OrderAction;
 import productBasketDirectSales.ProductBasketAction;
+import productsDirectSales.ProductsAction;
 import testExecutionData.TestCasesData;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
@@ -250,6 +253,53 @@ public class OpportunityStep {
 			OpportunityNavigation.pickOrderFromListD02(logStream, driver, stepID, productBasketName);			
 			
 			validation = OrderAction.orderScreenValidation(logStream, driver, stepID);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+		
+	}
+
+	public static void goToProductsRelatedView(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream,
+			WebDriver driver, String testName, String optyURL) throws Exception 
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+		
+		
+		String stepName="Opportunity: Go To Products Related View";
+
+		String stepNameMin="goToProductsRelatedView";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			String optyID=TestCasesData.getIDByURL(optyURL);
+			
+			String productsRelatedView=ExcelDataFetch.searchDT(0, "DirectSales")+ExcelDataFetch.searchDT(0, "DirectSalesProductsOpportunity")+optyID+ExcelDataFetch.searchDT(0, "DirectSalesProductsRelatedView");
+			
+			NavigationAction.goToByURL(logStream, driver, stepID, productsRelatedView);
+
+			validation = ProductsAction.validationOfProductsRelatedMenu(logStream, driver, stepID);
 
 			if(validation==true)
 			{

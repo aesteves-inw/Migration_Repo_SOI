@@ -4,7 +4,13 @@ import java.util.List;
 
 import org.openqa.selenium.WebDriver;
 
+import companyDirectSales.CompanyStep;
+import homePageDirectSales.HomePageStep;
+import loginPageDirectSales.LoginPageStep;
+import navigation.NavigationStep;
+import opportunityDirectSales.OpportunityStep;
 import productBasketDirectSales.ProductBasketStep;
+import productsDirectSales.ProductsStep;
 import simpleQuoting.J1835004000_14;
 import simpleQuoting.J1835004000_18;
 import testFrameworkLibrary.D02Models;
@@ -78,10 +84,56 @@ public class SOI_1013 {
 		
 		try
 		{
+			
+			
 			D02Models.ConfigureStandAloneProduct(testExecStructure, logStream, driver, testName, productName, configurationIndex);
 			
 			ProductBasketStep.syncProductBasket(testExecStructure, logStream, driver, testName);
 			
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, testName, "Test Failed", e.toString());
+			throw new Exception(testName+": Test Case Failed");
+		}
+		
+	}
+
+
+	public static void SOI_1013_TC06_DS_Sync_ProductBasket_SalesForce(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName) throws Exception 
+	{
+		String configurationIndex="configurationByDefault";
+		
+		String productName1 ="Voice Continuity";
+		
+		String optyURL;
+		
+		try
+		{
+			String userProfile="salesUser";
+
+			LoginPageStep.loginSFDS(testExecStructure, logStream, driver, testName, userProfile);
+
+			HomePageStep.navigateToCompanyPage(testExecStructure, logStream, driver, testName);
+
+			CompanyStep.createQuickSaleOpportunity(testExecStructure, logStream, driver, testName);
+			
+			optyURL = driver.getCurrentUrl();
+
+			OpportunityStep.createProductBasket(testExecStructure, logStream, driver, testName);
+			
+			D02Models.AddAndConfigureNewProduct(testExecStructure, logStream, driver, testName, productName1, configurationIndex);
+			
+			ProductBasketStep.syncProductBasket(testExecStructure, logStream, driver, testName);
+			
+			NavigationStep.goToOpportunityByURL(testExecStructure, logStream, driver, testName, optyURL);
+			
+			OpportunityStep.goToProductsRelatedView(testExecStructure, logStream, driver, testName, optyURL);
+			
+			ProductsStep.opportunitySyncedWithBasket(testExecStructure, logStream, driver, testName, productName1);
 			
 		}
 		catch(Exception e)

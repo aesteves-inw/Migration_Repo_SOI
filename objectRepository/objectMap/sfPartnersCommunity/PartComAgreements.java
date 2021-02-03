@@ -39,5 +39,19 @@ public class PartComAgreements {
 	public static String menuLanguage="/html/body/div[11]/div/ul";
 	
 	public static String editScreenSaveButton="/html/body/div[8]/div/div[2]/div/div[3]/div/button[3]";
-
+	
+	
+	
+	//Simple Quoting D02 Elements
+	public static String buttonGenerateProposalDocument = "//a[@title='Generate Proposal Document']";
+	
+	
+	//Agreement Related List - Files
+	public static String buttonShowMoreActions="//span[text()='Show Actions']";
+	
+	public static String optionDownload="//a[@title='Download']";
+	
+	public static String lineItems="//span[contains(@title,'AgreementSQ_')][contains(@title,'.pdf')][contains(@title,'a2A3M0000000HmbUAE')]";
 }
+
+

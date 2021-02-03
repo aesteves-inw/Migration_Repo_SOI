@@ -11,7 +11,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import executionTools.BrowserActions;
 import fetchDataFromExcelFiles.ExcelDataFetch;
-import objectMap.sfDirectSales.DirSalesAgreement;
 import objectMap.sfDirectSales.DirSalesProductBasket;
 import testExecutionData.TestCasesData;
 
@@ -57,7 +56,6 @@ public class ProductBasketNavigation
 		}
 	}
 	
-
 	public static void goToAgreement(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
 	{
 		
@@ -72,11 +70,7 @@ public class ProductBasketNavigation
 			
 			ProductBasketAction.changeToDefaultiFrame(logStream, driver, stepID);
 			
-			new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesAgreement.detailsAgreement)));
-			
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
-
-
 
 		}
 		catch(Exception e)
@@ -162,6 +156,6 @@ public class ProductBasketNavigation
 	}
 
 	
+	}
 	
-	
-}
+

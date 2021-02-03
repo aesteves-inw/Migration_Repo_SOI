@@ -58,5 +58,19 @@ public class DirSalesProducts {
 	
 	public static String errorMessage="//span[@class='genericSummary uiOutputText']";
 	
-	//public static String
+	
+	
+	//Products Related Screen on Opportunity
+	
+	public static String buttonAddProducts="//div[@title='Add Products']";
+	
+	public static String buttonShowQuickFilters="//button[@title='Show quick filters']";
+	
+	public static String buttonRefresh="//button[@title='Refresh']";
+	
+	public static String titleProducts="//h1[@title='Products']";
+	
+	public static String flagQuoteSynced="//img[@class='slds-truncate checked']";
+	
+	public static String flagQuoteUnSynced="//img[@class='slds-truncate unchecked']";
 }

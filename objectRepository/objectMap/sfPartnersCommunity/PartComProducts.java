@@ -50,4 +50,6 @@ public class PartComProducts {
 	
 	public static String productRegimeMenu="/html/body/div[7]/div/div[2]/div/div[2]/div/div[2]/div[2]/div/div[1]/div[2]/div[2]/div[1]/div/div/table/tbody/tr/td[6]/div/div/div[1]/div/div/div/div/div/div/div";
 
+	
+	
 }

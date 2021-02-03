@@ -213,23 +213,42 @@ public class ProductBasketAction {
 	{
 		String actionName="goToEditProductConfiguration";
 
-
 		try
 		{
+			
+			//28-01-2021 - Initial approach in how to access the Edit Product Configuration
+			/*
 			WebElement productBasketTable=driver.findElement(By.xpath(DirSalesProductBasket.productBasketTable));
 			
-			List<WebElement> productBasketLineItem=productBasketTable.findElements(By.tagName("li"));
-			
-			
-			for(WebElement we : productBasketLineItem)
+			List<WebElement> productBasketLines=productBasketTable.findElements(By.tagName("li"));
+					
+			for (WebElement we:productBasketLines)
 			{
-				if(we.getText().contains(productName))
+				if (we.getText().contains(productName))
 				{
 					we.findElement(By.xpath(DirSalesProductBasket.editProductConfigurationButton)).click();
-					
 					break;
 				}
 			}
+			*/
+			
+			// 28-01-2020 - New approach in how to access the Edit Product Configuration
+			
+			WebElement productBasketTable=driver.findElement(By.xpath(DirSalesProductBasket.productBasketTable));
+			
+			List<WebElement> productBasketLines=productBasketTable.findElements(By.tagName("li"));
+			
+			List<WebElement> productBasketLinesBts=productBasketTable.findElements(By.xpath(DirSalesProductBasket.editProductConfigurationButton));
+			
+			for(int i=0;i<productBasketLines.size();i++)
+			{
+				if (productBasketLines.get(i).getText().contains(productName))
+				{
+					productBasketLinesBts.get(i).click();
+					break;
+				}
+			}
+			
 			
 			new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesEditProductConfiguration.iFrameEditProductConfiguration)));		
 
@@ -703,5 +722,8 @@ public class ProductBasketAction {
 			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
 		}
 	}
+
+
+
 
 }

@@ -2,8 +2,13 @@ package homePageDirectSales;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import fetchDataFromExcelFiles.ExcelDataFetch;
+import objectMap.sfDirectSales.DirSalesHomePage;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
 
@@ -16,11 +21,7 @@ public class HomePageAction {
 
 		String homePageURLValidation, homePageURL, homePageTitle, homePageTitleValidation;
 
-		//18-01-2021 - Switched to "TRY" statement
-		
-		//homePageURLValidation=driver.getCurrentUrl();
 
-		//homePageTitleValidation=driver.getTitle();
 
 		homePageURL=ExcelDataFetch.searchDT(0, "DirectSalesHomePage");
 
@@ -29,7 +30,7 @@ public class HomePageAction {
 		try
 		{
 			
-			Thread.sleep(5000);
+			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesHomePage.homePageDetails)));
 			
 			homePageURLValidation=driver.getCurrentUrl();
 

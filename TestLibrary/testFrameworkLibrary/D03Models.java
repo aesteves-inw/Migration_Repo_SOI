@@ -5,8 +5,8 @@ import java.util.List;
 import org.openqa.selenium.WebDriver;
 
 import addOfferToBasketDirectSales.AddOfferToBasketStep;
+import agreementDirectSales.AgreementStep;
 import companyDirectSales.CompanyStep;
-import editProductConfigurationScreenDirectSales.EProdConfigStep;
 import homePageDirectSales.HomePageStep;
 import loginPageDirectSales.LoginPageStep;
 import opportunityDirectSales.OpportunityStep;
@@ -19,8 +19,10 @@ public class D03Models
 {
 
 	public static void E2FFlowForD03(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream,
-			WebDriver driver, String testName, String product, String configurationProduct) throws Exception 
+			WebDriver driver, String testName) throws Exception 
 	{
+		String product = "PABX";
+		
 		try
 		{
 
@@ -38,11 +40,13 @@ public class D03Models
 			
 			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, product);
 			
-			ProductBasketStep.goToEditProductConfigurationScreen(testExecStructure, logStream, driver, testName, product);
+			ProductBasketStep.syncProductBasket(testExecStructure, logStream, driver, testName);
 			
-			EProdConfigStep.configureNonQuotableProduct(testExecStructure, logStream, driver, testName, configurationProduct);
+			ProductBasketStep.goToAgreementScreen(testExecStructure, logStream, driver, testName);
 			
-			EProdConfigStep.finsihConfiguration(testExecStructure, logStream, driver, testName);	
+			AgreementStep.addFileToAgreement(testExecStructure, logStream, driver, testName);
+			
+		
 			
 
 		}
@@ -55,4 +59,23 @@ public class D03Models
 		
 	}
 
+	public static void AddNonQuotableProductToProductBasket(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream,
+			WebDriver driver, String testName, String product) throws Exception
+	{
+		String actionName="AddNonQuotableProductToProductBasket";
+		
+		try
+		{
+			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, testName);
+			
+			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, product);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, testName, "Test Failed on Model: "+actionName, e.toString());
+			throw new Exception(testName+": Test Case Failed on Test Model: "+actionName);
+		}
+	}
 }
