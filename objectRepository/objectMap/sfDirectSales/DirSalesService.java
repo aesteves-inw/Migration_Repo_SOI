@@ -72,4 +72,18 @@ public class DirSalesService {
 	
 	public static String saveBtn="//button[@title='Save']";
 	
+	
+	
+	// --- 03-02-2020 - D03 Test Automation
+	
+	public static String buttonDetails="//button//span[@title='Details']";
+	
+	public static String buttonEditProvContact="//button[@title='Edit Provisioning Contact Person']";
+	
+	public static String buttonEditInternalComments="//button[@title='Edit Internal Comments']";
+	
+	public static String buttonEditBillingAccountID="//button[@title='Edit Billing Account ID']";
+	
+
+	
 }
