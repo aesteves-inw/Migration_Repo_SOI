@@ -22,7 +22,9 @@ public class OrderAction
 					{
 						if(BrowserActions.isElementPresent(driver, DirSalesOrder.orderDetails))
 						{
-							new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("DirSalesOrder.orderDetails")));
+							new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesOrder.orderDetails)));
+							
+							//new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='Services']")));
 							
 							TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
 							return true;
@@ -40,5 +42,6 @@ public class OrderAction
 						throw new Exception (actionName+" - Failed in Step: "+stepID,e);
 					}
 	}
+	
 	
 }

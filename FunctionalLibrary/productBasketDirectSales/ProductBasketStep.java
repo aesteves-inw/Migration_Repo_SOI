@@ -439,6 +439,94 @@ public class ProductBasketStep
 
 
 }
+
+	public static void fillExistingBillingAccountIdField(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName) throws Exception 
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+		
+		String stepName="Product Basket: fill Existing Billing Account Id Field";
+
+		String stepNameMin="fillExistingBillingAccountIdField";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+		
+		String textExistingBillingAccountIdField="04121986";
+
+		try
+		{
+			ProductBasketAction.fillExistingBillingAccountIdField(logStream, driver, stepID, textExistingBillingAccountIdField);
+			
+			Thread.sleep(2000);
+
+			validation = ProductBasketAction.checkExistingBillingAccountIdField(logStream, driver, stepID, textExistingBillingAccountIdField);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+		
+	}
+
+	public static void fillExistingTechnicalContact(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName, String textExistingTechnicalContact) throws Exception 
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+		
+		String stepName="Product Basket: Existing Technical Contact: "+textExistingTechnicalContact;
+
+		String stepNameMin="fillExistingTechnicalContact";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			ProductBasketAction.fillExistingTechnicalContact(logStream, driver, stepID, textExistingTechnicalContact);
+
+			validation = ProductBasketAction.checkExistingTechnicalContact(logStream, driver, stepID, textExistingTechnicalContact);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+		
+	}
 }
 	
 

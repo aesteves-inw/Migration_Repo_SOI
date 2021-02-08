@@ -31,6 +31,10 @@
 							<suiteXmlFile>src\test\java\d02\SOI_1013\SOI_1013_TestSuite.xml</suiteXmlFile>
 							<suiteXmlFile>src\test\java\d02\SOI_2206\SOI_2206_TestSuite.xml</suiteXmlFile>
 							<suiteXmlFile>src\test\java\d02\SOI_2205\SOI_2205_TestSuite.xml</suiteXmlFile>
+							<suiteXmlFile>src\test\java\d03\SOI_2205\SOI_3504_TestSuite.xml</suiteXmlFile>
+							<suiteXmlFile>src\test\java\d03\SOI_2205\SOI_3505_TestSuite.xml</suiteXmlFile>
+							<suiteXmlFile>src\test\java\d03\SOI_2205\SOI_3507_TestSuite.xml</suiteXmlFile>
+							<suiteXmlFile>src\test\java\d03\SOI_2205\SOI_3566_TestSuite.xml</suiteXmlFile>
 						</suiteXmlFiles>
 					</configuration>
 				</plugin>

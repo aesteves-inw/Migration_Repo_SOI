@@ -66,5 +66,18 @@ public class DirSalesProductBasket {
 		public static String buttonOrderEnrichment="//button[@aria-label='Order Enrichment']";
 		
 		public static String lineItemsProductBasketTable="//*[@role='gridcell']";
+		
+		
+		
+		//04-02-2021 - D03 Changes Regarding Product Basket Object:
+		
+		public static String inputExistingBillingAccountId = "//input[@aria-labelledby='PRX_SOI_Billing_Account_ID__c']";
+		
+		public static String inputProvisioningContactPerson="//input[@aria-labelledby='PRX_SOI_Provisioning_Contact_Person__c']";
+		
+		public static String searchResultsForProvisioningContactPerson="//ul[@role='listbox']";
+		
+		
+		
 
 }
