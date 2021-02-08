@@ -87,7 +87,7 @@ public class PartComOpportunity {
 	
 	public static String productsListViewLink="//article[contains(.,'Products')]//h2/a";
 	
-
+	public static String titleProducts="//h1[@title='Products (Professional Market Catalogue)']";
 	
 	//  --- Products ---
 	

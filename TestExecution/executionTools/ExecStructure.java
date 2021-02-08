@@ -133,12 +133,12 @@ public class ExecStructure {
 		}
 		
 		// Function to create all Folder structure related to the Test Case
-		public static void createReportStructure(String testName) {
+		public static void createReportStructure(String testName) 
+		{
 			createDirectoryIfNeeded(testRunsBasket);
 			createDirectoryIfNeeded(testRunsBasket+"\\"+todaysDate);
 			createDirectoryIfNeeded(testFolder(testName));
 			createDirectoryIfNeeded(newTestExecutionFolder(testName));
-			
 		}
 
 		//Function to retrieve Test Execution String from classname
@@ -166,7 +166,19 @@ public class ExecStructure {
 		}
 
 		
-
+		//Function to Move Files from one Folder To Another. Params: fileName, originPath, finalPath
+		public static void moveFile(String fileName, String originPath, String finalPath)
+		{
+			String currentFileLocation=originPath+"\\"+fileName;
+			String finalFileLocation=finalPath+"\\"+fileName;
+			
+			File file = new File(currentFileLocation);
+			
+			file.renameTo(new File(finalFileLocation));
+			
+			file.delete();
+			
+		}
 
 }
 

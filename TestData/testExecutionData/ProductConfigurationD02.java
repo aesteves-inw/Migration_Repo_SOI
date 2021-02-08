@@ -33,7 +33,7 @@ public class ProductConfigurationD02 {
 	public static String[] convertConfiguration(String dataFromExcel)
 	{			
 		String[] ProductConfiguration = dataFromExcel.split(",");
-		
+
 		return ProductConfiguration;
 	}
 
@@ -59,8 +59,37 @@ public class ProductConfigurationD02 {
 		default:
 			throw new Exception("Product not found");
 		}
-		
+
 		return configuration;
 	}
 
+	public static String getSalesforceMappedProduct(String product) throws Exception
+	{
+		String productMapped;
+
+		switch(product)
+		{
+		//D02 StandAlone Products Mapping
+		case "Voice Continuity":
+			productMapped="Fix Voice Value Added Services";
+			break;
+		case "Enterprise Voice":
+			productMapped="VoIP Access & Traffic";
+			break;
+		case "Phone Line":
+			productMapped="PSTN/ISDN Access & Traffic";
+		case "Professional Internet":
+		productMapped="Professional Internet";
+			break;
+			//D02 ECS Products
+			//D03 Products Mapping
+		case "PABX":
+		productMapped="VoIP Access & Traffic";
+			break;
+		default:
+			throw new Exception("Product not found");
+		}
+		
+		return productMapped;
+	}
 }

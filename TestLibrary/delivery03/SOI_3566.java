@@ -70,4 +70,6 @@ public class SOI_3566 {
 		
 	}
 
+
+
 }

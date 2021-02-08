@@ -5,8 +5,11 @@ import java.util.List;
 import org.openqa.selenium.WebDriver;
 import addOfferToBasketDirectSales.AddOfferToBasketAction;
 import agreementDirectSales.AgreementAction;
+import agreementPartCom.AgreementPCAction;
 import editProductConfigurationScreenDirectSales.EProdConfigAction;
 import executionTools.TestExecutionReport;
+import navigation.NavigationAction;
+import opportunityDirectSales.OpportunityAction;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
 import testReportComposition.ReportStructure;
@@ -352,9 +355,90 @@ public class ProductBasketStep
 		}
 	}
 
+	public static void goToAgreementScreenInPC(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, String testName) throws Exception
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testReportStream);
+		
+		String stepName="Product Basket: Go To Agreement Screen (After Sync) in PartCom";
+
+		String stepNameMin="goToAgreementScreenInPC";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			ProductBasketNavigation.goToAgreement(logStream, driver, stepID);
+
+			validation = AgreementPCAction.agreementScreenValidation(logStream, driver, stepID);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testReportStream, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testReportStream, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+	}
 	
+	public static void goToOpportunityScreenByURL(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, String testName, String optyURL) throws Exception
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testReportStream);
+		
+		
+		String stepName="Product Basket: Go To Opportunity Screen By URL";
+
+		String stepNameMin="goToOpportunityScreenByURL";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
 
 
+		boolean validation;
+
+		try
+		{
+			ProductBasketAction.changeToDefaultiFrame(logStream, driver, stepID);
+			
+			NavigationAction.goToOPTYByURL(logStream, driver, stepID, optyURL);
+
+			validation = OpportunityAction.opportunityScreenValidation(logStream, driver, stepID);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testReportStream, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testReportStream, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+
+
+}
 }
 	
 

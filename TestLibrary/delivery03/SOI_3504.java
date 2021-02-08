@@ -120,15 +120,13 @@ public class SOI_3504 {
 
 		try
 		{
-			
-		
 			D02Models.ToHaveAProductBasketInPC(testExecStructure, logStream, driver, testName);
 			
 			D02Models.AddAndConfigureNewProductInPC(testExecStructure, logStream, driver, testName, productName2, configurationIndex2);
 			
 			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, testName);
 			
-			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, productName);	
+			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, productName);
 
 		}
 		catch(Exception e)
@@ -140,4 +138,5 @@ public class SOI_3504 {
 
 	}
 
+	
 }
