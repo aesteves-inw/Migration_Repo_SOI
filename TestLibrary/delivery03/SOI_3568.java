@@ -5,7 +5,6 @@ import java.util.List;
 import org.openqa.selenium.WebDriver;
 
 import addOfferToBasketDirectSales.AddOfferToBasketStep;
-import editProductConfigurationScreenDirectSales.EProdConfigStep;
 import productBasketDirectSales.ProductBasketStep;
 import testFrameworkLibrary.D02Models;
 import testLogBuilder.TestLog;
