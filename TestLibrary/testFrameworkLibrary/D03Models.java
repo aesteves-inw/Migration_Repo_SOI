@@ -36,6 +36,9 @@ public class D03Models
 
 			OpportunityStep.createProductBasket(testExecStructure, logStream, driver, testName);
 			
+			ProductBasketStep.fillExistingBillingAccountIdField(testExecStructure, logStream, driver, testName);
+			
+			/*
 			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, testName);
 			
 			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, product);
@@ -45,7 +48,7 @@ public class D03Models
 			ProductBasketStep.goToAgreementScreen(testExecStructure, logStream, driver, testName);
 			
 			AgreementStep.addFileToAgreement(testExecStructure, logStream, driver, testName);
-			
+			*/
 		
 			
 
