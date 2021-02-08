@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -315,14 +316,14 @@ public class ProductBasketAction {
 		try
 		{
 			WebElement inputExistingBillingAccountIdField = driver.findElement(By.xpath(DirSalesProductBasket.inputExistingBillingAccountId));
-			
+
 			inputExistingBillingAccountIdField.clear();
-			
+
 			inputExistingBillingAccountIdField.sendKeys(textExistingBillingAccountIdField);
+
+
 			
-			
-			driver.findElement(By.xpath(DirSalesProductBasket.saveButton)).click();
-			
+			saveProductBasketChanges(logStream, driver, stepID);
 			
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
@@ -337,8 +338,80 @@ public class ProductBasketAction {
 
 	}
 
-	//Validation Actions
+	public static void fillExistingTechnicalContact(List<TestLog> logStream, WebDriver driver, int stepID,
+			String textExistingTechnicalContact) throws Exception 
+	{
+		String actionName="fillExistingBillingAccountIdField";
 
+
+		try
+		{
+			
+			
+			
+						
+			WebElement inputProvisioningContact = driver.findElement(By.xpath(DirSalesProductBasket.inputProvisioningContactPerson));
+
+			inputProvisioningContact.sendKeys(textExistingTechnicalContact);
+			
+			List<WebElement> provlistItem= new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//li/div/div[1]")));
+			
+			
+			
+			for(int i=0;i<provlistItem.size();i++)
+			{
+				String validation=provlistItem.get(i).getText().toString();
+				
+				System.out.println("validation: "+validation);
+				
+				if(textExistingTechnicalContact.contains(validation))
+				{
+					provlistItem.get(i).click();
+				}
+				
+			}
+				
+			
+			saveProductBasketChanges(logStream, driver, stepID);
+
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+
+	}
+
+	public static void saveProductBasketChanges(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
+	{
+		String actionName="saveProductBasketChanges";
+
+
+		try
+		{
+			driver.findElement(By.xpath(DirSalesProductBasket.saveButton)).click();
+			
+			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h3[@role='alert'][text()='Saved successfully']"))).click();
+			
+			
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+	}
+
+	//Validation Actions
 	public static boolean productBasketScreenValidation(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
 	{
 		String actionName="Product Basket: Validation of Product Basket Screen";
@@ -752,7 +825,6 @@ public class ProductBasketAction {
 		}
 	}
 
-
 	public static boolean checkExistingBillingAccountIdField(List<TestLog> logStream, WebDriver driver, int stepID,
 			String textExistingBillingAccountIdField) throws Exception 
 	{
@@ -760,10 +832,10 @@ public class ProductBasketAction {
 		try
 		{
 			WebElement inputProvisioningContactPerson = driver.findElement(By.xpath(DirSalesProductBasket.inputExistingBillingAccountId));
-			
+
 			System.out.println("Debug of inputProvisioningContactPerson.getText().toString() after val: "+inputProvisioningContactPerson.getAttribute("value"));
-			
-			if(inputProvisioningContactPerson.getText().toString().contains(textExistingBillingAccountIdField))
+
+			if(textExistingBillingAccountIdField.contains(inputProvisioningContactPerson.getText().toString()))
 			{
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
 				return true;
@@ -781,6 +853,43 @@ public class ProductBasketAction {
 			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
 		}
 	}
+
+
+	public static boolean checkExistingTechnicalContact(List<TestLog> logStream, WebDriver driver, int stepID,
+			String textExistingTechnicalContact) throws Exception 
+	{
+		String actionName="checkExistingTechnicalContact";
+		
+		try
+		{
+			Thread.sleep(3000);
+			
+			WebElement inputCheck=driver.findElement(By.xpath(DirSalesProductBasket.inputProvisioningContactPerson));
+			
+			String inputCheckVal=inputCheck.getAttribute("value");
+			
+			System.out.println("Debug of inputCheckVal: "+inputCheckVal);
+			
+			if(inputCheckVal.contains(textExistingTechnicalContact))
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
+
+
 
 
 

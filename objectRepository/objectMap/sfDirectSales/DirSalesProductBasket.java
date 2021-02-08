@@ -75,7 +75,7 @@ public class DirSalesProductBasket {
 		
 		public static String inputProvisioningContactPerson="//input[@aria-labelledby='PRX_SOI_Provisioning_Contact_Person__c']";
 		
-		public static String searchResultsForProvisioningContactPerson="//ul[@id=select2-results-6]";
+		public static String searchResultsForProvisioningContactPerson="//ul[@role='listbox']";
 		
 		
 		
