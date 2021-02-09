@@ -84,6 +84,50 @@ public class DirSalesService {
 	
 	public static String buttonEditBillingAccountID="//button[@title='Edit Billing Account ID']";
 	
+	
+	
+	// --- 08-02-2020 - D03 Test Automation - Service Details
+
+	
+	//Provisioning Contact Person
+	public static String inputProvisioningContactPerson="";
+	
+	public static String searchResult="";
+	
+	public static String searchValueToInput="";
+	
+	public static String buttonCreateNewCompanyContact="";
+	
+	
+	
+	//Internal Comments
+	public static String inputInternalComments="//input[@name='PRX_SOI_Internal_Comments__c']";
+	
+	
+	
+	// Billing Account ID
+	public static String inputBillingAccountID="//input[@name='PRX_SOI_Billing_Account_ID__c']";
+	
+	
+	
+	// Footer Buttons on Edit Frame
+	
+	public static String buttonSave ="//button[@name='SaveEdit']";
+	
+	public static String buttonCancel="//button[@name='CancelEdit']";
+	
+	
+	
+	// Detail Fields for Validation
+	
+	public static String fieldProvisioningContactPerson="//flexipage-field[@data-field-id='RecordPRX_SOI_Provisioning_Contact_Person__cField']";
+	
+	public static String fieldInternalComments="//flexipage-field[@data-field-id='RecordPRX_SOI_Internal_Comments__cField']";
+	
+	public static String fieldBillingAccountID="//flexipage-field[@data-field-id='RecordPRX_SOI_Billing_Account_ID__cField']";
+	
+	
+	
 
 	
 }

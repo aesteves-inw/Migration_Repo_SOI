@@ -6,15 +6,11 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import agreementDirectSales.AgreementStep;
 import companyDirectSales.CompanyStep;
 import homePageDirectSales.HomePageStep;
 import loginPageDirectSales.LoginPageStep;
 import navigation.NavigationStep;
-import objectMap.sfDirectSales.DirSalesOrder;
 import objectMap.sfDirectSales.DirSalesProductBasket;
 import opportunityDirectSales.OpportunityStep;
 import orderDirectSales.OrderStep;

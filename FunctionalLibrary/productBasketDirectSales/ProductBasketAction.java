@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -341,7 +340,7 @@ public class ProductBasketAction {
 	public static void fillExistingTechnicalContact(List<TestLog> logStream, WebDriver driver, int stepID,
 			String textExistingTechnicalContact) throws Exception 
 	{
-		String actionName="fillExistingBillingAccountIdField";
+		String actionName="fillExistingTechnicalContact";
 
 
 		try
@@ -354,9 +353,8 @@ public class ProductBasketAction {
 
 			inputProvisioningContact.sendKeys(textExistingTechnicalContact);
 			
+			/*
 			List<WebElement> provlistItem= new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//li/div/div[1]")));
-			
-			
 			
 			for(int i=0;i<provlistItem.size();i++)
 			{
@@ -370,7 +368,11 @@ public class ProductBasketAction {
 				}
 				
 			}
-				
+				*/
+			
+			WebElement provlistItem = new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li/div/div[1]")));
+			
+			provlistItem.click();
 			
 			saveProductBasketChanges(logStream, driver, stepID);
 
@@ -862,11 +864,11 @@ public class ProductBasketAction {
 		
 		try
 		{
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			
-			WebElement inputCheck=driver.findElement(By.xpath(DirSalesProductBasket.inputProvisioningContactPerson));
+			WebElement inputCheck=driver.findElement(By.xpath("//div[@class='select2-container select2-allowclear ng-pristine ng-untouched ng-valid']"));
 			
-			String inputCheckVal=inputCheck.getAttribute("value");
+			String inputCheckVal=inputCheck.getText();
 			
 			System.out.println("Debug of inputCheckVal: "+inputCheckVal);
 			
@@ -877,6 +879,7 @@ public class ProductBasketAction {
 			}
 			else
 			{
+				TestLogger.logTrace(logStream, actionName, "Failed in Step: "+stepID+". Validation: False");
 				return false;
 			}
 

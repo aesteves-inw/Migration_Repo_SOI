@@ -8,6 +8,7 @@ import agreementDirectSales.AgreementAction;
 import agreementPartCom.AgreementPCAction;
 import editProductConfigurationScreenDirectSales.EProdConfigAction;
 import executionTools.TestExecutionReport;
+import fetchDataFromExcelFiles.ExcelDataFetch;
 import navigation.NavigationAction;
 import opportunityDirectSales.OpportunityAction;
 import testLogBuilder.TestLog;
@@ -454,7 +455,7 @@ public class ProductBasketStep
 
 		boolean validation;
 		
-		String textExistingBillingAccountIdField="04121986";
+		String textExistingBillingAccountIdField=ExcelDataFetch.searchDT(12, "textExistingBillingAccountIdField");
 
 		try
 		{
