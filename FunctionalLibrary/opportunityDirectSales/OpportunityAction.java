@@ -6,7 +6,10 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import executionTools.BrowserActions;
@@ -121,7 +124,7 @@ public class OpportunityAction {
 
 		try
 		{
-			openEditOpportunityMenu(logStream, driver, stepID);
+			//openEditOpportunityMenu(logStream, driver, stepID);
 
 			changeStatusOfOpportunity(logStream, driver, stepID, status);
 
@@ -176,17 +179,33 @@ public class OpportunityAction {
 
 		try
 		{
-			driver.findElement(By.xpath(DirSalesOpportunity.editInputSelectStage)).click();
+			//09-02-2021
+			System.out.println("Debug of changeStatusOfOpportunity - Start");
 			
-			//WebElement statusElement = new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//lightning-base-combobox-item[@data-value='"+status+"']/span[@class='slds-media__figure slds-listbox__option-icon']")));
-
-			//statusElement.click();
+			Thread.sleep(1000);
 			
-			WebElement statusClosedWon = BrowserActions.getElementByJSQuery(driver, "return document.querySelector('records-lwc-detail-panel').shadowRoot.querySelector('records-base-record-form').shadowRoot.querySelector('records-lwc-record-layout').shadowRoot.querySelector('forcegenerated-detailpanel_opportunity___012000000000000aaa___full___edit___recordlayout2').shadowRoot.querySelector('sfa-input-stage-name').shadowRoot.querySelector('force-record-picklist').shadowRoot.querySelector('force-form-picklist').shadowRoot.querySelector('lightning-picklist').shadowRoot.querySelector('lightning-combobox').shadowRoot.querySelector('lightning-base-combobox').shadowRoot.querySelectorAll('lightning-base-combobox-item')[7].shadowRoot.querySelector('span.slds-media__figure.slds-listbox__option-icon')");
+			WebElement buttonEditStage=driver.findElement(By.xpath("//button[@title='Edit Stage']"));
 			
-			BrowserActions.jsClick(driver, statusClosedWon);
+			BrowserActions.jsClick(driver, buttonEditStage);
+			
+			Thread.sleep(1000);
+			
+			WebElement selectList=driver.findElement(By.xpath("//force-record-layout-block/slot/force-record-layout-section[1]/div/div/div/slot/force-record-layout-row[3]/slot/force-record-layout-item[2]/div/span/slot/slot/sfa-input-stage-name/force-record-picklist/force-form-picklist/lightning-picklist/lightning-combobox/div/lightning-base-combobox/div/div[1]/input"));
+			
+			BrowserActions.jsClick(driver, selectList);
+			
+			Thread.sleep(1000);
+			
+			WebElement statusLabel=driver.findElement(By.xpath("//span[@title='"+status+"']"));
+			
+			BrowserActions.jsClick(driver, statusLabel);
+			
+			Thread.sleep(1000);
 			
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+			
+			//09-02-2021
+			System.out.println("Debug of changeStatusOfOpportunity - End");
 
 
 		}
@@ -208,7 +227,7 @@ public class OpportunityAction {
 		{
 			driver.findElement(By.xpath(DirSalesOpportunity.saveEditButton)).click();
 
-			new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesOpportunity.editConfirmationMessage)));
+			Thread.sleep(10000);
 
 
 
@@ -351,11 +370,13 @@ public class OpportunityAction {
 		try
 		{
 
-			String optyEditValidation =driver.findElement(By.xpath(DirSalesOpportunity.optyDetails)).getText().toString();
+			String optyEditValidation =driver.findElement(By.xpath("//records-lwc-detail-panel/records-base-record-form/div/div/div/div/records-record-layout-event-broker/slot/records-lwc-record-layout/forcegenerated-detailpanel_opportunity___0123m0000000s3sqau___full___view___recordlayout2/force-record-layout-block/slot/force-record-layout-section[1]/div/div/div/slot/force-record-layout-row[3]/slot/force-record-layout-item[2]/div/div/div[2]/span/slot[1]/slot/lightning-formatted-text")).getText().toString();
 			
-			Thread.sleep(2000);
+		
+			System.out.println("Debug of closeWonOpportunityValidation 01: "+optyEditValidation);
+			System.out.println("Debug of closeWonOpportunityValidation 02: "+optyEditValidation.contains(status));
 
-			if(BrowserActions.isElementPresent(driver, DirSalesOpportunity.editConfirmationMessage) || optyEditValidation.contains(status))
+			if(optyEditValidation.contains(status))
 			{
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
 				return true;

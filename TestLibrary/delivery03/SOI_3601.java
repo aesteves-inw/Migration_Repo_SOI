@@ -70,6 +70,8 @@ public class SOI_3601 {
 			D02Models.AddAndConfigureNewProduct(testExecStructure, logStream, driver, testName, productName, configurationIndex);
 
 			D03Models.AddNonQuotableProductToProductBasket(testExecStructure, logStream, driver, testName, productD03);
+			
+			ProductBasketStep.syncProductBasket(testExecStructure, logStream, driver, testName);
 
 			D02Models.GoToAgreementAndGenerateProposal(testExecStructure, logStream, driver, testName);
 
@@ -117,7 +119,7 @@ public class SOI_3601 {
 			{
 				OrderStep.goToServiceScreenByURL(testExecStructure, logStream, driver, testName, sURL);
 				
-				ServiceStep.fillDetailsFields(testExecStructure, logStream, driver, testName, provContactPerson);
+				ServiceStep.fillProvisioningContactPerson(testExecStructure, logStream, driver, testName, provContactPerson);
 
 				NavigationStep.goToOrderByURL(testExecStructure, logStream, driver, testName, orderURL);
 

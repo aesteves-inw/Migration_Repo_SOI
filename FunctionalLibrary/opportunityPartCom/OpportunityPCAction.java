@@ -36,8 +36,6 @@ public class OpportunityPCAction {
 		
 	}
 	
-
-
 	private static void clickNewBasketButtonOnOPTY(List<TestLog> logStream, int stepID, WebDriver driver) throws Exception 
 	{
 		 String actionName="clickNewBasketButtonOnOPTY";
@@ -63,8 +61,7 @@ public class OpportunityPCAction {
 	}
 
 
-
-
+	
 	// Validation Actions
 
 	public static boolean opportunityPageValidation(List<TestLog> logStream, String testName, int stepID,
@@ -95,5 +92,4 @@ public class OpportunityPCAction {
 	}
 
 	
-
 }

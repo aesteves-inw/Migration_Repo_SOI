@@ -370,9 +370,9 @@ public class D02Models
 
 			ProductBasketStep.syncProductBasket(testExecStructure, logStream, driver, testName);
 
-			ProductBasketStep.goToAgreementScreen(testExecStructure, logStream, driver, testName);
+			//ProductBasketStep.goToAgreementScreen(testExecStructure, logStream, driver, testName);
 
-			AgreementStep.generateDocumentProposal(testExecStructure, logStream, driver, testName);
+			//AgreementStep.generateDocumentProposal(testExecStructure, logStream, driver, testName);
 
 			NavigationStep.goToOpportunityByURL(testExecStructure, logStream, driver, testName, optyURL);
 
@@ -385,8 +385,7 @@ public class D02Models
 			NavigationStep.goToOpportunityByURL(testExecStructure, logStream, driver, testName, optyURL);
 
 			// 14/01 - End Of Workaround for Opportunity Page Refresh after Close Won and before going to OrderScreen 
-
-
+			
 			OpportunityStep.goToOrderScreen(testExecStructure, logStream, driver, testName, productBasketName);
 
 		}

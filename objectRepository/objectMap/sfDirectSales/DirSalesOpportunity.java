@@ -98,7 +98,9 @@ public class DirSalesOpportunity {
 
 	public static String optyHeader = "//h1[contains(.,'Opportunity')]";
 
-	public static String optyDetails = "//div[@class='slds-tabs_default']";
+	//public static String optyDetails = "//div[@class='slds-tabs_default']";
+	
+	public static String optyDetails="//flexipage-component2/slot/records-lwc-detail-panel/records-base-record-form/div/div/div/div/records-record-layout-event-broker/slot/records-lwc-record-layout/forcegenerated-detailpanel_opportunity___0123m0000000s3sqau___full___view___recordlayout2/force-record-layout-block/slot/force-record-layout-section[1]";
 	
 	public static String optyEdit = "//a[@title='Edit']";
 	

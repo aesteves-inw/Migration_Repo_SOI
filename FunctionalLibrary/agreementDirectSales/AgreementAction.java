@@ -31,6 +31,8 @@ public class AgreementAction
 					Thread.sleep(1000);
 			}
 			
+			System.out.println("Debug of generateDocumentProposal - Passes Here");
+			
 			BrowserActions.refreshPage(driver);
 			
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
