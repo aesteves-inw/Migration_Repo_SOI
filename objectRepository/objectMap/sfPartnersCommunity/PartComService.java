@@ -34,5 +34,10 @@ public class PartComService {
 	public static String caseLink="//a[contains(@href,'case')][contains(.,'0')]";
 	
 
+	// --- D03 Test Automation ---
+	public static String saveDetailsButton="//button[@type='submit']";
+	
+	public static String saveServiceSuccessMessage="//span[@data-aura-class='forceActionsText'][text()='The record has been updated successfully.']";
+
 
 }

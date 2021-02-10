@@ -419,15 +419,17 @@ public class ProductBasketAction {
 		String actionName="Product Basket: Validation of Product Basket Screen";
 
 		try
-		{			
+		{	
+			changeToDefaultiFrame(logStream, driver, stepID);
+			
 			changeToProductBasketiFrame(logStream, driver, stepID);
+			
 
 			if(BrowserActions.isElementPresent(driver, DirSalesProductBasket.cloneBasketButton) && 
 					BrowserActions.isElementPresent(driver, DirSalesProductBasket.syncButton) && 
 					BrowserActions.isElementPresent(driver, DirSalesProductBasket.productBasketHeader) && 
 					BrowserActions.isElementPresent(driver, DirSalesProductBasket.productBasketName) && 
-					BrowserActions.isElementPresent(driver, DirSalesProductBasket.addProductButton) && 
-					BrowserActions.isElementPresent(driver, DirSalesProductBasket.opportunityName))
+					BrowserActions.isElementPresent(driver, DirSalesProductBasket.addProductButton))
 			{
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
 

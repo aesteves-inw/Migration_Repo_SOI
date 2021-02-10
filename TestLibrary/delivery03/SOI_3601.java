@@ -7,15 +7,23 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import agreementPartCom.AgreementPCStep;
 import companyDirectSales.CompanyStep;
+import companyPartCom.CompanyPCStep;
+import fetchDataFromExcelFiles.ExcelDataFetch;
 import homePageDirectSales.HomePageStep;
+import homePagePartCom.HomePagePCStep;
 import loginPageDirectSales.LoginPageStep;
+import loginPagePartCom.LoginPagePCStep;
 import navigation.NavigationStep;
 import objectMap.sfDirectSales.DirSalesProductBasket;
 import opportunityDirectSales.OpportunityStep;
+import opportunityPartCom.OpportunityPCStep;
 import orderDirectSales.OrderStep;
+import orderPartCom.OrderPCStep;
 import productBasketDirectSales.ProductBasketStep;
 import serviceDirectSales.ServiceStep;
+import servicePartCom.ServicePCStep;
 import testFrameworkLibrary.D02Models;
 import testFrameworkLibrary.D03Models;
 import testLogBuilder.TestLog;
@@ -178,8 +186,6 @@ public class SOI_3601 {
 				String productBasketName=driver.findElement(By.xpath(DirSalesProductBasket.inputProductBasketName)).getAttribute("value");
 				TestLogger.logDebug(logStream, "productBasketName", "productBasketName value: "+productBasketName);
 				//end of variable storage
-				
-				ProductBasketStep.fillExistingBillingAccountIdField(testExecStructure, logStream, driver, testName);
 
 				D02Models.AddAndConfigureNewProduct(testExecStructure, logStream, driver, testName, productName, configurationIndex);
 
@@ -254,9 +260,94 @@ public class SOI_3601 {
 	public static void SOI_3601_TC03_PC_CopyBA_ProductBasket2Service(List<TestStepReportStructure> testExecStructure,
 			List<TestLog> logStream, WebDriver driver, String testName) throws Exception 
 	{
+		String user="farmerUser";
+		
+		String productName="Voice Continuity";
+
+		String configurationIndex="configurationByDefault";
+
+		String productD03="PABX";
+		
+		String provContactPerson="First User";
+		
+		
+		String optyURL, productBasketName, orderURL, serviceName, serviceURL, serviceID;
+
+		List<String> servicesURL=new ArrayList<String>();
+
+		int counterServices;
+
 		try
 		{
+			LoginPagePCStep.LoginPartnersCommunity(testExecStructure, logStream, driver, testName, user);
 
+			HomePagePCStep.NavigateToCompanyPage(testExecStructure, logStream, driver, testName);
+
+			CompanyPCStep.createQuickSaleOPTY(testExecStructure, logStream, driver, testName);
+			
+			optyURL = driver.getCurrentUrl();
+
+			OpportunityPCStep.createProductBasket(testExecStructure, logStream, driver, testName);
+			
+			productBasketName=driver.findElement(By.xpath(DirSalesProductBasket.inputProductBasketName)).getAttribute("value");
+			
+			ProductBasketStep.fillExistingBillingAccountIdField(testExecStructure, logStream, driver, testName);
+			
+			D02Models.AddAndConfigureNewProductInPC(testExecStructure, logStream, driver, testName, productName, configurationIndex);
+			
+			D03Models.AddNonQuotableProductToProductBasket(testExecStructure, logStream, driver, testName, productD03);
+			
+			ProductBasketStep.syncProductBasket(testExecStructure, logStream, driver, testName);
+			
+			ProductBasketStep.goToAgreementScreenInPC(testExecStructure, logStream, driver, testName);
+			
+			AgreementPCStep.generateDocumentProposal(testExecStructure, logStream, driver, testName);
+			
+			NavigationStep.goToOpportunityByURLInPC(testExecStructure, logStream, driver, testName, optyURL);
+			
+			OpportunityStep.closeWinOPTY(testExecStructure, logStream, driver, testName);
+			
+			OpportunityPCStep.goToOrderScreenList(testExecStructure, logStream, driver, testName, productBasketName);
+			
+			orderURL=driver.getCurrentUrl();
+			
+			List<WebElement> listOfServices = driver.findElements(By.xpath("//a[@title='Name']"));
+			
+			counterServices=listOfServices.size();
+			
+			for(int i=0;counterServices>i;i++)
+			{
+
+				serviceName=listOfServices.get(i).getText().toString();
+
+				serviceID=listOfServices.get(i).getAttribute("data-recordid");
+				
+				serviceURL=ExcelDataFetch.searchDT(0, "PartnersCommunity")+"/"+serviceID;
+
+				servicesURL.add(serviceURL);
+
+				System.out.println("Debug of serviceName: "+serviceName+" - URL: "+serviceURL);
+
+				TestLogger.logDebug(logStream, "serviceName", "serviceName: "+serviceName+" - URL: "+serviceURL);
+
+				System.out.println("Debug of listOfServices: End of the loop: "+i);
+
+			}
+			
+			for(String sURL : servicesURL)
+			{
+				OrderPCStep.goToServiceScreenByURL(testExecStructure, logStream, driver, testName, sURL);
+				
+				ServicePCStep.fillProvisioningContactPerson(testExecStructure, logStream, driver, testName, provContactPerson);
+
+				NavigationStep.goToOrderByURLInPC(testExecStructure, logStream, driver, testName, orderURL);
+
+				Thread.sleep(5000);
+			}
+
+			OrderPCStep.submitOrderPositiveValidation(testExecStructure, logStream, driver, testName);
+
+			
 
 		}
 		catch(Exception e)
@@ -274,7 +365,102 @@ public class SOI_3601 {
 	{
 		try
 		{
+			String user="farmerUser";
+			
+			String productName="Voice Continuity";
 
+			String configurationIndex="configurationByDefault";
+
+			String productD03="PABX";
+			
+			String provContactPerson="First User";
+			
+			
+			String optyURL, productBasketName, orderURL, serviceName, serviceURL, serviceID;
+
+			List<String> servicesURL=new ArrayList<String>();
+
+			int counterServices;
+
+			try
+			{
+				LoginPagePCStep.LoginPartnersCommunity(testExecStructure, logStream, driver, testName, user);
+
+				HomePagePCStep.NavigateToCompanyPage(testExecStructure, logStream, driver, testName);
+
+				CompanyPCStep.createQuickSaleOPTY(testExecStructure, logStream, driver, testName);
+				
+				optyURL = driver.getCurrentUrl();
+
+				OpportunityPCStep.createProductBasket(testExecStructure, logStream, driver, testName);
+				
+				productBasketName=driver.findElement(By.xpath(DirSalesProductBasket.inputProductBasketName)).getAttribute("value");
+				
+				ProductBasketStep.fillExistingBillingAccountIdField(testExecStructure, logStream, driver, testName);
+				
+				D02Models.AddAndConfigureNewProductInPC(testExecStructure, logStream, driver, testName, productName, configurationIndex);
+				
+				D03Models.AddNonQuotableProductToProductBasket(testExecStructure, logStream, driver, testName, productD03);
+				
+				ProductBasketStep.syncProductBasket(testExecStructure, logStream, driver, testName);
+				
+				ProductBasketStep.goToAgreementScreenInPC(testExecStructure, logStream, driver, testName);
+				
+				AgreementPCStep.generateDocumentProposal(testExecStructure, logStream, driver, testName);
+				
+				NavigationStep.goToOpportunityByURLInPC(testExecStructure, logStream, driver, testName, optyURL);
+				
+				OpportunityStep.closeWinOPTY(testExecStructure, logStream, driver, testName);
+				
+				OpportunityPCStep.goToOrderScreenList(testExecStructure, logStream, driver, testName, productBasketName);
+				
+				orderURL=driver.getCurrentUrl();
+				
+				List<WebElement> listOfServices = driver.findElements(By.xpath("//a[@title='Name']"));
+				
+				counterServices=listOfServices.size();
+				
+				for(int i=0;counterServices>i;i++)
+				{
+
+					serviceName=listOfServices.get(i).getText().toString();
+
+					serviceID=listOfServices.get(i).getAttribute("data-recordid");
+					
+					serviceURL=ExcelDataFetch.searchDT(0, "PartnersCommunity")+"/"+serviceID;
+
+					servicesURL.add(serviceURL);
+
+					System.out.println("Debug of serviceName: "+serviceName+" - URL: "+serviceURL);
+
+					TestLogger.logDebug(logStream, "serviceName", "serviceName: "+serviceName+" - URL: "+serviceURL);
+
+					System.out.println("Debug of listOfServices: End of the loop: "+i);
+
+				}
+				
+				for(String sURL : servicesURL)
+				{
+					OrderPCStep.goToServiceScreenByURL(testExecStructure, logStream, driver, testName, sURL);
+					
+					ServicePCStep.fillProvisioningContactPerson(testExecStructure, logStream, driver, testName, provContactPerson);
+
+					NavigationStep.goToOrderByURLInPC(testExecStructure, logStream, driver, testName, orderURL);
+
+					Thread.sleep(5000);
+				}
+
+				OrderPCStep.submitOrderNegativeValBillingAddress(testExecStructure, logStream, driver, testName);
+
+				
+
+			}
+			catch(Exception e)
+			{
+				System.out.println(e);
+				TestLogger.logError(logStream, testName, "Test Failed", e.toString());
+				throw new Exception(testName+" - Test Case Failed");
+			}
 
 		}
 		catch(Exception e)

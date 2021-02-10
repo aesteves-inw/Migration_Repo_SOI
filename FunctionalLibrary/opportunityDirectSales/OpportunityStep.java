@@ -8,6 +8,7 @@ import executionTools.BrowserActions;
 import executionTools.TestExecutionReport;
 import fetchDataFromExcelFiles.ExcelDataFetch;
 import navigation.NavigationAction;
+import opportunityPartCom.OpportunityPCAction;
 import orderDirectSales.OrderAction;
 import productBasketDirectSales.ProductBasketAction;
 import productsDirectSales.ProductsAction;
@@ -204,9 +205,9 @@ public class OpportunityStep {
 
 		try
 		{
-			OpportunityAction.closeWonOpportunity(logStream, driver, stepID, testName);
+			OpportunityPCAction.closeWinOPTY(logStream, driver, stepID);
 
-			validation = OpportunityAction.closeWonOpportunityValidation(logStream, driver, stepID, testName);
+			validation = OpportunityPCAction.closeWinOPTYValidation(logStream, driver, stepID);
 
 			if(validation==true)
 			{

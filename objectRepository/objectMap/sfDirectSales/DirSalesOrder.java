@@ -199,6 +199,8 @@ public class DirSalesOrder {
 	public static String orderSubmitionErrorBillingAccount="//span[starts-with(.,'Billing Account Id must be filled')]";
 	
 	public static String orderSubmitionErrorProvisioningContact ="//span[starts-with(.,'Provisioning contact must be filled')]";
+	
+	public static String orderStatusLabel="//*[contains(@id,'sectionContent-')]/div/slot/force-record-layout-row[5]/slot/force-record-layout-item[2]/div/div/div[2]/span/slot[1]/slot/lightning-formatted-text";
 
 	
 

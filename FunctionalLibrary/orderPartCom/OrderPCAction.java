@@ -1,4 +1,4 @@
-package orderDirectSales;
+package orderPartCom;
 
 import java.util.List;
 
@@ -8,12 +8,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import executionTools.BrowserActions;
-import objectMap.sfDirectSales.DirSalesOrder;
+import objectMap.sfPartnersCommunity.PartComOrder;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
 
-public class OrderAction 
-{
+public class OrderPCAction {
+
 	// Operational Actions
 
 	public static void submitOrder(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
@@ -23,9 +23,9 @@ public class OrderAction
 
 		try
 		{
-			driver.findElement(By.xpath(DirSalesOrder.submitOrderButton)).click();
+			driver.findElement(By.xpath(PartComOrder.submitOrderBtn)).click();
 
-			new WebDriverWait(driver, 15).until(ExpectedConditions.elementToBeClickable(By.xpath(DirSalesOrder.submitOrderButton)));
+			new WebDriverWait(driver, 15).until(ExpectedConditions.elementToBeClickable(By.xpath(PartComOrder.submitOrderBtn)));
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
@@ -40,21 +40,19 @@ public class OrderAction
 	}
 
 
-
-
 	// Validation Actions
 
-	public static boolean orderScreenValidation(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
+	public static boolean validateOrderScreen(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
 	{
-		String actionName="orderScreenValidation";
+		String actionName="validateOrderScreen";
 		try
 		{
-			if(BrowserActions.isElementPresent(driver, DirSalesOrder.orderDetails))
+			if(
+					BrowserActions.isElementPresent(driver, PartComOrder.filesContainer) &&
+					BrowserActions.isElementPresent(driver, PartComOrder.servicesContainer) &&
+					BrowserActions.isElementPresent(driver, PartComOrder.orderDetailsFrame)
+					)
 			{
-				new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesOrder.orderDetails)));
-
-				//new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='Services']")));
-
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
 				return true;
 			}
@@ -72,23 +70,23 @@ public class OrderAction
 		}
 	}
 
-	public static boolean submitOrderPositiveValidationValidation(List<TestLog> logStream, WebDriver driver,
-			int stepID) throws Exception 
+
+	public static boolean orderSubmissionPositiveValidation(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
 	{
-		String actionName="submitOrderPositiveValidationValidation";
+		String actionName="orderSubmissionPositiveValidation";
 
 		String orderStatusValidation;
-		
+
 		try
 		{
-			if(BrowserActions.isElementPresent(driver, DirSalesOrder.orderSubmittedSuccess))
+			if(BrowserActions.isElementPresent(driver, PartComOrder.successMessage))
 			{							
 				Thread.sleep(3000);
 
 				BrowserActions.refreshPage(driver);
 
-				orderStatusValidation=driver.findElement(By.xpath(DirSalesOrder.orderStatusLabel)).getText().toString();
-				
+				orderStatusValidation=driver.findElement(By.xpath(PartComOrder.orderStatusLabel)).getText().toString();
+
 				System.out.println("Debug of submitOrderPositiveValidationValidation: "+orderStatusValidation);
 
 				if(orderStatusValidation.equalsIgnoreCase("submitted"))
@@ -116,13 +114,14 @@ public class OrderAction
 		}
 	}
 
-	public static boolean submitOrderNegativeValBillingAddress(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
-	{
-		String actionName="submitOrderNegativeValBillingAddress";
 
+	public static boolean orderSubmissionNegativeValBillingAddress(List<TestLog> logStream, WebDriver driver,
+			int stepID) throws Exception 
+	{
+		String actionName="orderSubmissionNegativeValBillingAddress";
 		try
-		{			
-			if(BrowserActions.isElementPresent(driver, DirSalesOrder.orderSubmitionErrorBillingAccount))
+		{
+			if(BrowserActions.isElementPresent(driver, PartComOrder.submitOrderBillingAccountErrorMessage))
 			{
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
 				return true;
@@ -141,30 +140,6 @@ public class OrderAction
 		}
 	}
 
-	public static boolean submitOrderNegativeValProvisioningContact(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
-	{
-		String actionName="submitOrderNegativeValProvisioningContact";
-
-		try
-		{			
-			if(BrowserActions.isElementPresent(driver, DirSalesOrder.orderSubmitionErrorProvisioningContact))
-			{
-				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
-				return true;
-			}
-			else
-			{
-				return false;
-			}
-
-		}
-		catch(Exception e)
-		{
-			System.out.println(e);
-			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
-			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
-		}
-	}
 
 
 }

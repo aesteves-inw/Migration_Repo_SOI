@@ -12,9 +12,11 @@ import homePageDirectSales.HomePageStep;
 import loginPageDirectSales.LoginPageStep;
 import navigation.NavigationStep;
 import objectMap.sfDirectSales.DirSalesProductBasket;
+import objectMap.sfDirectSales.DirSalesService;
 import opportunityDirectSales.OpportunityStep;
 import orderDirectSales.OrderStep;
 import productBasketDirectSales.ProductBasketStep;
+import serviceDirectSales.ServiceStep;
 import testFrameworkLibrary.D02Models;
 import testFrameworkLibrary.D03Models;
 import testLogBuilder.TestLog;
@@ -35,12 +37,16 @@ public class SOI_3511
 		String nonQuotableProduct="PABX";
 
 		String userProfile="salesUser";
+		
+		String provContactPerson="First User";
 
-		String optyURL, orderURL, serviceURL;
+		String optyURL, orderURL, serviceURL, caseURL, caseURLLink;
 
 		String productBasketName, serviceName;
 		
 		List<String> servicesURL=new ArrayList<String>();
+		
+		List<String> caseURLValidation=new ArrayList<String>();
 
 		try
 		{
@@ -59,6 +65,8 @@ public class SOI_3511
 
 			TestLogger.logDebug(logStream, "productBasketName", "productBasketName value: "+productBasketName);
 			//end of variable storage
+			
+			ProductBasketStep.fillExistingBillingAccountIdField(testExecStructure, logStream, driver, testName);
 
 			D02Models.AddAndConfigureNewProduct(testExecStructure, logStream, driver, testName, productName, configurationIndex);
 
@@ -118,14 +126,36 @@ public class SOI_3511
 			{
 				OrderStep.goToServiceScreenByURL(testExecStructure, logStream, driver, testName, sURL);
 				
+				ServiceStep.fillProvisioningContactPerson(testExecStructure, logStream, driver, testName, provContactPerson);
+				
 				NavigationStep.goToOrderByURL(testExecStructure, logStream, driver, testName, orderURL);
 				
 				Thread.sleep(5000);
 			}
 			
+			OrderStep.submitOrderPositiveValidation(testExecStructure, logStream, driver, testName);
 			
+			for(String sURL : servicesURL)
+			{
+				OrderStep.goToServiceScreenByURL(testExecStructure, logStream, driver, testName, sURL);
+				
+				ServiceStep.serviceCaseValidationAfterOrderSubmit(testExecStructure, logStream, driver, testName);
+				
+				caseURL=driver.findElement(By.xpath(DirSalesService.caseFieldOnServicePage)).getAttribute("href");
+				
+				caseURLValidation.add(caseURL);
+					
+				NavigationStep.goToOrderByURL(testExecStructure, logStream, driver, testName, orderURL);
+				
+				Thread.sleep(5000);
+			}
 			
-
+			/*
+			 * 10/02 - A part from E2E Flow Process of navigation to Case.
+			caseURLLink=caseURLValidation.get(0);
+			
+			NavigationStep.goToCasePageByURL(testExecStructure, logStream, driver, testName, caseURLLink);
+			*/
 		}
 		catch(Exception e)
 		{

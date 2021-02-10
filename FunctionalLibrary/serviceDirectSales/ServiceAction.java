@@ -173,7 +173,7 @@ public class ServiceAction {
 		{
 			driver.findElement(By.xpath(DirSalesService.buttonEditProvContact)).click();
 
-			WebElement inputEditProvContact = new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesService.inputProvisioningContactPerson)));
+			WebElement inputEditProvContact = driver.findElement(By.xpath(DirSalesService.inputProvisioningContactPerson));
 
 			inputEditProvContact.sendKeys(provContactPerson);
 
@@ -199,7 +199,7 @@ public class ServiceAction {
 			String textExistingBillingAccountIdField) throws Exception 
 	{
 		String actionName="fillBillingAccountIDSingleAction";
-		
+
 		try
 		{
 			WebElement inputBillingAccountID = new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesService.inputBillingAccountID)));
@@ -295,6 +295,7 @@ public class ServiceAction {
 
 			String fieldProvisioningContactPersonValidation=driver.findElement(By.xpath(DirSalesService.fieldProvisioningContactPerson)).getText().toString();
 
+			System.out.println("debug of fieldProvisioningContactPersonValidation: "+fieldProvisioningContactPersonValidation);
 
 			if(fieldProvisioningContactPersonValidation.contains(provContactPerson))
 			{
@@ -326,6 +327,33 @@ public class ServiceAction {
 
 
 			if(fieldBillingAccountIDValidation.contains(textExistingBillingAccountIdField))
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
+
+	public static boolean caseLinkOnServicePageValidation(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
+	{
+		String actionName="caseLinkOnServicePageValidation";
+		
+		try
+		{
+			WebElement caseFieldOnServiceScreen = driver.findElement(By.xpath("//*[contains(@id, 'brandBand')]/div/div/div[5]/div/one-record-home-flexipage2/forcegenerated-adgrollup_component___forcegenerated__flexipage_recordpage___d02_service_layout___csord__service__c___view/forcegenerated-flexipage_d02_service_layout_csord__service__c__view_js/record_flexipage-record-page-decorator/div[1]/slot/flexipage-record-home-template-desktop2/div/div[1]/slot/slot/flexipage-component2/slot/records-lwc-highlights-panel/records-lwc-record-layout/forcegenerated-highlightspanel_csord__service__c___0123m0000000fbfqae___compact___view___recordlayout2/force-highlights2/div[1]/div[2]/slot/slot/force-highlights-details-item[3]/div/p[2]/slot/force-lookup/div/force-hoverable-link/div/a"));
+			
+			if(caseFieldOnServiceScreen != null)
 			{
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
 				return true;
