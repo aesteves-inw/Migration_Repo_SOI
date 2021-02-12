@@ -441,28 +441,34 @@ public class ServiceAction {
 
 	
 	public static boolean validateNewProvisioningContactPersonAfterSaving(List<TestLog> logStream, WebDriver driver,
-			int stepID) 
+			int stepID) throws Exception 
 	{
-        String actionName="validateNewProvisioningContactPersonAfterSaving";
-	     	try
-					{
-						if()
-						{
-							TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
-							return true;
-						}
-						else
-						{
-							return false;
-						}
+		String actionName="validateNewProvisioningContactPersonAfterSaving";
 
-					}
-					catch(Exception e)
-					{
-						System.out.println(e);
-						TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
-						throw new Exception (actionName+" - Failed in Step: "+stepID,e);
-					}
+		try
+		{
+
+			String fieldProvisioningContactPersonValidation=driver.findElement(By.xpath(DirSalesService.fieldProvisioningContactPerson)).getText().toString();
+
+			System.out.println("debug of fieldProvisioningContactPersonValidation: "+fieldProvisioningContactPersonValidation);
+
+			if(fieldProvisioningContactPersonValidation.contains("Tomated"))
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
 	}
 
 	

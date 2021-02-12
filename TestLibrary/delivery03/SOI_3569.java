@@ -23,6 +23,7 @@ import opportunityPartCom.OpportunityPCStep;
 import orderDirectSales.OrderStep;
 import orderPartCom.OrderPCStep;
 import productBasketDirectSales.ProductBasketStep;
+import productBasketPartCom.ProductBasketPCStep;
 import serviceDirectSales.ServiceStep;
 import servicePartCom.ServicePCStep;
 import testFrameworkLibrary.D02Models;
@@ -34,6 +35,7 @@ import testReportComposition.TestStepReportStructure;
 public class SOI_3569 
 {
 
+	
 	public static void SOI_3569_TC01_DS_TechnicalContactServiceLevel_New(
 			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver,
 			String testName) throws Exception 
@@ -401,8 +403,25 @@ public class SOI_3569
 			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver,
 			String testName) throws Exception 
 	{
+		
+		String productName ="Phone Line";
+
+		String userProfile="salesUser";
+
+
 		try
 		{
+			LoginPageStep.loginSFDS(testExecStructure, logStream, driver, testName, userProfile);
+
+			HomePageStep.navigateToCompanyPage(testExecStructure, logStream, driver, testName);
+
+			CompanyStep.createQuickSaleOpportunity(testExecStructure, logStream, driver, testName);
+
+			OpportunityStep.createProductBasket(testExecStructure, logStream, driver, testName);
+			
+			D02Models.AddAnyProductToProductBasket(testExecStructure, logStream, driver, testName, productName);
+			
+			ProductBasketStep.goToOrderEnrichment(testExecStructure, logStream, driver, testName, productName);
 
 
 		}
@@ -419,8 +438,95 @@ public class SOI_3569
 			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver,
 			String testName) throws Exception 
 	{
+		String user="farmerUser";
+
+		String productName ="Phone Line";
+
+		String configurationIndex="configurationByDefault";
+
+		String productD03="PABX";
+
+		String provContactPerson="First User";
+
+
+
+		String optyURL, productBasketName, orderURL, serviceName, serviceURL, serviceID;
+
+		List<String> servicesURL=new ArrayList<String>();
+
+
+
+		int counterServices;
+
 		try
 		{
+			LoginPagePCStep.LoginPartnersCommunity(testExecStructure, logStream, driver, testName, user);
+
+			HomePagePCStep.NavigateToCompanyPage(testExecStructure, logStream, driver, testName);
+
+			CompanyPCStep.createQuickSaleOPTY(testExecStructure, logStream, driver, testName);
+
+			optyURL = driver.getCurrentUrl();
+
+			OpportunityPCStep.createProductBasket(testExecStructure, logStream, driver, testName);
+
+			productBasketName=driver.findElement(By.xpath(DirSalesProductBasket.inputProductBasketName)).getAttribute("value");
+
+			ProductBasketStep.fillExistingBillingAccountIdField(testExecStructure, logStream, driver, testName);
+
+			D02Models.AddAndConfigureNewProductInPC(testExecStructure, logStream, driver, testName, productName, configurationIndex);
+
+			D03Models.AddNonQuotableProductToProductBasket(testExecStructure, logStream, driver, testName, productD03);
+
+			ProductBasketStep.syncProductBasket(testExecStructure, logStream, driver, testName);
+
+			ProductBasketStep.goToAgreementScreenInPC(testExecStructure, logStream, driver, testName);
+
+			AgreementPCStep.generateDocumentProposal(testExecStructure, logStream, driver, testName);
+
+			NavigationStep.goToOpportunityByURLInPC(testExecStructure, logStream, driver, testName, optyURL);
+
+			OpportunityStep.closeWinOPTY(testExecStructure, logStream, driver, testName);
+
+			OpportunityPCStep.goToOrderScreenList(testExecStructure, logStream, driver, testName, productBasketName);
+
+			orderURL=driver.getCurrentUrl();
+
+			List<WebElement> listOfServices = driver.findElements(By.xpath("//a[@title='Name']"));
+
+			counterServices=listOfServices.size();
+
+			for(int i=0;counterServices>i;i++)
+			{
+
+				serviceName=listOfServices.get(i).getText().toString();
+
+				serviceID=listOfServices.get(i).getAttribute("data-recordid");
+
+				serviceURL=ExcelDataFetch.searchDT(0, "PartnersCommunity")+"/"+serviceID;
+
+				servicesURL.add(serviceURL);
+
+				System.out.println("Debug of serviceName: "+serviceName+" - URL: "+serviceURL);
+
+				TestLogger.logDebug(logStream, "serviceName", "serviceName: "+serviceName+" - URL: "+serviceURL);
+
+				System.out.println("Debug of listOfServices: End of the loop: "+i);
+
+			}
+
+			for(String sURL : servicesURL)
+			{
+				OrderPCStep.goToServiceScreenByURL(testExecStructure, logStream, driver, testName, sURL);
+
+				ServicePCStep.fillProvisioningContactPerson(testExecStructure, logStream, driver, testName, provContactPerson);
+
+				NavigationStep.goToOrderByURLInPC(testExecStructure, logStream, driver, testName, orderURL);
+
+				Thread.sleep(5000);
+			}
+
+			OrderPCStep.submitOrderPositiveValidation(testExecStructure, logStream, driver, testName);
 
 
 		}
@@ -624,7 +730,7 @@ public class SOI_3569
 			{
 				OrderPCStep.goToServiceScreenByURL(testExecStructure, logStream, driver, testName, sURL);
 
-				ServicePCStep.fillProvisioningContactPerson(testExecStructure, logStream, driver, testName, provContactPerson);
+				ServicePCStep.fillWithNewProvisioningContactPerson(testExecStructure, logStream, driver, testName, provContactPerson);
 
 				NavigationStep.goToOrderByURLInPC(testExecStructure, logStream, driver, testName, orderURL);
 
@@ -648,9 +754,24 @@ public class SOI_3569
 			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver,
 			String testName) throws Exception 
 	{
+		String productName ="Phone Line";
+
+		String userProfile="salesUser";
+		
 		try
 		{
+
+			LoginPagePCStep.LoginPartnersCommunity(testExecStructure, logStream, driver, testName, userProfile);
+
+			HomePagePCStep.NavigateToCompanyPage(testExecStructure, logStream, driver, testName);
+
+			CompanyPCStep.createQuickSaleOPTY(testExecStructure, logStream, driver, testName);
+
+			OpportunityPCStep.createProductBasket(testExecStructure, logStream, driver, testName);
 			
+			D02Models.AddAnyProductToProductBasket(testExecStructure, logStream, driver, testName, productName);
+			
+			ProductBasketPCStep.goToOrderEnrichment(testExecStructure, logStream, driver, testName, productName);
 
 		}
 		catch(Exception e)
@@ -662,4 +783,5 @@ public class SOI_3569
 
 	}
 
+	
 }

@@ -68,7 +68,7 @@ public class CompanyContactPersonAction
 
 
 
-	private static void inputFirstName(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
+	public static void inputFirstName(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
 	{
 		String actionName="inputFirstName";
 
@@ -89,7 +89,7 @@ public class CompanyContactPersonAction
 
 	}
 
-	private static void inputLastName(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
+	public static void inputLastName(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
 	{
 		String actionName="inputLastName";
 
@@ -109,7 +109,7 @@ public class CompanyContactPersonAction
 
 	}
 
-	private static void inputSelectCompany(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
+	public static void inputSelectCompany(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
 	{
 		String actionName="inputSelectCompany";
 
@@ -136,7 +136,7 @@ public class CompanyContactPersonAction
 
 	}
 
-	private static void inputEmail(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
+	public static void inputEmail(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
 	{
 		String actionName="inputEmail";
 
@@ -295,9 +295,9 @@ public class CompanyContactPersonAction
 
 		try
 		{
-			driver.findElement(By.xpath()).click();
+			driver.findElement(By.xpath(DirSalesCompanyContactPerson.buttonSave)).click();
 			
-			new WebDriverWait(driver, 15).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath()));
+			new WebDriverWait(driver, 15).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(DirSalesCompanyContactPerson.buttonSave)));
 
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);

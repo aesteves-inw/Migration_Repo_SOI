@@ -39,5 +39,5 @@ public class PartComService {
 	
 	public static String saveServiceSuccessMessage="//span[@data-aura-class='forceActionsText'][text()='The record has been updated successfully.']";
 
-
+	public static String buttonNewCompanyContactPerson="//div[@title='New Company contact person']";
 }

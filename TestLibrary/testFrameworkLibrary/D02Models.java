@@ -411,5 +411,25 @@ public class D02Models
 
 		OpportunityStep.goToOrderScreen(testExecStructure, logStream, driver, testName, productBasketName);
 	}
+	
+	public static void AddAnyProductToProductBasket(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream,
+			WebDriver driver, String testName, String product) throws Exception
+	{
+		String actionName="AddAnyProductToProductBasket";
+		
+		try
+		{
+			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, testName);
+			
+			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, product);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, testName, "Test Failed on Model: "+actionName, e.toString());
+			throw new Exception(testName+": Test Case Failed on Test Model: "+actionName);
+		}
+	}
 
 }
