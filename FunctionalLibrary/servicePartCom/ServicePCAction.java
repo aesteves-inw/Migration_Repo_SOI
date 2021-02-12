@@ -47,29 +47,56 @@ public class ServicePCAction {
 		}
 
 	}
-	
+
 	public static void saveChangesOnServiceDetails(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
-    {
-        String actionName="saveChangesOnServiceDetails";
+	{
+		String actionName="saveChangesOnServiceDetails";
 
 
-				try
-				{
-					driver.findElement(By.xpath(PartComService.saveDetailsButton)).click();
-					
-					new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(PartComService.saveServiceSuccessMessage)));
+		try
+		{
+			driver.findElement(By.xpath(PartComService.saveDetailsButton)).click();
 
-					TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(PartComService.saveServiceSuccessMessage)));
 
-				}
-				catch(Exception e)
-				{
-					System.out.println(e);
-					TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
-					throw new Exception (actionName+" - Failed in Step "+stepID,e);
-				}
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
-    }
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+
+	}
+
+
+	public static void fillBillingAccountID(List<TestLog> logStream, WebDriver driver, int stepID,
+			String billingAccountID) throws Exception 
+	{
+		String actionName="fillBillingAccountID";
+
+
+		try
+		{
+			driver.findElement(By.xpath("//input[@name='PRX_SOI_Billing_Account_ID__c']")).clear();
+
+			driver.findElement(By.xpath("//input[@name='PRX_SOI_Billing_Account_ID__c']")).sendKeys(billingAccountID);
+
+
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+
+	}
 
 
 	// Validation Actions
@@ -82,6 +109,61 @@ public class ServicePCAction {
 			if(BrowserActions.isElementPresent(driver, PartComService.filesContainer) &&
 					BrowserActions.isElementPresent(driver, PartComService.headerServicesPage) &&
 					BrowserActions.isElementPresent(driver, PartComService.detailsServicePage))
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
+
+	public static boolean caseValidationAfterOrderSubmit(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
+	{
+		String actionName="caseValidationAfterOrderSubmit";
+
+		try
+		{
+
+			if(BrowserActions.isElementPresent(driver, PartComService.caseLink))
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
+
+
+
+	public static boolean validateBillingAccountID(List<TestLog> logStream, WebDriver driver, int  stepID,
+			String billingAccountID) throws Exception 
+	{
+		String actionName="validateBillingAccountID";
+		try
+		{
+			String valBillingAccountID = driver.findElement(By.xpath("//input[@name='PRX_SOI_Billing_Account_ID__c']")).getAttribute("value");
+			
+			if(valBillingAccountID.contains(billingAccountID))
 			{
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
 				return true;

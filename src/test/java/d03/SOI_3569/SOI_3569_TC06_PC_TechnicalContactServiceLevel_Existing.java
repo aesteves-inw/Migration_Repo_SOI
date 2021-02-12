@@ -1,4 +1,4 @@
-package testingFrameworkPackage;
+package d03.SOI_3569;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,60 +8,60 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import delivery03.SOI_3569;
 import executionDriver.ExecDriverClass;
 import executionTools.ExecStructure;
 import executionTools.TestStructure;
-import testFrameworkLibrary.D02Models;
 import testLogBuilder.TestLog;
+import testLogger.TestLogger;
 import testReportComposition.TestReportTestData;
 import testReportComposition.TestStepReportStructure;
 
-public class GeneralTestingClassD02
+public class SOI_3569_TC06_PC_TechnicalContactServiceLevel_Existing 
 {
-	
-	String testName = "GeneralTestingClass_D02_TC01_ProductInProductBasket";
+	String testName = "SOI_3569_TC06_PC_TechnicalContactServiceLevel_Existing";
 
 	String initialTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
 
 	long startTime=System.nanoTime();
 
 	List<TestStepReportStructure> testExecStructure = new ArrayList<TestStepReportStructure>();
-	
+
 	List<TestReportTestData> testData = new ArrayList<TestReportTestData>();
-	
+
 	List<TestLog> logStream = new ArrayList<TestLog>();
-	
-	int stepsExecuted;
-	
+
 	WebDriver driver;
 	
-	
-	
+
 	@BeforeClass
 	public void beforeClass() 
 	{
 		driver = ExecDriverClass.setupDriver();
 		
 		TestStructure.startTest(logStream,testName);
+		
 	}
+
 	
 	@Test
-	public void ProductInProductBasket() throws Exception
-	{		
-		
-		
-		String configurationIndex="configurationByDefault";
-		
-		String product ="Phone Line";
-		
-		D02Models.E2FFlowForD02(testExecStructure, logStream, driver, testName, product, configurationIndex);
+	public void testCase() throws Exception
+	{ 
+		try
+		{
+			SOI_3569.SOI_3569_TC06_PC_TechnicalContactServiceLevel_Existing(testExecStructure, logStream, driver, testName);
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, testName, "Test Execution Failed", e.toString());
+			throw new Exception (testName+" - Failed: ",e);
+		}
 	}
-	
-	
-	@AfterClass
+
+		@AfterClass
 	public void afterClass() 
 	{
 		TestStructure.finishTest(testName, initialTestDate, startTime, testExecStructure, testData, driver, logStream);
 	}
-
 }

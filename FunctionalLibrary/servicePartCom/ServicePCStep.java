@@ -11,7 +11,8 @@ import testReportComposition.ReportStructure;
 import testReportComposition.TestStepReportStructure;
 import testReporter.TestReporter;
 
-public class ServicePCStep {
+public class 
+ServicePCStep {
 
 	public static void fillProvisioningContactPerson(List<TestStepReportStructure> testExecStructure,
 			List<TestLog> logStream, WebDriver driver, String testName, String provContactPerson) throws Exception 
@@ -34,6 +35,97 @@ public class ServicePCStep {
 			ServicePCAction.saveChangesOnServiceDetails(logStream, driver, stepID);
 
 			validation = BrowserActions.isElementPresent(driver, "//input[@placeholder='"+provContactPerson+"']");
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				TestLogger.logTrace(logStream, stepNameMin, "Failed in Step: "+stepID+". Validation: False");
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+		
+	}
+
+	public static void serviceCaseValidationAfterOrderSubmit(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName) throws Exception 
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+		
+		String stepName="Service: Case Validation After Order Submit";
+
+		String stepNameMin="serviceCaseValidationAfterOrderSubmit";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+
+			validation = ServicePCAction.caseValidationAfterOrderSubmit(logStream, driver, stepID);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				TestLogger.logTrace(logStream, stepNameMin, "Failed in Step: "+stepID+". Validation: False");
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+		
+	}
+
+	
+	public static void fillBillingAccountID(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream,
+			WebDriver driver, String testName) throws Exception 
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+		
+		String stepName="Service fillBillingAccountID (in PC)";
+
+		String stepNameMin="fillBillingAccountID";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+		
+		
+		String billingAccountID ="04121986";
+
+		try
+		{
+			ServicePCAction.fillBillingAccountID(logStream, driver, stepID, billingAccountID);
+			
+			ServicePCAction.saveChangesOnServiceDetails(logStream, driver, stepID);
+
+			validation = ServicePCAction.validateBillingAccountID(logStream, driver, stepID, billingAccountID);
 
 			if(validation==true)
 			{

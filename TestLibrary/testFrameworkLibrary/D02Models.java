@@ -364,12 +364,12 @@ public class D02Models
 
 			ProductBasketStep.goToEditProductConfigurationScreen(testExecStructure, logStream, driver, testName, productName);
 
-			EProdConfigStep.configureVoiceContinuity(testExecStructure, logStream, driver, testName, productName, configurationIndex);
+			EProdConfigStep.configurePhoneLine(testExecStructure, logStream, driver, testName, productName, configurationIndex);
 
 			EProdConfigStep.finsihConfiguration(testExecStructure, logStream, driver, testName);
 
 			ProductBasketStep.syncProductBasket(testExecStructure, logStream, driver, testName);
-
+/*
 			//ProductBasketStep.goToAgreementScreen(testExecStructure, logStream, driver, testName);
 
 			//AgreementStep.generateDocumentProposal(testExecStructure, logStream, driver, testName);
@@ -387,7 +387,7 @@ public class D02Models
 			// 14/01 - End Of Workaround for Opportunity Page Refresh after Close Won and before going to OrderScreen 
 			
 			OpportunityStep.goToOrderScreen(testExecStructure, logStream, driver, testName, productBasketName);
-
+*/
 		}
 		catch(Exception e)
 		{

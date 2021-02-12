@@ -256,7 +256,6 @@ public class SOI_3601 {
 		
 	}
 	
-
 	public static void SOI_3601_TC03_PC_CopyBA_ProductBasket2Service(List<TestStepReportStructure> testExecStructure,
 			List<TestLog> logStream, WebDriver driver, String testName) throws Exception 
 	{

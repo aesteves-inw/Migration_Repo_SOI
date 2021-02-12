@@ -6,6 +6,7 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
 import agreementDirectSales.AgreementStep;
 import agreementPartCom.AgreementPCStep;
 import companyDirectSales.CompanyStep;
@@ -17,8 +18,6 @@ import loginPageDirectSales.LoginPageStep;
 import loginPagePartCom.LoginPagePCStep;
 import navigation.NavigationStep;
 import objectMap.sfDirectSales.DirSalesProductBasket;
-import objectMap.sfDirectSales.DirSalesService;
-import objectMap.sfPartnersCommunity.PartComService;
 import opportunityDirectSales.OpportunityStep;
 import opportunityPartCom.OpportunityPCStep;
 import orderDirectSales.OrderStep;
@@ -32,30 +31,51 @@ import testLogBuilder.TestLog;
 import testLogger.TestLogger;
 import testReportComposition.TestStepReportStructure;
 
-public class SOI_3511 
+public class SOI_3569 
 {
 
-	public static void SOI_3511_TC01_DS_SingleCaseRecordForQuotableAndNonQuotable(
+	public static void SOI_3569_TC01_DS_TechnicalContactServiceLevel_New(
 			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver,
 			String testName) throws Exception 
 	{
-		String productName ="Voice Continuity";
+		try
+		{
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, testName, "Test Failed", e.toString());
+			throw new Exception(testName+" - Test Case Failed");
+		}
+
+	}
+
+	public static void SOI_3569_TC02_DS_TechnicalContactServiceLevel_Existing(
+			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver,
+			String testName) throws Exception 
+	{
+
+		String productName ="Phone Line";
 
 		String configurationIndex="configurationByDefault";
 
 		String nonQuotableProduct="PABX";
 
 		String userProfile="salesUser";
-		
+
 		String provContactPerson="First User";
 
-		String optyURL, orderURL, serviceURL, caseURL;
+
+
+		String optyURL, orderURL, serviceURL;
 
 		String productBasketName, serviceName;
-		
+
 		List<String> servicesURL=new ArrayList<String>();
-		
-		List<String> caseURLValidation=new ArrayList<String>();
+
+
 
 		try
 		{
@@ -74,7 +94,7 @@ public class SOI_3511
 
 			TestLogger.logDebug(logStream, "productBasketName", "productBasketName value: "+productBasketName);
 			//end of variable storage
-			
+
 			ProductBasketStep.fillExistingBillingAccountIdField(testExecStructure, logStream, driver, testName);
 
 			D02Models.AddAndConfigureNewProduct(testExecStructure, logStream, driver, testName, productName, configurationIndex);
@@ -105,66 +125,46 @@ public class SOI_3511
 			OpportunityStep.goToOrderScreen(testExecStructure, logStream, driver, testName, productBasketName);
 
 			orderURL=driver.getCurrentUrl();
-			
+
 			List<WebElement> listOfServices=driver.findElements(By.xpath("//table/tbody/tr/td/span/lightning-formatted-url/a"));
-			
+
 			int counterServices;
-			
+
 			System.out.println("Debug of listOfServices: "+listOfServices.size());
-			
+
 			counterServices=listOfServices.size();
-			
+
 			for(int i=0;counterServices>i;i++)
 			{
-				
+
 				serviceName=listOfServices.get(i).getText().toString();
-				
+
 				serviceURL=listOfServices.get(i).getAttribute("href");
-				
+
 				servicesURL.add(serviceURL);
-				
+
 				//System.out.println("Debug of serviceName: "+serviceName+" - URL: "+serviceURL);
-				
+
 				TestLogger.logDebug(logStream, "serviceName", "serviceName: "+serviceName+" - URL: "+serviceURL);
-				
+
 				//System.out.println("Debug of listOfServices: End of the loop: "+i);
-				
+
 			}
-			
+
 			for(String sURL : servicesURL)
 			{
 				OrderStep.goToServiceScreenByURL(testExecStructure, logStream, driver, testName, sURL);
-				
+
 				ServiceStep.fillProvisioningContactPerson(testExecStructure, logStream, driver, testName, provContactPerson);
-				
+
 				NavigationStep.goToOrderByURL(testExecStructure, logStream, driver, testName, orderURL);
-				
+
 				Thread.sleep(5000);
 			}
-			
+
 			OrderStep.submitOrderPositiveValidation(testExecStructure, logStream, driver, testName);
-			
-			for(String sURL : servicesURL)
-			{
-				OrderStep.goToServiceScreenByURL(testExecStructure, logStream, driver, testName, sURL);
-				
-				ServiceStep.serviceCaseValidationAfterOrderSubmit(testExecStructure, logStream, driver, testName);
-				
-				caseURL=driver.findElement(By.xpath(DirSalesService.caseFieldOnServicePage)).getAttribute("href");
-				
-				caseURLValidation.add(caseURL);
-					
-				NavigationStep.goToOrderByURL(testExecStructure, logStream, driver, testName, orderURL);
-				
-				Thread.sleep(5000);
-			}
-			
-			/*
-			 * 10/02 - A part from E2E Flow Process of navigation to Case.
-			caseURLLink=caseURLValidation.get(0);
-			
-			NavigationStep.goToCasePageByURL(testExecStructure, logStream, driver, testName, caseURLLink);
-			*/
+
+
 		}
 		catch(Exception e)
 		{
@@ -175,31 +175,82 @@ public class SOI_3511
 
 	}
 
-	public static void SOI_3511_TC02_PC_SingleCaseRecordForQuotableAndNonQuotable(
+	public static void SOI_3569_TC03_DS_TechnicalContactServiceLevel_Negative(
+			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver,
+			String testName) throws Exception 
+	{
+		try
+		{
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, testName, "Test Failed", e.toString());
+			throw new Exception(testName+" - Test Case Failed");
+		}
+
+	}
+
+	public static void SOI_3569_TC04_DS_TechnicalContactServiceLevel_OE_Deprecated(
+			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver,
+			String testName) throws Exception 
+	{
+		try
+		{
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, testName, "Test Failed", e.toString());
+			throw new Exception(testName+" - Test Case Failed");
+		}
+
+	}
+
+	public static void SOI_3569_TC05_PC_TechnicalContactServiceLevel_New(
+			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver,
+			String testName) throws Exception 
+	{
+		try
+		{
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, testName, "Test Failed", e.toString());
+			throw new Exception(testName+" - Test Case Failed");
+		}
+
+	}
+
+	public static void SOI_3569_TC06_PC_TechnicalContactServiceLevel_Existing(
 			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver,
 			String testName) throws Exception 
 	{
 		
-
 		String user="farmerUser";
-		
-		String productName="Voice Continuity";
+
+		String productName ="Phone Line";
 
 		String configurationIndex="configurationByDefault";
 
 		String productD03="PABX";
-		
+
 		String provContactPerson="First User";
-		
-		
-		
-		String optyURL, productBasketName, orderURL, serviceName, serviceURL, serviceID, caseURL;
+
+
+
+		String optyURL, productBasketName, orderURL, serviceName, serviceURL, serviceID;
 
 		List<String> servicesURL=new ArrayList<String>();
-		
-		List<String> caseURLValidation=new ArrayList<String>();
-		
-		
+
+
 
 		int counterServices;
 
@@ -210,44 +261,44 @@ public class SOI_3511
 			HomePagePCStep.NavigateToCompanyPage(testExecStructure, logStream, driver, testName);
 
 			CompanyPCStep.createQuickSaleOPTY(testExecStructure, logStream, driver, testName);
-			
+
 			optyURL = driver.getCurrentUrl();
 
 			OpportunityPCStep.createProductBasket(testExecStructure, logStream, driver, testName);
-			
+
 			productBasketName=driver.findElement(By.xpath(DirSalesProductBasket.inputProductBasketName)).getAttribute("value");
-			
+
 			ProductBasketStep.fillExistingBillingAccountIdField(testExecStructure, logStream, driver, testName);
-			
+
 			D02Models.AddAndConfigureNewProductInPC(testExecStructure, logStream, driver, testName, productName, configurationIndex);
-			
+
 			D03Models.AddNonQuotableProductToProductBasket(testExecStructure, logStream, driver, testName, productD03);
-			
+
 			ProductBasketStep.syncProductBasket(testExecStructure, logStream, driver, testName);
-			
+
 			ProductBasketStep.goToAgreementScreenInPC(testExecStructure, logStream, driver, testName);
-			
+
 			AgreementPCStep.generateDocumentProposal(testExecStructure, logStream, driver, testName);
-			
+
 			NavigationStep.goToOpportunityByURLInPC(testExecStructure, logStream, driver, testName, optyURL);
-			
+
 			OpportunityStep.closeWinOPTY(testExecStructure, logStream, driver, testName);
-			
+
 			OpportunityPCStep.goToOrderScreenList(testExecStructure, logStream, driver, testName, productBasketName);
-			
+
 			orderURL=driver.getCurrentUrl();
-			
+
 			List<WebElement> listOfServices = driver.findElements(By.xpath("//a[@title='Name']"));
-			
+
 			counterServices=listOfServices.size();
-			
+
 			for(int i=0;counterServices>i;i++)
 			{
 
 				serviceName=listOfServices.get(i).getText().toString();
 
 				serviceID=listOfServices.get(i).getAttribute("data-recordid");
-				
+
 				serviceURL=ExcelDataFetch.searchDT(0, "PartnersCommunity")+"/"+serviceID;
 
 				servicesURL.add(serviceURL);
@@ -259,11 +310,11 @@ public class SOI_3511
 				System.out.println("Debug of listOfServices: End of the loop: "+i);
 
 			}
-			
+
 			for(String sURL : servicesURL)
 			{
 				OrderPCStep.goToServiceScreenByURL(testExecStructure, logStream, driver, testName, sURL);
-				
+
 				ServicePCStep.fillProvisioningContactPerson(testExecStructure, logStream, driver, testName, provContactPerson);
 
 				NavigationStep.goToOrderByURLInPC(testExecStructure, logStream, driver, testName, orderURL);
@@ -272,21 +323,6 @@ public class SOI_3511
 			}
 
 			OrderPCStep.submitOrderPositiveValidation(testExecStructure, logStream, driver, testName);
-			
-			for(String sURL : servicesURL)
-			{
-				OrderPCStep.goToServiceScreenByURL(testExecStructure, logStream, driver, testName, sURL);
-				
-				ServicePCStep.serviceCaseValidationAfterOrderSubmit(testExecStructure, logStream, driver, testName);
-				
-				caseURL=driver.findElement(By.xpath(PartComService.caseLink)).getAttribute("href");
-				
-				caseURLValidation.add(caseURL);
-					
-				NavigationStep.goToOrderByURL(testExecStructure, logStream, driver, testName, orderURL);
-				
-				Thread.sleep(5000);
-			}
 
 
 		}
@@ -296,6 +332,43 @@ public class SOI_3511
 			TestLogger.logError(logStream, testName, "Test Failed", e.toString());
 			throw new Exception(testName+" - Test Case Failed");
 		}
+
+	}
+
+	public static void SOI_3569_TC07_PC_TechnicalContactServiceLevel_Negative(
+			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver,
+			String testName) throws Exception 
+	{
+		try
+		{
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, testName, "Test Failed", e.toString());
+			throw new Exception(testName+" - Test Case Failed");
+		}
+
+	}
+
+	public static void SOI_3569_TC08_PC_TechnicalContactServiceLevel_OE_Deprecated(
+			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver,
+			String testName) throws Exception 
+	{
+		try
+		{
+			
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, testName, "Test Failed", e.toString());
+			throw new Exception(testName+" - Test Case Failed");
+		}
+
 	}
 
 }
