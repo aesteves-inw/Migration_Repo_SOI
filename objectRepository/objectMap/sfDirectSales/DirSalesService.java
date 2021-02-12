@@ -98,6 +98,8 @@ public class DirSalesService {
 	
 	public static String buttonCreateNewCompanyContact="//lightning-base-combobox-item[@data-value='actionCreateNew']";
 	
+	public static String newCompanyContactPersonLink="//span[@title='New Company contact person']";
+	
 	
 	
 	//Internal Comments

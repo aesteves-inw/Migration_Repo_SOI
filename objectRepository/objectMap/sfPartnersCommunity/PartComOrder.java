@@ -102,7 +102,7 @@ public class PartComOrder {
 	
 	public static String submitOrderBillingAccountErrorMessage="//span[@data-aura-class='forceActionsText'][text()='Billing Account Id must be filled before submit order!']";
 	
-	public static String submitOrderProvisioningContactErrorMessage="";
+	public static String submitOrderProvisioningContactErrorMessage="//span[@data-aura-class='forceActionsText'][text()='Provisioning contact must be filled before submit order!']";
 	
 
 }

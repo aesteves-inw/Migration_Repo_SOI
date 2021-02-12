@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import companyContactPersonDirectSales.CompanyContactPersonAction;
 import executionTools.BrowserActions;
 import executionTools.ExecStructure;
 import objectMap.sfDirectSales.DirSalesService;
@@ -219,8 +220,74 @@ public class ServiceAction {
 		}
 	}
 
+	public static void newContactForProvisioningContactPerson(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
+	{
+		String actionName="newContactForProvisioningContactPerson";
+
+		
+
+		try
+		{
+			driver.findElement(By.xpath(DirSalesService.buttonEditProvContact)).click();
+
+			WebElement inputEditProvContact = driver.findElement(By.xpath(DirSalesService.inputProvisioningContactPerson));
+
+			inputEditProvContact.click();
+
+			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesService.searchResult)));
+
+			driver.findElement(By.xpath(DirSalesService.newCompanyContactPersonLink)).click();
+
+			Thread.sleep(1000);
+
+			
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+	}
+
+	public static void createNewProvisioningContactPerson(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
+	{
+		String actionName="createNewProvisioningContactPerson";
 
 
+		try
+		{
+			driver.findElement(By.xpath(DirSalesService.buttonEditProvContact)).click();
+
+			WebElement inputEditProvContact = driver.findElement(By.xpath(DirSalesService.inputProvisioningContactPerson));
+
+			inputEditProvContact.sendKeys(" ");
+
+			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesService.searchResult)));
+
+			driver.findElement(By.xpath(DirSalesService.newCompanyContactPersonLink)).click();
+
+			Thread.sleep(1000);
+			
+			CompanyContactPersonAction.
+			createNewProvisioningContactPersonFromService(logStream, driver, stepID);
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+		
+	}
+	
+	
 	// Validation Actions
 	public static boolean validateServiceScreen(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
 	{
@@ -371,6 +438,34 @@ public class ServiceAction {
 			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
 		}
 	}
+
+	
+	public static boolean validateNewProvisioningContactPersonAfterSaving(List<TestLog> logStream, WebDriver driver,
+			int stepID) 
+	{
+        String actionName="validateNewProvisioningContactPersonAfterSaving";
+	     	try
+					{
+						if()
+						{
+							TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+							return true;
+						}
+						else
+						{
+							return false;
+						}
+
+					}
+					catch(Exception e)
+					{
+						System.out.println(e);
+						TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+						throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+					}
+	}
+
+	
 
 
 

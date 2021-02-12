@@ -141,5 +141,30 @@ public class OrderPCAction {
 	}
 
 
+	public static boolean negativeValProvisioningContact(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
+	{
+        String actionName="negativeValProvisioningContact";
+	     	try
+					{
+						if(BrowserActions.isElementPresent(driver, PartComOrder.submitOrderProvisioningContactErrorMessage))
+						{
+							TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+							return true;
+						}
+						else
+						{
+							return false;
+						}
+
+					}
+					catch(Exception e)
+					{
+						System.out.println(e);
+						TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+						throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+					}
+	}
+
+
 
 }
