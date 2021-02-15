@@ -229,6 +229,32 @@ public class ServicePCAction {
 		}
 	}
 
+	public static boolean validateProvisioningContactPersonAfterSaving(List<TestLog> logStream, WebDriver driver,
+			int stepID, String provContactPerson) throws Exception 
+	{
+String actionName="validateNewProvisioningContactPersonAfterSaving";
+		
+		try
+		{			
+			if(BrowserActions.isElementPresent(driver, "//input[contains(@placeholder,'"+provContactPerson+"')]"))
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
+
 
 
 
