@@ -155,7 +155,7 @@ public class OpportunityPCStep
 	{
 		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
 		
-		String stepName="step";
+		String stepName="Opportunity: close Win Opportunity (In PC)";
 
 		String stepNameMin="step";
 

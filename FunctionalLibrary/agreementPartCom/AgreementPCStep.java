@@ -105,15 +105,92 @@ public class AgreementPCStep {
 	}
 
 	public static void addFileToAgreement(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream,
-			WebDriver driver, String testName) 
+			WebDriver driver, String testName, String filePath, String fileName) throws Exception 
 	{
-				
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+		
+		String stepName="Agreement: add File To Agreement (In PC)";
+
+		String stepNameMin="addFileToAgreementPC";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			AgreementPCAction.addFileToAgreement(logStream, driver, stepID, filePath);
+			
+			validation = AgreementPCAction.addFileToAgreementValidation(logStream, driver, stepID, fileName);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				TestLogger.logTrace(logStream, stepNameMin, "Failed in Step: "+stepID+". Validation: False");
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}		
 	}
 
 	public static void addFileAndGenerateFileToAgreement(List<TestStepReportStructure> testExecStructure,
-			List<TestLog> logStream, WebDriver driver, String testName) 
+			List<TestLog> logStream, WebDriver driver, String testName, String filePath, String fileName) throws Exception 
 	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
 		
+		String stepName="Agreement: addFileAndGenerateFileToAgreement";
+
+		String stepNameMin="addFileAndGenerateFileToAgreementInPC";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);	
+		
+		
+		String agreementID=TestCasesData.getIDByURL(driver.getCurrentUrl());
+		
+
+		boolean validation;
+
+		try
+		{
+			AgreementPCAction.generateDocumentOnly(logStream, driver, stepID);
+			
+			AgreementPCAction.addFileToAgreement(logStream, driver, stepID, filePath);
+		
+			validation = AgreementPCAction.addFileToAgreementValidation(logStream, driver, stepID, fileName) && AgreementPCAction.addFileToAgreementValidation(logStream, driver, stepID, agreementID);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				TestLogger.logTrace(logStream, stepNameMin, "Failed in Step: "+stepID+". Validation: False");
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
 		
 	}
 	

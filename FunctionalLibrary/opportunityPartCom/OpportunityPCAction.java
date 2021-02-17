@@ -67,35 +67,20 @@ public class OpportunityPCAction {
 	{
 		String actionName="closeWinOPTY";
 
+		String status="Closed Won";
+
 		try
 		{
-			
-			WebElement editBtn=driver.findElement(By.xpath("//button[@title='Edit Stage']"));
-			
-			BrowserActions.jsClick(driver, editBtn);
-			
-			Thread.sleep(1000);
-			
-			WebElement menu = driver.findElement(By.xpath("//force-record-layout-section[1]/div/div/div/slot/force-record-layout-row[3]/slot/force-record-layout-item[2]/div/span/slot/slot/sfa-input-stage-name/force-record-picklist/force-form-picklist/lightning-picklist/lightning-combobox/div/lightning-base-combobox/div/div[1]/input"));
-			
-			BrowserActions.jsClick(driver, menu);
-			
-			Thread.sleep(1000);
-			
-			WebElement status=driver.findElement(By.xpath("//*[@title='Closed Won']"));
-			
-			BrowserActions.jsClick(driver, status);
-			
-			Thread.sleep(1000);
-			
-			driver.findElement(By.xpath("//button[@name='SaveEdit']")).click();
-			
-			new WebDriverWait(driver,15).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//button[@name='SaveEdit']")));
-			
-			
+			goToEditOPTYScreen(logStream, driver, stepID);
+
+			changeStageField(logStream, driver, stepID, status);
+
+			saveChangesOnEditOPTY(logStream, driver, stepID);
+
+
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);			
-			
+
 
 		}
 		catch(Exception e)
@@ -108,6 +93,90 @@ public class OpportunityPCAction {
 	}
 
 
+
+	private static void goToEditOPTYScreen(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
+	{
+		String actionName="goToEditOPTYScreen";
+
+
+		try
+		{
+			driver.findElement(By.xpath(PartComOpportunity.editButton)).click();
+
+			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(PartComOpportunity.headerEditOPTY)));
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+
+
+	}
+
+	private static void changeStageField(List<TestLog> logStream, WebDriver driver, int stepID, String status) throws Exception 
+	{
+		String actionName="changeStageField";
+
+
+		try
+		{
+			WebElement comboBoxStage=driver.findElement(By.xpath(PartComOpportunity.comboStage));
+
+			Thread.sleep(1000);
+
+			BrowserActions.jsClick(driver, comboBoxStage);
+
+			Thread.sleep(1000);
+
+			WebElement stageToClick=driver.findElement(By.xpath("//*[text()='status']"));
+
+			Thread.sleep(1000);
+
+			BrowserActions.jsClick(driver, stageToClick);
+
+			Thread.sleep(1000);
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+
+
+	}
+
+	private static void saveChangesOnEditOPTY(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
+	{
+		String actionName="saveChangesOnEditOPTY";
+
+
+		try
+		{
+			driver.findElement(By.xpath(PartComOpportunity.buttonSaveEdit)).click();
+
+			new WebDriverWait(driver, 15).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(PartComOpportunity.headerEditOPTY)));
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+
+
+	}
 
 	// Validation Actions
 

@@ -17,6 +17,7 @@ import opportunityPartCom.OpportunityPCStep;
 import orderDirectSales.OrderStep;
 import orderPartCom.OrderPCStep;
 import productBasketDirectSales.ProductBasketStep;
+import testDataFiles.TestDataFiles;
 import testFrameworkLibrary.D02Models;
 import testFrameworkLibrary.D03Models;
 import testLogBuilder.TestLog;
@@ -157,7 +158,9 @@ public class SOI_3649
 	{
 			String product = "PABX";
 			
-			String fileName="SimpleOrdering_Dummy_File";
+			String fileName=TestDataFiles.fileFinalNameD01;
+			
+			String filePath=TestDataFiles.fileNameD01;
 			
 			String optyURL;
 			
@@ -187,7 +190,7 @@ public class SOI_3649
 
 				ProductBasketStep.goToAgreementScreenInPC(testExecStructure, logStream, driver, testName);
 				
-				AgreementPCStep.addFileToAgreement(testExecStructure, logStream, driver, testName);
+				AgreementPCStep.addFileToAgreement(testExecStructure, logStream, driver, testName, filePath, fileName);
 				
 				NavigationStep.goToOpportunityByURLInPC(testExecStructure, logStream, driver, testName, optyURL);
 				
@@ -215,7 +218,9 @@ public class SOI_3649
 		
 		String userProfile="salesUser";
 		
-		String fileName="SimpleOrdering_Dummy_File";
+		String filePath=TestDataFiles.fileNameD01;
+		
+		String fileName=TestDataFiles.fileFinalNameD01;
 		
 		String productName="Phone Line";
 		
@@ -249,7 +254,7 @@ public class SOI_3649
 
 			ProductBasketStep.goToAgreementScreenInPC(testExecStructure, logStream, driver, testName);
 			
-			AgreementPCStep.addFileAndGenerateFileToAgreement(testExecStructure, logStream, driver, testName);
+			AgreementPCStep.addFileAndGenerateFileToAgreement(testExecStructure, logStream, driver, testName, filePath, fileName);
 			
 			NavigationStep.goToOpportunityByURLInPC(testExecStructure, logStream, driver, testName, optyURL);
 			
