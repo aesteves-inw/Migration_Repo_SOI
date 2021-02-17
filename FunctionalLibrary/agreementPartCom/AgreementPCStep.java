@@ -109,6 +109,13 @@ public class AgreementPCStep {
 	{
 				
 	}
+
+	public static void addFileAndGenerateFileToAgreement(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName) 
+	{
+		
+		
+	}
 	
 	
 
