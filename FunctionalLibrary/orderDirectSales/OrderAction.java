@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -78,7 +79,7 @@ public class OrderAction
 		String actionName="submitOrderPositiveValidationValidation";
 
 		String orderStatusValidation;
-		
+
 		try
 		{
 			if(BrowserActions.isElementPresent(driver, DirSalesOrder.orderSubmittedSuccess))
@@ -88,7 +89,7 @@ public class OrderAction
 				BrowserActions.refreshPage(driver);
 
 				orderStatusValidation=driver.findElement(By.xpath(DirSalesOrder.orderStatusLabel)).getText().toString();
-				
+
 				System.out.println("Debug of submitOrderPositiveValidationValidation: "+orderStatusValidation);
 
 				if(orderStatusValidation.equalsIgnoreCase("submitted"))
@@ -148,6 +149,35 @@ public class OrderAction
 		try
 		{			
 			if(BrowserActions.isElementPresent(driver, DirSalesOrder.orderSubmitionErrorProvisioningContact))
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
+
+
+	public static boolean validateFilesInOrderScreen(List<TestLog> logStream, List<TestLog> logStream2,
+			WebDriver driver, int stepID, String fileName) throws Exception 
+	{
+		String actionName="validateFilesInOrderScreen";
+		
+		try
+		{
+			String fileElementToValidate="//a[@title='"+fileName+"']";
+			
+			if(BrowserActions.isElementPresent(driver, fileElementToValidate))
 			{
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
 				return true;

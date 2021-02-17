@@ -205,9 +205,9 @@ public class OpportunityStep {
 
 		try
 		{
-			OpportunityPCAction.closeWinOPTY(logStream, driver, stepID);
+			OpportunityAction.closeWonOpportunity(logStream, driver, stepID, testName);
 
-			validation = OpportunityPCAction.closeWinOPTYValidation(logStream, driver, stepID);
+			validation = OpportunityAction.closeWonOpportunityValidation(logStream, driver, stepID, testName);
 
 			if(validation==true)
 			{

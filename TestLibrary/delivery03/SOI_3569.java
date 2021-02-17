@@ -35,7 +35,6 @@ import testReportComposition.TestStepReportStructure;
 public class SOI_3569 
 {
 
-	
 	public static void SOI_3569_TC01_DS_TechnicalContactServiceLevel_New(
 			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver,
 			String testName) throws Exception 
@@ -783,5 +782,6 @@ public class SOI_3569
 
 	}
 
+	
 	
 }

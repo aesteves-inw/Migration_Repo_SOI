@@ -47,6 +47,35 @@ public class AgreementAction
 
 	}
 	
+	
+	public static void generateDocumentProposalOnly(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
+	{
+		String actionName="generateDocumentProposal";
+
+
+		try
+		{
+			driver.findElement(By.xpath(DirSalesAgreement.buttonGenerateProposalDocument)).click();
+			
+			for(int i=0;i<30;i++)
+			{
+					Thread.sleep(1000);
+			}
+			
+			System.out.println("Debug of generateDocumentProposal - Passes Here");
+			
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+
+	}
+	
 	//Add File To Agreement
 	public static void addFileToAgreement(List<TestLog> logStream, WebDriver driver, int stepID, String fileName) throws Exception 
 	{

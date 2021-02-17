@@ -69,31 +69,33 @@ public class OpportunityPCAction {
 
 		try
 		{
-			WebElement editBtn=driver.findElement(By.xpath("//div/div[2]/div[2]/div/div[2]/button"));
+			
+			WebElement editBtn=driver.findElement(By.xpath("//button[@title='Edit Stage']"));
 			
 			BrowserActions.jsClick(driver, editBtn);
 			
 			Thread.sleep(1000);
 			
-			WebElement menu = driver.findElement(By.xpath("//article/div[3]/div/div[1]/div/div[1]/div/div/div[2]/div[2]/div/div/div/div/div[1]/div/div/a"));
+			WebElement menu = driver.findElement(By.xpath("//force-record-layout-section[1]/div/div/div/slot/force-record-layout-row[3]/slot/force-record-layout-item[2]/div/span/slot/slot/sfa-input-stage-name/force-record-picklist/force-form-picklist/lightning-picklist/lightning-combobox/div/lightning-base-combobox/div/div[1]/input"));
 			
 			BrowserActions.jsClick(driver, menu);
 			
 			Thread.sleep(1000);
 			
-			WebElement status=driver.findElement(By.xpath("//a[@title='Closed Won']"));
+			WebElement status=driver.findElement(By.xpath("//*[@title='Closed Won']"));
 			
 			BrowserActions.jsClick(driver, status);
 			
 			Thread.sleep(1000);
 			
-			driver.findElement(By.xpath("//article/div[3]/div/div[2]/div/div/div[2]/button[2]")).click();
+			driver.findElement(By.xpath("//button[@name='SaveEdit']")).click();
 			
-			//new WebDriverWait(driver,15).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//article/div[3]/div/div[2]/div/div/div[2]/button[2]")));
+			new WebDriverWait(driver,15).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//button[@name='SaveEdit']")));
 			
-			Thread.sleep(10000);
+			
 
-			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);			
+			
 
 		}
 		catch(Exception e)

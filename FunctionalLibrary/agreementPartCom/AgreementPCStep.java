@@ -104,4 +104,12 @@ public class AgreementPCStep {
 		
 	}
 
+	public static void addFileToAgreement(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream,
+			WebDriver driver, String testName) 
+	{
+				
+	}
+	
+	
+
 }
