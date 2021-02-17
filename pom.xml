@@ -43,6 +43,7 @@
 							<suiteXmlFile>src\test\java\d03\SOI_3569\SOI_3569_TestSuite.xml</suiteXmlFile>
 							<suiteXmlFile>src\test\java\d03\SOI_3601\SOI_3601_TestSuite.xml</suiteXmlFile>
 							<suiteXmlFile>src\test\java\d03\SOI_3604\SOI_3604_TestSuite.xml</suiteXmlFile>
+							<suiteXmlFile>src\test\java\d03\SOI_3649\SOI_3649_TestSuite.xml</suiteXmlFile>
 						</suiteXmlFiles>
 					</configuration>
 				</plugin>
