@@ -54,7 +54,9 @@ public class DirSalesCase {
 	
 	public static String caseOwnerFieldLabel="//article/div/div[2]/div/div/div[2]/div/section/div[1]/div/div/div/div/div[3]/div[1]/div/div[2]/span/span";
 
-	
+	public static String itemsKeyDetails="//span[@class='test-id__field-value slds-form-element__static slds-grow']";
+
+	public static String itemSubCategoryKeyDetails="(//span[@class='test-id__field-value slds-form-element__static slds-grow'])[13]";
 	
 	//10-02-2020 - D03 test Automation
 	

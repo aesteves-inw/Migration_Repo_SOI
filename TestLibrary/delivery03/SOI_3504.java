@@ -81,7 +81,7 @@ public class SOI_3504 {
 
 		String productName ="PABX";
 		
-		String configurationIndex="productPABX";
+		//String configurationIndex="productPABX";
 
 		try
 		{
