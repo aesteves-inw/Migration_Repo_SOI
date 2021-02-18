@@ -133,7 +133,7 @@ public class OpportunityPCAction {
 
 			Thread.sleep(1000);
 
-			WebElement stageToClick=driver.findElement(By.xpath("//*[text()='status']"));
+			WebElement stageToClick=driver.findElement(By.xpath("//*[text()='"+status+"']"));
 
 			Thread.sleep(1000);
 

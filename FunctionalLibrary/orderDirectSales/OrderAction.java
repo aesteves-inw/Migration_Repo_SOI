@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import executionTools.BrowserActions;
+import objectMap.sfDirectSales.DirSalesAgreement;
 import objectMap.sfDirectSales.DirSalesOrder;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
@@ -41,7 +42,38 @@ public class OrderAction
 	}
 
 
+	public static void addFileToOrder(List<TestLog> logStream, WebDriver driver, int stepID, String filePath) throws Exception 
+	{
+		String actionName="addFileToOrder";
+		
+		try
+		{
+			WebElement inputFile = driver.findElement(By.xpath("//input[contains(@class,'slds-file-selector__input slds-assistive-text')]"));
+			
+			inputFile.sendKeys(filePath);
+			
+			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesAgreement.titleUploadFiles)));
+			
+			Thread.sleep(3000);
+			
+			WebElement doneButton = new WebDriverWait(driver, 15).until(ExpectedConditions.elementToBeClickable(By.xpath(DirSalesAgreement.buttonDoneUploadFiles)));
+			
+			BrowserActions.jsClick(driver, doneButton);
+			
+			new WebDriverWait(driver, 15).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(DirSalesAgreement.buttonDoneUploadFiles)));
+			
 
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+		
+	}
 
 	// Validation Actions
 
@@ -168,8 +200,7 @@ public class OrderAction
 	}
 
 
-	public static boolean validateFilesInOrderScreen(List<TestLog> logStream, List<TestLog> logStream2,
-			WebDriver driver, int stepID, String fileName) throws Exception 
+	public static boolean validateFilesInOrderScreen(List<TestLog> logStream, WebDriver driver, int stepID, String fileName) throws Exception 
 	{
 		String actionName="validateFilesInOrderScreen";
 		
@@ -195,6 +226,9 @@ public class OrderAction
 			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
 		}
 	}
+
+
+	
 
 
 }

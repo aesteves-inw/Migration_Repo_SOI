@@ -17,6 +17,7 @@ import testLogger.TestLogger;
 public class AgreementAction 
 {
 	//OPERATIONAL ACTIONS
+	
 	public static void generateDocumentProposal(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
 	{
 		String actionName="generateDocumentProposal";
@@ -46,7 +47,6 @@ public class AgreementAction
 		}
 
 	}
-	
 	
 	public static void generateDocumentProposalOnly(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
 	{
@@ -112,10 +112,10 @@ public class AgreementAction
 	}
 
 
-	
 
 
 	// VALIDATION ACTIONS
+	
 	public static boolean agreementScreenValidation(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
 	{
 		String actionName="agreementScreenValidation";
@@ -223,7 +223,6 @@ public class AgreementAction
 				}
 	}
 
-	 
-
+	
 	
 }

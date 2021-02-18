@@ -187,10 +187,91 @@ public class OrderPCStep {
 		
 	}
 
+
 	public static void validateFileOnOrderRelatedMenu(List<TestStepReportStructure> testExecStructure,
-			List<TestLog> logStream, WebDriver driver, String testName, String fileName) 
+			List<TestLog> logStream, WebDriver driver, String testName, String fileName) throws Exception 
 	{
-		// TODO Auto-generated method stub
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+		
+		String stepName="Order: validate File On Order Related Menu (In PC)";
+
+		String stepNameMin="validateFileOnOrderRelatedMenuInPC";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			validation = BrowserActions.isElementPresent(driver, "//a[contains(@title, '"+fileName+"')]");
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				TestLogger.logTrace(logStream, stepNameMin, "Failed in Step: "+stepID+". Validation: False");
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+		
+	}
+	
+	
+	public static void addFileToOrder(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream,
+			WebDriver driver, String testName, String filePath, String fileName) throws Exception 
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+		
+		String stepName="Order: add File To Order (In PC)";
+
+		String stepNameMin="addFileToOrder";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			OrderPCAction.addFileToOrder(logStream, driver, stepID, filePath);
+
+			validation = OrderPCAction.validateFileInOrderScreen(logStream, driver, stepID, fileName);
+
+			
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				TestLogger.logTrace(logStream, stepNameMin, "Failed in Step: "+stepID+". Validation: False");
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
 		
 	}
 

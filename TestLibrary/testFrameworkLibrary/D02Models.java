@@ -275,7 +275,6 @@ public class D02Models
 		}
 	}
 
-
 	public static void AddAndConfigureNewProductInPC(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver, String testName, String productName, String configurationIndex) throws Exception
 	{
 		try
@@ -314,7 +313,6 @@ public class D02Models
 			throw new Exception(testName+": Test Case Failed on Test Model - AddAndConfigureNewProduct with "+productName);
 		}
 	}
-
 
 	//18-02-2021: AgreementFlow in D02: Composed by goToAgreement,  
 	public static void GoToAgreementAndGenerateProposal(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver, String testName) throws Exception

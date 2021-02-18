@@ -54,12 +54,12 @@ public class AgreementPCAction {
 		{
 			driver.findElement(By.xpath(PartComAgreements.buttonGenerateProposalDocument)).click();
 
-			for(int i=0;i<30;i++)
+			for(int i=0;i<20;i++)
 			{
 				Thread.sleep(1000);
 			}
 
-			BrowserActions.refreshPage(driver);
+			//BrowserActions.refreshPage(driver);
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 

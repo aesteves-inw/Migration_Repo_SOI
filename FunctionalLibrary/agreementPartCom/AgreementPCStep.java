@@ -5,6 +5,7 @@ import java.util.List;
 import org.openqa.selenium.WebDriver;
 
 import agreementDirectSales.AgreementAction;
+import executionTools.BrowserActions;
 import executionTools.TestExecutionReport;
 import generatedProposal.GeneratedProposalAction;
 import testExecutionData.TestCasesData;
@@ -168,6 +169,8 @@ public class AgreementPCStep {
 			AgreementPCAction.generateDocumentOnly(logStream, driver, stepID);
 			
 			AgreementPCAction.addFileToAgreement(logStream, driver, stepID, filePath);
+			
+			BrowserActions.refreshPage(driver);
 		
 			validation = AgreementPCAction.addFileToAgreementValidation(logStream, driver, stepID, fileName) && AgreementPCAction.addFileToAgreementValidation(logStream, driver, stepID, agreementID);
 

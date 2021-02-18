@@ -157,7 +157,7 @@ public class OpportunityPCStep
 		
 		String stepName="Opportunity: close Win Opportunity (In PC)";
 
-		String stepNameMin="step";
+		String stepNameMin="closeWinOpportunityInPC";
 
 		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
 

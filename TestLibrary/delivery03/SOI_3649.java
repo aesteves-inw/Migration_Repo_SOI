@@ -8,8 +8,11 @@ import org.openqa.selenium.WebDriver;
 import agreementDirectSales.AgreementStep;
 import agreementPartCom.AgreementPCStep;
 import companyDirectSales.CompanyStep;
+import companyPartCom.CompanyPCStep;
 import homePageDirectSales.HomePageStep;
+import homePagePartCom.HomePagePCStep;
 import loginPageDirectSales.LoginPageStep;
+import loginPagePartCom.LoginPagePCStep;
 import navigation.NavigationStep;
 import objectMap.sfDirectSales.DirSalesProductBasket;
 import opportunityDirectSales.OpportunityStep;
@@ -156,6 +159,8 @@ public class SOI_3649
 	public static void SOI_3649_TC03_PC_LinkDocumentsFromAgreementToOrder_NonQuotable_ExternalFile(
 			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver, String testName) throws Exception
 	{
+			String user="farmerUser";
+		
 			String product = "PABX";
 			
 			String fileName=TestDataFiles.fileFinalNameD01;
@@ -167,17 +172,15 @@ public class SOI_3649
 			try
 			{
 
-				String userProfile="salesUser";
+				LoginPagePCStep.LoginPartnersCommunity(testExecStructure, logStream, driver, testName, user);
 
-				LoginPageStep.loginSFDS(testExecStructure, logStream, driver, testName, userProfile);
+				HomePagePCStep.NavigateToCompanyPage(testExecStructure, logStream, driver, testName);
 
-				HomePageStep.navigateToCompanyPage(testExecStructure, logStream, driver, testName);
-
-				CompanyStep.createQuickSaleOpportunity(testExecStructure, logStream, driver, testName);
+				CompanyPCStep.createQuickSaleOPTY(testExecStructure, logStream, driver, testName);
 				
 				optyURL=driver.getCurrentUrl();
 
-				OpportunityStep.createProductBasket(testExecStructure, logStream, driver, testName);
+				OpportunityPCStep.createProductBasket(testExecStructure, logStream, driver, testName);				
 				
 				//variable storage
 				String productBasketName=driver.findElement(By.xpath(DirSalesProductBasket.inputProductBasketName)).getAttribute("value");
@@ -216,7 +219,7 @@ public class SOI_3649
 	{
 		String product = "PABX";
 		
-		String userProfile="salesUser";
+		String user="farmerUser";
 		
 		String filePath=TestDataFiles.fileNameD01;
 		
@@ -231,22 +234,22 @@ public class SOI_3649
 		
 		try
 		{
-			LoginPageStep.loginSFDS(testExecStructure, logStream, driver, testName, userProfile);
+			LoginPagePCStep.LoginPartnersCommunity(testExecStructure, logStream, driver, testName, user);
 
-			HomePageStep.navigateToCompanyPage(testExecStructure, logStream, driver, testName);
+			HomePagePCStep.NavigateToCompanyPage(testExecStructure, logStream, driver, testName);
 
-			CompanyStep.createQuickSaleOpportunity(testExecStructure, logStream, driver, testName);
+			CompanyPCStep.createQuickSaleOPTY(testExecStructure, logStream, driver, testName);
 			
 			optyURL=driver.getCurrentUrl();
-
-			OpportunityStep.createProductBasket(testExecStructure, logStream, driver, testName);
 			
+			OpportunityPCStep.createProductBasket(testExecStructure, logStream, driver, testName);
+									
 			//variable storage
 			productBasketName=driver.findElement(By.xpath(DirSalesProductBasket.inputProductBasketName)).getAttribute("value");
 			TestLogger.logDebug(logStream, "productBasketName", "productBasketName value: "+productBasketName);
 			//end of variable storage
-			
-			D02Models.AddAndConfigureNewProduct(testExecStructure, logStream, driver, testName, productName, configurationIndex);
+						
+			D02Models.AddAndConfigureNewProductInPC(testExecStructure, logStream, driver, testName, productName, configurationIndex);
 			
 			D03Models.AddNonQuotableProductToProductBasket(testExecStructure, logStream, driver, testName, product);
 
