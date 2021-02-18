@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SOI-3600 User Story" parallel="false">
+  <test name="SOI_3600_TC01_DS_NewBA_ProductBasket">
+    <classes>
+      <class name="d03.SOI_3600.SOI_3600_TC01_DS_NewBA_ProductBasket"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="SOI_3600_TC02_PC_NewBA_ProductBasket">
+    <classes>
+      <class name="d03.SOI_3600.SOI_3600_TC02_PC_NewBA_ProductBasket"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- SOI-3600 User Story -->

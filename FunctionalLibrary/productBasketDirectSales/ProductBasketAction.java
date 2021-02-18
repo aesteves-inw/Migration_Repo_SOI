@@ -305,7 +305,6 @@ public class ProductBasketAction {
 
 	}
 
-
 	public static void fillExistingBillingAccountIdField(List<TestLog> logStream, WebDriver driver, int stepID,
 			String textExistingBillingAccountIdField) throws Exception 
 	{
@@ -321,9 +320,9 @@ public class ProductBasketAction {
 			inputExistingBillingAccountIdField.sendKeys(textExistingBillingAccountIdField);
 
 
-			
+
 			saveProductBasketChanges(logStream, driver, stepID);
-			
+
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
@@ -342,38 +341,33 @@ public class ProductBasketAction {
 	{
 		String actionName="fillExistingTechnicalContact";
 
-
 		try
 		{
-			
-			
-			
-						
 			WebElement inputProvisioningContact = driver.findElement(By.xpath(DirSalesProductBasket.inputProvisioningContactPerson));
 
 			inputProvisioningContact.sendKeys(textExistingTechnicalContact);
-			
+
 			/*
 			List<WebElement> provlistItem= new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//li/div/div[1]")));
-			
+
 			for(int i=0;i<provlistItem.size();i++)
 			{
 				String validation=provlistItem.get(i).getText().toString();
-				
+
 				System.out.println("validation: "+validation);
-				
+
 				if(textExistingTechnicalContact.contains(validation))
 				{
 					provlistItem.get(i).click();
 				}
-				
+
 			}
-				*/
-			
+			 */
+
 			WebElement provlistItem = new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li/div/div[1]")));
-			
+
 			provlistItem.click();
-			
+
 			saveProductBasketChanges(logStream, driver, stepID);
 
 
@@ -396,11 +390,17 @@ public class ProductBasketAction {
 
 		try
 		{
-			driver.findElement(By.xpath(DirSalesProductBasket.saveButton)).click();
+			WebElement saveButton=driver.findElement(By.xpath(DirSalesProductBasket.saveButton));
 			
+			Thread.sleep(1000);
+			
+			BrowserActions.jsClick(driver, saveButton);
+			
+			Thread.sleep(1000);
+
 			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h3[@role='alert'][text()='Saved successfully']"))).click();
-			
-			
+
+
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
@@ -413,6 +413,116 @@ public class ProductBasketAction {
 		}
 	}
 
+	public static void saveEditProductBasketChanges(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
+	{
+		String actionName="saveEditProductBasketChanges";
+
+
+		try
+		{
+			WebElement saveButton=driver.findElement(By.xpath(DirSalesProductBasket.saveButton));
+			
+			Thread.sleep(1000);
+			
+			BrowserActions.jsClick(driver, saveButton);
+			
+			Thread.sleep(1000);
+
+			
+
+
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+	}
+	
+	public static void cancelProductBasketChanges(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
+	{
+		String actionName="cancelProductBasketChanges";
+
+
+		try
+		{
+			WebElement cancelButton=driver.findElement(By.xpath(DirSalesProductBasket.cancelButton));
+			
+			
+			BrowserActions.jsClick(driver, cancelButton);
+			
+			Thread.sleep(1000);
+
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+
+
+	}
+
+	public static void fillNewBillingAccountAddress(List<TestLog> logStream, WebDriver driver, int stepID, String newBillingAddress) throws Exception 
+	{
+		String actionName="fillNewBillingAccountAddress";
+
+
+		try
+		{
+			driver.findElement(By.xpath(DirSalesProductBasket.inputNewBillingAccountAddress)).sendKeys(newBillingAddress);
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+
+	}
+
+	public static void fillExistingBillingAccountIdFieldNoSave(List<TestLog> logStream, WebDriver driver, int stepID,
+			String existingBillingAccountIdField) throws Exception 
+	{
+		String actionName="fillExistingBillingAccountIdFieldNoSave";
+
+
+		try
+		{
+			WebElement inputExistingBillingAccountIdField = driver.findElement(By.xpath(DirSalesProductBasket.inputExistingBillingAccountId));
+
+			inputExistingBillingAccountIdField.clear();
+
+			inputExistingBillingAccountIdField.sendKeys(existingBillingAccountIdField);
+
+
+
+			
+
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+		
+	}
+
 	//Validation Actions
 	public static boolean productBasketScreenValidation(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
 	{
@@ -421,10 +531,41 @@ public class ProductBasketAction {
 		try
 		{	
 			changeToDefaultiFrame(logStream, driver, stepID);
-			
-			changeToProductBasketiFrame(logStream, driver, stepID);
-			
 
+			changeToProductBasketiFrame(logStream, driver, stepID);
+
+
+			if(BrowserActions.isElementPresent(driver, DirSalesProductBasket.cloneBasketButton) && 
+					BrowserActions.isElementPresent(driver, DirSalesProductBasket.syncButton) && 
+					BrowserActions.isElementPresent(driver, DirSalesProductBasket.productBasketHeader) && 
+					BrowserActions.isElementPresent(driver, DirSalesProductBasket.productBasketName) && 
+					BrowserActions.isElementPresent(driver, DirSalesProductBasket.addProductButton))
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+
+
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
+	
+	public static boolean validateProductBasketScreen(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
+	{
+		String actionName="Product Basket: Validation of Product Basket Screen";
+
+		try
+		{	
 			if(BrowserActions.isElementPresent(driver, DirSalesProductBasket.cloneBasketButton) && 
 					BrowserActions.isElementPresent(driver, DirSalesProductBasket.syncButton) && 
 					BrowserActions.isElementPresent(driver, DirSalesProductBasket.productBasketHeader) && 
@@ -858,22 +999,21 @@ public class ProductBasketAction {
 		}
 	}
 
-
 	public static boolean checkExistingTechnicalContact(List<TestLog> logStream, WebDriver driver, int stepID,
 			String textExistingTechnicalContact) throws Exception 
 	{
 		String actionName="checkExistingTechnicalContact";
-		
+
 		try
 		{
 			Thread.sleep(5000);
-			
+
 			WebElement inputCheck=driver.findElement(By.xpath("//div[@class='select2-container select2-allowclear ng-pristine ng-untouched ng-valid']"));
-			
+
 			String inputCheckVal=inputCheck.getText();
-			
+
 			System.out.println("Debug of inputCheckVal: "+inputCheckVal);
-			
+
 			if(inputCheckVal.contains(textExistingTechnicalContact))
 			{
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
@@ -893,6 +1033,62 @@ public class ProductBasketAction {
 			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
 		}
 	}
+
+	public static boolean validationNewBillingAccountAddressNegVal(List<TestLog> logStream, WebDriver driver,
+			int stepID) throws Exception 
+	{
+		String actionName="validationNewBillingAccountAddressNegVal";
+		try
+		{
+			if(BrowserActions.isElementPresent(driver, DirSalesProductBasket.errorMessageBillingConfiguration))
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
+
+	public static boolean fillNewBillingAccountAddressValidation(List<TestLog> logStream, WebDriver driver, int stepID,
+			String newBillingAddress) throws Exception 
+	{
+		String actionName="fillNewBillingAccountAddressValidation";
+		try
+		{
+			String newBillingAddressVal=driver.findElement(By.xpath(DirSalesProductBasket.inputNewBillingAccountAddress)).getAttribute("value");
+			
+			if(newBillingAddressVal.contains(newBillingAddress))
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
+
+	
+
+
 
 
 

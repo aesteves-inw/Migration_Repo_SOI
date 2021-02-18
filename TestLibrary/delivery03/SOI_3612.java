@@ -28,13 +28,11 @@ import testReportComposition.TestStepReportStructure;
 
 public class SOI_3612 
 {
-
 	public static void SOI_3612_TC01_DS_NonQuotable_UploadFles_OrderLevel(
 			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver,
 			String testName) throws Exception 
 	{
-		try
-		{
+		
 			String product = "PABX";
 			
 			String userProfile="salesUser";
@@ -83,16 +81,6 @@ public class SOI_3612
 				OpportunityStep.goToOrderScreen(testExecStructure, logStream, driver, testName, productBasketName);
 				
 				OrderStep.addFileToOrder(testExecStructure, logStream, driver, testName, filePath, fileName);
-
-			}
-			catch(Exception e)
-			{
-				System.out.println(e);
-				TestLogger.logError(logStream, testName, "Test Failed", e.toString());
-				throw new Exception(testName+" - Test Case Failed");
-			}
-
-
 
 		}
 		catch(Exception e)
