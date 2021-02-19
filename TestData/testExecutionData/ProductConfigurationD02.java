@@ -40,6 +40,7 @@ public class ProductConfigurationD02 {
 	public static String[] getD02ConfigurationToApply(String product, String configurationIndex) throws Exception
 	{
 		String[] configuration;
+		
 		String dataFromExcel;
 
 		switch(product)
@@ -53,7 +54,7 @@ public class ProductConfigurationD02 {
 			configuration=convertConfiguration(dataFromExcel);
 			break;
 		case "Phone Line":
-			dataFromExcel=ExcelDataFetch.searchDT(6, configurationIndex);
+			dataFromExcel=ExcelDataFetch.searchDT(7, configurationIndex);
 			configuration=convertConfiguration(dataFromExcel);
 			break;
 		default:

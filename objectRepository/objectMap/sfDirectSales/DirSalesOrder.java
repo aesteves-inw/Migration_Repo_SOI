@@ -19,7 +19,9 @@ public class DirSalesOrder {
 
 	public static String servicesContainer="//article[contains(.,'Services')]";
 
-	public static String orderDetails="//div[@class='slds-tabs_default']";
+	public static String orderDetailsTab="//div[@class='slds-tabs_default']";
+	
+	public static String orderDetails="//force-record-layout-section";
 
 	public static String orderHeader="//h1[contains(.,'Order')]";
 
@@ -193,7 +195,16 @@ public class DirSalesOrder {
 
 	
 	
-
+	//09/02 - test Automation elements
+	public static String orderSubmitionErrorBillingAccount="//span[starts-with(.,'Billing Account Id must be filled')]";
 	
+	public static String orderSubmitionErrorProvisioningContact ="//span[starts-with(.,'Provisioning contact must be filled')]";
+	
+	public static String orderStatusLabel="//*[contains(@id,'sectionContent-')]/div/slot/force-record-layout-row[5]/slot/force-record-layout-item[2]/div/div/div[2]/span/slot[1]/slot/lightning-formatted-text";
 
+	public static String linksToService="//table/tbody/tr/td/span/lightning-formatted-url/a";
+	
+	
+	
+	
 }

@@ -25,16 +25,25 @@
 						<forkCount>0</forkCount>
 						<!-- Suite testng xml file to consider for test execution -->
 						<suiteXmlFiles>
+							<!-- Test Suites From Simple Quoting Legacy -->
 							<suiteXmlFile>src\test\java\sq\J1835004000_64\J1835004000_64_TestSuite.xml</suiteXmlFile>
 							<suiteXmlFile>src\test\java\sq\J1835004000_14\J1835004000_14_TestSuite.xml</suiteXmlFile>
 							<suiteXmlFile>src\test\java\sq\J1835004000_18\J1835004000_18_TestSuite.xml</suiteXmlFile>
+							<!-- D02: Automated Test Suites -->
 							<suiteXmlFile>src\test\java\d02\SOI_1013\SOI_1013_TestSuite.xml</suiteXmlFile>
 							<suiteXmlFile>src\test\java\d02\SOI_2206\SOI_2206_TestSuite.xml</suiteXmlFile>
 							<suiteXmlFile>src\test\java\d02\SOI_2205\SOI_2205_TestSuite.xml</suiteXmlFile>
-							<suiteXmlFile>src\test\java\d03\SOI_2205\SOI_3504_TestSuite.xml</suiteXmlFile>
-							<suiteXmlFile>src\test\java\d03\SOI_2205\SOI_3505_TestSuite.xml</suiteXmlFile>
-							<suiteXmlFile>src\test\java\d03\SOI_2205\SOI_3507_TestSuite.xml</suiteXmlFile>
-							<suiteXmlFile>src\test\java\d03\SOI_2205\SOI_3566_TestSuite.xml</suiteXmlFile>
+							<!-- D03: Automated Test Suites -->
+							<suiteXmlFile>src\test\java\d03\SOI_3504\SOI_3504_TestSuite.xml</suiteXmlFile>
+							<suiteXmlFile>src\test\java\d03\SOI_3505\SOI_3505_TestSuite.xml</suiteXmlFile>
+							<suiteXmlFile>src\test\java\d03\SOI_3507\SOI_3507_TestSuite.xml</suiteXmlFile>
+							<suiteXmlFile>src\test\java\d03\SOI_3511\SOI_3511_TestSuite.xml</suiteXmlFile>
+							<suiteXmlFile>src\test\java\d03\SOI_3566\SOI_3566_TestSuite.xml</suiteXmlFile>
+							<suiteXmlFile>src\test\java\d03\SOI_3568\SOI_3568_TestSuite.xml</suiteXmlFile>
+							<suiteXmlFile>src\test\java\d03\SOI_3569\SOI_3569_TestSuite.xml</suiteXmlFile>
+							<suiteXmlFile>src\test\java\d03\SOI_3601\SOI_3601_TestSuite.xml</suiteXmlFile>
+							<suiteXmlFile>src\test\java\d03\SOI_3604\SOI_3604_TestSuite.xml</suiteXmlFile>
+							<suiteXmlFile>src\test\java\d03\SOI_3649\SOI_3649_TestSuite.xml</suiteXmlFile>
 						</suiteXmlFiles>
 					</configuration>
 				</plugin>

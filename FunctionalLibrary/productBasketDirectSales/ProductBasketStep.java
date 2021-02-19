@@ -8,8 +8,10 @@ import agreementDirectSales.AgreementAction;
 import agreementPartCom.AgreementPCAction;
 import editProductConfigurationScreenDirectSales.EProdConfigAction;
 import executionTools.TestExecutionReport;
+import fetchDataFromExcelFiles.ExcelDataFetch;
 import navigation.NavigationAction;
 import opportunityDirectSales.OpportunityAction;
+import orderEnrichmentDirectSales.OrderEnrichmentAction;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
 import testReportComposition.ReportStructure;
@@ -314,7 +316,6 @@ public class ProductBasketStep
 		
 	}
 	
-	
 	public static void goToAgreementScreen(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, String testName) throws Exception
 	{
 		int stepID=TestExecutionReport.stepOfTestStep(testReportStream);
@@ -527,6 +528,239 @@ public class ProductBasketStep
 		}
 		
 	}
+
+	public static void goToOrderEnrichment(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName, String productName) throws Exception
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+		
+		String stepName="ProductBasket: go To Order Enrichment";
+
+		String stepNameMin="step";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			ProductBasketAction.goToOrderEnrichmentConsole(logStream, driver, stepID);
+
+			OrderEnrichmentAction.selectProductForOEConfig(logStream, driver, stepID, productName);
+			
+			validation=OrderEnrichmentAction.tabsforOEValidation(logStream, driver, stepID);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				TestLogger.logTrace(logStream, stepNameMin, "Failed in Step: "+stepID+". Validation: False");
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+	}
+
+	public static void fillNewBillingAccountAddress(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName, String product) throws Exception 
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+		
+		String stepName="Product Basket: Fill New Billing Account Address";
+
+		String stepNameMin="fillNewBillingAccountAddress";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+		
+		String newBillingAddress=ExcelDataFetch.searchDT(11, "newBillingAddress");
+
+		try
+		{
+			ProductBasketAction.fillNewBillingAccountAddress(logStream, driver, stepID, newBillingAddress);
+			
+			ProductBasketAction.saveProductBasketChanges(logStream, driver, stepID);
+			
+			validation = ProductBasketAction.fillNewBillingAccountAddressValidation(logStream, driver, stepID, newBillingAddress);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				TestLogger.logTrace(logStream, stepNameMin, "Failed in Step: "+stepID+". Validation: False");
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+		
+	}
+
+	public static void fillNewBillingAccountAddressNegVal(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName, String newBillingAddress) throws Exception 
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+		
+		String stepName="Product Basket: fill New Billing Account Address with Negative Validation";
+
+		String stepNameMin="fillNewBillingAccountAddressNegVal";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			ProductBasketAction.fillNewBillingAccountAddress(logStream, driver, stepID, newBillingAddress);
+			
+			ProductBasketAction.saveProductBasketChanges(logStream, driver, stepID);
+			
+			validation = ProductBasketAction.validationNewBillingAccountAddressNegVal(logStream, driver, stepID);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				TestLogger.logTrace(logStream, stepNameMin, "Failed in Step: "+stepID+". Validation: False");
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+		
+	}
+
+	public static void cancelProductBasketEdition(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName) throws Exception 
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+		
+		String stepName="Product Basket: cancel Product Basket Edition";
+
+		String stepNameMin="cancelProductBasketEdition";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			ProductBasketAction.cancelProductBasketChanges(logStream, driver, stepID);
+
+			validation = ProductBasketAction.validateProductBasketScreen(logStream, driver, stepID);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				TestLogger.logTrace(logStream, stepNameMin, "Failed in Step: "+stepID+". Validation: False");
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+		
+	}
+
+	
+	public static void fillNewAndExistingBillingDetails(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName) throws Exception 
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+		
+		String stepName="Product Basket: fill New And Existing Billing Details";
+
+		String stepNameMin="fillNewAndExistingBillingDetails";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);
+		
+		
+		String existingBillingAccountIdField=ExcelDataFetch.searchDT(11, "existingBillingAccountIdField");
+		
+		String newBillingAddress=ExcelDataFetch.searchDT(11, "newBillingAddress");
+
+		boolean validation;
+
+		try
+		{
+			ProductBasketAction.fillNewBillingAccountAddress(logStream, driver, stepID, newBillingAddress);
+			
+			ProductBasketAction.fillExistingBillingAccountIdFieldNoSave(logStream, driver, stepID, existingBillingAccountIdField);
+
+			ProductBasketAction.saveEditProductBasketChanges(logStream, driver, stepID);
+			
+			validation = ProductBasketAction.validationNewBillingAccountAddressNegVal(logStream, driver, stepID);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				TestLogger.logTrace(logStream, stepNameMin, "Failed in Step: "+stepID+". Validation: False");
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+		
+	}
+
+	
+
 }
 	
 

@@ -5,7 +5,6 @@ import java.util.List;
 import org.openqa.selenium.WebDriver;
 
 import addOfferToBasketDirectSales.AddOfferToBasketStep;
-import agreementDirectSales.AgreementStep;
 import companyDirectSales.CompanyStep;
 import homePageDirectSales.HomePageStep;
 import loginPageDirectSales.LoginPageStep;
@@ -23,6 +22,8 @@ public class D03Models
 	{
 		String product = "PABX";
 		
+		String textExistingTechnicalContact ="First User";
+		
 		try
 		{
 
@@ -37,6 +38,10 @@ public class D03Models
 			OpportunityStep.createProductBasket(testExecStructure, logStream, driver, testName);
 			
 			ProductBasketStep.fillExistingBillingAccountIdField(testExecStructure, logStream, driver, testName);
+			
+			ProductBasketStep.fillExistingTechnicalContact(testExecStructure, logStream, driver, testName, textExistingTechnicalContact);
+			
+			
 			
 			/*
 			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, testName);
@@ -81,4 +86,9 @@ public class D03Models
 			throw new Exception(testName+": Test Case Failed on Test Model: "+actionName);
 		}
 	}
+
+	
+
+	
+	
 }

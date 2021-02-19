@@ -57,5 +57,12 @@ public class ProductBasketPCStep
 		}
 
 	}
+
+	public static void goToOrderEnrichment(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream,
+			WebDriver driver, String testName, String productName) 
+	{
+		
+		
+	}
 }
 

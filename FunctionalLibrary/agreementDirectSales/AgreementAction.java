@@ -17,6 +17,7 @@ import testLogger.TestLogger;
 public class AgreementAction 
 {
 	//OPERATIONAL ACTIONS
+	
 	public static void generateDocumentProposal(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
 	{
 		String actionName="generateDocumentProposal";
@@ -31,7 +32,37 @@ public class AgreementAction
 					Thread.sleep(1000);
 			}
 			
+			System.out.println("Debug of generateDocumentProposal - Passes Here");
+			
 			BrowserActions.refreshPage(driver);
+			
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+
+	}
+	
+	public static void generateDocumentProposalOnly(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
+	{
+		String actionName="generateDocumentProposal";
+
+
+		try
+		{
+			driver.findElement(By.xpath(DirSalesAgreement.buttonGenerateProposalDocument)).click();
+			
+			for(int i=0;i<30;i++)
+			{
+					Thread.sleep(1000);
+			}
+			
+			System.out.println("Debug of generateDocumentProposal - Passes Here");
 			
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
@@ -81,10 +112,10 @@ public class AgreementAction
 	}
 
 
-	
 
 
 	// VALIDATION ACTIONS
+	
 	public static boolean agreementScreenValidation(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
 	{
 		String actionName="agreementScreenValidation";
@@ -192,7 +223,6 @@ public class AgreementAction
 				}
 	}
 
-	 
-
+	
 	
 }

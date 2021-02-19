@@ -3,6 +3,7 @@ package productConfigurationCloudSense;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -28,56 +29,56 @@ public class ProfessionalInternet
 	
 	private static String getContractDuration(String[] configuration)
 	{
-		String ContractDuration=configuration[0];
+		String ContractDuration=configuration[1];
 
 		return ContractDuration;
 	}
 	
 	private static String getOCKID(String[] configuration)
 	{
-		String OCKID=configuration[0];
+		String OCKID=configuration[2];
 
 		return OCKID;
 	}
 	
 	private static String getOCKResult(String[] configuration)
 	{
-		String OCKResult=configuration[0];
+		String OCKResult=configuration[3];
 
 		return OCKResult;
 	}
 	
 	private static String getPhoneLineInstallationType(String[] configuration)
 	{
-		String PhoneLineInstallationType=configuration[0];
+		String PhoneLineInstallationType=configuration[4];
 
 		return PhoneLineInstallationType;
 	}
 	
 	private static String getPhoneLineConfiguration(String[] configuration)
 	{
-		String PhoneLineConfiguration=configuration[0];
+		String PhoneLineConfiguration=configuration[5];
 
 		return PhoneLineConfiguration;
 	}
 	
 	private static String getExistingPhoneLineID(String[] configuration)
 	{
-		String ExistingPhoneLineID=configuration[0];
+		String ExistingPhoneLineID=configuration[6];
 
 		return ExistingPhoneLineID;
 	}
 	
 	private static String getInternetSubscription(String[] configuration)
 	{
-		String InternetSubscription=configuration[0];
+		String InternetSubscription=configuration[7];
 
 		return InternetSubscription;
 	}
 	
 	private static String getWifiAccess(String[] configuration)
 	{
-		String WifiAccess=configuration[0];
+		String WifiAccess=configuration[8];
 
 		return WifiAccess;
 	}
@@ -188,18 +189,20 @@ public class ProfessionalInternet
 	private static void fieldRequestedInstallationDate(List<TestLog> logStream, WebDriver driver, int stepID,
 			String[] configuration) throws Exception 
 	{
-		String dateToInput=ExecStructure.tomorrowFormattedDate();
+		String dateToInput=ExecStructure.tomorrowFormattedDate("dd");
 
 		String actionName="PI Desired Installation Date - Config: "+dateToInput;
 
 
 		try
 		{
-			WebElement inputDesiredInstallationDate = new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.id("Details:Contract_Information:serviceRequestDate_0")));
+			new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.id("Details:Contract_Information:serviceRequestDate_0")));
 
-			inputDesiredInstallationDate.clear();
+			driver.findElement(By.xpath("//span[@class='icon-calendar']")).click();
 
-			inputDesiredInstallationDate.sendKeys(dateToInput);
+			new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//table[@class='calDays']")));
+			
+			driver.findElement(By.xpath("//td[text()='"+dateToInput+"']")).click();
 
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
@@ -252,9 +255,13 @@ public class ProfessionalInternet
 		{
 			WebElement inputRemarks = new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.id("Details:Contract_Information:remarks_0")));
 
+			inputRemarks.click();
+			
 			inputRemarks.clear();
 
 			inputRemarks.sendKeys(remarksText);
+			
+			inputRemarks.sendKeys(Keys.ENTER);
 
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
@@ -288,9 +295,13 @@ public class ProfessionalInternet
 		{
 			WebElement inputInternalComments = new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.id("Details:Contract_Information:internalComments_0")));
 
+			inputInternalComments.click();
+			
 			inputInternalComments.clear();
 
 			inputInternalComments.sendKeys(remarksText);
+			
+			inputInternalComments.sendKeys(Keys.ENTER);
 
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
@@ -344,11 +355,15 @@ public class ProfessionalInternet
 
 		try
 		{
-			WebElement inputOCKID = new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.id("Details:Installation_Address___OCK_check:OCKID_0")));
+			WebElement inputOCKID = new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='Details:Installation_Address___OCK_Check:OCKID_0']")));
 
+			inputOCKID.click();
+			
 			inputOCKID.clear();
 
 			inputOCKID.sendKeys(ockID);
+			
+			//inputOCKID.sendKeys(Keys.ENTER);
 
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
@@ -372,9 +387,10 @@ public class ProfessionalInternet
 
 		try
 		{
-			Select comboContractType = new Select(driver.findElement(By.id("Details:Installation_Address___OCK_check:ockResult_0")));
+			Select comboContractType = new Select(driver.findElement(By.xpath("//select[@id='Details:Installation_Address___OCK_Check:OCK_Result_0']")));
 
 			comboContractType.selectByVisibleText(OCKResult);
+			
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
@@ -554,10 +570,11 @@ public class ProfessionalInternet
 			
 			selectBoxInternetSubscription.click();
 			
-			WebElement listOfSubscriptionsInProductBasket = new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='select2-results']/ul[1]")));
+			new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//ul[@id='select2-results-1'][@role='listbox']")));
 			
-			listOfSubscriptionsInProductBasket.findElement(By.xpath("//div[@title="+selectInternetSubscription+"]")).click();
+			WebElement internetSubscription = new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@title='"+selectInternetSubscription+"']")));
 			
+			internetSubscription.click();
 			
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 			

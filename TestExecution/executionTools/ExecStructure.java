@@ -66,6 +66,25 @@ public class ExecStructure {
 
 		}
 		
+		public static String tomorrowFormattedDate(String format) 
+		{
+			String finalDate;
+			
+			LocalDate todayDate, tomorrowDate;
+			
+			todayDate = LocalDate.now();
+			
+			tomorrowDate=todayDate.plusDays(1);
+			
+			DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern(format);
+			
+			finalDate = myFormatObj.format(tomorrowDate);
+			
+
+			return finalDate;
+
+		}
+		
 		
 		// Function for Directory creation
 		public static void createDirectoryIfNeeded(String directoryName)

@@ -93,5 +93,16 @@ public class PartComOrder {
 	// NOT EXISTING
 	public static String newOrderButton="//*[contains(.,'New')]";
 	
+	
+	
+	//10/02 - D03 Test Automation
+	public static String orderDetailsFrame="//div[@data-aura-class='forcePageBlockSection forcePageBlockSectionView']";
+	
+	public static String orderStatusLabel="//div/div[5]/div[2]/div/div[2]/span/span";
+	
+	public static String submitOrderBillingAccountErrorMessage="//span[@data-aura-class='forceActionsText'][text()='Billing Account Id must be filled before submit order!']";
+	
+	public static String submitOrderProvisioningContactErrorMessage="//span[@data-aura-class='forceActionsText'][text()='Provisioning contact must be filled before submit order!']";
+	
 
 }
