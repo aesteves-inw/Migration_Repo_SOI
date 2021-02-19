@@ -19,7 +19,7 @@ import testReportComposition.TestStepReportStructure;
 
 public class SOI_3567_TC02_DS_Order2Case_NonQuotable_Quotable_MoreWeight 
 {
-	String testName = "";
+	String testName = "SOI_3567_TC02_DS_Order2Case_NonQuotable_Quotable_MoreWeight";
 
 	String initialTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
 

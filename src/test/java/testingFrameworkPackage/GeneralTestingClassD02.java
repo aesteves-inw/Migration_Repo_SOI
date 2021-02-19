@@ -50,9 +50,9 @@ public class GeneralTestingClassD02
 	{		
 		
 		
-		String configurationIndex="configurationByDefault";
+		String configurationIndex="fullFiberSimpleConfiguration";
 		
-		String product ="Phone Line";
+		String product ="Professional Internet";
 		
 		D02Models.E2FFlowForD02(testExecStructure, logStream, driver, testName, product, configurationIndex);
 	}

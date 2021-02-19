@@ -128,9 +128,6 @@ public class DirSalesOpportunity {
 	//Close This Opportunity Menu
 
 
-
-
-
 	//OPTY Pool Screen
 	public static String optysHeader = "//div[@class='slds-page-header--object-home slds-page-header_joined slds-page-header_bleed slds-page-header slds-shrink-none test-headerRegion forceListViewManagerHeader']";
 
@@ -143,4 +140,21 @@ public class DirSalesOpportunity {
 	public static String optyTableResults = "//th[1]/span/a";
 
 
+	
+	// 19-02-2021 - New Mandatory Opportunity Fields
+	public static String textareaDescription="//textarea[@maxlength='32000']";
+	
+	public static String selectLevelOfConfidence="(//input[@lightning-basecombobox_basecombobox])[4]";
+	
+	public static String inputNextStep="//input[@name='NextStep']";
+	
+	public static String inputNextStepDueDate="//input[@name='PRX_Next_Step_Due_Date__c']";
+	
+	public static String selectProductFamily="(//input[@lightning-basecombobox_basecombobox])[9]";
+	
+	public static String nomeCompetitorName="//span[@title='None']";
+	
+	public static String buttonAddToChosen="//button[@title='Move selection to Chosen']";
+	
+	public static String selectStageEditScreen="(//input[@lightning-basecombobox_basecombobox])[3]";
 }

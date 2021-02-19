@@ -120,6 +120,8 @@ public class D02Models
 		}
 	}
 
+	
+	
 	// Stand-Alone Products: Product Configuration - PI/PL/EV/VC
 	public static void ConfigureVoiceContinuity(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver, String testName, String configurationIndex) throws Exception
 	{
@@ -191,6 +193,7 @@ public class D02Models
 	}
 
 
+	
 	// ECS Products: Product Configuration
 
 
@@ -314,6 +317,8 @@ public class D02Models
 		}
 	}
 
+	
+	
 	//18-02-2021: AgreementFlow in D02: Composed by goToAgreement,  
 	public static void GoToAgreementAndGenerateProposal(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver, String testName) throws Exception
 	{
@@ -334,6 +339,8 @@ public class D02Models
 		}
 	}
 
+	
+	
 	//Generic E2E Flow in D02
 	public static void E2FFlowForD02(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver, String testName, String productName, String configurationIndex) throws Exception
 	{
@@ -362,11 +369,11 @@ public class D02Models
 
 			ProductBasketStep.goToEditProductConfigurationScreen(testExecStructure, logStream, driver, testName, productName);
 
-			EProdConfigStep.configurePhoneLine(testExecStructure, logStream, driver, testName, productName, configurationIndex);
+			EProdConfigStep.configureProfessionalInternet(testExecStructure, logStream, driver, testName, productName, configurationIndex);
 
 			EProdConfigStep.finsihConfiguration(testExecStructure, logStream, driver, testName);
 
-			ProductBasketStep.syncProductBasket(testExecStructure, logStream, driver, testName);
+			/*ProductBasketStep.syncProductBasket(testExecStructure, logStream, driver, testName);*/
 /*
 			//ProductBasketStep.goToAgreementScreen(testExecStructure, logStream, driver, testName);
 

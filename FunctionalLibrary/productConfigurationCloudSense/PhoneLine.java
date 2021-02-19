@@ -252,7 +252,9 @@ public class PhoneLine {
 		try
 		{
 			WebElement inputRemarks = new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.id("Details:Contract_Information:remarks_0")));
-
+			
+			inputRemarks.click();
+			
 			inputRemarks.clear();
 
 			inputRemarks.sendKeys(remarksText);
@@ -282,6 +284,8 @@ public class PhoneLine {
 		{
 			WebElement inputInternalComments = new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.id("Details:Contract_Information:internalComments_0")));
 
+			inputInternalComments.click();
+			
 			inputInternalComments.clear();
 
 			inputInternalComments.sendKeys(remarksText);
