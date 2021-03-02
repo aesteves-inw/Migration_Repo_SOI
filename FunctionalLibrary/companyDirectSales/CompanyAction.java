@@ -27,6 +27,8 @@ public class CompanyAction {
 
 	static String logInfo="Executed with success";
 	static String logError="Executed with errors";
+	
+	// Operational Actions
 
 	//Quick Sale
 
@@ -687,7 +689,180 @@ public class CompanyAction {
 
 	}
 
+	
+	
+	// 02-03-2020 - Create the New Opportunity - Create a Quick Opportunity
+	public static void createNewQuickOpportunity(List<TestLog> logStream, WebDriver driver, String testName, int stepID, String productFamily) throws Exception
+    {
+        String actionName="createNewQuickOpportunity";
 
+
+				try
+				{
+					WebElement newButton = new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOf(driver.findElement(By.linkText("New"))));
+
+					newButton.click();
+					
+					fillNewOpportunityName(logStream, driver, testName, stepID);
+					
+					fillNewCloseDate(logStream, driver, stepID);
+					
+					fillDescription(logStream, driver, testName, stepID);
+					
+					fillProductFamily(logStream, driver, stepID, productFamily);
+					
+					clickCreateButton(logStream, driver, stepID);
+					
+					driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+					
+
+					TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+				}
+				catch(Exception e)
+				{
+					System.out.println(e);
+					TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+					throw new Exception (actionName+" - Failed in Step "+stepID,e);
+				}
+
+    }
+	
+	private static void fillNewOpportunityName(List<TestLog> logStream, WebDriver driver, String testName, int stepID) throws Exception 
+	{
+		String actionName="fillNewOpportunityName";
+		
+		String optyName=TestCasesData.getOPTYName(testName);
+		
+		try
+		{
+			WebElement inputOpportunityName = driver.findElement(By.xpath("//input[@name='Name']"));
+			
+			inputOpportunityName.click();
+			
+			inputOpportunityName.clear();
+			
+			inputOpportunityName.sendKeys(optyName);
+			
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+		
+	}
+
+	private static void fillNewCloseDate(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
+	{
+		String actionName="fillNewCloseDate";
+		
+		String closeDate=ExecStructure.tomorrowFormattedDate("dd-MMM-yyyy");
+		
+		try
+		{
+			WebElement inputCloseDate = driver.findElement(By.xpath("//input[@name='CloseDate']"));
+			
+			inputCloseDate.click();
+			
+			inputCloseDate.clear();
+			
+			inputCloseDate.sendKeys(closeDate);
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+		
+	}
+
+	private static void fillDescription(List<TestLog> logStream, WebDriver driver, String testName, int stepID) throws Exception
+	{
+		String actionName="fillDescription";
+		
+		try
+		{
+			WebElement inputDescription = driver.findElement(By.xpath("//textarea[@name='Description']"));
+			
+			inputDescription.click();
+			
+			inputDescription.clear();
+			
+			inputDescription.sendKeys(testName);
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+		
+	}
+
+	private static void fillProductFamily(List<TestLog> logStream, WebDriver driver, int stepID, String productFamily) throws Exception
+	{
+		String actionName="fillProductFamily";
+		
+		try
+		{
+			
+			driver.findElement(By.xpath("//input[@name='PRX_Product_family__c']")).click();
+			
+					
+			BrowserActions.jsClickByXpath(driver, "//span[@title='"+productFamily+"']");
+			
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+		
+	}
+	
+	private static void clickCreateButton(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
+	{
+		 String actionName="clickCreateButton";
+
+
+			try
+			{
+				BrowserActions.jsClickByXpath(driver, "//button[@name='Create']");
+
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+			}
+			catch(Exception e)
+			{
+				System.out.println(e);
+				TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+				throw new Exception (actionName+" - Failed in Step "+stepID,e);
+			}
+
+		
+	}
+
+	
+	
+	
+	// Validation Actions
+	
 	//Validation of Company Page
 
 	public static boolean companyPageValidation(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
@@ -731,7 +906,9 @@ public class CompanyAction {
 	}
 
 
-
+	
+	
+	
 	
 
 

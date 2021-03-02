@@ -352,7 +352,9 @@ public class D02Models
 
 			HomePageStep.navigateToCompanyPage(testExecStructure, logStream, driver, testName);
 
-			CompanyStep.createQuickSaleOpportunity(testExecStructure, logStream, driver, testName);
+			//CompanyStep.createQuickSaleOpportunity(testExecStructure, logStream, driver, testName);
+			
+			CompanyStep.createNewQuickOpportunity(testExecStructure, logStream, driver, testName, "Fix Data");
 
 			String optyURL=driver.getCurrentUrl();
 
@@ -373,8 +375,8 @@ public class D02Models
 
 			EProdConfigStep.finsihConfiguration(testExecStructure, logStream, driver, testName);
 
-			/*ProductBasketStep.syncProductBasket(testExecStructure, logStream, driver, testName);*/
-/*
+			ProductBasketStep.syncProductBasket(testExecStructure, logStream, driver, testName);
+
 			//ProductBasketStep.goToAgreementScreen(testExecStructure, logStream, driver, testName);
 
 			//AgreementStep.generateDocumentProposal(testExecStructure, logStream, driver, testName);
@@ -382,7 +384,7 @@ public class D02Models
 			NavigationStep.goToOpportunityByURL(testExecStructure, logStream, driver, testName, optyURL);
 
 			OpportunityStep.closeWinOPTY(testExecStructure, logStream, driver, testName);
-
+/*
 			// 14/01 - Workaround for Opportunity Page Refresh after Close Won and before going to OrderScreen
 
 			Thread.sleep(10000);

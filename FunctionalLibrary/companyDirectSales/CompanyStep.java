@@ -275,4 +275,49 @@ public class CompanyStep {
 
 	}
 
+	// 02-03-2021 - Step to Create the New Opportunity - Create a Quick Opportunity
+	
+	public static void createNewQuickOpportunity(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver, String testName, String productFamily) throws Exception
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+		
+		String stepName="Company: Create a Quick Opportunity";
+
+		String stepNameMin="createNewQuickOpportunity";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			CompanyNavigation.goToOpportunityRelatedMenuOnCompany(logStream, driver, testName);
+			
+			CompanyAction.createNewQuickOpportunity(logStream, driver, testName, stepID, productFamily);
+
+			validation = OpportunityAction.opportunityScreenValidation(logStream, driver, stepID);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				TestLogger.logTrace(logStream, stepNameMin, "Failed in Step: "+stepID+". Validation: False");
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+
+	}
 }
