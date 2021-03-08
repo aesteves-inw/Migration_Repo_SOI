@@ -298,9 +298,15 @@ public class OpportunityAction {
 
 		try
 		{
-			driver.findElement(By.xpath(DirSalesOpportunity.selectProductFamily)).click();
+			WebElement selectProductFamily=driver.findElement(By.xpath(DirSalesOpportunity.selectProductFamily));
 			
-			driver.findElement(By.xpath("//*[text()='Fix Data']")).click();
+			BrowserActions.jsClick(driver, selectProductFamily);
+			Thread.sleep(1000);
+			
+			WebElement productFamilyItem=driver.findElement(By.xpath("//*[text()='Fix Data']"));
+			
+			BrowserActions.jsClick(driver, productFamilyItem);
+			Thread.sleep(1000);
 
 			
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);

@@ -2,10 +2,15 @@ package orderPartCom;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import executionTools.BrowserActions;
 import executionTools.TestExecutionReport;
+import fetchDataFromExcelFiles.ExcelDataFetch;
+import navigation.NavigationAction;
+import orderDirectSales.OrderAction;
 import servicePartCom.ServicePCAction;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
@@ -272,6 +277,103 @@ public class OrderPCStep {
 			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
 			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
+		
+	}
+
+	public static void submitOrderNegativeValContractType(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName) throws Exception
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+		
+		String stepName="step";
+
+		String stepNameMin="step";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			OrderPCAction.submitOrder(logStream, driver, stepID);
+
+			validation = OrderAction.submitOrderNegativeValContractType(logStream, driver, stepID);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				TestLogger.logTrace(logStream, stepNameMin, "Failed in Step: "+stepID+". Validation: False");
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+
+		
+	}
+
+	public static void goToServiceScreenByServiceName(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName, String serviceName) throws Exception
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+		
+		String stepName="Order: go To Service Screen By Service Name";
+
+		String stepNameMin="goToServiceScreenByServiceName";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);	
+		
+		
+		String serviceID, serviceURL;
+
+
+		boolean validation;
+
+		try
+		{
+			WebElement serviceLink = driver.findElement(By.xpath("//a[@title='"+serviceName+"']"));
+			
+			serviceID=serviceLink.getAttribute("data-recordid");
+			
+			serviceURL=ExcelDataFetch.searchDT(0, "PartnersCommunity")+"/"+serviceID;
+			
+			NavigationAction.goToByURL(logStream, driver, stepID, serviceURL);
+
+			validation = ServicePCAction.serviceScreenValidation(logStream, driver, stepID);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				TestLogger.logTrace(logStream, stepNameMin, "Failed in Step: "+stepID+". Validation: False");
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+
 		
 	}
 

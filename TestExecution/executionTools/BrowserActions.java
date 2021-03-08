@@ -73,11 +73,20 @@ public class BrowserActions {
 
 	}
 
-	public static void jsClick(WebDriver driver, By locator) {
+	public static void jsClickByXpath(WebDriver driver, String xpath)
+	{
+		WebElement element = driver.findElement(By.xpath(xpath));
+		
+		jsClick(driver, element);
+	}
+	
+	public static void jsClick(WebDriver driver, By locator) 
+	{
 		jsClick(driver, driver.findElement(locator));
 	}
 
-	public static void jsClick(WebDriver driver, WebElement elem) {
+	public static void jsClick(WebDriver driver, WebElement elem) 
+	{
 		((JavascriptExecutor) driver).executeScript(
 				"arguments[0].click();", elem
 				);
@@ -88,7 +97,8 @@ public class BrowserActions {
 	
 	
 	// Function to Take Screen Shots from WebDriver
-	public static void screenShotTaking(WebDriver driver, String TestName, String shotName) throws IOException {
+	public static void screenShotTaking(WebDriver driver, String TestName, String shotName) throws IOException 
+	{
 
 		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		FileHandler.copy(scrFile, new File(ExecStructure.testExecutionScreenshotsFolder(TestName)+"\\"+shotName+".png"));
