@@ -45,23 +45,23 @@ public class OrderAction
 	public static void addFileToOrder(List<TestLog> logStream, WebDriver driver, int stepID, String filePath) throws Exception 
 	{
 		String actionName="addFileToOrder";
-		
+
 		try
 		{
 			WebElement inputFile = driver.findElement(By.xpath("//input[contains(@class,'slds-file-selector__input slds-assistive-text')]"));
-			
+
 			inputFile.sendKeys(filePath);
-			
+
 			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesAgreement.titleUploadFiles)));
-			
+
 			Thread.sleep(3000);
-			
+
 			WebElement doneButton = new WebDriverWait(driver, 15).until(ExpectedConditions.elementToBeClickable(By.xpath(DirSalesAgreement.buttonDoneUploadFiles)));
-			
+
 			BrowserActions.jsClick(driver, doneButton);
-			
+
 			new WebDriverWait(driver, 15).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(DirSalesAgreement.buttonDoneUploadFiles)));
-			
+
 
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
@@ -72,7 +72,7 @@ public class OrderAction
 			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
-		
+
 	}
 
 	// Validation Actions
@@ -203,11 +203,11 @@ public class OrderAction
 	public static boolean validateFilesInOrderScreen(List<TestLog> logStream, WebDriver driver, int stepID, String fileName) throws Exception 
 	{
 		String actionName="validateFilesInOrderScreen";
-		
+
 		try
 		{
 			String fileElementToValidate="//a[@title='"+fileName+"']";
-			
+
 			if(BrowserActions.isElementPresent(driver, fileElementToValidate))
 			{
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
@@ -228,7 +228,34 @@ public class OrderAction
 	}
 
 
-	
+	public static boolean submitOrderNegativeValContractType(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
+	{
+		String actionName="submitOrderNegativeValContractType";
+
+		try
+		{
+			if(BrowserActions.isElementPresent(driver, "//*[starts-with(.,'Missing Contract Type on Service(s):')]"))
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+
+	}
+
+
+
 
 
 }

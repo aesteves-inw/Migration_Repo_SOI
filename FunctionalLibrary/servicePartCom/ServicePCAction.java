@@ -105,7 +105,7 @@ public class ServicePCAction {
 		try
 		{
 			driver.findElement(By.xpath(PartComService.buttonNewCompanyContactPerson)).click();
-			
+
 			CompanyContactPersonPCAction.fillNewProvisioningContactPerson(logStream, driver, stepID);
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
@@ -117,10 +117,11 @@ public class ServicePCAction {
 			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
-		
-	}
-	
 
+	}
+
+
+	
 
 	// Validation Actions
 
@@ -207,7 +208,7 @@ public class ServicePCAction {
 			int stepID) throws Exception 
 	{
 		String actionName="validateNewProvisioningContactPersonAfterSaving";
-		
+
 		try
 		{			
 			if(BrowserActions.isElementPresent(driver, "//input[contains(@placeholder,'Tomated')]"))
@@ -232,8 +233,8 @@ public class ServicePCAction {
 	public static boolean validateProvisioningContactPersonAfterSaving(List<TestLog> logStream, WebDriver driver,
 			int stepID, String provContactPerson) throws Exception 
 	{
-String actionName="validateNewProvisioningContactPersonAfterSaving";
-		
+		String actionName="validateNewProvisioningContactPersonAfterSaving";
+
 		try
 		{			
 			if(BrowserActions.isElementPresent(driver, "//input[contains(@placeholder,'"+provContactPerson+"')]"))
@@ -255,8 +256,6 @@ String actionName="validateNewProvisioningContactPersonAfterSaving";
 		}
 	}
 
-
-
-
+	
 
 }
