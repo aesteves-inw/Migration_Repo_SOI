@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="SOI-3601 User Story" parallel="false">
   <test name="SOI_3601_TC01_DS_CopyBA_ProductBasket2Service">
     <classes>
       <class name="d03.SOI_3601.SOI_3601_TC01_DS_CopyBA_ProductBasket2Service"/>
     </classes>
-	</test> <!-- Test -->
+	</test> 
 	<test name="SOI_3601_TC02_DS_CopyBA_ProductBasket2Service_Negative">
     <classes>
       <class name="d03.SOI_3601.SOI_3601_TC02_DS_CopyBA_ProductBasket2Service_Negative"/>
     </classes>
-	</test> <!-- Test -->
+	</test> 
 	<test name="SOI_3601_TC03_PC_CopyBA_ProductBasket2Service">
     <classes>
       <class name="d03.SOI_3601.SOI_3601_TC03_PC_CopyBA_ProductBasket2Service"/>
     </classes>
-  </test> <!-- Test -->
+  </test> 
   <test name="SOI_3601_TC04_PC_CopyBA_ProductBasket2Service_Negative">
     <classes>
       <class name="d03.SOI_3601.SOI_3601_TC04_PC_CopyBA_ProductBasket2Service_Negative"/>
     </classes>
-  </test> <!-- Test -->
-   
+  </test> 
 </suite> <!-- SOI-3601 User Story -->
