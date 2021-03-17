@@ -45,7 +45,7 @@ public class SOI_3569_TC04_DS_TechnicalContactServiceLevel_OE_Deprecated
 
 	
 	@Test
-	public void testCase() throws Exception
+	public void SOI_3569_TC04_DS_TechnicalContactServiceLevel_OE_Deprecated() throws Exception
 	{ 
 		try
 		{

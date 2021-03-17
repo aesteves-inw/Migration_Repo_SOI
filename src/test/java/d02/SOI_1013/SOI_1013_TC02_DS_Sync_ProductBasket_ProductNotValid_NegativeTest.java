@@ -50,7 +50,7 @@ public class SOI_1013_TC02_DS_Sync_ProductBasket_ProductNotValid_NegativeTest {
 		
 	}
 	@Test
-	public void testCase() throws Exception
+	public void SOI_1013_TC02_DS_Sync_ProductBasket_ProductNotValid_NegativeTest() throws Exception
 	{
 		try
 		{

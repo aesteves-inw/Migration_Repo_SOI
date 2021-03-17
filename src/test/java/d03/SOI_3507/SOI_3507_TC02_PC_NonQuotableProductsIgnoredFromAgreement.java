@@ -45,7 +45,7 @@ public class SOI_3507_TC02_PC_NonQuotableProductsIgnoredFromAgreement
 
 	
 	@Test
-	public void testCase() throws Exception
+	public void SOI_3507_TC02_PC_NonQuotableProductsIgnoredFromAgreement() throws Exception
 	{
 		try
 		{

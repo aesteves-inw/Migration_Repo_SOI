@@ -46,7 +46,7 @@ public class SOI_3601_TC01_DS_CopyBA_ProductBasket2Service
 
 	
 	@Test
-	public void testCase() throws Exception
+	public void SOI_3601_TC01_DS_CopyBA_ProductBasket2Service() throws Exception
 	{ 
 		try
 		{

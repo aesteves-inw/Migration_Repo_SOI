@@ -45,7 +45,7 @@ public class SOI_3569_TC02_DS_TechnicalContactServiceLevel_Existing
 
 	
 	@Test
-	public void testCase() throws Exception
+	public void SOI_3569_TC02_DS_TechnicalContactServiceLevel_Existing() throws Exception
 	{ 
 		try
 		{

@@ -45,7 +45,7 @@ public class SOI_3600_TC01_DS_NewBA_ProductBasket
 
 	
 	@Test
-	public void testCase() throws Exception
+	public void SOI_3600_TC01_DS_NewBA_ProductBasket() throws Exception
 	{
 		try
 		{

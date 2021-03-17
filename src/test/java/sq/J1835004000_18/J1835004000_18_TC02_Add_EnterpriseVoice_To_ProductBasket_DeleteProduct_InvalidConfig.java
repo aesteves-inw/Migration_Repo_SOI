@@ -45,7 +45,7 @@ public class J1835004000_18_TC02_Add_EnterpriseVoice_To_ProductBasket_DeleteProd
 	}
 	
 	@Test
-	public void testCase() throws Exception
+	public void J1835004000_18_TC02_Add_EnterpriseVoice_To_ProductBasket_DeleteProduct_InvalidConfig() throws Exception
 	{
 		try
 		{

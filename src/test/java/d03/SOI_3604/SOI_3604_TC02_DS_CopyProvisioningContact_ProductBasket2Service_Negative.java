@@ -45,7 +45,7 @@ public class SOI_3604_TC02_DS_CopyProvisioningContact_ProductBasket2Service_Nega
 
 	
 	@Test
-	public void testCase() throws Exception
+	public void SOI_3604_TC02_DS_CopyProvisioningContact_ProductBasket2Service_Negative() throws Exception
 	{
 		try
 		{

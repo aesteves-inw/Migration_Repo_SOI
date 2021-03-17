@@ -45,7 +45,7 @@ public class SOI_3649_TC03_PC_LinkDocumentsFromAgreementToOrder_NonQuotable_Exte
 
 	
 	@Test
-	public void testCase() throws Exception
+	public void SOI_3649_TC03_PC_LinkDocumentsFromAgreementToOrder_NonQuotable_ExternalFile() throws Exception
 	{
 		try
 		{

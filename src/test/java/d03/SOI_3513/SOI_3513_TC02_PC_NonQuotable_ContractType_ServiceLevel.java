@@ -45,7 +45,7 @@ public class SOI_3513_TC02_PC_NonQuotable_ContractType_ServiceLevel
 
 	
 	@Test
-	public void testCase() throws Exception
+	public void SOI_3513_TC02_PC_NonQuotable_ContractType_ServiceLevel() throws Exception
 	{
 		try
 		{

@@ -45,7 +45,7 @@ public class SOI_3569_TC07_PC_TechnicalContactServiceLevel_Negative
 
 	
 	@Test
-	public void testCase() throws Exception
+	public void SOI_3569_TC07_PC_TechnicalContactServiceLevel_Negative() throws Exception
 	{ 
 		try
 		{

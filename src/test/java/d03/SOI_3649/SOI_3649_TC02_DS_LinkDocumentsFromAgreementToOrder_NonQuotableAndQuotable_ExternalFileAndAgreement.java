@@ -45,7 +45,7 @@ public class SOI_3649_TC02_DS_LinkDocumentsFromAgreementToOrder_NonQuotableAndQu
 
 	
 	@Test
-	public void testCase() throws Exception
+	public void SOI_3649_TC02_DS_LinkDocumentsFromAgreementToOrder_NonQuotableAndQuotable_ExternalFileAndAgreement() throws Exception
 	{
 		try
 		{

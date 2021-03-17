@@ -46,7 +46,7 @@ public class SOI_3568_TC01_DS_BillingAccountServiceLevel
 
 	
 	@Test
-	public void testCase() throws Exception
+	public void SOI_3568_TC01_DS_BillingAccountServiceLevel() throws Exception
 	{ 
 		try
 		{

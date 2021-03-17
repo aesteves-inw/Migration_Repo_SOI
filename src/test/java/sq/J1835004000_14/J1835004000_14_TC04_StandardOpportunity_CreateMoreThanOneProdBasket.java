@@ -45,7 +45,7 @@ public class J1835004000_14_TC04_StandardOpportunity_CreateMoreThanOneProdBasket
 	}
 	
 	@Test
-	public void testCase() throws Exception
+	public void J1835004000_14_TC04_StandardOpportunity_CreateMoreThanOneProdBasket() throws Exception
 	{
 		try
 		{

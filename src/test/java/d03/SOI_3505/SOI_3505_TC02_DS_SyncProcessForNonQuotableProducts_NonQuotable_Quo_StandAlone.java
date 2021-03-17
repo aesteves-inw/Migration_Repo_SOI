@@ -45,7 +45,7 @@ public class SOI_3505_TC02_DS_SyncProcessForNonQuotableProducts_NonQuotable_Quo_
 
 	
 	@Test
-	public void testCase() throws Exception
+	public void SOI_3505_TC02_DS_SyncProcessForNonQuotableProducts_NonQuotable_Quo_StandAlone() throws Exception
 	{ 
 		try
 		{

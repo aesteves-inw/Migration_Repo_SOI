@@ -50,7 +50,7 @@ public class SOI_3504_TC03_PC_NonQuotableOffer_Standalone {
 		
 	}
 	@Test
-	public void testCase() throws Exception
+	public void SOI_3504_TC03_PC_NonQuotableOffer_Standalone() throws Exception
 	{
 		try
 		{

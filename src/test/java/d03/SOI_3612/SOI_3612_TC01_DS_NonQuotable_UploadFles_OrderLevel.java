@@ -46,7 +46,7 @@ public class SOI_3612_TC01_DS_NonQuotable_UploadFles_OrderLevel
 
 	
 	@Test
-	public void testCase() throws Exception
+	public void SOI_3612_TC01_DS_NonQuotable_UploadFles_OrderLevel() throws Exception
 	{
 		try
 		{

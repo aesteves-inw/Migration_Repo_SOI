@@ -45,7 +45,7 @@ public class SOI_3567_TC04_DS_Order2Case_NonQuotable_Quotable_LessWeight
 
 	
 	@Test
-	public void testCase() throws Exception
+	public void SOI_3567_TC04_DS_Order2Case_NonQuotable_Quotable_LessWeight() throws Exception
 	{
 		try
 		{

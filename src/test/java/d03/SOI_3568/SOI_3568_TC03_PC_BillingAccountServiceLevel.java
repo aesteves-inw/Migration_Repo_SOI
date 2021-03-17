@@ -45,7 +45,7 @@ public class SOI_3568_TC03_PC_BillingAccountServiceLevel
 
 	
 	@Test
-	public void testCase() throws Exception
+	public void SOI_3568_TC03_PC_BillingAccountServiceLevel() throws Exception
 	{ 
 		try
 		{

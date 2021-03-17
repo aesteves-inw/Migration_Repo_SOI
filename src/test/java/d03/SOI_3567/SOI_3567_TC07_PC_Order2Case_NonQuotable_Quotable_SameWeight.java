@@ -45,7 +45,7 @@ public class SOI_3567_TC07_PC_Order2Case_NonQuotable_Quotable_SameWeight
 
 	
 	@Test
-	public void testCase() throws Exception
+	public void SOI_3567_TC07_PC_Order2Case_NonQuotable_Quotable_SameWeight() throws Exception
 	{
 		try
 		{

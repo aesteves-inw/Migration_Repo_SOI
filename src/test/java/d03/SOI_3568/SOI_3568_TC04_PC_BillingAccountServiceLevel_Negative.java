@@ -45,7 +45,7 @@ public class SOI_3568_TC04_PC_BillingAccountServiceLevel_Negative
 
 	
 	@Test
-	public void testCase() throws Exception
+	public void SOI_3568_TC04_PC_BillingAccountServiceLevel_Negative() throws Exception
 	{ 
 		try
 		{

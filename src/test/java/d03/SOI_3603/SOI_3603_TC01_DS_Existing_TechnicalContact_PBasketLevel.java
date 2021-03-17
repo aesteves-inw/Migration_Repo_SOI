@@ -46,7 +46,7 @@ public class SOI_3603_TC01_DS_Existing_TechnicalContact_PBasketLevel
 
 	
 	@Test
-	public void testCase() throws Exception
+	public void SOI_3603_TC01_DS_Existing_TechnicalContact_PBasketLevel() throws Exception
 	{ 
 		try
 		{

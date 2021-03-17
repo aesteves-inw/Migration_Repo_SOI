@@ -45,7 +45,7 @@ public class SOI_3569_TC06_PC_TechnicalContactServiceLevel_Existing
 
 	
 	@Test
-	public void testCase() throws Exception
+	public void SOI_3569_TC06_PC_TechnicalContactServiceLevel_Existing() throws Exception
 	{ 
 		try
 		{

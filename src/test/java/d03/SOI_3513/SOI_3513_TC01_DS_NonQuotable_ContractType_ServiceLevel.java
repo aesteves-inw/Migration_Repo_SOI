@@ -19,7 +19,7 @@ import testReportComposition.TestStepReportStructure;
 
 public class SOI_3513_TC01_DS_NonQuotable_ContractType_ServiceLevel 
 {
-	String testName = "";
+	String testName = "SOI_3513_TC01_DS_NonQuotable_ContractType_ServiceLevel";
 
 	String initialTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
 
@@ -45,7 +45,7 @@ public class SOI_3513_TC01_DS_NonQuotable_ContractType_ServiceLevel
 
 	
 	@Test
-	public void testCase() throws Exception
+	public void SOI_3513_TC01_DS_NonQuotable_ContractType_ServiceLevel() throws Exception
 	{
 		try
 		{

@@ -45,7 +45,7 @@ public class SOI_3567_TC01_DS_Order2Case_NonQuotable_Standalone
 
 	
 	@Test
-	public void testCase() throws Exception
+	public void SOI_3567_TC01_DS_Order2Case_NonQuotable_Standalone() throws Exception
 	{
 		try
 		{

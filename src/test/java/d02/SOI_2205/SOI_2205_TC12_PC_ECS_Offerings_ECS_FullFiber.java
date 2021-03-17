@@ -47,7 +47,7 @@ public class SOI_2205_TC12_PC_ECS_Offerings_ECS_FullFiber
 
 	
 	@Test
-	public void testCase() throws Exception
+	public void SOI_2205_TC12_PC_ECS_Offerings_ECS_FullFiber() throws Exception
 	{
 		try
 		{

@@ -48,7 +48,7 @@ public class SOI_3504_TC02_DS_NonQuotableOffer_NonQuotableQuotable {
 		
 	}
 	@Test
-	public void testCase() throws Exception
+	public void SOI_3504_TC02_DS_NonQuotableOffer_NonQuotableQuotable() throws Exception
 	{
 		try
 		{
