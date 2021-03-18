@@ -31,4 +31,34 @@
       <class name="d02.SOI_2205.SOI_2205_TC06_DS_ECS_Offerings_ECS_FullFiberExtended"/>
     </classes>
     </test> 
+    <test name="SOI_2205_TC08_PC_ECS_Offerings_ECS_Pro_EnterpriseVoice">
+    <classes>
+      <class name="d02.SOI_2205.SOI_2205_TC08_PC_ECS_Offerings_ECS_Pro_EnterpriseVoice"/>
+    </classes>
+    </test> 
+    <test name="SOI_2205_TC09_PC_ECS_Offerings_ECS_Pro_PhoneLine">
+    <classes>
+      <class name="d02.SOI_2205.SOI_2205_TC09_PC_ECS_Offerings_ECS_Pro_PhoneLine"/>
+    </classes>
+    </test> 
+    <test name="SOI_2205_TC10_PC_ECS_Offerings_ECS_ProPlus_EnterpriseVoice">
+    <classes>
+      <class name="d02.SOI_2205.SOI_2205_TC10_PC_ECS_Offerings_ECS_ProPlus_EnterpriseVoice"/>
+    </classes>
+    </test> 
+    <test name="SOI_2205_TC11_PC_ECS_Offerings_ECS_ProPlus_PhoneLine">
+    <classes>
+      <class name="d02.SOI_2205.SOI_2205_TC11_PC_ECS_Offerings_ECS_ProPlus_PhoneLine"/>
+    </classes>
+    </test> 
+    <test name="SOI_2205_TC12_PC_ECS_Offerings_ECS_FullFiber">
+    <classes>
+      <class name="d02.SOI_2205.SOI_2205_TC12_PC_ECS_Offerings_ECS_FullFiber"/>
+    </classes>
+    </test> 
+    <test name="SOI_2205_TC13_PC_ECS_Offerings_ECS_FullFiberExtended">
+    <classes>
+      <class name="d02.SOI_2205.SOI_2205_TC13_PC_ECS_Offerings_ECS_FullFiberExtended"/>
+    </classes>
+    </test> 
 </suite><!-- Suite -->
