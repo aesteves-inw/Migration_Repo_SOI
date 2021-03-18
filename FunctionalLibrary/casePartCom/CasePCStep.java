@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.openqa.selenium.WebDriver;
 
-import caseDirectSales.CaseAction;
 import executionTools.TestExecutionReport;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;

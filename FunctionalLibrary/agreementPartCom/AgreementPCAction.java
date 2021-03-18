@@ -9,7 +9,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import executionTools.BrowserActions;
-import objectMap.sfDirectSales.DirSalesAgreement;
 import objectMap.sfPartnersCommunity.PartComAgreements;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;

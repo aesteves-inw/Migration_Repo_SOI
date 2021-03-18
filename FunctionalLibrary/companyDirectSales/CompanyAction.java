@@ -160,17 +160,16 @@ public class CompanyAction {
 	{
 		String actionName="validateQuickSaleFilledFields";
 
-		String forecastCategoryValidation, closeDateValidation, stageValidation;
+		String closeDateValidation, stageValidation;
 
 		try
 		{
-			forecastCategoryValidation=driver.findElement(By.xpath(DirSalesOpportunity.forecastCategoryText)).getText().toString();
-
+			
 			stageValidation=driver.findElement(By.xpath(DirSalesOpportunity.stageText)).getText().toString();
 
 			closeDateValidation=driver.findElement(By.xpath(DirSalesOpportunity.closeDateInput)).getAttribute("value");
 			
-			if(forecastCategoryValidation.contains("Committed") && stageValidation.contains("Prospecting") && ExecStructure.formattedDate("dd/MM/YYYY").contains(closeDateValidation))
+			if(stageValidation.contains("Prospecting") && ExecStructure.formattedDate("dd/MM/YYYY").contains(closeDateValidation))
 			{
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepsExecuted);
 				System.out.println(actionName+" - Succeeded in Step: "+stepsExecuted);

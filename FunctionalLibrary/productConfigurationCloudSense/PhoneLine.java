@@ -191,7 +191,7 @@ public class PhoneLine {
 
 		try
 		{
-			WebElement inputDesiredInstallationDate = new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.id("Details:Contract_Information:serviceRequestDate_0")));
+			new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.id("Details:Contract_Information:serviceRequestDate_0")));
 
 			driver.findElement(By.xpath("//span[@class='icon-calendar']")).click();
 
