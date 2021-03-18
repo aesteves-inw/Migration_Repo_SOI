@@ -133,7 +133,7 @@ public class CompanyAction {
 			if(BrowserActions.isElementPresent(driver, DirSalesOpportunity.quickSaleHeader)&&
 					BrowserActions.isElementPresent(driver, DirSalesOpportunity.optyNameinput)&&
 					BrowserActions.isElementPresent(driver, DirSalesOpportunity.companyName) &&
-					BrowserActions.isElementPresent(driver, DirSalesOpportunity.forecastCategoryMenu)&&
+					//BrowserActions.isElementPresent(driver, DirSalesOpportunity.forecastCategoryMenu)&&
 					BrowserActions.isElementPresent(driver, DirSalesOpportunity.closeDateInput)&&
 					BrowserActions.isElementPresent(driver, DirSalesOpportunity.stageMenu)&&
 					BrowserActions.isElementPresent(driver, DirSalesOpportunity.totalContractValueInput))
