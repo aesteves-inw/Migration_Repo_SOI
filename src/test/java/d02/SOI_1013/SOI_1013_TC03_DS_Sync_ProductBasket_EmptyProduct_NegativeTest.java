@@ -38,6 +38,7 @@ public class SOI_1013_TC03_DS_Sync_ProductBasket_EmptyProduct_NegativeTest {
 	@BeforeClass
 	public void beforeClass() 
 	{
+		
 		driver = ExecDriverClass.setupDriver();
 		
 		TestStructure.startTest(logStream,testName);

@@ -42,7 +42,6 @@ public class SOI_1013_TC02_DS_Sync_ProductBasket_ProductNotValid_NegativeTest {
 	@BeforeClass
 	public void beforeClass() 
 	{
-		BrowserActions.endSession(driver);
 		
 		driver = ExecDriverClass.setupDriver();
 		

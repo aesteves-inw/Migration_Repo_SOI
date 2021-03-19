@@ -40,7 +40,6 @@ public class SOI_1013_TC01_DS_Sync_ProductBasket_CloudSense
 	@BeforeClass
 	public void beforeClass() 
 	{
-		BrowserActions.endSession(driver);
 		
 		driver = ExecDriverClass.setupDriver();
 		

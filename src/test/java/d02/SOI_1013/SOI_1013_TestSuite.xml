@@ -16,4 +16,9 @@
       <class name="d02.SOI_1013.SOI_1013_TC03_DS_Sync_ProductBasket_EmptyProduct_NegativeTest"/>
     </classes>
   </test> 
+    <test name="SOI_1013_TC06_DS_Sync_ProductBasket_SalesForce">
+    <classes>
+      <class name="d02.SOI_1013.SOI_1013_TC06_DS_Sync_ProductBasket_SalesForce"/>
+    </classes>
+  </test> 
 </suite> <!-- SOI-1013 User Story -->

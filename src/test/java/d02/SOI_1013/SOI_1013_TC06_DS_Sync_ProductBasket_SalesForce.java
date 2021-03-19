@@ -40,7 +40,7 @@ public class SOI_1013_TC06_DS_Sync_ProductBasket_SalesForce
 	@BeforeClass
 	public void beforeClass() 
 	{
-		BrowserActions.endSession(driver);
+		
 		
 		driver = ExecDriverClass.setupDriver();
 		
