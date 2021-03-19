@@ -29,12 +29,8 @@ public class ExecDriverClass {
 		prefs.put("download.default_directory", TestDataFiles.externalFilesRepository);
 
 		ChromeOptions chromeProfile = new ChromeOptions(); 
-
-		//chromeProfile.addArguments("--window-size=1980,1080");
-		
+	
 		chromeProfile.addArguments("--start-maximized"); 
-		
-		//chromeProfile.addArguments("--start-fullscreen");
 
 		chromeProfile.addArguments("chrome.switches","--disable-extensions");
 
