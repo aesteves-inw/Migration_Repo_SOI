@@ -48,7 +48,7 @@ public class J1835004000_68_TC01_GenerateProposalDocument_AfterSyncProductBasket
 		
 	}
 	@Test
-	public void testCase() throws Exception
+	public void J1835004000_68_TC01_GenerateProposalDocument_AfterSyncProductBasket() throws Exception
 	{
 		try
 		{
