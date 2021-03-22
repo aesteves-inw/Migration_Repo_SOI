@@ -1,0 +1,914 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="SOI-3610 User Story" parallel="false">
+<!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="PABX"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="PABX"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Call Connect"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Call Connect"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="ONE Project"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="ONE Project"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+ <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Explore"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Explore"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+   <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="E-Line"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="E-Line"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+   <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Explore BiLAN Teleworking"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Explore BiLAN Teleworking"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Explore International with voice"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Explore International with voice"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Explore Mobile Worker"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Explore Mobile Worker"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Explore Mono with voice"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Explore Mono with voice"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Explore Mono without voice"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Explore Mono without voice"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="SDWAN"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="SDWAN"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="SDWAN International"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="SDWAN International"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+       <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="IP Pack on BiLAN/Explore"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="IP Pack on BiLAN/Explore"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Microsoft Office 365 MS Teams"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Microsoft Office 365 MS Teams"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+   <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Temporary rental PABX"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Temporary rental PABX"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="PRA over IAD30"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="PRA over IAD30"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Directory Number (DDI/ISDN)"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Directory Number (DDI/ISDN)"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="PRA"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="PRA"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Bizz Call Connect"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Bizz Call Connect"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Multiline"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Multiline"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Cloud Mail Security"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Cloud Mail Security"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="DNS"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="DNS"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Personal Cloud"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Personal Cloud"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Tariff Plan"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Tariff Plan"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Cloud Exchange"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Cloud Exchange"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Cloud Mail Security"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Cloud Mail Security"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Conversational Chatbot"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Conversational Chatbot"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="EM+S (Microsoft)"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="EM+S (Microsoft)"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Hosting (Shared)"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Hosting (Shared)"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Housing (not BiLAN)"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Housing (not BiLAN)"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Interact"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Interact"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Internet of Things"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Internet of Things"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Microsoft Office 365"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Microsoft Office 365"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Proximus Azure Services"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Proximus Azure Services"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Proximus DocDrop"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Proximus DocDrop"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Secure Mail"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Secure Mail"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="SMS Solution"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="SMS Solution"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="SMS Solutions Pack"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="SMS Solutions Pack"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Voice Assist"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Voice Assist"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Workspace_One (Airwatch)"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Workspace_One (Airwatch)"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Cloud vContainer"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Cloud vContainer"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Temporary xDSL Fast Internet"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Temporary xDSL Fast Internet"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Marketing Number"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Marketing Number"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Marketing Number International"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Marketing Number International"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Marketing Number Mobile"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Marketing Number Mobile"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="VMS"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="VMS"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Mass Market"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Mass Market"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Pack (with mobile)"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Pack (with mobile)"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Pack (without mobile)"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Pack (without mobile)"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Mobile Prepaid"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Mobile Prepaid"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Mobile BONE"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Mobile BONE"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Elevator line"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Elevator line"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Temporary ISDN"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Temporary ISDN"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Engage"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Engage"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Leased Line"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Leased Line"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="CPE"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="CPE"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Split Plan-IFE/PFE"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Split Plan-IFE/PFE"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Joint Offer"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Joint Offer"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Proximus TV"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Proximus TV"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Tariff Plan"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Tariff Plan"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Proximus TV App (TV Everywhere)"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Proximus TV App (TV Everywhere)"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Split Plan/IFE Tool"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Split Plan/IFE Tool"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="M2M KORE"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="M2M KORE"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Fixed IP address"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="Fixed IP address"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+     <!-- Execution in Direct Sales-->
+  <test name="SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="IP Pack on xDSL Fast Internet"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <!-- Execution in Partners Community -->
+  <test name="SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable">
+  <parameter name = "productD03" value="IP Pack on xDSL Fast Internet"/>
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+</suite> <!-- SOI- User Story -->
