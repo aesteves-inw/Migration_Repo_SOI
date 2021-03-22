@@ -193,6 +193,8 @@ public class VoiceContinuity
 		{
 			WebElement inputInternalComments = new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.id("Details:Contract_Information:internalComments_0")));
 			
+			inputInternalComments.click();
+			
 			inputInternalComments.clear();
 			
 			inputInternalComments.sendKeys(internalComment);

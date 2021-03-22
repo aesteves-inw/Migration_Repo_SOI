@@ -277,7 +277,7 @@ public class SOI_3505
 			
 			OpportunityPCStep.createProductBasket(testExecStructure, logStream, driver, testName);
 			
-			D02Models.AddAndConfigureNewProduct(testExecStructure, logStream, driver, testName, productName2, configurationIndex2);
+			D02Models.AddAndConfigureNewProductInPC(testExecStructure, logStream, driver, testName, productName2, configurationIndex2);
 			
 			D03Models.AddNonQuotableProductToProductBasket(testExecStructure, logStream, driver, testName, productName);
 			
@@ -325,7 +325,7 @@ public class SOI_3505
 			
 			OpportunityPCStep.createProductBasket(testExecStructure, logStream, driver, testName);
 			
-			D02Models.AddAndConfigureNewProduct(testExecStructure, logStream, driver, testName, productName2, configurationIndex2);
+			D02Models.AddAndConfigureNewProductInPC(testExecStructure, logStream, driver, testName, productName2, configurationIndex2);
 			
 			ProductBasketStep.syncProductBasket(testExecStructure, logStream, driver, testName);
 			
@@ -353,7 +353,7 @@ public class SOI_3505
 			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver,
 			String testName) throws Exception 
 	{
-String user = "farmerUser";
+		String user = "farmerUser";
 		
 		String productName ="PABX";
 
@@ -379,7 +379,7 @@ String user = "farmerUser";
 			
 			ProductBasketStep.syncProductBasket(testExecStructure, logStream, driver, testName);
 			
-			D02Models.AddAndConfigureNewProduct(testExecStructure, logStream, driver, testName, productName2, configurationIndex2);
+			D02Models.AddAndConfigureNewProductInPC(testExecStructure, logStream, driver, testName, productName2, configurationIndex2);
 			
 			ProductBasketStep.syncProductBasket(testExecStructure, logStream, driver, testName);
 			

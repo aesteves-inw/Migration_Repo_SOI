@@ -40,8 +40,7 @@ public class SOI_3504_TC02_DS_NonQuotableOffer_NonQuotableQuotable {
 	@BeforeClass
 	public void beforeClass() 
 	{
-		BrowserActions.endSession(driver);
-		
+				
 		driver = ExecDriverClass.setupDriver();
 		
 		TestStructure.startTest(logStream,testName);

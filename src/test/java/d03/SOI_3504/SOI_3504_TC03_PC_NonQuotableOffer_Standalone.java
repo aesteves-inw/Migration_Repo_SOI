@@ -42,8 +42,7 @@ public class SOI_3504_TC03_PC_NonQuotableOffer_Standalone {
 	@BeforeClass
 	public void beforeClass() 
 	{
-		BrowserActions.endSession(driver);
-		
+				
 		driver = ExecDriverClass.setupDriver();
 		
 		TestStructure.startTest(logStream,testName);

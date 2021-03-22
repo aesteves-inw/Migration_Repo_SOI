@@ -24,29 +24,29 @@ public class BrowserActions {
 	public static void goToByURL(WebDriver driver, String url)
 	{
 		driver.get(url);
-		
+
 		//07-12-2020 - To review after
 		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 	}
-	
-	
-	
+
+
+
 	//URL Manipulation
 	public static String getRecordIDByURL(WebDriver driver)
 	{
 		String optyRecordID;
-		
+
 		String OPTYURL=driver.getCurrentUrl();
-				
+
 		String[] arrOfOPTYURL=OPTYURL.split("/");
-		
+
 		optyRecordID=arrOfOPTYURL[6];
-		
+
 		return optyRecordID;
 	}
 
-	
-	
+
+
 	//Browser Actions
 	public static void refreshPage(WebDriver driver)
 	{
@@ -76,10 +76,10 @@ public class BrowserActions {
 	public static void jsClickByXpath(WebDriver driver, String xpath)
 	{
 		WebElement element = driver.findElement(By.xpath(xpath));
-		
+
 		jsClick(driver, element);
 	}
-	
+
 	public static void jsClick(WebDriver driver, By locator) 
 	{
 		jsClick(driver, driver.findElement(locator));
@@ -94,8 +94,8 @@ public class BrowserActions {
 		catch (InterruptedException ie) { ; /* ignore */ }
 	}
 
-	
-	
+
+
 	// Function to Take Screen Shots from WebDriver
 	public static void screenShotTaking(WebDriver driver, String TestName, String shotName) throws IOException 
 	{
@@ -106,9 +106,9 @@ public class BrowserActions {
 
 	}
 
-	
-	
-	
+
+
+
 	//Elements validation
 	public static boolean isElementPresent(WebDriver driver, String webObject)
 	{
@@ -172,7 +172,7 @@ public class BrowserActions {
 
 
 
-	
+
 	//Elements attributes 
 	public static int getXOfElement(WebDriver driver, String WebObject) throws Exception
 	{
@@ -281,7 +281,7 @@ public class BrowserActions {
 
 
 	// End of Session
-	public static void endSession(WebDriver driver)
+	public static void endSession(WebDriver driver) 
 	{
 
 		if (driver != null)
@@ -290,15 +290,24 @@ public class BrowserActions {
 			driver.quit();
 		}
 
+		try
+		{
+			Runtime.getRuntime().exec("taskkill /F /IM chromedriver.exe /T");
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+
 	}
 
 
-	
+
 	//PDF Validation
 	public static boolean pdfPositiveValidation(String fileLocation, String textToValidate) throws Exception
 	{
 		int Counter=0; 
-		
+
 		File file = new File(fileLocation);
 
 		PDDocument document = PDDocument.load(file);
@@ -311,7 +320,7 @@ public class BrowserActions {
 		{
 			Counter++;
 		}
-		
+
 		if(Counter>0)
 		{
 			return true;
@@ -320,13 +329,13 @@ public class BrowserActions {
 		{
 			return false;
 		}
-		
+
 	}
-	
+
 	public static boolean pdfNegativeValidation(String fileLocation, String textToValidate) throws Exception
 	{
 		int Counter=0; 
-		
+
 		File file = new File(fileLocation);
 
 		PDDocument document = PDDocument.load(file);
@@ -339,7 +348,7 @@ public class BrowserActions {
 		{
 			Counter++;
 		}
-		
+
 		if(Counter==0)
 		{
 			return true;
@@ -348,10 +357,10 @@ public class BrowserActions {
 		{
 			return false;
 		}
-		
+
 	}
 
 
 
-	
+
 }
