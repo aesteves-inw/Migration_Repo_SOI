@@ -25,9 +25,9 @@ public class DirSalesOpportunity {
 
 	public static String listForecastCategory="/html/body/div[11]/div/ul";
 
-	public static String nosCancelButton="//button[@title='Cancel']";
+	public static String nosCancelButton="//button[@name='CancelEdit']";
 
-	public static String nosSaveButton="//button[@title='Save']";
+	public static String nosSaveButton="//button[@name='SaveEdit']";
 
 	public static String additionalInformationTab="//h3[contains(.,'Additional Information')]";
 

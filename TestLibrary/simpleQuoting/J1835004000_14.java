@@ -91,6 +91,8 @@ public class J1835004000_14 {
 			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver, String testName,
 			int stepsExecuted) throws Exception 
 	{
+		String productFamily ="Fix Voice";
+		
 		try
 		{
 			stepsExecuted++;
@@ -105,7 +107,9 @@ public class J1835004000_14 {
 
 			stepsExecuted++;
 			
-			CompanyStep.createStandardOpportunityForD02(testExecStructure, logStream, driver, stepsExecuted, testName);
+			//22-03-2021 - Changes about opportunity creation.
+			//CompanyStep.createStandardOpportunityForD02(testExecStructure, logStream, driver, stepsExecuted, testName);
+			CompanyStep.createNewQuickOpportunity(testExecStructure, logStream, driver, testName, productFamily);
 			
 			stepsExecuted++;
 			
@@ -128,6 +132,8 @@ public class J1835004000_14 {
 			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver, String testName,
 			int stepsExecuted) throws Exception 
 	{
+		String productFamily ="Fix Voice";
+		
 		try
 		{
 			stepsExecuted++;
@@ -142,7 +148,9 @@ public class J1835004000_14 {
 
 			stepsExecuted++;
 			
-			CompanyStep.createStandardOpportunityForD02(testExecStructure, logStream, driver, stepsExecuted, testName);
+			//22-03-2021 - Changes about opportunity creation.
+			//CompanyStep.createStandardOpportunityForD02(testExecStructure, logStream, driver, stepsExecuted, testName);
+			CompanyStep.createNewQuickOpportunity(testExecStructure, logStream, driver, testName, productFamily);
 			
 			String optyURL=driver.getCurrentUrl();
 			
@@ -197,7 +205,7 @@ public class J1835004000_14 {
 		}
 		catch(Exception e)
 		{
-			//System.out.println(e);
+			System.out.println(e);
 			TestLogger.logError(logStream, testName, "Test Failed", e.toString());
 			throw new Exception(testName+": Test Case Failed");
 		}
@@ -206,7 +214,7 @@ public class J1835004000_14 {
 
 	public static void J1835004000_14_TC06_QuickSaleOpportunity_EditOpportunity_WithProdBasket(
 			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver, String testName,
-			int stepsExecuted) 
+			int stepsExecuted) throws Exception 
 	{
 		String productName = "Voice Continuity";
 		
@@ -246,7 +254,9 @@ public class J1835004000_14 {
 		}
 		catch(Exception e)
 		{
-			
+			System.out.println(e);
+			TestLogger.logError(logStream, testName, "Test Failed", e.toString());
+			throw new Exception(testName+": Test Case Failed");
 		}
 		
 	}
