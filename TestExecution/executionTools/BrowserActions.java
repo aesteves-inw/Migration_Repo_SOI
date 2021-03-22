@@ -290,14 +290,14 @@ public class BrowserActions {
 			driver.quit();
 		}
 
-		try
+		/*try
 		{
 			Runtime.getRuntime().exec("taskkill /F /IM chromedriver.exe /T");
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();
-		}
+		}*/
 
 	}
 
