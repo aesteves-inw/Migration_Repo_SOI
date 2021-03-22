@@ -287,6 +287,7 @@ public class BrowserActions {
 		if (driver != null)
 		{
 			driver.close();
+			
 			driver.quit();
 		}
 
