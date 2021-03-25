@@ -13,14 +13,15 @@ import delivery03.SOI_3610;
 import executionDriver.ExecDriverClass;
 import executionTools.ExecStructure;
 import executionTools.TestStructure;
+import testExecutionData.ProductsListD03;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
 import testReportComposition.TestReportTestData;
 import testReportComposition.TestStepReportStructure;
 
-public class SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable 
+public class SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable 
 {
-	String testName = "SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable";
+	String testName = "SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable";
 
 	String initialTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
 
@@ -45,15 +46,14 @@ public class SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable
 	}
 
 	
-	@Test
-	@Parameters("productD03")
-	public void SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable(String productD03) throws Exception
+	@Test(dataProvider = "ProductsListD03", dataProviderClass = ProductsListD03.class)
+	public void SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable(String productD03) throws Exception
 	{
-		String finalTestName = testName+productD03;
+		String finalTestName = testName+"_"+productD03;
 		
 		try
 		{
-			SOI_3610.SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable(testExecStructure, logStream, driver, finalTestName, productD03);
+			SOI_3610.SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable(testExecStructure, logStream, driver, finalTestName, productD03);
 		}
 		catch(Exception e)
 		{
