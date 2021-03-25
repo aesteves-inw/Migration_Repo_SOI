@@ -11,7 +11,7 @@ import testReportComposition.TestStepReportStructure;
 
 public class SOI_3610 {
 
-	public static void SOI_3610_TC00_DS_SingleOrder_Quotable_NonQuotable(
+	public static void SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable(
 			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver,
 			String finalTestName, String productD03) throws Exception 
 	{
@@ -30,7 +30,7 @@ public class SOI_3610 {
 		
 	}
 
-	public static void SOI_3610_TC00_PC_SingleOrder_Quotable_NonQuotable(
+	public static void SOI_3610_TC02_PC_SingleOrder_Quotable_NonQuotable(
 			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver,
 			String finalTestName, String productD03) throws Exception 
 	{
