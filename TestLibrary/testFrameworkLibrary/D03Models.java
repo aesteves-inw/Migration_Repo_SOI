@@ -193,7 +193,7 @@ public class D03Models
 			
 			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, productD03);
 			
-			D02Models.AddAndConfigureNewProduct(testExecStructure, logStream, driver, testName, productD02, prodConfigD02);
+			D02Models.AddAndConfigureNewProductInPC(testExecStructure, logStream, driver, testName, productD02, prodConfigD02);
 			
 			ProductBasketStep.syncProductBasket(testExecStructure, logStream, driver, testName);
 			

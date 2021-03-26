@@ -189,22 +189,22 @@ public class ProfessionalInternet
 	private static void fieldRequestedInstallationDate(List<TestLog> logStream, WebDriver driver, int stepID,
 			String[] configuration) throws Exception 
 	{
-		String dateToInput=ExecStructure.tomorrowFormattedDate("dd");
+		String dateToInput=ExecStructure.tomorrowFormattedDate();
 
 		String actionName="PI Desired Installation Date - Config: "+dateToInput;
 
 
 		try
 		{
-			new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.id("Details:Contract_Information:serviceRequestDate_0")));
-
-			driver.findElement(By.xpath("//span[@class='icon-calendar']")).click();
-
-			new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//table[@class='calDays']")));
+			WebElement inputRequestDate=new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.id("Details:Contract_Information:serviceRequestDate_0")));
 			
-			driver.findElement(By.xpath("//td[text()='"+dateToInput+"']")).click();
-
-
+			inputRequestDate.click();
+			
+			inputRequestDate.clear();
+			
+			inputRequestDate.sendKeys(dateToInput);
+			
+			
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
 		}

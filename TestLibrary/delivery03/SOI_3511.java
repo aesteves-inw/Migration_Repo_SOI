@@ -231,7 +231,7 @@ public class SOI_3511
 			
 			NavigationStep.goToOpportunityByURLInPC(testExecStructure, logStream, driver, testName, optyURL);
 			
-			OpportunityStep.closeWinOPTY(testExecStructure, logStream, driver, testName);
+			OpportunityPCStep.closeWinOpportunityInPC(testExecStructure, logStream, driver, testName);
 			
 			OpportunityPCStep.goToOrderScreenList(testExecStructure, logStream, driver, testName, productBasketName);
 			
