@@ -127,7 +127,13 @@ public class ProductBasketAction {
 			{
 				if(we.getText().contains(productName))
 				{
-					we.findElement(By.xpath(DirSalesProductBasket.selectLineItemCheckBox)).click();
+					
+					//we.findElement(By.xpath(DirSalesProductBasket.selectLineItemCheckBox)).click();
+					
+					WebElement selectLineItemCheckBox = we.findElement(By.xpath(DirSalesProductBasket.selectLineItemCheckBox));
+					
+					BrowserActions.jsClick(driver, selectLineItemCheckBox);
+					
 					break;
 				}
 			}			
@@ -189,7 +195,9 @@ public class ProductBasketAction {
 			{
 				if(we.getText().contains(productName))
 				{
-					we.findElement(By.xpath(DirSalesProductBasket.expandPackageButton)).click();
+					//we.findElement(By.xpath(DirSalesProductBasket.expandPackageButton)).click();
+					
+					BrowserActions.jsClick(driver, we.findElement(By.xpath(DirSalesProductBasket.expandPackageButton)));
 
 					break;
 				}
@@ -244,7 +252,9 @@ public class ProductBasketAction {
 			{
 				if (productBasketLines.get(i).getText().contains(productName))
 				{
-					productBasketLinesBts.get(i).click();
+					//productBasketLinesBts.get(i).click();
+					
+					BrowserActions.jsClick(driver, productBasketLinesBts.get(i));
 					break;
 				}
 			}
