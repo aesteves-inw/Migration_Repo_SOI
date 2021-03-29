@@ -97,7 +97,11 @@ public class ProductBasketAction {
 
 		try
 		{
-			driver.findElement(By.xpath(DirSalesProductBasket.syncButton)).click();
+			//driver.findElement(By.xpath(DirSalesProductBasket.syncButton)).click();
+			
+			WebElement syncButton = driver.findElement(By.xpath(DirSalesProductBasket.syncButton));
+			
+			BrowserActions.jsClick(driver, syncButton);
 
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+newStepCounter);
@@ -203,7 +207,7 @@ public class ProductBasketAction {
 				}
 			}	
 
-			Thread.sleep(5000);
+			Thread.sleep(10000);
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
