@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import companyContactPersonPartCom.CompanyContactPersonPCAction;
@@ -36,6 +37,10 @@ public class ServicePCAction {
 			driver.findElement(By.xpath(DirSalesService.searchValueToInput)).click();
 
 			Thread.sleep(1000);
+			
+			
+			saveChangesOnServiceDetails(logStream, driver, stepID);
+			
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
@@ -80,10 +85,16 @@ public class ServicePCAction {
 
 		try
 		{
-			driver.findElement(By.xpath("//input[@name='PRX_SOI_Billing_Account_ID__c']")).clear();
-
-			driver.findElement(By.xpath("//input[@name='PRX_SOI_Billing_Account_ID__c']")).sendKeys(billingAccountID);
-
+			WebElement inputBillingAccountID=driver.findElement(By.xpath("//input[@name='PRX_SOI_Billing_Account_ID__c']"));
+			
+			inputBillingAccountID.click();
+			
+			inputBillingAccountID.clear();
+			
+			inputBillingAccountID.sendKeys(billingAccountID);
+			
+			
+			saveChangesOnServiceDetails(logStream, driver, stepID);
 
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
@@ -120,7 +131,37 @@ public class ServicePCAction {
 
 	}
 
+	public static void fillContractTypeServiceLevel(List<TestLog> logStream, WebDriver driver, int stepID,
+			String contractType) throws Exception
+	{
+		String actionName="fillContractTypeServiceLevel";
 
+		try
+		{
+			Select selectContractType = new Select(driver.findElement(By.name("contractTypePicklist")));
+
+			selectContractType.selectByValue(contractType);
+			
+			WebElement buttonSave=driver.findElement(By.xpath(PartComService.saveDetailsButton));
+			
+			BrowserActions.jsClick(driver, buttonSave);
+			
+			Thread.sleep(1000);
+			
+			
+			saveChangesOnServiceDetails(logStream, driver, stepID);
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+		
+	}
 	
 
 	// Validation Actions
@@ -255,6 +296,9 @@ public class ServicePCAction {
 			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
 		}
 	}
+
+	
+	
 
 	
 

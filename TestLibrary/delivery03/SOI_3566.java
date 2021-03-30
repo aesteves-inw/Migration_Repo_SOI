@@ -18,7 +18,9 @@ public class SOI_3566 {
 	public static void SOI_3566_TC01_DS_ProductModellingSingleProducts(List<TestStepReportStructure> testExecStructure,
 			List<TestLog> logStream, String testName, WebDriver driver) throws Exception 
 	{
-		String productName= ExcelDataFetch.searchDT(10, "productPABX");
+		// String productName= ExcelDataFetch.searchDT(10, "productPABX");
+		
+		String productName= "PABX";
 		
 		try
 		{
@@ -43,7 +45,9 @@ public class SOI_3566 {
 	public static void SOI_3566_TC02_PC_ProductModellingSingleProducts(List<TestStepReportStructure> testExecStructure,
 			List<TestLog> logStream, String testName, WebDriver driver) throws Exception 
 	{
-		String productName= ExcelDataFetch.searchDT(10, "productPABX");
+		//String productName= ExcelDataFetch.searchDT(10, "productPABX");
+		
+		String productName= "PABX";
 		
 		try
 		{

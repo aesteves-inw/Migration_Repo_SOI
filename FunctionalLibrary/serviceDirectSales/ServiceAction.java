@@ -55,9 +55,11 @@ public class ServiceAction {
 
 		try
 		{
-			driver.findElement(By.xpath(DirSalesService.buttonSave)).click();
+			WebElement buttonSave = driver.findElement(By.xpath(DirSalesService.buttonSave));
+			
+			BrowserActions.jsClick(driver, buttonSave);
 
-			new WebDriverWait(driver, 20).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(DirSalesService.buttonSave)));
+			//new WebDriverWait(driver, 20).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(DirSalesService.buttonSave)));
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
@@ -86,6 +88,8 @@ public class ServiceAction {
 			inputBillingAccountID.sendKeys(textExistingBillingAccountIdField);
 
 			Thread.sleep(1000);
+			
+			saveServiceChanges(logStream, driver, stepID);
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
@@ -115,8 +119,9 @@ public class ServiceAction {
 			inputInternalComments.sendKeys(executionString);
 
 			Thread.sleep(1000);
+			
 
-
+			saveServiceChanges(logStream, driver, stepID);
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
@@ -139,7 +144,7 @@ public class ServiceAction {
 		try
 		{
 
-			driver.findElement(By.xpath(DirSalesService.buttonEditProvContact)).click();
+			//driver.findElement(By.xpath(DirSalesService.buttonEditProvContact)).click();
 
 			WebElement inputEditProvContact = new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesService.inputProvisioningContactPerson)));
 
@@ -152,6 +157,8 @@ public class ServiceAction {
 			Thread.sleep(1000);
 
 
+			saveServiceChanges(logStream, driver, stepID);
+			
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
@@ -173,7 +180,7 @@ public class ServiceAction {
 
 		try
 		{
-			driver.findElement(By.xpath(DirSalesService.buttonEditProvContact)).click();
+			//driver.findElement(By.xpath(DirSalesService.buttonEditProvContact)).click();
 
 			WebElement inputEditProvContact = driver.findElement(By.xpath(DirSalesService.inputProvisioningContactPerson));
 
@@ -184,6 +191,8 @@ public class ServiceAction {
 			driver.findElement(By.xpath(DirSalesService.searchValueToInput)).click();
 
 			Thread.sleep(1000);
+			
+			saveServiceChanges(logStream, driver, stepID);
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
@@ -206,9 +215,16 @@ public class ServiceAction {
 		{
 			WebElement inputBillingAccountID = new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesService.inputBillingAccountID)));
 
+			inputBillingAccountID.click();
+			
+			inputBillingAccountID.clear();
+			
 			inputBillingAccountID.sendKeys(textExistingBillingAccountIdField);
+			
 
 			Thread.sleep(1000);
+			
+			saveServiceChanges(logStream, driver, stepID);
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
@@ -229,7 +245,7 @@ public class ServiceAction {
 
 		try
 		{
-			driver.findElement(By.xpath(DirSalesService.buttonEditProvContact)).click();
+			//driver.findElement(By.xpath(DirSalesService.buttonEditProvContact)).click();
 
 			WebElement inputEditProvContact = driver.findElement(By.xpath(DirSalesService.inputProvisioningContactPerson));
 
@@ -273,8 +289,7 @@ public class ServiceAction {
 
 			Thread.sleep(1000);
 
-			CompanyContactPersonAction.
-			createNewProvisioningContactPersonFromService(logStream, driver, stepID);
+			CompanyContactPersonAction.createNewProvisioningContactPersonFromService(logStream, driver, stepID);
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
@@ -299,6 +314,15 @@ public class ServiceAction {
 			Select selectContractType = new Select(driver.findElement(By.name("contractTypePicklist")));
 
 			selectContractType.selectByValue(contractType);
+			
+			WebElement buttonSave=driver.findElement(By.xpath(DirSalesService.buttonSave));
+			
+			BrowserActions.jsClick(driver, buttonSave);
+			
+			Thread.sleep(1000);
+			
+			
+			saveServiceChanges(logStream, driver, stepID);
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
@@ -321,10 +345,7 @@ public class ServiceAction {
 		try
 		{
 			if(BrowserActions.isElementPresent(driver, DirSalesService.headerServicesPage) && 
-					BrowserActions.isElementPresent(driver, DirSalesService.buttonDetails) && 
-					BrowserActions.isElementPresent(driver, DirSalesService.buttonEditProvContact) && 
-					BrowserActions.isElementPresent(driver, DirSalesService.buttonEditInternalComments) && 
-					BrowserActions.isElementPresent(driver, DirSalesService.buttonEditBillingAccountID))
+					BrowserActions.isElementPresent(driver, DirSalesService.secundaryHeaderFields))
 			{
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
 				return true;
@@ -381,15 +402,13 @@ public class ServiceAction {
 			int stepID, String provContactPerson) throws Exception 
 	{
 		String actionName="validateProvisioningContactPersonAfterSaving";
+		
+		String elementToValidate="//input[@placeholder='"+provContactPerson+"']";
 
 		try
 		{
 
-			String fieldProvisioningContactPersonValidation=driver.findElement(By.xpath(DirSalesService.fieldProvisioningContactPerson)).getText().toString();
-
-			System.out.println("debug of fieldProvisioningContactPersonValidation: "+fieldProvisioningContactPersonValidation);
-
-			if(fieldProvisioningContactPersonValidation.contains(provContactPerson))
+			if(BrowserActions.isElementPresent(driver, elementToValidate))
 			{
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
 				return true;
@@ -474,7 +493,7 @@ public class ServiceAction {
 
 			String fieldProvisioningContactPersonValidation=driver.findElement(By.xpath(DirSalesService.fieldProvisioningContactPerson)).getText().toString();
 
-			System.out.println("debug of fieldProvisioningContactPersonValidation: "+fieldProvisioningContactPersonValidation);
+			//System.out.println("debug of fieldProvisioningContactPersonValidation: "+fieldProvisioningContactPersonValidation);
 
 			if(fieldProvisioningContactPersonValidation.contains("Tomated"))
 			{
@@ -495,7 +514,6 @@ public class ServiceAction {
 		}
 	}
 
-
 	public static boolean valContractType(List<TestLog> logStream, WebDriver driver, int stepID,
 			String contractType) throws Exception
 	{
@@ -506,6 +524,8 @@ public class ServiceAction {
 			WebElement weSelectContractType=driver.findElement(By.name("contractTypePicklist"));
 						
 			String valueToValidate=weSelectContractType.getAttribute("value");
+			
+			//System.out.println("Debug of valueToValidate: "+valueToValidate);
 			
 			if(valueToValidate.contains(contractType))
 			{

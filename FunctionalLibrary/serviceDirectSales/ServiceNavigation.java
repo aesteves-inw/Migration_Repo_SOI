@@ -1,5 +1,6 @@
 package serviceDirectSales;
 
-public class ServiceNavigation {
-
+public class ServiceNavigation 
+{
+	
 }

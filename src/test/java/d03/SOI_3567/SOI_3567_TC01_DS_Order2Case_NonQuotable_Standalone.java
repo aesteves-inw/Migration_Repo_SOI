@@ -55,7 +55,7 @@ public class SOI_3567_TC01_DS_Order2Case_NonQuotable_Standalone
 		{
 			System.out.println(e);
 			TestLogger.logError(logStream, testName, "Test Execution Failed", e.toString());
-			throw new Exception (testName+" - Failed: ",e);
+			throw new Exception (testName+" - Failed",e);
 		}
 	}
 

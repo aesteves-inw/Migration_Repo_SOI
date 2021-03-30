@@ -281,7 +281,7 @@ public class ServiceStep {
 	{
 		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
 		
-		String stepName="Service: Fill Contract Type";
+		String stepName="Service: Fill Contract Type - "+contractType;
 
 		String stepNameMin="fillContractType";
 
@@ -293,6 +293,8 @@ public class ServiceStep {
 		try
 		{
 			ServiceAction.fillContractTypeServiceLevel(logStream, driver, stepID, contractType);
+			
+			ServiceAction.saveServiceChanges(logStream, driver, stepID);
 
 			validation = ServiceAction.valContractType(logStream, driver, stepID, contractType);
 

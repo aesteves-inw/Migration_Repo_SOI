@@ -64,7 +64,7 @@ public class ProductBasketNavigation
 
 		try
 		{
-			WebElement buttonGoToAgreement = new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesProductBasket.buttonGoToAgreement)));
+			WebElement buttonGoToAgreement = new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesProductBasket.buttonGoToAgreement)));
 
 			//buttonGoToAgreement.click();
 			

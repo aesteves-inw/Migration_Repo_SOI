@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -54,10 +55,12 @@ public class CaseAction {
 		
 		try
 		{
-			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(DirSalesCase.itemsKeyDetails)));
+			
+			WebElement itemsKeyDetails = new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesCase.itemsKeyDetails)));
 
-			String itemSubCategoryKeyDetailsVal=driver.findElement(By.xpath(DirSalesCase.itemSubCategoryKeyDetails)).getText();
-
+			String itemSubCategoryKeyDetailsVal=itemsKeyDetails.getText();
+			
+					
 			if(itemSubCategoryKeyDetailsVal.contains("New"))
 			{
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
@@ -90,7 +93,7 @@ public class CaseAction {
 
 			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(DirSalesCase.itemsKeyDetails)));
 
-			String itemSubCategoryKeyDetailsVal=driver.findElement(By.xpath(DirSalesCase.itemSubCategoryKeyDetails)).getText();
+			String itemSubCategoryKeyDetailsVal=driver.findElement(By.xpath(DirSalesCase.itemsKeyDetails)).getText();
 
 			if(itemSubCategoryKeyDetailsVal.contains(contactType))
 			{
@@ -124,7 +127,7 @@ public class CaseAction {
 
 			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(DirSalesCase.itemsKeyDetails)));
 
-			String itemSubCategoryKeyDetailsVal=driver.findElement(By.xpath(DirSalesCase.itemSubCategoryKeyDetails)).getText();
+			String itemSubCategoryKeyDetailsVal=driver.findElement(By.xpath(DirSalesCase.itemsKeyDetails)).getText();
 
 			if(itemSubCategoryKeyDetailsVal.contains(contactType) || itemSubCategoryKeyDetailsVal.equalsIgnoreCase("new"))
 			{

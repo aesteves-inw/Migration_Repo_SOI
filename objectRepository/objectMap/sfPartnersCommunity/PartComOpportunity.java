@@ -98,9 +98,9 @@ public class PartComOpportunity {
 	
 	public static String headerEditOPTY="//h2[contains(.,'Edit')]";
 	
-	public static String comboStage="//article/div[3]/div/div[1]/div/div/div[2]/div[2]/div/div/div/div/div[1]/div/div/a";
+	public static String comboStage="(//a[@class='select'])[1]";
 	
-	public static String buttonSaveEdit="//button[3]/span";
+	public static String buttonSaveEdit="//button[@title='Save']/span";
 	
 	
 }

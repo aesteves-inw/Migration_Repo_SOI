@@ -18,7 +18,8 @@ import testReportComposition.ReportStructure;
 import testReportComposition.TestStepReportStructure;
 import testReporter.TestReporter;
 
-public class OpportunityStep {
+public class OpportunityStep 
+{
 	
 	public static void createProductBasket(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, String testName) throws Exception
 	{
@@ -205,7 +206,7 @@ public class OpportunityStep {
 		try
 		{
 			OpportunityAction.closeWonOpportunity(logStream, driver, stepID, testName);
-
+			
 			validation = OpportunityAction.closeWonOpportunityValidation(logStream, driver, stepID, testName);
 
 			if(validation==true)
@@ -322,8 +323,6 @@ public class OpportunityStep {
 		}
 		
 	}
-	
-	
 	
 	
 }

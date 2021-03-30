@@ -203,7 +203,7 @@ public class D03Models
 			
 			//AgreementPCStep.generateDocumentProposal(testExecStructure, logStream, driver, testName);
 			
-			NavigationStep.goToOpportunityByURL(testExecStructure, logStream, driver, testName, optyURL);
+			NavigationStep.goToOpportunityByURLInPC(testExecStructure, logStream, driver, testName, optyURL);
 			
 			OpportunityPCStep.closeWinOpportunityInPC(testExecStructure, logStream, driver, testName);
 			

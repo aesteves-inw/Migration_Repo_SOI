@@ -2,13 +2,23 @@ package delivery03;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import addOfferToBasketDirectSales.AddOfferToBasketStep;
+import agreementDirectSales.AgreementStep;
+import companyDirectSales.CompanyStep;
+import homePageDirectSales.HomePageStep;
+import loginPageDirectSales.LoginPageStep;
 import navigation.NavigationStep;
+import objectMap.sfDirectSales.DirSalesProductBasket;
+import opportunityDirectSales.OpportunityStep;
 import orderDirectSales.OrderStep;
 import orderPartCom.OrderPCStep;
+import productBasketDirectSales.ProductBasketStep;
 import serviceDirectSales.ServiceStep;
 import servicePartCom.ServicePCStep;
+import testFrameworkLibrary.D02Models;
 import testFrameworkLibrary.D03Models;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
@@ -28,14 +38,59 @@ public class SOI_3513
 		String productD02="Phone Line";
 
 		String prodConfigD02="configurationByDefault";
+		
+		String userProfile="salesUser";
 
 
 		String contractType="New";
+		
+		String optyURL, productBasketName;
+		
+		String textExistingTechnicalContact="First User";
 
 		try
 		{
-			D03Models.E2EFlowUntilGoToOrder(testExecStructure, logStream, driver, testName, productD03, productD02, prodConfigD02);           
+			D03Models.E2EFlowUntilGoToOrder(testExecStructure, logStream, driver, testName, productD03, productD02, prodConfigD02);  
 
+			LoginPageStep.loginSFDS(testExecStructure, logStream, driver, testName, userProfile);
+
+			HomePageStep.navigateToCompanyPage(testExecStructure, logStream, driver, testName);
+
+			CompanyStep.createQuickSaleOpportunity(testExecStructure, logStream, driver, testName);
+			
+			optyURL=driver.getCurrentUrl();
+
+			OpportunityStep.createProductBasket(testExecStructure, logStream, driver, testName);
+			
+			//variable storage
+			productBasketName=driver.findElement(By.xpath(DirSalesProductBasket.inputProductBasketName)).getAttribute("value");
+			TestLogger.logDebug(logStream, "productBasketName", "productBasketName value: "+productBasketName);
+			//end of variable storage
+			
+			ProductBasketStep.fillExistingBillingAccountIdField(testExecStructure, logStream, driver, testName);
+			
+			ProductBasketStep.fillExistingTechnicalContact(testExecStructure, logStream, driver, testName, textExistingTechnicalContact);
+		
+			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, testName);
+			
+			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, productD03);
+			
+			D02Models.AddAndConfigureNewProduct(testExecStructure, logStream, driver, testName, productD02, prodConfigD02);
+			
+			ProductBasketStep.syncProductBasket(testExecStructure, logStream, driver, testName);
+			
+			ProductBasketStep.goToAgreementScreen(testExecStructure, logStream, driver, testName);
+			
+			AgreementStep.addFileToAgreement(testExecStructure, logStream, driver, testName);
+		
+			//AgreementStep.generateDocumentProposal(testReportStream, logStream, driver, testName);
+			
+			NavigationStep.goToOpportunityByURL(testExecStructure, logStream, driver, testName, optyURL);
+			
+			OpportunityStep.closeWinOPTY(testExecStructure, logStream, driver, testName);		
+			
+			OpportunityStep.goToOrderScreen(testExecStructure, logStream, driver, testName, productBasketName);
+			
 			orderURL=driver.getCurrentUrl();
 
 			OrderStep.submitOrderNegativeValContractType(testExecStructure, logStream, driver, testName);
