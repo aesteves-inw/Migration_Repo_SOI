@@ -40,7 +40,6 @@ public class TestStructure {
 
 		BrowserActions.endSession(driver);
 		
-		
 	}
 
 	

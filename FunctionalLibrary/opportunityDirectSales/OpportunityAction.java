@@ -11,7 +11,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import executionTools.BrowserActions;
 import executionTools.ExecStructure;
-import fetchDataFromExcelFiles.ExcelDataFetch;
 import objectMap.sfDirectSales.DirSalesOpportunity;
 import testExecutionData.TestCasesData;
 import testLogBuilder.TestLog;
@@ -123,14 +122,19 @@ public class OpportunityAction {
 
 
 		try
-		{
-			openEditOpportunityMenu(logStream, driver, stepID);
+		{			
+			openEditOpportunityMenuInOptyDetailsScreen(logStream, driver, stepID);
 
 			fillOtherMandatoryFieldsOfOpportunity(logStream, driver, stepID, testName);
 
 			changeStatusOfOpportunity(logStream, driver, stepID, status);
 
 			saveChangesOnEditOpportunityScreen(logStream, driver, stepID);
+			
+			
+			
+			
+			
 			
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
@@ -144,22 +148,18 @@ public class OpportunityAction {
 		}
 	}
 
-	private static void openEditOpportunityMenu(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
+	private static void openEditOpportunityMenuInOptyDetailsScreen(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
 	{
 		String actionName="openEditOpportunityMenu";
 
 
 		try
 		{
-			String optyURL=driver.getCurrentUrl();
-
-			String editOpportunityMenuURL=ExcelDataFetch.searchDT(0, "DirectSalesEditOptyMenu");
-
-			String optyEditMenuURL=optyURL.replaceAll("view", editOpportunityMenuURL);
-
-			BrowserActions.goToByURL(driver, optyEditMenuURL);
-
-			new WebDriverWait (driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesOpportunity.editHeader)));
+			WebElement editOppyName=driver.findElement(By.xpath("//button[@title='Edit Opportunity Name']"));
+			
+			BrowserActions.jsClick(driver, editOppyName);
+			
+			Thread.sleep(1000);
 
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
@@ -183,8 +183,7 @@ public class OpportunityAction {
 		{
 			fillOptyDescription(logStream, driver, stepID, testName);
 			
-			//19-02-2021 - Not Built
-			//fillOptyLevelOfConfidence(logStream, driver, stepID);
+			fillLevelOfConfidence(logStream, driver, stepID);
 
 			fillOptyNextStep(logStream, driver, stepID, testName);
 
@@ -206,6 +205,8 @@ public class OpportunityAction {
 		}
 
 	}
+
+	
 
 	private static void fillOptyDescription(List<TestLog> logStream, WebDriver driver, int stepID, String testName) throws Exception
 	{
@@ -235,6 +236,40 @@ public class OpportunityAction {
 
 	}
 
+	private static void fillLevelOfConfidence(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
+	{
+		String actionName="fillLevelOfConfidence";
+		
+		String levelOfConfidence="High (100%)";
+
+
+		try
+		{
+			WebElement selectLevelOfConfidence = driver.findElement(By.xpath(DirSalesOpportunity.selectLevelOfConfidence));
+			
+			BrowserActions.jsClick(driver, selectLevelOfConfidence);
+			
+			Thread.sleep(1000);
+			
+			WebElement statusLabel=driver.findElement(By.xpath("//span[@title='"+levelOfConfidence+"']"));
+			
+			BrowserActions.jsClick(driver, statusLabel);
+			
+			Thread.sleep(1000);
+
+			
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+		
+	}
+	
 	private static void fillOptyNextStep(List<TestLog> logStream, WebDriver driver, int stepID, String testName) throws Exception
 	{
 		String actionName="fillOptyNextStep";
@@ -416,7 +451,7 @@ public class OpportunityAction {
 		{
 			driver.findElement(By.xpath(DirSalesOpportunity.saveEditButton)).click();
 
-			Thread.sleep(10000);
+			new WebDriverWait(driver, 30).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(DirSalesOpportunity.saveEditButton)));
 
 
 
@@ -502,10 +537,11 @@ public class OpportunityAction {
 					BrowserActions.isElementPresent(driver, DirSalesOpportunity.editHeader) &&
 					BrowserActions.isElementPresent(driver, DirSalesOpportunity.optyNameinput) &&
 					BrowserActions.isElementPresent(driver, DirSalesOpportunity.nosCancelButton) &&
-					BrowserActions.isElementPresent(driver, DirSalesOpportunity.nosSaveButton) &&
-					BrowserActions.isElementPresent(driver, DirSalesOpportunity.selectStage) &&
-					BrowserActions.isElementPresent(driver, DirSalesOpportunity.selectForecastCategory)
-					)
+					BrowserActions.isElementPresent(driver, DirSalesOpportunity.nosSaveButton) //&&
+					//BrowserActions.isElementPresent(driver, DirSalesOpportunity.selectStage) &&
+					//BrowserActions.isElementPresent(driver, DirSalesOpportunity.selectForecastCategory
+							)
+					
 			{
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepsExecuted);
 				return true;

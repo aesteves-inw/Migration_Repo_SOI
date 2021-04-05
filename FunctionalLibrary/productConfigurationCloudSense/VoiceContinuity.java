@@ -164,7 +164,9 @@ public class VoiceContinuity
 		try
 		{
 			WebElement inputDesiredInstallationDate = new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.id("Details:Contract_Information:serviceRequestDate_0")));
-
+			
+			inputDesiredInstallationDate.click();
+			
 			inputDesiredInstallationDate.clear();
 			
 			inputDesiredInstallationDate.sendKeys(dateToInput);
@@ -192,6 +194,8 @@ public class VoiceContinuity
 		try
 		{
 			WebElement inputInternalComments = new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.id("Details:Contract_Information:internalComments_0")));
+			
+			inputInternalComments.click();
 			
 			inputInternalComments.clear();
 			

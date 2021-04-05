@@ -27,6 +27,7 @@ import opportunityPartCom.OpportunityPCStep;
 import orderDirectSales.OrderStep;
 import orderPartCom.OrderPCStep;
 import productBasketDirectSales.ProductBasketStep;
+import serviceDirectSales.ServiceStep;
 import testFrameworkLibrary.D02Models;
 import testFrameworkLibrary.D03Models;
 import testLogBuilder.TestLog;
@@ -51,6 +52,8 @@ public class SOI_3567 {
 		String productBasketName, serviceName;
 
 		List<String> servicesURL=new ArrayList<String>();
+		
+		String productFamily = "Fix Data";
 
 		try
 		{
@@ -58,7 +61,9 @@ public class SOI_3567 {
 
 			HomePageStep.navigateToCompanyPage(testExecStructure, logStream, driver, testName);
 
-			CompanyStep.createQuickSaleOpportunity(testExecStructure, logStream, driver, testName);
+			//CompanyStep.createQuickSaleOpportunity(testExecStructure, logStream, driver, testName);
+			
+			CompanyStep.createNewQuickOpportunity(testExecStructure, logStream, driver, testName, productFamily);
 
 			optyURL=driver.getCurrentUrl();
 
@@ -120,9 +125,15 @@ public class SOI_3567 {
 
 			}
 
+			OrderStep.goToServiceScreenByURL(testExecStructure, logStream, driver, testName, servicesURL.get(0));
+			
+			ServiceStep.fillContractType(testExecStructure, logStream, driver, testName, "New");
+			
+			NavigationStep.goToOrderByURL(testExecStructure, logStream, driver, testName, orderURL);
+			
 			OrderStep.submitOrderPositiveValidation(testExecStructure, logStream, driver, testName);
-
-			OrderPCStep.goToServiceScreenByURL(testExecStructure, logStream, driver, testName, servicesURL.get(0));
+			
+			OrderStep.goToServiceScreenByURL(testExecStructure, logStream, driver, testName, servicesURL.get(0));
 
 			caseURL=driver.findElement(By.xpath(DirSalesService.caseLink)).getAttribute("href");
 
@@ -889,4 +900,5 @@ public class SOI_3567 {
 
 	}
 
+	
 }

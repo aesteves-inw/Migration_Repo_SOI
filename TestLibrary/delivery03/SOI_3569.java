@@ -11,6 +11,7 @@ import agreementDirectSales.AgreementStep;
 import agreementPartCom.AgreementPCStep;
 import companyDirectSales.CompanyStep;
 import companyPartCom.CompanyPCStep;
+import executionTools.BrowserActions;
 import fetchDataFromExcelFiles.ExcelDataFetch;
 import homePageDirectSales.HomePageStep;
 import homePagePartCom.HomePagePCStep;
@@ -18,13 +19,16 @@ import loginPageDirectSales.LoginPageStep;
 import loginPagePartCom.LoginPagePCStep;
 import navigation.NavigationStep;
 import objectMap.sfDirectSales.DirSalesProductBasket;
+import objectMap.sfDirectSales.DirSalesService;
 import opportunityDirectSales.OpportunityStep;
 import opportunityPartCom.OpportunityPCStep;
 import orderDirectSales.OrderStep;
 import orderPartCom.OrderPCStep;
 import productBasketDirectSales.ProductBasketStep;
 import productBasketPartCom.ProductBasketPCStep;
+import serviceDirectSales.ServiceAction;
 import serviceDirectSales.ServiceStep;
+import servicePartCom.ServicePCAction;
 import servicePartCom.ServicePCStep;
 import testFrameworkLibrary.D02Models;
 import testFrameworkLibrary.D03Models;
@@ -49,8 +53,6 @@ public class SOI_3569
 		String userProfile="salesUser";
 
 		
-
-
 
 		String optyURL, orderURL, serviceURL;
 
@@ -139,6 +141,11 @@ public class SOI_3569
 				OrderStep.goToServiceScreenByURL(testExecStructure, logStream, driver, testName, sURL);
 
 				ServiceStep.fillWithNewProvisioningContactPerson(testExecStructure, logStream, driver, testName);
+				
+				if(BrowserActions.isElementPresent(driver, DirSalesService.fieldContractType))
+				{
+					ServiceAction.fillContractTypeServiceLevel(logStream, driver, counterServices, "New");
+				}
 
 				NavigationStep.goToOrderByURL(testExecStructure, logStream, driver, testName, orderURL);
 
@@ -261,6 +268,11 @@ public class SOI_3569
 				OrderStep.goToServiceScreenByURL(testExecStructure, logStream, driver, testName, sURL);
 
 				ServiceStep.fillProvisioningContactPerson(testExecStructure, logStream, driver, testName, provContactPerson);
+				
+				if(BrowserActions.isElementPresent(driver, DirSalesService.fieldContractType))
+				{
+					ServiceAction.fillContractTypeServiceLevel(logStream, driver, counterServices, "New");
+				}
 
 				NavigationStep.goToOrderByURL(testExecStructure, logStream, driver, testName, orderURL);
 
@@ -379,6 +391,11 @@ public class SOI_3569
 			for(String sURL : servicesURL)
 			{
 				OrderStep.goToServiceScreenByURL(testExecStructure, logStream, driver, testName, sURL);
+				
+				if(BrowserActions.isElementPresent(driver, DirSalesService.fieldContractType))
+				{
+					ServiceAction.fillContractTypeServiceLevel(logStream, driver, counterServices, "New");
+				}
 
 				NavigationStep.goToOrderByURL(testExecStructure, logStream, driver, testName, orderURL);
 
@@ -519,6 +536,11 @@ public class SOI_3569
 				OrderPCStep.goToServiceScreenByURL(testExecStructure, logStream, driver, testName, sURL);
 
 				ServicePCStep.fillProvisioningContactPerson(testExecStructure, logStream, driver, testName, provContactPerson);
+				
+				if(BrowserActions.isElementPresent(driver, DirSalesService.fieldContractType))
+				{
+					ServicePCAction.fillContractTypeServiceLevel(logStream, driver, counterServices, "New");
+				}
 
 				NavigationStep.goToOrderByURLInPC(testExecStructure, logStream, driver, testName, orderURL);
 
@@ -625,6 +647,11 @@ public class SOI_3569
 				OrderPCStep.goToServiceScreenByURL(testExecStructure, logStream, driver, testName, sURL);
 
 				ServicePCStep.fillProvisioningContactPerson(testExecStructure, logStream, driver, testName, provContactPerson);
+				
+				if(BrowserActions.isElementPresent(driver, DirSalesService.fieldContractType))
+				{
+					ServicePCAction.fillContractTypeServiceLevel(logStream, driver, counterServices, "New");
+				}
 
 				NavigationStep.goToOrderByURLInPC(testExecStructure, logStream, driver, testName, orderURL);
 
@@ -729,7 +756,10 @@ public class SOI_3569
 			{
 				OrderPCStep.goToServiceScreenByURL(testExecStructure, logStream, driver, testName, sURL);
 
-				ServicePCStep.fillWithNewProvisioningContactPerson(testExecStructure, logStream, driver, testName, provContactPerson);
+				if(BrowserActions.isElementPresent(driver, DirSalesService.fieldContractType))
+				{
+					ServicePCAction.fillContractTypeServiceLevel(logStream, driver, counterServices, "New");
+				}
 
 				NavigationStep.goToOrderByURLInPC(testExecStructure, logStream, driver, testName, orderURL);
 
@@ -755,7 +785,7 @@ public class SOI_3569
 	{
 		String productName ="Phone Line";
 
-		String userProfile="salesUser";
+		String userProfile="farmerUser";
 		
 		try
 		{

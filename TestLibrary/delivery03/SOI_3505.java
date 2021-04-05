@@ -37,10 +37,10 @@ public class SOI_3505
 		
 		String productName= ExcelDataFetch.searchDT(10, "productPABX");
 		
+		String userProfile="salesUser";
+		
 		try
 		{
-			String userProfile="salesUser";
-
 			LoginPageStep.loginSFDS(testExecStructure, logStream, driver, testName, userProfile);
 
 			HomePageStep.navigateToCompanyPage(testExecStructure, logStream, driver, testName);
@@ -78,6 +78,8 @@ public class SOI_3505
 			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver,
 			String testName) throws Exception 
 	{
+		String userProfile="salesUser";
+		
 		String productName ="PABX";
 
 		String configurationIndex2="configurationByDefault";
@@ -88,8 +90,7 @@ public class SOI_3505
 		
 		try
 		{
-			String userProfile="salesUser";
-
+			
 			LoginPageStep.loginSFDS(testExecStructure, logStream, driver, testName, userProfile);
 
 			HomePageStep.navigateToCompanyPage(testExecStructure, logStream, driver, testName);
@@ -122,6 +123,8 @@ public class SOI_3505
 			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver,
 			String testName) throws Exception 
 	{
+		String userProfile="salesUser";
+		
 		String productName ="PABX";
 
 		String configurationIndex2="configurationByDefault";
@@ -132,8 +135,6 @@ public class SOI_3505
 		
 		try
 		{
-			String userProfile="salesUser";
-
 			LoginPageStep.loginSFDS(testExecStructure, logStream, driver, testName, userProfile);
 
 			HomePageStep.navigateToCompanyPage(testExecStructure, logStream, driver, testName);
@@ -168,6 +169,8 @@ public class SOI_3505
 			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, String testName,
 			WebDriver driver) throws Exception 
 	{
+		String userProfile="salesUser";
+		
 		String productName ="PABX";
 
 		String configurationIndex2="configurationByDefault";
@@ -178,8 +181,6 @@ public class SOI_3505
 		
 		try
 		{
-			String userProfile="salesUser";
-
 			LoginPageStep.loginSFDS(testExecStructure, logStream, driver, testName, userProfile);
 
 			HomePageStep.navigateToCompanyPage(testExecStructure, logStream, driver, testName);
@@ -277,7 +278,7 @@ public class SOI_3505
 			
 			OpportunityPCStep.createProductBasket(testExecStructure, logStream, driver, testName);
 			
-			D02Models.AddAndConfigureNewProduct(testExecStructure, logStream, driver, testName, productName2, configurationIndex2);
+			D02Models.AddAndConfigureNewProductInPC(testExecStructure, logStream, driver, testName, productName2, configurationIndex2);
 			
 			D03Models.AddNonQuotableProductToProductBasket(testExecStructure, logStream, driver, testName, productName);
 			
@@ -325,7 +326,7 @@ public class SOI_3505
 			
 			OpportunityPCStep.createProductBasket(testExecStructure, logStream, driver, testName);
 			
-			D02Models.AddAndConfigureNewProduct(testExecStructure, logStream, driver, testName, productName2, configurationIndex2);
+			D02Models.AddAndConfigureNewProductInPC(testExecStructure, logStream, driver, testName, productName2, configurationIndex2);
 			
 			ProductBasketStep.syncProductBasket(testExecStructure, logStream, driver, testName);
 			
@@ -353,7 +354,7 @@ public class SOI_3505
 			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver,
 			String testName) throws Exception 
 	{
-String user = "farmerUser";
+		String user = "farmerUser";
 		
 		String productName ="PABX";
 
@@ -379,7 +380,7 @@ String user = "farmerUser";
 			
 			ProductBasketStep.syncProductBasket(testExecStructure, logStream, driver, testName);
 			
-			D02Models.AddAndConfigureNewProduct(testExecStructure, logStream, driver, testName, productName2, configurationIndex2);
+			D02Models.AddAndConfigureNewProductInPC(testExecStructure, logStream, driver, testName, productName2, configurationIndex2);
 			
 			ProductBasketStep.syncProductBasket(testExecStructure, logStream, driver, testName);
 			
@@ -398,12 +399,5 @@ String user = "farmerUser";
 		}
 		
 	}
-
-	
-
-	
-	
-
-
 
 }

@@ -182,7 +182,7 @@ public class PhoneLine {
 	private static void fieldRequestedInstallationDate(List<TestLog> logStream, WebDriver driver, int stepID,
 			String[] configuration) throws Exception 
 	{
-		String dateToInput=ExecStructure.tomorrowFormattedDate("dd");
+		String dateToInput=ExecStructure.tomorrowFormattedDate();
 		
 		String actionName="PL Desired Installation Date - Config: "+dateToInput;
 		
@@ -191,14 +191,13 @@ public class PhoneLine {
 
 		try
 		{
-			new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.id("Details:Contract_Information:serviceRequestDate_0")));
+			WebElement inputRequestdate = new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.id("Details:Contract_Information:serviceRequestDate_0")));
 
-			driver.findElement(By.xpath("//span[@class='icon-calendar']")).click();
-
-			new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//table[@class='calDays']")));
+			inputRequestdate.click();
 			
-			driver.findElement(By.xpath("//td[text()='"+dateToInput+"']")).click();
+			inputRequestdate.clear();
 			
+			inputRequestdate.sendKeys(dateToInput);	
 			
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
@@ -342,7 +341,9 @@ public class PhoneLine {
 		try
 		{
 			WebElement inputOCKID = new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.id("Details:Installation_Address___OCK_check:OCKID_0")));
-
+			
+			inputOCKID.click();
+			
 			inputOCKID.clear();
 
 			inputOCKID.sendKeys(ockID);

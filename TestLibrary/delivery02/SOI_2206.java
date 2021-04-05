@@ -175,5 +175,163 @@ public class SOI_2206
 		
 	}
 
+	public static void SOI_2206_TC08_PC_ECS_PackageContent_ECS_Pro_EnterpriseVoice(
+			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver,
+			String testName) throws Exception
+	{
+		String productName="Enterprise Call & Surf Pro with Enterprise Voice";
+		
+		try
+		{
+			D02Models.ToHaveAProductBasketInPC(testExecStructure, logStream, driver, testName);
+			
+			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, testName);
+			
+			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, productName);
+            
+			ProductBasketStep.expandECSPackage(testExecStructure, logStream, driver, testName, productName);
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, testName, "Test Failed", e.toString());
+			throw new Exception(testName+" - Test Case Failed");
+		}
+		
+	}
+
+	public static void SOI_2206_TC09_PC_ECS_PackageContent_ECS_Pro_PhoneLine(
+			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver,
+			String testName) throws Exception
+	{
+		String productName="Enterprise Call & Surf Pro with Phone Line";
+		
+		try
+		{
+			D02Models.ToHaveAProductBasketInPC(testExecStructure, logStream, driver, testName);
+			
+			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, testName);
+			
+			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, productName);
+            
+			ProductBasketStep.expandECSPackage(testExecStructure, logStream, driver, testName, productName);
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, testName, "Test Failed", e.toString());
+			throw new Exception(testName+" - Test Case Failed");
+		}
+		
+	}
+
+	public static void SOI_2206_TC10_PC_ECS_PackageContent_ECS_ProPlus_EnterpriseVoice(
+			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver,
+			String testName) throws Exception
+	{
+		String productName="Enterprise Call & Surf Pro+ with Enterprise Voice";
+		
+		try
+		{
+			D02Models.ToHaveAProductBasketInPC(testExecStructure, logStream, driver, testName);
+			
+			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, testName);
+			
+			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, productName);
+            
+			ProductBasketStep.expandECSPackage(testExecStructure, logStream, driver, testName, productName);
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, testName, "Test Failed", e.toString());
+			throw new Exception(testName+" - Test Case Failed");
+		}
+		
+	}
+
+	public static void SOI_2206_TC11_PC_ECS_PackageContent_ECS_ProPlus_PhoneLine(
+			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver,
+			String testName) throws Exception
+	{
+		String productName="Enterprise Call & Surf Pro+ with Phone Line";
+		
+		try
+		{
+			D02Models.ToHaveAProductBasketInPC(testExecStructure, logStream, driver, testName);
+			
+			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, testName);
+			
+			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, productName);
+            
+			ProductBasketStep.expandECSPackage(testExecStructure, logStream, driver, testName, productName);
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, testName, "Test Failed", e.toString());
+			throw new Exception(testName+" - Test Case Failed");
+		}
+		
+	}
+
+	public static void SOI_2206_TC12_PC_ECS_PackageContent_ECS_FullFiber(
+			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver,
+			String testName) throws Exception
+	{
+		String productName="Enterprise Call & Surf FullFiber";
+		
+		try
+		{
+			D02Models.ToHaveAProductBasketInPC(testExecStructure, logStream, driver, testName);
+			
+			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, testName);
+			
+			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, productName);
+            
+			ProductBasketStep.expandECSPackage(testExecStructure, logStream, driver, testName, productName);
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, testName, "Test Failed", e.toString());
+			throw new Exception(testName+" - Test Case Failed");
+		}
+		
+	}
+
+	public static void SOI_2206_TC13_PC_ECS_PackageContent_ECS_FullFiberExtended(
+			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver,
+			String testName) throws Exception
+	{
+		String productName="Enterprise Call & Surf FullFiber Extended";
+		
+		try
+		{
+			D02Models.ToHaveAProductBasketInPC(testExecStructure, logStream, driver, testName);
+			
+			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, testName);
+			
+			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, productName);
+            
+		
+            
+			ProductBasketStep.expandECSPackage(testExecStructure, logStream, driver, testName, productName);
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, testName, "Test Failed", e.toString());
+			throw new Exception(testName+" - Test Case Failed");
+		}
+		
+	}
+
 	
 }

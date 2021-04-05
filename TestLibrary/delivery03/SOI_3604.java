@@ -11,6 +11,7 @@ import agreementDirectSales.AgreementStep;
 import agreementPartCom.AgreementPCStep;
 import companyDirectSales.CompanyStep;
 import companyPartCom.CompanyPCStep;
+import executionTools.BrowserActions;
 import fetchDataFromExcelFiles.ExcelDataFetch;
 import homePageDirectSales.HomePageStep;
 import homePagePartCom.HomePagePCStep;
@@ -18,12 +19,15 @@ import loginPageDirectSales.LoginPageStep;
 import loginPagePartCom.LoginPagePCStep;
 import navigation.NavigationStep;
 import objectMap.sfDirectSales.DirSalesProductBasket;
+import objectMap.sfDirectSales.DirSalesService;
 import opportunityDirectSales.OpportunityStep;
 import opportunityPartCom.OpportunityPCStep;
 import orderDirectSales.OrderStep;
 import orderPartCom.OrderPCStep;
 import productBasketDirectSales.ProductBasketStep;
+import serviceDirectSales.ServiceAction;
 import serviceDirectSales.ServiceStep;
+import servicePartCom.ServicePCAction;
 import servicePartCom.ServicePCStep;
 import testFrameworkLibrary.D02Models;
 import testFrameworkLibrary.D03Models;
@@ -136,6 +140,11 @@ public class SOI_3604 {
 				OrderStep.goToServiceScreenByURL(testExecStructure, logStream, driver, testName, sURL);
 
 				ServiceStep.validateProvisioningContactPerson(testExecStructure, logStream, driver, testName, provContactPerson);
+				
+				if(BrowserActions.isElementPresent(driver, DirSalesService.fieldContractType))
+				{
+					ServiceAction.fillContractTypeServiceLevel(logStream, driver, counterServices, "New");
+				}
 
 				NavigationStep.goToOrderByURL(testExecStructure, logStream, driver, testName, orderURL);
 
@@ -251,6 +260,11 @@ public class SOI_3604 {
 			for(String sURL : servicesURL)
 			{
 				OrderStep.goToServiceScreenByURL(testExecStructure, logStream, driver, testName, sURL);
+				
+				if(BrowserActions.isElementPresent(driver, DirSalesService.fieldContractType))
+				{
+					ServiceAction.fillContractTypeServiceLevel(logStream, driver, counterServices, "New");
+				}
 
 				NavigationStep.goToOrderByURL(testExecStructure, logStream, driver, testName, orderURL);
 
@@ -360,6 +374,11 @@ public class SOI_3604 {
 				OrderPCStep.goToServiceScreenByURL(testExecStructure, logStream, driver, testName, sURL);
 
 				ServicePCStep.validateProvisioningContactPerson(testExecStructure, logStream, driver, testName, provContactPerson);
+				
+				if(BrowserActions.isElementPresent(driver, DirSalesService.fieldContractType))
+				{
+					ServicePCAction.fillContractTypeServiceLevel(logStream, driver, counterServices, "New");
+				}
 
 				NavigationStep.goToOrderByURLInPC(testExecStructure, logStream, driver, testName, orderURL);
 
@@ -460,6 +479,11 @@ public class SOI_3604 {
 			for(String sURL : servicesURL)
 			{
 				OrderPCStep.goToServiceScreenByURL(testExecStructure, logStream, driver, testName, sURL);
+				
+				if(BrowserActions.isElementPresent(driver, DirSalesService.fieldContractType))
+				{
+					ServicePCAction.fillContractTypeServiceLevel(logStream, driver, counterServices, "New");
+				}
 
 				NavigationStep.goToOrderByURLInPC(testExecStructure, logStream, driver, testName, orderURL);
 

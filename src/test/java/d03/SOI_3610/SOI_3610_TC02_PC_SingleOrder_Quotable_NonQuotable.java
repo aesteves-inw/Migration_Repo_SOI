@@ -1,6 +1,4 @@
-package d03.SOI_3504;
-
-import org.testng.annotations.Test;
+package d03.SOI_3610;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,20 +7,21 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import org.testng.annotations.Parameters;
 
-import delivery03.SOI_3504;
+import delivery03.SOI_3610;
 import executionDriver.ExecDriverClass;
-import executionTools.BrowserActions;
 import executionTools.ExecStructure;
 import executionTools.TestStructure;
+import testExecutionData.ProductsListD03;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
 import testReportComposition.TestReportTestData;
 import testReportComposition.TestStepReportStructure;
 
-public class SOI_3504_TC03_PC_NonQuotableOffer_Standalone {
-	
-	String testName = "SOI_3504_TC03_PC_NonQuotableOffer_Standalone";
+public class SOI_3610_TC02_PC_SingleOrder_Quotable_NonQuotable 
+{
+	String testName = "SOI_3610_TC02_PC_SingleOrder_Quotable_NonQuotable";
 
 	String initialTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
 
@@ -34,32 +33,33 @@ public class SOI_3504_TC03_PC_NonQuotableOffer_Standalone {
 
 	List<TestLog> logStream = new ArrayList<TestLog>();
 
-	int stepsExecuted; 
-	
 	WebDriver driver;
 	
 
 	@BeforeClass
 	public void beforeClass() 
 	{
-				
 		driver = ExecDriverClass.setupDriver();
 		
 		TestStructure.startTest(logStream,testName);
 		
 	}
-	@Test
-	public void SOI_3504_TC03_PC_NonQuotableOffer_Standalone() throws Exception
+
+	
+	@Test(dataProvider = "ProductsListD03", dataProviderClass = ProductsListD03.class)
+	public void SOI_3610_TC02_PC_SingleOrder_Quotable_NonQuotable(String productD03) throws Exception
 	{
+		String finalTestName = testName+"_"+productD03;
+		
 		try
 		{
-			SOI_3504.SOI_3504_TC03_PC_NonQuotableOffer_Standalone(testExecStructure, logStream, driver, stepsExecuted, testName);
+			SOI_3610.SOI_3610_TC02_PC_SingleOrder_Quotable_NonQuotable(testExecStructure, logStream, driver, finalTestName, productD03);
 		}
 		catch(Exception e)
 		{
 			System.out.println(e);
 			TestLogger.logError(logStream, testName, "Test Execution Failed", e.toString());
-			throw new Exception (testName+" - Execution Failed",e);
+			throw new Exception (testName+" - Failed: ",e);
 		}
 	}
 
@@ -68,6 +68,4 @@ public class SOI_3504_TC03_PC_NonQuotableOffer_Standalone {
 	{
 		TestStructure.finishTest(testName, initialTestDate, startTime, testExecStructure, testData, driver, logStream);
 	}
-
-
 }

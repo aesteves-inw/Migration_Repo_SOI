@@ -21,30 +21,29 @@ public class SOI_3507
 			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver,
 			String testName) throws Exception 
 	{
-		try
-		{
-			
-		
 		String product="PABX";
-		
+
 		String productName="Voice Continuity";
-		
+
 		String configurationIndex="configurationByDefault";
-		
-		D02Models.ToHaveAProductBasket(testExecStructure, logStream, driver, testName);
-		
-		D02Models.AddAndConfigureNewProduct(testExecStructure, logStream, driver, testName, productName, configurationIndex);
-		
-		D03Models.AddNonQuotableProductToProductBasket(testExecStructure, logStream, driver, testName, product);
-		
-		ProductBasketStep.syncProductBasket(testExecStructure, logStream, driver, testName);
-		
-		ProductBasketStep.goToAgreementScreen(testExecStructure, logStream, driver, testName);
-		
-		AgreementStep.generateDocumentProposal(testExecStructure, logStream, driver, testName);
-		
-		AgreementStep.validateProposalForNonQuotableProducts(testExecStructure, logStream, driver, testName, product);	
-		
+
+		try
+		{	
+
+			D02Models.ToHaveAProductBasket(testExecStructure, logStream, driver, testName);
+
+			D02Models.AddAndConfigureNewProduct(testExecStructure, logStream, driver, testName, productName, configurationIndex);
+
+			D03Models.AddNonQuotableProductToProductBasket(testExecStructure, logStream, driver, testName, product);
+
+			ProductBasketStep.syncProductBasket(testExecStructure, logStream, driver, testName);
+
+			ProductBasketStep.goToAgreementScreen(testExecStructure, logStream, driver, testName);
+
+			AgreementStep.generateDocumentProposal(testExecStructure, logStream, driver, testName);
+
+			AgreementStep.validateProposalForNonQuotableProducts(testExecStructure, logStream, driver, testName, product);	
+
 		}
 		catch(Exception e)
 		{
@@ -52,38 +51,39 @@ public class SOI_3507
 			TestLogger.logError(logStream, testName, "Test Failed", e.toString());
 			throw new Exception(testName+" - Test Case Failed");
 		}
-		
+
 	}
-	
+
 	public static void SOI_3507_TC02_PC_NonQuotableProductsIgnoredFromAgreement(
 			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver,
 			String testName) throws Exception 
 	{
+		String product="PABX";
+
+		String productName="Voice Continuity";
+
+		String configurationIndex="configurationByDefault";
+		
 		try
 		{
-			String product="PABX";
-			
-			String productName="Voice Continuity";
-			
-			String configurationIndex="configurationByDefault";
 			
 			D02Models.ToHaveAProductBasketInPC(testExecStructure, logStream, driver, testName);
-			
+
 			D02Models.AddAndConfigureNewProductInPC(testExecStructure, logStream, driver, testName, productName, configurationIndex);
-			
+
 			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, testName);
-			
+
 			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, product);
-			
+
 			ProductBasketStep.syncProductBasket(testExecStructure, logStream, driver, testName);
-			
+
 			ProductBasketStep.goToAgreementScreenInPC(testExecStructure, logStream, driver, testName);
-			
+
 			AgreementPCStep.generateDocumentProposal(testExecStructure, logStream, driver, testName);
-			
+
 			AgreementPCStep.validateProposalForNonQuotableProductsInPC(testExecStructure, logStream, driver, testName, product);
-			
-			
+
+
 		}
 		catch(Exception e)
 		{
@@ -91,7 +91,7 @@ public class SOI_3507
 			TestLogger.logError(logStream, testName, "Test Failed", e.toString());
 			throw new Exception(testName+" - Test Case Failed");
 		}
-		
+
 	}
 
 

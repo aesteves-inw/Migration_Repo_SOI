@@ -122,7 +122,7 @@ public class OrderAction
 
 				orderStatusValidation=driver.findElement(By.xpath(DirSalesOrder.orderStatusLabel)).getText().toString();
 
-				System.out.println("Debug of submitOrderPositiveValidationValidation: "+orderStatusValidation);
+				//System.out.println("Debug of submitOrderPositiveValidationValidation: "+orderStatusValidation);
 
 				if(orderStatusValidation.equalsIgnoreCase("submitted"))
 				{

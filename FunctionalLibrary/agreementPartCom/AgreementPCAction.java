@@ -91,6 +91,8 @@ public class AgreementPCAction {
 			
 			Thread.sleep(1000);
 			
+			BrowserActions.refreshPage(driver);
+			
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 

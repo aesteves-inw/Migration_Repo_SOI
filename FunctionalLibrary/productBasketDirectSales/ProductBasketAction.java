@@ -97,7 +97,11 @@ public class ProductBasketAction {
 
 		try
 		{
-			driver.findElement(By.xpath(DirSalesProductBasket.syncButton)).click();
+			//driver.findElement(By.xpath(DirSalesProductBasket.syncButton)).click();
+			
+			WebElement syncButton = driver.findElement(By.xpath(DirSalesProductBasket.syncButton));
+			
+			BrowserActions.jsClick(driver, syncButton);
 
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+newStepCounter);
@@ -127,7 +131,13 @@ public class ProductBasketAction {
 			{
 				if(we.getText().contains(productName))
 				{
-					we.findElement(By.xpath(DirSalesProductBasket.selectLineItemCheckBox)).click();
+					
+					//we.findElement(By.xpath(DirSalesProductBasket.selectLineItemCheckBox)).click();
+					
+					WebElement selectLineItemCheckBox = we.findElement(By.xpath(DirSalesProductBasket.selectLineItemCheckBox));
+					
+					BrowserActions.jsClick(driver, selectLineItemCheckBox);
+					
 					break;
 				}
 			}			
@@ -189,13 +199,15 @@ public class ProductBasketAction {
 			{
 				if(we.getText().contains(productName))
 				{
-					we.findElement(By.xpath(DirSalesProductBasket.expandPackageButton)).click();
+					//we.findElement(By.xpath(DirSalesProductBasket.expandPackageButton)).click();
+					
+					BrowserActions.jsClick(driver, we.findElement(By.xpath(DirSalesProductBasket.expandPackageButton)));
 
 					break;
 				}
 			}	
 
-			Thread.sleep(5000);
+			Thread.sleep(10000);
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
@@ -244,7 +256,9 @@ public class ProductBasketAction {
 			{
 				if (productBasketLines.get(i).getText().contains(productName))
 				{
-					productBasketLinesBts.get(i).click();
+					//productBasketLinesBts.get(i).click();
+					
+					BrowserActions.jsClick(driver, productBasketLinesBts.get(i));
 					break;
 				}
 			}
@@ -757,7 +771,7 @@ public class ProductBasketAction {
 
 		try
 		{
-			List<WebElement> ecsProductExpanded = new WebDriverWait(driver, 15).until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//li[@class='ng-scope']")));
+			List<WebElement> ecsProductExpanded = new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//li[@class='ng-scope']")));
 
 			for(WebElement we:ecsProductExpanded)
 			{
@@ -794,7 +808,7 @@ public class ProductBasketAction {
 
 		try
 		{
-			List<WebElement> ecsProductExpanded = new WebDriverWait(driver, 15).until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//li[@class='ng-scope']")));
+			List<WebElement> ecsProductExpanded = new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//li[@class='ng-scope']")));
 
 			for(WebElement we:ecsProductExpanded)
 			{
@@ -831,7 +845,7 @@ public class ProductBasketAction {
 
 		try
 		{
-			List<WebElement> ecsProductExpanded = new WebDriverWait(driver, 15).until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//li[@class='ng-scope']")));
+			List<WebElement> ecsProductExpanded = new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//li[@class='ng-scope']")));
 
 			for(WebElement we:ecsProductExpanded)
 			{
@@ -868,7 +882,7 @@ public class ProductBasketAction {
 
 		try
 		{
-			List<WebElement> ecsProductExpanded = new WebDriverWait(driver, 15).until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//li[@class='ng-scope']")));
+			List<WebElement> ecsProductExpanded = new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//li[@class='ng-scope']")));
 
 			for(WebElement we:ecsProductExpanded)
 			{
@@ -905,7 +919,7 @@ public class ProductBasketAction {
 
 		try
 		{
-			List<WebElement> ecsProductExpanded = new WebDriverWait(driver, 15).until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//li[@class='ng-scope']")));
+			List<WebElement> ecsProductExpanded = new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//li[@class='ng-scope']")));
 
 			for(WebElement we:ecsProductExpanded)
 			{
@@ -942,7 +956,7 @@ public class ProductBasketAction {
 
 		try
 		{
-			List<WebElement> ecsProductExpanded = new WebDriverWait(driver, 15).until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//li[@class='ng-scope']")));
+			List<WebElement> ecsProductExpanded = new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//li[@class='ng-scope']")));
 
 			for(WebElement we:ecsProductExpanded)
 			{
