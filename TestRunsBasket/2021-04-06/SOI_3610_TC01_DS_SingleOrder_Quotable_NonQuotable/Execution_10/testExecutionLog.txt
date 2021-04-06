@@ -1,0 +1,68 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable
+Log Date: 06-04-2021 12:06:58
+Test Status: Failed
+###############################################################################
+06-04-2021 12:07:02 - INFO - startTest - Test Case: SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable initiation
+06-04-2021 12:07:06 - TRACE - goToLoginPage - Executed with success
+06-04-2021 12:07:08 - TRACE - fillcredentials - Executed with success
+06-04-2021 12:07:15 - TRACE - pressLoginButton - Executed with success
+06-04-2021 12:07:15 - INFO - loginDirectSales on Step 1 - Executed with success
+06-04-2021 12:07:19 - TRACE - homePageValidation - Executed with success
+06-04-2021 12:07:19 - INFO - loginSFDS - Step 1 - Executed with success
+06-04-2021 12:07:26 - TRACE - goToCompanyDetailsPage - Executed with success
+06-04-2021 12:07:27 - TRACE - companyPageValidation - Executed with success
+06-04-2021 12:07:27 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+06-04-2021 12:07:31 - TRACE - openQuickSaleOPTYScreen - Executed with success
+06-04-2021 12:07:37 - TRACE - createQuickSaleOpty - Executed with success
+06-04-2021 12:07:42 - TRACE - saveOpportunity - Executed with success
+06-04-2021 12:07:42 - INFO - createQuickSaleOpty - Executed with success
+06-04-2021 12:07:46 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+06-04-2021 12:07:50 - INFO - goToOpportunityPage - Executed with success
+06-04-2021 12:07:54 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 3
+06-04-2021 12:07:54 - INFO - createQuickSaleOpportunity - Step 3 - Executed with success
+06-04-2021 12:07:57 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 4
+06-04-2021 12:08:00 - TRACE - clickNewProductBasketLink - Succeeded in Step 4
+06-04-2021 12:08:00 - TRACE - createProductBasket - Succeeded in Step 4
+06-04-2021 12:08:00 - TRACE - Product Basket: Change to default frame - Succeeded in Step 4
+06-04-2021 12:08:06 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 4
+06-04-2021 12:08:08 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 4
+06-04-2021 12:08:08 - INFO - createProductBasket - Executed with success
+06-04-2021 12:08:08 - DEBUG - productBasketName - productBasketName value: SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable
+06-04-2021 12:08:08 - TRACE - Product Basket: Open Add Product Menu - Succeeded in Step 5
+06-04-2021 12:08:09 - TRACE - addProductMenuValidation - Succeeded in Step: 5
+06-04-2021 12:08:09 - INFO - goToAddOferToBasketScreen - Executed with success
+06-04-2021 12:08:15 - TRACE - Add Offer to Basket: Pick Product - PABX - Succeeded in Step 6
+06-04-2021 12:08:15 - TRACE - productOnProductBasketValidation - Succeeded in Step: 6
+06-04-2021 12:08:15 - INFO - addProductToProductBasket - Executed with success
+06-04-2021 12:08:17 - TRACE - syncProductBasket - Succeeded in Step 7
+06-04-2021 12:08:24 - TRACE - syncProductBasketPosVal - Succeeded in Step: 7
+06-04-2021 12:08:24 - INFO - syncProductBasketPosVal - Executed with success
+06-04-2021 12:08:26 - TRACE - goToOPTYByURL - Succeeded in Step 8
+06-04-2021 12:08:31 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 8
+06-04-2021 12:08:31 - INFO - goToOpportunityByURL - Executed with success
+06-04-2021 12:08:35 - TRACE - openEditOpportunityMenu - Succeeded in Step 9
+06-04-2021 12:08:36 - TRACE - fillOptyDescription - Succeeded in Step 9
+06-04-2021 12:08:40 - TRACE - fillLevelOfConfidence - Succeeded in Step 9
+06-04-2021 12:08:40 - TRACE - fillOptyNextStep - Succeeded in Step 9
+06-04-2021 12:08:41 - TRACE - fillOptyNextStepDueDate - Succeeded in Step 9
+06-04-2021 12:08:45 - TRACE - fillOptyProductFamily - Succeeded in Step 9
+06-04-2021 12:08:46 - TRACE - fillOptyCompetitorName - Succeeded in Step 9
+06-04-2021 12:08:46 - TRACE - fillOtherMandatoryFieldsOfOpportunity - Succeeded in Step 9
+06-04-2021 12:08:50 - TRACE - changeStatusOfOpportunity - Succeeded in Step 9
+06-04-2021 12:09:19 - TRACE - saveChangesOnEditOpportunityScreen - Succeeded in Step 9
+06-04-2021 12:09:19 - TRACE - closeWonOpportunity - Succeeded in Step 9
+06-04-2021 12:09:19 - TRACE - closeWonOpportunityValidation - Succeeded in Step: 9
+06-04-2021 12:09:19 - INFO - closeWinOPTY - Executed with success
+06-04-2021 12:09:27 - TRACE - goToOrdersRelatedViewMenu - Succeeded in Step 10
+06-04-2021 12:09:31 - TRACE - pickOrderFromOrderListView - Succeeded in Step 10
+06-04-2021 12:09:35 - TRACE - orderScreenValidation - Succeeded in Step: 10
+06-04-2021 12:09:35 - INFO - goToOrderScreen - Executed with success
+06-04-2021 12:09:56 - TRACE - validateServiceRelatedList - Failed in Step: 11. Validation: False
+06-04-2021 12:09:56 - ERROR - validateServiceRelatedList - Executed with errors - java.lang.Exception: Order: validate Service(s) Related List - Failed in Step: 11
+06-04-2021 12:09:56 - ERROR - SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable - Test Failed - java.lang.Exception: Order: validate Service(s) Related List - Failed in Step: 11
+06-04-2021 12:09:56 - ERROR - SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable - Test Execution Failed - java.lang.Exception: SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable - Test Case Failed
+06-04-2021 12:09:56 - INFO - finishTest - Test Case: SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable completion
+############################# End Of Log File #################################

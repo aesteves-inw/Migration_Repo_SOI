@@ -1,0 +1,31 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable
+Log Date: 06-04-2021 14:03:12
+Test Status: Failed
+###############################################################################
+06-04-2021 14:03:15 - INFO - startTest - Test Case: SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable initiation
+06-04-2021 14:03:18 - TRACE - goToLoginPage - Executed with success
+06-04-2021 14:03:20 - TRACE - fillcredentials - Executed with success
+06-04-2021 14:03:25 - TRACE - pressLoginButton - Executed with success
+06-04-2021 14:03:25 - INFO - loginDirectSales on Step 1 - Executed with success
+06-04-2021 14:03:28 - TRACE - homePageValidation - Executed with success
+06-04-2021 14:03:28 - INFO - loginSFDS - Step 1 - Executed with success
+06-04-2021 14:03:32 - TRACE - goToCompanyDetailsPage - Executed with success
+06-04-2021 14:03:33 - TRACE - companyPageValidation - Executed with success
+06-04-2021 14:03:33 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+06-04-2021 14:03:35 - TRACE - openQuickSaleOPTYScreen - Executed with success
+06-04-2021 14:03:40 - TRACE - createQuickSaleOpty - Executed with success
+06-04-2021 14:03:56 - ERROR - saveOpportunity - Executed with errors - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for invisibility of [[ChromeDriver: chrome on WINDOWS (721d63588bdd26516e71c3d6246093b0)] -> xpath: //*[@class='modal-footer slds-modal__footer']/button[2]] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'INNOWAVE-383', ip: '192.168.0.165', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.114, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: C:\source\simpleOrderingInt...}, goog:chromeOptions: {debuggerAddress: localhost:51367}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 721d63588bdd26516e71c3d6246093b0
+06-04-2021 14:03:56 - ERROR - createQuickSaleOpty - Executed with errors - java.lang.Exception: saveOpportunity - Executed with errors
+06-04-2021 14:03:56 - ERROR - createQuickSaleOpportunity - Step 3 - Executed with errors - java.lang.Exception: createQuickSaleOpty - Executed with errors
+06-04-2021 14:03:56 - ERROR - SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable - Test Failed - java.lang.Exception: Company: Create Quick Sale Opportunity - Failed in Step: 3
+06-04-2021 14:03:56 - ERROR - SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable - Test Execution Failed - java.lang.Exception: SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable - Test Case Failed
+06-04-2021 14:03:56 - INFO - finishTest - Test Case: SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable completion
+############################# End Of Log File #################################

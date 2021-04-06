@@ -1,0 +1,73 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable
+Log Date: 06-04-2021 14:04:07
+Test Status: Failed
+###############################################################################
+06-04-2021 14:04:10 - INFO - startTest - Test Case: SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable initiation
+06-04-2021 14:04:12 - TRACE - goToLoginPage - Executed with success
+06-04-2021 14:04:14 - TRACE - fillcredentials - Executed with success
+06-04-2021 14:04:19 - TRACE - pressLoginButton - Executed with success
+06-04-2021 14:04:19 - INFO - loginDirectSales on Step 1 - Executed with success
+06-04-2021 14:04:21 - TRACE - homePageValidation - Executed with success
+06-04-2021 14:04:21 - INFO - loginSFDS - Step 1 - Executed with success
+06-04-2021 14:04:26 - TRACE - goToCompanyDetailsPage - Executed with success
+06-04-2021 14:04:27 - TRACE - companyPageValidation - Executed with success
+06-04-2021 14:04:27 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+06-04-2021 14:04:29 - TRACE - openQuickSaleOPTYScreen - Executed with success
+06-04-2021 14:04:34 - TRACE - createQuickSaleOpty - Executed with success
+06-04-2021 14:04:46 - TRACE - saveOpportunity - Executed with success
+06-04-2021 14:04:46 - INFO - createQuickSaleOpty - Executed with success
+06-04-2021 14:04:48 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+06-04-2021 14:04:52 - INFO - goToOpportunityPage - Executed with success
+06-04-2021 14:04:54 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 3
+06-04-2021 14:04:54 - INFO - createQuickSaleOpportunity - Step 3 - Executed with success
+06-04-2021 14:04:56 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 4
+06-04-2021 14:04:58 - TRACE - clickNewProductBasketLink - Succeeded in Step 4
+06-04-2021 14:04:58 - TRACE - createProductBasket - Succeeded in Step 4
+06-04-2021 14:04:58 - TRACE - Product Basket: Change to default frame - Succeeded in Step 4
+06-04-2021 14:05:04 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 4
+06-04-2021 14:05:05 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 4
+06-04-2021 14:05:05 - INFO - createProductBasket - Executed with success
+06-04-2021 14:05:05 - DEBUG - productBasketName - productBasketName value: SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable
+06-04-2021 14:05:05 - TRACE - Product Basket: Open Add Product Menu - Succeeded in Step 5
+06-04-2021 14:05:06 - TRACE - addProductMenuValidation - Succeeded in Step: 5
+06-04-2021 14:05:06 - INFO - goToAddOferToBasketScreen - Executed with success
+06-04-2021 14:05:12 - TRACE - Add Offer to Basket: Pick Product - PABX - Succeeded in Step 6
+06-04-2021 14:05:12 - TRACE - productOnProductBasketValidation - Succeeded in Step: 6
+06-04-2021 14:05:12 - INFO - addProductToProductBasket - Executed with success
+06-04-2021 14:05:12 - TRACE - Product Basket: Open Add Product Menu - Succeeded in Step 7
+06-04-2021 14:05:13 - TRACE - addProductMenuValidation - Succeeded in Step: 7
+06-04-2021 14:05:13 - INFO - goToAddOferToBasketScreen - Executed with success
+06-04-2021 14:05:14 - TRACE - Add Offer to Basket: Pick Product - Phone Line - Succeeded in Step 8
+06-04-2021 14:05:18 - TRACE - productOnProductBasketValidation - Succeeded in Step: 8
+06-04-2021 14:05:18 - INFO - addProductToProductBasket - Executed with success
+06-04-2021 14:05:29 - TRACE - goToEditProductConfiguration - Succeeded in Step 9
+06-04-2021 14:05:29 - TRACE - Change to Edit Prodcut Configuration iframe - Succeeded in Step 9
+06-04-2021 14:05:32 - INFO - goToEditProductConfigurationScreen - Executed with success
+06-04-2021 14:05:33 - TRACE - PL Desired Installation Date - Config: 07/04/2021 - Succeeded in Step 10
+06-04-2021 14:05:33 - TRACE - PL Contract Type - Config: New - Succeeded in Step 10
+06-04-2021 14:05:34 - TRACE - PL Remarks - Config: SOI_3610_TC01_Ex15_20210406 - Succeeded in Step 10
+06-04-2021 14:05:36 - TRACE - PL Internal Comments - Config: SOI_3610_TC01_Ex15_20210406 - Succeeded in Step 10
+06-04-2021 14:05:36 - TRACE - Contract Information On Phone Line - Succeeded in Step 10
+06-04-2021 14:05:37 - TRACE - PL OCK Id field - Config: 898989 - Succeeded in Step 10
+06-04-2021 14:05:37 - TRACE - PL OCK Result Field - Config: Copper - Succeeded in Step 10
+06-04-2021 14:05:37 - TRACE - Installation Address & OCKCheck On Phone Line - Succeeded in Step 10
+06-04-2021 14:05:37 - TRACE - Included Internet On Phone Line - Succeeded in Step 10
+06-04-2021 14:05:37 - TRACE - Product Selection Fields On Phone Line - Succeeded in Step 10
+06-04-2021 14:05:37 - TRACE - configurationOfPhoneLine - Succeeded in Step 10
+06-04-2021 14:05:37 - TRACE - Validation of Phone Line configuration (By Default Test Data) - Succeeded in Step: 10
+06-04-2021 14:05:37 - INFO - configurePhoneLine - Executed with success
+06-04-2021 14:05:46 - TRACE - Finish Configuration on 'Edit Product Configuration' Screen - Succeeded in Step 11
+06-04-2021 14:05:46 - TRACE - Product Basket: Change to default frame - Succeeded in Step 11
+06-04-2021 14:05:47 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 11
+06-04-2021 14:05:47 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 11
+06-04-2021 14:05:47 - INFO - finsihConfiguration - Executed with success
+06-04-2021 14:05:49 - TRACE - syncProductBasket - Succeeded in Step 12
+06-04-2021 14:06:09 - ERROR - syncProductBasketPosVal - Failed in Step 12 - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //button[@aria-label='Go to Agreement'] (tried for 20 second(s) with 500 milliseconds interval)
+06-04-2021 14:06:09 - ERROR - syncProductBasketPosVal - Executed with errors - java.lang.Exception: syncProductBasketPosVal - Failed in Step: 12
+06-04-2021 14:06:09 - ERROR - SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable - Test Failed - java.lang.Exception: Sync Product Basket (Positive Validation) - Failed in Step: 12
+06-04-2021 14:06:09 - ERROR - SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable - Test Execution Failed - java.lang.Exception: SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable - Test Case Failed
+06-04-2021 14:06:09 - INFO - finishTest - Test Case: SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable completion
+############################# End Of Log File #################################

@@ -1,0 +1,30 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SOI_3610_TC02_PC_SingleOrder_Quotable_NonQuotable
+Log Date: 06-04-2021 11:33:23
+Test Status: Passed
+###############################################################################
+06-04-2021 11:33:27 - INFO - startTest - Test Case: SOI_3610_TC02_PC_SingleOrder_Quotable_NonQuotable initiation
+06-04-2021 11:33:33 - TRACE - goToLoginPage - Executed with success
+06-04-2021 11:33:47 - ERROR - fillcredentials - Executed with errors - org.openqa.selenium.WebDriverException: chrome not reachable
+  (Session info: chrome=89.0.4389.114)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'INNOWAVE-383', ip: '10.1.7.33', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.114, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: C:\source\simpleOrderingInt...}, goog:chromeOptions: {debuggerAddress: localhost:57760}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 09d9ce99267578b4cea55d9950126f9b
+*** Element info: {Using=xpath, value=//*[@id='username']}
+06-04-2021 11:33:47 - ERROR - loginPartnersCommunity - Failed in Step 1 - java.lang.Exception: fillcredentials - Executed with errors
+06-04-2021 11:33:47 - ERROR - LoginPartnersCommunity - Executed with errors - java.lang.Exception: loginPartnersCommunity - Failed in Step 1
+06-04-2021 11:34:00 - ERROR - SOI_3610_TC02_PC_SingleOrder_Quotable_NonQuotable_PABX - Test Failed - org.openqa.selenium.WebDriverException: chrome not reachable
+  (Session info: chrome=89.0.4389.114)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'INNOWAVE-383', ip: '10.1.7.33', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.114, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: C:\source\simpleOrderingInt...}, goog:chromeOptions: {debuggerAddress: localhost:57760}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 09d9ce99267578b4cea55d9950126f9b
+06-04-2021 11:34:00 - ERROR - SOI_3610_TC02_PC_SingleOrder_Quotable_NonQuotable_PABX - Test Failed - java.lang.Exception: SOI_3610_TC02_PC_SingleOrder_Quotable_NonQuotable_PABX: Test Case Failed on Test Model - E2EFlowToOrderNoAgreement
+06-04-2021 11:34:00 - ERROR - SOI_3610_TC02_PC_SingleOrder_Quotable_NonQuotable - Test Execution Failed - java.lang.Exception: SOI_3610_TC02_PC_SingleOrder_Quotable_NonQuotable_PABX - Test Case Failed
+06-04-2021 11:34:00 - INFO - finishTest - Test Case: SOI_3610_TC02_PC_SingleOrder_Quotable_NonQuotable completion
+############################# End Of Log File #################################
