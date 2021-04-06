@@ -51,11 +51,10 @@ public class SOI_3610_TC02_PC_SingleOrder_Quotable_NonQuotable
 	{
 		String productD03="PABX";
 		
-		String finalTestName = testName+"_"+productD03;
 		
 		try
 		{
-			SOI_3610.SOI_3610_TC02_PC_SingleOrder_Quotable_NonQuotable(testExecStructure, logStream, driver, finalTestName, productD03);
+			SOI_3610.SOI_3610_TC02_PC_SingleOrder_Quotable_NonQuotable(testExecStructure, logStream, driver, testName, productD03);
 		}
 		catch(Exception e)
 		{
