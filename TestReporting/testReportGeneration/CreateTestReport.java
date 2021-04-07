@@ -58,6 +58,8 @@ public class CreateTestReport {
 			htmlSB.append("<caption><h3>Execution Information</h3></caption>");
 
 			htmlSB.append("<tr><td class=\"reportheader\">");
+			
+			htmlSB.append("<p><b>Test Name: </b>Environment: </b>ITT</p>");
 
 			htmlSB.append("<p><b>Test Name: </b>"+testHeader.getTestName()+"</p>");
 
@@ -78,7 +80,7 @@ public class CreateTestReport {
 			htmlSB.append("<p><b>Steps Executed: </b>"+testHeader.getStepsExecuted()+"</p>");
 
 			htmlSB.append("</td></tr></table><br>");
-/*
+
 			htmlSB.append("<table align=\"center\" border=\"1\" bordercolor=\"#000000\">");
 
 			htmlSB.append("<caption><h3>Test Data Information</h3></caption>");
@@ -102,7 +104,7 @@ public class CreateTestReport {
 			}
 
 			htmlSB.append("</td></tr></table><br>");
-*/
+
 			htmlSB.append("<table align=\"center\" border=\"1\" bordercolor=\"#000000\">");
 
 			htmlSB.append("<caption><h3>Test Procedure Information</h3></caption>");
