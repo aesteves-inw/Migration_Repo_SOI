@@ -1,0 +1,100 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable
+Log Date: 06-04-2021 12:26:05
+Test Status: Failed
+###############################################################################
+06-04-2021 12:26:09 - INFO - startTest - Test Case: SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable initiation
+06-04-2021 12:26:12 - TRACE - goToLoginPage - Executed with success
+06-04-2021 12:26:14 - TRACE - fillcredentials - Executed with success
+06-04-2021 12:26:21 - TRACE - pressLoginButton - Executed with success
+06-04-2021 12:26:21 - INFO - loginDirectSales on Step 1 - Executed with success
+06-04-2021 12:26:24 - TRACE - homePageValidation - Executed with success
+06-04-2021 12:26:24 - INFO - loginSFDS - Step 1 - Executed with success
+06-04-2021 12:26:30 - TRACE - goToCompanyDetailsPage - Executed with success
+06-04-2021 12:26:32 - TRACE - companyPageValidation - Executed with success
+06-04-2021 12:26:32 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+06-04-2021 12:26:34 - TRACE - openQuickSaleOPTYScreen - Executed with success
+06-04-2021 12:26:42 - TRACE - createQuickSaleOpty - Executed with success
+06-04-2021 12:26:47 - TRACE - saveOpportunity - Executed with success
+06-04-2021 12:26:47 - INFO - createQuickSaleOpty - Executed with success
+06-04-2021 12:26:50 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+06-04-2021 12:26:56 - INFO - goToOpportunityPage - Executed with success
+06-04-2021 12:27:01 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 3
+06-04-2021 12:27:01 - INFO - createQuickSaleOpportunity - Step 3 - Executed with success
+06-04-2021 12:27:04 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 4
+06-04-2021 12:27:07 - TRACE - clickNewProductBasketLink - Succeeded in Step 4
+06-04-2021 12:27:07 - TRACE - createProductBasket - Succeeded in Step 4
+06-04-2021 12:27:07 - TRACE - Product Basket: Change to default frame - Succeeded in Step 4
+06-04-2021 12:27:15 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 4
+06-04-2021 12:27:18 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 4
+06-04-2021 12:27:18 - INFO - createProductBasket - Executed with success
+06-04-2021 12:27:18 - DEBUG - productBasketName - productBasketName value: SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable
+06-04-2021 12:27:18 - TRACE - Product Basket: Open Add Product Menu - Succeeded in Step 5
+06-04-2021 12:27:19 - TRACE - addProductMenuValidation - Succeeded in Step: 5
+06-04-2021 12:27:19 - INFO - goToAddOferToBasketScreen - Executed with success
+06-04-2021 12:27:25 - TRACE - Add Offer to Basket: Pick Product - PABX - Succeeded in Step 6
+06-04-2021 12:27:25 - TRACE - productOnProductBasketValidation - Succeeded in Step: 6
+06-04-2021 12:27:25 - INFO - addProductToProductBasket - Executed with success
+06-04-2021 12:27:26 - TRACE - Product Basket: Open Add Product Menu - Succeeded in Step 7
+06-04-2021 12:27:26 - TRACE - addProductMenuValidation - Succeeded in Step: 7
+06-04-2021 12:27:26 - INFO - goToAddOferToBasketScreen - Executed with success
+06-04-2021 12:27:28 - TRACE - Add Offer to Basket: Pick Product - Phone Line - Succeeded in Step 8
+06-04-2021 12:27:32 - TRACE - productOnProductBasketValidation - Succeeded in Step: 8
+06-04-2021 12:27:32 - INFO - addProductToProductBasket - Executed with success
+06-04-2021 12:27:40 - TRACE - goToEditProductConfiguration - Succeeded in Step 9
+06-04-2021 12:27:40 - TRACE - Change to Edit Prodcut Configuration iframe - Succeeded in Step 9
+06-04-2021 12:27:44 - INFO - goToEditProductConfigurationScreen - Executed with success
+06-04-2021 12:27:45 - TRACE - PL Desired Installation Date - Config: 07/04/2021 - Succeeded in Step 10
+06-04-2021 12:27:45 - TRACE - PL Contract Type - Config: New - Succeeded in Step 10
+06-04-2021 12:27:46 - TRACE - PL Remarks - Config: SOI_3610_TC01_Ex13_20210406 - Succeeded in Step 10
+06-04-2021 12:27:49 - TRACE - PL Internal Comments - Config: SOI_3610_TC01_Ex13_20210406 - Succeeded in Step 10
+06-04-2021 12:27:49 - TRACE - Contract Information On Phone Line - Succeeded in Step 10
+06-04-2021 12:27:49 - TRACE - PL OCK Id field - Config: 898989 - Succeeded in Step 10
+06-04-2021 12:27:50 - TRACE - PL OCK Result Field - Config: Copper - Succeeded in Step 10
+06-04-2021 12:27:50 - TRACE - Installation Address & OCKCheck On Phone Line - Succeeded in Step 10
+06-04-2021 12:27:50 - TRACE - Included Internet On Phone Line - Succeeded in Step 10
+06-04-2021 12:27:50 - TRACE - Product Selection Fields On Phone Line - Succeeded in Step 10
+06-04-2021 12:27:50 - TRACE - configurationOfPhoneLine - Succeeded in Step 10
+06-04-2021 12:27:50 - TRACE - Validation of Phone Line configuration (By Default Test Data) - Succeeded in Step: 10
+06-04-2021 12:27:50 - INFO - configurePhoneLine - Executed with success
+06-04-2021 12:27:58 - TRACE - Finish Configuration on 'Edit Product Configuration' Screen - Succeeded in Step 11
+06-04-2021 12:27:58 - TRACE - Product Basket: Change to default frame - Succeeded in Step 11
+06-04-2021 12:27:59 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 11
+06-04-2021 12:27:59 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 11
+06-04-2021 12:27:59 - INFO - finsihConfiguration - Executed with success
+06-04-2021 12:28:00 - TRACE - syncProductBasket - Succeeded in Step 12
+06-04-2021 12:28:03 - TRACE - syncProductBasketPosVal - Succeeded in Step: 12
+06-04-2021 12:28:03 - INFO - syncProductBasketPosVal - Executed with success
+06-04-2021 12:28:08 - TRACE - goToOPTYByURL - Succeeded in Step 13
+06-04-2021 12:28:11 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 13
+06-04-2021 12:28:11 - INFO - goToOpportunityByURL - Executed with success
+06-04-2021 12:28:14 - TRACE - openEditOpportunityMenu - Succeeded in Step 14
+06-04-2021 12:28:15 - TRACE - fillOptyDescription - Succeeded in Step 14
+06-04-2021 12:28:19 - TRACE - fillLevelOfConfidence - Succeeded in Step 14
+06-04-2021 12:28:20 - TRACE - fillOptyNextStep - Succeeded in Step 14
+06-04-2021 12:28:20 - TRACE - fillOptyNextStepDueDate - Succeeded in Step 14
+06-04-2021 12:28:25 - TRACE - fillOptyProductFamily - Succeeded in Step 14
+06-04-2021 12:28:25 - TRACE - fillOptyCompetitorName - Succeeded in Step 14
+06-04-2021 12:28:25 - TRACE - fillOtherMandatoryFieldsOfOpportunity - Succeeded in Step 14
+06-04-2021 12:28:29 - TRACE - changeStatusOfOpportunity - Succeeded in Step 14
+06-04-2021 12:28:51 - TRACE - saveChangesOnEditOpportunityScreen - Succeeded in Step 14
+06-04-2021 12:28:51 - TRACE - closeWonOpportunity - Succeeded in Step 14
+06-04-2021 12:28:51 - TRACE - closeWonOpportunityValidation - Succeeded in Step: 14
+06-04-2021 12:28:51 - INFO - closeWinOPTY - Executed with success
+06-04-2021 12:28:58 - TRACE - goToOrdersRelatedViewMenu - Succeeded in Step 15
+06-04-2021 12:29:19 - ERROR - pickOrderFromOrderListView - Failed in Step 15 - org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"link text","selector":"New Basket 2021-04-06 11:27:09"}
+  (Session info: chrome=89.0.4389.114)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'INNOWAVE-383', ip: '192.168.0.165', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.114, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: C:\source\simpleOrderingInt...}, goog:chromeOptions: {debuggerAddress: localhost:55898}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 96af38daa40c76a8b3adf64da7c0ba5f
+*** Element info: {Using=link text, value=New Basket 2021-04-06 11:27:09}
+06-04-2021 12:29:19 - ERROR - goToOrderScreen - Executed with errors - java.lang.Exception: pickOrderFromOrderListView - Failed in Step 15
+06-04-2021 12:29:19 - ERROR - SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable - Test Failed - java.lang.Exception: Opportunity: Go to Order Screen - Failed in Step: 15
+06-04-2021 12:29:19 - ERROR - SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable - Test Execution Failed - java.lang.Exception: SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable - Test Case Failed
+06-04-2021 12:29:19 - INFO - finishTest - Test Case: SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable completion
+############################# End Of Log File #################################

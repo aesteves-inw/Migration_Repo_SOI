@@ -46,14 +46,15 @@ public class SOI_3610_TC02_PC_SingleOrder_Quotable_NonQuotable
 	}
 
 	
-	@Test(dataProvider = "ProductsListD03", dataProviderClass = ProductsListD03.class)
-	public void SOI_3610_TC02_PC_SingleOrder_Quotable_NonQuotable(String productD03) throws Exception
+	@Test
+	public void SOI_3610_TC02_PC_SingleOrder_Quotable_NonQuotable() throws Exception
 	{
-		String finalTestName = testName+"_"+productD03;
+		String productD03="PABX";
+		
 		
 		try
 		{
-			SOI_3610.SOI_3610_TC02_PC_SingleOrder_Quotable_NonQuotable(testExecStructure, logStream, driver, finalTestName, productD03);
+			SOI_3610.SOI_3610_TC02_PC_SingleOrder_Quotable_NonQuotable(testExecStructure, logStream, driver, testName, productD03);
 		}
 		catch(Exception e)
 		{

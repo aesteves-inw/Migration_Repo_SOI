@@ -373,7 +373,7 @@ public class OrderStep
 
 		try
 		{
-			validation = BrowserActions.isElementPresent(driver, "(//a[contains(.,'"+productD03+"')])[3]");
+			validation = BrowserActions.isElementPresent(driver, "//*[text()='"+productD03+"']");
 
 			if(validation==true)
 			{

@@ -1,0 +1,20 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable
+Log Date: 06-04-2021 11:35:13
+Test Status: Passed
+###############################################################################
+06-04-2021 11:35:17 - INFO - startTest - Test Case: SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable initiation
+06-04-2021 11:35:20 - TRACE - goToLoginPage - Executed with success
+06-04-2021 11:35:22 - TRACE - fillcredentials - Executed with success
+06-04-2021 11:35:29 - TRACE - pressLoginButton - Executed with success
+06-04-2021 11:35:29 - INFO - loginDirectSales on Step 1 - Executed with success
+06-04-2021 11:35:31 - TRACE - homePageValidation - Executed with success
+06-04-2021 11:35:31 - INFO - loginSFDS - Step 1 - Executed with success
+06-04-2021 11:35:32 - ERROR - loginSFDS - Step 1 - Executed with errors - java.lang.NullPointerException
+06-04-2021 11:35:32 - ERROR - SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable_PABX - Test Failed - java.lang.NullPointerException
+06-04-2021 11:35:32 - ERROR - SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable_PABX - Test Failed - java.lang.Exception: SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable_PABX: Test Case Failed on Test Model - E2EFlowToOrderNoAgreement
+06-04-2021 11:35:32 - ERROR - SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable - Test Execution Failed - java.lang.Exception: SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable_PABX - Test Case Failed
+06-04-2021 11:35:32 - INFO - finishTest - Test Case: SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable completion
+############################# End Of Log File #################################

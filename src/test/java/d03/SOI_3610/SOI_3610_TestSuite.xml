@@ -8,7 +8,7 @@
   </test>
   <test name="SOI_3610_TC02_PC_SingleOrder_Quotable_NonQuotable">
     <classes>
-      <class name="d03.SOI_3610.SOI_3610_TC02_DS_SingleOrder_Quotable_NonQuotable"/>
+      <class name="d03.SOI_3610.SOI_3610_TC02_PC_SingleOrder_Quotable_NonQuotable"/>
     </classes>
   </test>
 </suite> <!-- SOI- User Story -->

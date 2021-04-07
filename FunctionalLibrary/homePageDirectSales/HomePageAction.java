@@ -30,11 +30,12 @@ public class HomePageAction {
 		try
 		{
 			
-			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesHomePage.homePageDetails)));
+			new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesHomePage.homePageDetails)));
 			
 			homePageURLValidation=driver.getCurrentUrl();
 
 			homePageTitleValidation=driver.getTitle();
+			
 			
 			if(homePageURL.equalsIgnoreCase(homePageURLValidation) && homePageTitle.equalsIgnoreCase(homePageTitleValidation))
 			{
