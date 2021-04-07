@@ -59,7 +59,7 @@ public class CreateTestReport {
 
 			htmlSB.append("<tr><td class=\"reportheader\">");
 			
-			htmlSB.append("<p><b>Test Name: </b>Environment: </b>ITT</p>");
+			htmlSB.append("<p><b>Environment: </b>ITT</p>");
 
 			htmlSB.append("<p><b>Test Name: </b>"+testHeader.getTestName()+"</p>");
 
