@@ -22,8 +22,11 @@ public class ExecDriverClass {
 	{
 		WebDriver driver;
 		
-		System.setProperty("webdriver.chrome.driver", ExecStructure.workingDir+"\\lib\\chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver", ExecStructure.workingDir+"\\lib\\chromedriver.exe");
 		
+		System.setProperty("webdriver.chrome.driver", "C:\\source\\chromedriver.exe");
+		
+	
 		Map<String, Object> prefs = new HashMap<String, Object>();
 		
 		prefs.put("download.default_directory", TestDataFiles.externalFilesRepository);

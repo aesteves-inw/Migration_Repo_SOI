@@ -48,7 +48,9 @@ public class PartComOpportunity {
 	
 	public static String optyHeader="/html/body/div[4]/div[2]/div/div[2]/div[1]/div/div[1]/header/div[2]";
 	
-	public static String optyDetails="//div[@class='forceCommunityRecordDetail']";
+	//public static String optyDetails="//div[@class='forceCommunityRecordDetail']";
+	
+	public static String optyDetails="/html/body/div[3]/div[2]/div/div[2]/div[1]/div";
 	
 	public static String followButton="//span[@title='Follow']";
 	

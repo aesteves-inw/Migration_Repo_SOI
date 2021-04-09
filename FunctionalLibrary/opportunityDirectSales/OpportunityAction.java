@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import executionTools.BrowserActions;
 import executionTools.ExecStructure;
 import objectMap.sfDirectSales.DirSalesOpportunity;
+import objectMap.sfPartnersCommunity.PartComOpportunity;
 import testExecutionData.TestCasesData;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;

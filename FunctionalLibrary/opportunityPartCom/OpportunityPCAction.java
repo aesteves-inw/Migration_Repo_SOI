@@ -82,7 +82,7 @@ public class OpportunityPCAction {
 
 			saveChangesOnEditOPTY(logStream, driver, stepID);
 
-
+			
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);			
 
@@ -386,6 +386,8 @@ public class OpportunityPCAction {
 		try
 		{
 			driver.findElement(By.xpath(PartComOpportunity.buttonSaveEdit)).click();
+			
+			Thread.sleep(5000);
 
 			new WebDriverWait(driver, 30).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(PartComOpportunity.headerEditOPTY)));
 

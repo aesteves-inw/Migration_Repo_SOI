@@ -127,7 +127,7 @@ public class SOI_3610 {
 			ProductBasketStep.syncProductBasket(testExecStructure, logStream, driver, testName);
 					
 			
-			NavigationStep.goToOpportunityByURL(testExecStructure, logStream, driver, testName, optyURL);
+			NavigationStep.goToOpportunityByURLPC(testExecStructure, logStream, driver, testName, optyURL);
 			
 			OpportunityPCStep.closeWinOpportunityInPC(testExecStructure, logStream, driver, testName);
 			
