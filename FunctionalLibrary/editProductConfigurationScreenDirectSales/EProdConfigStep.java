@@ -281,6 +281,51 @@ public class EProdConfigStep
 
 		
 	}
+	
+	public static void configureEnterpriseVoice(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName, String productName, String configurationIndex) throws Exception 
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+
+		String stepName="Product Configuration: "+productName;
+
+		String stepNameMin="configureEnterpriseVoice";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		String[] configuration=ProductConfigurationD02.getD02ConfigurationToApply(productName, configurationIndex);
+
+		try
+		{
+			ProfessionalInternet.configurationOfProfessionalInternet(logStream, driver, stepID, configuration, testName);
+
+			validation = ProfessionalInternet.validationOfPIConfiguration(logStream, driver, stepID, configuration);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+
+		
+	}
 
 	// D03 Products
 	public static void configureNonQuotableProduct(List<TestStepReportStructure> testExecStructure,

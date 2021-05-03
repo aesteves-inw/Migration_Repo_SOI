@@ -260,6 +260,9 @@ public class D02Models
 			case "Professional Internet":
 				EProdConfigStep.configureProfessionalInternet(testExecStructure, logStream, driver, testName, productName, configurationIndex);
 				break;
+			case "Enterprise Voice":
+				EProdConfigStep.configureProfessionalInternet(testExecStructure, logStream, driver, testName, productName, configurationIndex);
+				break;
 			case "PABX":
 				EProdConfigStep.configureNonQuotableProduct(testExecStructure, logStream, driver, testName, configurationIndex);
 				break;

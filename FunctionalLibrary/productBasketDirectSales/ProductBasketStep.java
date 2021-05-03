@@ -63,6 +63,49 @@ public class ProductBasketStep
 
 	}
 	
+	public static void categorieValidatationStep(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, String testName) throws Exception
+	{
+		int stepID;
+		
+		stepID=TestExecutionReport.stepOfTestStep(testReportStream);
+		
+		String stepName="Go To Add Offer to Basket Screen and Categorie Validation";
+
+		String stepNameMin="categorieValidatationStep";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			ProductBasketAction.openAddProductMenu(logStream, driver, stepID);
+
+			validation = AddOfferToBasketAction.categorieProductMenuValidation(logStream, driver, stepID);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testReportStream, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testReportStream, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+
+	}
+	
 	public static void syncProductBasket(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, String testName) throws Exception
 	{
 		int stepID=TestExecutionReport.stepOfTestStep(testReportStream);
