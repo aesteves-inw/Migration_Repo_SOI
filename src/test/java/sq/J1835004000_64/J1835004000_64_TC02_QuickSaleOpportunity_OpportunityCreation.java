@@ -47,7 +47,7 @@ public class J1835004000_64_TC02_QuickSaleOpportunity_OpportunityCreation{
 
 
 	@Test
-	public void testCase() throws Exception
+	public void J1835004000_64_TC02_QuickSaleOpportunity_OpportunityCreation() throws Exception
 	{
 		try
 		{

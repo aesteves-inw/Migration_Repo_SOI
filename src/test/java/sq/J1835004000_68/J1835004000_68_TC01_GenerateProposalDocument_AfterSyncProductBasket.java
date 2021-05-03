@@ -40,7 +40,6 @@ public class J1835004000_68_TC01_GenerateProposalDocument_AfterSyncProductBasket
 	@BeforeClass
 	public void beforeClass() 
 	{
-		BrowserActions.endSession(driver);
 		
 		driver = ExecDriverClass.setupDriver();
 		
@@ -48,7 +47,7 @@ public class J1835004000_68_TC01_GenerateProposalDocument_AfterSyncProductBasket
 		
 	}
 	@Test
-	public void testCase() throws Exception
+	public void J1835004000_68_TC01_GenerateProposalDocument_AfterSyncProductBasket() throws Exception
 	{
 		try
 		{

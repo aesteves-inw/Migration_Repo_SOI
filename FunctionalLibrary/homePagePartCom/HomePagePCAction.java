@@ -27,7 +27,6 @@ public class HomePagePCAction
 	     	try
 					{
 						if(BrowserActions.isElementPresent(driver, PartComHomePage.headerNavigationBar) &&
-							BrowserActions.isElementPresent(driver, PartComHomePage.quickCreateButton) &&
 							BrowserActions.isElementPresent(driver, PartComHomePage.inputSearchBar) &&
 							BrowserActions.isElementPresent(driver, PartComHomePage.dashboard))
 						{

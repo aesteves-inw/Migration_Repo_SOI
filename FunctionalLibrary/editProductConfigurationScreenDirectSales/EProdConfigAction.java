@@ -138,7 +138,6 @@ public class EProdConfigAction {
 		}
 	}
 
-
 	public static boolean editProductConfigurationForD03(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
 	{
 		String actionName="Product Basket: Edit Product Configuration Screen Validation";

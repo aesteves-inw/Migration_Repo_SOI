@@ -86,7 +86,7 @@ public class AgreementNavigation
 			
 			BrowserActions.goToByURL(driver, proposalURL);
 			
-			System.out.println("goToProposalByURL - Passa Aqui antes de clickar no botão Download");
+			//System.out.println("goToProposalByURL - Pass here before Download");
 			
 			WebElement downloadButton = new WebDriverWait(driver, 15).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@title='Download']")));
 

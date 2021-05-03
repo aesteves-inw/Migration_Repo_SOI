@@ -45,7 +45,7 @@ public class SOI_3505_TC06_PC_SyncProcessForNonQuotableProducts
 
 	
 	@Test
-	public void testCase() throws Exception
+	public void SOI_3505_TC06_PC_SyncProcessForNonQuotableProducts() throws Exception
 	{ 
 		try
 		{

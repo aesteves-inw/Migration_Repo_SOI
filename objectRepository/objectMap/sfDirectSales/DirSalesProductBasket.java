@@ -21,9 +21,9 @@ public class DirSalesProductBasket {
 		
 		public static String syncButton="//button[@aria-label='Sync']";
 		
-		public static String cancelButton="//span[.='Cancel']";
+		public static String cancelButton="//span[text()='Cancel']";
 		
-		public static String saveButton="//span[.='Save']";
+		public static String saveButton="//span[text()='Save']";
 		
 		public static String productBasketHeader = "/html/body/div[1]/span/div/div[2]/div/div[1]/h1";
 		
@@ -78,6 +78,7 @@ public class DirSalesProductBasket {
 		public static String searchResultsForProvisioningContactPerson="//ul[@role='listbox']";
 		
 		
+		public static String inputNewBillingAccountAddress ="//input[@aria-labelledby='PRX_SOI_New_Billing_Account_Address__c']";
 		
-
+		public static String errorMessageBillingConfiguration="//li[@class='error-msg ng-scope']";
 }

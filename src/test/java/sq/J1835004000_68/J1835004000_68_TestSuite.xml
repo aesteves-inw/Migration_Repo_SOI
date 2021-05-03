@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="J1835004000-68 User Story" parallel="false">
+  <test name="J1835004000_68_TC01_Add_EnterpriseVoice_To_ProductBasket">
+    <classes>
+      <class name="sq.J1835004000_68.J1835004000_68_TC01_GenerateProposalDocument_AfterSyncProductBasket"/>
+    </classes>
+  </test>
+</suite> <!-- J1835004000-68 User Story -->

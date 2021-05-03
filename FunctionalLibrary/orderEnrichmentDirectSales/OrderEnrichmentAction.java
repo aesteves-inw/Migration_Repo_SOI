@@ -14,6 +14,8 @@ import testLogger.TestLogger;
 
 public class OrderEnrichmentAction 
 {
+	// Operational Actions
+
 	public static void changeToOrderEnrichmentiFrame(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
 	{
 		WebDriverWait wait = new WebDriverWait(driver,30);
@@ -43,4 +45,70 @@ public class OrderEnrichmentAction
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
 	}
+
+	public static void selectProductForOEConfig(List<TestLog> logStream, WebDriver driver, int stepID,
+			String productName) throws Exception 
+	{
+		String actionName="selectProductForOEConfig";
+
+
+		try
+		{
+			driver.findElement(By.xpath("//div[text()='"+productName+"']")).click();
+
+			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(DirSalesOrderEnrichment.tabInTheList)));
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+
+	}
+
+
+
+
+	// Validation Actions
+	public static boolean tabsforOEValidation(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
+	{
+		String actionName="tabsforOEValidation";
+		
+		int errorCounter=0;
+		
+		try
+		{
+			List<WebElement> oeTabsList=driver.findElements(By.xpath(DirSalesOrderEnrichment.tabInTheList));
+
+			for(WebElement oetab:oeTabsList)
+			{
+				if (oetab.getText().toLowerCase().contains("contact"))
+				{
+					errorCounter++;
+				}
+			}
+
+			if(errorCounter > 0)
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
+
 }

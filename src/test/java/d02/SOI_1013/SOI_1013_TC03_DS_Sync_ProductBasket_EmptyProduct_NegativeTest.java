@@ -38,6 +38,7 @@ public class SOI_1013_TC03_DS_Sync_ProductBasket_EmptyProduct_NegativeTest {
 	@BeforeClass
 	public void beforeClass() 
 	{
+		
 		driver = ExecDriverClass.setupDriver();
 		
 		TestStructure.startTest(logStream,testName);
@@ -46,7 +47,7 @@ public class SOI_1013_TC03_DS_Sync_ProductBasket_EmptyProduct_NegativeTest {
 
 	
 	@Test
-	public void testCase() throws Exception
+	public void SOI_1013_TC03_DS_Sync_ProductBasket_EmptyProduct_NegativeTest() throws Exception
 	{
 			SOI_1013.SOI_1013_TC03_DS_Sync_ProductBasket_EmptyProduct_NegativeTest(testExecStructure, logStream, driver, stepsExecuted, testName);
 	}

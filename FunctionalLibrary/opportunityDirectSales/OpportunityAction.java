@@ -10,12 +10,15 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import executionTools.BrowserActions;
-import fetchDataFromExcelFiles.ExcelDataFetch;
+import executionTools.ExecStructure;
 import objectMap.sfDirectSales.DirSalesOpportunity;
+import objectMap.sfPartnersCommunity.PartComOpportunity;
+import testExecutionData.TestCasesData;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
 
 public class OpportunityAction {
+	
 
 	//Operational Actions
 	public static void createProductBasket(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
@@ -120,12 +123,20 @@ public class OpportunityAction {
 
 
 		try
-		{
-			openEditOpportunityMenu(logStream, driver, stepID);
+		{			
+			openEditOpportunityMenuInOptyDetailsScreen(logStream, driver, stepID);
+
+			fillOtherMandatoryFieldsOfOpportunity(logStream, driver, stepID, testName);
 
 			changeStatusOfOpportunity(logStream, driver, stepID, status);
 
 			saveChangesOnEditOpportunityScreen(logStream, driver, stepID);
+			
+			
+			
+			
+			
+			
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
@@ -138,23 +149,225 @@ public class OpportunityAction {
 		}
 	}
 
-	private static void openEditOpportunityMenu(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
+	private static void openEditOpportunityMenuInOptyDetailsScreen(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
 	{
 		String actionName="openEditOpportunityMenu";
 
 
 		try
 		{
-			String optyURL=driver.getCurrentUrl();
-
-			String editOpportunityMenuURL=ExcelDataFetch.searchDT(0, "DirectSalesEditOptyMenu");
-
-			String optyEditMenuURL=optyURL.replaceAll("view", editOpportunityMenuURL);
-
-			BrowserActions.goToByURL(driver, optyEditMenuURL);
+			WebElement editOppyName=driver.findElement(By.xpath("//button[@title='Edit Opportunity Name']"));
 			
-			new WebDriverWait (driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesOpportunity.editHeader)));
+			BrowserActions.jsClick(driver, editOppyName);
+			
+			Thread.sleep(1000);
 
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+
+	}
+
+	private static void fillOtherMandatoryFieldsOfOpportunity(List<TestLog> logStream, WebDriver driver, int stepID, String testName) throws Exception
+	{
+		String actionName="fillOtherMandatoryFieldsOfOpportunity";
+
+
+		try
+		{
+			fillOptyDescription(logStream, driver, stepID, testName);
+			
+			fillLevelOfConfidence(logStream, driver, stepID);
+
+			fillOptyNextStep(logStream, driver, stepID, testName);
+
+			fillOptyNextStepDueDate(logStream, driver, stepID);
+
+			fillOptyProductFamily(logStream, driver, stepID);
+
+			fillOptyCompetitorName(logStream, driver, stepID);
+			
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+
+	}
+
+	
+
+	private static void fillOptyDescription(List<TestLog> logStream, WebDriver driver, int stepID, String testName) throws Exception
+	{
+		String actionName="fillOptyDescription";
+
+
+		try
+		{
+			WebElement textareaDescription = driver.findElement(By.xpath(DirSalesOpportunity.textareaDescription));
+
+			textareaDescription.click();
+
+			textareaDescription.clear();
+
+			textareaDescription.sendKeys(TestCasesData.getOPTYName(testName));
+
+			
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+
+	}
+
+	private static void fillLevelOfConfidence(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
+	{
+		String actionName="fillLevelOfConfidence";
+		
+		String levelOfConfidence="High (100%)";
+
+
+		try
+		{
+			WebElement selectLevelOfConfidence = driver.findElement(By.xpath(DirSalesOpportunity.selectLevelOfConfidence));
+			
+			BrowserActions.jsClick(driver, selectLevelOfConfidence);
+			
+			Thread.sleep(1000);
+			
+			WebElement statusLabel=driver.findElement(By.xpath("//span[@title='"+levelOfConfidence+"']"));
+			
+			BrowserActions.jsClick(driver, statusLabel);
+			
+			Thread.sleep(1000);
+
+			
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+		
+	}
+	
+	private static void fillOptyNextStep(List<TestLog> logStream, WebDriver driver, int stepID, String testName) throws Exception
+	{
+		String actionName="fillOptyNextStep";
+
+
+		try
+		{
+			WebElement inputNextStep = driver.findElement(By.xpath(DirSalesOpportunity.inputNextStep));
+
+			inputNextStep.click();
+
+			inputNextStep.clear();
+
+			inputNextStep.sendKeys(TestCasesData.getOPTYName(testName));
+
+			
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+
+	}
+
+	private static void fillOptyNextStepDueDate(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
+	{
+		String actionName="fillOptyNextStepDueDate";
+
+
+		try
+		{
+			WebElement inputNextStepDueDate = driver.findElement(By.xpath(DirSalesOpportunity.inputNextStepDueDate));
+
+			inputNextStepDueDate.click();
+
+			inputNextStepDueDate.clear();
+
+			inputNextStepDueDate.sendKeys(ExecStructure.tomorrowFormattedDate("dd/MM/yyyy"));
+
+			
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+
+	}
+
+	private static void fillOptyProductFamily(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
+	{
+		String actionName="fillOptyProductFamily";
+
+
+		try
+		{
+			WebElement selectProductFamily=driver.findElement(By.xpath(DirSalesOpportunity.selectProductFamily));
+			
+			BrowserActions.jsClick(driver, selectProductFamily);
+			Thread.sleep(1000);
+			
+			WebElement productFamilyItem=driver.findElement(By.xpath("//*[text()='Fix Data']"));
+			
+			BrowserActions.jsClick(driver, productFamilyItem);
+			Thread.sleep(1000);
+
+			
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+
+	}
+
+	private static void fillOptyCompetitorName(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
+	{
+		String actionName="fillOptyCompetitorName";
+
+
+		try
+		{
+			driver.findElement(By.xpath(DirSalesOpportunity.nomeCompetitorName)).click();
+			
+			driver.findElement(By.xpath(DirSalesOpportunity.buttonAddToChosen)).click();
+			
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
@@ -171,24 +384,55 @@ public class OpportunityAction {
 	private static void changeStatusOfOpportunity(List<TestLog> logStream, WebDriver driver, int stepID, String status) throws Exception 
 	{
 		String actionName="changeStatusOfOpportunity";
-		
-		
 
 		try
 		{
-			driver.findElement(By.xpath(DirSalesOpportunity.editInputSelectStage)).click();
-			
-			//WebElement statusElement = new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//lightning-base-combobox-item[@data-value='"+status+"']/span[@class='slds-media__figure slds-listbox__option-icon']")));
+			/*
+			//09-02-2021
+			System.out.println("Debug of changeStatusOfOpportunity - Start");
 
-			//statusElement.click();
-			
-			WebElement statusClosedWon = BrowserActions.getElementByJSQuery(driver, "return document.querySelector('records-lwc-detail-panel').shadowRoot.querySelector('records-base-record-form').shadowRoot.querySelector('records-lwc-record-layout').shadowRoot.querySelector('forcegenerated-detailpanel_opportunity___012000000000000aaa___full___edit___recordlayout2').shadowRoot.querySelector('sfa-input-stage-name').shadowRoot.querySelector('force-record-picklist').shadowRoot.querySelector('force-form-picklist').shadowRoot.querySelector('lightning-picklist').shadowRoot.querySelector('lightning-combobox').shadowRoot.querySelector('lightning-base-combobox').shadowRoot.querySelectorAll('lightning-base-combobox-item')[7].shadowRoot.querySelector('span.slds-media__figure.slds-listbox__option-icon')");
-			
-			BrowserActions.jsClick(driver, statusClosedWon);
-			
+			Thread.sleep(1000);
+
+			WebElement buttonEditStage=driver.findElement(By.xpath("//button[@title='Edit Stage']"));
+
+			BrowserActions.jsClick(driver, buttonEditStage);
+
+			Thread.sleep(1000);
+
+			WebElement selectList=driver.findElement(By.xpath("//force-record-layout-block/slot/force-record-layout-section[1]/div/div/div/slot/force-record-layout-row[3]/slot/force-record-layout-item[2]/div/span/slot/slot/sfa-input-stage-name/force-record-picklist/force-form-picklist/lightning-picklist/lightning-combobox/div/lightning-base-combobox/div/div[1]/input"));
+
+			BrowserActions.jsClick(driver, selectList);
+
+			Thread.sleep(1000);
+
+			WebElement statusLabel=driver.findElement(By.xpath("//span[@title='"+status+"']"));
+
+			BrowserActions.jsClick(driver, statusLabel);
+
+			Thread.sleep(1000);
+
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
+			//09-02-2021
+			System.out.println("Debug of changeStatusOfOpportunity - End");
+			 */
+			
+			// 19-02-2021
+			
+			WebElement selectStageEditScreen = driver.findElement(By.xpath(DirSalesOpportunity.selectStageEditScreen));
+			
+			BrowserActions.jsClick(driver, selectStageEditScreen);
+			
+			Thread.sleep(1000);
+			
+			WebElement statusLabel=driver.findElement(By.xpath("//span[@title='"+status+"']"));
+			
+			BrowserActions.jsClick(driver, statusLabel);
+			
+			Thread.sleep(1000);
+			
 
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 		}
 		catch(Exception e)
 		{
@@ -208,7 +452,7 @@ public class OpportunityAction {
 		{
 			driver.findElement(By.xpath(DirSalesOpportunity.saveEditButton)).click();
 
-			new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesOpportunity.editConfirmationMessage)));
+			new WebDriverWait(driver, 30).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(DirSalesOpportunity.saveEditButton)));
 
 
 
@@ -224,8 +468,8 @@ public class OpportunityAction {
 
 	}
 
-	
-	
+
+
 	//Validation Actions
 	public static boolean opportunityScreenValidation(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
 	{
@@ -294,10 +538,11 @@ public class OpportunityAction {
 					BrowserActions.isElementPresent(driver, DirSalesOpportunity.editHeader) &&
 					BrowserActions.isElementPresent(driver, DirSalesOpportunity.optyNameinput) &&
 					BrowserActions.isElementPresent(driver, DirSalesOpportunity.nosCancelButton) &&
-					BrowserActions.isElementPresent(driver, DirSalesOpportunity.nosSaveButton) &&
-					BrowserActions.isElementPresent(driver, DirSalesOpportunity.selectStage) &&
-					BrowserActions.isElementPresent(driver, DirSalesOpportunity.selectForecastCategory)
-					)
+					BrowserActions.isElementPresent(driver, DirSalesOpportunity.nosSaveButton) //&&
+					//BrowserActions.isElementPresent(driver, DirSalesOpportunity.selectStage) &&
+					//BrowserActions.isElementPresent(driver, DirSalesOpportunity.selectForecastCategory
+							)
+					
 			{
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepsExecuted);
 				return true;
@@ -351,11 +596,13 @@ public class OpportunityAction {
 		try
 		{
 
-			String optyEditValidation =driver.findElement(By.xpath(DirSalesOpportunity.optyDetails)).getText().toString();
-			
-			Thread.sleep(2000);
+			String optyEditValidation =driver.findElement(By.xpath("//records-lwc-detail-panel/records-base-record-form/div/div/div/div/records-record-layout-event-broker/slot/records-lwc-record-layout/forcegenerated-detailpanel_opportunity___0123m0000000s3sqau___full___view___recordlayout2/force-record-layout-block/slot/force-record-layout-section[1]/div/div/div/slot/force-record-layout-row[3]/slot/force-record-layout-item[2]/div/div/div[2]/span/slot[1]/slot/lightning-formatted-text")).getText().toString();
 
-			if(BrowserActions.isElementPresent(driver, DirSalesOpportunity.editConfirmationMessage) || optyEditValidation.contains(status))
+
+			System.out.println("Debug of closeWonOpportunityValidation 01: "+optyEditValidation);
+			System.out.println("Debug of closeWonOpportunityValidation 02: "+optyEditValidation.contains(status));
+
+			if(optyEditValidation.contains(status))
 			{
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
 				return true;
@@ -373,9 +620,6 @@ public class OpportunityAction {
 			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
 		}
 	}
-
-
-
 
 
 }

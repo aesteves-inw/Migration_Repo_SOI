@@ -46,7 +46,7 @@ public class SOI_3511_TC02_PC_SingleCaseRecordForQuotableAndNonQuotable
 
 	
 	@Test
-	public void testCase() throws Exception
+	public void SOI_3511_TC02_PC_SingleCaseRecordForQuotableAndNonQuotable() throws Exception
 	{ 
 		try
 		{

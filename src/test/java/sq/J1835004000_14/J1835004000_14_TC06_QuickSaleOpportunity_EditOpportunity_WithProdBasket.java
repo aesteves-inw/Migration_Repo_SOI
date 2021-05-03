@@ -45,7 +45,7 @@ public class J1835004000_14_TC06_QuickSaleOpportunity_EditOpportunity_WithProdBa
 	}
 	
 	@Test
-	public void testCase() throws Exception
+	public void J1835004000_14_TC06_QuickSaleOpportunity_EditOpportunity_WithProdBasket() throws Exception
 	{
 		try
 		{

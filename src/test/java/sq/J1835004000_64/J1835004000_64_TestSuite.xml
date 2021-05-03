@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="J1835004000-64 User Story" parallel="false">
   <test name="J1835004000_64_TC01_QuickSaleOpportunity_PreFilledFields">
     <classes>
       <class name="sq.J1835004000_64.J1835004000_64_TC01_QuickSaleOpportunity_PreFilledFields"/>
     </classes>
-  </test> <!-- Test -->
+  </test> 
   <test name="J1835004000_64_TC02_QuickSaleOpportunity_OpportunityCreation">
     <classes>
       <class name="sq.J1835004000_64.J1835004000_64_TC02_QuickSaleOpportunity_OpportunityCreation"/>
     </classes>
-  </test> <!-- Test -->
+  </test> 
 </suite> <!-- J1835004000-64 User Story -->

@@ -1,0 +1,103 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable
+Log Date: 06-04-2021 12:17:40
+Test Status: Failed
+###############################################################################
+06-04-2021 12:17:44 - INFO - startTest - Test Case: SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable initiation
+06-04-2021 12:17:47 - TRACE - goToLoginPage - Executed with success
+06-04-2021 12:17:50 - TRACE - fillcredentials - Executed with success
+06-04-2021 12:17:57 - TRACE - pressLoginButton - Executed with success
+06-04-2021 12:17:57 - INFO - loginDirectSales on Step 1 - Executed with success
+06-04-2021 12:18:00 - TRACE - homePageValidation - Executed with success
+06-04-2021 12:18:00 - INFO - loginSFDS - Step 1 - Executed with success
+06-04-2021 12:18:07 - TRACE - goToCompanyDetailsPage - Executed with success
+06-04-2021 12:18:09 - TRACE - companyPageValidation - Executed with success
+06-04-2021 12:18:09 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+06-04-2021 12:18:13 - TRACE - openQuickSaleOPTYScreen - Executed with success
+06-04-2021 12:18:19 - TRACE - createQuickSaleOpty - Executed with success
+06-04-2021 12:18:23 - TRACE - saveOpportunity - Executed with success
+06-04-2021 12:18:23 - INFO - createQuickSaleOpty - Executed with success
+06-04-2021 12:18:26 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+06-04-2021 12:18:31 - INFO - goToOpportunityPage - Executed with success
+06-04-2021 12:18:36 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 3
+06-04-2021 12:18:36 - INFO - createQuickSaleOpportunity - Step 3 - Executed with success
+06-04-2021 12:18:38 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 4
+06-04-2021 12:18:42 - TRACE - clickNewProductBasketLink - Succeeded in Step 4
+06-04-2021 12:18:42 - TRACE - createProductBasket - Succeeded in Step 4
+06-04-2021 12:18:42 - TRACE - Product Basket: Change to default frame - Succeeded in Step 4
+06-04-2021 12:18:48 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 4
+06-04-2021 12:18:49 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 4
+06-04-2021 12:18:49 - INFO - createProductBasket - Executed with success
+06-04-2021 12:18:50 - DEBUG - productBasketName - productBasketName value: SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable
+06-04-2021 12:18:50 - TRACE - Product Basket: Open Add Product Menu - Succeeded in Step 5
+06-04-2021 12:18:51 - TRACE - addProductMenuValidation - Succeeded in Step: 5
+06-04-2021 12:18:51 - INFO - goToAddOferToBasketScreen - Executed with success
+06-04-2021 12:18:57 - TRACE - Add Offer to Basket: Pick Product - PABX - Succeeded in Step 6
+06-04-2021 12:18:57 - TRACE - productOnProductBasketValidation - Succeeded in Step: 6
+06-04-2021 12:18:57 - INFO - addProductToProductBasket - Executed with success
+06-04-2021 12:18:58 - TRACE - Product Basket: Open Add Product Menu - Succeeded in Step 7
+06-04-2021 12:18:59 - TRACE - addProductMenuValidation - Succeeded in Step: 7
+06-04-2021 12:18:59 - INFO - goToAddOferToBasketScreen - Executed with success
+06-04-2021 12:19:00 - TRACE - Add Offer to Basket: Pick Product - Phone Line - Succeeded in Step 8
+06-04-2021 12:19:05 - TRACE - productOnProductBasketValidation - Succeeded in Step: 8
+06-04-2021 12:19:05 - INFO - addProductToProductBasket - Executed with success
+06-04-2021 12:19:13 - TRACE - goToEditProductConfiguration - Succeeded in Step 9
+06-04-2021 12:19:13 - TRACE - Change to Edit Prodcut Configuration iframe - Succeeded in Step 9
+06-04-2021 12:19:16 - INFO - goToEditProductConfigurationScreen - Executed with success
+06-04-2021 12:19:18 - TRACE - PL Desired Installation Date - Config: 07/04/2021 - Succeeded in Step 10
+06-04-2021 12:19:18 - TRACE - PL Contract Type - Config: New - Succeeded in Step 10
+06-04-2021 12:19:19 - TRACE - PL Remarks - Config: SOI_3610_TC01_Ex11_20210406 - Succeeded in Step 10
+06-04-2021 12:19:21 - TRACE - PL Internal Comments - Config: SOI_3610_TC01_Ex11_20210406 - Succeeded in Step 10
+06-04-2021 12:19:21 - TRACE - Contract Information On Phone Line - Succeeded in Step 10
+06-04-2021 12:19:23 - TRACE - PL OCK Id field - Config: 898989 - Succeeded in Step 10
+06-04-2021 12:19:23 - TRACE - PL OCK Result Field - Config: Copper - Succeeded in Step 10
+06-04-2021 12:19:23 - TRACE - Installation Address & OCKCheck On Phone Line - Succeeded in Step 10
+06-04-2021 12:19:23 - TRACE - Included Internet On Phone Line - Succeeded in Step 10
+06-04-2021 12:19:23 - TRACE - Product Selection Fields On Phone Line - Succeeded in Step 10
+06-04-2021 12:19:23 - TRACE - configurationOfPhoneLine - Succeeded in Step 10
+06-04-2021 12:19:24 - TRACE - Validation of Phone Line configuration (By Default Test Data) - Succeeded in Step: 10
+06-04-2021 12:19:24 - INFO - configurePhoneLine - Executed with success
+06-04-2021 12:19:32 - TRACE - Finish Configuration on 'Edit Product Configuration' Screen - Succeeded in Step 11
+06-04-2021 12:19:32 - TRACE - Product Basket: Change to default frame - Succeeded in Step 11
+06-04-2021 12:19:32 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 11
+06-04-2021 12:19:32 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 11
+06-04-2021 12:19:32 - INFO - finsihConfiguration - Executed with success
+06-04-2021 12:19:34 - TRACE - syncProductBasket - Succeeded in Step 12
+06-04-2021 12:19:37 - TRACE - syncProductBasketPosVal - Succeeded in Step: 12
+06-04-2021 12:19:37 - INFO - syncProductBasketPosVal - Executed with success
+06-04-2021 12:19:42 - TRACE - goToOPTYByURL - Succeeded in Step 13
+06-04-2021 12:19:45 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 13
+06-04-2021 12:19:45 - INFO - goToOpportunityByURL - Executed with success
+06-04-2021 12:19:49 - TRACE - openEditOpportunityMenu - Succeeded in Step 14
+06-04-2021 12:19:49 - TRACE - fillOptyDescription - Succeeded in Step 14
+06-04-2021 12:19:54 - TRACE - fillLevelOfConfidence - Succeeded in Step 14
+06-04-2021 12:19:54 - TRACE - fillOptyNextStep - Succeeded in Step 14
+06-04-2021 12:19:55 - TRACE - fillOptyNextStepDueDate - Succeeded in Step 14
+06-04-2021 12:19:59 - TRACE - fillOptyProductFamily - Succeeded in Step 14
+06-04-2021 12:20:00 - TRACE - fillOptyCompetitorName - Succeeded in Step 14
+06-04-2021 12:20:00 - TRACE - fillOtherMandatoryFieldsOfOpportunity - Succeeded in Step 14
+06-04-2021 12:20:04 - TRACE - changeStatusOfOpportunity - Succeeded in Step 14
+06-04-2021 12:20:32 - TRACE - saveChangesOnEditOpportunityScreen - Succeeded in Step 14
+06-04-2021 12:20:32 - TRACE - closeWonOpportunity - Succeeded in Step 14
+06-04-2021 12:20:32 - TRACE - closeWonOpportunityValidation - Succeeded in Step: 14
+06-04-2021 12:20:32 - INFO - closeWinOPTY - Executed with success
+06-04-2021 12:20:42 - TRACE - goToOrdersRelatedViewMenu - Succeeded in Step 15
+06-04-2021 12:20:47 - TRACE - pickOrderFromOrderListView - Succeeded in Step 15
+06-04-2021 12:20:50 - TRACE - orderScreenValidation - Succeeded in Step: 15
+06-04-2021 12:20:50 - INFO - goToOrderScreen - Executed with success
+06-04-2021 12:20:51 - ERROR - validateServiceRelatedList - Executed with errors - org.openqa.selenium.InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression (//*[text()='PABX') because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string '(//*[text()='PABX')' is not a valid XPath expression.
+  (Session info: chrome=89.0.4389.114)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/invalid_selector_exception.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'INNOWAVE-383', ip: '192.168.0.165', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.114, chrome: {chromedriverVersion: 89.0.4389.23 (61b08ee2c5002..., userDataDir: C:\source\simpleOrderingInt...}, goog:chromeOptions: {debuggerAddress: localhost:51147}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: c386ba8a0adfeb98e9578a0f85c01053
+*** Element info: {Using=xpath, value=(//*[text()='PABX')}
+06-04-2021 12:20:52 - ERROR - SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable - Test Failed - java.lang.Exception: Order: validate Service(s) Related List - Failed in Step: 16
+06-04-2021 12:20:52 - ERROR - SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable - Test Execution Failed - java.lang.Exception: SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable - Test Case Failed
+06-04-2021 12:20:52 - INFO - finishTest - Test Case: SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable completion
+############################# End Of Log File #################################

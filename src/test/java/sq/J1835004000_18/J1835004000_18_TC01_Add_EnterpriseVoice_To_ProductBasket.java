@@ -45,7 +45,7 @@ public class J1835004000_18_TC01_Add_EnterpriseVoice_To_ProductBasket {
 	}
 	
 	@Test
-	public void testCase() throws Exception
+	public void J1835004000_18_TC01_Add_EnterpriseVoice_To_ProductBasket() throws Exception
 	{
 		try
 		{

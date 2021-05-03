@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="SOI-3612 User Story" parallel="false">
+  <test name="SOI_3612_TC01_DS_NonQuotable_UploadFles_OrderLevel">
+    <classes>
+      <class name="d03.SOI_3612.SOI_3612_TC01_DS_NonQuotable_UploadFles_OrderLevel"/>
+    </classes>
+  </test> 
+    <test name="SOI_3612_TC02_PC_NonQuotable_UploadFles_OrderLevel">
+    <classes>
+      <class name="d03.SOI_3612.SOI_3612_TC02_PC_NonQuotable_UploadFles_OrderLevel"/>
+    </classes>
+  </test> 
+</suite> <!-- SOI-3612 User Story -->

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="SOI-3610 User Story" parallel="false">
+  <test name="SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable">
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC01_DS_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+  <test name="SOI_3610_TC02_PC_SingleOrder_Quotable_NonQuotable">
+    <classes>
+      <class name="d03.SOI_3610.SOI_3610_TC02_PC_SingleOrder_Quotable_NonQuotable"/>
+    </classes>
+  </test>
+</suite> <!-- SOI- User Story -->

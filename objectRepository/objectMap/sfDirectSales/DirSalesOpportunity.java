@@ -25,9 +25,9 @@ public class DirSalesOpportunity {
 
 	public static String listForecastCategory="/html/body/div[11]/div/ul";
 
-	public static String nosCancelButton="//button[@title='Cancel']";
+	public static String nosCancelButton="//button[@name='CancelEdit']";
 
-	public static String nosSaveButton="//button[@title='Save']";
+	public static String nosSaveButton="//button[@name='SaveEdit']";
 
 	public static String additionalInformationTab="//h3[contains(.,'Additional Information')]";
 
@@ -98,7 +98,9 @@ public class DirSalesOpportunity {
 
 	public static String optyHeader = "//h1[contains(.,'Opportunity')]";
 
-	public static String optyDetails = "//div[@class='slds-tabs_default']";
+	//public static String optyDetails = "//div[@class='slds-tabs_default']";
+	
+	public static String optyDetails="//flexipage-component2/slot/records-lwc-detail-panel/records-base-record-form/div/div/div/div/records-record-layout-event-broker/slot/records-lwc-record-layout/forcegenerated-detailpanel_opportunity___0123m0000000s3sqau___full___view___recordlayout2/force-record-layout-block/slot/force-record-layout-section[1]";
 	
 	public static String optyEdit = "//a[@title='Edit']";
 	
@@ -126,9 +128,6 @@ public class DirSalesOpportunity {
 	//Close This Opportunity Menu
 
 
-
-
-
 	//OPTY Pool Screen
 	public static String optysHeader = "//div[@class='slds-page-header--object-home slds-page-header_joined slds-page-header_bleed slds-page-header slds-shrink-none test-headerRegion forceListViewManagerHeader']";
 
@@ -141,4 +140,21 @@ public class DirSalesOpportunity {
 	public static String optyTableResults = "//th[1]/span/a";
 
 
+	
+	// 19-02-2021 - New Mandatory Opportunity Fields
+	public static String textareaDescription="//textarea[@maxlength='32000']";
+	
+	public static String selectLevelOfConfidence="(//input[@lightning-basecombobox_basecombobox])[4]";
+	
+	public static String inputNextStep="//input[@name='NextStep']";
+	
+	public static String inputNextStepDueDate="//input[@name='PRX_Next_Step_Due_Date__c']";
+	
+	public static String selectProductFamily="(//input[@lightning-basecombobox_basecombobox])[9]";
+	
+	public static String nomeCompetitorName="//span[@title='None']";
+	
+	public static String buttonAddToChosen="//button[@title='Move selection to Chosen']";
+	
+	public static String selectStageEditScreen="(//input[@lightning-basecombobox_basecombobox])[3]";
 }

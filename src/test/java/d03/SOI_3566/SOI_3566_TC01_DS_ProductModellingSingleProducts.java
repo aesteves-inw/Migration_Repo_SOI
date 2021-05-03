@@ -45,7 +45,7 @@ public class SOI_3566_TC01_DS_ProductModellingSingleProducts
 
 	
 	@Test
-	public void testCase() throws Exception
+	public void SOI_3566_TC01_DS_ProductModellingSingleProducts() throws Exception
 	{
 		try
 		{

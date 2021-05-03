@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="SOI-1013 User Story" parallel="false">
 <test name="SOI_1013_TC01_DS_Sync_ProductBasket_CloudSense">
     <classes>
       <class name="d02.SOI_1013.SOI_1013_TC01_DS_Sync_ProductBasket_CloudSense"/>
     </classes>
-  </test> <!-- Test -->
+  </test> 
   <test name="SOI_1013_TC02_DS_Sync_ProductBasket_ProductNotValid_NegativeTest">
     <classes>
       <class name="d02.SOI_1013.SOI_1013_TC02_DS_Sync_ProductBasket_ProductNotValid_NegativeTest"/>
     </classes>
-  </test> <!-- Test -->
+  </test> 
   <test name="SOI_1013_TC03_DS_Sync_ProductBasket_EmptyProduct_NegativeTest">
     <classes>
       <class name="d02.SOI_1013.SOI_1013_TC03_DS_Sync_ProductBasket_EmptyProduct_NegativeTest"/>
     </classes>
-  </test> <!-- Test -->
+  </test> 
+    <test name="SOI_1013_TC06_DS_Sync_ProductBasket_SalesForce">
+    <classes>
+      <class name="d02.SOI_1013.SOI_1013_TC06_DS_Sync_ProductBasket_SalesForce"/>
+    </classes>
+  </test> 
 </suite> <!-- SOI-1013 User Story -->

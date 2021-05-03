@@ -1,0 +1,79 @@
+###############################################################################
+Simple Ordering Intake Project - Test Automation
+###############################################################################
+Test Case: SOI_3600_TC01_DS_NewBA_ProductBasket
+Log Date: 06-04-2021 12:01:48
+Test Status: Passed
+###############################################################################
+06-04-2021 12:01:52 - INFO - startTest - Test Case: SOI_3600_TC01_DS_NewBA_ProductBasket initiation
+06-04-2021 12:01:56 - TRACE - goToLoginPage - Executed with success
+06-04-2021 12:01:58 - TRACE - fillcredentials - Executed with success
+06-04-2021 12:02:05 - TRACE - pressLoginButton - Executed with success
+06-04-2021 12:02:05 - INFO - loginDirectSales on Step 1 - Executed with success
+06-04-2021 12:02:08 - TRACE - homePageValidation - Executed with success
+06-04-2021 12:02:08 - INFO - loginSFDS - Step 1 - Executed with success
+06-04-2021 12:02:16 - TRACE - goToCompanyDetailsPage - Executed with success
+06-04-2021 12:02:18 - TRACE - companyPageValidation - Executed with success
+06-04-2021 12:02:18 - INFO - navigateToCompanyPage - Step 2 - Executed with success
+06-04-2021 12:02:21 - TRACE - openQuickSaleOPTYScreen - Executed with success
+06-04-2021 12:02:31 - TRACE - createQuickSaleOpty - Executed with success
+06-04-2021 12:02:36 - TRACE - saveOpportunity - Executed with success
+06-04-2021 12:02:36 - INFO - createQuickSaleOpty - Executed with success
+06-04-2021 12:02:38 - INFO - goToOpportunityRelatedMenuonCompany - Executed with success
+06-04-2021 12:02:47 - INFO - goToOpportunityPage - Executed with success
+06-04-2021 12:02:52 - TRACE - Opportunity: Opportunity Page validation - Succeeded in Step: 3
+06-04-2021 12:02:52 - INFO - createQuickSaleOpportunity - Step 3 - Executed with success
+06-04-2021 12:02:55 - TRACE - goToProductBasketRelatedMenu - Succeeded in Step 4
+06-04-2021 12:02:59 - TRACE - clickNewProductBasketLink - Succeeded in Step 4
+06-04-2021 12:02:59 - TRACE - createProductBasket - Succeeded in Step 4
+06-04-2021 12:02:59 - TRACE - Product Basket: Change to default frame - Succeeded in Step 4
+06-04-2021 12:03:07 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 4
+06-04-2021 12:03:09 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 4
+06-04-2021 12:03:09 - INFO - createProductBasket - Executed with success
+06-04-2021 12:03:10 - TRACE - Product Basket: Open Add Product Menu - Succeeded in Step 5
+06-04-2021 12:03:11 - TRACE - addProductMenuValidation - Succeeded in Step: 5
+06-04-2021 12:03:11 - INFO - goToAddOferToBasketScreen - Executed with success
+06-04-2021 12:03:17 - TRACE - Add Offer to Basket: Pick Product - PABX - Succeeded in Step 6
+06-04-2021 12:03:17 - TRACE - productOnProductBasketValidation - Succeeded in Step: 6
+06-04-2021 12:03:17 - INFO - addProductToProductBasket - Executed with success
+06-04-2021 12:03:18 - TRACE - Product Basket: Open Add Product Menu - Succeeded in Step 7
+06-04-2021 12:03:19 - TRACE - addProductMenuValidation - Succeeded in Step: 7
+06-04-2021 12:03:19 - INFO - goToAddOferToBasketScreen - Executed with success
+06-04-2021 12:03:21 - TRACE - Add Offer to Basket: Pick Product - Phone Line - Succeeded in Step 8
+06-04-2021 12:03:26 - TRACE - productOnProductBasketValidation - Succeeded in Step: 8
+06-04-2021 12:03:26 - INFO - addProductToProductBasket - Executed with success
+06-04-2021 12:03:38 - TRACE - goToEditProductConfiguration - Succeeded in Step 9
+06-04-2021 12:03:39 - TRACE - Change to Edit Prodcut Configuration iframe - Succeeded in Step 9
+06-04-2021 12:03:43 - INFO - goToEditProductConfigurationScreen - Executed with success
+06-04-2021 12:03:45 - TRACE - PL Desired Installation Date - Config: 07/04/2021 - Succeeded in Step 10
+06-04-2021 12:03:45 - TRACE - PL Contract Type - Config: New - Succeeded in Step 10
+06-04-2021 12:03:46 - TRACE - PL Remarks - Config: SOI_3600_TC01_Ex1_20210406 - Succeeded in Step 10
+06-04-2021 12:03:49 - TRACE - PL Internal Comments - Config: SOI_3600_TC01_Ex1_20210406 - Succeeded in Step 10
+06-04-2021 12:03:49 - TRACE - Contract Information On Phone Line - Succeeded in Step 10
+06-04-2021 12:03:50 - TRACE - PL OCK Id field - Config: 898989 - Succeeded in Step 10
+06-04-2021 12:03:50 - TRACE - PL OCK Result Field - Config: Copper - Succeeded in Step 10
+06-04-2021 12:03:50 - TRACE - Installation Address & OCKCheck On Phone Line - Succeeded in Step 10
+06-04-2021 12:03:50 - TRACE - Included Internet On Phone Line - Succeeded in Step 10
+06-04-2021 12:03:50 - TRACE - Product Selection Fields On Phone Line - Succeeded in Step 10
+06-04-2021 12:03:50 - TRACE - configurationOfPhoneLine - Succeeded in Step 10
+06-04-2021 12:03:51 - TRACE - Validation of Phone Line configuration (By Default Test Data) - Succeeded in Step: 10
+06-04-2021 12:03:51 - INFO - configurePhoneLine - Executed with success
+06-04-2021 12:04:00 - TRACE - Finish Configuration on 'Edit Product Configuration' Screen - Succeeded in Step 11
+06-04-2021 12:04:01 - TRACE - Product Basket: Change to default frame - Succeeded in Step 11
+06-04-2021 12:04:01 - TRACE - Product Basket: Change to Product Basket iframe - Succeeded in Step 11
+06-04-2021 12:04:01 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 11
+06-04-2021 12:04:01 - INFO - finsihConfiguration - Executed with success
+06-04-2021 12:04:02 - TRACE - fillNewBillingAccountAddress - Succeeded in Step 12
+06-04-2021 12:04:02 - TRACE - fillExistingBillingAccountIdFieldNoSave - Succeeded in Step 12
+06-04-2021 12:04:05 - TRACE - saveEditProductBasketChanges - Succeeded in Step 12
+06-04-2021 12:04:05 - TRACE - validationNewBillingAccountAddressNegVal - Succeeded in Step: 12
+06-04-2021 12:04:05 - INFO - fillNewAndExistingBillingDetails - Executed with success
+06-04-2021 12:04:08 - TRACE - cancelProductBasketChanges - Succeeded in Step 13
+06-04-2021 12:04:08 - TRACE - Product Basket: Validation of Product Basket Screen - Succeeded in Step: 13
+06-04-2021 12:04:08 - INFO - cancelProductBasketEdition - Executed with success
+06-04-2021 12:04:09 - TRACE - fillNewBillingAccountAddress - Succeeded in Step 14
+06-04-2021 12:04:13 - TRACE - saveProductBasketChanges - Succeeded in Step 14
+06-04-2021 12:04:13 - TRACE - fillNewBillingAccountAddressValidation - Succeeded in Step: 14
+06-04-2021 12:04:13 - INFO - fillNewBillingAccountAddress - Executed with success
+06-04-2021 12:04:13 - INFO - finishTest - Test Case: SOI_3600_TC01_DS_NewBA_ProductBasket completion
+############################# End Of Log File #################################

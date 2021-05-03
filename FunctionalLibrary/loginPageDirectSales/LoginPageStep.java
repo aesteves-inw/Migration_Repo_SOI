@@ -37,6 +37,7 @@ public class LoginPageStep {
 			
 			validation=HomePageAction.homePageValidation(logStream, driver);
 			
+			
 			if (validation==true) 
 			{
 				TestLogger.logInfo(logStream, componentOfTheLog, TestLogger.logInfo);

@@ -46,7 +46,7 @@ public class SOI_3505_TC05_DS_SyncProcessForNonQuotableProducts_BasketSynched_Ad
 
 	
 	@Test
-	public void testCase() throws Exception
+	public void SOI_3505_TC05_DS_SyncProcessForNonQuotableProducts_BasketSynched_AddQuotable() throws Exception
 	{
 		try
 		{

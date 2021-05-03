@@ -24,17 +24,18 @@ public class ExecDriverClass {
 		
 		System.setProperty("webdriver.chrome.driver", ExecStructure.workingDir+"\\lib\\chromedriver.exe");
 		
+		//System.setProperty("webdriver.chrome.driver", "C:\\source\\chromedriver.exe");
+		
+	
 		Map<String, Object> prefs = new HashMap<String, Object>();
 		
 		prefs.put("download.default_directory", TestDataFiles.externalFilesRepository);
 
 		ChromeOptions chromeProfile = new ChromeOptions(); 
-
-		//chromeProfile.addArguments("--window-size=1980,1080");
 		
-		chromeProfile.addArguments("--start-maximized"); 
-		
-		//chromeProfile.addArguments("--start-fullscreen");
+		//chromeProfile.addArguments("--start-maximized");
+	
+		chromeProfile.addArguments("--headless", "--window-size=1920,1080");
 
 		chromeProfile.addArguments("chrome.switches","--disable-extensions");
 

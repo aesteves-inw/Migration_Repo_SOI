@@ -47,7 +47,7 @@ public class SOI_2205_TC01_DS_ECS_Offerings_ECS_Pro_EnterpriseVoice
 
 	
 	@Test
-	public void testCase() throws Exception
+	public void SOI_2205_TC01_DS_ECS_Offerings_ECS_Pro_EnterpriseVoice() throws Exception
 	{
 		try
 		{

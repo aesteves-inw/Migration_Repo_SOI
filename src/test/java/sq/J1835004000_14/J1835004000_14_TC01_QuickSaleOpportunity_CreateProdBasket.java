@@ -45,7 +45,7 @@ public class J1835004000_14_TC01_QuickSaleOpportunity_CreateProdBasket {
 	}
 
 	@Test
-	public void testCase() throws Exception
+	public void J1835004000_14_TC01_QuickSaleOpportunity_CreateProdBasket() throws Exception
 	{
 		try
 		{

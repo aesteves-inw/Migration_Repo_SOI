@@ -113,16 +113,29 @@ public class PhoneLine {
 	{
 		String actionName="Contract Information On Phone Line";
 
+		String contractType = getContractType(configuration);
 
 		try
 		{
-			fieldContractType(logStream, driver, stepID, configuration);
-
 			fieldRequestedInstallationDate(logStream, driver, stepID, configuration);
+			
+			
+			if(contractType.equalsIgnoreCase("new"))
+			{
+				fieldContractType(logStream, driver, stepID, configuration);
+			}
+			else
+			{
+				fieldContractType(logStream, driver, stepID, configuration);
+				
+				fieldExistingLine(logStream, driver, stepID, configuration);
+			}
 
-			fieldExistingLine(logStream, driver, stepID, configuration);
+			
 
 			fieldRemarks(logStream, driver, stepID, configuration, testName);
+			
+			Thread.sleep(1000);
 
 			fieldInternalComments(logStream, driver, stepID, configuration, testName);
 
@@ -170,18 +183,22 @@ public class PhoneLine {
 			String[] configuration) throws Exception 
 	{
 		String dateToInput=ExecStructure.tomorrowFormattedDate();
-
+		
 		String actionName="PL Desired Installation Date - Config: "+dateToInput;
+		
+		
 
 
 		try
 		{
-			WebElement inputDesiredInstallationDate = new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.id("Details:Contract_Information:serviceRequestDate_0")));
+			WebElement inputRequestdate = new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.id("Details:Contract_Information:serviceRequestDate_0")));
 
-			inputDesiredInstallationDate.clear();
-
-			inputDesiredInstallationDate.sendKeys(dateToInput);
-
+			inputRequestdate.click();
+			
+			inputRequestdate.clear();
+			
+			inputRequestdate.sendKeys(dateToInput);	
+			
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
@@ -234,7 +251,9 @@ public class PhoneLine {
 		try
 		{
 			WebElement inputRemarks = new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.id("Details:Contract_Information:remarks_0")));
-
+			
+			inputRemarks.click();
+			
 			inputRemarks.clear();
 
 			inputRemarks.sendKeys(remarksText);
@@ -264,6 +283,8 @@ public class PhoneLine {
 		{
 			WebElement inputInternalComments = new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.id("Details:Contract_Information:internalComments_0")));
 
+			inputInternalComments.click();
+			
 			inputInternalComments.clear();
 
 			inputInternalComments.sendKeys(remarksText);
@@ -291,6 +312,7 @@ public class PhoneLine {
 
 		try
 		{
+					
 			fieldOCKId(logStream, driver, stepID, configuration);
 
 			fieldOCKResult(logStream, driver, stepID, configuration);
@@ -319,7 +341,9 @@ public class PhoneLine {
 		try
 		{
 			WebElement inputOCKID = new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.id("Details:Installation_Address___OCK_check:OCKID_0")));
-
+			
+			inputOCKID.click();
+			
 			inputOCKID.clear();
 
 			inputOCKID.sendKeys(ockID);
@@ -339,7 +363,7 @@ public class PhoneLine {
 
 	private static void fieldOCKResult(List<TestLog> logStream, WebDriver driver, int stepID, String[] configuration) throws Exception 
 	{
-		String OCKResult = getContractType(configuration);
+		String OCKResult = getOCKResult(configuration);
 
 		String actionName="PL OCK Result Field - Config: "+OCKResult;
 
@@ -372,15 +396,17 @@ public class PhoneLine {
 		String internetInstallationType = getInternetInstallationType(configuration);
 
 		try
-		{
-			fieldInternetInstallationType(logStream, driver, stepID, configuration);
-
+		{			
 			if(internetInstallationType.equalsIgnoreCase("existing"))
 			{
+				fieldInternetInstallationType(logStream, driver, stepID, configuration);
+				
 				fieldExistingConnectivityID(logStream, driver, stepID, configuration);
 			}
 			else if(internetInstallationType.equalsIgnoreCase("new"))
 			{
+				fieldInternetInstallationType(logStream, driver, stepID, configuration);
+				
 				fieldSelectInternetSubscription(logStream, driver, stepID, configuration);
 			}
 
@@ -493,7 +519,7 @@ public class PhoneLine {
 
 		try
 		{
-			fieldTechnology(logStream, driver, stepID, configuration);
+			//fieldTechnology(logStream, driver, stepID, configuration);
 
 
 
@@ -513,14 +539,16 @@ public class PhoneLine {
 	{
 		String technology = getTechnology(configuration);
 
-		String actionName="PL Existing Connectivity ID - Config: "+technology;
+		String actionName="PL Technology - Config: "+technology;
 
 
 		try
 		{
 			String technologyVal=driver.findElement(By.id("s2id_Details:Product_Selection:PriceItem_0")).getAttribute("value");
 			
-			if (technology.contains(technologyVal))
+			System.out.println("Debug of technologyVal.contains(technology)"+technologyVal.contains(technology));
+			
+			if (technologyVal.contains(technology))
 			{
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 			}
@@ -565,7 +593,7 @@ public class PhoneLine {
 				
 			}
 			
-			if(i >= 5)
+			if(i >= 2)
 			{
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
 				return true;

@@ -49,7 +49,7 @@ public class J1835004000_64_TC01_QuickSaleOpportunity_PreFilledFields
 
 	
 	@Test
-	public void testCase() throws Exception
+	public void J1835004000_64_TC01_QuickSaleOpportunity_PreFilledFields() throws Exception
 	{
 		try
 		{

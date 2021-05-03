@@ -42,15 +42,14 @@ public class SOI_3504_TC03_PC_NonQuotableOffer_Standalone {
 	@BeforeClass
 	public void beforeClass() 
 	{
-		BrowserActions.endSession(driver);
-		
+				
 		driver = ExecDriverClass.setupDriver();
 		
 		TestStructure.startTest(logStream,testName);
 		
 	}
 	@Test
-	public void testCase() throws Exception
+	public void SOI_3504_TC03_PC_NonQuotableOffer_Standalone() throws Exception
 	{
 		try
 		{

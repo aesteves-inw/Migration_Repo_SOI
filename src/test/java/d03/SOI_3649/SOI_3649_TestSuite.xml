@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="SOI-3649 User Story" parallel="false">
+  <test name="SOI_3649_TC01_DS_LinkDocumentsFromAgreementToOrder_NonQuotable_ExternalFile">
+    <classes>
+      <class name="d03.SOI_3649.SOI_3649_TC01_DS_LinkDocumentsFromAgreementToOrder_NonQuotable_ExternalFile"/>
+    </classes>
+  </test> 
+   <test name="SOI_3649_TC02_DS_LinkDocumentsFromAgreementToOrder_NonQuotableAndQuotable_ExternalFileAndAgreement">
+    <classes>
+      <class name="d03.SOI_3649.SOI_3649_TC02_DS_LinkDocumentsFromAgreementToOrder_NonQuotableAndQuotable_ExternalFileAndAgreement"/>
+    </classes>
+  </test> 
+    <test name="SOI_3649_TC03_PC_LinkDocumentsFromAgreementToOrder_NonQuotable_ExternalFile">
+    <classes>
+      <class name="d03.SOI_3649.SOI_3649_TC03_PC_LinkDocumentsFromAgreementToOrder_NonQuotable_ExternalFile"/>
+    </classes>
+  </test> 
+    <test name="SOI_3649_TC04_PC_LinkDocumentsFromAgreementToOrder_NonQuotableAndQuotable_ExternalFileAndAgreement">
+    <classes>
+      <class name="d03.SOI_3649.SOI_3649_TC04_PC_LinkDocumentsFromAgreementToOrder_NonQuotableAndQuotable_ExternalFileAndAgreement"/>
+    </classes>
+  </test> 
+</suite> <!-- SOI-3649 User Story -->

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.openqa.selenium.WebDriver;
 
+import executionTools.BrowserActions;
 import executionTools.TestExecutionReport;
 import generatedProposal.GeneratedProposalAction;
 import testDataFiles.TestDataFiles;
@@ -181,6 +182,62 @@ public class AgreementStep
 			}
 			else
 			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+		
+	}
+
+	public static void addFileAndGenerateFileToAgreement(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName) throws Exception 
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+		
+		String stepName="Agreement: add File And Generate File To Agreement";
+
+		String stepNameMin="addFileAndGenerateFileToAgreement";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+		
+	
+		
+		String externalFileName=TestDataFiles.fileNameD01;
+		
+		
+
+
+
+		boolean validation;
+
+		try
+		{
+			AgreementAction.generateDocumentProposalOnly(logStream, driver, stepID);
+			
+			AgreementAction.addFileToAgreement(logStream, driver, stepID, externalFileName);
+			
+			Thread.sleep(10000);
+			
+			BrowserActions.refreshPage(driver);
+
+			validation = AgreementAction.validationOfFileAddedToAgreement(logStream, driver, stepID, externalFileName) && AgreementAction.generateDocumentProposalValidation(logStream, driver, stepID);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				TestLogger.logTrace(logStream, stepNameMin, "Failed in Step: "+stepID+". Validation: False");
 				throw new Exception (stepName+" - Failed in Step: "+stepID);
 			}
 

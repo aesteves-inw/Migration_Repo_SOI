@@ -22,26 +22,38 @@
 					<artifactId>maven-surefire-plugin</artifactId>
 					<version>3.0.0-M3</version>
 					<configuration>
-						<forkCount>0</forkCount>
 						<!-- Suite testng xml file to consider for test execution -->
 						<suiteXmlFiles>
 							<suiteXmlFile>src\test\java\sq\J1835004000_64\J1835004000_64_TestSuite.xml</suiteXmlFile>
 							<suiteXmlFile>src\test\java\sq\J1835004000_14\J1835004000_14_TestSuite.xml</suiteXmlFile>
 							<suiteXmlFile>src\test\java\sq\J1835004000_18\J1835004000_18_TestSuite.xml</suiteXmlFile>
+							<suiteXmlFile>src\test\java\sq\J1835004000_68\J1835004000_68_TestSuite.xml</suiteXmlFile>
 							<suiteXmlFile>src\test\java\d02\SOI_1013\SOI_1013_TestSuite.xml</suiteXmlFile>
-							<suiteXmlFile>src\test\java\d02\SOI_2206\SOI_2206_TestSuite.xml</suiteXmlFile>
+							<suiteXmlFile>src\test\java\d02\SOI_2206\SOI_2206_TestSuite.xml</suiteXmlFile> 
 							<suiteXmlFile>src\test\java\d02\SOI_2205\SOI_2205_TestSuite.xml</suiteXmlFile>
-							<suiteXmlFile>src\test\java\d03\SOI_2205\SOI_3504_TestSuite.xml</suiteXmlFile>
-							<suiteXmlFile>src\test\java\d03\SOI_2205\SOI_3505_TestSuite.xml</suiteXmlFile>
-							<suiteXmlFile>src\test\java\d03\SOI_2205\SOI_3507_TestSuite.xml</suiteXmlFile>
-							<suiteXmlFile>src\test\java\d03\SOI_2205\SOI_3566_TestSuite.xml</suiteXmlFile>
+							<suiteXmlFile>src\test\java\d03\SOI_3504\SOI_3504_TestSuite.xml</suiteXmlFile>
+							<suiteXmlFile>src\test\java\d03\SOI_3505\SOI_3505_TestSuite.xml</suiteXmlFile>
+							<suiteXmlFile>src\test\java\d03\SOI_3507\SOI_3507_TestSuite.xml</suiteXmlFile>
+							<suiteXmlFile>src\test\java\d03\SOI_3511\SOI_3511_TestSuite.xml</suiteXmlFile>
+							<suiteXmlFile>src\test\java\d03\SOI_3513\SOI_3513_TestSuite.xml</suiteXmlFile>
+							<suiteXmlFile>src\test\java\d03\SOI_3566\SOI_3566_TestSuite.xml</suiteXmlFile>
+							<suiteXmlFile>src\test\java\d03\SOI_3567\SOI_3567_TestSuite.xml</suiteXmlFile>
+							<suiteXmlFile>src\test\java\d03\SOI_3568\SOI_3568_TestSuite.xml</suiteXmlFile>
+							<suiteXmlFile>src\test\java\d03\SOI_3569\SOI_3569_TestSuite.xml</suiteXmlFile>
+							<suiteXmlFile>src\test\java\d03\SOI_3600\SOI_3600_TestSuite.xml</suiteXmlFile>
+							<suiteXmlFile>src\test\java\d03\SOI_3601\SOI_3601_TestSuite.xml</suiteXmlFile>
+							<suiteXmlFile>src\test\java\d03\SOI_3603\SOI_3603_TestSuite.xml</suiteXmlFile>
+							<suiteXmlFile>src\test\java\d03\SOI_3604\SOI_3604_TestSuite.xml</suiteXmlFile>
+							<suiteXmlFile>src\test\java\d03\SOI_3610\SOI_3610_TestSuite.xml</suiteXmlFile>
+							<suiteXmlFile>src\test\java\d03\SOI_3612\SOI_3612_TestSuite.xml</suiteXmlFile>
+							<suiteXmlFile>src\test\java\d03\SOI_3649\SOI_3649_TestSuite.xml</suiteXmlFile>
 						</suiteXmlFiles>
 					</configuration>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.5.1</version>
+					<version>3.8.1</version>
 				</plugin>
 			</plugins>
 		</pluginManagement>
@@ -59,6 +71,7 @@
 			<artifactId>testng</artifactId>
 			<version>6.14.3</version>
 			<scope>compile</scope>
+			
 		</dependency>
 		<dependency>
 			<groupId>org.apache.poi</groupId>
@@ -87,6 +100,11 @@
 			<groupId>org.apache.pdfbox</groupId>
 			<artifactId>pdfbox</artifactId>
 			<version>2.0.22</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-surefire-plugin</artifactId>
+			<version>3.0.0-M3</version>
 		</dependency>
 	</dependencies>
 </project>

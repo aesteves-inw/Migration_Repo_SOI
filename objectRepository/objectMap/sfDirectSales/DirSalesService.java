@@ -86,4 +86,55 @@ public class DirSalesService {
 	
 
 	
+	// --- 08-02-2020 - D03 Test Automation - Service Details
+
+	
+	//Provisioning Contact Person
+	public static String inputProvisioningContactPerson="//input[@placeholder='Search Company contact person...']";
+	
+	public static String searchResult="//ul[@role='group']";
+	
+	public static String searchValueToInput="//lightning-base-combobox-item[contains(@data-value,'0')]";
+	
+	public static String buttonCreateNewCompanyContact="//lightning-base-combobox-item[@data-value='actionCreateNew']";
+	
+	public static String newCompanyContactPersonLink="//span[@title='New Company contact person']";
+	
+	
+	
+	//Internal Comments
+	public static String inputInternalComments="//input[@name='PRX_SOI_Internal_Comments__c']";
+	
+	
+	
+	// Billing Account ID
+	public static String inputBillingAccountID="//input[@name='PRX_SOI_Billing_Account_ID__c']";
+	
+	
+	
+	// Footer Buttons on Edit Frame
+	
+	public static String buttonSave ="//button[@name='update']";
+	
+	public static String buttonCancel="//button[@name='CancelEdit']";
+	
+	
+	
+	// Detail Fields for Validation
+	
+	public static String fieldProvisioningContactPerson="//*[contains(@id,'field-section-content-')]/slot/slot/flexipage-column2/div/slot/flexipage-field[1]/slot/record_flexipage-record-field/div/div/div[2]/span/slot[1]/slot/force-lookup/div/force-hoverable-link/div/a";
+	
+	public static String fieldInternalComments="//flexipage-field[@data-field-id='RecordPRX_SOI_Internal_Comments__cField']";
+	
+	public static String fieldBillingAccountID="//flexipage-field[@data-field-id='RecordPRX_SOI_Billing_Account_ID__cField']";
+	
+	public static String fieldContractType="//select[@name='contractTypePicklist']";
+	
+	//Fields after OrderSubmission
+	public static String caseFieldOnServicePage="//*[contains(@id, 'brandBand')]/div/div/div[5]/div/one-record-home-flexipage2/forcegenerated-adgrollup_component___forcegenerated__flexipage_recordpage___d02_service_layout___csord__service__c___view/forcegenerated-flexipage_d02_service_layout_csord__service__c__view_js/record_flexipage-record-page-decorator/div[1]/slot/flexipage-record-home-template-desktop2/div/div[1]/slot/slot/flexipage-component2/slot/records-lwc-highlights-panel/records-lwc-record-layout/forcegenerated-highlightspanel_csord__service__c___0123m0000000fbfqae___compact___view___recordlayout2/force-highlights2/div[1]/div[2]/slot/slot/force-highlights-details-item[3]/div/p[2]/slot/force-lookup/div/force-hoverable-link/div/a";
+	
+	
+	
+	public static String secundaryHeaderFields="//div[@role='list'][@class='secondaryFields']";
+	
 }

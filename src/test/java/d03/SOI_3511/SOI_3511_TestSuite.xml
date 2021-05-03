@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="SOI-3511 User Story" parallel="false">
+  <test name="SOI_3511_TC01_DS_SingleCaseRecordForQuotableAndNonQuotable">
+    <classes>
+      <class name="d03.SOI_3511.SOI_3511_TC01_DS_SingleCaseRecordForQuotableAndNonQuotable"/>
+    </classes>
+  </test> 
+   <test name="SOI_3511_TC02_PC_SingleCaseRecordForQuotableAndNonQuotable">
+    <classes>
+      <class name="d03.SOI_3511.SOI_3511_TC02_PC_SingleCaseRecordForQuotableAndNonQuotable"/>
+    </classes>
+  </test> 
+</suite> <!-- SOI-3511 User Story -->

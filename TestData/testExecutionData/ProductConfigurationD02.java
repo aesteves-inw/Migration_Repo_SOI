@@ -40,6 +40,7 @@ public class ProductConfigurationD02 {
 	public static String[] getD02ConfigurationToApply(String product, String configurationIndex) throws Exception
 	{
 		String[] configuration;
+		
 		String dataFromExcel;
 
 		switch(product)

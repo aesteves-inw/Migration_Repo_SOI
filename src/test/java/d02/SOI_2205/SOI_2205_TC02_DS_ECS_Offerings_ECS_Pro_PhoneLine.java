@@ -47,7 +47,7 @@ public class SOI_2205_TC02_DS_ECS_Offerings_ECS_Pro_PhoneLine
 
 	
 	@Test
-	public void testCase() throws Exception
+	public void SOI_2205_TC02_DS_ECS_Offerings_ECS_Pro_PhoneLine() throws Exception
 	{
 		try
 		{

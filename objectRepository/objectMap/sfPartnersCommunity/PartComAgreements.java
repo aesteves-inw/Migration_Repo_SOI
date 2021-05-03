@@ -51,7 +51,13 @@ public class PartComAgreements {
 	
 	public static String optionDownload="//a[@title='Download']";
 	
-	public static String lineItems="//span[contains(@title,'AgreementSQ_')][contains(@title,'.pdf')][contains(@title,'a2A3M0000000HmbUAE')]";
+	public static String lineItems="//span[contains(@title,'AgreementSQ_')][contains(@title,'.pdf')]";
+	
+	
+	//UploadFiles
+	public static String inputUploadFiles="//input[@name='fileInput']";
+	
+	public static String buttonDone="//button/span[contains(.,'Done')]";
 }
 
 
