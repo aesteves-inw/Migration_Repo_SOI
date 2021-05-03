@@ -1,11 +1,20 @@
 package delivery03;
 
+
 import java.util.ArrayList;
+
 import java.util.List;
 
+
 import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.WebElement;
+
+
+
+import addOfferToBasketDirectSales.AddOfferToBasketStep;
 
 import agreementDirectSales.AgreementStep;
 import agreementPartCom.AgreementPCStep;
@@ -24,16 +33,27 @@ import opportunityDirectSales.OpportunityStep;
 import opportunityPartCom.OpportunityPCStep;
 import orderDirectSales.OrderStep;
 import orderPartCom.OrderPCStep;
+
 import productBasketDirectSales.ProductBasketStep;
+
 import serviceDirectSales.ServiceAction;
 import serviceDirectSales.ServiceStep;
 import servicePartCom.ServicePCAction;
 import servicePartCom.ServicePCStep;
+
 import testFrameworkLibrary.D02Models;
+
 import testFrameworkLibrary.D03Models;
+
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
 import testReportComposition.TestStepReportStructure;
+
+
+public class SOI_3568 {
+	
+	public static void SOI_3569_TC01_DS_TechnicalContactServiceLevel_New(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, int stepsExecuted, String testName) throws Exception 
 
 public class SOI_3568 
 {
@@ -284,13 +304,26 @@ public class SOI_3568
 
 	public static void SOI_3568_TC03_PC_BillingAccountServiceLevel(List<TestStepReportStructure> testExecStructure,
 			List<TestLog> logStream, WebDriver driver, String testName) throws Exception 
+
 	{
+
+		String productName ="PABX";
 
 		String user="farmerUser";
 
+
+
+		String configurationIndex2="configurationByDefault";
+
 		String productName="Phone Line";
 
+
+
+		String productName2 ="Enterprise Voice";
+
 		String configurationIndex="configurationByDefault";
+
+
 
 		String productD03="PABX";
 
@@ -306,8 +339,20 @@ public class SOI_3568
 
 		int counterServices;
 
+
 		try
 		{
+
+			
+			
+			D02Models.ToHaveAProductBasket(testExecStructure, logStream, driver, testName);
+			
+			D02Models.AddAndConfigureNewProduct(testExecStructure, logStream, driver, testName, productName2, configurationIndex2);
+			
+			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, testName);
+			
+			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, productName);
+
 			LoginPagePCStep.LoginPartnersCommunity(testExecStructure, logStream, driver, testName, user);
 
 			HomePagePCStep.NavigateToCompanyPage(testExecStructure, logStream, driver, testName);
@@ -388,9 +433,14 @@ public class SOI_3568
 		{
 			System.out.println(e);
 			TestLogger.logError(logStream, testName, "Test Failed", e.toString());
+
+			throw new Exception(testName+": Test Case Failed");
+
 			throw new Exception(testName+" - Test Case Failed");
+
 		}
 
+=
 	}
 
 	public static void SOI_3568_TC04_PC_BillingAccountServiceLevel_Negative(
@@ -495,8 +545,8 @@ public class SOI_3568
 			TestLogger.logError(logStream, testName, "Test Failed", e.toString());
 			throw new Exception(testName+" - Test Case Failed");
 		}	
-	}
 
+	}
 
 
 }

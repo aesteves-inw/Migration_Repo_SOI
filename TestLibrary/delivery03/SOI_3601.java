@@ -1,11 +1,20 @@
 package delivery03;
 
+
 import java.util.ArrayList;
+
 import java.util.List;
 
+
 import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.WebElement;
+
+
+
+import addOfferToBasketDirectSales.AddOfferToBasketStep;
 
 import agreementPartCom.AgreementPCStep;
 import companyDirectSales.CompanyStep;
@@ -23,18 +32,24 @@ import opportunityDirectSales.OpportunityStep;
 import opportunityPartCom.OpportunityPCStep;
 import orderDirectSales.OrderStep;
 import orderPartCom.OrderPCStep;
+
 import productBasketDirectSales.ProductBasketStep;
+
 import serviceDirectSales.ServiceAction;
 import serviceDirectSales.ServiceStep;
 import servicePartCom.ServicePCAction;
 import servicePartCom.ServicePCStep;
+
 import testFrameworkLibrary.D02Models;
+
 import testFrameworkLibrary.D03Models;
+
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
 import testReportComposition.TestStepReportStructure;
 
 public class SOI_3601 {
+
 
 	public static void SOI_3601_TC01_DS_CopyBA_ProductBasket2Service(List<TestStepReportStructure> testExecStructure,
 			List<TestLog> logStream, WebDriver driver, String testName) throws Exception 
@@ -269,15 +284,22 @@ public class SOI_3601 {
 		}
 		
 	}
-	
+
+	public static void SOI_3601_TC01_DS_CopyBA_ProductBasket2Service(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, int stepsExecuted, String testName) throws Exception 
+
 	public static void SOI_3601_TC03_PC_CopyBA_ProductBasket2Service(List<TestStepReportStructure> testExecStructure,
 			List<TestLog> logStream, WebDriver driver, String testName) throws Exception 
+
 	{
+
 		String user="farmerUser";
 		
 		String productName="Voice Continuity";
 
 		String configurationIndex="configurationByDefault";
+
+		String productName ="PABX";
 
 		String productD03="PABX";
 		
@@ -286,12 +308,18 @@ public class SOI_3601 {
 		
 		String optyURL, productBasketName, orderURL, serviceName, serviceURL, serviceID;
 
+		String configurationIndex2="configurationByDefault";
+
 		List<String> servicesURL=new ArrayList<String>();
+
+		String productName2 ="Enterprise Voice";
 
 		int counterServices;
 
+
 		try
 		{
+
 			LoginPagePCStep.LoginPartnersCommunity(testExecStructure, logStream, driver, testName, user);
 
 			HomePagePCStep.NavigateToCompanyPage(testExecStructure, logStream, driver, testName);
@@ -365,7 +393,7 @@ public class SOI_3601 {
 
 			OrderPCStep.submitOrderPositiveValidation(testExecStructure, logStream, driver, testName);
 
-			
+
 
 		}
 		catch(Exception e)
@@ -384,16 +412,25 @@ public class SOI_3601 {
 		try
 		{
 			String user="farmerUser";
-			
+
+			D02Models.ToHaveAProductBasket(testExecStructure, logStream, driver, testName);
+
 			String productName="Voice Continuity";
 
 			String configurationIndex="configurationByDefault";
 
 			String productD03="PABX";
-			
+
+			D02Models.AddAndConfigureNewProduct(testExecStructure, logStream, driver, testName, productName2, configurationIndex2);
+
 			String provContactPerson="First User";
+
+			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, testName);
+
 			
-			
+
+			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, productName);
+
 			String optyURL, productBasketName, orderURL, serviceName, serviceURL, serviceID;
 
 			List<String> servicesURL=new ArrayList<String>();
@@ -485,15 +522,21 @@ public class SOI_3601 {
 				throw new Exception(testName+" - Test Case Failed");
 			}
 
+
 		}
 		catch(Exception e)
 		{
 			System.out.println(e);
 			TestLogger.logError(logStream, testName, "Test Failed", e.toString());
+
+			throw new Exception(testName+": Test Case Failed");
+
 			throw new Exception(testName+" - Test Case Failed");
+
 		}
 
 	}
+
 
 
 

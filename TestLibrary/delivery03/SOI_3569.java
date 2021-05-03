@@ -1,11 +1,18 @@
 package delivery03;
 
+
 import java.util.ArrayList;
+
 import java.util.List;
 
+
 import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.WebElement;
+
+import addOfferToBasketDirectSales.AddOfferToBasketStep;
 
 import agreementDirectSales.AgreementStep;
 import agreementPartCom.AgreementPCStep;
@@ -25,16 +32,26 @@ import opportunityPartCom.OpportunityPCStep;
 import orderDirectSales.OrderStep;
 import orderPartCom.OrderPCStep;
 import productBasketDirectSales.ProductBasketStep;
+
 import productBasketPartCom.ProductBasketPCStep;
 import serviceDirectSales.ServiceAction;
 import serviceDirectSales.ServiceStep;
 import servicePartCom.ServicePCAction;
 import servicePartCom.ServicePCStep;
+
 import testFrameworkLibrary.D02Models;
+
 import testFrameworkLibrary.D03Models;
+
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
 import testReportComposition.TestStepReportStructure;
+
+
+public class SOI_3569 {
+	
+	public static void SOI_3569_TC01_DS_TechnicalContactServiceLevel_New(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, int stepsExecuted, String testName) throws Exception 
 
 public class SOI_3569 
 {
@@ -296,6 +313,7 @@ public class SOI_3569
 			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver,
 			String testName) throws Exception 
 	{
+
 		String productName ="Phone Line";
 
 		String configurationIndex="configurationByDefault";
@@ -413,7 +431,11 @@ public class SOI_3569
 			throw new Exception(testName+" - Test Case Failed");
 		}
 
+		String productName ="PABX";
+
 	}
+
+		String configurationIndex2="configurationByDefault";
 
 	public static void SOI_3569_TC04_DS_TechnicalContactServiceLevel_OE_Deprecated(
 			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver,
@@ -422,11 +444,15 @@ public class SOI_3569
 		
 		String productName ="Phone Line";
 
-		String userProfile="salesUser";
 
+
+		String productName2 ="Phone Line";
+
+		String userProfile="salesUser";
 
 		try
 		{
+
 			LoginPageStep.loginSFDS(testExecStructure, logStream, driver, testName, userProfile);
 
 			HomePageStep.navigateToCompanyPage(testExecStructure, logStream, driver, testName);
@@ -434,9 +460,17 @@ public class SOI_3569
 			CompanyStep.createQuickSaleOpportunity(testExecStructure, logStream, driver, testName);
 
 			OpportunityStep.createProductBasket(testExecStructure, logStream, driver, testName);
-			
+
+			//D02Models.AddAndConfigureNewProduct(testExecStructure, logStream, driver, testName, productName2, configurationIndex2);
+
 			D02Models.AddAnyProductToProductBasket(testExecStructure, logStream, driver, testName, productName);
+
+			//D02Models.ProductInProductBasket(testExecStructure, logStream, driver, testName, productName);
 			
+			D02Models.ToHaveAProductBasket(testExecStructure, logStream, driver, testName);
+			
+			D02Models.AddAndConfigureNewProduct(testExecStructure, logStream, driver, testName, productName2, configurationIndex2);
+
 			ProductBasketStep.goToOrderEnrichment(testExecStructure, logStream, driver, testName, productName);
 
 
@@ -797,21 +831,29 @@ public class SOI_3569
 			CompanyPCStep.createQuickSaleOPTY(testExecStructure, logStream, driver, testName);
 
 			OpportunityPCStep.createProductBasket(testExecStructure, logStream, driver, testName);
-			
+
+			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, testName);
+
 			D02Models.AddAnyProductToProductBasket(testExecStructure, logStream, driver, testName, productName);
-			
+
+			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, productName);
+
 			ProductBasketPCStep.goToOrderEnrichment(testExecStructure, logStream, driver, testName, productName);
+
 
 		}
 		catch(Exception e)
 		{
 			System.out.println(e);
 			TestLogger.logError(logStream, testName, "Test Failed", e.toString());
+
+			throw new Exception(testName+": Test Case Failed");
+
 			throw new Exception(testName+" - Test Case Failed");
+
 		}
 
 	}
 
-	
-	
+
 }
