@@ -83,7 +83,7 @@ public class EProdConfigStep
 		{
 			EProdConfigAction.finishConfiguration(logStream, driver, stepID);
 
-			validation = ProductBasketAction.productBasketScreenValidation(logStream, driver, stepID);
+			validation = ProductBasketAction.productBasketScreenValidationPC(logStream, driver, stepID);
 
 			if(validation==true)
 			{
@@ -166,6 +166,51 @@ public class EProdConfigStep
 		try
 		{
 			PhoneLine.configurationOfPhoneLine(logStream, driver, stepID, configuration, testName);
+
+			validation = PhoneLine.validationOfPLConfiguration(logStream, driver, stepID, configuration);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+
+		
+	}
+	
+	public static void configurePhoneLinePC(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream,
+			WebDriver driver, String testName, String productName, String configurationIndex) throws Exception 
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+
+		String stepName="Product Configuration: "+productName;
+
+		String stepNameMin="configurePhoneLine";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		String[] configuration=ProductConfigurationD02.getD02ConfigurationToApply(productName, configurationIndex);
+
+		try
+		{
+			PhoneLine.configurationOfPhoneLinePC(logStream, driver, stepID, configuration, testName);
 
 			validation = PhoneLine.validationOfPLConfiguration(logStream, driver, stepID, configuration);
 

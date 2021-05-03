@@ -277,6 +277,47 @@ public class D02Models
 			throw new Exception(testName+": Test Case Failed on Test Model - AddAndConfigureNewProduct with "+productName);
 		}
 	}
+	
+	public static void AddAndConfigureNewProductPC(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver, String testName, String productName, String configurationIndex) throws Exception
+	{
+		try
+		{			
+			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, testName);
+
+			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, productName);
+
+			Thread.sleep(2000);
+
+			ProductBasketStep.goToEditProductConfigurationScreen(testExecStructure, logStream, driver, testName, productName);
+
+			switch(productName)
+			{
+			case "Voice Continuity":
+				EProdConfigStep.configureVoiceContinuity(testExecStructure, logStream, driver, testName, productName, configurationIndex);
+				break;
+			case "Phone Line":
+				EProdConfigStep.configurePhoneLine(testExecStructure, logStream, driver, testName, productName, configurationIndex);
+				break;
+			case "Professional Internet":
+				EProdConfigStep.configureProfessionalInternet(testExecStructure, logStream, driver, testName, productName, configurationIndex);
+				break;
+			case "PABX":
+				EProdConfigStep.configureNonQuotableProduct(testExecStructure, logStream, driver, testName, configurationIndex);
+				break;
+			default:
+				throw new Exception("Product Invalid in Test Data File");
+			}
+
+			EProdConfigStep.finsihConfiguration(testExecStructure, logStream, driver, testName);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, testName, "Test Failed on Pre Conditions Setup", e.toString());
+			throw new Exception(testName+": Test Case Failed on Test Model - AddAndConfigureNewProduct with "+productName);
+		}
+	}
 
 	public static void AddAndConfigureNewProductInPC(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver, String testName, String productName, String configurationIndex) throws Exception
 	{
