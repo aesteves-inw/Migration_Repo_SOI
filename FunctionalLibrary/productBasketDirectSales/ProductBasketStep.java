@@ -2,11 +2,20 @@ package productBasketDirectSales;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.Point;
+import org.openqa.selenium.Rectangle;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
+import org.openqa.selenium.WebElement;
+
 import addOfferToBasketDirectSales.AddOfferToBasketAction;
 import agreementDirectSales.AgreementAction;
 import agreementPartCom.AgreementPCAction;
 import editProductConfigurationScreenDirectSales.EProdConfigAction;
+import executionTools.BrowserActions;
 import executionTools.TestExecutionReport;
 import fetchDataFromExcelFiles.ExcelDataFetch;
 import navigation.NavigationAction;
@@ -249,6 +258,52 @@ public class ProductBasketStep
 			ProductBasketAction.expandingECS(logStream, driver, stepID, productName);
 			
 			validation = ProductBasketAction.expandedECSPackValidation(logStream, driver, stepID, productName);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testReportStream, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testReportStream, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+	}
+	
+	public static void selectInternetECSPackage(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, String testName, String productName) throws Exception
+	{
+		int stepID;
+		
+		stepID=TestExecutionReport.stepOfTestStep(testReportStream);
+		
+		String stepName="Select Internet of an ECS Package on Product Basket";
+
+		String stepNameMin="selectInternetECSPackage";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			ProductBasketAction.expandingECS(logStream, driver, stepID, productName);
+			
+			WebElement internetEditButton = driver.findElement(By.xpath("//div[@id='basket-table']/div[2]/div[1]/ul[1]/li[1]/div[1]/div[1]/div[1]/div[3]/ul[1]/li[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/div[1]/div[1]/div[1]/div[1]/div[7]/button[1]"));
+			
+			internetEditButton.click();
+			
+			validation = ProductBasketAction.internetEditConfigValidation(logStream, driver, stepID);
 
 			if(validation==true)
 			{

@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import editProductConfigurationScreenDirectSales.EProdConfigAction;
 import executionTools.BrowserActions;
 import objectMap.sfDirectSales.DirSalesEditProductConfiguration;
 import objectMap.sfDirectSales.DirSalesProductBasket;
@@ -915,7 +916,7 @@ public class ProductBasketAction {
 
 		try
 		{
-			List<WebElement> ecsProductExpanded = new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//li[@class='ng-scope']")));
+			List<WebElement> ecsProductExpanded = new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//*[@id=\"basket-table\"]/div[2]/div/ul/li/div/div/div/div[3]/ul")));
 
 			for(WebElement we:ecsProductExpanded)
 			{
@@ -1065,6 +1066,36 @@ public class ProductBasketAction {
 			System.out.println("Debug of inputProvisioningContactPerson.getText().toString() after val: "+inputProvisioningContactPerson.getAttribute("value"));
 
 			if(textExistingBillingAccountIdField.contains(inputProvisioningContactPerson.getText().toString()))
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
+	
+	public static boolean internetEditConfigValidation(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
+	{
+		String actionName="internetEditConfigValidation";
+		try
+		{
+			EProdConfigAction.changeToEditProductConfigurationiFrame(logStream, driver, stepID);
+			
+			String internetEditConfigHeader1 = driver.findElement(By.xpath("//p[text()='Product Configuration']")).getText();
+			String internetEditConfigHeader2 = driver.findElement(By.xpath("//h1[text()='ECS - Professional Internet']")).getText();
+
+			//if(internetEditConfigHeader1 == "Product Configuration" || internetEditConfigHeader2 == "ECS - Professional Internet")
+			if(driver.findElement(By.xpath("//p[text()='Product Configuration']")).isDisplayed() || driver.findElement(By.xpath("//h1[text()='ECS - Professional Internet']")).isDisplayed())
 			{
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
 				return true;

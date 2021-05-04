@@ -2,6 +2,7 @@ package editProductConfigurationScreenDirectSales;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import executionTools.TestExecutionReport;
 import productBasketDirectSales.ProductBasketAction;
@@ -68,9 +69,9 @@ public class EProdConfigStep
 	public static void finsihConfiguration(List<TestStepReportStructure> testExecStructure,
 			List<TestLog> logStream, WebDriver driver, String testName) throws Exception
 	{
-		
+
 		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);		
-		
+
 		String stepName="Edit Product Configuration 'Screen': Finish Configuration";
 
 		String stepNameMin="finsihConfiguration";
@@ -105,13 +106,13 @@ public class EProdConfigStep
 			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
 	}
-	
+
 	public static void finsihConfigurationInPC(List<TestStepReportStructure> testExecStructure,
 			List<TestLog> logStream, WebDriver driver, String testName) throws Exception
 	{
-		
+
 		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);		
-		
+
 		String stepName="Edit Product Configuration 'Screen': Finish Configuration";
 
 		String stepNameMin="finsihConfiguration";
@@ -189,9 +190,9 @@ public class EProdConfigStep
 			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
 
-		
+
 	}
-	
+
 	public static void configurePhoneLinePC(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream,
 			WebDriver driver, String testName, String productName, String configurationIndex) throws Exception 
 	{
@@ -234,7 +235,7 @@ public class EProdConfigStep
 			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
 
-		
+
 	}
 
 	public static void configureProfessionalInternet(List<TestStepReportStructure> testExecStructure,
@@ -279,9 +280,9 @@ public class EProdConfigStep
 			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
 
-		
+
 	}
-	
+
 	public static void configureEnterpriseVoice(List<TestStepReportStructure> testExecStructure,
 			List<TestLog> logStream, WebDriver driver, String testName, String productName, String configurationIndex) throws Exception 
 	{
@@ -324,7 +325,207 @@ public class EProdConfigStep
 			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
 
+
+	}
+
+	public static void maxVoiceChannelsOCKValidation(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName, String productName, String configurationIndex) throws Exception 
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+
+		String stepName="Product Configuration: "+productName;
+
+		String stepNameMin="maxVoiceChannelsOCKValidation";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);
+
+		boolean validation = false;
 		
+		try
+		{
+
+			int i = 0;
+
+			int n = 1;
+
+			String voicechannels;
+
+			String[] maxVoiceChannels = new String[3];
+
+			for( i = 0; i<=2; i++ ) {
+
+				if(productName.equals("Enterprise Voice")) {
+
+					driver.findElement(By.id("s2id_Details:Installation_Address___OCK_Check:accessTechnology_0")).click();
+
+				}
+
+				else {
+
+					driver.findElement(By.id("s2id_Enterprise_Call___Surf_Internet:ECS_Pack_Installation_Address___OCK_Check:accessTechnology_0")).click();
+
+				}
+
+				Thread.sleep(2000);
+
+				driver.findElement(By.xpath("//*[@id=\"select2-results-1\"]/li["+ n +"]")).click();
+
+				Thread.sleep(3000);
+
+				if(productName.equals("Enterprise Voice")) {
+					
+					voicechannels = driver.findElement(By.xpath("//*[@id=\"Details:Installation_Address___OCK_Check:OCKMaxNumberChannels_0\"]")).getText();
+					
+				}
+				else {
+
+					voicechannels = driver.findElement(By.id("Enterprise_Call___Surf_Internet:ECS_Pack_Installation_Address___OCK_Check:OCKmaxNumberChannels_0")).getText();
+
+				}
+				
+				System.out.println(voicechannels);
+
+				maxVoiceChannels[i]=voicechannels;
+
+				n++;
+			}
+
+			if(maxVoiceChannels[0] != "" && maxVoiceChannels[1] != "" && maxVoiceChannels[2] != "") {
+
+				validation = true;
+			}
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+
+
+	}
+	
+	public static void maxVoiceChannelsOCKValidationPC(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName, String productName, String configurationIndex) throws Exception 
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+
+		String stepName="Product Configuration: "+productName;
+
+		String stepNameMin="maxVoiceChannelsOCKValidation";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);
+
+		boolean validation = false;
+		
+		if(productName.equals("Enterprise Voice")) {
+			
+			driver.findElement(By.xpath("//*[@id=\"select2-chosen-5\"]")).click();
+			
+			Thread.sleep(3000);
+			
+			driver.findElement(By.xpath("//*[@id=\"select2-results-5\"]/li[1]")).click();
+		}
+		else {
+			
+			driver.findElement(By.xpath("//*[@id=\"select2-chosen-3\"]")).click();
+			
+			Thread.sleep(3000);
+			
+			driver.findElement(By.xpath("//*[@id=\"select2-results-3\"]/li[1]")).click();
+			
+		}
+		
+		
+
+		try
+		{
+
+			int i = 0;
+
+			int n = 1;
+
+			String voicechannels;
+
+			String[] maxVoiceChannels = new String[3];
+
+			for( i = 0; i<=2; i++ ) {
+
+				if(productName.equals("Enterprise Voice")) {
+
+					driver.findElement(By.id("s2id_Details:Installation_Address___OCK_Check:accessTechnology_0")).click();
+
+				}
+
+				else {
+
+					driver.findElement(By.id("s2id_Enterprise_Call___Surf_Internet:ECS_Pack_Installation_Address___OCK_Check:accessTechnology_0")).click();
+
+				}
+
+				Thread.sleep(2000);
+
+				driver.findElement(By.xpath("//*[@id=\"select2-results-1\"]/li["+ n +"]")).click();
+
+				Thread.sleep(3000);
+
+				if(productName.equals("Enterprise Voice")) {
+					
+					voicechannels = driver.findElement(By.xpath("//*[@id=\"Details:Installation_Address___OCK_Check:OCKMaxNumberChannels_0\"]")).getText();
+					
+				}
+				else {
+
+					voicechannels = driver.findElement(By.id("Enterprise_Call___Surf_Internet:ECS_Pack_Installation_Address___OCK_Check:OCKmaxNumberChannels_0")).getText();
+
+				}
+				
+				System.out.println(voicechannels);
+
+				maxVoiceChannels[i]=voicechannels;
+
+				n++;
+			}
+
+			if(maxVoiceChannels[0] != "" && maxVoiceChannels[1] != "" && maxVoiceChannels[2] != "") {
+
+				validation = true;
+			}
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+
+
 	}
 
 	// D03 Products
@@ -332,7 +533,7 @@ public class EProdConfigStep
 			List<TestLog> logStream, WebDriver driver, String testName, String configurationProduct) throws Exception 
 	{
 		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
-		
+
 		String stepName="Configure Non Quotable Product: "+configurationProduct;
 
 		String stepNameMin="configureNonQuotableProductStep";
@@ -367,16 +568,16 @@ public class EProdConfigStep
 			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
 			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
-		
+
 	}
 
-	
+
 	public static void validateD03ProductConfiguration(List<TestStepReportStructure> testExecStructure,
 			List<TestLog> logStream, WebDriver driver, String testName, String productName) throws Exception 
 	{
 		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
-		
-		
+
+
 		String stepName="Product Configuration: D03 Product Validation";
 
 		String stepNameMin="validateD03ProductConfiguration";
@@ -388,7 +589,7 @@ public class EProdConfigStep
 
 		try
 		{
-			
+
 			validation = NonQuotableProducts.validationOfNQPConfiguration(logStream, driver, stepID, productName);
 
 			if(validation==true)
@@ -410,8 +611,8 @@ public class EProdConfigStep
 			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
 			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
-		
+
 	}
 
-	
+
 }
