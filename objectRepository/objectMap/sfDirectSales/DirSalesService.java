@@ -110,7 +110,9 @@ public class DirSalesService {
 	// Billing Account ID
 	public static String inputBillingAccountID="//input[@name='PRX_SOI_Billing_Account_ID__c']";
 	
+	// New billing Account
 	
+	public static String inputNewBillingAccount="//input[@name='PRX_SOI_NewBillingAccountAddress__c']";
 	
 	// Footer Buttons on Edit Frame
 	
@@ -124,9 +126,11 @@ public class DirSalesService {
 	
 	public static String fieldProvisioningContactPerson="//*[contains(@id,'field-section-content-')]/slot/slot/flexipage-column2/div/slot/flexipage-field[1]/slot/record_flexipage-record-field/div/div/div[2]/span/slot[1]/slot/force-lookup/div/force-hoverable-link/div/a";
 	
-	public static String fieldInternalComments="//flexipage-field[@data-field-id='RecordPRX_SOI_Internal_Comments__cField']";
+	public static String fieldInternalComments="//input[@name='PRX_SOI_Internal_Comments__c']";
 	
-	public static String fieldBillingAccountID="//flexipage-field[@data-field-id='RecordPRX_SOI_Billing_Account_ID__cField']";
+	public static String fieldBillingAccountID="//input[@name='PRX_SOI_Billing_Account_ID__c']";
+	
+	public static String fieldNewBillingAccount="//input[@name='PRX_SOI_NewBillingAccountAddress__c']";
 	
 	public static String fieldContractType="//select[@name='contractTypePicklist']";
 	

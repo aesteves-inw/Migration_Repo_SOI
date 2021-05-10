@@ -152,6 +152,8 @@ public class DirSalesOrder {
 	
 	public static String headerTableColumnsOrder="//table/thead/tr/th/div/a/span[2]";
 	
+	//public static String orderHeader="(//div[contains(@class,'highlights slds-clearfix')])[2]";
+	
 
 	
 	
@@ -197,6 +199,8 @@ public class DirSalesOrder {
 	
 	//09/02 - test Automation elements
 	public static String orderSubmitionErrorBillingAccount="//span[starts-with(.,'Billing Account Id must be filled')]";
+	
+	public static String orderSubmitErrorGeneral="//*[contains(.,\"This order can't be submitted.\")]";
 	
 	public static String orderSubmitionErrorProvisioningContact ="//span[starts-with(.,'Provisioning contact must be filled')]";
 	

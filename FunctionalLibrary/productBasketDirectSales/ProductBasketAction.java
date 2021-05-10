@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -392,9 +393,17 @@ public class ProductBasketAction {
 
 		try
 		{
-			WebElement inputProvisioningContact = driver.findElement(By.xpath(DirSalesProductBasket.inputProvisioningContactPerson));
+			/*WebElement inputProvisioningContact = driver.findElement(By.xpath(DirSalesProductBasket.inputProvisioningContactPerson));
 
 			inputProvisioningContact.sendKeys(textExistingTechnicalContact);
+			
+			Thread.sleep(3000);
+			
+			driver.findElement(By.xpath("//*[@id=\"select2-results-6\"]/li[1]")).click();
+			
+			*/
+			
+			//BrowserActions.jsClick(driver, contactList);
 
 			/*
 			List<WebElement> provlistItem= new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//li/div/div[1]")));
@@ -412,8 +421,11 @@ public class ProductBasketAction {
 
 			}
 			 */
+			
+			//driver.switchTo().frame(driver.findElement(By.xpath("//*[@id=\"select2-drop\"]")));
 
-			WebElement provlistItem = new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li/div/div[1]")));
+			//WebElement provlistItem = new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li/div/div[1]")));
+			WebElement provlistItem = new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"select2-results-6\"]/li[1]")));
 
 			provlistItem.click();
 

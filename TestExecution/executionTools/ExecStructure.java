@@ -66,6 +66,82 @@ public class ExecStructure {
 
 		}
 		
+		public static String underFifteenFormattedDate() 
+		{
+			String finalDate;
+			
+			LocalDate todayDate, tomorrowDate;
+			
+			todayDate = LocalDate.now();
+			
+			tomorrowDate=todayDate.plusDays(15);
+			
+			DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+			
+			finalDate = myFormatObj.format(tomorrowDate);
+			
+
+			return finalDate;
+
+		}
+		
+		public static String plusFifteenFormattedDate() 
+		{
+			String finalDate;
+			
+			LocalDate todayDate, tomorrowDate;
+			
+			todayDate = LocalDate.now();
+			
+			tomorrowDate=todayDate.plusDays(16);
+			
+			DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+			
+			finalDate = myFormatObj.format(tomorrowDate);
+			
+
+			return finalDate;
+
+		}
+		
+		public static String underFortyFiveFormattedDate() 
+		{
+			String finalDate;
+			
+			LocalDate todayDate, tomorrowDate;
+			
+			todayDate = LocalDate.now();
+			
+			tomorrowDate=todayDate.plusDays(15);
+			
+			DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+			
+			finalDate = myFormatObj.format(tomorrowDate);
+			
+
+			return finalDate;
+
+		}
+		
+		public static String plusFortyFiveFormattedDate() 
+		{
+			String finalDate;
+			
+			LocalDate todayDate, tomorrowDate;
+			
+			todayDate = LocalDate.now();
+			
+			tomorrowDate=todayDate.plusDays(15);
+			
+			DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+			
+			finalDate = myFormatObj.format(tomorrowDate);
+			
+
+			return finalDate;
+
+		}
+		
 		public static String tomorrowFormattedDate(String format) 
 		{
 			String finalDate;

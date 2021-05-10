@@ -338,7 +338,7 @@ public class D02Models
 				EProdConfigStep.configureVoiceContinuity(testExecStructure, logStream, driver, testName, productName, configurationIndex);
 				break;
 			case "Phone Line":
-				EProdConfigStep.configurePhoneLine(testExecStructure, logStream, driver, testName, productName, configurationIndex);
+				EProdConfigStep.configurePhoneLinePC(testExecStructure, logStream, driver, testName, productName, configurationIndex);
 				break;
 			case "Professional Internet":
 				EProdConfigStep.configureProfessionalInternet(testExecStructure, logStream, driver, testName, productName, configurationIndex);

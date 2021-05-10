@@ -84,7 +84,7 @@ public class EProdConfigStep
 		{
 			EProdConfigAction.finishConfiguration(logStream, driver, stepID);
 
-			validation = ProductBasketAction.productBasketScreenValidationPC(logStream, driver, stepID);
+			validation = ProductBasketAction.productBasketScreenValidation(logStream, driver, stepID);
 
 			if(validation==true)
 			{
@@ -126,6 +126,7 @@ public class EProdConfigStep
 			EProdConfigAction.finishConfiguration(logStream, driver, stepID);
 
 			validation = ProductBasketPCAction.validateProductBasketScreen(logStream, stepID, driver);
+			
 
 			if(validation==true)
 			{
@@ -158,7 +159,6 @@ public class EProdConfigStep
 		String stepNameMin="configurePhoneLine";
 
 		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
-
 
 		boolean validation;
 

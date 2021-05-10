@@ -100,7 +100,6 @@ public class PhoneLine {
 
 			productSelectionFields(logStream, driver, stepID, configuration, testName);
 
-
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
 		}
