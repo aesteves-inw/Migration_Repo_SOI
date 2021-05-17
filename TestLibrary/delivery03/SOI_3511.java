@@ -114,10 +114,14 @@ public class SOI_3511
 			
 			counterServices=listOfServices.size();
 			
+			String service = "";
+			
 			for(int i=0;counterServices>i;i++)
 			{
 				
 				serviceName=listOfServices.get(i).getText().toString();
+				
+				if(serviceName == "PABX") {service = serviceName;}
 				
 				serviceURL=listOfServices.get(i).getAttribute("href");
 				
@@ -136,6 +140,10 @@ public class SOI_3511
 				OrderStep.goToServiceScreenByURL(testExecStructure, logStream, driver, testName, sURL);
 				
 				ServiceStep.fillProvisioningContactPerson(testExecStructure, logStream, driver, testName, provContactPerson);
+				
+				ServiceStep.fillBillingAccountID(testExecStructure, logStream, driver, testName, "12345");
+				
+				if(service == "PABX") {ServiceStep.fillContractType(testExecStructure, logStream, driver, testName, "New");}
 				
 				NavigationStep.goToOrderByURL(testExecStructure, logStream, driver, testName, orderURL);
 				

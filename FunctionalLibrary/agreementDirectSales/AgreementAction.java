@@ -122,9 +122,12 @@ public class AgreementAction
 		
 		try
 		{
-			new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesAgreement.detailsAgreement)));
+			//new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesAgreement.detailsAgreement)));
 			
-			if(BrowserActions.isElementPresent(driver, DirSalesAgreement.headerAgreementPage)&&BrowserActions.isElementPresent(driver, DirSalesAgreement.detailsAgreement))
+			//new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.id(DirSalesAgreement.detailsAgreement)));
+			
+			//if(BrowserActions.isElementPresent(driver, DirSalesAgreement.headerAgreementPage)&&BrowserActions.isElementPresent(driver, DirSalesAgreement.detailsAgreement))
+				if(BrowserActions.isElementPresent(driver, DirSalesAgreement.headerAgreementPage))
 			{
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
 				return true;

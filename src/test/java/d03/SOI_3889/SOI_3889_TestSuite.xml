@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="SOI-3889" parallel="false">
+  <test name="SOI_3889_TC01_DS_OCK_Refactor_MaxVoiceChannels_EV">
+    <classes>
+      <class name="d03.SOI_3889_TC01_DS_OCK_Refactor_MaxVoiceChannels_EV"/>
+    </classes>
+  </test> 
+    <test name="SOI_3889_TC02_DS_OCK_Refactor_MaxVoiceChannels_ECS_Pro">
+    <classes>
+      <class name="d03.SOI_3889_TC02_DS_OCK_Refactor_MaxVoiceChannels_ECS_Pro"/>
+    </classes>
+  </test> 
+  <test name="SOI_3889_TC03_DS_OCK_Refactor_MaxVoiceChannels_ECS_Pro_Plus">
+    <classes>
+      <class name="d03.SOI_3889_TC03_DS_OCK_Refactor_MaxVoiceChannels_ECS_Pro_Plus"/>
+    </classes>
+  </test> 
+    <test name="SOI_3889_TC04_DS_OCK_Refactor_MaxVoiceChannels_ECS_FullFiber">
+    <classes>
+      <class name="d03.SOI_3889_TC04_DS_OCK_Refactor_MaxVoiceChannels_ECS_FullFiber"/>
+    </classes>
+  </test> 
+  <test name="SOI_3889_TC05_DS_OCK_Refactor_MaxVoiceChannels_ECS_FullFiberExtended">
+    <classes>
+      <class name="d03.SOI_3889_TC05_DS_OCK_Refactor_MaxVoiceChannels_ECS_FullFiberExtended"/>
+    </classes>
+  </test> 
+    <test name="SOI_3889_TC06_PC_OCK_Refactor_MaxVoiceChannels_EV">
+    <classes>
+      <class name="d03.SOI_3889_TC06_PC_OCK_Refactor_MaxVoiceChannels_EV"/>
+    </classes>
+  </test> 
+  <test name="SOI_3889_TC07_PC_OCK_Refactor_MaxVoiceChannels_ECS_Pro ">
+    <classes>
+      <class name="d03.SOI_3889_TC07_PC_OCK_Refactor_MaxVoiceChannels_ECS_Pro "/>
+    </classes>
+  </test> 
+    <test name="SOI_3889_TC08_PC_OCK_Refactor_MaxVoiceChannels_ECS_Pro_Plus">
+    <classes>
+      <class name="d03.SOI_3889_TC08_PC_OCK_Refactor_MaxVoiceChannels_ECS_Pro_Plus"/>
+    </classes>
+  </test> 
+  <test name="SOI_3889_TC09_PC_OCK_Refactor_MaxVoiceChannels_ECS_FullFiber">
+    <classes>
+      <class name="d03.SOI_3889_TC09_PC_OCK_Refactor_MaxVoiceChannels_ECS_FullFiber"/>
+    </classes>
+  </test> 
+    <test name="SOI_3889_TC10_PC_OCK_Refactor_MaxVoiceChannels_ECS_FullFiberExtended">
+    <classes>
+      <class name="d03.SOI_3889_TC10_PC_OCK_Refactor_MaxVoiceChannels_ECS_FullFiberExtended"/>
+    </classes>
+  </test> 
+</suite> <!-- Suite -->

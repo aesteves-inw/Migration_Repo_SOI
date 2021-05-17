@@ -323,6 +323,49 @@ public class OrderPCStep {
 
 		
 	}
+	
+	public static void submitOrderNegativeValPC(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName) throws Exception 
+	{ 
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+		
+		String stepName="Order: Submit Order (Negative)";
+
+		String stepNameMin="submitOrderNegativeVal";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			OrderAction.submitOrderPC(logStream, driver, stepID);
+			
+			validation = OrderAction.submitOrderNegativeValPC(logStream, driver, stepID);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				TestLogger.logTrace(logStream, stepNameMin, "Failed in Step: "+stepID+". Validation: False");
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+		
+	}
 
 	public static void goToServiceScreenByServiceName(List<TestStepReportStructure> testExecStructure,
 			List<TestLog> logStream, WebDriver driver, String testName, String serviceName) throws Exception
@@ -343,7 +386,9 @@ public class OrderPCStep {
 
 		try
 		{
-			WebElement serviceLink = driver.findElement(By.xpath("//a[@title='"+serviceName+"']"));
+			//WebElement serviceLink = driver.findElement(By.xpath("//a[@title='"+serviceName+"']"));
+			
+			WebElement serviceLink = driver.findElement(By.xpath("//a[contains(.,'"+serviceName+"')]"));
 			
 			serviceID=serviceLink.getAttribute("data-recordid");
 			

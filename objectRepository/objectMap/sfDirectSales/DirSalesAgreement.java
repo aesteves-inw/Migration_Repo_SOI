@@ -19,7 +19,11 @@ public class DirSalesAgreement{
 	
 	public static String headerAgreementPage="//h1[contains(.,'Agreement')]";
 	
-	public static String detailsAgreement="//div[@class='slds-tabs_default']";
+	//public static String detailsAgreement="//div[@class='slds-tabs_default']";
+	
+	//public static String detailsAgreement="/html/body/div[3]/div[2]/div/div[2]/div[1]/div/div/div/div";
+	
+	public static String detailsAgreement="tab-14";
 	
 	public static String nameAgreement="//span[contains(.,'Agreement Documents Name')]";
 	
@@ -73,6 +77,10 @@ public class DirSalesAgreement{
 	//Agreement Collection in 09-01-2021 for D02 E2E Flow
 	
 	public static String buttonGenerateProposalDocument="//button[@name='csclm__Agreement__c.PRX_CS_Generate_Proposal_Document']";
+	
+	//public static String buttonGenerateProposalDocument="/html/body/div[3]/div[2]/div/div[1]/div/div/header/div[2]/div/div[2]/ul/li[2]";
+	
+	
 	
 	public static String buttonDigitalSignature="//button[contains(.,'Digital Signature')]";
 	

@@ -11,10 +11,16 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import companyContactPersonPartCom.CompanyContactPersonPCAction;
 import executionTools.BrowserActions;
+import executionTools.TestExecutionReport;
+import objectMap.sfDirectSales.DirSalesOrder;
 import objectMap.sfDirectSales.DirSalesService;
+import objectMap.sfPartnersCommunity.PartComOrder;
 import objectMap.sfPartnersCommunity.PartComService;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
+import testReportComposition.ReportStructure;
+import testReportComposition.TestStepReportStructure;
+import testReporter.TestReporter;
 
 public class ServicePCAction {
 
@@ -92,6 +98,38 @@ public class ServicePCAction {
 			inputBillingAccountID.clear();
 			
 			inputBillingAccountID.sendKeys(billingAccountID);
+			
+			
+			saveChangesOnServiceDetails(logStream, driver, stepID);
+
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+
+	}
+	
+	public static void fillNewBillingAccount(List<TestLog> logStream, WebDriver driver, int stepID,
+			String billingAccountID) throws Exception 
+	{
+		String actionName="fillNewBillingAccount";
+
+
+		try
+		{
+			WebElement inputNewBillingAccount=driver.findElement(By.xpath("//input[@name='PRX_SOI_NewBillingAccountAddress__c']"));
+			
+			inputNewBillingAccount.click();
+			
+			inputNewBillingAccount.clear();
+			
+			inputNewBillingAccount.sendKeys(billingAccountID);
 			
 			
 			saveChangesOnServiceDetails(logStream, driver, stepID);
@@ -244,6 +282,33 @@ public class ServicePCAction {
 			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
 		}
 	}
+	
+	public static boolean validateNewBillingAccount(List<TestLog> logStream, WebDriver driver, int  stepID,
+			String newBillingAccount) throws Exception 
+	{
+		String actionName="validateNewBillingAccount";
+		try
+		{
+			String valBillingAccountID = driver.findElement(By.xpath("//input[@name='PRX_SOI_NewBillingAccountAddress__c']")).getAttribute("value");
+
+			if(valBillingAccountID.contains(newBillingAccount))
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
 
 	public static boolean validateNewProvisioningContactPersonAfterSaving(List<TestLog> logStream, WebDriver driver,
 			int stepID) throws Exception 
@@ -297,7 +362,56 @@ public class ServicePCAction {
 		}
 	}
 
-	
+	public static void navigateToOrderPC(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream,
+			WebDriver driver, String testName, String productBasketName) throws Exception 
+	{
+		String actionName="navigateToOrderPC";
+
+		boolean validation = false;
+
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+
+		String stepName="Service: Navigate to Order (PC)";
+
+		String stepNameMin="navigateToOrder";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+		try
+		{
+
+			WebElement orderLink = driver.findElement(By.xpath("//a[contains(.,'"+productBasketName+"')]"));
+
+			orderLink.click();
+
+			new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(PartComOrder.headerOrder)));
+
+			Thread.sleep(1000);
+			
+			validation = driver.findElement(By.xpath(PartComOrder.headerOrder)).isDisplayed();
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				TestLogger.logTrace(logStream, stepNameMin, "Failed in Step: "+stepID+". Validation: False");
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+
+	}
 	
 
 	

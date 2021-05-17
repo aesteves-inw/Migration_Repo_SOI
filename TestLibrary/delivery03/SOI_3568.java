@@ -50,10 +50,7 @@ import testLogger.TestLogger;
 import testReportComposition.TestStepReportStructure;
 
 
-public class SOI_3568 {
-	
-	public static void SOI_3569_TC01_DS_TechnicalContactServiceLevel_New(List<TestStepReportStructure> testExecStructure,
-			List<TestLog> logStream, WebDriver driver, int stepsExecuted, String testName) throws Exception 
+
 
 public class SOI_3568 
 {
@@ -440,7 +437,7 @@ public class SOI_3568
 
 		}
 
-=
+
 	}
 
 	public static void SOI_3568_TC04_PC_BillingAccountServiceLevel_Negative(
@@ -550,4 +547,5 @@ public class SOI_3568
 
 
 }
+
 

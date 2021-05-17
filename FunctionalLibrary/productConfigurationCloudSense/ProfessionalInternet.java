@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import executionTools.BrowserActions;
 import executionTools.ExecStructure;
 import objectMap.sfDirectSales.DirSalesEditProductConfiguration;
 import testExecutionData.TestCasesData;
@@ -34,51 +35,58 @@ public class ProfessionalInternet
 		return ContractDuration;
 	}
 	
-	private static String getOCKID(String[] configuration)
+	/*private static String getOCKID(String[] configuration)
+	{
+		String OCKID=configuration[2];
+
+		return OCKID;
+	}*/
+	
+	private static String getAccessTechnology(String[] configuration)
 	{
 		String OCKID=configuration[2];
 
 		return OCKID;
 	}
 	
-	private static String getOCKResult(String[] configuration)
+	/*private static String getOCKResult(String[] configuration)
 	{
 		String OCKResult=configuration[3];
 
 		return OCKResult;
-	}
+	}*/
 	
 	private static String getPhoneLineInstallationType(String[] configuration)
 	{
-		String PhoneLineInstallationType=configuration[4];
+		String PhoneLineInstallationType=configuration[3];
 
 		return PhoneLineInstallationType;
 	}
 	
 	private static String getPhoneLineConfiguration(String[] configuration)
 	{
-		String PhoneLineConfiguration=configuration[5];
+		String PhoneLineConfiguration=configuration[4];
 
 		return PhoneLineConfiguration;
 	}
 	
 	private static String getExistingPhoneLineID(String[] configuration)
 	{
-		String ExistingPhoneLineID=configuration[6];
+		String ExistingPhoneLineID=configuration[5];
 
 		return ExistingPhoneLineID;
 	}
 	
 	private static String getInternetSubscription(String[] configuration)
 	{
-		String InternetSubscription=configuration[7];
+		String InternetSubscription=configuration[6];
 
 		return InternetSubscription;
 	}
 	
 	private static String getWifiAccess(String[] configuration)
 	{
-		String WifiAccess=configuration[8];
+		String WifiAccess=configuration[7];
 
 		return WifiAccess;
 	}
@@ -99,9 +107,11 @@ public class ProfessionalInternet
 		{
 			contractInformationFields(logStream, driver, stepID, configuration, testName);
 
-			installationAddressOCKCheckFields(logStream, driver, stepID, configuration, testName);
+			accessTechnology(logStream, driver, stepID, configuration);
 
 			includedPhoneLineFields(logStream, driver, stepID, configuration, testName);
+			
+			Thread.sleep(2000);
 
 			subscriptionSelectionFields(logStream, driver, stepID, configuration, testName);
 			
@@ -319,18 +329,32 @@ public class ProfessionalInternet
 	
 	
 	// INSTALLATION ADDRESS & OCK CHECK
-	private static void installationAddressOCKCheckFields(List<TestLog> logStream, WebDriver driver, int stepID,
-			String[] configuration, String testName) throws Exception 
+	
+	
+	private static void accessTechnology(List<TestLog> logStream, WebDriver driver, int stepID, String[] configuration) throws Exception 
 	{
-		String actionName="Installation Address & OCKCheck On Professional Internet";
+		String accessTechnology = getAccessTechnology(configuration);
+
+		String actionName="PI Access Technology Field - Config: "+accessTechnology;
 
 
 		try
 		{
-			fieldOCKId(logStream, driver, stepID, configuration);
+			driver.findElement(By.xpath("//*[@id=\"s2id_Details:Installation_Address___OCK_Check:accessTechnology_0\"]")).click();;
 
-			fieldOCKResult(logStream, driver, stepID, configuration);
+			switch(accessTechnology) {
 
+			case "GPON":
+				driver.findElement(By.xpath("//div[contains(text(),'GPON')]")).click();
+				break;
+			case "VDSL2":
+				//driver.findElement(By.xpath("//*[@id=\"select2-results-1\"]/li[2]")).click();
+				driver.findElement(By.xpath("//div[contains(text(),'VDSL2')]")).click();
+				break;
+			case "ADSL2+E":
+				driver.findElement(By.xpath("//div[contains(text(),'ADSL2+E')]")).click();
+				break;
+			}
 
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
@@ -343,10 +367,9 @@ public class ProfessionalInternet
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
 
-		
 	}
 
-	private static void fieldOCKId(List<TestLog> logStream, WebDriver driver, int stepID, String[] configuration) throws Exception 
+	/*private static void fieldOCKId(List<TestLog> logStream, WebDriver driver, int stepID, String[] configuration) throws Exception 
 	{
 		String ockID = getOCKID(configuration);
 
@@ -376,7 +399,7 @@ public class ProfessionalInternet
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
 		
-	}
+	}*/
 
 	private static void fieldOCKResult(List<TestLog> logStream, WebDriver driver, int stepID, String[] configuration) throws Exception 
 	{
@@ -566,11 +589,15 @@ public class ProfessionalInternet
 
 		try
 		{
-			WebElement selectBoxInternetSubscription = new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.id("s2id_Details:Subscription_Selection:PriceItem_0")));
+			WebElement selectBoxInternetSubscription = new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"s2id_Details:Subscription_Selection:PriceItem_0\"]")));
+			
+			BrowserActions.ScrollByElement(driver, "xpath", "//*[@id=\"s2id_Details:Installation_Address___OCK_Check:accessTechnology_0\"]");
 			
 			selectBoxInternetSubscription.click();
 			
-			new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//ul[@id='select2-results-1'][@role='listbox']")));
+			Thread.sleep(3000);
+			
+			new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"select2-drop\"]")));
 			
 			WebElement internetSubscription = new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@title='"+selectInternetSubscription+"']")));
 			

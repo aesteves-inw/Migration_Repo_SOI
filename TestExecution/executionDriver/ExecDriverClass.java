@@ -22,9 +22,9 @@ public class ExecDriverClass {
 	{
 		WebDriver driver;
 		
-		System.setProperty("webdriver.chrome.driver", ExecStructure.workingDir+"\\lib\\chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver", ExecStructure.workingDir+"\\lib\\chromedriver.exe");
 		
-		//System.setProperty("webdriver.chrome.driver", "C:\\source\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\source\\chromedriver.exe");
 		
 	
 		Map<String, Object> prefs = new HashMap<String, Object>();
@@ -33,9 +33,10 @@ public class ExecDriverClass {
 
 		ChromeOptions chromeProfile = new ChromeOptions(); 
 		
-		//chromeProfile.addArguments("--start-maximized");
+		chromeProfile.addArguments("--start-maximized");
 	
 		chromeProfile.addArguments("--headless", "--window-size=1920,1080");
+		//chromeProfile.addArguments("--window-size=1920,1080");
 
 		chromeProfile.addArguments("chrome.switches","--disable-extensions");
 

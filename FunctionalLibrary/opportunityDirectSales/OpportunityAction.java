@@ -452,7 +452,7 @@ public class OpportunityAction {
 		{
 			driver.findElement(By.xpath(DirSalesOpportunity.saveEditButton)).click();
 
-			new WebDriverWait(driver, 30).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(DirSalesOpportunity.saveEditButton)));
+			new WebDriverWait(driver, 50).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(DirSalesOpportunity.saveEditButton)));
 
 
 
@@ -477,7 +477,8 @@ public class OpportunityAction {
 
 		try
 		{
-			if(BrowserActions.isElementPresent(driver, DirSalesOpportunity.optyHeader) && BrowserActions.isElementPresent(driver, DirSalesOpportunity.optyDetails))
+			//if(BrowserActions.isElementPresent(driver, DirSalesOpportunity.optyHeader) && BrowserActions.isElementPresent(driver, DirSalesOpportunity.optyDetails))
+				if(BrowserActions.isElementPresent(driver, DirSalesOpportunity.optyDetails))
 			{
 				new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesOpportunity.optyDetails)));
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
@@ -596,9 +597,10 @@ public class OpportunityAction {
 		try
 		{
 
-			String optyEditValidation =driver.findElement(By.xpath("//records-lwc-detail-panel/records-base-record-form/div/div/div/div/records-record-layout-event-broker/slot/records-lwc-record-layout/forcegenerated-detailpanel_opportunity___0123m0000000s3sqau___full___view___recordlayout2/force-record-layout-block/slot/force-record-layout-section[1]/div/div/div/slot/force-record-layout-row[3]/slot/force-record-layout-item[2]/div/div/div[2]/span/slot[1]/slot/lightning-formatted-text")).getText().toString();
+			
+			String optyEditValidation =driver.findElement(By.xpath("(//a[@data-tab-name='Closed Won']//span)[2]")).getText().toString();
 
-
+			
 			System.out.println("Debug of closeWonOpportunityValidation 01: "+optyEditValidation);
 			System.out.println("Debug of closeWonOpportunityValidation 02: "+optyEditValidation.contains(status));
 

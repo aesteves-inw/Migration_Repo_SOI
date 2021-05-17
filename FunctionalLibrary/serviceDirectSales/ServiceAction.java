@@ -3,6 +3,7 @@ package serviceDirectSales;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -186,7 +187,7 @@ public class ServiceAction {
 
 			inputEditProvContact.sendKeys(provContactPerson);
 
-			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesService.searchResult)));
+			new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesService.searchResult)));
 
 			driver.findElement(By.xpath(DirSalesService.searchValueToInput)).click();
 
@@ -220,6 +221,37 @@ public class ServiceAction {
 			inputBillingAccountID.clear();
 			
 			inputBillingAccountID.sendKeys(textExistingBillingAccountIdField);
+			
+
+			Thread.sleep(1000);
+			
+			saveServiceChanges(logStream, driver, stepID);
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+	}
+	
+	public static void fillNewBillingAccountSingleAction(List<TestLog> logStream, WebDriver driver, int stepID,
+			String textExistingBillingAccountIdField) throws Exception 
+	{
+		String actionName="fillNewBillingAccountSingleAction";
+
+		try
+		{
+			WebElement inputNewBillingAccount = new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesService.inputNewBillingAccount)));
+
+			inputNewBillingAccount.click();
+			
+			inputNewBillingAccount.clear();
+			
+			inputNewBillingAccount.sendKeys(textExistingBillingAccountIdField);
 			
 
 			Thread.sleep(1000);
@@ -438,6 +470,67 @@ public class ServiceAction {
 
 
 			if(fieldBillingAccountIDValidation.contains(textExistingBillingAccountIdField))
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
+	
+	public static boolean validateBillingAccountIDAfterSavingNegative(List<TestLog> logStream, WebDriver driver,
+			int stepID, String textExistingBillingAccountIdField) throws Exception 
+	{
+		String actionName="validateBillingAccountIDAfterSaving";
+
+		try
+		{
+			WebElement billingIDNewBillingError=driver.findElement(By.xpath("//*[@id=\"one\"]/div/form/lightning-messages/div/div"));			
+
+
+			if(billingIDNewBillingError.isDisplayed())
+			{
+				driver.findElement(By.xpath(DirSalesService.fieldNewBillingAccount)).clear();
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
+	
+	public static boolean validateNewBillingAccountAfterSaving(List<TestLog> logStream, WebDriver driver,
+			int stepID, String textExistingNewBillingAccountField) throws Exception 
+	{
+		String actionName="validateNewBillingAccountAfterSaving";
+		
+		try
+		{
+			
+			String fieldNewBillingAccountValidation=driver.findElement(By.xpath(DirSalesService.fieldNewBillingAccount)).getAttribute("value");
+			
+			System.out.println(fieldNewBillingAccountValidation);
+
+			if(fieldNewBillingAccountValidation.contains(textExistingNewBillingAccountField))
 			{
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
 				return true;

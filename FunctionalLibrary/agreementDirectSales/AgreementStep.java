@@ -220,9 +220,9 @@ public class AgreementStep
 
 		try
 		{
-			AgreementAction.generateDocumentProposalOnly(logStream, driver, stepID);
-			
 			AgreementAction.addFileToAgreement(logStream, driver, stepID, externalFileName);
+			
+			AgreementAction.generateDocumentProposalOnly(logStream, driver, stepID);
 			
 			Thread.sleep(10000);
 			

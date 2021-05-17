@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="SOI-3503" parallel="false">
+  <test name="SOI_3503_TC01_DS_D03_Products_Categories">
+    <classes>
+      <class name="d03.SOI_3503_TC01_DS_D03_Products_Categories"/>
+    </classes>
+  </test> 
+    <test name="SOI_3503_TC02_PC_D03_Products_Categories">
+    <classes>
+      <class name="d03.SOI_3503_TC02_PC_D03_Products_Categories"/>
+    </classes>
+  </test> 
+</suite> <!-- Suite -->

@@ -4,14 +4,17 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import editProductConfigurationScreenDirectSales.EProdConfigAction;
 import executionTools.BrowserActions;
 import objectMap.sfDirectSales.DirSalesEditProductConfiguration;
 import objectMap.sfDirectSales.DirSalesProductBasket;
+import objectMap.sfPartnersCommunity.PartComProductBasket;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
 
@@ -29,6 +32,8 @@ public class ProductBasketAction {
 		try
 		{
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(DirSalesProductBasket.iframeProductBasket)));
+			
+			//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesProductBasket.iframeProductBasket)));
 
 			WebElement iframeProductBasket = driver.findElement(By.xpath(DirSalesProductBasket.iframeProductBasket));
 
@@ -49,6 +54,37 @@ public class ProductBasketAction {
 		}
 	}
 
+	public static void changeToProductBasketiFramePC(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
+	{
+		WebDriverWait wait = new WebDriverWait(driver,30);
+
+		String actionName="Product Basket: Change to Product Basket iframe";
+
+
+		try
+		{
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(PartComProductBasket.iframeProductBasket)));
+			
+			//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesProductBasket.iframeProductBasket)));
+
+			WebElement iframeProductBasket = driver.findElement(By.xpath(PartComProductBasket.iframeProductBasket));
+
+			driver.switchTo().frame(iframeProductBasket);
+
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesProductBasket.productBasketLabel)));
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+	}
 	public static void changeToDefaultiFrame(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
 	{
 		String actionName="Product Basket: Change to default frame";
@@ -357,9 +393,17 @@ public class ProductBasketAction {
 
 		try
 		{
-			WebElement inputProvisioningContact = driver.findElement(By.xpath(DirSalesProductBasket.inputProvisioningContactPerson));
+			/*WebElement inputProvisioningContact = driver.findElement(By.xpath(DirSalesProductBasket.inputProvisioningContactPerson));
 
 			inputProvisioningContact.sendKeys(textExistingTechnicalContact);
+			
+			Thread.sleep(3000);
+			
+			driver.findElement(By.xpath("//*[@id=\"select2-results-6\"]/li[1]")).click();
+			
+			*/
+			
+			//BrowserActions.jsClick(driver, contactList);
 
 			/*
 			List<WebElement> provlistItem= new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//li/div/div[1]")));
@@ -377,8 +421,11 @@ public class ProductBasketAction {
 
 			}
 			 */
+			
+			//driver.switchTo().frame(driver.findElement(By.xpath("//*[@id=\"select2-drop\"]")));
 
-			WebElement provlistItem = new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li/div/div[1]")));
+			//WebElement provlistItem = new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li/div/div[1]")));
+			WebElement provlistItem = new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"select2-results-6\"]/li[1]")));
 
 			provlistItem.click();
 
@@ -547,6 +594,42 @@ public class ProductBasketAction {
 			changeToDefaultiFrame(logStream, driver, stepID);
 
 			changeToProductBasketiFrame(logStream, driver, stepID);
+
+
+			if(BrowserActions.isElementPresent(driver, DirSalesProductBasket.cloneBasketButton) && 
+					BrowserActions.isElementPresent(driver, DirSalesProductBasket.syncButton) && 
+					BrowserActions.isElementPresent(driver, DirSalesProductBasket.productBasketHeader) && 
+					BrowserActions.isElementPresent(driver, DirSalesProductBasket.productBasketName) && 
+					BrowserActions.isElementPresent(driver, DirSalesProductBasket.addProductButton))
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+
+
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
+	
+	public static boolean productBasketScreenValidationPC(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
+	{
+		String actionName="Product Basket: Validation of Product Basket Screen";
+
+		try
+		{	
+			changeToDefaultiFrame(logStream, driver, stepID);
+
+			changeToProductBasketiFramePC(logStream, driver, stepID);
 
 
 			if(BrowserActions.isElementPresent(driver, DirSalesProductBasket.cloneBasketButton) && 
@@ -845,7 +928,7 @@ public class ProductBasketAction {
 
 		try
 		{
-			List<WebElement> ecsProductExpanded = new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//li[@class='ng-scope']")));
+			List<WebElement> ecsProductExpanded = new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//*[@id=\"basket-table\"]/div[2]/div/ul/li/div/div/div/div[3]/ul")));
 
 			for(WebElement we:ecsProductExpanded)
 			{
@@ -995,6 +1078,36 @@ public class ProductBasketAction {
 			System.out.println("Debug of inputProvisioningContactPerson.getText().toString() after val: "+inputProvisioningContactPerson.getAttribute("value"));
 
 			if(textExistingBillingAccountIdField.contains(inputProvisioningContactPerson.getText().toString()))
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
+	
+	public static boolean internetEditConfigValidation(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
+	{
+		String actionName="internetEditConfigValidation";
+		try
+		{
+			EProdConfigAction.changeToEditProductConfigurationiFrame(logStream, driver, stepID);
+			
+			String internetEditConfigHeader1 = driver.findElement(By.xpath("//p[text()='Product Configuration']")).getText();
+			String internetEditConfigHeader2 = driver.findElement(By.xpath("//h1[text()='ECS - Professional Internet']")).getText();
+
+			//if(internetEditConfigHeader1 == "Product Configuration" || internetEditConfigHeader2 == "ECS - Professional Internet")
+			if(driver.findElement(By.xpath("//p[text()='Product Configuration']")).isDisplayed() || driver.findElement(By.xpath("//h1[text()='ECS - Professional Internet']")).isDisplayed())
 			{
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
 				return true;

@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import executionTools.BrowserActions;
 import objectMap.sfDirectSales.DirSalesAgreement;
 import objectMap.sfDirectSales.DirSalesOrder;
+import objectMap.sfPartnersCommunity.PartComOrder;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
 
@@ -28,6 +29,29 @@ public class OrderAction
 			driver.findElement(By.xpath(DirSalesOrder.submitOrderButton)).click();
 
 			new WebDriverWait(driver, 15).until(ExpectedConditions.elementToBeClickable(By.xpath(DirSalesOrder.submitOrderButton)));
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+
+	}
+	
+	public static void submitOrderPC(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
+	{
+		String actionName="submitOrder";
+
+
+		try
+		{
+			driver.findElement(By.xpath(PartComOrder.submitOrderBtn)).click();
+
+			new WebDriverWait(driver, 15).until(ExpectedConditions.elementToBeClickable(By.xpath(PartComOrder.submitOrderBtn)));
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
@@ -235,6 +259,60 @@ public class OrderAction
 		try
 		{
 			if(BrowserActions.isElementPresent(driver, "//*[starts-with(.,'Missing Contract Type on Service(s):')]"))
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+
+	}
+	
+	public static boolean submitOrderNegativeVal(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
+	{
+		String actionName="submitOrderNegativeVal";
+
+		try
+		{
+			//if(BrowserActions.isElementPresent(driver, DirSalesOrder.orderSubmitErrorGeneral))
+				if(driver.findElement(By.xpath(DirSalesOrder.orderSubmitErrorGeneral)).isDisplayed())
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+
+	}
+	
+	public static boolean submitOrderNegativeValPC(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
+	{
+		String actionName="submitOrderNegativeVal";
+
+		try
+		{
+			//if(BrowserActions.isElementPresent(driver, DirSalesOrder.orderSubmitErrorGeneral))
+				if(driver.findElement(By.xpath(DirSalesOrder.orderSubmitErrorGeneral)).isDisplayed())
 			{
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
 				return true;
