@@ -459,11 +459,23 @@ public class PhoneLine {
 		
 			try
 			{
-				driver.findElement(By.xpath("//*[@id=\"select2-chosen-3\"]")).click();
+				String address = driver.findElement(By.xpath("//*[@id=\"select2-chosen-3\"]")).getText();
 				
-				Thread.sleep(3000);
 				
-				driver.findElement(By.xpath("//*[@id=\"select2-results-3\"]/li[1]")).click();
+				
+				if(address.contains("Koning Albert ll-laan,27 B, Brussels, 1030, Belgium")) {
+				
+					System.out.println(address);
+				}
+				
+				else {
+					driver.findElement(By.xpath("//*[@id=\"select2-chosen-3\"]")).click();
+					
+					Thread.sleep(3000);
+					
+					driver.findElement(By.xpath("//*[@id=\"select2-results-3\"]/li[1]")).click();
+					
+				}
 				
 				WebElement inputAccessTechnology = new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.id("s2id_Details:Installation_Address___OCK_check:accessTechnology_0")));
 

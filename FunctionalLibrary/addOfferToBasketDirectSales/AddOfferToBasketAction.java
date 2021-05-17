@@ -27,6 +27,9 @@ public class AddOfferToBasketAction {
 
 		try
 		{
+			
+			BrowserActions.ScrollByElement(driver, "linkText", productToAdd);
+			
 			driver.findElement(By.linkText(productToAdd)).click();
 
 			WebElement productSummary=driver.findElement(By.xpath(DirSalesAddOfferToBasket.summarySection));

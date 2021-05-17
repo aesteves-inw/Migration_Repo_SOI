@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="SOI-3602" parallel="false">
+  <test name="SOI_3602_TC01_DS_NewBillingAccount_ServiceLevel_Positive">
+    <classes>
+      <class name="d03.SOI_3602_TC01_DS_NewBillingAccount_ServiceLevel_Positive"/>
+    </classes>
+  </test> 
+    <test name="SOI_3602_TC02_DS_NewBillingAccount_ServiceLevel_Positive_FilledProductBasket">
+    <classes>
+      <class name="d03.SOI_3602_TC02_DS_NewBillingAccount_ServiceLevel_Positive_FilledProductBasket"/>
+    </classes>
+  </test> 
+  <test name="SOI_3602_TC03_DS_NewBillingAccount_ServiceLevel_Negative_NewExisting">
+    <classes>
+      <class name="d03.SOI_3602_TC03_DS_NewBillingAccount_ServiceLevel_Negative_NewExisting"/>
+    </classes>
+  </test> 
+    <test name="SOI_3602_TC04_DS_NewBillingAccount_ServiceLevel_Negative_Empty">
+    <classes>
+      <class name="d03.SOI_3602_TC04_DS_NewBillingAccount_ServiceLevel_Negative_Empty"/>
+    </classes>
+  </test> 
+  <test name="SOI_3602_TC05_PC_NewBillingAccount_ServiceLevel_Positive">
+    <classes>
+      <class name="d03.SOI_3602_TC05_PC_NewBillingAccount_ServiceLevel_Positive"/>
+    </classes>
+  </test> 
+    <test name="SOI_3602_TC06_PC_NewBillingAccount_ServiceLevel_Positive_FilledProductBasket">
+    <classes>
+      <class name="d03.SOI_3602_TC06_PC_NewBillingAccount_ServiceLevel_Positive_FilledProductBasket"/>
+    </classes>
+  </test> 
+  <test name="SOI_3602_TC07_PC_NewBillingAccount_ServiceLevel_Negative_NewExisting">
+    <classes>
+      <class name="d03.SOI_3602_TC07_PC_NewBillingAccount_ServiceLevel_Negative_NewExisting"/>
+    </classes>
+  </test> 
+    <test name="SOI_3602_TC08_PC_NewBillingAccount_ServiceLevel_Negative_Empty">
+    <classes>
+      <class name="d03.SOI_3602_TC08_PC_NewBillingAccount_ServiceLevel_Negative_Empty"/>
+    </classes>
+  </test> 
+</suite> <!-- Suite -->

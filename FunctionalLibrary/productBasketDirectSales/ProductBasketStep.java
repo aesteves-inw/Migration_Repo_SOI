@@ -644,6 +644,10 @@ public class ProductBasketStep
 		try
 		{
 			ProductBasketAction.goToOrderEnrichmentConsole(logStream, driver, stepID);
+			
+			Thread.sleep(5000);
+			
+			OrderEnrichmentAction.changeToOrderEnrichmentiFrame(logStream, driver, stepID);
 
 			OrderEnrichmentAction.selectProductForOEConfig(logStream, driver, stepID, productName);
 			

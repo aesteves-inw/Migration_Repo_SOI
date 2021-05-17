@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import executionTools.TestExecutionReport;
 import productBasketDirectSales.ProductBasketAction;
 import productBasketPartCom.ProductBasketPCAction;
+import productConfigurationCloudSense.EnterpriseVoice;
 import productConfigurationCloudSense.NonQuotableProducts;
 import productConfigurationCloudSense.PhoneLine;
 import productConfigurationCloudSense.ProfessionalInternet;
@@ -253,6 +254,8 @@ public class EProdConfigStep
 		boolean validation;
 
 		String[] configuration=ProductConfigurationD02.getD02ConfigurationToApply(productName, configurationIndex);
+		
+		System.out.println(configuration);
 
 		try
 		{
@@ -301,9 +304,9 @@ public class EProdConfigStep
 
 		try
 		{
-			ProfessionalInternet.configurationOfProfessionalInternet(logStream, driver, stepID, configuration, testName);
+			EnterpriseVoice.configurationOfEnterpriseVoice(logStream, driver, stepID, configuration, testName);
 
-			validation = ProfessionalInternet.validationOfPIConfiguration(logStream, driver, stepID, configuration);
+			validation = EnterpriseVoice.validationOfEVConfiguration(logStream, driver, stepID, configuration);
 
 			if(validation==true)
 			{

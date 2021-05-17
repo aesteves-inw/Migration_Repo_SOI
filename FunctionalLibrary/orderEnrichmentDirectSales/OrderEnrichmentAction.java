@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import executionTools.BrowserActions;
 import objectMap.sfDirectSales.DirSalesOrderEnrichment;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
@@ -54,12 +55,17 @@ public class OrderEnrichmentAction
 
 		try
 		{
-			driver.findElement(By.xpath("//div[text()='"+productName+"']")).click();
-
-			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(DirSalesOrderEnrichment.tabInTheList)));
+			if(productName == "Enterprise Voice") {driver.findElement(By.xpath("//*[starts-with(text(),'"+productName+"')]")).click();}
+			
+			else if (productName == "Professional Internet") {driver.findElement(By.xpath("//*[starts-with(text(),'"+productName+"')]")).click();} 
+			
+			else {driver.findElement(By.xpath("//div[text()='"+productName+"']")).click();}
+			
+			driver.switchTo().frame(driver.findElement(By.xpath("//*[@id=\"specificationsApp\"]/div[2]/div[2]/article/div[2]/iframe")));
+			
+			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(DirSalesOrderEnrichment.tabsList)));
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
-
 		}
 		catch(Exception e)
 		{
@@ -77,17 +83,20 @@ public class OrderEnrichmentAction
 	public static boolean tabsforOEValidation(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
 	{
 		String actionName="tabsforOEValidation";
-		
+
 		int errorCounter=0;
-		
+
 		try
 		{
+			
 			List<WebElement> oeTabsList=driver.findElements(By.xpath(DirSalesOrderEnrichment.tabInTheList));
 
 			for(WebElement oetab:oeTabsList)
 			{
-				if (oetab.getText().toLowerCase().contains("contact"))
+				//if (oetab.getText().toLowerCase().contains("contact"))
+				if (oetab.isDisplayed())
 				{
+					System.out.println(oetab.getText());
 					errorCounter++;
 				}
 			}
