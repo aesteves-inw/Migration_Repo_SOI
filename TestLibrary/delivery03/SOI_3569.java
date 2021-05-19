@@ -48,10 +48,10 @@ import testLogger.TestLogger;
 import testReportComposition.TestStepReportStructure;
 
 
-public class SOI_3569 {
-	
-	public static void SOI_3569_TC01_DS_TechnicalContactServiceLevel_New(List<TestStepReportStructure> testExecStructure,
-			List<TestLog> logStream, WebDriver driver, int stepsExecuted, String testName) throws Exception 
+//public class SOI_3569 {
+//	
+//	public static void SOI_3569_TC01_DS_TechnicalContactServiceLevel_New(List<TestStepReportStructure> testExecStructure,
+//			List<TestLog> logStream, WebDriver driver, int stepsExecuted, String testName) throws Exception 
 
 public class SOI_3569 
 {
@@ -431,11 +431,11 @@ public class SOI_3569
 			throw new Exception(testName+" - Test Case Failed");
 		}
 
-		String productName ="PABX";
+//		String productName ="PABX";
 
 	}
 
-		String configurationIndex2="configurationByDefault";
+//		String configurationIndex2="configurationByDefault";
 
 	public static void SOI_3569_TC04_DS_TechnicalContactServiceLevel_OE_Deprecated(
 			List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver,
@@ -444,7 +444,7 @@ public class SOI_3569
 		
 		String productName ="Phone Line";
 
-
+		String configurationIndex2="configurationByDefault";
 
 		String productName2 ="Phone Line";
 
@@ -849,7 +849,7 @@ public class SOI_3569
 
 			throw new Exception(testName+": Test Case Failed");
 
-			throw new Exception(testName+" - Test Case Failed");
+//			throw new Exception(testName+" - Test Case Failed");
 
 		}
 

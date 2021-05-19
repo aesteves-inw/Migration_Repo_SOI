@@ -433,7 +433,7 @@ public class SOI_3568
 
 			throw new Exception(testName+": Test Case Failed");
 
-			throw new Exception(testName+" - Test Case Failed");
+//			throw new Exception(testName+" - Test Case Failed");
 
 		}
 

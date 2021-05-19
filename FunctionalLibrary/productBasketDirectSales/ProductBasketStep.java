@@ -254,7 +254,7 @@ public class ProductBasketStep
 		boolean validation;
 
 		try
-		{
+		{	
 			ProductBasketAction.expandingECS(logStream, driver, stepID, productName);
 			
 			validation = ProductBasketAction.expandedECSPackValidation(logStream, driver, stepID, productName);

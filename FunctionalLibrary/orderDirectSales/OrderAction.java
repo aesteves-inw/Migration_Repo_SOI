@@ -3,6 +3,7 @@ package orderDirectSales;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.By.ByXPath;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -30,6 +31,7 @@ public class OrderAction
 
 			new WebDriverWait(driver, 15).until(ExpectedConditions.elementToBeClickable(By.xpath(DirSalesOrder.submitOrderButton)));
 
+								
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
 		}

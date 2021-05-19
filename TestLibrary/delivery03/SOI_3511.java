@@ -114,32 +114,45 @@ public class SOI_3511
 			
 			counterServices=listOfServices.size();
 			
+			String service = "";
+			
 			for(int i=0;counterServices>i;i++)
 			{
 				
-				serviceName=listOfServices.get(i).getText().toString();
-				
-				serviceURL=listOfServices.get(i).getAttribute("href");
-				
-				servicesURL.add(serviceURL);
-				
-				//System.out.println("Debug of serviceName: "+serviceName+" - URL: "+serviceURL);
-				
-				TestLogger.logDebug(logStream, "serviceName", "serviceName: "+serviceName+" - URL: "+serviceURL);
-				
-				//System.out.println("Debug of listOfServices: End of the loop: "+i);
+			serviceName=listOfServices.get(i).getText().toString();
+						
+			serviceURL=listOfServices.get(i).getAttribute("href");
+			
+			if(serviceName.contentEquals("PABX")) {service = serviceURL;}
+			
+			servicesURL.add(serviceURL);
+			
+
+			
+			//System.out.println("Debug of serviceName: "+serviceName+" - URL: "+serviceURL);
+			
+			TestLogger.logDebug(logStream, "serviceName", "serviceName: "+serviceName+" - URL: "+serviceURL);
+			
+			//System.out.println("Debug of listOfServices: End of the loop: "+i);
+			
+			}
+			for(String sURL : servicesURL)
+			{
+			OrderStep.goToServiceScreenByURL(testExecStructure, logStream, driver, testName, sURL);
+			
+			ServiceStep.fillProvisioningContactPerson(testExecStructure, logStream, driver, testName, provContactPerson);
+			
+			ServiceStep.fillBillingAccountID(testExecStructure, logStream, driver, testName, "12345");
+			
+			if(sURL.contentEquals(service)) 
+			{
+				ServiceStep.fillContractType(testExecStructure, logStream, driver, testName, "New");
 				
 			}
 			
-			for(String sURL : servicesURL)
-			{
-				OrderStep.goToServiceScreenByURL(testExecStructure, logStream, driver, testName, sURL);
-				
-				ServiceStep.fillProvisioningContactPerson(testExecStructure, logStream, driver, testName, provContactPerson);
-				
-				NavigationStep.goToOrderByURL(testExecStructure, logStream, driver, testName, orderURL);
-				
-				Thread.sleep(5000);
+			NavigationStep.goToOrderByURL(testExecStructure, logStream, driver, testName, orderURL);
+			
+			Thread.sleep(5000);
 			}
 			
 			OrderStep.submitOrderPositiveValidation(testExecStructure, logStream, driver, testName);
@@ -241,6 +254,8 @@ public class SOI_3511
 			
 			counterServices=listOfServices.size();
 			
+			String service = "";
+			
 			for(int i=0;counterServices>i;i++)
 			{
 
@@ -249,6 +264,9 @@ public class SOI_3511
 				serviceID=listOfServices.get(i).getAttribute("data-recordid");
 				
 				serviceURL=ExcelDataFetch.searchDT(0, "PartnersCommunity")+"/"+serviceID;
+				
+				if(serviceName.contentEquals("PABX")) {service = serviceURL;}
+
 
 				servicesURL.add(serviceURL);
 
@@ -265,6 +283,12 @@ public class SOI_3511
 				OrderPCStep.goToServiceScreenByURL(testExecStructure, logStream, driver, testName, sURL);
 				
 				ServicePCStep.fillProvisioningContactPerson(testExecStructure, logStream, driver, testName, provContactPerson);
+				
+				if(sURL.contentEquals(service)) 
+				{
+					ServiceStep.fillContractType(testExecStructure, logStream, driver, testName, "New");
+					
+				}
 
 				NavigationStep.goToOrderByURLInPC(testExecStructure, logStream, driver, testName, orderURL);
 
@@ -281,9 +305,12 @@ public class SOI_3511
 				
 				caseURL=driver.findElement(By.xpath(PartComService.caseLink)).getAttribute("href");
 				
+				System.out.println(caseURL);
+				
 				caseURLValidation.add(caseURL);
 					
-				NavigationStep.goToOrderByURL(testExecStructure, logStream, driver, testName, orderURL);
+//				NavigationStep.goToOrderByURL(testExecStructure, logStream, driver, testName, orderURL);
+				NavigationStep.goToOrderByURLInPC(testExecStructure, logStream, driver, testName, orderURL);
 				
 				Thread.sleep(5000);
 			}

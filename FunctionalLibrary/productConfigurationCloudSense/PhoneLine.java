@@ -729,6 +729,8 @@ public class PhoneLine {
 				if(editProductConfigScreenValText.contains(par))
 				{
 					++i;
+					System.out.println("editProductConfigScreenValText: " + editProductConfigScreenValText);
+					System.out.println("par: " + par);
 				}
 
 			}

@@ -8,6 +8,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import editProductConfigurationScreenDirectSales.EProdConfigAction;
@@ -31,9 +32,14 @@ public class ProductBasketAction {
 
 		try
 		{
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(DirSalesProductBasket.iframeProductBasket)));
 			
-			//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesProductBasket.iframeProductBasket)));
+//			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(DirSalesProductBasket.iframeProductBasket)));
+			
+//			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesProductBasket.iframeProductBasket)));
+			
+			driver.findElements(By.tagName("iframe")).size();
+			
+//			wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.tagName("iframe")));
 
 			WebElement iframeProductBasket = driver.findElement(By.xpath(DirSalesProductBasket.iframeProductBasket));
 
@@ -226,7 +232,7 @@ public class ProductBasketAction {
 
 		try
 		{
-
+			
 			WebElement productBasketTable=driver.findElement(By.xpath(DirSalesProductBasket.productBasketTable));
 
 			List<WebElement> productBasketLineItem=productBasketTable.findElements(By.tagName("li"));
@@ -244,9 +250,9 @@ public class ProductBasketAction {
 			}	
 
 			Thread.sleep(10000);
-
+			
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
-
+			
 		}
 		catch(Exception e)
 		{
@@ -591,7 +597,7 @@ public class ProductBasketAction {
 
 		try
 		{	
-			changeToDefaultiFrame(logStream, driver, stepID);
+//			changeToDefaultiFrame(logStream, driver, stepID);
 
 			changeToProductBasketiFrame(logStream, driver, stepID);
 
@@ -928,11 +934,13 @@ public class ProductBasketAction {
 
 		try
 		{
-			List<WebElement> ecsProductExpanded = new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//*[@id=\"basket-table\"]/div[2]/div/ul/li/div/div/div/div[3]/ul")));
+//			List<WebElement> ecsProductExpanded = new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//*[@id=\"basket-table\"]/div[2]/div/ul/li/div/div/div/div[3]/ul")));
+			List<WebElement> ecsProductExpanded = new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//*[@id='basket-table']//ul//li[@draggable='false']")));
 
+			
 			for(WebElement we:ecsProductExpanded)
 			{
-				if(we.getText().contains("Internet Pro") || we.getText().contains("Enterprise Voice - Converged") || we.getText().contains("Business Continuity"))
+				if(we.getText().toString().contains("Internet Pro") || we.getText().toString().contains("Enterprise Voice - Converged") || we.getText().contains("Business Continuity"))
 				{
 					validation++;
 				}

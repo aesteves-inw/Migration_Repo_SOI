@@ -319,8 +319,6 @@ public class SOI_2206
 			
 			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, productName);
             
-		
-            
 			ProductBasketStep.expandECSPackage(testExecStructure, logStream, driver, testName, productName);
 			
 		}
