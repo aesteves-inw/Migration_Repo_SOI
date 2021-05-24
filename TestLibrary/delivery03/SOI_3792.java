@@ -17,6 +17,7 @@ import objectMap.sfDirectSales.DirSalesProductBasket;
 import opportunityDirectSales.OpportunityStep;
 import opportunityPartCom.OpportunityPCStep;
 import productBasketDirectSales.ProductBasketStep;
+import productConfigurationCloudSense.PhoneLine;
 import testFrameworkLibrary.D02Models;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
@@ -32,7 +33,7 @@ public class SOI_3792
 
 //		String [] configurationIndex = {"configurationByDefault","fiberConfiguration","SOI_3792_copperConfiguration"};
 		
-		String configurationIndex = "SOI_3792_Configuration_1";
+//		String configurationIndex = "SOI_3792_Configuration_1";
 
 		String userProfile="salesUser";
 		
@@ -41,6 +42,12 @@ public class SOI_3792
 		String optyURL;
 
 		String productBasketName;
+		
+		String address ="Koning Albert ll-laan,27 B, Brussels, 1030, Belgium";
+		
+		String accessTechnology="VDSL2";
+		
+		String technology = "Classic Telephone Line";
 
 		try
 		{
@@ -66,9 +73,10 @@ public class SOI_3792
 			
 			AddOfferToBasketStep.addProductToProductBasket(testExecStructure, logStream, driver, testName, productName);
 			
-			ProductBasketStep.goToEditProductConfigurationScreen(testExecStructure, logStream, driver, testName, productName);			
+			ProductBasketStep.goToEditProductConfigurationScreen(testExecStructure, logStream, driver, testName, productName);	
 			
-			EProdConfigStep.configurePhoneLine(testExecStructure, logStream, driver, testName, productName, configurationIndex);
+			PhoneLine.OCK_Check_TechnolgyAvailableForAdress(testExecStructure, logStream, driver, testName, productName, address, accessTechnology, technology);
+			
 
 		}
 		catch(Exception e)

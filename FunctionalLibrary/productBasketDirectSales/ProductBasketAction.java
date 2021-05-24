@@ -4,9 +4,11 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -1261,22 +1263,42 @@ public class ProductBasketAction {
 	}
 	
 	public static boolean technologyValidationOCK(List<TestLog> logStream, WebDriver driver, int stepID,
-			String techonology) throws Exception 
+			String technology) throws Exception 
 	{
-		String actionName="selectAddressEditProduct";
+		String actionName="Access Technology field - Config: "+ technology;
+		String technologyConfirmation = null;
 		try
 		{
+			switch (technology) {
+			
+			case "Classic Telephone Line":
+				
+				WebElement TechnologyField = driver.findElement(By.xpath("//*[@id='s2id_Details:Product_Selection:PriceItem_0']//*[@id='select2-chosen-2']"));
+				
+				new WebDriverWait(driver, 30).until(ExpectedConditions.textToBePresentInElement(TechnologyField, technology));
+				
+				BrowserActions.ScrollByElement(driver, "xpath", "//*[@id='s2id_Details:Product_Selection:PriceItem_0']//*[@id='select2-chosen-2']");
+				
+				
+				technologyConfirmation=TechnologyField.getText();
+				break;
+
+			default:
+			
 			driver.findElement(By.xpath("//*[@id=\"s2id_Enterprise_Call___Surf_Internet:ECS_Pack_Installation_Address___OCK_Check:accessTechnology_0\"]")).click();
 
-			WebElement technologySelect = new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(),'"+techonology+"')]")));
+			WebElement technologySelect = new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(),'"+technology+"')]")));
 
 			technologySelect.click();
 			
-			String technologyConfirmation = driver.findElement(By.xpath("//*[@id=\"s2id_Enterprise_Call___Surf_Internet:ECS_Pack_Installation_Address___OCK_Check:accessTechnology_0\"]")).getText();
-
-			System.out.println(technologyConfirmation);
+			technologyConfirmation = driver.findElement(By.xpath("//*[@id=\"s2id_Enterprise_Call___Surf_Internet:ECS_Pack_Installation_Address___OCK_Check:accessTechnology_0\"]")).getText();
+			break;
+			}
 			
-			if(technologyConfirmation.contains(techonology))
+			
+//			System.out.println(technologyConfirmation);
+			
+			if(technologyConfirmation.contains(technology))
 			{
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
 				return true;

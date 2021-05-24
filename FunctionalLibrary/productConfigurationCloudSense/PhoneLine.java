@@ -9,11 +9,17 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import executionTools.BrowserActions;
 import executionTools.ExecStructure;
+import executionTools.TestExecutionReport;
 import objectMap.sfDirectSales.DirSalesEditProductConfiguration;
+import productBasketDirectSales.ProductBasketAction;
 import testExecutionData.TestCasesData;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
+import testReportComposition.ReportStructure;
+import testReportComposition.TestStepReportStructure;
+import testReporter.TestReporter;
 
 public class PhoneLine {
 
@@ -377,6 +383,8 @@ public class PhoneLine {
 			//fieldOCKId(logStream, driver, stepID, configuration);
 
 			//fieldOCKResult(logStream, driver, stepID, configuration);
+			
+//			ProductBasketAction.selectAddressEditProduct(logStream, driver, stepID, "Koning Albert ll-laan,27 B, Brussels, 1030, Belgium")
 
 			accessTechnology(logStream, driver, stepID, configuration);
 
@@ -471,9 +479,11 @@ public class PhoneLine {
 				else {
 					driver.findElement(By.xpath("//*[@id=\"select2-chosen-3\"]")).click();
 					
+					driver.findElement(By.xpath("//*[@id='s2id_autogen3_search']")).sendKeys("Koning Albert ll-laan,27 B, Brussels, 1030, Belgium");;
+					
 					Thread.sleep(3000);
 					
-					driver.findElement(By.xpath("//*[@id=\"select2-results-3\"]/li[1]")).click();
+					driver.findElement(By.xpath("//*[@id='select2-results-3']/li[1]")).click();
 					
 				}
 				
@@ -671,7 +681,7 @@ public class PhoneLine {
 
 		try
 		{
-			//fieldTechnology(logStream, driver, stepID, configuration);
+			fieldTechnology(logStream, driver, stepID, configuration);
 
 
 
@@ -767,7 +777,89 @@ public class PhoneLine {
 	}
 
 
+	public static void OCK_Check_TechnolgyAvailableForAdress(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName, String productName, String address, String accessTechnology, String technology) throws Exception
+	{
+
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+		
+		String stepName="OCK Check Config: "+productName;
+
+		String stepNameMin="OCK_Check_Technology_Available_For_Address";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);
+		
+		try {
+			
+			ProductBasketAction.selectAddressEditProduct(logStream, driver, stepID, address);
+			
+			BrowserActions.screenShotTaking(driver, testName, evidenceName+"_firstValidation_InstalaltionAddress");
+
+			accessTechnologyForAddress(logStream, driver, stepID, accessTechnology);
+			
+			BrowserActions.screenShotTaking(driver, testName, evidenceName+"_secondValidation_AccessTechnology");
+
+			
+//			WebElement CmbBoxTechnology = new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='s2id_Details:Product_Selection:PriceItem_0']")));
+
+//			CmbBoxTechnology.click();
+	
+			ProductBasketAction.technologyValidationOCK(logStream, driver, stepID, technology);
+			
+			BrowserActions.screenShotTaking(driver, testName, evidenceName+"_thirdValidation_Technlogy");
+			
+			
+		} catch (Exception e) {
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+
+	}
+	
+	private static void accessTechnologyForAddress(List<TestLog> logStream, WebDriver driver, int stepID, String accessTechnology) throws Exception 
+	{
+		String technology = accessTechnology;
+		String actionName="PL Access Technology field - Config: "+ technology;
+
+		
+			try
+			{
+				
+				WebElement inputAccessTechnology = new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"s2id_Details:Installation_Address___OCK_check:accessTechnology_0\"]")));
+
+				inputAccessTechnology.click();
+
+				switch(technology) {
+
+				case "GPON":
+					driver.findElement(By.xpath("//div[contains(text(),'GPON')]")).click();
+					break;
+
+				case "VDSL2":
+					driver.findElement(By.xpath("//div[contains(text(),'VDSL2')]")).click();
+					break;
+
+				case "ADSL+E":
+					driver.findElement(By.xpath("//div[contains(text(),'ADSL2+E')]")).click();
+					break;
+
+				}
+
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+			}
+			catch(Exception e)
+			{
+				System.out.println(e);
+				TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+				throw new Exception (actionName+" - Failed in Step "+stepID,e);
+			}
 
 
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
+		
+	}
 }
