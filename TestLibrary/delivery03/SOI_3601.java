@@ -285,8 +285,7 @@ public class SOI_3601 {
 		
 	}
 
-	public static void SOI_3601_TC01_DS_CopyBA_ProductBasket2Service(List<TestStepReportStructure> testExecStructure,
-			List<TestLog> logStream, WebDriver driver, int stepsExecuted, String testName) throws Exception 
+
 
 	public static void SOI_3601_TC03_PC_CopyBA_ProductBasket2Service(List<TestStepReportStructure> testExecStructure,
 			List<TestLog> logStream, WebDriver driver, String testName) throws Exception 
@@ -299,7 +298,6 @@ public class SOI_3601 {
 
 		String configurationIndex="configurationByDefault";
 
-		String productName ="PABX";
 
 		String productD03="PABX";
 		
@@ -420,8 +418,6 @@ public class SOI_3601 {
 			String configurationIndex="configurationByDefault";
 
 			String productD03="PABX";
-
-			D02Models.AddAndConfigureNewProduct(testExecStructure, logStream, driver, testName, productName2, configurationIndex2);
 
 			String provContactPerson="First User";
 

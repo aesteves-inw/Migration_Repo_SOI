@@ -8,8 +8,8 @@ import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-
 import browserManagement.BrowserData;
+import executionTools.ExecStructure;
 import testDataFiles.TestDataFiles;
 
 
@@ -33,10 +33,10 @@ public class ExecDriverClass {
 
 		ChromeOptions chromeProfile = new ChromeOptions(); 
 		
-//		chromeProfile.addArguments("--start-maximized");
+		chromeProfile.addArguments("--start-maximized");
 	
-		// Argument to disable launch of GUI of chrome browser
-//		chromeProfile.addArguments("--headless", "--window-size=1920,1080");
+		//chromeProfile.addArguments("--headless", "--window-size=1920,1080");
+		chromeProfile.addArguments("--window-size=1920,1080");
 
 		chromeProfile.addArguments("chrome.switches","--disable-extensions");
 
@@ -49,12 +49,12 @@ public class ExecDriverClass {
 		chromeProfile.addArguments("download.prompt_for_download", "false");
 
 		chromeProfile.addArguments("browser.helperApps.neverAsk.saveToDisk", "application/pdf");
-		
+
 		chromeProfile.setPageLoadStrategy(PageLoadStrategy.NORMAL);
 		
 		chromeProfile.setExperimentalOption("prefs", prefs);
 
-		driver = new ChromeDriver(chromeProfile);
+		driver = new ChromeDriver(chromeProfile); 
 
 		Set<Cookie> allCookies = driver.manage().getCookies(); 
 
@@ -63,8 +63,11 @@ public class ExecDriverClass {
 		{ 
 			driver.manage().addCookie(cookie); 
 		}
-		
 		return driver;
-				
+		
+		
 	}
+	
+	
+
 }

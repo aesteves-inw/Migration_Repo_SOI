@@ -1220,6 +1220,80 @@ public class ProductBasketAction {
 			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
 		}
 	}
+	
+	public static boolean selectAddressEditProduct(List<TestLog> logStream, WebDriver driver, int stepID,
+			String address) throws Exception 
+	{
+		String actionName="selectAddressEditProduct";
+		try
+		{
+			BrowserActions.ScrollByElement(driver, "xpath", "//*[@id=\"select2-chosen-3\"]");
+
+			driver.findElement(By.xpath("//*[@id=\"select2-chosen-3\"]")).click();
+
+			driver.findElement(By.xpath("//*[@id=\"s2id_autogen3_search\"]")).sendKeys(address);
+
+			WebElement addressSelect = new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(),'"+address+"')]")));
+			
+			String addressConfirmation = addressSelect.getText();
+			
+			System.out.println(addressConfirmation);
+			
+			addressSelect.click();
+			
+			if(addressConfirmation.contains(address))
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
+	
+	public static boolean technologyValidationOCK(List<TestLog> logStream, WebDriver driver, int stepID,
+			String techonology) throws Exception 
+	{
+		String actionName="selectAddressEditProduct";
+		try
+		{
+			driver.findElement(By.xpath("//*[@id=\"s2id_Enterprise_Call___Surf_Internet:ECS_Pack_Installation_Address___OCK_Check:accessTechnology_0\"]")).click();
+
+			WebElement technologySelect = new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(),'"+techonology+"')]")));
+
+			technologySelect.click();
+			
+			String technologyConfirmation = driver.findElement(By.xpath("//*[@id=\"s2id_Enterprise_Call___Surf_Internet:ECS_Pack_Installation_Address___OCK_Check:accessTechnology_0\"]")).getText();
+
+			System.out.println(technologyConfirmation);
+			
+			if(technologyConfirmation.contains(techonology))
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
 
 	
 

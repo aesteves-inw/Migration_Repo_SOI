@@ -45,7 +45,7 @@ public class SOI_3600 {
 			
 			D03Models.AddNonQuotableProductToProductBasket(testExecStructure, logStream, driver, testName, product);
 			
-			D02Models.AddAndConfigureNewProduct(testExecStructure, logStream, driver, testName, productName, configurationIndex);
+			//D02Models.AddAndConfigureNewProduct(testExecStructure, logStream, driver, testName, productName, configurationIndex);
 		
 			ProductBasketStep.fillNewAndExistingBillingDetails(testExecStructure, logStream, driver, testName);
 			
