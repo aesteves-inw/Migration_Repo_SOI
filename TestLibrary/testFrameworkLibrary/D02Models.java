@@ -236,6 +236,38 @@ public class D02Models
 			throw new Exception(testName+": Test Case Failed on Test Model - ProductConfiguration with "+productName);
 		}
 	}
+	
+	public static void OCK_Check_Config(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver, String testName, String productName, String configurationIndex) throws Exception
+	{
+
+		try
+		{
+			ProductInProductBasket(testExecStructure, logStream, driver, testName, productName);
+
+			ProductBasketStep.goToEditProductConfigurationScreen(testExecStructure, logStream, driver, testName, productName);
+
+			switch(productName)
+			{
+			case "Phone Line":
+				EProdConfigStep.configurePhoneLine(testExecStructure, logStream, driver, testName, productName, configurationIndex);
+				break;
+			case "Professional Internet":
+				EProdConfigStep.OCK_CheckInternetECS_Pro(testExecStructure, logStream, driver, testName, productName, configurationIndex);
+				break;
+			default:
+				throw new Exception("Product Invalid in Test Data File");
+			}
+
+			EProdConfigStep.finsihConfiguration(testExecStructure, logStream, driver, testName);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, testName, "Test Failed on Pre Conditions Setup", e.toString());
+			throw new Exception(testName+": Test Case Failed on Test Model - ProductConfiguration with "+productName);
+		}
+	}
 
 	public static void AddAndConfigureNewProduct(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream, WebDriver driver, String testName, String productName, String configurationIndex) throws Exception
 	{

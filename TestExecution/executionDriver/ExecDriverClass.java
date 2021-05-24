@@ -35,8 +35,8 @@ public class ExecDriverClass {
 		
 		chromeProfile.addArguments("--start-maximized");
 	
-		chromeProfile.addArguments("--headless", "--window-size=1920,1080");
-		//chromeProfile.addArguments("--window-size=1920,1080");
+		//chromeProfile.addArguments("--headless", "--window-size=1920,1080");
+		chromeProfile.addArguments("--window-size=1920,1080");
 
 		chromeProfile.addArguments("chrome.switches","--disable-extensions");
 

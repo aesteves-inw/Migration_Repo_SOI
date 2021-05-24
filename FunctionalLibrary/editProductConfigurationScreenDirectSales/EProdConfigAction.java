@@ -137,6 +137,40 @@ public class EProdConfigAction {
 			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
 		}
 	}
+	
+	public static boolean editProductConfigurationECS(List<TestLog> logStream, WebDriver driver, int stepID,
+			String productName) throws Exception 
+	{
+		String actionName="Product Basket: Edit Product Configuration Screen Validation";
+
+		try
+		{
+			WebElement productToBeConfigured=driver.findElement(By.xpath("//h1[@title='ECS - "+productName+"']"));
+
+			String productToBeConfiguredValidation=productToBeConfigured.getText().toString();
+
+			if(
+					BrowserActions.isElementPresent(driver, DirSalesEditProductConfiguration.bannerEditProductConfiguration) &&
+					BrowserActions.isElementPresent(driver, DirSalesEditProductConfiguration.productConfigurationLabel) &&
+					productToBeConfigured.isDisplayed() && productToBeConfiguredValidation.contains(productName)
+					)
+			{
+				System.out.println(actionName+" - Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
 
 	public static boolean editProductConfigurationForD03(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
 	{
