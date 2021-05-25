@@ -104,6 +104,12 @@ public class SOI_3792
 
 		String productBasketName;
 
+		String address ="Koning Albert ll-laan,27 B, Brussels, 1030, Belgium";
+		
+		String accessTechnology="VDSL2";
+		
+		String technology = "Classic Telephone Line";
+
 		try
 		{
 			LoginPageStep.loginSFDS(testExecStructure, logStream, driver, testName, userProfile);
