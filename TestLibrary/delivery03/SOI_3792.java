@@ -13,9 +13,12 @@ import homePageDirectSales.HomePageStep;
 import homePagePartCom.HomePagePCStep;
 import loginPageDirectSales.LoginPageStep;
 import loginPagePartCom.LoginPagePCStep;
+import objectMap.sfDirectSales.DirSalesEditProductConfiguration;
 import objectMap.sfDirectSales.DirSalesProductBasket;
 import opportunityDirectSales.OpportunityStep;
 import opportunityPartCom.OpportunityPCStep;
+import orderEnrichmentDirectSales.OrderEnrichmentAction;
+import orderEnrichmentDirectSales.OrderEnrichmentStep;
 import productBasketDirectSales.ProductBasketStep;
 import productConfigurationCloudSense.PhoneLine;
 import testFrameworkLibrary.D02Models;
@@ -137,6 +140,13 @@ public class SOI_3792
 			ProductBasketStep.goToEditProductConfigurationScreen(testExecStructure, logStream, driver, testName, productName);			
 			
 			EProdConfigStep.configureEnterpriseVoice(testExecStructure, logStream, driver, testName, productName, configurationIndex);
+			
+			//TO DELETE BEFORE COMMITT
+			
+			
+			EProdConfigStep.finsihConfiguration(testExecStructure, logStream, driver, testName);
+			ProductBasketStep.goToOrderEnrichment(testExecStructure, logStream, driver, testName, productName);
+			OrderEnrichmentStep.changeProduct(testExecStructure, logStream, driver, testName, productName);
 			
 
 		}

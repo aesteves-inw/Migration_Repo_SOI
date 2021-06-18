@@ -8,7 +8,7 @@ public class PartComHomePage {
 	
 	public static String quickCreateButton="//span[@class='triggerLabel truncate']";
 	
-	public static String inputSearchBar="//input[@title='Search...']";
+	public static String inputSearchBar="//input[@title='WeSearch...']";
 	
 	public static String dashboard="//section[@role='tabpanel']";
 	
