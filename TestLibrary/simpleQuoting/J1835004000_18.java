@@ -48,8 +48,7 @@ public class J1835004000_18 {
 	{
 		try
 		{
-			
-			
+						
 			J1835004000_14.J1835004000_14_TC01_Quick_Sale_Opportunity_CreateProdBasket(testExecStructure, logStream, driver, testName, stepsExecuted);
 			
 			ProductBasketStep.goToAddOferToBasketScreen(testExecStructure, logStream, driver, testName);

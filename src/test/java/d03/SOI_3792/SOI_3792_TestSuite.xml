@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="SOI-3792 User Story" parallel="false">
+  <test name="SOI_3792_TC01_DS_OCK_Refactor_BusinessRules_PhoneLine">
+    <classes>
+      <class name="d03.SOI_3792.OI_3792_TC01_DS_OCK_Refactor_BusinessRules_PhoneLine"/>
+    </classes>
+  </test> 
+   <test name="SOI_3792_TC02_DS_OCK_Refactor_BusinessRules_EnterpriseVoice">
+    <classes>
+      <class name="d03.SOI_3792.SOI_3792_TC02_DS_OCK_Refactor_BusinessRules_EnterpriseVoice"/>
+    </classes>
+  </test> 
+    <test name="SOI_3792_TC03_DS_OCK_Refactor_BusinessRules_Internet">
+    <classes>
+      <class name="d03.SOI_3792.SOI_3792_TC03_DS_OCK_Refactor_BusinessRules_Internet"/>
+    </classes>
+  </test> 
+    <test name="SOI_3792_TC04_DS_OCK_Refactor_BusinessRules_ECS_Pro">
+    <classes>
+      <class name="d03.SOI_3792.SOI_3792_TC04_DS_OCK_Refactor_BusinessRules_ECS_Pro"/>
+    </classes>
+  </test> 
+    <test name="SOI_3792_TC05_DS_OCK_Refactor_BusinessRules_ECS_ProPlus">
+    <classes>
+      <class name="d03.SOI_3792.SOI_3792_TC05_DS_OCK_Refactor_BusinessRules_ECS_ProPlus"/>
+    </classes>
+  </test> 
+      <test name="SOI_3792_TC06_DS_OCK_Refactor_BusinessRules_ECS_Fiber">
+    <classes>
+      <class name="d03.SOI_3792.SOI_3792_TC06_DS_OCK_Refactor_BusinessRules_ECS_Fiber"/>
+    </classes>
+  </test> 
+      <test name="SOI_3792_TC07_PC_OCK_Refactor_BusinessRules_PhoneLine">
+    <classes>
+      <class name="d03.SOI_3792.SOI_3792_TC07_PC_OCK_Refactor_BusinessRules_PhoneLine"/>
+    </classes>
+  </test> 
+      <test name="SOI_3792_TC08_PC_OCK_Refactor_BusinessRules_EnterpriseVoice">
+    <classes>
+      <class name="d03.SOI_3792.SOI_3792_TC08_PC_OCK_Refactor_BusinessRules_EnterpriseVoice"/>
+    </classes>
+  </test> 
+      <test name="SOI_3792_TC09_PC_OCK_Refactor_BusinessRules_Internet">
+    <classes>
+      <class name="d03.SOI_3792.SOI_3792_TC09_PC_OCK_Refactor_BusinessRules_Internet"/>
+    </classes>
+  </test> 
+      <test name="SOI_3792_TC10_PC_OCK_Refactor_BusinessRules_ECS_Pro">
+    <classes>
+      <class name="d03.SOI_3792.SOI_3792_TC10_PC_OCK_Refactor_BusinessRules_ECS_Pro"/>
+    </classes>
+  </test> 
+      <test name="SOI_3792_TC11_PC_OCK_Refactor_BusinessRules_ECS_ProPlus">
+    <classes>
+      <class name="d03.SOI_3792.SOI_3792_TC11_PC_OCK_Refactor_BusinessRules_ECS_ProPlus"/>
+    </classes>
+  </test> 
+      <test name="SOI_3792_TC12_PC_OCK_Refactor_BusinessRules_ECS_Fiber">
+    <classes>
+      <class name="d03.SOI_3792.SOI_3792_TC12_PC_OCK_Refactor_BusinessRules_ECS_Fiber"/>
+    </classes>
+  </test> 
+</suite> <!-- SOI-3792 User Story -->

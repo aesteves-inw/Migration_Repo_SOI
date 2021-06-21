@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="SOI-4099" parallel="false">
+  <test name="SOI_4099_TC01_DS_D03Categories">
+    <classes>
+      <class name="d03.SOI_4099.SOI_4099_TC01_DS_D03Categories"/>
+    </classes>
+  </test> 
+    <test name="SOI_4099_TC02_PC_D03Categories">
+    <classes>
+      <class name="d03.SOI_4099.SOI_4099_TC02_PC_D03Categories"/>
+    </classes>
+  </test> 
+</suite> <!-- Suite -->

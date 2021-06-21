@@ -19,6 +19,7 @@ import executionTools.BrowserActions;
 import executionTools.TestExecutionReport;
 import fetchDataFromExcelFiles.ExcelDataFetch;
 import navigation.NavigationAction;
+import objectMap.sfDirectSales.DirSalesProductBasket;
 import opportunityDirectSales.OpportunityAction;
 import orderEnrichmentDirectSales.OrderEnrichmentAction;
 import testLogBuilder.TestLog;
@@ -91,12 +92,26 @@ public class ProductBasketStep
 		{
 			ProductBasketAction.openAddProductMenu(logStream, driver, stepID);
 
-			validation = AddOfferToBasketAction.categorieProductMenuValidation(logStream, driver, stepID);
+			validation = AddOfferToBasketAction.categorieProductMenuValidation(logStream, driver, stepID,testName);
 
 			if(validation==true)
 			{
 				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
-				TestReporter.stepPassed(testReportStream, driver, testName, stepID, stepName, evidenceName);
+				TestReporter.stepPassed(testReportStream, driver, testName, stepID, stepName, evidenceName+"_Part1");
+				BrowserActions.verticalscrollByVisibleElement(driver, DirSalesProductBasket.categoryExternallyQuotedProducts);
+				TestReporter.stepPassed(testReportStream, driver, testName, stepID, stepName, evidenceName+"_Part2");
+				BrowserActions.verticalscrollByVisibleElement(driver, DirSalesProductBasket.categoryExternallyQuotedProducts_ComputeStorage);
+				TestReporter.stepPassed(testReportStream, driver, testName, stepID, stepName, evidenceName+"_Part3");
+				BrowserActions.verticalscrollByVisibleElement(driver, DirSalesProductBasket.categoryExternallyQuotedProducts_MassMarket);
+				TestReporter.stepPassed(testReportStream, driver, testName, stepID, stepName, evidenceName+"_Part4");
+				BrowserActions.verticalscrollByVisibleElement(driver, DirSalesProductBasket.categoryExternallyQuotedProducts_NetwConnServ);
+				TestReporter.stepPassed(testReportStream, driver, testName, stepID, stepName, evidenceName+"_Part5");
+				BrowserActions.verticalscrollByVisibleElement(driver, DirSalesProductBasket.categoryExternallyQuotedProducts_Voice);
+				TestReporter.stepPassed(testReportStream, driver, testName, stepID, stepName, evidenceName+"_Part6");
+
+
+
+			
 			}
 			else
 			{
@@ -254,7 +269,7 @@ public class ProductBasketStep
 		boolean validation;
 
 		try
-		{
+		{	
 			ProductBasketAction.expandingECS(logStream, driver, stepID, productName);
 			
 			validation = ProductBasketAction.expandedECSPackValidation(logStream, driver, stepID, productName);

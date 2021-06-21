@@ -11,7 +11,8 @@ public class DirSalesProductBasket {
 	// Product Basket Screen
 		//Simple Quoting Legacy
 		
-		public static String iframeProductBasket = "//*[starts-with(@id,'brandBand_')]/div/div/div[3]/div/force-aloha-page/div/iframe";
+//		public static String iframeProductBasket = "//*[starts-with(@id,'brandBand_')]/div/div/div[3]/div/force-aloha-page/div/iframe";
+		public static String iframeProductBasket = "//div[contains(@class,'windowViewMode-normal')]//iframe";
 		
 		public static String iframeProductBasketPC = "/html/body/div[3]/div[2]/div/div[2]/div/div/div/div/iframe";
 			
@@ -83,4 +84,40 @@ public class DirSalesProductBasket {
 		public static String inputNewBillingAccountAddress ="//input[@aria-labelledby='PRX_SOI_New_Billing_Account_Address__c']";
 		
 		public static String errorMessageBillingConfiguration="//li[@class='error-msg ng-scope']";
+		
+		//17-06-2021 - Add Offer to Basket Screen (Categories)
+		
+		public static String categoryECSPack="//*[@id='a0z3M0000008dUuQAI']";
+		
+		public static String categoryConvergedOfferrings="//*[@id='a0z3M0000008dUsQAI']";
+		
+		public static String categoryStandaloneOfferings="//*[@id='a0z3M0000008dUtQAI']";
+		
+		public static String categoryStandaloneOfferings_Internet=categoryStandaloneOfferings + "//*[@id='a0z3M0000008dUyQAI']";
+		
+		public static String categoryStandaloneOfferings_Voice=categoryStandaloneOfferings + "//*[@id='a0z3M0000008dUxQAI']";
+		
+		public static String categoryExternallyQuotedProducts="//*[@id='a0z3M0000008wGUQAY']";
+		
+		public static String categoryExternallyQuotedProducts_AdvTelcoSol=categoryExternallyQuotedProducts + "//*[@id='a0z3M0000008wCAQAY']";
+		
+		public static String categoryExternallyQuotedProducts_AdvancedWorkplace=categoryExternallyQuotedProducts + "//*[@id='a0z3M0000008wC8QAI']";
+		
+		public static String categoryExternallyQuotedProducts_ComputeStorage=categoryExternallyQuotedProducts + "//*[@id='a0z3M0000008wCEQAY']";
+		
+		public static String categoryExternallyQuotedProducts_DNSWebhosting=categoryExternallyQuotedProducts + "//*[@id='a0z3M0000008ysfQAA']";
+		
+		public static String categoryExternallyQuotedProducts_EnterprisePackTogether=categoryExternallyQuotedProducts + "//*[@id='a0z3M0000008yskQAA']";
+		
+		public static String categoryExternallyQuotedProducts_IOTAnalytics=categoryExternallyQuotedProducts + "//*[@id='a0z3M0000008wCFQAY']";
+		
+		public static String categoryExternallyQuotedProducts_MassMarket=categoryExternallyQuotedProducts + "//*[@id='a0z3M0000008wC6QAI']";
+		
+		public static String categoryExternallyQuotedProducts_Mobile=categoryExternallyQuotedProducts + "//*[@id='a0z3M0000008wCCQAY']";
+		
+		public static String categoryExternallyQuotedProducts_NetwConnServ=categoryExternallyQuotedProducts + "//*[@id='a0z3M0000008wC7QAI']";
+		
+		public static String categoryExternallyQuotedProducts_NextGenComm=categoryExternallyQuotedProducts + "//*[@id='a0z3M0000008wCBQAY']";
+		
+		public static String categoryExternallyQuotedProducts_Voice=categoryExternallyQuotedProducts + "//*[@id='a0z3M0000008yslQAA']";
 }

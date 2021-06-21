@@ -33,6 +33,8 @@ public class DirSalesOrder {
 	public static String orderSubmittedSuccess="//div[contains(.,'Your Order has been successfully submited')]";
 
 	public static String orderAlreadySubmitted="//div[contains(.,'Order already submited!')]";
+	
+	public static String oderCanNotBeSubmitted="//div[contains(.,This order can't be submitted.')]";
 
 
 	//In Edit Mode

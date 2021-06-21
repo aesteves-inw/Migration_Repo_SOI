@@ -286,6 +286,8 @@ public class BrowserActions {
 
 		if (driver != null)
 		{
+			System.out.println("Current Browser URL: " + driver. getCurrentUrl());
+			
 			driver.close();
 			
 			driver.quit();
