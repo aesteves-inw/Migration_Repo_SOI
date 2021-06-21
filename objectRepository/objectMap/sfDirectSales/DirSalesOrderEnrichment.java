@@ -4,6 +4,8 @@ public class DirSalesOrderEnrichment
 {
 	public static String iframeOrderEnrichment = "//iframe[@title='Order Enrichment']";
 	
+	public static String iframeContactsConfig = "//iframe[@title='Edit Product Configuration ~ Salesforce - Unlimited Edition']";
+	
 	public static String headerOrderEnrichment="//h1[@title='Order Enrichment - Custom']";
 	
 	public static String configOrderEnrichmentFrame="//iframe[@class='slds-size_12-of-12 specIframe']";

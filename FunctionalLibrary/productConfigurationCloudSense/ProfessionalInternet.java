@@ -401,7 +401,7 @@ public class ProfessionalInternet
 		
 	}*/
 
-	private static void fieldOCKResult(List<TestLog> logStream, WebDriver driver, int stepID, String[] configuration) throws Exception 
+	/*private static void fieldOCKResult(List<TestLog> logStream, WebDriver driver, int stepID, String[] configuration) throws Exception 
 	{
 		String OCKResult = getOCKResult(configuration);
 
@@ -425,7 +425,7 @@ public class ProfessionalInternet
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
 		
-	}
+	}*/
 
 
 

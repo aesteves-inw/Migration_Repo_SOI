@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 import executionTools.TestExecutionReport;
 import fetchDataFromExcelFiles.ExcelDataFetch;
+import orderDirectSales.OrderAction;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
 import testReportComposition.ReportStructure;
@@ -471,8 +472,8 @@ public class ServiceStep {
 		try
 		{
 			ServiceNavigation.navigateToOrder(testExecStructure, logStream, driver, testName);
-
-			validation = ServiceAction.valContractType(logStream, driver, stepID, contractType);
+			
+			validation = OrderAction.orderScreenValidation(logStream, driver, stepID);
 
 			if(validation==true)
 			{

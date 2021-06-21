@@ -32,7 +32,7 @@ public class ProductBasketAction {
 		try
 		{
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(DirSalesProductBasket.iframeProductBasket)));
-			
+
 			//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesProductBasket.iframeProductBasket)));
 
 			WebElement iframeProductBasket = driver.findElement(By.xpath(DirSalesProductBasket.iframeProductBasket));
@@ -64,7 +64,7 @@ public class ProductBasketAction {
 		try
 		{
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(PartComProductBasket.iframeProductBasket)));
-			
+
 			//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesProductBasket.iframeProductBasket)));
 
 			WebElement iframeProductBasket = driver.findElement(By.xpath(PartComProductBasket.iframeProductBasket));
@@ -134,9 +134,9 @@ public class ProductBasketAction {
 		try
 		{
 			//driver.findElement(By.xpath(DirSalesProductBasket.syncButton)).click();
-			
+
 			WebElement syncButton = driver.findElement(By.xpath(DirSalesProductBasket.syncButton));
-			
+
 			BrowserActions.jsClick(driver, syncButton);
 
 
@@ -167,13 +167,13 @@ public class ProductBasketAction {
 			{
 				if(we.getText().contains(productName))
 				{
-					
+
 					//we.findElement(By.xpath(DirSalesProductBasket.selectLineItemCheckBox)).click();
-					
+
 					WebElement selectLineItemCheckBox = we.findElement(By.xpath(DirSalesProductBasket.selectLineItemCheckBox));
-					
+
 					BrowserActions.jsClick(driver, selectLineItemCheckBox);
-					
+
 					break;
 				}
 			}			
@@ -236,7 +236,7 @@ public class ProductBasketAction {
 				if(we.getText().contains(productName))
 				{
 					//we.findElement(By.xpath(DirSalesProductBasket.expandPackageButton)).click();
-					
+
 					BrowserActions.jsClick(driver, we.findElement(By.xpath(DirSalesProductBasket.expandPackageButton)));
 
 					break;
@@ -293,7 +293,7 @@ public class ProductBasketAction {
 				if (productBasketLines.get(i).getText().contains(productName))
 				{
 					//productBasketLinesBts.get(i).click();
-					
+
 					BrowserActions.jsClick(driver, productBasketLinesBts.get(i));
 					break;
 				}
@@ -396,13 +396,13 @@ public class ProductBasketAction {
 			/*WebElement inputProvisioningContact = driver.findElement(By.xpath(DirSalesProductBasket.inputProvisioningContactPerson));
 
 			inputProvisioningContact.sendKeys(textExistingTechnicalContact);
-			
+
 			Thread.sleep(3000);
-			
+
 			driver.findElement(By.xpath("//*[@id=\"select2-results-6\"]/li[1]")).click();
-			
-			*/
-			
+
+			 */
+
 			//BrowserActions.jsClick(driver, contactList);
 
 			/*
@@ -421,7 +421,7 @@ public class ProductBasketAction {
 
 			}
 			 */
-			
+
 			//driver.switchTo().frame(driver.findElement(By.xpath("//*[@id=\"select2-drop\"]")));
 
 			//WebElement provlistItem = new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li/div/div[1]")));
@@ -452,11 +452,11 @@ public class ProductBasketAction {
 		try
 		{
 			WebElement saveButton=driver.findElement(By.xpath(DirSalesProductBasket.saveButton));
-			
+
 			Thread.sleep(1000);
-			
+
 			BrowserActions.jsClick(driver, saveButton);
-			
+
 			Thread.sleep(1000);
 
 			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h3[@role='alert'][text()='Saved successfully']"))).click();
@@ -482,14 +482,14 @@ public class ProductBasketAction {
 		try
 		{
 			WebElement saveButton=driver.findElement(By.xpath(DirSalesProductBasket.saveButton));
-			
-			Thread.sleep(1000);
-			
-			BrowserActions.jsClick(driver, saveButton);
-			
+
 			Thread.sleep(1000);
 
-			
+			BrowserActions.jsClick(driver, saveButton);
+
+			Thread.sleep(1000);
+
+
 
 
 
@@ -503,7 +503,7 @@ public class ProductBasketAction {
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
 	}
-	
+
 	public static void cancelProductBasketChanges(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
 	{
 		String actionName="cancelProductBasketChanges";
@@ -512,10 +512,10 @@ public class ProductBasketAction {
 		try
 		{
 			WebElement cancelButton=driver.findElement(By.xpath(DirSalesProductBasket.cancelButton));
-			
-			
+
+
 			BrowserActions.jsClick(driver, cancelButton);
-			
+
 			Thread.sleep(1000);
 
 
@@ -569,7 +569,7 @@ public class ProductBasketAction {
 
 
 
-			
+
 
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
@@ -581,7 +581,7 @@ public class ProductBasketAction {
 			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
 			throw new Exception (actionName+" - Failed in Step "+stepID,e);
 		}
-		
+
 	}
 
 	//Validation Actions
@@ -620,7 +620,7 @@ public class ProductBasketAction {
 			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
 		}
 	}
-	
+
 	public static boolean productBasketScreenValidationPC(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
 	{
 		String actionName="Product Basket: Validation of Product Basket Screen";
@@ -656,17 +656,31 @@ public class ProductBasketAction {
 			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
 		}
 	}
-	
+
 	public static boolean validateProductBasketScreen(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
 	{
 		String actionName="Product Basket: Validation of Product Basket Screen";
+		
+		WebDriverWait wait = new WebDriverWait(driver,30);
+		
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"brandBand_2\"]/div/div/div[2]/div/force-aloha-page/div/iframe")));
+
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesProductBasket.iframeProductBasket)));
+
+		WebElement iframeProductBasket = driver.findElement(By.xpath("//*[@id=\"brandBand_2\"]/div/div/div[2]/div/force-aloha-page/div/iframe"));
+
+		driver.switchTo().frame(iframeProductBasket);
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesProductBasket.productBasketLabel)));
+
+		TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
 		try
 		{	
-			if(BrowserActions.isElementPresent(driver, DirSalesProductBasket.cloneBasketButton) && 
-					BrowserActions.isElementPresent(driver, DirSalesProductBasket.syncButton) && 
-					BrowserActions.isElementPresent(driver, DirSalesProductBasket.productBasketHeader) && 
-					BrowserActions.isElementPresent(driver, DirSalesProductBasket.productBasketName) && 
+			if(//BrowserActions.isElementPresent(driver, DirSalesProductBasket.cloneBasketButton) && 
+					//BrowserActions.isElementPresent(driver, DirSalesProductBasket.syncButton)) //&& 
+					//BrowserActions.isElementPresent(driver, DirSalesProductBasket.productBasketHeader) && 
+					//BrowserActions.isElementPresent(driver, DirSalesProductBasket.productBasketName) && 
 					BrowserActions.isElementPresent(driver, DirSalesProductBasket.addProductButton))
 			{
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
@@ -1095,14 +1109,14 @@ public class ProductBasketAction {
 			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
 		}
 	}
-	
+
 	public static boolean internetEditConfigValidation(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
 	{
 		String actionName="internetEditConfigValidation";
 		try
 		{
 			EProdConfigAction.changeToEditProductConfigurationiFrame(logStream, driver, stepID);
-			
+
 			String internetEditConfigHeader1 = driver.findElement(By.xpath("//p[text()='Product Configuration']")).getText();
 			String internetEditConfigHeader2 = driver.findElement(By.xpath("//h1[text()='ECS - Professional Internet']")).getText();
 
@@ -1193,7 +1207,7 @@ public class ProductBasketAction {
 		try
 		{
 			String newBillingAddressVal=driver.findElement(By.xpath(DirSalesProductBasket.inputNewBillingAccountAddress)).getAttribute("value");
-			
+
 			if(newBillingAddressVal.contains(newBillingAddress))
 			{
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
@@ -1213,7 +1227,120 @@ public class ProductBasketAction {
 		}
 	}
 
-	
+	public static boolean selectAddressEditProduct(List<TestLog> logStream, WebDriver driver, int stepID,
+			String address) throws Exception 
+	{
+		String actionName="selectAddressEditProduct";
+		try
+		{
+			BrowserActions.ScrollByElement(driver, "xpath", "//*[@id=\"configurationContainer\"]/div/div/div[2]/div[3]/h3");
+
+			driver.findElement(By.xpath("//*[@id=\"select2-chosen-3\"]")).click();
+
+			driver.findElement(By.xpath("//*[@id=\"s2id_autogen3_search\"]")).sendKeys(address);
+
+			WebElement addressSelect = new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(),'"+address+"')]")));
+
+			String addressConfirmation = addressSelect.getText();
+
+			System.out.println(addressConfirmation);
+
+			addressSelect.click();
+
+			if(addressConfirmation.contains(address))
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
+
+	public static boolean technologyValidationOCK(List<TestLog> logStream, WebDriver driver, int stepID,
+			String technology) throws Exception 
+	{
+		String actionName="selectAddressEditProduct";
+
+		boolean validation = false;
+
+		try
+		{
+			driver.findElement(By.xpath("//*[@id=\"s2id_Enterprise_Call___Surf_Internet:ECS_Pack_Installation_Address___OCK_Check:accessTechnology_0\"]")).click();
+
+			WebElement technologySelect = new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@id='select2-drop']//ul)[2]")));
+			
+			technologySelect.getText();
+
+			String technologyList = driver.findElement(By.xpath("//*[@id=\"select2-results-1\"]")).getText();
+
+			System.out.println(driver.findElement(By.xpath("//*[@id=\"select2-results-1\"]")).getText());
+
+			switch(technology) {
+
+			case "COPPER":
+				if(technologyList.contains("VDSL2") || technologyList.contains("ADSL2+E"))
+				{
+					TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+					validation = true;
+					driver.findElement(By.xpath("//*[@id=\"select2-results-1\"]/li[1]")).click();
+				}
+				else
+				{
+					validation =  false;
+				}
+				break;
+			case "FIBER":
+				if(technologyList.contains("GPON"))
+				{
+					TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+					validation =  true;
+					driver.findElement(By.xpath("//*[@id=\"select2-results-1\"]/li[1]")).click();
+				}
+				else
+				{
+					validation =  false;
+				}
+				break;
+			case "BOTH":
+				if(technologyList.contains("VDSL2") || technologyList.contains("ADSL2+E") && technologyList.contains("GPON"))
+				{
+					TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+					validation =  true;
+					driver.findElement(By.xpath("//*[@id=\"select2-results-1\"]/li[1]")).click();
+				}
+				else
+				{
+					validation =  false;
+				}
+			break;
+
+			}
+
+			if(validation == true) {
+				return true;
+			}
+			else {return false;}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
+
+
 
 
 
