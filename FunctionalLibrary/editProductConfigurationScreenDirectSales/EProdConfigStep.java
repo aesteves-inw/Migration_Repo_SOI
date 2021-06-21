@@ -218,19 +218,19 @@ public class EProdConfigStep
 		{	
 			ProductBasketAction.selectAddressEditProduct(logStream, driver, stepID, "Rue J Besme,20, Koekelberg, 1081, Belgium");
 
-			ProductBasketAction.technologyValidationOCK(logStream, driver, stepID, "VDSL2");
+			ProductBasketAction.technologyValidationOCK(logStream, driver, stepID, "COPPER");
 			
 			BrowserActions.screenShotTaking(driver, testName, "firstValidation");
 			
 			ProductBasketAction.selectAddressEditProduct(logStream, driver, stepID, "Zandstraat,40, Brecht, 2960, Belgium");
 			
-			ProductBasketAction.technologyValidationOCK(logStream, driver, stepID, "ADSL2+E");
+			ProductBasketAction.technologyValidationOCK(logStream, driver, stepID, "COPPER");
 
 			BrowserActions.screenShotTaking(driver, testName, "secondValidation");
 			
-			ProductBasketAction.selectAddressEditProduct(logStream, driver, stepID, "Rue Odette Virlée,23, Dinant, 5500, Belgium");
+			ProductBasketAction.selectAddressEditProduct(logStream, driver, stepID, "Rue J Besme,20, Koekelberg, 1081, Belgium");
 			
-			ProductBasketAction.technologyValidationOCK(logStream, driver, stepID, "GPON");
+			ProductBasketAction.technologyValidationOCK(logStream, driver, stepID, "FIBER");
 
 			BrowserActions.screenShotTaking(driver, testName, "thirdValidation");
 
@@ -374,6 +374,92 @@ public class EProdConfigStep
 			EnterpriseVoice.configurationOfEnterpriseVoice(logStream, driver, stepID, configuration, testName);
 
 			validation = EnterpriseVoice.validationOfEVConfiguration(logStream, driver, stepID, configuration);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+
+
+	}
+	
+	public static void selectAddress(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName, String address) throws Exception 
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+
+		String stepName="Select Address ";
+
+		String stepNameMin="selectAddress";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			EProdConfigAction.selectAddress(logStream, driver, stepID, address);
+
+			validation = EProdConfigAction.selectAddressValidation(logStream, driver, stepID);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+
+
+	}
+	
+	public static void selectTechnologyNOK(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName) throws Exception 
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+
+		String stepName="Select Technology NOK ";
+
+		String stepNameMin="selectTechnologyNOK";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			EProdConfigAction.selectTechnologyNOK(logStream, driver, stepID, "VDSL2");
+
+			validation = EProdConfigAction.selectTechnologyValidationNOK(logStream, driver, stepID);
 
 			if(validation==true)
 			{

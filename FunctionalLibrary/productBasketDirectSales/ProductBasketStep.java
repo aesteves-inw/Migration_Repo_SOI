@@ -690,7 +690,11 @@ public class ProductBasketStep
 			
 			Thread.sleep(5000);
 			
+			String OE_URL = driver.getCurrentUrl();
+			
+			if(OE_URL.contains("one")) {
 			OrderEnrichmentAction.changeToOrderEnrichmentiFrame(logStream, driver, stepID);
+			}
 
 			OrderEnrichmentAction.selectProductForOEConfig(logStream, driver, stepID, productName);
 			

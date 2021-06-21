@@ -56,13 +56,13 @@ public class OrderEnrichmentAction
 		try
 		{
 			if(productName == "Enterprise Voice") {driver.findElement(By.xpath("//*[starts-with(text(),'"+productName+"')]")).click();}
-			
+
 			else if (productName == "Professional Internet") {driver.findElement(By.xpath("//*[starts-with(text(),'"+productName+"')]")).click();} 
-			
+
 			else {driver.findElement(By.xpath("//div[text()='"+productName+"']")).click();}
-			
+
 			driver.switchTo().frame(driver.findElement(By.xpath("//*[@id=\"specificationsApp\"]/div[2]/div[2]/article/div[2]/iframe")));
-			
+
 			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(DirSalesOrderEnrichment.tabsList)));
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
@@ -84,11 +84,13 @@ public class OrderEnrichmentAction
 	{
 		String actionName="tabsforOEValidation";
 
-		int errorCounter=0;
+		int errorCounter=1;
+
+		boolean validation = false;
 
 		try
 		{
-			
+
 			List<WebElement> oeTabsList=driver.findElements(By.xpath(DirSalesOrderEnrichment.tabInTheList));
 
 			for(WebElement oetab:oeTabsList)
@@ -97,11 +99,19 @@ public class OrderEnrichmentAction
 				if (oetab.isDisplayed())
 				{
 					System.out.println(oetab.getText());
-					errorCounter++;
+
+					if(oetab.getText().contains("CONTACTS")) {
+
+						driver.findElement(By.xpath("//li[@title='Contacts']//a[1]")).click();
+						Thread.sleep(5000);
+						validation=true;	
+					}
+					else {validation=true;}
+
 				}
 			}
 
-			if(errorCounter > 0)
+			if(validation == true)
 			{
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
 				return true;
@@ -118,6 +128,143 @@ public class OrderEnrichmentAction
 			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
 			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
 		}
+	}
+
+	public static void fillDataCapFormEV(List<TestLog> logStream, WebDriver driver, int stepID,
+			String productName, String dataCapValue) throws Exception 
+	{
+		String actionName="fillDataCapFormEV";
+
+
+		try
+		{
+			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(DirSalesOrderEnrichment.tabsList)));
+
+			driver.findElement(By.xpath("//li[@title='Data Capture Form']//a[1]")).click();
+			
+			driver.switchTo().frame(1);
+			
+			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[@id=\"addRowBtn\"]")));
+
+			driver.findElement(By.xpath("//*[@id=\"addRowBtn\"]")).click();
+
+			driver.findElement(By.xpath("//*[@id=\"tableBody\"]/tr/td[2]/div/input")).sendKeys(dataCapValue);
+
+			driver.findElement(By.xpath("//*[@id=\"saveBtnMultiple\"]")).click();
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+
+	}
+	
+	public static boolean dataCaptureValidation(List<TestLog> logStream, WebDriver driver, int stepID,
+			String productName, String dataCapValue) throws Exception 
+	{
+		String actionName="fillDataCapFormEV";
+
+
+		try
+		{
+
+			String dataCap = driver.findElement(By.xpath("//*[@id=\"tableBody\"]/tr/td[2]/div/input")).getAttribute("value");
+			
+		if(dataCap.contains(dataCapValue)) {
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+			return true;
+		}
+		else {
+			return false;
+		}
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+
+	}
+
+	public static void fillContactEV(List<TestLog> logStream, WebDriver driver, int stepID,
+			String productName, String contact) throws Exception 
+	{
+		String actionName="fillContactEV";
+
+
+		try
+		{
+			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(DirSalesOrderEnrichment.tabsList)));
+
+			driver.findElement(By.xpath("//li[@title='Contacts']//a[1]")).click();
+			
+			driver.switchTo().frame(0);
+			
+			driver.findElement(By.xpath("//*[@id=\"s2id_Primary:General_Information:Person_0\"]/a")).click();
+			
+			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[@id=\"s2id_autogen1_search\"]")));
+
+			driver.findElement(By.xpath("//*[@id=\"s2id_autogen1_search\"]")).sendKeys(contact);
+			
+			Thread.sleep(5000);
+
+			driver.findElement(By.xpath("//*[@id=\"select2-results-1\"]/li")).click();
+			
+			driver.findElement(By.xpath("(//button[text()='Save'])[2]")).click();
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+
+	}
+	
+	public static boolean contactValidation(List<TestLog> logStream, WebDriver driver, int stepID,
+			String productName, String contact) throws Exception 
+	{
+		String actionName="fillDataCapFormEV";
+
+
+		try
+		{
+			//new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(DirSalesOrderEnrichment.tabsList)));
+
+			//driver.findElement(By.xpath("//li[@title='Contacts']//a[1]")).click();
+
+			//driver.switchTo().frame(driver.findElement(By.xpath("//*[@id=\"specificationsApp\"]/div[2]/div[2]/article/div[2]/iframe")));
+
+			String contactFilled = driver.findElement(By.xpath("//*[@id=\"select2-chosen-1\"]")).getText();
+			
+			System.out.println(contactFilled);
+			
+		if(contactFilled.contains(contact)) {
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+			return true;
+		}
+		else {
+			return false;
+		}
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+
 	}
 
 }

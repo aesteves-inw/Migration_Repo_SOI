@@ -466,8 +466,7 @@ public class ServiceAction {
 
 		try
 		{
-			String fieldBillingAccountIDValidation=driver.findElement(By.xpath(DirSalesService.fieldBillingAccountID)).getText().toString();			
-
+			String fieldBillingAccountIDValidation=driver.findElement(By.xpath(DirSalesService.fieldBillingAccountID)).getAttribute("value");
 
 			if(fieldBillingAccountIDValidation.contains(textExistingBillingAccountIdField))
 			{
