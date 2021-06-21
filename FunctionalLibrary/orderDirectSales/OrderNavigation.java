@@ -19,7 +19,7 @@ public class OrderNavigation {
 
 		try
 		{
-			String serviceURL=driver.findElement(By.xpath("//a[text()='"+serviceName+"']")).getAttribute("href");
+			String serviceURL=driver.findElement(By.xpath("//a[starts-with(text(),'"+serviceName+"')]")).getAttribute("href");
 			
 			System.out.println("Debug - serviceURL: "+serviceURL);
 			
