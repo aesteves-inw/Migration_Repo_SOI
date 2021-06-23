@@ -37,7 +37,7 @@ public class ServiceNavigation
 		try
 		{
 
-			WebElement orderLink = driver.findElement(By.xpath("//a[contains(.,'New')]"));
+			WebElement orderLink = driver.findElement(By.xpath("//a[contains(.,'New Basket')]"));
 
 			orderLink.click();
 

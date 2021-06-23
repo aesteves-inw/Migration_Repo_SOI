@@ -26,6 +26,8 @@ public class ProductBasketPCAction
 
 		try
 		{
+			driver.switchTo().defaultContent();
+			
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(PartComProductBasket.iframeProductBasket)));
 
 			WebElement iframeProductBasket = driver.findElement(By.xpath(PartComProductBasket.iframeProductBasket));
@@ -60,10 +62,10 @@ public class ProductBasketPCAction
 			
 			changeToProductBasketiframePC(logStream, stepID, driver);
 
-			if(BrowserActions.isElementPresent(driver, DirSalesProductBasket.cloneBasketButton) && 
+			if(/*BrowserActions.isElementPresent(driver, DirSalesProductBasket.cloneBasketButton) && 
 					BrowserActions.isElementPresent(driver, DirSalesProductBasket.syncButton) && 
 					BrowserActions.isElementPresent(driver, DirSalesProductBasket.productBasketHeader) && 
-					BrowserActions.isElementPresent(driver, DirSalesProductBasket.productBasketName) && 
+					BrowserActions.isElementPresent(driver, DirSalesProductBasket.productBasketName) &&*/ 
 					BrowserActions.isElementPresent(driver, DirSalesProductBasket.addProductButton))
 			{
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);

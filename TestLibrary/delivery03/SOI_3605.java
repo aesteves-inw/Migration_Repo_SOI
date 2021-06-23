@@ -82,7 +82,7 @@ public class SOI_3605 {
 
 			OrderEnrichmentStep.fillDataCapFormEV(testExecStructure, logStream, driver, testName, productEnterpriseVoice, "12345");
 
-			OrderEnrichmentStep.fillContactsFormEV(testExecStructure, logStream, driver, testName, productEnterpriseVoice, "First User");
+			//OrderEnrichmentStep.fillContactsFormEV(testExecStructure, logStream, driver, testName, productEnterpriseVoice, "First User");
 
 			OrderEnrichmentStep.backToProductBasket(testExecStructure, logStream, driver, testName);
 
@@ -188,15 +188,17 @@ public class SOI_3605 {
 
 			OrderEnrichmentStep.fillDataCapFormEV(testExecStructure, logStream, driver, testName, productEnterpriseVoice, "12345");
 
-			OrderEnrichmentStep.fillContactsFormEV(testExecStructure, logStream, driver, testName, productEnterpriseVoice, "First User");
+			//OrderEnrichmentStep.fillContactsFormEV(testExecStructure, logStream, driver, testName, productEnterpriseVoice, "First User");
 
-			OrderEnrichmentStep.backToProductBasket(testExecStructure, logStream, driver, testName);
+			OrderEnrichmentStep.backToProductBasketPC(testExecStructure, logStream, driver, testName);
 
 			ProductBasketStep.syncProductBasket(testExecStructure, logStream, driver, testName);
 
 			ProductBasketStep.goToAgreementScreen(testExecStructure, logStream, driver, testName);
 
-			NavigationStep.goToOpportunityByURL(testExecStructure, logStream, driver, testName, optyURL);
+			//NavigationStep.goToOpportunityByURL(testExecStructure, logStream, driver, testName, optyURL);
+			
+			NavigationStep.goToOpportunityByURLInPC(testExecStructure, logStream, driver, testName, optyURL);
 
 			OpportunityPCStep.closeWinOpportunityInPC(testExecStructure, logStream, driver, testName);
 
