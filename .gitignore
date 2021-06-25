@@ -1,1 +1,6 @@
 /target/
+/TestLogging/
+/TestReporting/
+/TestRunsBasket/
+/test-output/
+/Selenium_Support/
