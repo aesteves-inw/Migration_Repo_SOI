@@ -210,6 +210,8 @@ public class DirSalesOrder {
 
 	public static String linksToService="//table/tbody/tr/td/span/lightning-formatted-url/a";
 	
+	public static String viewAllServices = "//a/span[contains(text(),'View All')]";
+	
 	
 	
 	

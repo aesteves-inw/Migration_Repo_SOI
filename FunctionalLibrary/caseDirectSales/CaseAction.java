@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import executionTools.BrowserActions;
 import objectMap.sfDirectSales.DirSalesCase;
 import testExecutionData.ProductConfigurationD02;
+import testExecutionData.ProductConfigurationD03;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
 
@@ -148,4 +149,74 @@ public class CaseAction {
 		}
 	}
 
+	
+	public static boolean validateOrderToCaseMappingNonQuotable(List<TestLog> logStream, WebDriver driver,
+			int stepID, String productName, String contractType) throws Exception
+	{
+		String actionName="validateOrderToCaseMappingNonQuotable";
+
+		try
+		{
+			String extractedCategoryMapped=ProductConfigurationD03.getCategoryMappedOfOrderableProduct(productName);
+			
+			// Validation on Key Details section
+			
+			new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(DirSalesCase.itemsKeyDetails)));
+
+			String itemSubCategoryKeyDetailsVal=driver.findElement(By.xpath(DirSalesCase.itemsKeyDetails + "//span[contains(text(),'"+contractType+"')]")).getText();
+			
+			String itemDomainKeyDetailsVal = driver.findElement(By.xpath(DirSalesCase.itemsKeyDetails + "//span[contains(text(),'Fix')]")).getText();
+			
+			String itemTypeKeyDetailsVal = driver.findElement(By.xpath(DirSalesCase.itemsKeyDetails + "//span[contains(text(),'Order (Fix)')]")).getText();
+			
+			String itemCategoryKeyDetailsVal = driver.findElement(By.xpath(DirSalesCase.itemsKeyDetails + "//span[contains(text(),'"+extractedCategoryMapped+"')]")).getText();
+
+			// Validation on Details Tab
+
+			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(DirSalesCase.caseMainTableDetailsTab)));
+			
+			
+//			System.out.println(driver.findElement(By.xpath(DirSalesCase.caseMainTableDetailsTab)).isDisplayed());
+
+			BrowserActions.jsClick(driver,(By.xpath(DirSalesCase.caseMainTableDetailsTab)));
+			
+//			System.out.println(driver.findElement(By.xpath(DirSalesCase.sectionCaseCategorizationDetailsTab)).isDisplayed());
+			
+			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(DirSalesCase.sectionCaseCategorizationDetailsTab)));
+			
+//			System.out.println(driver.findElement(By.xpath(DirSalesCase.sectionCaseCategorizationDetailsTab)).isDisplayed());
+			
+			String 	itemSubCategoryDetailsTabVal=driver.findElement(By.xpath(DirSalesCase.itemsKeyDetails + "//*[text()='"+contractType+"']")).getText();
+			
+			String itemDomainDetailsTabVal = driver.findElement(By.xpath(DirSalesCase.itemsKeyDetails + "//*[text()='Fix']")).getText();
+			
+			String itemTypeDetailsTabVal = driver.findElement(By.xpath(DirSalesCase.itemsKeyDetails + "//*[text()='Order (Fix)']")).getText();
+			
+			String itemCategoryDetailsTabVal = driver.findElement(By.xpath(DirSalesCase.itemsKeyDetails + "//*[text()='"+extractedCategoryMapped+"']")).getText();
+			
+			if((// Validation on Key Details section
+				itemSubCategoryKeyDetailsVal.contains(contractType) || itemSubCategoryKeyDetailsVal.equalsIgnoreCase("new"))&&
+					itemDomainKeyDetailsVal.equalsIgnoreCase("Fix") && itemTypeKeyDetailsVal.equalsIgnoreCase("Order (Fix)") &&
+					itemCategoryKeyDetailsVal.equalsIgnoreCase(extractedCategoryMapped)&&
+				// Validation on Details Tab
+				(itemSubCategoryDetailsTabVal.contains(contractType) || itemSubCategoryDetailsTabVal.equalsIgnoreCase("new"))&&
+				itemDomainDetailsTabVal.equalsIgnoreCase("Fix") && itemTypeDetailsTabVal.equalsIgnoreCase("Order (Fix)") &&
+				itemCategoryDetailsTabVal.equalsIgnoreCase(extractedCategoryMapped))
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
 }

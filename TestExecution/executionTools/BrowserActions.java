@@ -17,6 +17,8 @@ import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import objectMap.sfPartnersCommunity.PartComOrder;
+
 
 public class BrowserActions {
 
@@ -71,6 +73,21 @@ public class BrowserActions {
 			}
 		}
 
+	}
+	
+	public static void refreshPageUntilElementPresent(WebDriver driver, String xpath) throws Exception {
+
+		
+//		if (BrowserActions.isElementPresent(driver, xpath)==false) {
+			for (int i = 0; i < 30; i++) {
+				Thread.sleep(3000);
+
+				BrowserActions.refreshPage(driver);
+
+				if (BrowserActions.isElementPresent(driver, xpath))
+					break;
+			}
+//		}
 	}
 
 	public static void jsClickByXpath(WebDriver driver, String xpath)
