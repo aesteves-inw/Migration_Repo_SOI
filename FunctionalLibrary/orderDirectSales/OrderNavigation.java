@@ -19,7 +19,9 @@ public class OrderNavigation {
 
 		try
 		{
-			String serviceURL=driver.findElement(By.xpath("//a[starts-with(text(),'"+serviceName+"')]")).getAttribute("href");
+//			String serviceURL=driver.findElement(By.xpath("//a[starts-with(text(),'"+serviceName+"')]")).getAttribute("href");
+			// Xpath syntax simulates ends-with and starts-with functions
+			String serviceURL=driver.findElement(By.xpath("//a[text()[substring(.,string-length(.) - string-length('"+serviceName+"') + 1) = '"+serviceName+"'] and starts-with(text(),'"+serviceName+"')]")).getAttribute("href");
 			
 			System.out.println("Debug - serviceURL: "+serviceURL);
 			

@@ -114,12 +114,17 @@ public class OrderPCAction {
 		{
 			if(BrowserActions.isElementPresent(driver, PartComOrder.successMessage))
 			{							
-				Thread.sleep(3000);
-
-				BrowserActions.refreshPage(driver);
-
+				
 				orderStatusValidation=driver.findElement(By.xpath(PartComOrder.orderStatusLabel)).getText().toString();
 
+				if(orderStatusValidation.equalsIgnoreCase("submitted")==false) {
+					
+					BrowserActions.refreshPageUntilElementPresent(driver, PartComOrder.orderStatusLabel);
+					
+					orderStatusValidation=driver.findElement(By.xpath(PartComOrder.orderStatusLabel)).getText().toString();
+					
+				}
+				
 				System.out.println("Debug of submitOrderPositiveValidationValidation: "+orderStatusValidation);
 
 				if(orderStatusValidation.equalsIgnoreCase("submitted"))

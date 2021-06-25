@@ -25,9 +25,11 @@ public class AgreementAction
 
 		try
 		{
+			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesAgreement.buttonGenerateProposalDocument)));
+
 			driver.findElement(By.xpath(DirSalesAgreement.buttonGenerateProposalDocument)).click();
 			
-			for(int i=0;i<30;i++)
+			for(int i=0;i<50;i++)
 			{
 					Thread.sleep(1000);
 			}
@@ -152,6 +154,7 @@ public class AgreementAction
 
 		try
 		{
+			BrowserActions.refreshPageUntilElementPresent(driver, DirSalesAgreement.generatedDocument);
 
 			if(BrowserActions.isElementPresent(driver, DirSalesAgreement.generatedDocument))
 			{
