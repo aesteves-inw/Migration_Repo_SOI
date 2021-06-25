@@ -2,10 +2,16 @@ package serviceDirectSales;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import executionTools.BrowserActions;
 import executionTools.TestExecutionReport;
 import fetchDataFromExcelFiles.ExcelDataFetch;
+import objectMap.sfDirectSales.DirSalesProductBasket;
 import orderDirectSales.OrderAction;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
@@ -425,6 +431,18 @@ public class ServiceStep {
 
 		try
 		{
+			Thread.sleep(2000);
+			
+			new WebDriverWait(driver, 5).until(ExpectedConditions.visibilityOfElementLocated(By.name("contractTypePicklist")));
+			
+			if (contractType==null)
+			{
+			Select selectContractType = new Select(driver.findElement(By.name("contractTypePicklist")));
+
+			contractType = 	selectContractType.getOptions().get(1).getText();
+			
+			}
+			
 			ServiceAction.fillContractTypeServiceLevel(logStream, driver, stepID, contractType);
 			
 			ServiceAction.saveServiceChanges(logStream, driver, stepID);

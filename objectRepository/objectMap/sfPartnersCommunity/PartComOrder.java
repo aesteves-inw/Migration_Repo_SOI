@@ -18,7 +18,7 @@ public class PartComOrder {
 	public static String headerOrderDetail="//h3[contains(.,'Order')]";
 	
 //	public static String orderDetails="//div[@role='list']";
-	public static String orderDetails="//*[@class='forceCommunityRecordDetail']";
+	public static String orderDetails="//div[@data-aura-class='forceDetailPanelDesktop']";
 	
 	public static String addServiceBtn ="//div[@title='Add Service']";
 			

@@ -388,9 +388,11 @@ public class OrderPCStep {
 		{
 			//WebElement serviceLink = driver.findElement(By.xpath("//a[@title='"+serviceName+"']"));
 			
-			WebElement serviceLink = driver.findElement(By.xpath("//a[contains(.,'"+serviceName+"')]"));
+			// Xpath syntax simulates ends-with and starts-with functions
+			serviceID=driver.findElement(By.xpath("//a[text()[substring(.,string-length(.) - string-length('"+serviceName+"') + 1) = '"+serviceName+"'] and starts-with(text(),'"+serviceName+"')]")).getAttribute("data-recordid");
+//			WebElement serviceLink = driver.findElement(By.xpath("//a[contains(.,'"+serviceName+"')]"));
 			
-			serviceID=serviceLink.getAttribute("data-recordid");
+//			serviceID=serviceLink.getAttribute("data-recordid");
 			
 			serviceURL=ExcelDataFetch.searchDT(0, "PartnersCommunity")+"/"+serviceID;
 			

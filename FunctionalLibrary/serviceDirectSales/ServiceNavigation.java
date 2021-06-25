@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import executionTools.BrowserActions;
 import executionTools.TestExecutionReport;
 import objectMap.sfDirectSales.DirSalesOrder;
 import objectMap.sfDirectSales.DirSalesService;
@@ -37,7 +38,7 @@ public class ServiceNavigation
 		try
 		{
 
-			WebElement orderLink = driver.findElement(By.xpath("//a[contains(.,'New')]"));
+			WebElement orderLink = driver.findElement(By.xpath("//a[contains(.,'New Basket')]"));
 
 			orderLink.click();
 
@@ -47,6 +48,10 @@ public class ServiceNavigation
 			
 			validation = driver.findElement(By.xpath(DirSalesOrder.orderHeader)).isDisplayed();
 
+			new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(By.xpath(DirSalesOrder.viewAllServices)));
+			
+			BrowserActions.jsClick(driver, By.xpath(DirSalesOrder.viewAllServices));
+			
 			if(validation==true)
 			{
 				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);

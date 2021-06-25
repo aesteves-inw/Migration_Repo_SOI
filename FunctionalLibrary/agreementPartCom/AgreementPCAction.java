@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import executionTools.BrowserActions;
+import objectMap.sfDirectSales.DirSalesAgreement;
 import objectMap.sfPartnersCommunity.PartComAgreements;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
@@ -23,9 +24,13 @@ public class AgreementPCAction {
 
 		try
 		{
+			
+			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(PartComAgreements.buttonGenerateProposalDocument)));
+
+			
 			driver.findElement(By.xpath(PartComAgreements.buttonGenerateProposalDocument)).click();
 
-			for(int i=0;i<30;i++)
+			for(int i=0;i<50;i++)
 			{
 				Thread.sleep(1000);
 			}

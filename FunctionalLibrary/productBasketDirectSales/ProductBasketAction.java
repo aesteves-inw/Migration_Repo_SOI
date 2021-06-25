@@ -32,12 +32,20 @@ public class ProductBasketAction {
 		try
 		{
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(DirSalesProductBasket.iframeProductBasket)));
-
+			
 			//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesProductBasket.iframeProductBasket)));
+			
+			driver.findElements(By.tagName("iframe"));
+			
+//			int numberOfFrames = driver.findElements(By.tagName("iframe")).size();
+//			System.out.println("no. of iframes are " + numberOfFrames);
 
 			WebElement iframeProductBasket = driver.findElement(By.xpath(DirSalesProductBasket.iframeProductBasket));
 
 			driver.switchTo().frame(iframeProductBasket);
+			
+//			int numberOfFrames2 = driver.findElements(By.tagName("iframe")).size();
+//			System.out.println("no. of iframes are " + numberOfFrames2);
 
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesProductBasket.productBasketLabel)));
 
@@ -156,19 +164,20 @@ public class ProductBasketAction {
 	{
 		String actionName="selectLineItem";
 
-
 		try
 		{
 			WebElement productBasketTable=driver.findElement(By.xpath(DirSalesProductBasket.productBasketTable));
 
 			List<WebElement> productBasketLineItem=productBasketTable.findElements(By.tagName("li"));
-
+//			List<WebElement> productBasketLineItem=driver.findElements(By.xpath("//li[@role='treeitem']"));
+			
+			
 			for(WebElement we : productBasketLineItem)
 			{
 				if(we.getText().contains(productName))
 				{
 
-					//we.findElement(By.xpath(DirSalesProductBasket.selectLineItemCheckBox)).click();
+					we.findElement(By.xpath(DirSalesProductBasket.selectLineItemCheckBox)).click();
 
 					WebElement selectLineItemCheckBox = we.findElement(By.xpath(DirSalesProductBasket.selectLineItemCheckBox));
 
@@ -363,13 +372,15 @@ public class ProductBasketAction {
 
 		try
 		{
+			Thread.sleep(2000);
+
 			WebElement inputExistingBillingAccountIdField = driver.findElement(By.xpath(DirSalesProductBasket.inputExistingBillingAccountId));
 
 			inputExistingBillingAccountIdField.clear();
 
 			inputExistingBillingAccountIdField.sendKeys(textExistingBillingAccountIdField);
 
-
+			Thread.sleep(2000);
 
 			saveProductBasketChanges(logStream, driver, stepID);
 
@@ -594,7 +605,6 @@ public class ProductBasketAction {
 			changeToDefaultiFrame(logStream, driver, stepID);
 
 			changeToProductBasketiFrame(logStream, driver, stepID);
-
 
 			if(BrowserActions.isElementPresent(driver, DirSalesProductBasket.cloneBasketButton) && 
 					BrowserActions.isElementPresent(driver, DirSalesProductBasket.syncButton) && 
@@ -1087,11 +1097,11 @@ public class ProductBasketAction {
 		String actionName="checkExistingBillingAccountIdField";
 		try
 		{
-			WebElement inputProvisioningContactPerson = driver.findElement(By.xpath(DirSalesProductBasket.inputExistingBillingAccountId));
+			WebElement inputExistingBillingAccountId = driver.findElement(By.xpath(DirSalesProductBasket.inputExistingBillingAccountId));
 
-			System.out.println("Debug of inputProvisioningContactPerson.getText().toString() after val: "+inputProvisioningContactPerson.getAttribute("value"));
+			System.out.println("Debug of inputExistingBillingAccountId.getText().toString() after val: "+inputExistingBillingAccountId.getAttribute("value"));
 
-			if(textExistingBillingAccountIdField.contains(inputProvisioningContactPerson.getText().toString()))
+			if(textExistingBillingAccountIdField.contains(inputExistingBillingAccountId.getText().toString()))
 			{
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
 				return true;
@@ -1340,13 +1350,64 @@ public class ProductBasketAction {
 		}
 	}
 
+	public static void fillProvisioningContactPerson(List<TestLog> logStream, WebDriver driver, int stepID,
+			String textProvisioningContactPersonField) throws Exception 
+	{
+		String actionName="fillProvisioningContactPerson";
 
 
+		try
+		{
+			WebElement inputProvisioningContactPerson = driver.findElement(By.xpath(DirSalesProductBasket.inputProvisioningContactPerson));
 
+			inputProvisioningContactPerson.clear();
+			
+			inputProvisioningContactPerson.sendKeys(textProvisioningContactPersonField);
+			
+			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(),'"+textProvisioningContactPersonField+"')]"))).click();;
 
+			saveProductBasketChanges(logStream, driver, stepID);
 
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
 
+	}
+
+	public static boolean checkProvisioningContactPersonFieldDetails(List<TestLog> logStream, WebDriver driver, int stepID,
+			String textProvisioningContactPersonField) throws Exception 
+	{
+		String actionName="checkProvisioningContactPersonFieldDetails";
+		try
+		{
+			WebElement inputProvisioningContactPerson = driver.findElement(By.xpath(DirSalesProductBasket.inputProvisioningContactPerson));
+
+			System.out.println("Debug of inputProvisioningContactPerson.getText().toString() after val: "+inputProvisioningContactPerson.getAttribute("value"));
+
+			if(textProvisioningContactPersonField.contains(inputProvisioningContactPerson.getText().toString()))
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
 
 
 }

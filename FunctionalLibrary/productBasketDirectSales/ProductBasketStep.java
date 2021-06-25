@@ -1,5 +1,7 @@
 package productBasketDirectSales;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -922,9 +924,50 @@ public class ProductBasketStep
 		}
 		
 	}
-
 	
+	public static void fillProvisoningContactPersonDetails(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName,String textProvisioningContactPersonField) throws Exception 
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+		
+		String stepName="Product Basket: fill Provisioning Contact Person Details";
 
+		String stepNameMin="fillProvisoningContactPersonDetails";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			ProductBasketAction.fillProvisioningContactPerson(logStream, driver, stepID, textProvisioningContactPersonField);
+			
+			Thread.sleep(2000);
+
+			validation = ProductBasketAction.checkProvisioningContactPersonFieldDetails(logStream, driver, stepID, textProvisioningContactPersonField);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+		
+	}
 }
 	
 

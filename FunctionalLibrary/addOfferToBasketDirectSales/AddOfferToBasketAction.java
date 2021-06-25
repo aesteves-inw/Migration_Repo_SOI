@@ -63,6 +63,71 @@ public class AddOfferToBasketAction {
 		}
 	}
 
+	
+	public static void pickMultipleProductsFromSectionOnAddOfferBasket(List<TestLog> logStream, WebDriver driver, int stepID, List<String> listProductsName) throws Exception
+	{
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+
+		String actionName="Add Offer to Basket: Pick Products From a Section - "+listProductsName;
+
+		Boolean validation= false;
+
+		try
+		{
+			for (String productToAdd : listProductsName) {
+	        	
+				productToAdd.trim();
+				
+				BrowserActions.ScrollByElement(driver, "linkText", productToAdd);
+				
+				if(driver.findElements(By.linkText(productToAdd)).size() > 1)
+				{
+					driver.findElements(By.linkText(productToAdd)).get(1).click();
+				}
+				else
+				{
+					driver.findElement(By.linkText(productToAdd)).click();
+				}
+			
+				Thread.sleep(1000);
+				
+			}
+			
+			for (String productToAdd : listProductsName) {
+	        	
+				productToAdd.trim();
+				
+				WebElement productSummary=driver.findElement(By.xpath(DirSalesAddOfferToBasket.summarySection));
+				
+				String productVal=productSummary.getText().toString();
+				
+				validation = productVal.contains(productToAdd);
+				
+				if(validation==false) break;
+			}
+
+			if(validation==true)
+			{
+				driver.findElement(By.xpath(DirSalesAddOfferToBasket.add2OfferButton)).click();
+
+				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesProductBasket.singleLineItemProduct)));
+
+			}
+			else
+			{
+				throw new Exception ("Not Possible to confirm  Multiple Products Selection on Step "+stepID);
+			}
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+	}
 
 
 	//Validation Actions
@@ -271,7 +336,14 @@ public class AddOfferToBasketAction {
 						categoryExternallyQuotedProducts_Voice.getText().contains("PRA over IAD30")&&
 						categoryExternallyQuotedProducts_Voice.getText().contains("Temporary PSTN")&&
 						categoryExternallyQuotedProducts_Voice.getText().contains("Tariff Plan")&&
-						categoryExternallyQuotedProducts_Voice.getText().contains("Marketing Number"))
+						categoryExternallyQuotedProducts_Voice.getText().contains("Marketing Number")&&
+						
+					//Validations categories removed  
+					categoryExternallyQuotedProducts_NetwConnServ.getText().contains("Explore BiLAN Teleworking")==false &&
+					categoryExternallyQuotedProducts_NetwConnServ.getText().contains("Explore International with voice")==false &&
+					categoryExternallyQuotedProducts_NetwConnServ.getText().contains("Explore Mobile Worker")==false &&
+					categoryExternallyQuotedProducts_NetwConnServ.getText().contains("Explore Mono with voice")==false &&
+					categoryExternallyQuotedProducts_NetwConnServ.getText().contains("Explore Mono without voice")==false)
 			{
 //				BrowserActions.verticalscrollByVisibleElement(driver, DirSalesProductBasket.categoryStandaloneOfferings);
 //				BrowserActions.screenShotTaking(driver,testName, actionName);

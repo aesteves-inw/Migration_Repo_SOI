@@ -58,6 +58,12 @@ public class DirSalesCase {
 
 	public static String itemSubCategoryKeyDetails="(//span[@class='test-id__field-value slds-form-element__static slds-grow'])[13]";
 	
-	//10-02-2020 - D03 test Automation
+	public static String caseNumberField="//slot[@name='header']//div[contains(text(),'Case')]";
 	
+	//23-06-2021 - D03 test Automation
+	
+	public static String caseMainTableDetailsTab="//ul[@role='tablist']/li[@title='Details' and @class='slds-tabs_default__item']";
+	
+	public static String sectionCaseCategorizationDetailsTab = "(//div[@class=\"test-id__section-content slds-section__content section__content slds-p-horizontal_small\"])[2]";
+
 }

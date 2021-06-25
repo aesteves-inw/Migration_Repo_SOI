@@ -2,10 +2,16 @@ package servicePartCom;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
+
 import executionTools.BrowserActions;
 import executionTools.TestExecutionReport;
+import orderDirectSales.OrderAction;
+import orderPartCom.OrderPCAction;
 import serviceDirectSales.ServiceAction;
+import serviceDirectSales.ServiceNavigation;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
 import testReportComposition.ReportStructure;
@@ -343,9 +349,62 @@ ServicePCStep {
 
 		try
 		{
+			
+			if (contractType==null)
+			{
+			Select selectContractType = new Select(driver.findElement(By.name("contractTypePicklist")));
+
+			contractType = 	selectContractType.getOptions().get(1).getText();
+			
+			}
+			
 			ServiceAction.fillContractTypeServiceLevel(logStream, driver, stepID, contractType);
 			
 			validation = ServiceAction.valContractType(logStream, driver, stepID, contractType);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				TestLogger.logTrace(logStream, stepNameMin, "Failed in Step: "+stepID+". Validation: False");
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+		
+	}
+	
+	
+	public static void navigateToOrder(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream,
+			WebDriver driver, String testName) throws Exception 
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+		
+		String stepName="Service: Navigate to Order ";
+
+		String stepNameMin="navigateToOrder";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			ServiceNavigation.navigateToOrder(testExecStructure, logStream, driver, testName);
+			
+			validation = OrderPCAction.validateOrderScreen(logStream, driver, stepID);
 
 			if(validation==true)
 			{

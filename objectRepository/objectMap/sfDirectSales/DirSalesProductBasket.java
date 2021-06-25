@@ -80,6 +80,7 @@ public class DirSalesProductBasket {
 		
 		public static String searchResultsForProvisioningContactPerson="//ul[@role='listbox']";
 		
+		public static String firstResultForProvisioningContactPerson="//ul[@role='listbox']/li";
 		
 		public static String inputNewBillingAccountAddress ="//input[@aria-labelledby='PRX_SOI_New_Billing_Account_Address__c']";
 		

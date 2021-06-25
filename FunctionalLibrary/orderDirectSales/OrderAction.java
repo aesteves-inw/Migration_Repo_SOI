@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import executionTools.BrowserActions;
 import objectMap.sfDirectSales.DirSalesAgreement;
+import objectMap.sfDirectSales.DirSalesCase;
 import objectMap.sfDirectSales.DirSalesOrder;
 import objectMap.sfPartnersCommunity.PartComOrder;
 import testLogBuilder.TestLog;
@@ -31,9 +32,8 @@ public class OrderAction
 
 			new WebDriverWait(driver, 15).until(ExpectedConditions.elementToBeClickable(By.xpath(DirSalesOrder.submitOrderButton)));
 
-								
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
-
+			
 		}
 		catch(Exception e)
 		{
@@ -143,13 +143,21 @@ public class OrderAction
 			if(BrowserActions.isElementPresent(driver, DirSalesOrder.orderSubmittedSuccess))
 			{							
 				Thread.sleep(3000);
-
-				BrowserActions.refreshPage(driver);
-
+				
 				orderStatusValidation=driver.findElement(By.xpath(DirSalesOrder.orderStatusLabel)).getText().toString();
 
-				//System.out.println("Debug of submitOrderPositiveValidationValidation: "+orderStatusValidation);
+				if(orderStatusValidation.equalsIgnoreCase("submitted")==false) {
+					
+					BrowserActions.refreshPageUntilElementPresent(driver, DirSalesOrder.orderStatusLabel);
+					
+					orderStatusValidation=driver.findElement(By.xpath(DirSalesOrder.orderStatusLabel)).getText().toString();
+					
+				}
+//				System.out.println("Debug of submitOrderPositiveValidationValidation: "+orderStatusValidation);
+//				System.out.println(orderStatusValidation.equalsIgnoreCase("submitted"));
+//				System.out.println(orderStatusValidation.contains("Submitted"));
 
+				
 				if(orderStatusValidation.equalsIgnoreCase("submitted"))
 				{
 					TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
