@@ -2,9 +2,15 @@ package agreementPartCom;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import executionTools.BrowserActions;
 import fetchDataFromExcelFiles.ExcelDataFetch;
+import testExecutionData.TestCasesData;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
 
@@ -39,17 +45,28 @@ public class AgreementPCNavigation
 	public static void downloadfile(List<TestLog> logStream, WebDriver driver, int stepID, String agreementID) throws Exception 
 	{
 		String actionName="downloadfile";
+		
+		WebDriverWait driverWait = new WebDriverWait(driver, 30);
 
 
 		try
 		{
 			Thread.sleep(5000);
+		
+			WebElement newBasketAgreementDocs = driverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[contains(.,'View All')]/ancestor::a")));
+			String newBasketAgreementDocsURL=newBasketAgreementDocs.getAttribute("href");
 			
-			BrowserActions.getElementByJSQuery(driver,"document.querySelector('a.slds-button.slds-button--icon-x-small.slds-button--icon-border-filled').click();");
+			System.out.println(newBasketAgreementDocsURL);
+			
+			BrowserActions.goToByURL(driver, newBasketAgreementDocsURL);
+			
+			WebElement buttonShowMoreOptions = driverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[contains(@title,'"+agreementID+".pdf')]/ancestor::tr/td//a[@role='button']")));
+			
+			BrowserActions.jsClick(driver, buttonShowMoreOptions);
 			
 			Thread.sleep(3000);
 			
-			BrowserActions.getElementByJSQuery(driver,"document.querySelectorAll('a')[17].click();");
+			BrowserActions.jsClickByXpath(driver, "//a[@title='Download']");
 			
 			Thread.sleep(10000);
 			

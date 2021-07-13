@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="SOI-3925" parallel="false">
+  <test name="SOI_3925_TC01_DS_OCK_ContractTerm_Professional_Internet">
+    <classes>
+      <class name="d03.SOI_3925.SOI_3925_TC01_DS_OCK_ContractTerm_Professional_Internet"/>
+    </classes>
+  </test> 
+    <test name="SOI_3925_TC02_DS_OCK_ContractTerm_EnterpriseVoice">
+    <classes>
+      <class name="d03.SOI_3925.SOI_3925_TC02_DS_OCK_ContractTerm_EnterpriseVoice"/>
+    </classes>
+  </test> 
+  <test name="SOI_3925_TC03_DS_OCK_ContractTerm_Professional_Internet_Negative_Part1">
+    <classes>
+      <class name="d03.SOI_3925.SOI_3925_TC03_DS_OCK_ContractTerm_Professional_Internet_Negative_Part1"/>
+    </classes>
+  </test> 
+    <test name="SOI_3925_TC04_DS_OCK_ContractTerm_Professional_Internet_Negative_Part2">
+    <classes>
+      <class name="d03.SOI_3925.SOI_3925_TC04_DS_OCK_ContractTerm_Professional_Internet_Negative_Part2"/>
+    </classes>
+  </test> 
+  <test name="SOI_3925_TC05_DS_OCK_ContractTerm_EnterpriseVoice_Negative_Part1">
+    <classes>
+      <class name="d03.SOI_3925.SOI_3925_TC05_DS_OCK_ContractTerm_EnterpriseVoice_Negative_Part1"/>
+    </classes>
+  </test> 
+  <test name="SOI_3925_TC07_PC_OCK_ContractTerm_Professional_Internet ">
+    <classes>
+      <class name="d03.SOI_3925.SOI_3925_TC07_PC_OCK_ContractTerm_Professional_Internet"/>
+    </classes>
+  </test> 
+    <test name="SOI_3925_TC08_PC_OCK_ContractTerm_EnterpriseVoice">
+    <classes>
+      <class name="d03.SOI_3925.SOI_3925_TC08_PC_OCK_ContractTerm_EnterpriseVoice"/>
+    </classes>
+  </test> 
+  <test name="SOI_3925_TC09_PC_OCK_ContractTerm_Professional_Internet_Negative_Part1">
+    <classes>
+      <class name="d03.SOI_3925.SOI_3925_TC09_PC_OCK_ContractTerm_Professional_Internet_Negative_Part1"/>
+    </classes>
+  </test> 
+    <test name="SOI_3925_TC10_PC_OCK_ContractTerm_Professional_Internet_Negative_Part2">
+    <classes>
+      <class name="d03.SOI_3925.SOI_3925_TC10_PC_OCK_ContractTerm_Professional_Internet_Negative_Part2"/>
+    </classes>
+  </test> 
+    <test name="SOI_3925_TC11_PC_OCK_ContractTerm_EnterpriseVoice_Negative_Part1">
+    <classes>
+      <class name="d03.SOI_3925.SOI_3925_TC11_PC_OCK_ContractTerm_EnterpriseVoice_Negative_Part1"/>
+    </classes>
+  </test> 
+</suite> <!-- Suite -->

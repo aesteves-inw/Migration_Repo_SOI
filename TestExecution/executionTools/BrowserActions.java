@@ -3,9 +3,13 @@ package executionTools;
 import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
+import org.apache.xmlbeans.impl.common.SystemCache;
+import org.apache.xmlbeans.impl.regex.Match;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
@@ -323,35 +327,6 @@ public class BrowserActions {
 
 
 
-	//PDF Validation
-	public static boolean pdfPositiveValidation(String fileLocation, String textToValidate) throws Exception
-	{
-		int Counter=0; 
-
-		File file = new File(fileLocation);
-
-		PDDocument document = PDDocument.load(file);
-
-		PDFTextStripper pdfStripper = new PDFTextStripper();
-
-		String text = pdfStripper.getText(document);
-
-		if(text.contains(textToValidate))
-		{
-			Counter++;
-		}
-
-		if(Counter>0)
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-
-	}
-
 	public static boolean pdfNegativeValidation(String fileLocation, String textToValidate) throws Exception
 	{
 		int Counter=0; 
@@ -381,6 +356,75 @@ public class BrowserActions {
 	}
 
 
+
+	//PDF Validation
+	public static boolean pdfPositiveValidation(String fileLocation, String textToValidate) throws Exception
+	{
+		int Counter=0; 
+	
+		File file = new File(fileLocation);
+	
+		PDDocument document = PDDocument.load(file);
+	
+		PDFTextStripper pdfStripper = new PDFTextStripper();
+	
+		String text = pdfStripper.getText(document);
+	
+		if(text.contains(textToValidate))
+		{
+			Counter++;
+		}
+	
+		if(Counter>0)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	
+	}
+
+
+
+	//PDF Validation
+	public static boolean pdfContentValidationByRegex(String fileLocation,String validRegexPattern) throws Exception
+	{
+		Boolean pdfContainsExpectedText=null;
+		
+		File file = new File(fileLocation);
+	
+		PDDocument document = PDDocument.load(file);
+	
+		PDFTextStripper pdfStripper = new PDFTextStripper();
+	
+		String text = pdfStripper.getText(document);
+		
+		Pattern pattern = Pattern.compile(validRegexPattern,Pattern.CASE_INSENSITIVE | Pattern.DOTALL | Pattern.UNICODE_CASE);
+
+		Matcher matcher = pattern.matcher(text);
+		
+		
+//		System.out.println("Current REGEX is: "+validRegexPattern);
+		
+//	    System.out.println("Current INPUT is: "+text);
+        
+        try {
+        	if (matcher != null) {
+    	    	matcher.find();
+    	        pdfContainsExpectedText = matcher.groupCount()!=0;
+    	        System.out.println("Match Content:" + matcher.group(0));//Exception on this point
+    	        System.out.println("Match Count : " + matcher.groupCount() +". Match find result: " + matcher.find());
+    	        }
+		} catch (Exception e) {
+			pdfContainsExpectedText = false;
+		}
+
+
+		return pdfContainsExpectedText;
+		
+	}
 
 
 }

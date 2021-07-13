@@ -19,6 +19,9 @@ public class DirSalesEditProductConfiguration {
 	
 	public static String buttonCancel="//button[@data-cs-group='Cancel']";
 	
+	public static String dropDownListAccessTechologyField="//*[@id='select2-results-1']";
+
+	
 	
 	//PROFESSIONAL INTERNET
 	
