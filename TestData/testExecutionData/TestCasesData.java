@@ -4,14 +4,12 @@ import executionTools.ExecStructure;
 import fetchDataFromExcelFiles.ExcelDataFetch;
 
 public class TestCasesData {
-	
-	public static int tcDataindex(int tcNumber) throws Exception
-	{
+
+	public static int tcDataindex(int tcNumber) throws Exception {
 		int tcindex;
 
-		// add more 
-		switch(tcNumber)
-		{
+		// add more
+		switch (tcNumber) {
 		case 1:
 			tcindex = 3;
 			break;
@@ -27,77 +25,76 @@ public class TestCasesData {
 
 		return tcindex;
 	}
-	
-	public static String[] getSalesforceUser(String user) throws Exception
-	{
-		
-		if(user.contains("salesUser"))
-		{
-			String[] finalUser= {ExcelDataFetch.searchDT(1, "PRX_SalesUserProfile_userName"), ExcelDataFetch.searchDT(1, "PRX_SalesUserProfile_passWord")};
+
+	public static String[] getSalesforceUser(String user) throws Exception {
+
+		if (user.contains("salesUser")) {
+			String[] finalUser = { ExcelDataFetch.searchDT(1, "PRX_SalesUserProfile_userName"),
+					ExcelDataFetch.searchDT(1, "PRX_SalesUserProfile_passWord") };
 			return finalUser;
-		}
-		else if(user.contains("salesSupportUser"))
-		{
-			String[] finalUser= {ExcelDataFetch.searchDT(1, "PRX_SalesSupportProfile_userName"), ExcelDataFetch.searchDT(1, "PRX_SalesSupportProfile_passWord")};
+		} else if (user.contains("salesSupportUser")) {
+			String[] finalUser = { ExcelDataFetch.searchDT(1, "PRX_SalesSupportProfile_userName"),
+					ExcelDataFetch.searchDT(1, "PRX_SalesSupportProfile_passWord") };
 			return finalUser;
-		}
-		else if(user.contains("costumerSupportProfile"))
-		{
-			String[] finalUser= {ExcelDataFetch.searchDT(1, "PRX_EBUCustomerSupportProfile_userName"), ExcelDataFetch.searchDT(1, "PRX_EBUCustomerSupportProfile_passWord")};
+		} else if (user.contains("costumerSupportProfile")) {
+			String[] finalUser = { ExcelDataFetch.searchDT(1, "PRX_EBUCustomerSupportProfile_userName"),
+					ExcelDataFetch.searchDT(1, "PRX_EBUCustomerSupportProfile_passWord") };
 			return finalUser;
-		}
-		else if(user.contains("SysAdmin"))
-		{
-			String[] finalUser= {ExcelDataFetch.searchDT(1, "sysAdminProfile_userName"), ExcelDataFetch.searchDT(1, "sysAdminProfile_passWord")};
+		} else if (user.contains("SysAdmin")) {
+			String[] finalUser = { ExcelDataFetch.searchDT(1, "sysAdminProfile_userName"),
+					ExcelDataFetch.searchDT(1, "sysAdminProfile_passWord") };
 			return finalUser;
-		}
-		else if(user.contains("farmerUser"))
-		{
-			String[] finalUser= {ExcelDataFetch.searchDT(1, "PRXPartnerFarmerProfile_userName"), ExcelDataFetch.searchDT(1, "PRXPartnerFarmerProfile_passWord")};
+		} else if (user.contains("farmerUser")) {
+			String[] finalUser = { ExcelDataFetch.searchDT(1, "PRXPartnerFarmerProfile_userName"),
+					ExcelDataFetch.searchDT(1, "PRXPartnerFarmerProfile_passWord") };
 			return finalUser;
-		}
-		else if(user.contains("hunterUser"))
-		{
-			String[] finalUser= {ExcelDataFetch.searchDT(1, "PRXPartnerHunterProfile_userName"), ExcelDataFetch.searchDT(1, "PRXPartnerHunterProfile_passWord")};
+		} else if (user.contains("hunterUser")) {
+			String[] finalUser = { ExcelDataFetch.searchDT(1, "PRXPartnerHunterProfile_userName"),
+					ExcelDataFetch.searchDT(1, "PRXPartnerHunterProfile_passWord") };
 			return finalUser;
-		}
-		else
-		{
+		} else {
 			throw new Exception("Not possible to identify User Profile");
 		}
 	}
 
-	public static String getOPTYName(String testClassName)
-	{
-		String optyName=ExecStructure.getTestExecutionString(testClassName);
-		
+	public static String getOPTYName(String testClassName) {
+		String optyName = ExecStructure.getTestExecutionString(testClassName);
+
 		return optyName;
 	}
 
-	public static String getIDByURL(String urlOfElement)
-	{
+	public static String getIDByURL(String urlOfElement) {
 		// Debug of data passing
-		//int c=0;
-		
+		// int c=0;
+
 		String idToReturn;
-		
-		//optyURL="https://proximus--prxitt.lightning.force.com/lightning/r/Opportunity/0063M000002X6MuQAK/view";
-		
-		String[] urlToValidate=urlOfElement.split("/");
-		
-		/* Debug of data passing
-		for(String s:urlToValidate)
-		{
-			System.out.println("Componente do endereço: "+c+" - "+s);
-			c++;
-		}
-		*/
-		idToReturn=urlToValidate[6];
-		
+
+		// optyURL="https://proximus--prxitt.lightning.force.com/lightning/r/Opportunity/0063M000002X6MuQAK/view";
+
+		String[] urlToValidate = urlOfElement.split("/");
+
+		/*
+		 * Debug of data passing for(String s:urlToValidate) {
+		 * System.out.println("Componente do endereço: "+c+" - "+s); c++; }
+		 */
+		idToReturn = urlToValidate[6];
+
 		return idToReturn;
 	}
-	
-	
+
+	public static String getVariableValueFromExcelTestData(String sheetName, String variableName) throws Exception {
+
+		String dataFromExcel;
+
+		switch (sheetName) {
+		case "ProductConfigurationD02":
+			dataFromExcel = ExcelDataFetch.searchDT(4, variableName);
+			break;
+		// Add cases (for the sheets) according to the need
+		default:
+			throw new Exception("Product not found");
+		}
+
+		return dataFromExcel;
+	}
 }
-
-

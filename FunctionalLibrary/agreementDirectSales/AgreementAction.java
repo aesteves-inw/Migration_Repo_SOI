@@ -3,9 +3,11 @@ package agreementDirectSales;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import executionTools.BrowserActions;
@@ -14,221 +16,246 @@ import testDataFiles.TestDataFiles;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
 
-public class AgreementAction 
-{
-	//OPERATIONAL ACTIONS
-	
-	public static void generateDocumentProposal(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
-	{
-		String actionName="generateDocumentProposal";
+public class AgreementAction {
+	// OPERATIONAL ACTIONS
 
+	public static void generateDocumentProposal(List<TestLog> logStream, WebDriver driver, int stepID)
+			throws Exception {
+		String actionName = "generateDocumentProposal";
 
-		try
-		{
-			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesAgreement.buttonGenerateProposalDocument)));
+		try {
+			new WebDriverWait(driver, 15).until(ExpectedConditions
+					.visibilityOfElementLocated(By.xpath(DirSalesAgreement.buttonGenerateProposalDocument)));
 
 			driver.findElement(By.xpath(DirSalesAgreement.buttonGenerateProposalDocument)).click();
-			
-			for(int i=0;i<50;i++)
-			{
-					Thread.sleep(1000);
+
+			for (int i = 0; i < 50; i++) {
+				Thread.sleep(1000);
 			}
-			
+
 			System.out.println("Debug of generateDocumentProposal - Passes Here");
-			
+
 			BrowserActions.refreshPage(driver);
-			
-			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
-		}
-		catch(Exception e)
-		{
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step " + stepID);
+
+		} catch (Exception e) {
 			System.out.println(e);
-			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
-			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+			TestLogger.logError(logStream, actionName, "Failed in Step " + stepID, e.toString());
+			throw new Exception(actionName + " - Failed in Step " + stepID, e);
 		}
 
 	}
-	
-	public static void generateDocumentProposalOnly(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
-	{
-		String actionName="generateDocumentProposal";
 
+	public static void generateDocumentProposalOnly(List<TestLog> logStream, WebDriver driver, int stepID)
+			throws Exception {
+		String actionName = "generateDocumentProposal";
 
-		try
-		{
+		try {
 			driver.findElement(By.xpath(DirSalesAgreement.buttonGenerateProposalDocument)).click();
-			
-			for(int i=0;i<30;i++)
-			{
-					Thread.sleep(1000);
+
+			for (int i = 0; i < 30; i++) {
+				Thread.sleep(1000);
 			}
-			
+
 			System.out.println("Debug of generateDocumentProposal - Passes Here");
-			
-			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
-		}
-		catch(Exception e)
-		{
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step " + stepID);
+
+		} catch (Exception e) {
 			System.out.println(e);
-			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
-			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+			TestLogger.logError(logStream, actionName, "Failed in Step " + stepID, e.toString());
+			throw new Exception(actionName + " - Failed in Step " + stepID, e);
 		}
 
 	}
-	
-	//Add File To Agreement
-	public static void addFileToAgreement(List<TestLog> logStream, WebDriver driver, int stepID, String fileName) throws Exception 
-	{
-		String actionName="addFileToAgreement";
 
+	// Add File To Agreement
+	public static void addFileToAgreement(List<TestLog> logStream, WebDriver driver, int stepID, String fileName)
+			throws Exception {
+		String actionName = "addFileToAgreement";
 
-		try
-		{
-			WebElement inputFile = driver.findElement(By.xpath("//input[contains(@class,'slds-file-selector__input slds-assistive-text')]"));
-			
+		try {
+			WebElement inputFile = driver
+					.findElement(By.xpath("//input[contains(@class,'slds-file-selector__input slds-assistive-text')]"));
+
 			inputFile.sendKeys(fileName);
-			
-			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesAgreement.titleUploadFiles)));
-			
+
+			new WebDriverWait(driver, 15)
+					.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesAgreement.titleUploadFiles)));
+
 			Thread.sleep(3000);
-			
-			WebElement doneButton = new WebDriverWait(driver, 15).until(ExpectedConditions.elementToBeClickable(By.xpath(DirSalesAgreement.buttonDoneUploadFiles)));
-			
+
+			WebElement doneButton = new WebDriverWait(driver, 15)
+					.until(ExpectedConditions.elementToBeClickable(By.xpath(DirSalesAgreement.buttonDoneUploadFiles)));
+
 			BrowserActions.jsClick(driver, doneButton);
-			
-			new WebDriverWait(driver, 15).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(DirSalesAgreement.buttonDoneUploadFiles)));
-			
 
+			new WebDriverWait(driver, 15).until(
+					ExpectedConditions.invisibilityOfElementLocated(By.xpath(DirSalesAgreement.buttonDoneUploadFiles)));
 
-			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
-		}
-		catch(Exception e)
-		{
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step " + stepID);
+		} catch (Exception e) {
 			System.out.println(e);
-			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
-			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+			TestLogger.logError(logStream, actionName, "Failed in Step " + stepID, e.toString());
+			throw new Exception(actionName + " - Failed in Step " + stepID, e);
 		}
-		
+
 	}
 
+	public static void changeLanguageOnDetailsForAgreementDocument(List<TestLog> logStream, WebDriver driver,
+			int stepID, String language) throws Exception {
+		String actionName = "changeLanguageOnDetailsForAgreementDocument";
 
+		try {
+			
+			
+			WebElement langDetails = new WebDriverWait(driver,10).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesAgreement.languageFieldVaule)));
+			
+			System.out.println("changeLanguageOnDetailsForAgreementDocument - Current language selecetd on details: " + langDetails.getText());
+			
+			if(langDetails.getText().contains(language)==false) {
+				
+				BrowserActions.jsClick(driver, By.xpath("//button[@title='Edit Language']"));				
+				new WebDriverWait(driver, 15).until(ExpectedConditions
+						.visibilityOfElementLocated(By.xpath("//label[contains(.,'Language')]/parent::lightning-combobox//input[@role='combobox']"))).click();
+				
+				new WebDriverWait(driver, 15).until(ExpectedConditions
+						.presenceOfElementLocated(By.xpath("//label[contains(.,'Language')]/parent::lightning-combobox//*[@role='option'][@data-value='"+language+"']"))).click();;
+				
+				Thread.sleep(2000);
+				
+				BrowserActions.jsClick(driver, By.xpath(DirSalesAgreement.saveButton));
+				
+			}
 
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step " + stepID);
+		} catch (Exception e) {
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step " + stepID, e.toString());
+			throw new Exception(actionName + " - Failed in Step " + stepID, e);
+		}
+
+	}
 
 	// VALIDATION ACTIONS
-	
-	public static boolean agreementScreenValidation(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
-	{
-		String actionName="agreementScreenValidation";
-		
-		try
-		{
-			//new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesAgreement.detailsAgreement)));
-			
-			//new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.id(DirSalesAgreement.detailsAgreement)));
-			
-			//if(BrowserActions.isElementPresent(driver, DirSalesAgreement.headerAgreementPage)&&BrowserActions.isElementPresent(driver, DirSalesAgreement.detailsAgreement))
-				if(BrowserActions.isElementPresent(driver, DirSalesAgreement.headerAgreementPage))
-			{
-				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+
+	public static boolean agreementScreenValidation(List<TestLog> logStream, WebDriver driver, int stepID)
+			throws Exception {
+		String actionName = "agreementScreenValidation";
+
+		try {
+			// new WebDriverWait(driver,
+			// 10).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesAgreement.detailsAgreement)));
+
+			// new WebDriverWait(driver,
+			// 10).until(ExpectedConditions.visibilityOfElementLocated(By.id(DirSalesAgreement.detailsAgreement)));
+
+			// if(BrowserActions.isElementPresent(driver,
+			// DirSalesAgreement.headerAgreementPage)&&BrowserActions.isElementPresent(driver,
+			// DirSalesAgreement.detailsAgreement))
+			if (BrowserActions.isElementPresent(driver, DirSalesAgreement.headerAgreementPage)) {
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: " + stepID);
 				return true;
-			}
-			else
-			{
+			} else {
 				return false;
 			}
 
-		}
-		catch(Exception e)
-		{
+		} catch (Exception e) {
 			System.out.println(e);
-			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
-			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+			TestLogger.logError(logStream, actionName, "Failed in Step " + stepID, e.toString());
+			throw new Exception(actionName + " - Failed in Step: " + stepID, e);
 		}
 	}
 
-	public static boolean generateDocumentProposalValidation(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
-	{
-		String actionName="generateDocumentProposalValidation";
+	public static boolean generateDocumentProposalValidation(List<TestLog> logStream, WebDriver driver, int stepID)
+			throws Exception {
+		String actionName = "generateDocumentProposalValidation";
 
-		try
-		{
+		try {
 			BrowserActions.refreshPageUntilElementPresent(driver, DirSalesAgreement.generatedDocument);
 
-			if(BrowserActions.isElementPresent(driver, DirSalesAgreement.generatedDocument))
-			{
-				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+			if (BrowserActions.isElementPresent(driver, DirSalesAgreement.generatedDocument)) {
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: " + stepID);
 				return true;
-			}
-			else
-			{
+			} else {
 				return false;
 			}
 
-		}
-		catch(Exception e)
-		{
+		} catch (Exception e) {
 			System.out.println(e);
-			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
-			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+			TestLogger.logError(logStream, actionName, "Failed in Step " + stepID, e.toString());
+			throw new Exception(actionName + " - Failed in Step: " + stepID, e);
 		}
 	}
 
 	public static boolean validationOfFileAddedToAgreement(List<TestLog> logStream, WebDriver driver, int stepID,
-			String fileName) throws Exception 
-	{
-		String actionName="validationOfFileAddedToAgreement";
-		
-		String finalFileName=TestDataFiles.fileFinalNameD01;
-     	try
-				{
-     		
-     				List<WebElement> filesInAgreement=driver.findElements(By.xpath("//*[@title='"+finalFileName+"']"));
-     				    				
-					if(filesInAgreement.size()>0)
-					{
-						TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
-						return true;
-					}
-					else
-					{
-						return false;
-					}
+			String fileName) throws Exception {
+		String actionName = "validationOfFileAddedToAgreement";
 
-				}
-				catch(Exception e)
-				{
-					System.out.println(e);
-					TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
-					throw new Exception (actionName+" - Failed in Step: "+stepID,e);
-				}
+		String finalFileName = TestDataFiles.fileFinalNameD01;
+		try {
+
+			List<WebElement> filesInAgreement = driver.findElements(By.xpath("//*[@title='" + finalFileName + "']"));
+
+			if (filesInAgreement.size() > 0) {
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: " + stepID);
+				return true;
+			} else {
+				return false;
+			}
+
+		} catch (Exception e) {
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step " + stepID, e.toString());
+			throw new Exception(actionName + " - Failed in Step: " + stepID, e);
+		}
 	}
 
-	public static boolean validationOfFilesRelatedListView(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
-	{
-		String actionName="validationOfFilesRelatedListView";
-     	try
-				{
-					if(BrowserActions.isElementPresent(driver, DirSalesAgreement.addFilesButton) && BrowserActions.isElementPresent(driver, DirSalesAgreement.filesTitle))
-					{
-						TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
-						return true;
-					}
-					else
-					{
-						return false;
-					}
+	public static boolean validationOfFilesRelatedListView(List<TestLog> logStream, WebDriver driver, int stepID)
+			throws Exception {
+		String actionName = "validationOfFilesRelatedListView";
+		try {
+			if (BrowserActions.isElementPresent(driver, DirSalesAgreement.addFilesButton)
+					&& BrowserActions.isElementPresent(driver, DirSalesAgreement.filesTitle)) {
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: " + stepID);
+				return true;
+			} else {
+				return false;
+			}
 
-				}
-				catch(Exception e)
-				{
-					System.out.println(e);
-					TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
-					throw new Exception (actionName+" - Failed in Step: "+stepID,e);
-				}
+		} catch (Exception e) {
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step " + stepID, e.toString());
+			throw new Exception(actionName + " - Failed in Step: " + stepID, e);
+		}
 	}
 
-	
-	
+	public static boolean validationOfLanguageOnDetailsForAgreementDocument(List<TestLog> logStream, WebDriver driver,
+			int stepID, String language) throws Exception {
+		String actionName = "validationOfLanguageOnDetailsForAgreementDocument";
+
+		try {
+
+			
+			WebElement langDetails = new WebDriverWait(driver,10).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesAgreement.languageFieldVaule)));
+			
+			System.out.println("validationOfLanguageOnDetailsForAgreementDocument - Language validation: " + langDetails.getText());
+
+			
+			if (langDetails.getText().contains(language)== true) {
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: " + stepID);
+				return true;
+			} else {
+				return false;
+			}
+
+		} catch (Exception e) {
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step " + stepID, e.toString());
+			throw new Exception(actionName + " - Failed in Step " + stepID, e);
+		}
+
+	}
+
 }

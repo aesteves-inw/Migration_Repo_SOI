@@ -571,6 +571,8 @@ public class EnterpriseVoice {
 		{
 			BrowserActions.ScrollByElement(driver, "xpath", "//*[@id=\"configurationContainer\"]/div/div/div[2]/div[7]/article/div/div/button");
 			
+			Thread.sleep(2000);
+			
 			WebElement newNumberRanges = new WebDriverWait(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"configurationContainer\"]/div/div/div[2]/div[7]/article/div/div/button")));
 					
 			newNumberRanges.click();

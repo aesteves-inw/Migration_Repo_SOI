@@ -13,6 +13,9 @@ public class PartComAgreements {
 	
 	public static String editButton="//li/a/div[@title='Edit']";
 	
+	public static String saveButton="//button[@title='Save']";
+
+	
 	
 	// ..:: Agreements Related Menu ::..
 	

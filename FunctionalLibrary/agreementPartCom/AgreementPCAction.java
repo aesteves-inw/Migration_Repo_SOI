@@ -165,4 +165,64 @@ public class AgreementPCAction {
 					}
 	}
 
+	public static void changeLanguageOnDetailsForAgreementDocument(List<TestLog> logStream, WebDriver driver,
+			int stepID, String language) throws Exception {
+		String actionName = "changeLanguageOnDetailsForAgreementDocument";
+	
+		try {
+			
+			WebElement langDetails = new WebDriverWait(driver,30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(.,'Language')]/parent::div/following-sibling::div/span/span")));
+
+			System.out.println("changeLanguageOnDetailsForAgreementDocument - Current language selecetd on details: " + langDetails.getText());
+			
+			if(langDetails.getText().contains(language)==false) {
+				
+				BrowserActions.jsClick(driver, By.xpath("//button[@title='Edit Language']"));				
+				new WebDriverWait(driver, 15).until(ExpectedConditions
+						.visibilityOfElementLocated(By.xpath("//*[contains(.,'Language')]/parent::span/following-sibling::div//a"))).click();
+				
+				new WebDriverWait(driver, 15).until(ExpectedConditions
+						.presenceOfElementLocated(By.xpath("//li/a[@title='"+language+"']"))).click();;
+				
+				Thread.sleep(2000);
+				
+				BrowserActions.jsClick(driver, By.xpath(PartComAgreements.saveButton));
+				
+			}
+	
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step " + stepID);
+		} catch (Exception e) {
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step " + stepID, e.toString());
+			throw new Exception(actionName + " - Failed in Step " + stepID, e);
+		}
+	
+	}
+
+	public static boolean validationOfLanguageOnDetailsForAgreementDocument(List<TestLog> logStream, WebDriver driver,
+			int stepID, String language) throws Exception {
+		String actionName = "validationOfLanguageOnDetailsForAgreementDocument";
+	
+		try {
+	
+			WebElement langDetails = new WebDriverWait(driver,10).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(.,'Language')]/parent::div/following-sibling::div/span/span")));
+
+			System.out.println("validationOfLanguageOnDetailsForAgreementDocument - Language validation: " + langDetails.getText());
+	
+			
+			if (langDetails.getText().contains(language)== true) {
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: " + stepID);
+				return true;
+			} else {
+				return false;
+			}
+	
+		} catch (Exception e) {
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step " + stepID, e.toString());
+			throw new Exception(actionName + " - Failed in Step " + stepID, e);
+		}
+	
+	}
+
 }

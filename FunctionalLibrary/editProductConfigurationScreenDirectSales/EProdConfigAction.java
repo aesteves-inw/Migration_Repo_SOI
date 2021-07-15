@@ -1,10 +1,12 @@
 package editProductConfigurationScreenDirectSales;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -116,7 +118,8 @@ public class EProdConfigAction {
 
 			addressSelectField.click();
 			
-			driver.findElement(By.xpath("//*[@id=\"s2id_autogen5_search\"]")).sendKeys(address);
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@title='Address Details']/ancestor::div//input"))).sendKeys(address);
+//			driver.findElement(By.xpath("//*[@id=\"s2id_autogen5_search\"]")).sendKeys(address);
 			
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'"+address+"')]")));
 			
@@ -192,14 +195,14 @@ public class EProdConfigAction {
 	
 	//Validation Action
 	
-	public static boolean selectAddressValidation(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
+	public static boolean selectAddressValidation(List<TestLog> logStream, WebDriver driver, int stepID,String address) throws Exception
 	{
 		String actionName="Product Basket: Address Select Validation";
 
 		try
 		{
-			WebElement addressField=driver.findElement(By.xpath("//*[@id=\"select2-chosen-5\"]"));
-			
+//			WebElement addressField=driver.findElement(By.xpath("//*[@id=\"select2-chosen-5\"]"));
+			WebElement addressField = driver.findElement(By.xpath("//*[@id='s2id_Details:Installation_Address___OCK_Check:existingAddress_0']//span[@class='select2-chosen']"));
 			
 			System.out.println(addressField.getText());
 			
@@ -208,7 +211,8 @@ public class EProdConfigAction {
 			String addressValidation= addressField.getText();
 
 			if(
-					addressValidation.contains("A Rodenbachlaan,29, Grimbergen, 1850, Belgium")
+//					addressValidation.contains("A Rodenbachlaan,29, Grimbergen, 1850, Belgium")
+					addressValidation.contains(address)
 					)
 			{
 				System.out.println(actionName+" - Succeeded in Step: "+stepID);
@@ -419,6 +423,62 @@ public class EProdConfigAction {
 					BrowserActions.isElementPresent(driver, DirSalesEditProductConfiguration.productConfigurationLabel) &&
 					productToBeConfigured.isDisplayed() && productToBeConfiguredValidation.contains(productName)
 					)
+			{
+				System.out.println(actionName+" - Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
+	
+	public static boolean validateAccessTechnologyNoDuplicatesOptions(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
+	{
+		String actionName="Product Basket: Acess Techology No Duplicates Validation";
+		
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		
+		Actions actions = new Actions(driver);
+
+		
+		List<String> listAccessTechnologies= Arrays.asList("VDSL2", "READSLE", "ADSL2", "GPON","VDSL", "ADSL");
+		
+		Boolean validationNoDuplicates= true;
+
+		
+		try
+		{
+		
+		driver.findElement(By.id("s2id_Details:Installation_Address___OCK_Check:accessTechnology_0")).click();
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesEditProductConfiguration.dropDownListAccessTechologyField)));
+
+		for(String technologyOption: listAccessTechnologies)
+		{
+			List<WebElement> options= driver.findElements(By.xpath(DirSalesEditProductConfiguration.dropDownListAccessTechologyField+"//div[text()='"+technologyOption+"']"));
+			
+			TestLogger.logDebug(logStream, "Product Configuration: Validate Access Tenochnology Field No Duplicates Options","No. of Technology " + technologyOption +": " + options.size() + " option/s");
+			
+//			System.out.println(technologyOption + ": " + options.size());
+			if(options.size()>= 2 ) 
+			{
+				validationNoDuplicates=false;
+			}
+			
+			options.clear();
+			
+		}
+
+			if(validationNoDuplicates)
 			{
 				System.out.println(actionName+" - Succeeded in Step: "+stepID);
 				return true;

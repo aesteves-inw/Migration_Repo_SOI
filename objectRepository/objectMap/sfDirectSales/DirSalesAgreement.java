@@ -54,8 +54,10 @@ public class DirSalesAgreement{
 	
 	public static String selectDocumentType="//article/div[3]/div/div[1]/div/div/div[3]/div[2]/div/div/div/div/div[1]/div/div/a";
 	
-	public static String saveButton="/html/body/div[5]/div[2]/div/div[2]/div/div[3]/div/button[3]/span";
+//	public static String saveButton="/html/body/div[5]/div[2]/div/div[2]/div/div[3]/div/button[3]/span";
+	public static String saveButton="//button[@name='SaveEdit']";
 	
+	public static String languageFieldVaule = "//*[contains(.,'Language')]/parent::div/following-sibling::div//*[@data-output-element-id='output-field']";
 	
 	
 	// Upload Files Screen

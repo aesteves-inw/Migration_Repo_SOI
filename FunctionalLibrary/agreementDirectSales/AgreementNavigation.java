@@ -80,15 +80,22 @@ public class AgreementNavigation
 		{
 			agreementURL=driver.getCurrentUrl();
 			
-			WebElement generatedProposal =driver.findElement(By.xpath("//a[contains(@title,'Agreement')][contains(@title,'.pdf')][contains(@title,'"+TestCasesData.getIDByURL(driver.getCurrentUrl())+"')]"));
+			Thread.sleep(5000);
 			
+//			WebElement generatedProposal =driver.findElement(By.xpath("//a[contains(@title,'Agreement')][contains(@title,'.pdf')][contains(@title,'"+TestCasesData.getIDByURL(driver.getCurrentUrl())+"')]"));
+			WebElement generatedProposal =new WebDriverWait(driver, 20).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[contains(@title,'Agreement')][contains(@title,'.pdf')][contains(@title,'"+TestCasesData.getIDByURL(driver.getCurrentUrl())+"')]")));
 			proposalURL=generatedProposal.getAttribute("href");
+			
+			System.out.println("goToProposalByURL - Proposal URL: " + proposalURL);
 			
 			BrowserActions.goToByURL(driver, proposalURL);
 			
-			//System.out.println("goToProposalByURL - Pass here before Download");
+			Thread.sleep(5000);
+
+			System.out.println("goToProposalByURL - Pass here before Download");
 			
-			WebElement downloadButton = new WebDriverWait(driver, 15).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@title='Download']")));
+//			WebElement downloadButton = new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@title='Download']")));
+			WebElement downloadButton = new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@title='Download']")));
 
 			Thread.sleep(5000);
 			

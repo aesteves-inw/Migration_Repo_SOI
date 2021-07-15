@@ -14,7 +14,7 @@ import testLogger.TestLogger;
 public class GeneratedProposalAction 
 {
 
-	public static boolean validationOfNonQuotableProducts(List<TestLog> logStream, WebDriver driver, int stepID, String productName, String agreementID) throws Exception 
+	public static boolean validationOfNonQuotableProducts(List<TestLog> logStream, WebDriver driver, int stepID, String productName,String agreementID) throws Exception 
 	{
 		String actionName="validationOfNonQuotableProducts";
 		

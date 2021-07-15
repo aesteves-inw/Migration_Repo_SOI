@@ -24,14 +24,19 @@ public class ProductBasketAction {
 
 	public static void changeToProductBasketiFrame(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
 	{
-		WebDriverWait wait = new WebDriverWait(driver,30);
 
 		String actionName="Product Basket: Change to Product Basket iframe";
+		
+		WebDriverWait wait = new WebDriverWait(driver,30);
+		
+		WebElement iframeProductBasket = null;
 
 
 		try
 		{
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(DirSalesProductBasket.iframeProductBasket)));
+			
+			Thread.sleep(3000);
+//			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(DirSalesProductBasket.iframeProductBasket)));
 			
 			//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesProductBasket.iframeProductBasket)));
 			
@@ -40,7 +45,19 @@ public class ProductBasketAction {
 //			int numberOfFrames = driver.findElements(By.tagName("iframe")).size();
 //			System.out.println("no. of iframes are " + numberOfFrames);
 
-			WebElement iframeProductBasket = driver.findElement(By.xpath(DirSalesProductBasket.iframeProductBasket));
+//			WebElement iframeProductBasket = driver.findElement(By.xpath(DirSalesProductBasket.iframeProductBasket));
+			
+			Boolean existIframeDS = driver.findElements(By.xpath(DirSalesProductBasket.iframeProductBasket)).size() != 0;
+			
+			Boolean existIframePC = driver.findElements(By.xpath("//iframe[@title='Visualforce Page component container']")).size() != 0;
+			
+			if(existIframeDS==true) {
+				iframeProductBasket = driver.findElement(By.xpath(DirSalesProductBasket.iframeProductBasket));
+
+			}else if (existIframePC==true) {
+				iframeProductBasket = driver.findElement(By.xpath("//iframe[@title='Visualforce Page component container']"));
+
+			}
 
 			driver.switchTo().frame(iframeProductBasket);
 			
@@ -661,9 +678,16 @@ public class ProductBasketAction {
 
 		try
 		{	
+			Thread.sleep(3000);
+			
 			changeToDefaultiFrame(logStream, driver, stepID);
-
+			
 			changeToProductBasketiFrame(logStream, driver, stepID);
+			
+//			int size = driver.findElements(By.tagName("iframe")).size();
+//		    System.out.println("Total Frames after changeToProductBasketiFrame --" + size);
+//		    System.out.println("Element Sync is in current iFrame: --" + BrowserActions.isElementPresent(driver, DirSalesProductBasket.syncButton));
+
 
 			if(BrowserActions.isElementPresent(driver, DirSalesProductBasket.cloneBasketButton) && 
 					BrowserActions.isElementPresent(driver, DirSalesProductBasket.syncButton) && 

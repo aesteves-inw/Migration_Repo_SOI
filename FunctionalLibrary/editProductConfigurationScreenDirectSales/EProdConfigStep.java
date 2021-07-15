@@ -465,7 +465,7 @@ public class EProdConfigStep
 		{
 			EProdConfigAction.selectAddress(logStream, driver, stepID, address);
 
-			validation = EProdConfigAction.selectAddressValidation(logStream, driver, stepID);
+			validation = EProdConfigAction.selectAddressValidation(logStream, driver, stepID, address);
 
 			if(validation==true)
 			{
@@ -913,6 +913,44 @@ public class EProdConfigStep
 			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
 
+	}
+	
+	public static void validateAccessTechnologyNoDuplicatesOptions (List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName)throws Exception 
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+
+
+		String stepName="Product Configuration: Validate Access Tenochnology Field No Duplicates Options";
+
+		String stepNameMin="validateAccessTechnologyNoDuplicatesOptions";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);	
+		
+		boolean validation;
+
+		
+		try
+		{
+			validation = EProdConfigAction.validateAccessTechnologyNoDuplicatesOptions(logStream, driver, stepID);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
 	}
 
 
