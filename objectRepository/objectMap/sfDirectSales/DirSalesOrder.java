@@ -21,7 +21,9 @@ public class DirSalesOrder {
 
 	public static String orderDetailsTab="//div[@class='slds-tabs_default']";
 	
-	public static String orderDetails="//force-record-layout-section";
+	//public static String orderDetails="//force-record-layout-section";
+	
+	public static String orderDetails="//div[@data-aura-class='forceDetailPanelDesktop']";
 
 	public static String orderHeader="//h1[contains(.,'Order')]";
 

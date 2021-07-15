@@ -266,6 +266,64 @@ public class ProductBasketAction {
 
 	}
 
+	public static void goToEditProductConfigurationECS(List<TestLog> logStream, WebDriver driver, int stepID, String productName, String productToConfig) throws Exception
+	{
+		String actionName="goToEditProductConfiguration";
+
+		try
+		{
+
+			//28-01-2021 - Initial approach in how to access the Edit Product Configuration
+			/*
+			WebElement productBasketTable=driver.findElement(By.xpath(DirSalesProductBasket.productBasketTable));
+
+			List<WebElement> productBasketLines=productBasketTable.findElements(By.tagName("li"));
+
+			for (WebElement we:productBasketLines)
+			{
+				if (we.getText().contains(productName))
+				{
+					we.findElement(By.xpath(DirSalesProductBasket.editProductConfigurationButton)).click();
+					break;
+				}
+			}
+			 */
+
+			// 28-01-2020 - New approach in how to access the Edit Product Configuration
+				
+				/*WebElement productBasketTable=driver.findElement(By.xpath(DirSalesProductBasket.productBasketTable));
+
+				List<WebElement> productBasketLines=productBasketTable.findElements(By.tagName("li"));
+
+				List<WebElement> productBasketLinesBts=productBasketTable.findElements(By.xpath(DirSalesProductBasket.editProductConfigurationButton));
+
+				for(int i=0;i<productBasketLines.size();i++)
+				{
+					System.out.println(productBasketLines.get(i).getText());
+					if (productBasketLines.get(i).getText().contains(productToConfig))
+					{
+						productBasketLinesBts.get(i).click();
+
+						//BrowserActions.jsClick(driver, productBasketLinesBts.get(i));
+						break;
+					}
+				}*/
+			
+			driver.findElement(By.xpath("//*[@id=\"basket-table\"]/div[2]/div/ul/li[1]/div/div/div/div[3]/ul/li[1]/div/div/div/div[2]/ul/li/div/div/div/div/div[7]/button")).click();
+			
+			new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesEditProductConfiguration.iFrameEditProductConfiguration)));		
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+	}
+	
 	public static void goToEditProductConfiguration(List<TestLog> logStream, WebDriver driver, int stepID, String productName) throws Exception
 	{
 		String actionName="goToEditProductConfiguration";
@@ -299,6 +357,7 @@ public class ProductBasketAction {
 
 			for(int i=0;i<productBasketLines.size();i++)
 			{
+				
 				if (productBasketLines.get(i).getText().contains(productName))
 				{
 					//productBasketLinesBts.get(i).click();
@@ -721,7 +780,7 @@ public class ProductBasketAction {
 		{		
 			WebElement productBasketTable=driver.findElement(By.xpath(DirSalesProductBasket.productBasketTable));
 
-			new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfAllElements(productBasketTable.findElements(By.xpath("li/div/div/div/div/div[2][contains(.,'"+productName+"')]"))));
+			new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfAllElements(productBasketTable.findElements(By.xpath("li/div/div/div/div/div[2][contains(.,'"+productName+"')]"))));
 
 			String productBasketLineItemValidation=productBasketTable.getText().toString();
 
