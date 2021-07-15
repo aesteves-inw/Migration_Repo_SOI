@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="SOI-3889" parallel="false">
+	<test name="SOI_3930_TC01_DS_D03PlaceHolders_ProductsToBeRemoved">
+		<classes>
+			<class
+				name="d03.SOI_3930.SOI_3930_TC01_DS_D03PlaceHolders_ProductsToBeRemoved" />
+		</classes>
+	</test>
+	<test name="SOI_3930_TC02_DS_D03PlaceHolders_Section_AdvTelcoSol">
+		<classes>
+			<class
+				name="d03.SOI_3930.SOI_3930_TC02_DS_D03PlaceHolders_Section_AdvTelcoSol" />
+		</classes>
+	</test>
+	<test
+		name="SOI_3930_TC03_DS_D03PlaceHolders_Section_AdvancedWorkplace">
+		<classes>
+			<class
+				name="d03.SOI_3930.SOI_3930_TC03_DS_D03PlaceHolders_Section_AdvancedWorkplace" />
+		</classes>
+	</test>
+	<test
+		name="SOI_3930_TC04_DS_D03PlaceHolders_Section_ComputeStorage">
+		<classes>
+			<class
+				name="d03.SOI_3930.SOI_3930_TC04_DS_D03PlaceHolders_Section_ComputeStorage" />
+		</classes>
+	</test>
+	<test
+		name="SOI_3930_TC05_DS_D03PlaceHolders_Section_DNSWebhosting">
+		<classes>
+			<class
+				name="d03.SOI_3930.SOI_3930_TC05_DS_D03PlaceHolders_Section_DNSWebhosting" />
+		</classes>
+	</test>
+	<test name="SOI_3930_TC06_DS_D03PlaceHolders_Section_ECS">
+		<classes>
+			<class
+				name="d03.SOI_3930.SOI_3930_TC06_DS_D03PlaceHolders_Section_ECS" />
+		</classes>
+	</test>
+	<test name="SOI_3930_TC07_DS_D03PlaceHolders_Section_IOT">
+		<classes>
+			<class
+				name="d03.SOI_3930.SOI_3930_TC07_DS_D03PlaceHolders_Section_IOT" />
+		</classes>
+	</test>
+	<test name="SOI_3930_TC08_DS_D03PlaceHolders_Section_MassMarket">
+		<classes>
+			<class
+				name="d03.SOI_3930.SOI_3930_TC08_DS_D03PlaceHolders_Section_MassMarket" />
+		</classes>
+	</test>
+	<test name="SOI_3930_TC09_DS_D03PlaceHolders_Section_Mobile">
+		<classes>
+			<class
+				name="d03.SOI_3930.SOI_3930_TC09_DS_D03PlaceHolders_Section_Mobile" />
+		</classes>
+	</test>
+	<test name="SOI_3930_TC10_DS_D03PlaceHolders_Section_NetwConnServ">
+		<classes>
+			<class
+				name="d03.SOI_3930.SOI_3930_TC10_DS_D03PlaceHolders_Section_NetwConnServ" />
+		</classes>
+	</test>
+	<test name="SOI_3930_TC11_DS_D03PlaceHolders_Section_NextGenComm">
+		<classes>
+			<class
+				name="d03.SOI_3930.SOI_3930_TC11_DS_D03PlaceHolders_Section_NextGenComm" />
+		</classes>
+	</test>
+		<test name="SOI_3930_TC12_DS_D03PlaceHolders_Section_Voice">
+		<classes>
+			<class
+				name="d03.SOI_3930.SOI_3930_TC12_DS_D03PlaceHolders_Section_Voice" />
+		</classes>
+	</test>
+	<test name="SOI_3930_TC13_PC_D03PlaceHolders_ProductsToBeRemoved">
+		<classes>
+			<class
+				name="d03.SOI_3930.SOI_3930_TC13_PC_D03PlaceHolders_ProductsToBeRemoved" />
+		</classes>
+	</test>
+	<test name="SOI_3930_TC14_PC_D03PlaceHolders_Section_AdvTelcoSol">
+		<classes>
+			<class
+				name="d03.SOI_3930.SOI_3930_TC14_PC_D03PlaceHolders_Section_AdvTelcoSol" />
+		</classes>
+	</test>
+	<test
+		name="SOI_3930_TC15_PC_D03PlaceHolders_Section_AdvancedWorkplace">
+		<classes>
+			<class
+				name="d03.SOI_3930.SOI_3930_TC15_PC_D03PlaceHolders_Section_AdvancedWorkplace" />
+		</classes>
+	</test>
+	<test
+		name="SOI_3930_TC16_PC_D03PlaceHolders_Section_ComputeStorage">
+		<classes>
+			<class
+				name="d03.SOI_3930.SOI_3930_TC16_PC_D03PlaceHolders_Section_ComputeStorage" />
+		</classes>
+	</test>
+	<test
+		name="SOI_3930_TC17_PC_D03PlaceHolders_Section_DNSWebhosting">
+		<classes>
+			<class
+				name="d03.SOI_3930.SOI_3930_TC17_PC_D03PlaceHolders_Section_DNSWebhosting" />
+		</classes>
+	</test>
+		<test name="SOI_3930_TC18_PC_D03PlaceHolders_Section_ECS">
+		<classes>
+			<class
+				name="d03.SOI_3930.SOI_3930_TC18_PC_D03PlaceHolders_Section_ECS" />
+		</classes>
+	</test>
+		<test name="SOI_3930_TC19_PC_D03PlaceHolders_Section_IOT">
+		<classes>
+			<class
+				name="d03.SOI_3930.SOI_3930_TC19_PC_D03PlaceHolders_Section_IOT" />
+		</classes>
+	</test>
+	<test name="SOI_3930_TC20_PC_D03PlaceHolders_Section_MassMarket">
+		<classes>
+			<class
+				name="d03.SOI_3930.SOI_3930_TC20_PC_D03PlaceHolders_Section_MassMarket" />
+		</classes>
+	</test>
+		<test name="SOI_3930_TC21_PC_D03PlaceHolders_Section_Mobile">
+		<classes>
+			<class
+				name="d03.SOI_3930.SOI_3930_TC21_PC_D03PlaceHolders_Section_Mobile" />
+		</classes>
+	</test>
+		<test name="SOI_3930_TC22_PC_D03PlaceHolders_Section_NetwConnServ">
+		<classes>
+			<class
+				name="d03.SOI_3930.SOI_3930_TC22_PC_D03PlaceHolders_Section_NetwConnServ" />
+		</classes>
+	</test>
+		<test name="SOI_3930_TC23_PC_D03PlaceHolders_Section_NextGenComm">
+		<classes>
+			<class
+				name="d03.SOI_3930.SOI_3930_TC23_PC_D03PlaceHolders_Section_NextGenComm" />
+		</classes>
+	</test>
+			<test name="SOI_3930_TC24_PC_D03PlaceHolders_Section_Voice">
+		<classes>
+			<class
+				name="d03.SOI_3930.SOI_3930_TC24_PC_D03PlaceHolders_Section_Voice" />
+		</classes>
+	</test>
+</suite>

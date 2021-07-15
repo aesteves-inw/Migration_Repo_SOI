@@ -163,7 +163,7 @@ public class AddOfferToBasketAction {
 		}
 	}
 
-	public static boolean categorieProductMenuValidation(List<TestLog> logStream, WebDriver driver, int stepID, String testName) throws Exception
+	public static boolean categorieProductMenuValidation(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
 	{
 		String actionName="categorieProductMenuValidation";
 
