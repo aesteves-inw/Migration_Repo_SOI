@@ -142,7 +142,7 @@ public class OrderEnrichmentAction
 
 			driver.findElement(By.xpath("//li[@title='Data Capture Form']//a[1]")).click();
 			
-			driver.switchTo().frame(1);
+			driver.switchTo().frame(0);
 			
 			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//*[@id=\"addRowBtn\"]")));
 

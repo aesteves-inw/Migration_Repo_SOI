@@ -1,7 +1,5 @@
 package productBasketDirectSales;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -21,7 +19,6 @@ import executionTools.BrowserActions;
 import executionTools.TestExecutionReport;
 import fetchDataFromExcelFiles.ExcelDataFetch;
 import navigation.NavigationAction;
-import objectMap.sfDirectSales.DirSalesProductBasket;
 import opportunityDirectSales.OpportunityAction;
 import orderEnrichmentDirectSales.OrderEnrichmentAction;
 import testLogBuilder.TestLog;
@@ -35,9 +32,9 @@ public class ProductBasketStep
 	public static void goToAddOferToBasketScreen(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, String testName) throws Exception
 	{
 		int stepID;
-		
+
 		stepID=TestExecutionReport.stepOfTestStep(testReportStream);
-		
+
 		String stepName="Go To Add Offer to Basket Screen";
 
 		String stepNameMin="goToAddOferToBasketScreen";
@@ -74,13 +71,13 @@ public class ProductBasketStep
 		}
 
 	}
-	
+
 	public static void categorieValidatationStep(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, String testName) throws Exception
 	{
 		int stepID;
-		
+
 		stepID=TestExecutionReport.stepOfTestStep(testReportStream);
-		
+
 		String stepName="Go To Add Offer to Basket Screen and Categorie Validation";
 
 		String stepNameMin="categorieValidatationStep";
@@ -94,26 +91,12 @@ public class ProductBasketStep
 		{
 			ProductBasketAction.openAddProductMenu(logStream, driver, stepID);
 
-			validation = AddOfferToBasketAction.categorieProductMenuValidation(logStream, driver, stepID,testName);
+			validation = AddOfferToBasketAction.categorieProductMenuValidation(logStream, driver, stepID);
 
 			if(validation==true)
 			{
 				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
-				TestReporter.stepPassed(testReportStream, driver, testName, stepID, stepName, evidenceName+"_Part1");
-				BrowserActions.verticalscrollByVisibleElement(driver, DirSalesProductBasket.categoryExternallyQuotedProducts);
-				TestReporter.stepPassed(testReportStream, driver, testName, stepID, stepName, evidenceName+"_Part2");
-				BrowserActions.verticalscrollByVisibleElement(driver, DirSalesProductBasket.categoryExternallyQuotedProducts_ComputeStorage);
-				TestReporter.stepPassed(testReportStream, driver, testName, stepID, stepName, evidenceName+"_Part3");
-				BrowserActions.verticalscrollByVisibleElement(driver, DirSalesProductBasket.categoryExternallyQuotedProducts_MassMarket);
-				TestReporter.stepPassed(testReportStream, driver, testName, stepID, stepName, evidenceName+"_Part4");
-				BrowserActions.verticalscrollByVisibleElement(driver, DirSalesProductBasket.categoryExternallyQuotedProducts_NetwConnServ);
-				TestReporter.stepPassed(testReportStream, driver, testName, stepID, stepName, evidenceName+"_Part5");
-				BrowserActions.verticalscrollByVisibleElement(driver, DirSalesProductBasket.categoryExternallyQuotedProducts_Voice);
-				TestReporter.stepPassed(testReportStream, driver, testName, stepID, stepName, evidenceName+"_Part6");
-
-
-
-			
+				TestReporter.stepPassed(testReportStream, driver, testName, stepID, stepName, evidenceName);
 			}
 			else
 			{
@@ -131,11 +114,11 @@ public class ProductBasketStep
 		}
 
 	}
-	
+
 	public static void syncProductBasket(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, String testName) throws Exception
 	{
 		int stepID=TestExecutionReport.stepOfTestStep(testReportStream);
-		
+
 		String stepName="Sync Product Basket (Positive Validation)";
 
 		String stepNameMin="syncProductBasketPosVal";
@@ -171,7 +154,7 @@ public class ProductBasketStep
 			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
 	}
-	
+
 	public static void syncProductBasketNegVal(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream,
 			WebDriver driver, int newStepCounter, String testName) throws Exception 
 	{
@@ -210,7 +193,7 @@ public class ProductBasketStep
 			throw new Exception (stepName+" - Failed in Step: "+newStepCounter);
 		}
 
-		
+
 	}
 
 	public static void deletePBLineItem(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream,
@@ -228,9 +211,9 @@ public class ProductBasketStep
 		try
 		{
 			ProductBasketAction.selectLineItem(logStream, driver, newStepCounter, productName);
-			
+
 			ProductBasketAction.deleteLineItem(logStream, driver, newStepCounter);
-			
+
 			validation = ProductBasketAction.productOnProductBasketNegativeValidation(logStream, driver, newStepCounter, productName);
 
 			if(validation==true)
@@ -252,15 +235,15 @@ public class ProductBasketStep
 			TestReporter.stepFailed(testExecStructure, driver, testName, newStepCounter, stepName, evidenceName);
 			throw new Exception (stepName+" - Failed in Step: "+newStepCounter);
 		}
-		
+
 	}
 
 	public static void expandECSPackage(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, String testName, String productName) throws Exception
 	{
 		int stepID;
-		
+
 		stepID=TestExecutionReport.stepOfTestStep(testReportStream);
-		
+
 		String stepName="Expanding ECS Package on Product Basket";
 
 		String stepNameMin="expandECSPackage";
@@ -271,9 +254,9 @@ public class ProductBasketStep
 		boolean validation;
 
 		try
-		{	
+		{
 			ProductBasketAction.expandingECS(logStream, driver, stepID, productName);
-			
+
 			validation = ProductBasketAction.expandedECSPackValidation(logStream, driver, stepID, productName);
 
 			if(validation==true)
@@ -296,13 +279,13 @@ public class ProductBasketStep
 			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
 	}
-	
+
 	public static void selectInternetECSPackage(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, String testName, String productName) throws Exception
 	{
 		int stepID;
-		
+
 		stepID=TestExecutionReport.stepOfTestStep(testReportStream);
-		
+
 		String stepName="Select Internet of an ECS Package on Product Basket";
 
 		String stepNameMin="selectInternetECSPackage";
@@ -315,11 +298,11 @@ public class ProductBasketStep
 		try
 		{
 			ProductBasketAction.expandingECS(logStream, driver, stepID, productName);
-			
+
 			WebElement internetEditButton = driver.findElement(By.xpath("//div[@id='basket-table']/div[2]/div[1]/ul[1]/li[1]/div[1]/div[1]/div[1]/div[3]/ul[1]/li[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/div[1]/div[1]/div[1]/div[1]/div[7]/button[1]"));
-			
+
 			internetEditButton.click();
-			
+
 			validation = ProductBasketAction.internetEditConfigValidation(logStream, driver, stepID);
 
 			if(validation==true)
@@ -347,7 +330,7 @@ public class ProductBasketStep
 			List<TestLog> logStream, WebDriver driver, String testName, String productName) throws Exception 
 	{
 		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
-		
+
 		String stepName="Go To Edit Product Configuration Screen - "+productName;
 
 		String stepNameMin="goToEditProductConfigurationScreen";
@@ -360,7 +343,7 @@ public class ProductBasketStep
 		try
 		{
 			ProductBasketAction.goToEditProductConfiguration(logStream, driver, stepID, productName);
-			
+
 			EProdConfigAction.changeToEditProductConfigurationiFrame(logStream, driver, stepID);
 
 			validation = EProdConfigAction.editProductConfiguration(logStream, driver, stepID, productName);
@@ -384,30 +367,52 @@ public class ProductBasketStep
 			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
 			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
-		
+
 	}
 	public static void goToEditProductConfigurationScreenECS(List<TestStepReportStructure> testExecStructure,
-			List<TestLog> logStream, WebDriver driver, String testName, String productName) throws Exception 
+			List<TestLog> logStream, WebDriver driver, String testName, String productName, String productToConfig) throws Exception 
 	{
 		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
-		
+
 		String stepName="Go To Edit Product Configuration Screen - "+productName;
 
-		String stepNameMin="goToEditProductConfigurationScreen";
+		String stepNameMin="goToEditProductConfigurationScreenECS";
 
-		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);	
 
-
-		boolean validation;
+		boolean validation = false;
 
 		try
 		{
-			ProductBasketAction.goToEditProductConfiguration(logStream, driver, stepID, productName);
-			
+			ProductBasketAction.goToEditProductConfigurationECS(logStream, driver, stepID, productName, productToConfig);
+
 			EProdConfigAction.changeToEditProductConfigurationiFrame(logStream, driver, stepID);
 
-			validation = EProdConfigAction.editProductConfigurationECS(logStream, driver, stepID, productName);
+			switch(productToConfig) {
+			case "FullFiber Extended":
+				validation = EProdConfigAction.editProductConfigurationECSInternet(logStream, driver, stepID);
+				break;
 
+
+			case "FullFiber":
+				validation = EProdConfigAction.editProductConfigurationECSInternet(logStream, driver, stepID);
+				break;
+
+
+			case "Internet Pro+":
+				validation = EProdConfigAction.editProductConfigurationECSInternet(logStream, driver, stepID);
+				break;
+
+				
+			case "Internet Pro":
+				validation = EProdConfigAction.editProductConfigurationECSInternet(logStream, driver, stepID);
+				break;
+				
+			case "Enterprise Voice - Converged":
+				validation = EProdConfigAction.editProductConfigurationECSEV(logStream, driver, stepID);
+				break;
+			}
+			
 			if(validation==true)
 			{
 				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
@@ -427,14 +432,14 @@ public class ProductBasketStep
 			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
 			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
-		
+
 	}
-	
+
 	public static void goToEditProductConfigurationScreenForD03(List<TestStepReportStructure> testExecStructure,
 			List<TestLog> logStream, WebDriver driver, String testName, String productName) throws Exception 
 	{
 		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
-		
+
 		String stepName="Go To Edit Product Configuration Screen For D03 Product - "+productName;
 
 		String stepNameMin="goToEditProductConfigurationScreenForD03";
@@ -447,7 +452,7 @@ public class ProductBasketStep
 		try
 		{
 			ProductBasketAction.goToEditProductConfiguration(logStream, driver, stepID, productName);
-			
+
 			EProdConfigAction.changeToEditProductConfigurationiFrame(logStream, driver, stepID);
 
 			validation = EProdConfigAction.editProductConfigurationForD03(logStream, driver, stepID);
@@ -471,13 +476,13 @@ public class ProductBasketStep
 			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
 			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
-		
+
 	}
-	
+
 	public static void goToAgreementScreen(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, String testName) throws Exception
 	{
 		int stepID=TestExecutionReport.stepOfTestStep(testReportStream);
-		
+
 		String stepName="Product Basket: Go To Agreement Screen (After Sync)";
 
 		String stepNameMin="goToAgreementScreen";
@@ -517,7 +522,7 @@ public class ProductBasketStep
 	public static void goToAgreementScreenInPC(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, String testName) throws Exception
 	{
 		int stepID=TestExecutionReport.stepOfTestStep(testReportStream);
-		
+
 		String stepName="Product Basket: Go To Agreement Screen (After Sync) in PartCom";
 
 		String stepNameMin="goToAgreementScreenInPC";
@@ -553,12 +558,12 @@ public class ProductBasketStep
 			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
 	}
-	
+
 	public static void goToOpportunityScreenByURL(List<TestStepReportStructure> testReportStream, List<TestLog> logStream, WebDriver driver, String testName, String optyURL) throws Exception
 	{
 		int stepID=TestExecutionReport.stepOfTestStep(testReportStream);
-		
-		
+
+
 		String stepName="Product Basket: Go To Opportunity Screen By URL";
 
 		String stepNameMin="goToOpportunityScreenByURL";
@@ -571,7 +576,7 @@ public class ProductBasketStep
 		try
 		{
 			ProductBasketAction.changeToDefaultiFrame(logStream, driver, stepID);
-			
+
 			NavigationAction.goToOPTYByURL(logStream, driver, stepID, optyURL);
 
 			validation = OpportunityAction.opportunityScreenValidation(logStream, driver, stepID);
@@ -597,13 +602,13 @@ public class ProductBasketStep
 		}
 
 
-}
+	}
 
 	public static void fillExistingBillingAccountIdField(List<TestStepReportStructure> testExecStructure,
 			List<TestLog> logStream, WebDriver driver, String testName) throws Exception 
 	{
 		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
-		
+
 		String stepName="Product Basket: fill Existing Billing Account Id Field";
 
 		String stepNameMin="fillExistingBillingAccountIdField";
@@ -612,13 +617,13 @@ public class ProductBasketStep
 
 
 		boolean validation;
-		
+
 		String textExistingBillingAccountIdField="04121986";
 
 		try
 		{
 			ProductBasketAction.fillExistingBillingAccountIdField(logStream, driver, stepID, textExistingBillingAccountIdField);
-			
+
 			Thread.sleep(2000);
 
 			validation = ProductBasketAction.checkExistingBillingAccountIdField(logStream, driver, stepID, textExistingBillingAccountIdField);
@@ -642,14 +647,14 @@ public class ProductBasketStep
 			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
 			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
-		
+
 	}
 
 	public static void fillExistingTechnicalContact(List<TestStepReportStructure> testExecStructure,
 			List<TestLog> logStream, WebDriver driver, String testName, String textExistingTechnicalContact) throws Exception 
 	{
 		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
-		
+
 		String stepName="Product Basket: Existing Technical Contact: "+textExistingTechnicalContact;
 
 		String stepNameMin="fillExistingTechnicalContact";
@@ -684,14 +689,14 @@ public class ProductBasketStep
 			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
 			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
-		
+
 	}
 
 	public static void goToOrderEnrichment(List<TestStepReportStructure> testExecStructure,
 			List<TestLog> logStream, WebDriver driver, String testName, String productName) throws Exception
 	{
 		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
-		
+
 		String stepName="ProductBasket: go To Order Enrichment";
 
 		String stepNameMin="step";
@@ -704,17 +709,17 @@ public class ProductBasketStep
 		try
 		{
 			ProductBasketAction.goToOrderEnrichmentConsole(logStream, driver, stepID);
-			
+
 			Thread.sleep(5000);
-			
+
 			String OE_URL = driver.getCurrentUrl();
-			
+
 			if(OE_URL.contains("one")) {
-			OrderEnrichmentAction.changeToOrderEnrichmentiFrame(logStream, driver, stepID);
+				OrderEnrichmentAction.changeToOrderEnrichmentiFrame(logStream, driver, stepID);
 			}
 
 			OrderEnrichmentAction.selectProductForOEConfig(logStream, driver, stepID, productName);
-			
+
 			validation=OrderEnrichmentAction.tabsforOEValidation(logStream, driver, stepID);
 
 			if(validation==true)
@@ -742,7 +747,7 @@ public class ProductBasketStep
 			List<TestLog> logStream, WebDriver driver, String testName, String product) throws Exception 
 	{
 		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
-		
+
 		String stepName="Product Basket: Fill New Billing Account Address";
 
 		String stepNameMin="fillNewBillingAccountAddress";
@@ -751,15 +756,15 @@ public class ProductBasketStep
 
 
 		boolean validation;
-		
+
 		String newBillingAddress=ExcelDataFetch.searchDT(11, "newBillingAddress");
 
 		try
 		{
 			ProductBasketAction.fillNewBillingAccountAddress(logStream, driver, stepID, newBillingAddress);
-			
+
 			ProductBasketAction.saveProductBasketChanges(logStream, driver, stepID);
-			
+
 			validation = ProductBasketAction.fillNewBillingAccountAddressValidation(logStream, driver, stepID, newBillingAddress);
 
 			if(validation==true)
@@ -782,14 +787,14 @@ public class ProductBasketStep
 			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
 			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
-		
+
 	}
 
 	public static void fillNewBillingAccountAddressNegVal(List<TestStepReportStructure> testExecStructure,
 			List<TestLog> logStream, WebDriver driver, String testName, String newBillingAddress) throws Exception 
 	{
 		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
-		
+
 		String stepName="Product Basket: fill New Billing Account Address with Negative Validation";
 
 		String stepNameMin="fillNewBillingAccountAddressNegVal";
@@ -802,9 +807,9 @@ public class ProductBasketStep
 		try
 		{
 			ProductBasketAction.fillNewBillingAccountAddress(logStream, driver, stepID, newBillingAddress);
-			
+
 			ProductBasketAction.saveProductBasketChanges(logStream, driver, stepID);
-			
+
 			validation = ProductBasketAction.validationNewBillingAccountAddressNegVal(logStream, driver, stepID);
 
 			if(validation==true)
@@ -827,14 +832,14 @@ public class ProductBasketStep
 			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
 			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
-		
+
 	}
 
 	public static void cancelProductBasketEdition(List<TestStepReportStructure> testExecStructure,
 			List<TestLog> logStream, WebDriver driver, String testName) throws Exception 
 	{
 		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
-		
+
 		String stepName="Product Basket: cancel Product Basket Edition";
 
 		String stepNameMin="cancelProductBasketEdition";
@@ -870,24 +875,24 @@ public class ProductBasketStep
 			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
 			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
-		
+
 	}
 
-	
+
 	public static void fillNewAndExistingBillingDetails(List<TestStepReportStructure> testExecStructure,
 			List<TestLog> logStream, WebDriver driver, String testName) throws Exception 
 	{
 		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
-		
+
 		String stepName="Product Basket: fill New And Existing Billing Details";
 
 		String stepNameMin="fillNewAndExistingBillingDetails";
 
 		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);
-		
-		
+
+
 		String existingBillingAccountIdField=ExcelDataFetch.searchDT(11, "existingBillingAccountIdField");
-		
+
 		String newBillingAddress=ExcelDataFetch.searchDT(11, "newBillingAddress");
 
 		boolean validation;
@@ -895,11 +900,11 @@ public class ProductBasketStep
 		try
 		{
 			ProductBasketAction.fillNewBillingAccountAddress(logStream, driver, stepID, newBillingAddress);
-			
+
 			ProductBasketAction.fillExistingBillingAccountIdFieldNoSave(logStream, driver, stepID, existingBillingAccountIdField);
 
 			ProductBasketAction.saveEditProductBasketChanges(logStream, driver, stepID);
-			
+
 			validation = ProductBasketAction.validationNewBillingAccountAddressNegVal(logStream, driver, stepID);
 
 			if(validation==true)
@@ -922,54 +927,13 @@ public class ProductBasketStep
 			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
 			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
-		
+
 	}
-	
-	public static void fillProvisoningContactPersonDetails(List<TestStepReportStructure> testExecStructure,
-			List<TestLog> logStream, WebDriver driver, String testName,String textProvisioningContactPersonField) throws Exception 
-	{
-		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
-		
-		String stepName="Product Basket: fill Provisioning Contact Person Details";
-
-		String stepNameMin="fillProvisoningContactPersonDetails";
-
-		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
 
 
-		boolean validation;
 
-		try
-		{
-			ProductBasketAction.fillProvisioningContactPerson(logStream, driver, stepID, textProvisioningContactPersonField);
-			
-			Thread.sleep(2000);
-
-			validation = ProductBasketAction.checkProvisioningContactPersonFieldDetails(logStream, driver, stepID, textProvisioningContactPersonField);
-
-			if(validation==true)
-			{
-				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
-				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
-			}
-			else
-			{
-				throw new Exception (stepName+" - Failed in Step: "+stepID);
-			}
-
-
-		}
-		catch(Exception e)
-		{
-			System.out.println(e);
-			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
-			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
-			throw new Exception (stepName+" - Failed in Step: "+stepID);
-		}
-		
-	}
 }
-	
+
 
 
 
