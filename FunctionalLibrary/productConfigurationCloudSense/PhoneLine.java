@@ -379,7 +379,7 @@ public class PhoneLine {
 
 			//fieldOCKResult(logStream, driver, stepID, configuration);
 			
-			EProdConfigAction.selectAddress(logStream, driver, stepID, "Rue J Besme,20, Koekelberg, 1081, Belgium");
+//			EProdConfigAction.selectAddress(logStream, driver, stepID, "Rue J Besme,20, Koekelberg, 1081, Belgium");
 
 			accessTechnology(logStream, driver, stepID, configuration);
 
@@ -491,7 +491,7 @@ public class PhoneLine {
 					break;
 
 				case "VDSL2":
-					driver.findElement(By.xpath("//div[contains(text(),'COPPER')]")).click();
+					driver.findElement(By.xpath("//div[contains(text(),'VDSL2')]")).click();
 					break;
 
 				case "ADSL+E":
