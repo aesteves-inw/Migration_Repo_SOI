@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -16,46 +17,41 @@ import testLogger.TestLogger;
 import executionTools.*;
 
 public class EProdConfigAction {
-	
-	//Operational Action
 
-	public static void changeToEditProductConfigurationiFrame(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
-	{
+	// Operational Action
+
+	public static void changeToEditProductConfigurationiFrame(List<TestLog> logStream, WebDriver driver, int stepID)
+			throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 
-		String actionName="Change to Edit Prodcut Configuration iframe";
+		String actionName = "Change to Edit Prodcut Configuration iframe";
 
+		try {
+			wait.until(ExpectedConditions
+					.elementToBeClickable(By.xpath(DirSalesEditProductConfiguration.iFrameEditProductConfiguration)));
 
-		try
-		{
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(DirSalesEditProductConfiguration.iFrameEditProductConfiguration)));
-
-			WebElement iframeEditProdConfig = driver.findElement(By.xpath(DirSalesEditProductConfiguration.iFrameEditProductConfiguration));
+			WebElement iframeEditProdConfig = driver
+					.findElement(By.xpath(DirSalesEditProductConfiguration.iFrameEditProductConfiguration));
 
 			driver.switchTo().frame(iframeEditProdConfig);
 
-			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step " + stepID);
 
-		}
-		catch(Exception e)
-		{
+		} catch (Exception e) {
 			System.out.println(e);
-			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
-			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+			TestLogger.logError(logStream, actionName, "Failed in Step " + stepID, e.toString());
+			throw new Exception(actionName + " - Failed in Step " + stepID, e);
 		}
 	}
 
-	public static void finishConfiguration(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
-	{
-		String actionName="Finish Configuration on 'Edit Product Configuration' Screen";
+	public static void finishConfiguration(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception {
+		String actionName = "Finish Configuration on 'Edit Product Configuration' Screen";
 
+		try {
+			WebElement footer = driver
+					.findElement(By.xpath(DirSalesEditProductConfiguration.footerEditProductConfigurationScreen));
 
-		try
-		{
-			WebElement footer=driver.findElement(By.xpath(DirSalesEditProductConfiguration.footerEditProductConfigurationScreen));
-
-			if (footer.isDisplayed()== false)
-			{
+			if (footer.isDisplayed() == false) {
 				BrowserActions.scroll2Bottom(driver);
 			}
 
@@ -63,439 +59,436 @@ public class EProdConfigAction {
 
 			new WebDriverWait(driver, 20).until(ExpectedConditions.invisibilityOf(footer));
 
-			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step " + stepID);
 
-		}
-		catch(Exception e)
-		{
+		} catch (Exception e) {
 			System.out.println(e);
-			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
-			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+			TestLogger.logError(logStream, actionName, "Failed in Step " + stepID, e.toString());
+			throw new Exception(actionName + " - Failed in Step " + stepID, e);
 		}
 	}
 
-	public static void cancelConfiguration(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
-	{
-		String actionName="Cancel Configuration on 'Edit Product Configuration' Screen";
+	public static void cancelConfiguration(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception {
+		String actionName = "Cancel Configuration on 'Edit Product Configuration' Screen";
 
+		try {
+			WebElement footer = driver
+					.findElement(By.xpath(DirSalesEditProductConfiguration.footerEditProductConfigurationScreen));
 
-		try
-		{
-			WebElement footer=driver.findElement(By.xpath(DirSalesEditProductConfiguration.footerEditProductConfigurationScreen));
-			
-			if (footer.isDisplayed()== false)
-			{
+			if (footer.isDisplayed() == false) {
 				BrowserActions.scroll2Bottom(driver);
 			}
-			
+
 			footer.findElement(By.xpath(DirSalesEditProductConfiguration.buttonCancel)).click();
-			
+
 			new WebDriverWait(driver, 20).until(ExpectedConditions.invisibilityOf(footer));
 
-			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step " + stepID);
 
-		}
-		catch(Exception e)
-		{
+		} catch (Exception e) {
 			System.out.println(e);
-			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
-			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+			TestLogger.logError(logStream, actionName, "Failed in Step " + stepID, e.toString());
+			throw new Exception(actionName + " - Failed in Step " + stepID, e);
 		}
 	}
-	
-	public static void selectAddress(List<TestLog> logStream, WebDriver driver, int stepID, String address) throws Exception
-	{
+
+	public static void selectAddress(List<TestLog> logStream, WebDriver driver, int stepID, String address)
+			throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 
-		String actionName="Change to Edit Prodcut Configuration iframe";
+		String actionName = "Edit Prodcut Configuration: Select Address";
 
-
-		try
-		{
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"s2id_Details:Installation_Address___OCK_Check:existingAddress_0\"]")));
-
-			WebElement addressSelectField = driver.findElement(By.xpath("//*[@id=\"s2id_Details:Installation_Address___OCK_Check:existingAddress_0\"]"));
+		try {
+			
+			WebElement addressSelectField;
+			
+//			wait.until(ExpectedConditions.presenceOfElementLocated(
+//					By.xpath("//*[@id=\"s2id_Details:Installation_Address___OCK_Check:existingAddress_0\"]")));
+			
+		
+			if (driver.findElements(
+					By.xpath("//*[@id=\"s2id_Details:Installation_Address___OCK_Check:existingAddress_0\"]")).size()>0)
+			{
+				addressSelectField = driver.findElement(
+						By.xpath("//*[@id=\"s2id_Details:Installation_Address___OCK_Check:existingAddress_0\"]"));
+			}else{
+				addressSelectField = driver.findElement(
+						By.xpath("//*[@for='Details:Installation_Address___OCK_check:existingAddress_0']/parent::td/div"));
+			}
+			
 
 			addressSelectField.click();
-			
-			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@title='Address Details']/ancestor::div//input"))).sendKeys(address);
+
+			wait.until(ExpectedConditions
+					.presenceOfElementLocated(By.xpath("//div[@title='Address Details']/ancestor::div//input")))
+					.sendKeys(address);
 //			driver.findElement(By.xpath("//*[@id=\"s2id_autogen5_search\"]")).sendKeys(address);
-			
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'"+address+"')]")));
-			
-			driver.findElement(By.xpath("//div[contains(text(),'"+address+"')]")).click();
 
-			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'" + address + "')]")));
 
-		}
-		catch(Exception e)
-		{
+			driver.findElement(By.xpath("//div[contains(text(),'" + address + "')]")).click();
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step " + stepID);
+
+		} catch (Exception e) {
 			System.out.println(e);
-			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
-			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+			TestLogger.logError(logStream, actionName, "Failed in Step " + stepID, e.toString());
+			throw new Exception(actionName + " - Failed in Step " + stepID, e);
 		}
 	}
-	
-	public static void selectAddressECS(List<TestLog> logStream, WebDriver driver, int stepID, String address) throws Exception
-	{
+
+	public static void selectAddressECS(List<TestLog> logStream, WebDriver driver, int stepID, String address)
+			throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 
-		String actionName="Select Address";
+		String actionName = "Select Address";
 
-		try
-		{
-			wait.until(ExpectedConditions.elementToBeClickable(By.id("s2id_Enterprise_Call___Surf_Internet:ECS_Pack_Installation_Address___OCK_Check:existingAddress_0")));
+		try {
+			wait.until(ExpectedConditions.elementToBeClickable(By.id(
+					"s2id_Enterprise_Call___Surf_Internet:ECS_Pack_Installation_Address___OCK_Check:existingAddress_0")));
 
-			WebElement addressSelectField = driver.findElement(By.id("s2id_Enterprise_Call___Surf_Internet:ECS_Pack_Installation_Address___OCK_Check:existingAddress_0"));
+			WebElement addressSelectField = driver.findElement(By.id(
+					"s2id_Enterprise_Call___Surf_Internet:ECS_Pack_Installation_Address___OCK_Check:existingAddress_0"));
 
 			addressSelectField.click();
-			
+
 			driver.findElement(By.xpath("//*[@id=\"s2id_autogen3_search\"]")).sendKeys(address);
-			
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'"+address+"')]")));
-			
-			driver.findElement(By.xpath("//div[contains(text(),'"+address+"')]")).click();
 
-			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'" + address + "')]")));
 
-		}
-		catch(Exception e)
-		{
+			driver.findElement(By.xpath("//div[contains(text(),'" + address + "')]")).click();
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step " + stepID);
+
+		} catch (Exception e) {
 			System.out.println(e);
-			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
-			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+			TestLogger.logError(logStream, actionName, "Failed in Step " + stepID, e.toString());
+			throw new Exception(actionName + " - Failed in Step " + stepID, e);
 		}
 	}
-	
-	public static void selectTechnologyNOK(List<TestLog> logStream, WebDriver driver, int stepID, String Technology) throws Exception
-	{
+
+	public static void selectTechnologyNOK(List<TestLog> logStream, WebDriver driver, int stepID, String Technology)
+			throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 
-		String actionName="Change to Edit Prodcut Configuration iframe";
+		String actionName = "Change to Edit Prodcut Configuration iframe";
 
+		try {
+			wait.until(ExpectedConditions.elementToBeClickable(
+					By.xpath("//*[@id=\"s2id_Details:Installation_Address___OCK_Check:accessTechnology_0\"]")));
 
-		try
-		{
-			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"s2id_Details:Installation_Address___OCK_Check:accessTechnology_0\"]")));
-
-			WebElement technologySelectField = driver.findElement(By.xpath("//*[@id=\"s2id_Details:Installation_Address___OCK_Check:accessTechnology_0\"]"));
+			WebElement technologySelectField = driver.findElement(
+					By.xpath("//*[@id=\"s2id_Details:Installation_Address___OCK_Check:accessTechnology_0\"]"));
 
 			technologySelectField.click();
-			
+
 			Thread.sleep(6000);
 
-		}
-		catch(Exception e)
-		{
+		} catch (Exception e) {
 			System.out.println(e);
-			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
-			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+			TestLogger.logError(logStream, actionName, "Failed in Step " + stepID, e.toString());
+			throw new Exception(actionName + " - Failed in Step " + stepID, e);
 		}
 	}
-	
-	//Validation Action
-	
-	public static boolean selectAddressValidation(List<TestLog> logStream, WebDriver driver, int stepID,String address) throws Exception
-	{
-		String actionName="Product Basket: Address Select Validation";
 
-		try
-		{
+	// Validation Action
+
+	public static boolean selectAddressValidation(List<TestLog> logStream, WebDriver driver, int stepID, String address)
+			throws Exception {
+		String actionName = "Product Basket: Address Select Validation";
+
+		try {
+			WebElement addressField;
+			
 //			WebElement addressField=driver.findElement(By.xpath("//*[@id=\"select2-chosen-5\"]"));
-			WebElement addressField = driver.findElement(By.xpath("//*[@id='s2id_Details:Installation_Address___OCK_Check:existingAddress_0']//span[@class='select2-chosen']"));
+			
+//			WebElement addressField = driver.findElement(By.xpath(
+//					"//*[@id='s2id_Details:Installation_Address___OCK_Check:existingAddress_0']//span[@class='select2-chosen']"));
+			
+			if (driver.findElements(
+					By.xpath("//*[@id='s2id_Details:Installation_Address___OCK_Check:existingAddress_0']//span[@class='select2-chosen']")).size()>0)
+			{
+				addressField = driver.findElement(By.xpath(
+						"//*[@id='s2id_Details:Installation_Address___OCK_Check:existingAddress_0']//span[@class='select2-chosen']"));
+			}else{
+				addressField = driver.findElement(By.xpath(
+						"//*[@for='Details:Installation_Address___OCK_check:existingAddress_0']/parent::td/div"));
+			}
+			
 			
 			System.out.println(addressField.getText());
-			
-			
-			
-			String addressValidation= addressField.getText();
 
-			if(
+			String addressValidation = addressField.getText();
+
+			if (
 //					addressValidation.contains("A Rodenbachlaan,29, Grimbergen, 1850, Belgium")
-					addressValidation.contains(address)
-					)
-			{
-				System.out.println(actionName+" - Succeeded in Step: "+stepID);
+			addressValidation.contains(address)) {
+				System.out.println(actionName + " - Succeeded in Step: " + stepID);
 				return true;
-			}
-			else
-			{
+			} else {
 				return false;
 			}
 
-		}
-		catch(Exception e)
-		{
+		} catch (Exception e) {
 			System.out.println(e);
-			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
-			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+			TestLogger.logError(logStream, actionName, "Failed in Step " + stepID, e.toString());
+			throw new Exception(actionName + " - Failed in Step: " + stepID, e);
 		}
 	}
-	
-	public static boolean selectTechnologyValidationNOK(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
-	{
-		String actionName="Product Basket: Technology Select Validation";
 
-		try
-		{
+	public static boolean selectTechnologyValidationNOK(List<TestLog> logStream, WebDriver driver, int stepID)
+			throws Exception {
+		String actionName = "Product Basket: Technology Select Validation";
+
+		try {
 			String errorMessage = driver.switchTo().alert().getText();
-			
-			
+
 			System.out.println(driver.switchTo().alert().getText());
-			
+
 			driver.switchTo().alert().accept();
 
-			if(
-					errorMessage.contains("No technology available. Contact TCA Helpdesk for more detailed info.")
-					)
-			{
-				System.out.println(actionName+" - Succeeded in Step: "+stepID);
+			if (errorMessage.contains("No technology available. Contact TCA Helpdesk for more detailed info.")) {
+				System.out.println(actionName + " - Succeeded in Step: " + stepID);
 				return true;
-			}
-			else
-			{
+			} else {
 				return false;
 			}
 
-		}
-		catch(Exception e)
-		{
+		} catch (Exception e) {
 			System.out.println(e);
-			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
-			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+			TestLogger.logError(logStream, actionName, "Failed in Step " + stepID, e.toString());
+			throw new Exception(actionName + " - Failed in Step: " + stepID, e);
 		}
 	}
-	
+
 	public static boolean editProductConfiguration(List<TestLog> logStream, WebDriver driver, int stepID,
-			String productName) throws Exception 
-	{
-		String actionName="Product Basket: Edit Product Configuration Screen Validation";
+			String productName) throws Exception {
+		String actionName = "Product Basket: Edit Product Configuration Screen Validation";
 
-		try
-		{
-			WebElement productToBeConfigured=driver.findElement(By.xpath("//h1[@title='"+productName+"']"));
+		try {
+			WebElement productToBeConfigured = driver.findElement(By.xpath("//h1[@title='" + productName + "']"));
 
-			String productToBeConfiguredValidation=productToBeConfigured.getText().toString();
+			String productToBeConfiguredValidation = productToBeConfigured.getText().toString();
 
-			if(
-					BrowserActions.isElementPresent(driver, DirSalesEditProductConfiguration.bannerEditProductConfiguration) &&
-					BrowserActions.isElementPresent(driver, DirSalesEditProductConfiguration.productConfigurationLabel) &&
-					productToBeConfigured.isDisplayed() && productToBeConfiguredValidation.contains(productName)
-					)
-			{
-				System.out.println(actionName+" - Succeeded in Step: "+stepID);
+			if (BrowserActions.isElementPresent(driver, DirSalesEditProductConfiguration.bannerEditProductConfiguration)
+					&& BrowserActions.isElementPresent(driver,
+							DirSalesEditProductConfiguration.productConfigurationLabel)
+					&& productToBeConfigured.isDisplayed() && productToBeConfiguredValidation.contains(productName)) {
+				System.out.println(actionName + " - Succeeded in Step: " + stepID);
 				return true;
-			}
-			else
-			{
+			} else {
 				return false;
 			}
 
-		}
-		catch(Exception e)
-		{
+		} catch (Exception e) {
 			System.out.println(e);
-			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
-			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+			TestLogger.logError(logStream, actionName, "Failed in Step " + stepID, e.toString());
+			throw new Exception(actionName + " - Failed in Step: " + stepID, e);
 		}
 	}
-	
+
 	public static boolean editProductConfigurationECS(List<TestLog> logStream, WebDriver driver, int stepID,
-			String productName) throws Exception 
-	{
-		String actionName="Product Basket: Edit Product Configuration Screen Validation";
+			String productName) throws Exception {
+		String actionName = "Product Basket: Edit Product Configuration Screen Validation";
 
-		try
-		{
-			WebElement productToBeConfigured=driver.findElement(By.xpath("//h1[@title='ECS - "+productName+"']"));
+		try {
+			WebElement productToBeConfigured = driver.findElement(By.xpath("//h1[@title='ECS - " + productName + "']"));
 
-			String productToBeConfiguredValidation=productToBeConfigured.getText().toString();
+			String productToBeConfiguredValidation = productToBeConfigured.getText().toString();
 
-			if(
-					BrowserActions.isElementPresent(driver, DirSalesEditProductConfiguration.bannerEditProductConfiguration) &&
-					BrowserActions.isElementPresent(driver, DirSalesEditProductConfiguration.productConfigurationLabel) &&
-					productToBeConfigured.isDisplayed() && productToBeConfiguredValidation.contains(productName)
-					)
-			{
-				System.out.println(actionName+" - Succeeded in Step: "+stepID);
+			if (BrowserActions.isElementPresent(driver, DirSalesEditProductConfiguration.bannerEditProductConfiguration)
+					&& BrowserActions.isElementPresent(driver,
+							DirSalesEditProductConfiguration.productConfigurationLabel)
+					&& productToBeConfigured.isDisplayed() && productToBeConfiguredValidation.contains(productName)) {
+				System.out.println(actionName + " - Succeeded in Step: " + stepID);
 				return true;
-			}
-			else
-			{
+			} else {
 				return false;
 			}
 
-		}
-		catch(Exception e)
-		{
+		} catch (Exception e) {
 			System.out.println(e);
-			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
-			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+			TestLogger.logError(logStream, actionName, "Failed in Step " + stepID, e.toString());
+			throw new Exception(actionName + " - Failed in Step: " + stepID, e);
 		}
 	}
-	
-	public static boolean editProductConfigurationECSInternet(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
-	{
-		String actionName="Product Basket: Edit Product Configuration Screen Validation";
 
-		try
-		{
-			
-			WebElement productToBeConfigured=driver.findElement(By.xpath("//h1[@title='ECS - Professional Internet']"));
-			
-			String productToBeConfiguredText=driver.findElement(By.xpath("//h1[@title='ECS - Professional Internet']")).getText();
+	public static boolean editProductConfigurationECSInternet(List<TestLog> logStream, WebDriver driver, int stepID)
+			throws Exception {
+		String actionName = "Product Basket: Edit Product Configuration Screen Validation";
 
-			String productToBeConfiguredValidation=productToBeConfigured.getText().toString();
+		try {
 
-			if(
-					BrowserActions.isElementPresent(driver, DirSalesEditProductConfiguration.bannerEditProductConfiguration) &&
-					BrowserActions.isElementPresent(driver, DirSalesEditProductConfiguration.productConfigurationLabel) &&
-					productToBeConfigured.isDisplayed() && productToBeConfiguredValidation.contains(productToBeConfiguredText)
-					)
-			{
-				System.out.println(actionName+" - Succeeded in Step: "+stepID);
+			WebElement productToBeConfigured = driver
+					.findElement(By.xpath("//h1[@title='ECS - Professional Internet']"));
+
+			String productToBeConfiguredText = driver
+					.findElement(By.xpath("//h1[@title='ECS - Professional Internet']")).getText();
+
+			String productToBeConfiguredValidation = productToBeConfigured.getText().toString();
+
+			if (BrowserActions.isElementPresent(driver, DirSalesEditProductConfiguration.bannerEditProductConfiguration)
+					&& BrowserActions.isElementPresent(driver,
+							DirSalesEditProductConfiguration.productConfigurationLabel)
+					&& productToBeConfigured.isDisplayed()
+					&& productToBeConfiguredValidation.contains(productToBeConfiguredText)) {
+				System.out.println(actionName + " - Succeeded in Step: " + stepID);
 				return true;
-			}
-			else
-			{
+			} else {
 				return false;
 			}
 
-		}
-		catch(Exception e)
-		{
+		} catch (Exception e) {
 			System.out.println(e);
-			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
-			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+			TestLogger.logError(logStream, actionName, "Failed in Step " + stepID, e.toString());
+			throw new Exception(actionName + " - Failed in Step: " + stepID, e);
 		}
 	}
-	
-	public static boolean editProductConfigurationECSEV(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
-	{
-		String actionName="Product Basket: Edit Product Configuration Screen Validation";
 
-		try
-		{
-			
-			WebElement productToBeConfigured=driver.findElement(By.xpath("//h1[@title='ECS - Enterprise Voice']"));
-			
-			String productToBeConfiguredText=driver.findElement(By.xpath("//h1[@title='ECS - Enterprise Voice']")).getText();
+	public static boolean editProductConfigurationECSEV(List<TestLog> logStream, WebDriver driver, int stepID)
+			throws Exception {
+		String actionName = "Product Basket: Edit Product Configuration Screen Validation";
 
-			String productToBeConfiguredValidation=productToBeConfigured.getText().toString();
+		try {
 
-			if(
-					BrowserActions.isElementPresent(driver, DirSalesEditProductConfiguration.bannerEditProductConfiguration) &&
-					BrowserActions.isElementPresent(driver, DirSalesEditProductConfiguration.productConfigurationLabel) &&
-					productToBeConfigured.isDisplayed() && productToBeConfiguredValidation.contains(productToBeConfiguredText)
-					)
-			{
-				System.out.println(actionName+" - Succeeded in Step: "+stepID);
+			WebElement productToBeConfigured = driver.findElement(By.xpath("//h1[@title='ECS - Enterprise Voice']"));
+
+			String productToBeConfiguredText = driver.findElement(By.xpath("//h1[@title='ECS - Enterprise Voice']"))
+					.getText();
+
+			String productToBeConfiguredValidation = productToBeConfigured.getText().toString();
+
+			if (BrowserActions.isElementPresent(driver, DirSalesEditProductConfiguration.bannerEditProductConfiguration)
+					&& BrowserActions.isElementPresent(driver,
+							DirSalesEditProductConfiguration.productConfigurationLabel)
+					&& productToBeConfigured.isDisplayed()
+					&& productToBeConfiguredValidation.contains(productToBeConfiguredText)) {
+				System.out.println(actionName + " - Succeeded in Step: " + stepID);
 				return true;
-			}
-			else
-			{
+			} else {
 				return false;
 			}
 
-		}
-		catch(Exception e)
-		{
+		} catch (Exception e) {
 			System.out.println(e);
-			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
-			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+			TestLogger.logError(logStream, actionName, "Failed in Step " + stepID, e.toString());
+			throw new Exception(actionName + " - Failed in Step: " + stepID, e);
 		}
 	}
 
-	public static boolean editProductConfigurationForD03(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
-	{
-		String actionName="Product Basket: Edit Product Configuration Screen Validation";
-		
-		String productName="External Quoted";
+	public static boolean editProductConfigurationForD03(List<TestLog> logStream, WebDriver driver, int stepID)
+			throws Exception {
+		String actionName = "Product Basket: Edit Product Configuration Screen Validation";
 
-		try
-		{
-			WebElement productToBeConfigured=driver.findElement(By.xpath("//h1[@title='"+productName+"']"));
+		String productName = "External Quoted";
 
-			String productToBeConfiguredValidation=productToBeConfigured.getText().toString();
+		try {
+			WebElement productToBeConfigured = driver.findElement(By.xpath("//h1[@title='" + productName + "']"));
 
-			if(
-					BrowserActions.isElementPresent(driver, DirSalesEditProductConfiguration.bannerEditProductConfiguration) &&
-					BrowserActions.isElementPresent(driver, DirSalesEditProductConfiguration.productConfigurationLabel) &&
-					productToBeConfigured.isDisplayed() && productToBeConfiguredValidation.contains(productName)
-					)
-			{
-				System.out.println(actionName+" - Succeeded in Step: "+stepID);
+			String productToBeConfiguredValidation = productToBeConfigured.getText().toString();
+
+			if (BrowserActions.isElementPresent(driver, DirSalesEditProductConfiguration.bannerEditProductConfiguration)
+					&& BrowserActions.isElementPresent(driver,
+							DirSalesEditProductConfiguration.productConfigurationLabel)
+					&& productToBeConfigured.isDisplayed() && productToBeConfiguredValidation.contains(productName)) {
+				System.out.println(actionName + " - Succeeded in Step: " + stepID);
 				return true;
-			}
-			else
-			{
+			} else {
 				return false;
 			}
 
-		}
-		catch(Exception e)
-		{
+		} catch (Exception e) {
 			System.out.println(e);
-			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
-			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+			TestLogger.logError(logStream, actionName, "Failed in Step " + stepID, e.toString());
+			throw new Exception(actionName + " - Failed in Step: " + stepID, e);
 		}
 	}
-	
-	public static boolean validateAccessTechnologyNoDuplicatesOptions(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
-	{
-		String actionName="Product Basket: Acess Techology No Duplicates Validation";
-		
+
+	public static boolean validateAccessTechnologyNoDuplicatesOptions(List<TestLog> logStream, WebDriver driver,
+			int stepID) throws Exception {
+		String actionName = "Edit Product Configuration: Access Techology No Duplicates Validation";
+
 		WebDriverWait wait = new WebDriverWait(driver, 30);
-		
+
 		Actions actions = new Actions(driver);
 
-		
-		List<String> listAccessTechnologies= Arrays.asList("VDSL2", "READSLE", "ADSL2", "GPON","VDSL", "ADSL");
-		
-		Boolean validationNoDuplicates= true;
+		List<String> listAccessTechnologies = Arrays.asList("VDSL2", "READSLE", "ADSL2+E", "GPON", "VDSL", "ADSL");
 
-		
-		try
-		{
-		
-		driver.findElement(By.id("s2id_Details:Installation_Address___OCK_Check:accessTechnology_0")).click();
-		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesEditProductConfiguration.dropDownListAccessTechologyField)));
+		List<String> tableResultHeader = Arrays.asList("Access Network Type", "Access Technology", "Specification Type",
+				"Max Num of Possible Voice Channels");
 
-		for(String technologyOption: listAccessTechnologies)
-		{
-			List<WebElement> options= driver.findElements(By.xpath(DirSalesEditProductConfiguration.dropDownListAccessTechologyField+"//div[text()='"+technologyOption+"']"));
-			
-			TestLogger.logDebug(logStream, "Product Configuration: Validate Access Tenochnology Field No Duplicates Options","No. of Technology " + technologyOption +": " + options.size() + " option/s");
-			
-//			System.out.println(technologyOption + ": " + options.size());
-			if(options.size()>= 2 ) 
+		Boolean validationNoDuplicates = true;
+
+		try {
+
+			if (driver.findElements(
+					By.xpath("//*[@id=\"s2id_Details:Installation_Address___OCK_Check:existingAddress_0\"]")).size()>0)
 			{
-				validationNoDuplicates=false;
+				driver.findElement(By.id("s2id_Details:Installation_Address___OCK_Check:accessTechnology_0")).click();
+
+			}else{
+				driver.findElement(
+						By.xpath("//*[@for=\"Details:Installation_Address___OCK_check:accessTechnology_0\"]/parent::td/div")).click();
 			}
 			
-			options.clear();
-			
-		}
 
-			if(validationNoDuplicates)
-			{
-				System.out.println(actionName+" - Succeeded in Step: "+stepID);
+			for (String header : tableResultHeader) {
+
+				validationNoDuplicates = BrowserActions.isElementPresent(driver,
+						DirSalesEditProductConfiguration.dropDownListAccessTechologyField + "//div[@title='" + header
+								+ "']");
+
+				if (validationNoDuplicates == false) {
+
+					TestLogger.logDebug(logStream,
+							"Product Configuration: Validate Access Tenochnology Field No Duplicates Options",
+							"The header '" + header + "' is not present in the table's result");
+					break;
+				} else {
+					System.out.println("Header '" + header + "' is present.");
+				}
+			}
+
+			List<WebElement> tableResutsRows = driver
+					.findElements(By.xpath(DirSalesEditProductConfiguration.dropDownListAccessTechologyField
+							+ "//li//div[@class='rTableRow']"));
+
+			for (WebElement row : tableResutsRows) {
+				// 1st row corresponds to the table's headers
+				if (row != tableResutsRows.get(0)) {
+
+					String accessTechnologyOption = row.getText();
+
+					System.out.println(
+							"Acess Technology on row " + tableResutsRows.indexOf(row) + ": " + accessTechnologyOption);
+
+					int count = 0;
+					for (int i = 1; i < tableResutsRows.size(); i++) {
+						if (tableResutsRows.get(i).getText().contains(accessTechnologyOption) == true)
+							count++;
+					}
+
+					if (count > 1)
+						validationNoDuplicates = false;
+//						System.out.println("Count: " + count);
+				}
+
+			}
+
+			tableResutsRows.get(1).click();
+
+			if (validationNoDuplicates) {
+				System.out.println(actionName + " - Succeeded in Step: " + stepID);
 				return true;
-			}
-			else
-			{
+			} else {
 				return false;
 			}
 
-		}
-		catch(Exception e)
-		{
+		} catch (Exception e) {
 			System.out.println(e);
-			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
-			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+			TestLogger.logError(logStream, actionName, "Failed in Step " + stepID, e.toString());
+			throw new Exception(actionName + " - Failed in Step: " + stepID, e);
 		}
 	}
-	
 
 }
