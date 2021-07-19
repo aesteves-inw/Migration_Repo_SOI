@@ -18,7 +18,7 @@ import testReportComposition.TestReportTestData;
 import testReportComposition.TestStepReportStructure;
 
 public class SOI_4408_TC14_PC_OCK_NewColumns_PhoneLine {
-	String testName = "SOI_4408_TC13_PC_OCK_NewColumns_Internet";
+	String testName = "SOI_4408_TC14_PC_OCK_NewColumns_PhoneLine";
 
 	String initialTestDate=ExecStructure.formattedDate("dd-MM-yyyy HH:mm:ss");
 
