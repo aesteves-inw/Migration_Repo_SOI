@@ -16,6 +16,7 @@ import loginPageDirectSales.LoginPageStep;
 import loginPagePartCom.LoginPagePCStep;
 import objectMap.sfDirectSales.DirSalesProductBasket;
 import opportunityDirectSales.OpportunityStep;
+import opportunityPartCom.OpportunityPCStep;
 import productBasketDirectSales.ProductBasketStep;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
@@ -273,7 +274,7 @@ public class SOI_4408 {
 	
 			optyURL = driver.getCurrentUrl();
 	
-			OpportunityStep.createProductBasket(testExecStructure, logStream, driver, testName);
+			OpportunityPCStep.createProductBasket(testExecStructure, logStream, driver, testName);
 	
 			// variable storage
 			productBasketName = driver.findElement(By.xpath(DirSalesProductBasket.inputProductBasketName))
@@ -330,7 +331,7 @@ public class SOI_4408 {
 			CompanyPCStep.createQuickSaleOPTY(testExecStructure, logStream, driver, testName);
 			optyURL = driver.getCurrentUrl();
 	
-			OpportunityStep.createProductBasket(testExecStructure, logStream, driver, testName);
+			OpportunityPCStep.createProductBasket(testExecStructure, logStream, driver, testName);
 	
 			// variable storage
 			productBasketName = driver.findElement(By.xpath(DirSalesProductBasket.inputProductBasketName))
@@ -387,7 +388,7 @@ public class SOI_4408 {
 	
 			optyURL = driver.getCurrentUrl();
 	
-			OpportunityStep.createProductBasket(testExecStructure, logStream, driver, testName);
+			OpportunityPCStep.createProductBasket(testExecStructure, logStream, driver, testName);
 	
 			// variable storage
 			productBasketName = driver.findElement(By.xpath(DirSalesProductBasket.inputProductBasketName))
