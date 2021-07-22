@@ -4,8 +4,11 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import executionTools.BrowserActions;
+import objectMap.sfDirectSales.DirSalesEditProductConfiguration;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
 
@@ -27,8 +30,8 @@ public class OrderNavigation {
 			
 			BrowserActions.goToByURL(driver, serviceURL);
 			
+			//new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesEditProductConfiguration.iFrameEditProductConfiguration)));
 			
-
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
 		}

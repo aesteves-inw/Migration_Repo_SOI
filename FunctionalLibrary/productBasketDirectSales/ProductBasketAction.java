@@ -325,8 +325,38 @@ public class ProductBasketAction {
 						break;
 					}
 				}*/
+			switch(productToConfig){
 			
-			driver.findElement(By.xpath("//*[@id=\"basket-table\"]/div[2]/div/ul/li[1]/div/div/div/div[3]/ul/li[1]/div/div/div/div[2]/ul/li/div/div/div/div/div[7]/button")).click();
+			case "FullFiber Extended":
+				driver.findElement(By.xpath("//*[@id=\"basket-table\"]/div[2]/div/ul/li[1]/div/div/div/div[3]/ul/li[1]/div/div/div/div[2]/ul/li/div/div/div/div/div[7]/button")).click();
+				break;
+
+
+			case "FullFiber":
+				driver.findElement(By.xpath("//*[@id=\"basket-table\"]/div[2]/div/ul/li[1]/div/div/div/div[3]/ul/li[1]/div/div/div/div[2]/ul/li/div/div/div/div/div[7]/button")).click();
+				break;
+
+
+			case "Internet Pro+":
+				driver.findElement(By.xpath("//*[@id=\"basket-table\"]/div[2]/div/ul/li[1]/div/div/div/div[3]/ul/li[1]/div/div/div/div[2]/ul/li/div/div/div/div/div[7]/button")).click();
+				break;
+
+				
+			case "Internet Pro":
+				driver.findElement(By.xpath("//*[@id=\"basket-table\"]/div[2]/div/ul/li[1]/div/div/div/div[3]/ul/li[1]/div/div/div/div[2]/ul/li/div/div/div/div/div[7]/button")).click();
+				break;
+				
+			case "Enterprise Voice - Converged":
+				driver.findElement(By.xpath("//*[@id=\"basket-table\"]/div[2]/div/ul/li[1]/div/div/div/div[3]/ul/li[2]/div/div/div/div[2]/ul/li/div/div/div/div/div[7]/button")).click();
+				break;
+				
+			case "Business Continuity":
+				driver.findElement(By.xpath("//*[@id=\"basket-table\"]/div[2]/div/ul/li[1]/div/div/div/div[3]/ul/li[3]/div/div/div/div[2]/ul/li/div/div/div/div/div[7]/button")).click();
+				break;
+			}
+				
+			
+			//driver.findElement(By.xpath("//*[@id=\"basket-table\"]/div[2]/div/ul/li[1]/div/div/div/div[3]/ul/li[1]/div/div/div/div[2]/ul/li/div/div/div/div/div[7]/button")).click();
 			
 			new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesEditProductConfiguration.iFrameEditProductConfiguration)));		
 
@@ -448,7 +478,14 @@ public class ProductBasketAction {
 
 		try
 		{
+
 			Thread.sleep(2000);
+
+			changeToDefaultiFrame(logStream, driver, stepID);
+
+			changeToProductBasketiFrame(logStream, driver, stepID);
+			
+
 
 			WebElement inputExistingBillingAccountIdField = driver.findElement(By.xpath(DirSalesProductBasket.inputExistingBillingAccountId));
 
@@ -512,6 +549,12 @@ public class ProductBasketAction {
 			//driver.switchTo().frame(driver.findElement(By.xpath("//*[@id=\"select2-drop\"]")));
 
 			//WebElement provlistItem = new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li/div/div[1]")));
+			changeToDefaultiFrame(logStream, driver, stepID);
+
+			changeToProductBasketiFrame(logStream, driver, stepID);
+			
+			driver.findElement(By.id("select2-chosen-6")).click();
+			
 			WebElement provlistItem = new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"select2-results-6\"]/li[1]")));
 
 			provlistItem.click();
