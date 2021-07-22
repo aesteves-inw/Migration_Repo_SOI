@@ -141,14 +141,6 @@ public class SOI_3792
 			
 			EProdConfigStep.configureEnterpriseVoice(testExecStructure, logStream, driver, testName, productName, configurationIndex);
 			
-			//TO DELETE BEFORE COMMITT
-			
-			
-			EProdConfigStep.finsihConfiguration(testExecStructure, logStream, driver, testName);
-			ProductBasketStep.goToOrderEnrichment(testExecStructure, logStream, driver, testName, productName);
-			OrderEnrichmentStep.changeProduct(testExecStructure, logStream, driver, testName, productName);
-			
-
 		}
 		catch(Exception e)
 		{
