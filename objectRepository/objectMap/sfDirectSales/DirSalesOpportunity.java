@@ -155,7 +155,9 @@ public class DirSalesOpportunity {
 	
 	public static String selectProductFamily="(//input[@lightning-basecombobox_basecombobox])[9]";
 	
-	public static String nomeCompetitorName="//span[@title='None']";
+	//public static String nomeCompetitorName="//span[@title='None']";
+	
+	public static String nomeCompetitorName="//span[@title='No competitor']";
 	
 	public static String buttonAddToChosen="//button[@title='Move selection to Chosen']";
 	

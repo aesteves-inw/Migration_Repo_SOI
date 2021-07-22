@@ -20,6 +20,28 @@ import testLogger.TestLogger;
 public class ServiceAction {
 
 	// Operational Actions
+	
+	public static void navigateToInternetECS(List<TestLog> logStream, WebDriver driver, int stepID,
+			String product, String testName) throws Exception 
+	{
+		String actionName="navigateToInternetECS";
+
+
+		try
+		{
+			driver.findElement(By.xpath("//span[contains(text(),'"+product+"')]")).click();
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+
+	}
 
 	public static void fillDetailsSection(List<TestLog> logStream, WebDriver driver, int stepID,
 			String provContactPerson, String textExistingBillingAccountIdField, String testName) throws Exception 
@@ -620,6 +642,33 @@ public class ServiceAction {
 			//System.out.println("Debug of valueToValidate: "+valueToValidate);
 			
 			if(valueToValidate.contains(contractType))
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
+	
+	public static boolean valServiceInternetECS(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
+	{
+		String actionName="valServiceInternetECS";
+		
+		try
+		{
+			
+			
+			if(driver.findElement(By.xpath("//tr[@data-row-key-value='ECS Pack Contract Type']//th[1]")).isDisplayed() || driver.findElement(By.xpath("//tr[@data-row-key-value='ECS Pack Contract Type']//td[1]")).isDisplayed())
 			{
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
 				return true;

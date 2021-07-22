@@ -411,6 +411,10 @@ public class ProductBasketStep
 			case "Enterprise Voice - Converged":
 				validation = EProdConfigAction.editProductConfigurationECSEV(logStream, driver, stepID);
 				break;
+				
+			case "Business Continuity":
+				validation = EProdConfigAction.editProductConfigurationECSBC(logStream, driver, stepID);
+				break;
 			}
 			
 			if(validation==true)

@@ -447,6 +447,96 @@ public class EProdConfigStep
 
 	}
 	
+	public static void configureECSEnterpriseVoice(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName, String productName, String configurationIndex) throws Exception 
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+
+		String stepName="Product Configuration: "+productName;
+
+		String stepNameMin="configureECSEnterpriseVoice";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		String[] configuration=ProductConfigurationD02.getD02ConfigurationToApply(productName, configurationIndex);
+
+		try
+		{
+			ECS_FullFiberExtended.configurationOfECSEnterpriseVoice(logStream, driver, stepID, configuration, testName);
+
+			validation = ECS_FullFiberExtended.validationOfEVConfiguration(logStream, driver, stepID, configuration);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+
+
+	}
+	
+	public static void configureECSBusinessContinuity(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName, String productName, String configurationIndex) throws Exception 
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+
+		String stepName="Product Configuration: "+productName;
+
+		String stepNameMin="configureECSBusinessContinuity";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		String[] configuration=ProductConfigurationD02.getD02ConfigurationToApply(productName, configurationIndex);
+
+		try
+		{
+			ECS_FullFiberExtended.configurationOfECSBusinessContinuity(logStream, driver, stepID, configuration, testName);
+
+			validation = ECS_FullFiberExtended.validationOfBCConfiguration(logStream, driver, stepID, configuration);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+
+
+	}
+	
 	public static void selectAddress(List<TestStepReportStructure> testExecStructure,
 			List<TestLog> logStream, WebDriver driver, String testName, String address) throws Exception 
 	{
