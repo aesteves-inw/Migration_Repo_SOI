@@ -65,6 +65,10 @@ public class ProductConfigurationD02 {
 			dataFromExcel=ExcelDataFetch.searchDT(9, configurationIndex);
 			configuration=convertConfiguration(dataFromExcel);
 			break;
+		case "Enterprise Call & Surf FullFiber":
+			dataFromExcel=ExcelDataFetch.searchDT(9, configurationIndex);
+			configuration=convertConfiguration(dataFromExcel);
+			break;
 		default:
 			throw new Exception("Product not found");
 		}
