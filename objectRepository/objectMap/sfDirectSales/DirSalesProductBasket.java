@@ -70,6 +70,8 @@ public class DirSalesProductBasket {
 		
 		public static String lineItemsProductBasketTable="//*[@role='gridcell']";
 		
+		public static String tableLineItems ="//*[@aria-label='Line items and charges']";
+		
 		
 		
 		//04-02-2021 - D03 Changes Regarding Product Basket Object:
