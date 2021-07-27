@@ -187,7 +187,6 @@ public class EnterpriseVoice {
 			Select comboContractType = new Select(new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.id("Details:Contract_Information:implementationType_0"))));
 //			
 			comboContractType.selectByVisibleText(contractType);
-			comboContractType.selectByValue(contractType);
 			
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
