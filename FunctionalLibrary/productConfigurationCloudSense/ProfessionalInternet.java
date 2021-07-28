@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import editProductConfigurationScreenDirectSales.EProdConfigAction;
 import executionTools.BrowserActions;
 import executionTools.ExecStructure;
 import objectMap.sfDirectSales.DirSalesEditProductConfiguration;
@@ -106,6 +107,8 @@ public class ProfessionalInternet
 		try
 		{
 			contractInformationFields(logStream, driver, stepID, configuration, testName);
+			
+			//EProdConfigAction.selectAddress(logStream, driver, stepID, "Rue J Besme,20, Koekelberg, 1081, Belgium");
 
 			accessTechnology(logStream, driver, stepID, configuration);
 

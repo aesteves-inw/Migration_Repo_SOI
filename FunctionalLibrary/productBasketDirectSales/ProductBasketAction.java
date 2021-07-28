@@ -1039,7 +1039,7 @@ public class ProductBasketAction {
 
 		try
 		{
-			List<WebElement> ecsProductExpanded = new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//*[@id=\"basket-table\"]/div[2]/div/ul/li/div/div/div/div[3]/ul")));
+			List<WebElement> ecsProductExpanded = new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//li[@class='ng-scope']")));
 
 			for(WebElement we:ecsProductExpanded)
 			{

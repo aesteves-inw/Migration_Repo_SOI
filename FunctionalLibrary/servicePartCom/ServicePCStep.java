@@ -370,6 +370,52 @@ ServicePCStep {
 
 		
 	}
+	
+	public static void navigateToInternetECS(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream,
+			WebDriver driver, String testName, String contractType) throws Exception
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+		
+		String stepName="Service in PC: Navigate to ECS Internet product";
+
+		String stepNameMin="navigateToInternetECS";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			ServiceAction.fillContractTypeServiceLevel(logStream, driver, stepID, contractType);
+			
+			validation = ServiceAction.valContractType(logStream, driver, stepID, contractType);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				TestLogger.logTrace(logStream, stepNameMin, "Failed in Step: "+stepID+". Validation: False");
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+
+		
+	}
+	
+	
 
 
 }
