@@ -64,7 +64,9 @@ public class CompanyAction {
 		optyName=TestCasesData.getOPTYName(testName);
 
 		try
-		{			
+		{		
+			Thread.sleep(2000);
+
 			driver.findElement(By.xpath(DirSalesOpportunity.optyNameinput)).sendKeys(optyName);
 
 			TestLogger.logTrace(logStream, "createQuickSaleOpty", logInfo);

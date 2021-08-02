@@ -979,6 +979,48 @@ public class ProductBasketStep
 		
 	}
 
+	public static void validateRecurringPrices(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName,String productName, String configurationIndex) throws Exception 
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+		
+		String stepName="Product Basket: Validate Recurring Prices According to Product Configuration '" + configurationIndex + "'";
+	
+		String stepNameMin="validateRecurringPrices";
+	
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+	
+	
+		boolean validation;
+	
+		try
+		{
+			Thread.sleep(2000);
+	
+			validation = ProductBasketAction.checkRecurringPricesVSProductConfiguration(logStream, driver, stepID, productName, configurationIndex);
+	
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+	
+	
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+		
+	}
+
 
 
 }

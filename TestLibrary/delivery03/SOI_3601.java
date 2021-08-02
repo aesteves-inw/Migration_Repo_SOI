@@ -527,8 +527,6 @@ public class SOI_3601 {
 
 			throw new Exception(testName+": Test Case Failed");
 
-			throw new Exception(testName+" - Test Case Failed");
-
 		}
 
 	}

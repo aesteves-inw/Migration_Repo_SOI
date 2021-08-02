@@ -81,7 +81,7 @@ public class SOI_3507
 
 			AgreementPCStep.generateDocumentProposal(testExecStructure, logStream, driver, testName);
 
-			AgreementPCStep.validateProposalForNonQuotableProductsInPC(testExecStructure, logStream, driver, testName, product);
+			AgreementPCStep.validateProposalForNonQuotableProductsInPC(testExecStructure, logStream, driver, testName, product,"EN");
 
 
 		}

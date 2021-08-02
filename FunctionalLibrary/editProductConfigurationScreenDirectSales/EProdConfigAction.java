@@ -99,23 +99,30 @@ public class EProdConfigAction {
 		String actionName = "Edit Prodcut Configuration: Select Address";
 
 		try {
-			
-			WebElement addressSelectField;
-			
+
+			WebElement addressSelectField = null;
+
 //			wait.until(ExpectedConditions.presenceOfElementLocated(
 //					By.xpath("//*[@id=\"s2id_Details:Installation_Address___OCK_Check:existingAddress_0\"]")));
-			
-		
-			if (driver.findElements(
-					By.xpath("//*[@id=\"s2id_Details:Installation_Address___OCK_Check:existingAddress_0\"]")).size()>0)
-			{
-				addressSelectField = driver.findElement(
-						By.xpath("//*[@id=\"s2id_Details:Installation_Address___OCK_Check:existingAddress_0\"]"));
-			}else{
-				addressSelectField = driver.findElement(
-						By.xpath("//*[@for='Details:Installation_Address___OCK_check:existingAddress_0']/parent::td/div"));
-			}
-			
+
+//		
+//			if (driver.findElements(
+//					By.xpath("//*[@id=\"s2id_Details:Installation_Address___OCK_Check:existingAddress_0\"]")).size()>0)
+//			{
+//				addressSelectField = driver.findElement(
+//						By.xpath("//*[@id=\"s2id_Details:Installation_Address___OCK_Check:existingAddress_0\"]"));
+//			}else if (driver.findElements(
+//					By.xpath("//*[@for='Details:Installation_Address___OCK_check:existingAddress_0']/parent::td/div")).size()>0){
+//				addressSelectField = driver.findElement(
+//						By.xpath("//*[@for='Details:Installation_Address___OCK_check:existingAddress_0']/parent::td/div"));
+//			}else if (driver.findElements(
+//					By.xpath("//*[@for='Enterprise_Call___Surf_Internet:ECS_Pack_Installation_Address___OCK_Check:existingAddress_0']/parent::td/div")).size()>0) {
+//				addressSelectField = driver.findElement(
+//						By.xpath("//*[@for='Enterprise_Call___Surf_Internet:ECS_Pack_Installation_Address___OCK_Check:existingAddress_0']/parent::td/div"));
+//			}
+
+			addressSelectField = driver.findElement(By
+					.xpath("//*[contains(@for,'Installation_Address___OCK_check:existingAddress_0') or contains(@for,'Installation_Address___OCK_Check:existingAddress_0')]/parent::td/div"));
 
 			addressSelectField.click();
 
@@ -199,23 +206,25 @@ public class EProdConfigAction {
 
 		try {
 			WebElement addressField;
-			
+
 //			WebElement addressField=driver.findElement(By.xpath("//*[@id=\"select2-chosen-5\"]"));
-			
+
 //			WebElement addressField = driver.findElement(By.xpath(
 //					"//*[@id='s2id_Details:Installation_Address___OCK_Check:existingAddress_0']//span[@class='select2-chosen']"));
-			
-			if (driver.findElements(
-					By.xpath("//*[@id='s2id_Details:Installation_Address___OCK_Check:existingAddress_0']//span[@class='select2-chosen']")).size()>0)
-			{
-				addressField = driver.findElement(By.xpath(
-						"//*[@id='s2id_Details:Installation_Address___OCK_Check:existingAddress_0']//span[@class='select2-chosen']"));
-			}else{
-				addressField = driver.findElement(By.xpath(
-						"//*[@for='Details:Installation_Address___OCK_check:existingAddress_0']/parent::td/div"));
-			}
-			
-			
+
+//			if (driver.findElements(
+//					By.xpath("//*[@id='s2id_Details:Installation_Address___OCK_Check:existingAddress_0']//span[@class='select2-chosen']")).size()>0)
+//			{
+//				addressField = driver.findElement(By.xpath(
+//						"//*[@id='s2id_Details:Installation_Address___OCK_Check:existingAddress_0']//span[@class='select2-chosen']"));
+//			}else{
+//				addressField = driver.findElement(By.xpath(
+//						"//*[@for='Details:Installation_Address___OCK_check:existingAddress_0']/parent::td/div"));
+//			}
+
+			addressField = driver.findElement(By
+					.xpath("//*[contains(@for,'Installation_Address___OCK_check:existingAddress_0') or contains(@for,'Installation_Address___OCK_Check:existingAddress_0')]/parent::td/div"));
+
 			System.out.println(addressField.getText());
 
 			String addressValidation = addressField.getText();
@@ -375,40 +384,35 @@ public class EProdConfigAction {
 			throw new Exception(actionName + " - Failed in Step: " + stepID, e);
 		}
 	}
-	
-	public static boolean editProductConfigurationECSBC(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception 
-	{
-		String actionName="Product Basket: Edit Product Configuration Screen Validation";
 
-		try
-		{
-			
-			WebElement productToBeConfigured=driver.findElement(By.xpath("//h1[@title='ECS - Business Continuity']"));
-			
-			String productToBeConfiguredText=driver.findElement(By.xpath("//h1[@title='ECS - Business Continuity']")).getText();
+	public static boolean editProductConfigurationECSBC(List<TestLog> logStream, WebDriver driver, int stepID)
+			throws Exception {
+		String actionName = "Product Basket: Edit Product Configuration Screen Validation";
 
-			String productToBeConfiguredValidation=productToBeConfigured.getText().toString();
+		try {
 
-			if(
-					BrowserActions.isElementPresent(driver, DirSalesEditProductConfiguration.bannerEditProductConfiguration) &&
-					BrowserActions.isElementPresent(driver, DirSalesEditProductConfiguration.productConfigurationLabel) &&
-					productToBeConfigured.isDisplayed() && productToBeConfiguredValidation.contains(productToBeConfiguredText)
-					)
-			{
-				System.out.println(actionName+" - Succeeded in Step: "+stepID);
+			WebElement productToBeConfigured = driver.findElement(By.xpath("//h1[@title='ECS - Business Continuity']"));
+
+			String productToBeConfiguredText = driver.findElement(By.xpath("//h1[@title='ECS - Business Continuity']"))
+					.getText();
+
+			String productToBeConfiguredValidation = productToBeConfigured.getText().toString();
+
+			if (BrowserActions.isElementPresent(driver, DirSalesEditProductConfiguration.bannerEditProductConfiguration)
+					&& BrowserActions.isElementPresent(driver,
+							DirSalesEditProductConfiguration.productConfigurationLabel)
+					&& productToBeConfigured.isDisplayed()
+					&& productToBeConfiguredValidation.contains(productToBeConfiguredText)) {
+				System.out.println(actionName + " - Succeeded in Step: " + stepID);
 				return true;
-			}
-			else
-			{
+			} else {
 				return false;
 			}
 
-		}
-		catch(Exception e)
-		{
+		} catch (Exception e) {
 			System.out.println(e);
-			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
-			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+			TestLogger.logError(logStream, actionName, "Failed in Step " + stepID, e.toString());
+			throw new Exception(actionName + " - Failed in Step: " + stepID, e);
 		}
 	}
 
@@ -440,33 +444,36 @@ public class EProdConfigAction {
 		}
 	}
 
-	public static boolean validateAccessTechnologyNoDuplicatesOptions(List<TestLog> logStream, WebDriver driver,
+	public static boolean validateAccessTechnologyOptions(List<TestLog> logStream, WebDriver driver,
 			int stepID) throws Exception {
-		String actionName = "Edit Product Configuration: Access Techology No Duplicates Validation";
+		String actionName = "Edit Product Configuration: Access Techology Options' Validation";
 
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 
 		Actions actions = new Actions(driver);
 
-		List<String> listAccessTechnologies = Arrays.asList("VDSL2", "READSLE", "ADSL2+E", "GPON", "VDSL", "ADSL");
+		List<String> listAccessTechnologies = Arrays.asList("VDSL2", "READSLE", "ADSL2+E", "GPON", "VDSL", "ADSL","ADSLE","ADSL2+TV");
 
 		List<String> tableResultHeader = Arrays.asList("Access Network Type", "Access Technology", "Specification Type",
 				"Max Num of Possible Voice Channels");
 
 		Boolean validationNoDuplicates = true;
+		String productName = null;
 
 		try {
-
-			if (driver.findElements(
-					By.xpath("//*[@id=\"s2id_Details:Installation_Address___OCK_Check:existingAddress_0\"]")).size()>0)
-			{
-				driver.findElement(By.id("s2id_Details:Installation_Address___OCK_Check:accessTechnology_0")).click();
-
-			}else{
-				driver.findElement(
-						By.xpath("//*[@for=\"Details:Installation_Address___OCK_check:accessTechnology_0\"]/parent::td/div")).click();
+			
+			//In case the product to be configured is phone Line - Part 1
+			String xPathPhoneLineName = "//*[text()='Product Configuration']/following-sibling::h1";
+			
+			if(BrowserActions.isElementPresent(driver, xPathPhoneLineName)==true) {
+				productName= driver.findElement(By.xpath(xPathPhoneLineName)).getText().trim();
 			}
 			
+			//End of condition - Part 1 - for Phone Line product
+			
+			driver.findElement(By
+					.xpath("//*[contains(@for,'Installation_Address___OCK_check:accessTechnology_0') or contains(@for,'Installation_Address___OCK_Check:accessTechnology_0')]/parent::td/div"))
+					.click();
 
 			for (String header : tableResultHeader) {
 
@@ -489,29 +496,40 @@ public class EProdConfigAction {
 					.findElements(By.xpath(DirSalesEditProductConfiguration.dropDownListAccessTechologyField
 							+ "//li//div[@class='rTableRow']"));
 
-			for (WebElement row : tableResutsRows) {
-				// 1st row corresponds to the table's headers
-				if (row != tableResutsRows.get(0)) {
+			if (tableResutsRows.size() > 0) {
 
-					String accessTechnologyOption = row.getText();
+				for (WebElement row : tableResutsRows) {
+					
+					if (row != tableResutsRows.get(0)) {
 
-					System.out.println(
-							"Acess Technology on row " + tableResutsRows.indexOf(row) + ": " + accessTechnologyOption);
+						String accessTechnologyOption = row.getText();
 
-					int count = 0;
-					for (int i = 1; i < tableResutsRows.size(); i++) {
-						if (tableResutsRows.get(i).getText().contains(accessTechnologyOption) == true)
-							count++;
+						System.out.println("Acess Technology on row " + tableResutsRows.indexOf(row) + ": "
+								+ accessTechnologyOption);
+						
+						//In case the product to be configured is phone Line - Part 2
+						if (productName.contentEquals("Phone Line")==true && accessTechnologyOption.contains("COPPER VDSL VOICEGRADE")==false) {
+							
+							TestLogger.logDebug(logStream,
+									"Product Configuration: Validate Access Tenochnology Field Options",
+									productName+ " - OCK Check - Invalid entry found: \n\s" + "Access Technology on row " + tableResutsRows.indexOf(row) + ": "
+											+ accessTechnologyOption);
+							
+							validationNoDuplicates = false;
+
+						}else if(productName.contentEquals("Phone Line")==true && accessTechnologyOption.contains("COPPER VDSL VOICEGRADE")==true) {
+							TestLogger.logDebug(logStream,
+									"Product Configuration: Validate Access Tenochnology Field Options",
+									"Phone Line - OCK Check - Valid entry found on row " + tableResutsRows.indexOf(row)) ;
+						}
+						
+						// End of condition - Part 2 - for Phone Line product
 					}
-
-					if (count > 1)
-						validationNoDuplicates = false;
-//						System.out.println("Count: " + count);
 				}
-
+			}else {
+				validationNoDuplicates = false;
 			}
 
-			tableResutsRows.get(1).click();
 
 			if (validationNoDuplicates) {
 				System.out.println(actionName + " - Succeeded in Step: " + stepID);

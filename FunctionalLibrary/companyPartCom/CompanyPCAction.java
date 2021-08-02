@@ -101,7 +101,7 @@ public class CompanyPCAction
 			
 			buttonSaveQuickSale.click();
 			
-			new WebDriverWait(driver, 15).until(ExpectedConditions.invisibilityOf(buttonSaveQuickSale));
+			new WebDriverWait(driver, 30).until(ExpectedConditions.invisibilityOf(buttonSaveQuickSale));
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 

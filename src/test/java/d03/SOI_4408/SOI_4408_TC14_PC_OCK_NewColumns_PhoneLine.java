@@ -44,11 +44,11 @@ public class SOI_4408_TC14_PC_OCK_NewColumns_PhoneLine {
 
 	
 	@Test
-	public void SOI_4408_TC13_PC_OCK_NewColumns_Internet() throws Exception
+	public void SOI_4408_TC14_PC_OCK_NewColumns_PhoneLine() throws Exception
 	{
 		try
 		{
-			SOI_4408.SOI_4408_TC13_PC_OCK_NewColumns_Internet(testExecStructure, logStream, driver, testName);
+			SOI_4408.SOI_4408_TC14_PC_OCK_NewColumns_PhoneLine(testExecStructure, logStream, driver, testName);
 		}
 		catch(Exception e)
 		{

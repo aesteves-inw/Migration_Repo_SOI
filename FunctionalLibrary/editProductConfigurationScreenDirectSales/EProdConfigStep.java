@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import executionTools.BrowserActions;
 import executionTools.TestExecutionReport;
+import objectMap.sfDirectSales.DirSalesEditProductConfiguration;
 import productBasketDirectSales.ProductBasketAction;
 import productBasketPartCom.ProductBasketPCAction;
 import productConfigurationCloudSense.ECS_FullFiberExtended;
@@ -1005,15 +1006,15 @@ public class EProdConfigStep
 
 	}
 	
-	public static void validateAccessTechnologyNoDuplicatesOptions (List<TestStepReportStructure> testExecStructure,
+	public static void validateAccessTechnologyOptions (List<TestStepReportStructure> testExecStructure,
 			List<TestLog> logStream, WebDriver driver, String testName)throws Exception 
 	{
 		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
 
 
-		String stepName="Product Configuration: Validate Access Tenochnology Field No Duplicates Options";
+		String stepName="Product Configuration: Validate Access Tenochnology Field Options";
 
-		String stepNameMin="validateAccessTechnologyNoDuplicatesOptions";
+		String stepNameMin="validateAccessTechnologyOptions";
 
 		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);	
 		
@@ -1022,15 +1023,26 @@ public class EProdConfigStep
 		
 		try
 		{
-			validation = EProdConfigAction.validateAccessTechnologyNoDuplicatesOptions(logStream, driver, stepID);
+			validation = EProdConfigAction.validateAccessTechnologyOptions(logStream, driver, stepID);
 
 			if(validation==true)
 			{
 				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				
 				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
-			}
-			else
-			{
+				
+				Thread.sleep(2000);
+				
+				driver.findElement(
+						By.xpath("("+DirSalesEditProductConfiguration.dropDownListAccessTechologyField
+								+ "//li//div[@class='rTableRow'])[2]")).click();
+				
+				Thread.sleep(2000);
+
+				driver.findElement(By.xpath("//*[contains(@id,'Installation_Address___OCK_check:accessTechnology_0') or contains(@id,'Installation_Address___OCK_Check:accessTechnology_0')] /a/abbr")).click();
+				
+				
+			}else{
 				throw new Exception (stepName+" - Failed in Step: "+stepID);
 			}
 		}

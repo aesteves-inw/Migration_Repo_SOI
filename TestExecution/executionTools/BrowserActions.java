@@ -12,6 +12,7 @@ import org.apache.xmlbeans.impl.common.SystemCache;
 import org.apache.xmlbeans.impl.regex.Match;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.TakesScreenshot;
@@ -423,7 +424,20 @@ public class BrowserActions {
 
 
 		return pdfContainsExpectedText;
+		 
+	}
+	
+	public static void setValueInputField (WebDriver driver, By locator, String value) {
 		
+		WebElement element = new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(locator));
+		
+		element.click();
+
+		element.clear();
+
+		element.sendKeys(value);
+
+		element.sendKeys(Keys.ENTER);
 	}
 
 

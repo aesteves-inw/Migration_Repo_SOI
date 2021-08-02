@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="SOI-4088" parallel="false">
+	<test name="SOI_4088_TC01_DS_ContractType_MigrationBridge_EnterpriseVoice">
+		<classes>
+			<class
+				name="d03.SOI_4088.SOI_4088_TC01_DS_ContractType_MigrationBridge_EnterpriseVoice" />
+		</classes>
+	</test>
+	<test name="SOI_4088_TC02_DS_ContractType_MigrationBridge_FullFiber">
+		<classes>
+			<class
+				name="d03.SOI_4088.SOI_4088_TC02_DS_ContractType_MigrationBridge_FullFiber" />
+		</classes>
+	</test>
+	<test name="SOI_4088_TC03_DS_ContractType_MigrationBridge_FullFiberExtended">
+		<classes>
+			<class
+				name="d03.SOI_4088.SOI_4088_TC03_DS_ContractType_MigrationBridge_FullFiberExtended" />
+		</classes>
+	</test>
+	<test name="SOI_4088_TC04_DS_ContractType_MigrationBridge_InternetPro">
+		<classes>
+			<class
+				name="d03.SOI_4088.SOI_4088_TC04_DS_ContractType_MigrationBridge_InternetPro" />
+		</classes>
+	</test>
+	<test name="SOI_4088_TC05_DS_ContractType_MigrationBridge_InternetProPlus">
+		<classes>
+			<class
+				name="d03.SOI_4088.SOI_4088_TC05_DS_ContractType_MigrationBridge_InternetProPlus" />
+		</classes>
+	</test>
+	<test name="SOI_4088_TC06_DS_ContractType_MigrationBridge_InternetProPlusEssential_Negative">
+		<classes>
+			<class
+				name="d03.SOI_4088.SOI_4088_TC06_DS_ContractType_MigrationBridge_InternetProPlusEssential_Negative" />
+		</classes>
+	</test>
+	<test name="SOI_4088_TC07_DS_ContractType_MigrationBridge_InternetMaxiBizzServices_Negative">
+		<classes>
+			<class
+				name="d03.SOI_4088.SOI_4088_TC07_DS_ContractType_MigrationBridge_InternetMaxiBizzServices_Negative" />
+		</classes>
+	</test>
+	<test name="SOI_4088_TC08_DS_ContractType_MigrationBridge_InternetMaxiFiberBizzServices_Negative">
+		<classes>
+			<class
+				name="d03.SOI_4088.SOI_4088_TC08_DS_ContractType_MigrationBridge_InternetMaxiFiberBizzServices_Negative" />
+		</classes>
+	</test>
+	<test name="SOI_4088_TC09_DS_ContractType_MigrationBridge_InternetStartFiber_Negative">
+		<classes>
+			<class
+				name="d03.SOI_4088.SOI_4088_TC09_DS_ContractType_MigrationBridge_InternetStartFiber_Negative" />
+		</classes>
+	</test>
+	<test name="SOI_4088_TC10_PC_ContractType_MigrationBridge_EnterpriseVoice">
+		<classes>
+			<class
+				name="d03.SOI_4088.SOI_4088_TC10_PC_ContractType_MigrationBridge_EnterpriseVoice" />
+		</classes>
+	</test>
+	<test name="SOI_4088_TC11_PC_ContractType_MigrationBridge_FullFiber">
+		<classes>
+			<class
+				name="d03.SOI_4088.SOI_4088_TC11_PC_ContractType_MigrationBridge_FullFiber" />
+		</classes>
+	</test>
+	<test name="SOI_4088_TC12_PC_ContractType_MigrationBridge_FullFiberExtended">
+		<classes>
+			<class
+				name="d03.SOI_4088.SOI_4088_TC12_PC_ContractType_MigrationBridge_FullFiberExtended" />
+		</classes>
+	</test>
+	<test name="SOI_4088_TC13_PC_ContractType_MigrationBridge_InternetPro">
+		<classes>
+			<class
+				name="d03.SOI_4088.SOI_4088_TC13_PC_ContractType_MigrationBridge_InternetPro" />
+		</classes>
+	</test>
+	<test name="SOI_4088_TC14_PC_ContractType_MigrationBridge_InternetProPlus">
+		<classes>
+			<class
+				name="d03.SOI_4088.SOI_4088_TC14_PC_ContractType_MigrationBridge_InternetProPlus" />
+		</classes>
+	</test>
+	<test name="SOI_4088_TC15_PC_ContractType_MigrationBridge_InternetProPlusEssential_Negative">
+		<classes>
+			<class
+				name="d03.SOI_4088.SOI_4088_TC15_PC_ContractType_MigrationBridge_InternetProPlusEssential_Negative" />
+		</classes>
+	</test>
+	<test name="SOI_4088_TC16_PC_ContractType_MigrationBridge_InternetMaxiBizzServices_Negative">
+		<classes>
+			<class
+				name="d03.SOI_4088.SOI_4088_TC16_PC_ContractType_MigrationBridge_InternetMaxiBizzServices_Negative" />
+		</classes>
+	</test>
+	<test name="SOI_4088_TC17_PC_ContractType_MigrationBridge_InternetMaxiFiberBizzServices_Negative">
+		<classes>
+			<class
+				name="d03.SOI_4088.SOI_4088_TC17_PC_ContractType_MigrationBridge_InternetMaxiFiberBizzServices_Negative" />
+		</classes>
+	</test>
+	<test name="SOI_4088_TC18_PC_ContractType_MigrationBridge_InternetStartFiber_Negative">
+		<classes>
+			<class
+				name="d03.SOI_4088.SOI_4088_TC18_PC_ContractType_MigrationBridge_InternetStartFiber_Negative" />
+		</classes>
+	</test>
+</suite>

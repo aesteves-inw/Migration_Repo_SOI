@@ -149,10 +149,11 @@ public class EnterpriseVoice {
 
 			fieldRemarks(logStream, driver, stepID, configuration, testName);
 
-
 			if(getContractType(configuration).equalsIgnoreCase("new") == false)
 			{
-				driver.findElement(By.xpath("//*[@id=\"Details:Contract_Information:EVlineReference_0\"]")).sendKeys("909090");
+//				driver.findElement(By.xpath("//*[@id=\"Details:Contract_Information:EVlineReference_0\"]")).sendKeys("909090");
+				
+				BrowserActions.setValueInputField(driver, By.xpath("//*[@id=\"Details:Contract_Information:EVlineReference_0\"]"), "909090");
 			}
 
 			fieldInternalComments(logStream, driver, stepID, configuration, testName);
@@ -181,11 +182,12 @@ public class EnterpriseVoice {
 
 		try
 		{
-
-			Select comboContractType = new Select(driver.findElement(By.id("Details:Contract_Information:implementationType_0")));
-
+			
+//			Select comboContractType = new Select(driver.findElement(By.id("Details:Contract_Information:implementationType_0")));
+			Select comboContractType = new Select(new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.id("Details:Contract_Information:implementationType_0"))));
+//			
 			comboContractType.selectByVisibleText(contractType);
-
+			
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
 		}
