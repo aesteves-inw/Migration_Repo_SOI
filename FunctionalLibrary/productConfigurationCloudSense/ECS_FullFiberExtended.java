@@ -407,7 +407,7 @@ public class ECS_FullFiberExtended {
 
 		try
 		{
-			EProdConfigAction.selectAddressECS(logStream, driver, stepID, "Rue J Besme,20, Koekelberg, 1081, Belgium");
+//			EProdConfigAction.selectAddressECS(logStream, driver, stepID, "Rue J Besme,20, Koekelberg, 1081, Belgium");
 
 			driver.findElement(By.id("s2id_Enterprise_Call___Surf_Internet:ECS_Pack_Installation_Address___OCK_Check:accessTechnology_0")).click();;
 

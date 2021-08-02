@@ -29,7 +29,7 @@ public class SOI_4088 {
 			throws Exception {
 		String productName = "Enterprise Voice";
 
-		String configurationIndex = "contractMigrationBridge";
+		String configurationIndex = "configurationByDefaultContractMigrationBridge";
 		
 		String userProfile = "salesUser";
 

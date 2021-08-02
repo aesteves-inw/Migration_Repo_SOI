@@ -33,7 +33,7 @@ public class SOI_4408 {
 
 		String userProfile = "salesUser";
 
-		String address = "Rue J Besme,20, Koekelberg, 1081, Belgium";
+		String address = "Ambachtenlaan,10, Leuven, 3001, Belgium";
 
 		String optyURL;
 
@@ -92,7 +92,7 @@ public class SOI_4408 {
 
 		String userProfile = "salesUser";
 
-		String address = "Rue J Besme,20, Koekelberg, 1081, Belgium";
+		String address = "Ambachtenlaan,10, Leuven, 3001, Belgium";
 
 		String optyURL;
 
@@ -439,7 +439,7 @@ public class SOI_4408 {
 
 		String userProfile = "farmerUser";
 
-		String address = "Rue J Besme,20, Koekelberg, 1081, Belgium";
+		String address = "Ambachtenlaan,10, Leuven, 3001, Belgium";
 
 		String optyURL;
 
@@ -499,7 +499,7 @@ public class SOI_4408 {
 
 		String userProfile = "farmerUser";
 
-		String address = "Rue J Besme,20, Koekelberg, 1081, Belgium";
+		String address = "Ambachtenlaan,10, Leuven, 3001, Belgium";
 
 		String optyURL;
 
