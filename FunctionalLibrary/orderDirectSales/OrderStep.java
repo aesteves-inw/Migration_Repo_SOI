@@ -312,6 +312,48 @@ public class OrderStep
 
 		
 	}
+	
+	public static void validateContractTypeColumn(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName, String contractType) throws Exception 
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+		
+		String stepName="Order: validate Contract Type Column";
+
+		String stepNameMin="validateContractTypeColumn";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			validation = OrderAction.validateContractTypeColumn(logStream, driver, stepID, contractType);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				TestLogger.logTrace(logStream, stepNameMin, "Failed in Step: "+stepID+". Validation: False");
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+
+		
+	}
 
 	public static void addFileToOrder(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream,
 			WebDriver driver, String testName, String filePath, String fileName) throws Exception 
