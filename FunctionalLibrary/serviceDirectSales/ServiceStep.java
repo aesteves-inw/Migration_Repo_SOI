@@ -519,6 +519,50 @@ public class ServiceStep {
 
 
 	}
+	
+	public static void navigateToInternetECS_PC(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream,
+			WebDriver driver, String testName, String product) throws Exception 
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+
+		String stepName="Service: Navigate to Internet child service ";
+
+		String stepNameMin="navigateToInternetECS_PC";
+
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+
+
+		boolean validation;
+
+		try
+		{
+			ServiceAction.navigateToInternetECS_PC(logStream, driver, stepID, product, testName);
+
+			validation = ServiceAction.valServiceInternetECS_PC(logStream, driver, stepID);
+
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				TestLogger.logTrace(logStream, stepNameMin, "Failed in Step: "+stepID+". Validation: False");
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+
+
+	}
 
 	public static void navigateToOrder(List<TestStepReportStructure> testExecStructure, List<TestLog> logStream,
 			WebDriver driver, String testName) throws Exception 

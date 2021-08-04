@@ -42,6 +42,28 @@ public class ServiceAction {
 		}
 
 	}
+	
+	public static void navigateToInternetECS_PC(List<TestLog> logStream, WebDriver driver, int stepID,
+			String product, String testName) throws Exception 
+	{
+		String actionName="navigateToInternetECS_PC";
+
+
+		try
+		{
+			driver.findElement(By.xpath("//a[contains(text(),'"+product+"')]")).click();
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+
+	}
 
 	public static void fillDetailsSection(List<TestLog> logStream, WebDriver driver, int stepID,
 			String provContactPerson, String textExistingBillingAccountIdField, String testName) throws Exception 
@@ -666,7 +688,7 @@ public class ServiceAction {
 		
 		try
 		{
-			
+			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//tr[@data-row-key-value='ECS Pack Contract Type']//th[1]")));
 			
 			if(driver.findElement(By.xpath("//tr[@data-row-key-value='ECS Pack Contract Type']//th[1]")).isDisplayed() || driver.findElement(By.xpath("//tr[@data-row-key-value='ECS Pack Contract Type']//td[1]")).isDisplayed())
 			{
@@ -686,5 +708,36 @@ public class ServiceAction {
 			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
 		}
 	}
+	
+	public static boolean valServiceInternetECS_PC(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
+	{
+		String actionName="valServiceInternetECS_PC";
+		
+		try
+		{
+			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//tr[@data-row-key-value='ECS Pack Contract Type']//span)[1]")));
+			
+			if(driver.findElement(By.xpath("(//tr[@data-row-key-value='ECS Pack Contract Type']//span)[1]")).isDisplayed() || driver.findElement(By.xpath("(//tr[@data-row-key-value='ECS Pack Contract Type']//span)21]")).isDisplayed())
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
+
+
+
+
 
 }
