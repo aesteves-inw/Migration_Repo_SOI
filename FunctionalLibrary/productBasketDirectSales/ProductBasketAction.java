@@ -540,7 +540,7 @@ public class ProductBasketAction {
 
 			Thread.sleep(1000);
 
-			new WebDriverWait(driver, 15)
+			new WebDriverWait(driver, 30)
 					.until(ExpectedConditions
 							.visibilityOfElementLocated(By.xpath("//h3[@role='alert'][text()='Saved successfully']")))
 					.click();
@@ -1449,6 +1449,75 @@ public class ProductBasketAction {
 			}
 
 			return validation;
+		} catch (Exception e) {
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step " + stepID, e.toString());
+			throw new Exception(actionName + " - Failed in Step: " + stepID, e);
+		}
+	}
+	
+	public static void fillServiceRequestDate(List<TestLog> logStream, WebDriver driver, int stepID,
+			String date) throws Exception {
+		String actionName = "fillServiceRequestDate";
+
+		try {
+			
+			BrowserActions.setValueInputField(driver, By.xpath(DirSalesProductBasket.serviceRequestSate), date);
+			
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step " + stepID);
+
+		} catch (Exception e) {
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step " + stepID, e.toString());
+			throw new Exception(actionName + " - Failed in Step " + stepID, e);
+		}
+
+	}
+
+	public static boolean fillServiceRequestDateValidation(List<TestLog> logStream, WebDriver driver, int stepID,
+			String date) throws Exception {
+		String actionName = "fillServiceRequestDateValidation";
+		try {
+			
+			String ServiceRequestDate = driver.findElement(By.xpath(DirSalesProductBasket.serviceRequestSate)).getAttribute("value");
+	
+			System.out.println("Debug of fillServiceRequestDateValidation.getText().toString() after val: "
+					+ ServiceRequestDate);
+
+			System.out.println(ServiceRequestDate);
+			
+			if (ServiceRequestDate.contains(date)) {
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: " + stepID);
+				return true;
+			} else {
+				return false;
+			}
+	
+		} catch (Exception e) {
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step " + stepID, e.toString());
+			throw new Exception(actionName + " - Failed in Step: " + stepID, e);
+		}
+	}
+
+	public static boolean fillServiceRequestDateNegativeValidation(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception {
+		String actionName = "fillServiceRequestDateNegativeValidation";
+		try {
+			WebElement saveButton = driver.findElement(By.xpath(DirSalesProductBasket.saveButton));
+
+			Thread.sleep(1000);
+
+			BrowserActions.jsClick(driver, saveButton);
+
+			Thread.sleep(1000);
+			
+			if (BrowserActions.isElementPresent(driver, DirSalesProductBasket.errorMessageBillingConfiguration)) {
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: " + stepID);
+				return true;
+			} else {
+				return false;
+			}
+	
 		} catch (Exception e) {
 			System.out.println(e);
 			TestLogger.logError(logStream, actionName, "Failed in Step " + stepID, e.toString());

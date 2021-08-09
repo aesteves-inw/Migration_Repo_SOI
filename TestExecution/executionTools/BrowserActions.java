@@ -438,6 +438,8 @@ public class BrowserActions {
 		element.sendKeys(value);
 
 		element.sendKeys(Keys.ENTER);
+		
+		element.sendKeys(Keys.TAB);
 	}
 
 

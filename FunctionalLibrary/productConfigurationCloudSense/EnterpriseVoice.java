@@ -456,16 +456,16 @@ public class EnterpriseVoice {
 			switch(dataServiceType) {
 
 			case "Voice Only":
-				driver.findElement(By.xpath("//*[@id=\"select2-results-4\"]/li[4]")).click();
+				driver.findElement(By.xpath("//*[@id=\"select2-results-3\"]/li[4]")).click();
 				break;
 			case "Explore":
-				driver.findElement(By.xpath("//*[@id=\"select2-results-4\"]/li[1]")).click();
+				driver.findElement(By.xpath("//*[@id=\"select2-results-3\"]/li[1]")).click();
 				break;
 			case "High End Internet":
-				driver.findElement(By.xpath("//*[@id=\"select2-results-4\"]/li[2]")).click();
+				driver.findElement(By.xpath("//*[@id=\"select2-results-3\"]/li[2]")).click();
 				break;
 			case "Low End Internet (BBOX)":
-				driver.findElement(By.xpath("//*[@id=\"select2-results-4\"]/li[3]")).click();
+				driver.findElement(By.xpath("//*[@id=\"select2-results-3\"]/li[3]")).click();
 				break;
 			}
 
@@ -499,22 +499,28 @@ public class EnterpriseVoice {
 			switch(PBXConnectivityTypeField) {
 
 			case "Bizz IP Box ISDNoIP-2":
-				driver.findElement(By.xpath("//*[@id=\"select2-results-2\"]/li[1]")).click();
+//				driver.findElement(By.xpath("//*[@id=\"select2-results-2\"]/li[1]")).click();
+				driver.findElement(By.xpath("//div[contains(text(),'Bizz IP Box ISDNoIP-2')]")).click();
 				break;
 			case "Bizz IP Box ISDNoIP-30":
-				driver.findElement(By.xpath("//*[@id=\"select2-results-2\"]/li[2]")).click();
+//				driver.findElement(By.xpath("//*[@id=\"select2-results-2\"]/li[2]")).click();
+				driver.findElement(By.xpath("//div[contains(text(),'Bizz IP Box ISDNoIP-30')]")).click();
 				break;
 			case "Bizz IP Box Other IPBX":
-				driver.findElement(By.xpath("//*[@id=\"select2-results-2\"]/li[3]")).click();
+//				driver.findElement(By.xpath("//*[@id=\"select2-results-2\"]/li[3]")).click();
+				driver.findElement(By.xpath("//div[contains(text(),'Bizz IP Box Other IPBX')]")).click();
 				break;
 			case "FORUM 500 IP":
-				driver.findElement(By.xpath("//*[@id=\"select2-results-2\"]/li[4]")).click();
+//				driver.findElement(By.xpath("//*[@id=\"select2-results-2\"]/li[4]")).click();
+				driver.findElement(By.xpath("//div[contains(text(),'FORUM 500 IP')]")).click();
 				break;
 			case "Forum 5000":
-				driver.findElement(By.xpath("//*[@id=\"select2-results-2\"]/li[5]")).click();
+//				driver.findElement(By.xpath("//*[@id=\"select2-results-2\"]/li[5]")).click();
+				driver.findElement(By.xpath("//div[contains(text(),'Forum 5000')]")).click();
 				break;
 			case "Forum 700 IP":
-				driver.findElement(By.xpath("//*[@id=\"select2-results-2\"]/li[6]")).click();
+//				driver.findElement(By.xpath("//*[@id=\"select2-results-2\"]/li[6]")).click();
+				driver.findElement(By.xpath("//div[contains(text(),'Forum 700 IP')]")).click();
 				break;
 			}
 

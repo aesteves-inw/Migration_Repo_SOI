@@ -475,6 +475,7 @@ public class EProdConfigAction {
 					.xpath("//*[contains(@for,'Installation_Address___OCK_check:accessTechnology_0') or contains(@for,'Installation_Address___OCK_Check:accessTechnology_0')]/parent::td/div"))
 					.click();
 
+			
 			for (String header : tableResultHeader) {
 
 				validationNoDuplicates = BrowserActions.isElementPresent(driver,
@@ -508,7 +509,7 @@ public class EProdConfigAction {
 								+ accessTechnologyOption);
 						
 						//In case the product to be configured is phone Line - Part 2
-						if (productName.contentEquals("Phone Line")==true && accessTechnologyOption.contains("COPPER VDSL VOICEGRADE")==false) {
+						if (productName.contentEquals("Phone Line")==true && accessTechnologyOption.contains("COPPER xDSL VOICEGRADE")==false) {
 							
 							TestLogger.logDebug(logStream,
 									"Product Configuration: Validate Access Tenochnology Field Options",
@@ -517,7 +518,7 @@ public class EProdConfigAction {
 							
 							validationNoDuplicates = false;
 
-						}else if(productName.contentEquals("Phone Line")==true && accessTechnologyOption.contains("COPPER VDSL VOICEGRADE")==true) {
+						}else if(productName.contentEquals("Phone Line")==true && accessTechnologyOption.contains("COPPER xDSL VOICEGRADE")==true) {
 							TestLogger.logDebug(logStream,
 									"Product Configuration: Validate Access Tenochnology Field Options",
 									"Phone Line - OCK Check - Valid entry found on row " + tableResutsRows.indexOf(row)) ;

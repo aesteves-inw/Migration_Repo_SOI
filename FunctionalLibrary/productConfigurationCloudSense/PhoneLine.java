@@ -501,6 +501,9 @@ public class PhoneLine {
 				case "VDSL":
 					driver.findElement(By.xpath("//div[contains(text(),'VDSL')]")).click();
 					break;
+				case "xDSL":
+					driver.findElement(By.xpath("//div[contains(text(),'xDSL')]")).click();
+					break;
 				}
 
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);

@@ -1025,6 +1025,8 @@ public class EProdConfigStep
 		{
 			validation = EProdConfigAction.validateAccessTechnologyOptions(logStream, driver, stepID);
 
+			System.out.println(validation);
+			
 			if(validation==true)
 			{
 				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
