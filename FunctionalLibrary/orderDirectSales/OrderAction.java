@@ -236,6 +236,74 @@ public class OrderAction
 	}
 
 
+	public static boolean validateContractTypeColumn(List<TestLog> logStream, WebDriver driver, int stepID, String contractType) throws Exception 
+	{
+		String actionName="validateContractTypeColumn";
+
+		try
+		{
+			
+			String contractTypeColumnToValidate="//th[text()='Contract Type']";
+			
+			new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(contractTypeColumnToValidate)));
+			
+			String contractTypeElementToValidate="//td[text()='"+contractType+"']";
+			
+			new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(contractTypeElementToValidate)));
+
+			if(BrowserActions.isElementPresent(driver, contractTypeElementToValidate) || BrowserActions.isElementPresent(driver, contractTypeColumnToValidate))
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
+	
+	public static boolean validateContractTypeColumnPC(List<TestLog> logStream, WebDriver driver, int stepID, String contractType) throws Exception 
+	{
+		String actionName="validateContractTypeColumn";
+
+		try
+		{
+			
+			String contractTypeColumnToValidate="//th[text()='Contract Type']";
+			
+			new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(contractTypeColumnToValidate)));
+			
+			String contractTypeElementToValidate="//td[text()='"+contractType+"']";
+			
+			new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(contractTypeElementToValidate)));
+
+			if(BrowserActions.isElementPresent(driver, contractTypeElementToValidate) || BrowserActions.isElementPresent(driver, contractTypeColumnToValidate))
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
+	
 	public static boolean validateFilesInOrderScreen(List<TestLog> logStream, WebDriver driver, int stepID, String fileName) throws Exception 
 	{
 		String actionName="validateFilesInOrderScreen";
