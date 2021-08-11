@@ -325,9 +325,12 @@ public class ProductBasketAction {
 				break;
 
 			case "Business Continuity":
-				driver.findElement(By.xpath(
-						"//*[@id=\"basket-table\"]/div[2]/div/ul/li[1]/div/div/div/div[3]/ul/li[3]/div/div/div/div[2]/ul/li/div/div/div/div/div[7]/button"))
-						.click();
+				
+				BrowserActions.jsClick(driver, driver.findElement(By.xpath(
+						"//*[@id=\"basket-table\"]/div[2]/div/ul/li[1]/div/div/div/div[3]/ul/li[3]/div/div/div/div[2]/ul/li/div/div/div/div/div[7]/button")));
+//				driver.findElement(By.xpath(
+//						"//*[@id=\"basket-table\"]/div[2]/div/ul/li[1]/div/div/div/div[3]/ul/li[3]/div/div/div/div[2]/ul/li/div/div/div/div/div[7]/button"))
+//						.click();
 				break;
 			}
 
@@ -792,7 +795,7 @@ public class ProductBasketAction {
 		String actionName = "syncProductBasketPosVal";
 
 		try {
-			new WebDriverWait(driver, 20).until(
+			new WebDriverWait(driver, 60).until(
 					ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesProductBasket.buttonGoToAgreement)));
 
 			boolean isFlagChecked = driver.findElement(By.xpath(DirSalesProductBasket.syncWithPBFlag)).isSelected();
@@ -944,7 +947,7 @@ public class ProductBasketAction {
 		try {
 			List<WebElement> ecsProductExpanded = new WebDriverWait(driver, 30)
 					.until(ExpectedConditions.presenceOfAllElementsLocatedBy(
-							By.xpath("//*[@id=\"basket-table\"]/div[2]/div/ul/li/div/div/div/div[3]/ul")));
+							By.xpath("//li[@class='ng-scope']")));
 
 			for (WebElement we : ecsProductExpanded) {
 				if (we.getText().contains("Internet Pro") || we.getText().contains("Enterprise Voice - Converged")
@@ -952,7 +955,7 @@ public class ProductBasketAction {
 					validation++;
 				}
 			}
-
+			
 			if (validation > 2) {
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: " + stepID);
 				return true;

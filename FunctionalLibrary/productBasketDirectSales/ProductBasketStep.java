@@ -256,6 +256,8 @@ public class ProductBasketStep
 		try
 		{
 			ProductBasketAction.expandingECS(logStream, driver, stepID, productName);
+			
+			Thread.sleep(20000);
 
 			validation = ProductBasketAction.expandedECSPackValidation(logStream, driver, stepID, productName);
 
@@ -1099,7 +1101,7 @@ public class ProductBasketStep
 				throw new Exception (stepName+" - Failed in Step: "+stepID);
 			}
 	
-	
+			
 		}
 		catch(Exception e)
 		{

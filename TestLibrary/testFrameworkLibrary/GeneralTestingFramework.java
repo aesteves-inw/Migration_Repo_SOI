@@ -152,29 +152,92 @@ public class GeneralTestingFramework {
 		}
 	}
 
-	public static List<String> generateYesterdayTodayDateFormatter() throws Exception {
+	public static List<String> generateListOfDatesMultipleFormats() throws Exception {
 
 		List<String> datesSRD = new ArrayList<>();
 
 		try {
 
 			LocalDateTime todayDate = LocalDateTime.now();
+			
+			LocalDateTime tenDaysFromTodayDate = todayDate.plusDays(10);
+			
+			LocalDateTime tomorrowDate = todayDate.plusDays(1);
 
 			LocalDateTime yesterdayDate = todayDate.minusDays(1);
 
-			DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+			DateTimeFormatter dateFormatterDefault = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+			
+			DateTimeFormatter dateFormatterSRDService = DateTimeFormatter.ofPattern("dd-MMM-yyyy");
+			
+			DateTimeFormatter dateFormatterReqInstallationDateService = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
-			String validSRD = dateFormatter.format(todayDate);
+			//Dates for Product Basket
+			String todayDateProdBasketFormat = dateFormatterDefault.format(todayDate);
 
-			System.out.println("validSRD:" + validSRD);
+			System.out.println("todayDateProdBasketFormat:" + todayDateProdBasketFormat);
+			
+			String yesterdayDateProdBasketFormat = dateFormatterDefault.format(yesterdayDate);
 
-			String invalidSRD = dateFormatter.format(yesterdayDate);
+			System.out.println("yesterdayDateProdBasketFormat:" + yesterdayDateProdBasketFormat);
+			
+			String tomorrowDateProdBasketFormat = dateFormatterDefault.format(tomorrowDate);
 
-			System.out.println("invalidSRD:" + invalidSRD);
+			System.out.println("tomorrowDateProdBasketFormat:" + tomorrowDateProdBasketFormat);
+			
+			String tenDaysFromTodayDateProdBasketFormat = dateFormatterDefault.format(tenDaysFromTodayDate);
 
-			datesSRD.add(invalidSRD);
+			System.out.println("tenDaysFromTodayDateProdBasketFormat:" + tenDaysFromTodayDateProdBasketFormat);
+			
+			
+			//Dates on Service Level
+			
+			String todayDateSRDFormatService = dateFormatterSRDService.format(todayDate);
 
-			datesSRD.add(validSRD);
+			System.out.println("todayDateSRDFormatService:" + todayDateSRDFormatService);
+			
+			String tomorrowDateReqInstallationDateFormatService = dateFormatterReqInstallationDateService.format(tomorrowDate);
+
+			System.out.println("tomorrowDateReqInstallationDateFormatService:" + tomorrowDateReqInstallationDateFormatService);
+			
+			String tomorrowDateSRDFormatService = dateFormatterSRDService.format(tomorrowDate);
+
+			System.out.println("tomorrowDateSRDFormatService:" + tomorrowDateSRDFormatService);
+			
+			String yesterdayDateSRDFormatService = dateFormatterSRDService.format(yesterdayDate);
+
+			System.out.println("yesterdayDateSRDFormatService:" + yesterdayDateSRDFormatService);
+			
+			String tenDaysFromTodayDateSRDFormatService = dateFormatterSRDService.format(tenDaysFromTodayDate);
+
+			System.out.println("tenDaysFromTodayDateSRDFormatService:" + tenDaysFromTodayDateSRDFormatService);
+			
+			
+			String tenDaysFromTodayDatReqInstallationDateFormatService = dateFormatterReqInstallationDateService.format(tenDaysFromTodayDate);
+
+			System.out.println("tenDaysFromTodayDatReqInstallationDateFormatService:" + tenDaysFromTodayDatReqInstallationDateFormatService);
+			
+			
+			datesSRD.add(yesterdayDateProdBasketFormat);
+
+			datesSRD.add(todayDateProdBasketFormat);
+			
+			datesSRD.add(todayDateSRDFormatService);
+			
+			datesSRD.add(tomorrowDateReqInstallationDateFormatService);
+			
+			datesSRD.add(tomorrowDateSRDFormatService);
+			
+			datesSRD.add(yesterdayDateSRDFormatService);
+			
+			datesSRD.add(tomorrowDateProdBasketFormat);
+			
+			datesSRD.add(tenDaysFromTodayDateProdBasketFormat);
+			
+			datesSRD.add(tenDaysFromTodayDateSRDFormatService);
+			
+			datesSRD.add(tenDaysFromTodayDatReqInstallationDateFormatService);
+
 
 		} catch (Exception e) {
 			System.out.println(e);

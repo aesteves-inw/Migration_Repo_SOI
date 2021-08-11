@@ -607,4 +607,182 @@ public class ServiceStep {
 
 
 	}
+
+
+
+	public static void validateServiceRequestDateFromProdConfiguration(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName, String validSRDServiceFormat, String requestInstallDateFormat) throws Exception 
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+	
+		String stepName="Service: validate Service Request Date From Product Configuration";
+	
+		String stepNameMin="validateServiceRequestDateFromProdConfiguration";
+	
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+	
+	
+		boolean validation;
+	
+		try
+		{
+			validation = ServiceAction.validateServiceRequestDateFromProductConfig(logStream, driver, stepID, validSRDServiceFormat, requestInstallDateFormat);
+	
+			Thread.sleep(3000);
+			
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				TestLogger.logTrace(logStream, stepNameMin, "Failed in Step: "+stepID+". Validation: False");
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+	
+	
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+	
+	}
+
+
+
+	public static void validateServiceRequestDateFromProdBasket(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName, String validSRDServiceFormat) throws Exception 
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+	
+		String stepName="Service: validate Service Request Date From Product Basket";
+	
+		String stepNameMin="validateServiceRequestDateFromProdBasket";
+	
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+	
+	
+		boolean validation;
+	
+		try
+		{
+			validation = ServiceAction.validateServiceRequestDateFromProductBasket(logStream, driver, stepID, validSRDServiceFormat);
+			
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				TestLogger.logTrace(logStream, stepNameMin, "Failed in Step: "+stepID+". Validation: False");
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+	
+	
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+	
+	}
+
+
+
+	public static void fillServiceRequestDate(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName, String SRD) throws Exception
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+	
+		String stepName="Service: fill Service Request Date";
+	
+		String stepNameMin="fillServiceRequestDate";
+	
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+	
+	
+		boolean validation;
+	
+		try
+		{
+			ServiceAction.fillServiceRequestDateAction(logStream, driver, stepID, SRD);
+	
+			validation = ServiceAction.validateServiceRequestDateAfterSaving(logStream, driver, stepID, SRD);
+	
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				TestLogger.logTrace(logStream, stepNameMin, "Failed in Step: "+stepID+". Validation: False");
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+	
+	
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+	
+	}
+
+
+
+	public static void fillServiceRequestDateNegative(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName, String SRD) throws Exception
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+	
+		String stepName="Service: fill Service Request Date Negative";
+	
+		String stepNameMin="fillServiceRequestDateNegative";
+	
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+	
+	
+		boolean validation;
+	
+		try
+		{
+			ServiceAction.fillServiceRequestDateAction(logStream, driver, stepID, SRD);
+	
+			validation = ServiceAction.validateServiceRequestDateAfterSavingNegative(logStream, driver, stepID);
+	
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				TestLogger.logTrace(logStream, stepNameMin, "Failed in Step: "+stepID+". Validation: False");
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+	
+	
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+	
+	}
 }
