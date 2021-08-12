@@ -285,7 +285,7 @@ public class OpportunityPCAction {
 	{
 		String actionName="fillOptyCompetitorName";
 
-		String competitorName="None";
+		String competitorName="No competitor";
 
 		try
 		{

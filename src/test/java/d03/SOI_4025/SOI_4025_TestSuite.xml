@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="SOI-4025" parallel="false">
+	<test name="SOI_4025_TC01_DS_SRD_Field_StandaloneProducts">
+		<classes>
+			<class
+				name="d03.SOI_4025.SOI_4025_TC01_DS_SRD_Field_StandaloneProducts" />
+		</classes>
+	</test>
+	<test name="SOI_4025_TC02_DS_SRD_Field_ECS_FullFiberExtended">
+		<classes>
+			<class
+				name="d03.SOI_4025.SOI_4025_TC02_DS_SRD_Field_ECS_FullFiberExtended" />
+		</classes>
+	</test>
+	<test name="SOI_4025_TC03_DS_SRD_Field_ECS_FullFiber">
+		<classes>
+			<class
+				name="d03.SOI_4025.SOI_4025_TC03_DS_SRD_Field_ECS_FullFiber" />
+		</classes>
+	</test>
+	<test name="SOI_4025_TC04_DS_SRD_Field_ECS_ProPlus">
+		<classes>
+			<class
+				name="d03.SOI_4025.SOI_4025_TC04_DS_SRD_Field_ECS_ProPlus" />
+		</classes>
+	</test>
+	<test name="SOI_4025_TC05_DS_SRD_Field_ECS_Pro">
+		<classes>
+			<class
+				name="d03.SOI_4025.SOI_4025_TC05_DS_SRD_Field_ECS_Pro" />
+		</classes>
+	</test>
+	<test name="SOI_4025_TC06_DS_SRD_Field_NonQuotable">
+		<classes>
+			<class
+				name="d03.SOI_4025.SOI_4025_TC06_DS_SRD_Field_NonQuotable" />
+		</classes>
+	</test>
+	<test name="SOI_4025_TC07_DS_SRD_Field_LessDate">
+		<classes>
+			<class
+				name="d03.SOI_4025.SOI_4025_TC07_DS_SRD_Field_LessDate" />
+		</classes>
+	</test>
+	<test name="SOI_4025_TC08_PC_SRD_Field_StandaloneProducts">
+		<classes>
+			<class
+				name="d03.SOI_4025.SOI_4025_TC08_PC_SRD_Field_StandaloneProducts" />
+		</classes>
+	</test>
+	<test name="SOI_4025_TC09_PC_SRD_Field_ECS_FullFiberExtended">
+		<classes>
+			<class
+				name="d03.SOI_4025.SOI_4025_TC09_PC_SRD_Field_ECS_FullFiberExtended" />
+		</classes>
+	</test>
+	<test name="SOI_4025_TC10_PC_SRD_Field_ECS_FullFiber">
+		<classes>
+			<class
+				name="d03.SOI_4025.SOI_4025_TC10_PC_SRD_Field_ECS_FullFiber" />
+		</classes>
+	</test>
+	<test name="SOI_4025_TC11_PC_SRD_Field_ECS_ProPlus">
+		<classes>
+			<class
+				name="d03.SOI_4025.SOI_4025_TC11_PC_SRD_Field_ECS_ProPlus" />
+		</classes>
+	</test>
+	<test name="SOI_4025_TC12_PC_SRD_Field_ECS_Pro">
+		<classes>
+			<class
+				name="d03.SOI_4025.SOI_4025_TC12_PC_SRD_Field_ECS_Pro" />
+		</classes>
+	</test>
+	<test name="SOI_4025_TC13_PC_SRD_Field_NonQuotable">
+		<classes>
+			<class
+				name="d03.SOI_4025.SOI_4025_TC13_PC_SRD_Field_NonQuotable" />
+		</classes>
+	</test>
+	<test name="SOI_4025_TC14_PC_SRD_Field_LessDate">
+		<classes>
+			<class
+				name="d03.SOI_4025.SOI_4025_TC14_PC_SRD_Field_LessDate" />
+		</classes>
+	</test>
+</suite> <!-- Suite -->

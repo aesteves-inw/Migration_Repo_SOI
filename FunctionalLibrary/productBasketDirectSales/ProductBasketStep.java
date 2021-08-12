@@ -256,6 +256,8 @@ public class ProductBasketStep
 		try
 		{
 			ProductBasketAction.expandingECS(logStream, driver, stepID, productName);
+			
+			Thread.sleep(20000);
 
 			validation = ProductBasketAction.expandedECSPackValidation(logStream, driver, stepID, productName);
 
@@ -766,6 +768,8 @@ public class ProductBasketStep
 		try
 		{
 			ProductBasketAction.fillNewBillingAccountAddress(logStream, driver, stepID, newBillingAddress);
+			
+			Thread.sleep(10);
 
 			ProductBasketAction.saveProductBasketChanges(logStream, driver, stepID);
 
@@ -1019,6 +1023,94 @@ public class ProductBasketStep
 			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
 		
+	}
+
+	public static void fillServiceRequestDate(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName, String date) throws Exception 
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+	
+		String stepName="Product Basket: Fill Service Request Date";
+	
+		String stepNameMin="fillServiceRequestDate";
+	
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+	
+	
+		boolean validation;
+	
+		try
+		{
+			ProductBasketAction.fillServiceRequestDate(logStream, driver, stepID, date);
+	
+			ProductBasketAction.saveProductBasketChanges(logStream, driver, stepID);
+	
+			validation = ProductBasketAction.fillServiceRequestDateValidation(logStream, driver, stepID, date);
+	
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				TestLogger.logTrace(logStream, stepNameMin, "Failed in Step: "+stepID+". Validation: False");
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+	
+	
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+	
+	}
+
+	public static void fillServiceRequestDateNegVal(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName, String date) throws Exception 
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+	
+		String stepName="Product Basket: Fill Service Request Date Negative Validation";
+	
+		String stepNameMin="fillServiceRequestDateNegVal";
+	
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+	
+	
+		boolean validation;
+	
+		try
+		{
+			ProductBasketAction.fillServiceRequestDate(logStream, driver, stepID, date);
+	
+			validation = ProductBasketAction.fillServiceRequestDateNegativeValidation(logStream, driver, stepID);
+	
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				TestLogger.logTrace(logStream, stepNameMin, "Failed in Step: "+stepID+". Validation: False");
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+	
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+	
 	}
 
 

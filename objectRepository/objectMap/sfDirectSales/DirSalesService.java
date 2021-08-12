@@ -27,7 +27,8 @@ public class DirSalesService {
 	
 	public static String fieldServiceRequestDate="//span[contains(.,'Service Request Date')]";
 	
-	public static String fieldfilledServiceRequestDate="//div[contains(.,'Service Request Date')]/div[3]/div[2]/div";
+//	public static String fieldfilledServiceRequestDate="//div[contains(.,'Service Request Date')]/div[3]/div[2]/div";
+	public static String fieldfilledServiceRequestDate="//input[@name='PRX_Service_Request_Date__c']";
 	
 	public static String fieldEnd2EndRequestOwner="//span[contains(.,'End2End Request Owner')]";
 	
@@ -141,4 +142,8 @@ public class DirSalesService {
 	
 	public static String secundaryHeaderFields="//div[@role='list'][@class='secondaryFields']";
 	
+	// --- Service Attributes ---
+	
+	public static String fieldRequestInstallationDateValue = "//tr[@data-row-key-value='Requested Installation Date']//*[@data-label='Value']//lightning-base-formatted-text";
+
 }

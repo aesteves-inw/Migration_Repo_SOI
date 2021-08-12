@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -14,6 +15,7 @@ import companyContactPersonDirectSales.CompanyContactPersonAction;
 import executionTools.BrowserActions;
 import executionTools.ExecStructure;
 import objectMap.sfDirectSales.DirSalesService;
+import testFrameworkLibrary.GeneralTestingFramework;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
 
@@ -727,6 +729,176 @@ public class ServiceAction {
 				return false;
 			}
 
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
+
+	public static boolean validateServiceRequestDateFromProductConfig(List<TestLog> logStream, WebDriver driver, int stepID,
+			String validSRDServiceFormat, String requestInstallDateFormat) throws Exception
+		{
+			String actionName="validateServiceRequestDateFromProductConfig";
+			
+			try
+			{
+				
+				String fieldServiceRequestDate=driver.findElement(By.xpath(DirSalesService.fieldfilledServiceRequestDate)).getAttribute("value").trim();
+				
+				System.out.println("Debug of fieldServiceRequestDate: "+fieldServiceRequestDate);
+				
+				String fieldRequestInstallationDate =driver.findElement(By.xpath(DirSalesService.fieldRequestInstallationDateValue)).getText().trim();
+				
+				System.out.println("Debug of fieldRequestInstallationDate: "+ fieldRequestInstallationDate);
+
+				System.out.println("fieldServiceRequestDate.contains(validSRDServiceFormat): " + validSRDServiceFormat + "Boolean: " + fieldServiceRequestDate.contains(validSRDServiceFormat));
+				
+				System.out.println("fieldRequestInstallationDate.contains(requestInstallDateFormat): " + requestInstallDateFormat + "Boolean: " + fieldRequestInstallationDate.contains(requestInstallDateFormat));
+
+				
+				
+				if(fieldServiceRequestDate.contains(validSRDServiceFormat)==true && fieldRequestInstallationDate.contains(requestInstallDateFormat) == true)
+				{
+					TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+
+	
+			}
+			catch(Exception e)
+			{
+				System.out.println(e);
+				TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+				throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+			}
+		}
+
+	public static boolean validateServiceRequestDateFromProductBasket(List<TestLog> logStream, WebDriver driver, int stepID,
+		String validSRDServiceFormat) throws Exception
+	{
+		String actionName="validateServiceRequestDateFromProductBasket";
+		
+		try
+		{
+			
+			String fieldServiceRequestDate=driver.findElement(By.xpath(DirSalesService.fieldfilledServiceRequestDate)).getAttribute("value");
+			
+			System.out.println("Debug of fieldServiceRequestDate: "+fieldServiceRequestDate);
+			
+			Boolean validation = BrowserActions.isElementPresent(driver, DirSalesService.fieldRequestInstallationDateValue);
+			
+			System.out.println("Debug of fieldRequestInstallationDate presence: "+ validation);
+	
+			if(fieldServiceRequestDate.contains(validSRDServiceFormat) && validation==false)
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+	
+	
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
+
+	public static void fillServiceRequestDateAction(List<TestLog> logStream, WebDriver driver, int stepID,
+			String SRD) throws Exception 
+	{
+		String actionName="fillServiceRequestDateAction";
+	
+		try
+		{
+			
+			BrowserActions.setValueInputField(driver, By.xpath(DirSalesService.fieldfilledServiceRequestDate), SRD);
+			
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
+	
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step "+stepID,e);
+		}
+	}
+
+	public static boolean validateServiceRequestDateAfterSaving(List<TestLog> logStream, WebDriver driver,
+			int stepID, String SRD) throws Exception 
+	{
+		String actionName="validateBillingAccountIDAfterSaving";
+	
+		try
+		{
+
+			Thread.sleep(1000);
+			
+			saveServiceChanges(logStream, driver, stepID);
+			
+			Thread.sleep(1000);
+
+			String fieldServiceRequestDate=driver.findElement(By.xpath(DirSalesService.fieldfilledServiceRequestDate)).getAttribute("value");
+			
+			System.out.println("Debug of fieldServiceRequestDate: "+fieldServiceRequestDate);
+	
+			if(fieldServiceRequestDate.contains(SRD))
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+	
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
+
+	public static boolean validateServiceRequestDateAfterSavingNegative(List<TestLog> logStream, WebDriver driver,
+			int stepID) throws Exception 
+	{
+		String actionName="validateServiceRequestDateAfterSavingNegative";
+	
+		try
+		{
+			Thread.sleep(1000);
+			
+			saveServiceChanges(logStream, driver, stepID);
+	
+			WebElement serviceRequestDateError=driver.findElement(By.xpath("//*[contains(text(),'Service Request Date')]/parent::div/following-sibling::div[contains(@id,'error-message')]"));			
+	
+
+			if(serviceRequestDateError.isDisplayed())
+			{
+				driver.findElement(By.xpath(DirSalesService.fieldfilledServiceRequestDate)).clear();
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+	
 		}
 		catch(Exception e)
 		{

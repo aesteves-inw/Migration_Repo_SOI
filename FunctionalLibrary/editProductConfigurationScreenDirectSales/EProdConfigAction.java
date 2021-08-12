@@ -444,9 +444,10 @@ public class EProdConfigAction {
 		}
 	}
 
+	//Method validates the Access Technology's dropdown list structure as well as its options
 	public static boolean validateAccessTechnologyOptions(List<TestLog> logStream, WebDriver driver,
 			int stepID) throws Exception {
-		String actionName = "Edit Product Configuration: Access Techology Options' Validation";
+		String actionName = "Edit Product Configuration: Access Technology Options' Validation";
 
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 
@@ -457,7 +458,7 @@ public class EProdConfigAction {
 		List<String> tableResultHeader = Arrays.asList("Access Network Type", "Access Technology", "Specification Type",
 				"Max Num of Possible Voice Channels");
 
-		Boolean validationNoDuplicates = true;
+		Boolean validation = true;
 		String productName = null;
 
 		try {
@@ -475,13 +476,14 @@ public class EProdConfigAction {
 					.xpath("//*[contains(@for,'Installation_Address___OCK_check:accessTechnology_0') or contains(@for,'Installation_Address___OCK_Check:accessTechnology_0')]/parent::td/div"))
 					.click();
 
+			
 			for (String header : tableResultHeader) {
 
-				validationNoDuplicates = BrowserActions.isElementPresent(driver,
+				validation = BrowserActions.isElementPresent(driver,
 						DirSalesEditProductConfiguration.dropDownListAccessTechologyField + "//div[@title='" + header
 								+ "']");
 
-				if (validationNoDuplicates == false) {
+				if (validation == false) {
 
 					TestLogger.logDebug(logStream,
 							"Product Configuration: Validate Access Tenochnology Field No Duplicates Options",
@@ -508,36 +510,94 @@ public class EProdConfigAction {
 								+ accessTechnologyOption);
 						
 						//In case the product to be configured is phone Line - Part 2
-						if (productName.contentEquals("Phone Line")==true && accessTechnologyOption.contains("COPPER VDSL VOICEGRADE")==false) {
+						if (productName.contentEquals("Phone Line")==true && accessTechnologyOption.contains("COPPER xDSL VOICEGRADE")==false) {
 							
 							TestLogger.logDebug(logStream,
 									"Product Configuration: Validate Access Tenochnology Field Options",
 									productName+ " - OCK Check - Invalid entry found: \n\s" + "Access Technology on row " + tableResutsRows.indexOf(row) + ": "
 											+ accessTechnologyOption);
 							
-							validationNoDuplicates = false;
+							validation = false;
 
-						}else if(productName.contentEquals("Phone Line")==true && accessTechnologyOption.contains("COPPER VDSL VOICEGRADE")==true) {
+						}else if(productName.contentEquals("Phone Line")==true && accessTechnologyOption.contains("COPPER xDSL VOICEGRADE")==true) {
 							TestLogger.logDebug(logStream,
 									"Product Configuration: Validate Access Tenochnology Field Options",
 									"Phone Line - OCK Check - Valid entry found on row " + tableResutsRows.indexOf(row)) ;
 						}
-						
 						// End of condition - Part 2 - for Phone Line product
 					}
 				}
 			}else {
-				validationNoDuplicates = false;
+				validation = false;
 			}
 
 
-			if (validationNoDuplicates) {
+			if (validation) {
 				System.out.println(actionName + " - Succeeded in Step: " + stepID);
 				return true;
 			} else {
 				return false;
 			}
 
+		} catch (Exception e) {
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step " + stepID, e.toString());
+			throw new Exception(actionName + " - Failed in Step: " + stepID, e);
+		}
+	}
+
+	public static boolean validateAccessTechnologyNotContainsOption(List<TestLog> logStream, WebDriver driver,
+			int stepID, String option) throws Exception {
+		String actionName = "Edit Product Configuration: Validate that Access Technology field does not contain a specific option";
+	
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+	
+		Actions actions = new Actions(driver);
+	
+		Boolean validation = true;
+	
+		try {
+			
+			driver.findElement(By
+					.xpath("//*[contains(@for,'Installation_Address___OCK_check:accessTechnology_0') or contains(@for,'Installation_Address___OCK_Check:accessTechnology_0')]/parent::td/div"))
+					.click();
+	
+			
+			List<WebElement> tableResutsRows = driver
+					.findElements(By.xpath(DirSalesEditProductConfiguration.dropDownListAccessTechologyField
+							+ "//li//div[@class='rTableRow']"));
+	
+			if (tableResutsRows.size() > 0) {
+	
+				for (WebElement row : tableResutsRows) {
+					
+					if (row != tableResutsRows.get(0)) {
+	
+						String accessTechnologyOption = row.getText();
+	
+						System.out.println("Acess Technology on row " + tableResutsRows.indexOf(row) + ": "
+								+ accessTechnologyOption);
+						
+						if (accessTechnologyOption.contains(option)==true) {
+							validation= false;
+							TestLogger.logDebug(logStream,
+									"Product Configuration: Validate Access Tenochnology Field Options",
+									" OCK Check - Unexpected entry found: \n\s" + "Access Technology on row " + tableResutsRows.indexOf(row) + ": "
+											+ accessTechnologyOption);
+						}
+					}
+				}
+			}else {
+				validation = false;
+			}
+	
+			if (validation) {
+				System.out.println(actionName + " - Succeeded in Step: " + stepID);
+				return true;
+			} else {
+				return false;
+			}
+	
 		} catch (Exception e) {
 			System.out.println(e);
 			TestLogger.logError(logStream, actionName, "Failed in Step " + stepID, e.toString());

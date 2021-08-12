@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="SOI-4609" parallel="false">
+	<test name="SOI_4609_TC01_DS_OCK_VOICEGRADE_xDSL">
+		<classes>
+			<class
+				name="d03.SOI_4609.SOI_4609_TC01_DS_OCK_VOICEGRADE_xDSL" />
+		</classes>
+	</test>
+	<test name="SOI_4609_TC02_PC_OCK_VOICEGRADE_xDSL">
+		<classes>
+			<class
+				name="d03.SOI_4609.SOI_4609_TC02_PC_OCK_VOICEGRADE_xDSL" />
+		</classes>
+	</test>
+</suite> <!-- Suite -->

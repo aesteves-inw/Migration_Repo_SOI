@@ -112,7 +112,7 @@ public class PhoneLine {
 		}
 
 	}
-
+	
 	public static void configurationOfPhoneLinePC(List<TestLog> logStream, WebDriver driver, int stepID, String[] configuration, String testName) throws Exception
 	{
 		String actionName="configurationOfPhoneLine";
@@ -378,8 +378,8 @@ public class PhoneLine {
 			//fieldOCKId(logStream, driver, stepID, configuration);
 
 			//fieldOCKResult(logStream, driver, stepID, configuration);
-
-			//EProdConfigAction.selectAddress(logStream, driver, stepID, "Rue J Besme,20, Koekelberg, 1081, Belgium");
+			
+//			EProdConfigAction.selectAddress(logStream, driver, stepID, "Rue J Besme,20, Koekelberg, 1081, Belgium");
 
 			accessTechnology(logStream, driver, stepID, configuration);
 
@@ -394,7 +394,7 @@ public class PhoneLine {
 		}
 
 	}
-
+	
 	private static void installationAddressAccessTechnologyPC(List<TestLog> logStream, WebDriver driver, int stepID,
 			String[] configuration, String testName) throws Exception 
 	{
@@ -459,51 +459,67 @@ public class PhoneLine {
 		String actionName="PL Access Technology field - Config: "+Technology;
 
 
+		
+			try
+			{
+//				String address = driver.findElement(By.xpath("//*[@id=\"select2-chosen-3\"]")).getText();
+//				
+//				
+//				
+//				if(address.contains("Koning Albert ll-laan,27 B, Brussels, 1030, Belgium")) {
+//				
+//					System.out.println(address);
+//				}
+//				
+//				else {
+//					driver.findElement(By.xpath("//*[@id=\"select2-chosen-3\"]")).click();
+//					
+//					Thread.sleep(3000);
+//					
+//					driver.findElement(By.xpath("//*[@id=\"select2-results-3\"]/li[1]")).click();
+//					
+//				}
+				
+				WebElement inputAccessTechnology = new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"s2id_Details:Installation_Address___OCK_check:accessTechnology_0\"]")));
 
-		try
-		{
-			String address = driver.findElement(By.xpath("//*[@id=\"select2-chosen-3\"]")).getText();
+				inputAccessTechnology.click();
 
+				switch(Technology) {
 
+				case "GPON":
+					driver.findElement(By.xpath("//div[contains(text(),'GPON')]")).click();
+					break;
 
-			/*if(address.contains("Koning Albert ll-laan,27 B, Brussels, 1030, Belgium")) {
+				case "VDSL2":
+					driver.findElement(By.xpath("//div[contains(text(),'VDSL2')]")).click();
+					break;
 
-					System.out.println(address);
+				case "ADSL+E":
+					driver.findElement(By.xpath("//div[contains(text(),'ADSL2+E')]")).click();
+					break;
+					
+				case "VDSL":
+					driver.findElement(By.xpath("//div[contains(text(),'VDSL')]")).click();
+					break;
+				case "xDSL":
+					driver.findElement(By.xpath("//div[contains(text(),'xDSL')]")).click();
+					break;
 				}
 
-				else {
-					driver.findElement(By.xpath("//*[@id=\"select2-chosen-3\"]")).click();
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
-					Thread.sleep(3000);
-
-					driver.findElement(By.xpath("//*[@id=\"select2-results-3\"]/li[1]")).click();
-
-				}*/
-
-			WebElement inputAccessTechnology = new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"s2id_Details:Installation_Address___OCK_check:accessTechnology_0\"]")));
-
-			inputAccessTechnology.click();
-
-			WebElement inputRemarks = new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//div[contains(text(),'VDSL')]"))));
-			inputRemarks.click();
-			Thread.sleep(3000);
-
+			}
+			catch(Exception e)
+			{
+				System.out.println(e);
+				TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+				throw new Exception (actionName+" - Failed in Step "+stepID,e);
+			}
 
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
-		}
-		catch(Exception e)
-		{
-			System.out.println(e);
-			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
-			throw new Exception (actionName+" - Failed in Step "+stepID,e);
-		}
-
-
-		TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
-
-
+		
 	}
 
 	private static void fieldOCKResult(List<TestLog> logStream, WebDriver driver, int stepID, String[] configuration) throws Exception 

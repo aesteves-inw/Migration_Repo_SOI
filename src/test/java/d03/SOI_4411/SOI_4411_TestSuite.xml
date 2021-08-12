@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="SOI-4411" parallel="false">
+	<test name="SOI_4411_TC01_DS_OCK_NoFiber_OKBUT_ECS_FullFiber">
+		<classes>
+			<class
+				name="d03.SOI_4411.SOI_4411_TC01_DS_OCK_NoFiber_OKBUT_ECS_FullFiber" />
+		</classes>
+	</test>
+	<test name="SOI_4411_TC02_DS_OCK_NoFiber_NOK_ECS_FullFiber">
+		<classes>
+			<class
+				name="d03.SOI_4411.SOI_4411_TC02_DS_OCK_NoFiber_NOK_ECS_FullFiber" />
+		</classes>
+	</test>
+	<test name="SOI_4411_TC03_DS_OCK_NoFiber_OKBUT_FullFiberExtended">
+		<classes>
+			<class
+				name="d03.SOI_4411.SOI_4411_TC03_DS_OCK_NoFiber_OKBUT_FullFiberExtended" />
+		</classes>
+	</test>
+	<test name="SOI_4411_TC04_DS_OCK_NoFiber_NOK_FullFiberExtended">
+		<classes>
+			<class
+				name="d03.SOI_4411.SOI_4411_TC04_DS_OCK_NoFiber_NOK_FullFiberExtended" />
+		</classes>
+	</test>
+	<test name="SOI_4411_TC05_DS_OCK_NoFiber_OKBUT_Internet">
+		<classes>
+			<class
+				name="d03.SOI_4411.SOI_4411_TC05_DS_OCK_NoFiber_OKBUT_Internet" />
+		</classes>
+	</test>
+	<test name="SOI_4411_TC06_DS_OCK_NoFiber_NOK_Internet">
+		<classes>
+			<class
+				name="d03.SOI_4411.SOI_4411_TC06_DS_OCK_NoFiber_NOK_Internet" />
+		</classes>
+	</test>
+	<test name="SOI_4411_TC07_DS_OCK_NoFiber_OKBUT_EnterpriseVoice">
+		<classes>
+			<class
+				name="d03.SOI_4411.SOI_4411_TC07_DS_OCK_NoFiber_OKBUT_EnterpriseVoice" />
+		</classes>
+	</test>
+	<test name="SOI_4411_TC08_DS_OCK_NoFiber_NOK_EnterpriseVoice">
+		<classes>
+			<class
+				name="d03.SOI_4411.SOI_4411_TC08_DS_OCK_NoFiber_NOK_EnterpriseVoice" />
+		</classes>
+	</test>
+	<test name="SOI_4411_TC09_PC_OCK_NoFiber_OKBUT_ECS_FullFiber">
+		<classes>
+			<class
+				name="d03.SOI_4411.SOI_4411_TC09_PC_OCK_NoFiber_OKBUT_ECS_FullFiber" />
+		</classes>
+	</test>
+	<test name="SOI_4411_TC10_PC_OCK_NoFiber_NOK_ECS_FullFiber">
+		<classes>
+			<class
+				name="d03.SOI_4411.SOI_4411_TC10_PC_OCK_NoFiber_NOK_ECS_FullFiber" />
+		</classes>
+	</test>
+	<test name="SOI_4411_TC11_PC_OCK_NoFiber_OKBUT_FullFiberExtended">
+		<classes>
+			<class
+				name="d03.SOI_4411.SOI_4411_TC11_PC_OCK_NoFiber_OKBUT_FullFiberExtended" />
+		</classes>
+	</test>
+	<test name="SOI_4411_TC12_PC_OCK_NoFiber_NOK_FullFiberExtended">
+		<classes>
+			<class
+				name="d03.SOI_4411.SOI_4411_TC12_PC_OCK_NoFiber_NOK_FullFiberExtended" />
+		</classes>
+	</test>
+	<test name="SOI_4411_TC13_PC_OCK_NoFiber_OKBUT_Internet">
+		<classes>
+			<class
+				name="d03.SOI_4411.SOI_4411_TC13_PC_OCK_NoFiber_OKBUT_Internet" />
+		</classes>
+	</test>
+	<test name="SOI_4411_TC14_PC_OCK_NoFiber_NOK_Internet">
+		<classes>
+			<class
+				name="d03.SOI_4411.SOI_4411_TC14_PC_OCK_NoFiber_NOK_Internet" />
+		</classes>
+	</test>
+	<test name="SOI_4411_TC15_PC_OCK_NoFiber_NOK_EnterpriseVoice">
+		<classes>
+			<class
+				name="d03.SOI_4411.SOI_4411_TC15_PC_OCK_NoFiber_NOK_EnterpriseVoice" />
+		</classes>
+	</test>
+	<test name="SOI_4411_TC16_PC_OCK_NoFiber_NOK_EnterpriseVoice">
+		<classes>
+			<class
+				name="d03.SOI_4411.SOI_4411_TC16_PC_OCK_NoFiber_NOK_EnterpriseVoice" />
+		</classes>
+	</test>
+</suite> <!-- Suite -->
