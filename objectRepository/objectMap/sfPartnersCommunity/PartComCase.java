@@ -23,5 +23,8 @@ public class PartComCase {
 			
 	public static String caseOwnerFieldLabel="//article/div[2]/div/div[1]/div/div/div[3]/div[1]/div/div[2]/span/div/div/div/span";
 	
+	// 13-08-2021 - Case fields: - SOI- 4025
+	
+	public static String serviceRequestDate = "//span[contains(text(),'Service Request Date')]/parent::div/following-sibling::div//*[@class='uiOutputDate']";
 
 }

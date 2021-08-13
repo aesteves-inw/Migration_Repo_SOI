@@ -162,7 +162,7 @@ public class GeneralTestingFramework {
 			
 			LocalDateTime tenDaysFromTodayDate = todayDate.plusDays(10);
 			
-			LocalDateTime tomorrowDate = todayDate.plusDays(1);
+			LocalDateTime tomorrowDate = todayDate.plusDays(4);
 
 			LocalDateTime yesterdayDate = todayDate.minusDays(1);
 

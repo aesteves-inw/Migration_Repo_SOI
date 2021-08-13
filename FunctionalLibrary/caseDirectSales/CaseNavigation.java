@@ -38,7 +38,7 @@ public class CaseNavigation {
 		try
 		{
 			
-			new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(By.xpath(DirSalesOrder.viewAllServices)));
+			Thread.sleep(2000);
 			
 			if(BrowserActions.isElementPresent(driver, DirSalesOrder.viewAllServices)==true) {
 				BrowserActions.jsClick(driver, By.xpath(DirSalesOrder.viewAllServices));

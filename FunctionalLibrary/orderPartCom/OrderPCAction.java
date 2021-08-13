@@ -25,9 +25,10 @@ public class OrderPCAction {
 
 		try
 		{
-			driver.findElement(By.xpath(PartComOrder.submitOrderBtn)).click();
 
-			new WebDriverWait(driver, 15).until(ExpectedConditions.elementToBeClickable(By.xpath(PartComOrder.submitOrderBtn)));
+			new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.xpath(PartComOrder.submitOrderBtn)));
+			
+			driver.findElement(By.xpath(PartComOrder.submitOrderBtn)).click();
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
@@ -81,6 +82,7 @@ public class OrderPCAction {
 		String actionName="validateOrderScreen";
 		try
 		{
+			Thread.sleep(5000);
 			if(
 					BrowserActions.isElementPresent(driver, PartComOrder.filesContainer) &&
 					BrowserActions.isElementPresent(driver, PartComOrder.servicesContainer) &&
@@ -112,9 +114,11 @@ public class OrderPCAction {
 
 		try
 		{
+			
+			new WebDriverWait(driver, 60).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(PartComOrder.successMessage)));
+			
 			if(BrowserActions.isElementPresent(driver, PartComOrder.successMessage))
 			{							
-				
 				orderStatusValidation=driver.findElement(By.xpath(PartComOrder.orderStatusLabel)).getText().toString();
 
 				if(orderStatusValidation.equalsIgnoreCase("submitted")==false) {

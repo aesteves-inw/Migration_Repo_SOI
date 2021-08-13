@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -175,6 +176,49 @@ public class CasePCAction {
 				(itemSubCategoryDetailsTabVal.contains(contractType) || itemSubCategoryDetailsTabVal.equalsIgnoreCase("new"))&&
 				itemDomainDetailsTabVal.equalsIgnoreCase("Fix") && itemTypeDetailsTabVal.equalsIgnoreCase("Order (Fix)") &&
 				itemCategoryDetailsTabVal.equalsIgnoreCase(extractedCategoryMapped))
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
+	
+	public static boolean validateServiceRequestDateFromOrderToCaseAction(List<TestLog> logStream, WebDriver driver,
+			int stepID, String SRD) throws Exception
+	{
+		String actionName="validateServiceRequestDateFromOrderToCaseAction";
+
+		try
+		{
+			
+			// Validation on Details Tab
+
+			new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(PartComCase.detailsCase)));			
+			
+			WebElement serviceRequestDate = new WebDriverWait(driver, 15).until(ExpectedConditions.presenceOfElementLocated(By.xpath(PartComCase.serviceRequestDate)));
+			
+			BrowserActions.ScrollByElement(driver, "xpath", PartComCase.serviceRequestDate);
+			
+			Thread.sleep(2000);
+			
+			String 	serviceRequestDateValue = serviceRequestDate.getText();
+			
+			System.out.println("Debug of serviceRequestDateValue value: "+ serviceRequestDateValue);
+			
+			TestLogger.logDebug(logStream, "Case", "Service Resquest Date value: " + serviceRequestDateValue);
+			
+			if(serviceRequestDateValue.contains(SRD)==true)
 			{
 				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
 				return true;

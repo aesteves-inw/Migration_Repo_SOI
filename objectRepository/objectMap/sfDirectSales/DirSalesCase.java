@@ -25,7 +25,9 @@ public class DirSalesCase {
 	
 	public static String saveBtn="//button[@title='Save']";
 	
+	public static String serviceRequestDate = "//span[contains(text(),'Service Request Date')]/parent::div/following-sibling::div//*[@data-output-element-id='output-field']";
 	
+	public static String iconSRDflag= "//span[contains(text(),'SRD Flag')]/parent::div/following-sibling::div//img[@alt='Green']";
 	
 	//06-03-2020 - Cases List View Page - SOI-795
 	
@@ -65,5 +67,9 @@ public class DirSalesCase {
 	public static String caseMainTableDetailsTab="//ul[@role='tablist']/li[@title='Details' and @class='slds-tabs_default__item']";
 	
 	public static String sectionCaseCategorizationDetailsTab = "(//div[@class=\"test-id__section-content slds-section__content section__content slds-p-horizontal_small\"])[2]";
+
+	public static String sectionAdditonalInfoDetailsTab = "//span[contains(text(),'Additional Information')]/ancestor::div[contains(@class,'test-id__section')]";
+	
+	public static String sectionDescriptionInfoDetailsTab = "//span[contains(text(),'Description Information')]/ancestor::div[contains(@class,'test-id__section')]";
 
 }

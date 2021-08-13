@@ -5,11 +5,14 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import executionTools.BrowserActions;
 import executionTools.TestExecutionReport;
 import fetchDataFromExcelFiles.ExcelDataFetch;
 import navigation.NavigationAction;
+import objectMap.sfDirectSales.DirSalesCase;
 import orderDirectSales.OrderAction;
 import servicePartCom.ServicePCAction;
 import testLogBuilder.TestLog;
@@ -389,10 +392,11 @@ public class OrderPCStep {
 			//WebElement serviceLink = driver.findElement(By.xpath("//a[@title='"+serviceName+"']"));
 			
 			// Xpath syntax simulates ends-with and starts-with functions
-			serviceID=driver.findElement(By.xpath("//a[text()[substring(.,string-length(.) - string-length('"+serviceName+"') + 1) = '"+serviceName+"'] and starts-with(text(),'"+serviceName+"')]")).getAttribute("data-recordid");
-//			WebElement serviceLink = driver.findElement(By.xpath("//a[contains(.,'"+serviceName+"')]"));
+//			serviceID=driver.findElement(By.xpath("//a[text()[substring(.,string-length(.) - string-length('"+serviceName+"') + 1) = '"+serviceName+"'] and starts-with(text(),'"+serviceName+"')]")).getAttribute("data-recordid");
 			
-//			serviceID=serviceLink.getAttribute("data-recordid");
+			WebElement productService = new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//a[text()[substring(.,string-length(.) - string-length('"+serviceName+"') + 1) = '"+serviceName+"'] and starts-with(text(),'"+serviceName+"')]"))));
+
+			serviceID=productService.getAttribute("data-recordid");
 			
 			serviceURL=ExcelDataFetch.searchDT(0, "PartnersCommunity")+"/"+serviceID;
 			

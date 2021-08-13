@@ -145,8 +145,7 @@ public class AgreementAction {
 		String actionName = "agreementScreenValidation";
 
 		try {
-			// new WebDriverWait(driver,
-			// 10).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesAgreement.detailsAgreement)));
+			 new WebDriverWait(driver,30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesAgreement.headerAgreementPage)));
 
 			// new WebDriverWait(driver,
 			// 10).until(ExpectedConditions.visibilityOfElementLocated(By.id(DirSalesAgreement.detailsAgreement)));
