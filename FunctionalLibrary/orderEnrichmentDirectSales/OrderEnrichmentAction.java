@@ -19,19 +19,25 @@ public class OrderEnrichmentAction
 
 	public static void changeToOrderEnrichmentiFrame(List<TestLog> logStream, WebDriver driver, int stepID) throws Exception
 	{
-		WebDriverWait wait = new WebDriverWait(driver,30);
+		WebDriverWait wait = new WebDriverWait(driver,60);
 
 		String actionName="Product Basket: Change to Product Basket iframe";
 
 
 		try
 		{
+			Thread.sleep(20000);
+//			
+//			int totalIframes = driver.findElements(By.tagName("iframe")).size();
+//			
+//			System.out.println("total iframeOrderEnrichment: "+ totalIframes);
+
 			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(DirSalesOrderEnrichment.iframeOrderEnrichment)));
 
 			WebElement iframeOrderEnrichment = driver.findElement(By.xpath(DirSalesOrderEnrichment.iframeOrderEnrichment));
-
+			
 			driver.switchTo().frame(iframeOrderEnrichment);
-
+			
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesOrderEnrichment.headerOrderEnrichment)));
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
@@ -55,7 +61,7 @@ public class OrderEnrichmentAction
 
 		try
 		{
-			if(productName == "Enterprise Voice") {driver.findElement(By.xpath("//*[starts-with(text(),'"+productName+"')]")).click();}
+			if(productName.contains("Enterprise Voice")) {driver.findElement(By.xpath("//*[starts-with(text(),'"+productName+"')]")).click();}
 
 			else if (productName == "Professional Internet") {driver.findElement(By.xpath("//*[starts-with(text(),'"+productName+"')]")).click();} 
 

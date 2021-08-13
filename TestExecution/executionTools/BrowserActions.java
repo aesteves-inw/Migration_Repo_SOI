@@ -70,8 +70,8 @@ public class BrowserActions {
 	public static void refreshPageUntilElementPresent(WebDriver driver, String xpath) throws Exception {
 
 //		if (BrowserActions.isElementPresent(driver, xpath)==false) {
-		for (int i = 0; i < 30; i++) {
-			Thread.sleep(3000);
+		for (int i = 0; i < 15; i++) {
+			Thread.sleep(5000);
 
 			BrowserActions.refreshPage(driver);
 
@@ -346,7 +346,7 @@ public class BrowserActions {
 
 	public static void setValueInputField(WebDriver driver, By locator, String value) {
 
-		WebDriverWait driverWait = new WebDriverWait(driver, 30);
+		WebDriverWait driverWait = new WebDriverWait(driver, 60);
 
 		WebElement element= driverWait.until(ExpectedConditions.presenceOfElementLocated(locator));
 		

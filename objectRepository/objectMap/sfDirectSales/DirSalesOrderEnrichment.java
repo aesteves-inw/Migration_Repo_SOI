@@ -2,7 +2,8 @@ package objectMap.sfDirectSales;
 
 public class DirSalesOrderEnrichment 
 {
-	public static String iframeOrderEnrichment = "//iframe[@title='Order Enrichment']";
+//	public static String iframeOrderEnrichment = "//iframe[@title='Order Enrichment']";
+	public static String iframeOrderEnrichment = "//div[contains(@class,'oneContent active')]//iframe";
 	
 	public static String iframeContactsConfig = "//iframe[@title='Edit Product Configuration ~ Salesforce - Unlimited Edition']";
 	

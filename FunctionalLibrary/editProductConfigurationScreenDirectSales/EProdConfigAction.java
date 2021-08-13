@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import objectMap.sfDirectSales.DirSalesEditProductConfiguration;
+import objectMap.sfDirectSales.DirSalesProductBasket;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
 import executionTools.*;
@@ -57,7 +58,7 @@ public class EProdConfigAction {
 
 			footer.findElement(By.xpath(DirSalesEditProductConfiguration.buttonFinish)).click();
 
-			new WebDriverWait(driver, 20).until(ExpectedConditions.invisibilityOf(footer));
+			new WebDriverWait(driver, 60).until(ExpectedConditions.invisibilityOf(footer));
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step " + stepID);
 
@@ -121,8 +122,8 @@ public class EProdConfigAction {
 //						By.xpath("//*[@for='Enterprise_Call___Surf_Internet:ECS_Pack_Installation_Address___OCK_Check:existingAddress_0']/parent::td/div"));
 //			}
 
-			addressSelectField = driver.findElement(By
-					.xpath("//*[contains(@for,'Installation_Address___OCK_check:existingAddress_0') or contains(@for,'Installation_Address___OCK_Check:existingAddress_0')]/parent::td/div"));
+			addressSelectField = driver.findElement(By.xpath(
+					"//*[contains(@for,'Installation_Address___OCK_check:existingAddress_0') or contains(@for,'Installation_Address___OCK_Check:existingAddress_0')]/parent::td/div"));
 
 			addressSelectField.click();
 
@@ -222,8 +223,8 @@ public class EProdConfigAction {
 //						"//*[@for='Details:Installation_Address___OCK_check:existingAddress_0']/parent::td/div"));
 //			}
 
-			addressField = driver.findElement(By
-					.xpath("//*[contains(@for,'Installation_Address___OCK_check:existingAddress_0') or contains(@for,'Installation_Address___OCK_Check:existingAddress_0')]/parent::td/div"));
+			addressField = driver.findElement(By.xpath(
+					"//*[contains(@for,'Installation_Address___OCK_check:existingAddress_0') or contains(@for,'Installation_Address___OCK_Check:existingAddress_0')]/parent::td/div"));
 
 			System.out.println(addressField.getText());
 
@@ -444,16 +445,18 @@ public class EProdConfigAction {
 		}
 	}
 
-	//Method validates the Access Technology's dropdown list structure as well as its options
-	public static boolean validateAccessTechnologyOptions(List<TestLog> logStream, WebDriver driver,
-			int stepID) throws Exception {
+	// Method validates the Access Technology's dropdown list structure as well as
+	// its options
+	public static boolean validateAccessTechnologyOptions(List<TestLog> logStream, WebDriver driver, int stepID)
+			throws Exception {
 		String actionName = "Edit Product Configuration: Access Technology Options' Validation";
 
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 
 		Actions actions = new Actions(driver);
 
-		List<String> listAccessTechnologies = Arrays.asList("VDSL2", "READSLE", "ADSL2+E", "GPON", "VDSL", "ADSL","ADSLE","ADSL2+TV");
+		List<String> listAccessTechnologies = Arrays.asList("VDSL2", "READSLE", "ADSL2+E", "GPON", "VDSL", "ADSL",
+				"ADSLE", "ADSL2+TV");
 
 		List<String> tableResultHeader = Arrays.asList("Access Network Type", "Access Technology", "Specification Type",
 				"Max Num of Possible Voice Channels");
@@ -462,21 +465,20 @@ public class EProdConfigAction {
 		String productName = null;
 
 		try {
-			
-			//In case the product to be configured is phone Line - Part 1
+
+			// In case the product to be configured is phone Line - Part 1
 			String xPathPhoneLineName = "//*[text()='Product Configuration']/following-sibling::h1";
-			
-			if(BrowserActions.isElementPresent(driver, xPathPhoneLineName)==true) {
-				productName= driver.findElement(By.xpath(xPathPhoneLineName)).getText().trim();
+
+			if (BrowserActions.isElementPresent(driver, xPathPhoneLineName) == true) {
+				productName = driver.findElement(By.xpath(xPathPhoneLineName)).getText().trim();
 			}
-			
-			//End of condition - Part 1 - for Phone Line product
-			
-			driver.findElement(By
-					.xpath("//*[contains(@for,'Installation_Address___OCK_check:accessTechnology_0') or contains(@for,'Installation_Address___OCK_Check:accessTechnology_0')]/parent::td/div"))
+
+			// End of condition - Part 1 - for Phone Line product
+
+			driver.findElement(By.xpath(
+					"//*[contains(@for,'Installation_Address___OCK_check:accessTechnology_0') or contains(@for,'Installation_Address___OCK_Check:accessTechnology_0')]/parent::td/div"))
 					.click();
 
-			
 			for (String header : tableResultHeader) {
 
 				validation = BrowserActions.isElementPresent(driver,
@@ -501,36 +503,39 @@ public class EProdConfigAction {
 			if (tableResutsRows.size() > 0) {
 
 				for (WebElement row : tableResutsRows) {
-					
+
 					if (row != tableResutsRows.get(0)) {
 
 						String accessTechnologyOption = row.getText();
 
 						System.out.println("Acess Technology on row " + tableResutsRows.indexOf(row) + ": "
 								+ accessTechnologyOption);
-						
-						//In case the product to be configured is phone Line - Part 2
-						if (productName.contentEquals("Phone Line")==true && accessTechnologyOption.contains("COPPER xDSL VOICEGRADE")==false) {
-							
+
+						// In case the product to be configured is phone Line - Part 2
+						if (productName.contentEquals("Phone Line") == true
+								&& accessTechnologyOption.contains("COPPER xDSL VOICEGRADE") == false) {
+
 							TestLogger.logDebug(logStream,
 									"Product Configuration: Validate Access Tenochnology Field Options",
-									productName+ " - OCK Check - Invalid entry found: \n\s" + "Access Technology on row " + tableResutsRows.indexOf(row) + ": "
+									productName + " - OCK Check - Invalid entry found: \n"
+											+ "Access Technology on row " + tableResutsRows.indexOf(row) + ": "
 											+ accessTechnologyOption);
-							
+
 							validation = false;
 
-						}else if(productName.contentEquals("Phone Line")==true && accessTechnologyOption.contains("COPPER xDSL VOICEGRADE")==true) {
+						} else if (productName.contentEquals("Phone Line") == true
+								&& accessTechnologyOption.contains("COPPER xDSL VOICEGRADE") == true) {
 							TestLogger.logDebug(logStream,
 									"Product Configuration: Validate Access Tenochnology Field Options",
-									"Phone Line - OCK Check - Valid entry found on row " + tableResutsRows.indexOf(row)) ;
+									"Phone Line - OCK Check - Valid entry found on row "
+											+ tableResutsRows.indexOf(row));
 						}
 						// End of condition - Part 2 - for Phone Line product
 					}
 				}
-			}else {
+			} else {
 				validation = false;
 			}
-
 
 			if (validation) {
 				System.out.println(actionName + " - Succeeded in Step: " + stepID);
@@ -549,50 +554,162 @@ public class EProdConfigAction {
 	public static boolean validateAccessTechnologyNotContainsOption(List<TestLog> logStream, WebDriver driver,
 			int stepID, String option) throws Exception {
 		String actionName = "Edit Product Configuration: Validate that Access Technology field does not contain a specific option";
-	
+
 		WebDriverWait wait = new WebDriverWait(driver, 30);
-	
+
 		Actions actions = new Actions(driver);
-	
+
 		Boolean validation = true;
-	
+
 		try {
-			
-			driver.findElement(By
-					.xpath("//*[contains(@for,'Installation_Address___OCK_check:accessTechnology_0') or contains(@for,'Installation_Address___OCK_Check:accessTechnology_0')]/parent::td/div"))
+
+			driver.findElement(By.xpath(
+					"//*[contains(@for,'Installation_Address___OCK_check:accessTechnology_0') or contains(@for,'Installation_Address___OCK_Check:accessTechnology_0')]/parent::td/div"))
 					.click();
-	
-			
+
 			List<WebElement> tableResutsRows = driver
 					.findElements(By.xpath(DirSalesEditProductConfiguration.dropDownListAccessTechologyField
 							+ "//li//div[@class='rTableRow']"));
-	
+
 			if (tableResutsRows.size() > 0) {
-	
+
 				for (WebElement row : tableResutsRows) {
-					
+
 					if (row != tableResutsRows.get(0)) {
-	
+
 						String accessTechnologyOption = row.getText();
-	
+
 						System.out.println("Acess Technology on row " + tableResutsRows.indexOf(row) + ": "
 								+ accessTechnologyOption);
-						
-						if (accessTechnologyOption.contains(option)==true) {
-							validation= false;
+
+						if (accessTechnologyOption.contains(option) == true) {
+							validation = false;
 							TestLogger.logDebug(logStream,
 									"Product Configuration: Validate Access Tenochnology Field Options",
-									" OCK Check - Unexpected entry found: \n\s" + "Access Technology on row " + tableResutsRows.indexOf(row) + ": "
-											+ accessTechnologyOption);
+									" OCK Check - Unexpected entry found: \n\s" + "Access Technology on row "
+											+ tableResutsRows.indexOf(row) + ": " + accessTechnologyOption);
 						}
 					}
 				}
-			}else {
+			} else {
 				validation = false;
 			}
-	
+
 			if (validation) {
 				System.out.println(actionName + " - Succeeded in Step: " + stepID);
+				return true;
+			} else {
+				return false;
+			}
+
+		} catch (Exception e) {
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step " + stepID, e.toString());
+			throw new Exception(actionName + " - Failed in Step: " + stepID, e);
+		}
+	}
+
+	public static void fillRequestedInstallationDateField(List<TestLog> logStream, WebDriver driver, int stepID,
+			String date) throws Exception {
+
+		String actionName = "PI Desired Installation Date - Config: " + date;
+
+		try {
+			WebElement inputRequestDate = new WebDriverWait(driver, 10).until(ExpectedConditions
+					.elementToBeClickable(By.xpath("//*[contains(@id,'Contract_Information:serviceRequestDate_0')]")));
+			
+			Thread.sleep(2000);
+
+			inputRequestDate.click();
+			
+			Thread.sleep(1000);
+
+			inputRequestDate.clear();
+			
+			Thread.sleep(1000);
+			
+			inputRequestDate.sendKeys(date);
+			
+			Thread.sleep(1000);
+			
+			inputRequestDate.sendKeys(Keys.ENTER);
+			
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step " + stepID);
+
+		} catch (Exception e) {
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step " + stepID, e.toString());
+			throw new Exception(actionName + " - Failed in Step " + stepID, e);
+		}
+	}
+
+	public static boolean fillRequestedInstallationDateFieldValidation(List<TestLog> logStream, WebDriver driver,
+			int stepID, String date) throws Exception {
+		String actionName = "fillRequestedInstallationDateFieldValidation";
+		try {
+
+			String RequestedInstallationDate = driver
+					.findElement(By.xpath("//*[contains(@id,'Contract_Information:serviceRequestDate_0')]"))
+					.getAttribute("value");
+
+			System.out.println("Debug of fillRequestedInstallationDateFieldValidation.getText().toString() after val: "
+					+ RequestedInstallationDate);
+
+			if (RequestedInstallationDate.contains(date)) {
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: " + stepID);
+				return true;
+			} else {
+				return false;
+			}
+
+		} catch (Exception e) {
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step " + stepID, e.toString());
+			throw new Exception(actionName + " - Failed in Step: " + stepID, e);
+		}
+	}
+
+	public static WebElement fillFieldValueAction(List<TestLog> logStream, WebDriver driver, int stepID, String fieldName)
+			throws Exception {
+
+		String actionName = "Clear Value From Field: " + fieldName;
+
+		WebElement field = null;
+		try {
+			switch (fieldName) {
+			case "Requested Installation Date":
+				field = new WebDriverWait(driver, 10).until(ExpectedConditions
+						.elementToBeClickable(By.xpath("//*[contains(@id,'Contract_Information:serviceRequestDate_0')]")));
+				break;
+
+			default:
+				System.out.println("The field '" + field
+						+ "' was not found. Please add the field name and respective xpath to the method.");
+				break;
+			}
+
+			field.clear();
+			
+
+			TestLogger.logTrace(logStream, actionName, "Succeeded in Step " + stepID);
+			
+			return field;
+
+		} catch (Exception e) {
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step " + stepID, e.toString());
+			throw new Exception(actionName + " - Failed in Step " + stepID, e);
+		}
+	}
+
+	public static boolean fillFieldValueActionValidation(List<TestLog> logStream, WebDriver driver,
+			int stepID, WebElement field) throws Exception {
+		String actionName = "fillFieldValueActionValidation";
+		try {
+	
+			if (field.getAttribute("value").isEmpty()==true) {
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: " + stepID);
 				return true;
 			} else {
 				return false;

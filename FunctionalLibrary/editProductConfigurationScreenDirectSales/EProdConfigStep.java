@@ -312,26 +312,26 @@ public class EProdConfigStep
 			List<TestLog> logStream, WebDriver driver, String testName, String productName, String configurationIndex) throws Exception 
 	{
 		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
-
+	
 		String stepName="Product Configuration: "+productName;
-
+	
 		String stepNameMin="configureProfessionalInternet";
-
+	
 		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
-
-
+	
+	
 		boolean validation;
-
+	
 		String[] configuration=ProductConfigurationD02.getD02ConfigurationToApply(productName, configurationIndex);
-
+	
 		System.out.println(configuration);
-
+	
 		try
 		{
 			ProfessionalInternet.configurationOfProfessionalInternet(logStream, driver, stepID, configuration, testName);
-
+	
 			validation = ProfessionalInternet.validationOfPIConfiguration(logStream, driver, stepID, configuration);
-
+	
 			if(validation==true)
 			{
 				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
@@ -341,8 +341,8 @@ public class EProdConfigStep
 			{
 				throw new Exception (stepName+" - Failed in Step: "+stepID);
 			}
-
-
+	
+	
 		}
 		catch(Exception e)
 		{
@@ -351,10 +351,10 @@ public class EProdConfigStep
 			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
 			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
-
-
-	}
 	
+	
+	}
+
 	public static void configureECSInternet(List<TestStepReportStructure> testExecStructure,
 			List<TestLog> logStream, WebDriver driver, String testName, String productName, String configurationIndex) throws Exception 
 	{
@@ -1149,6 +1149,92 @@ public class EProdConfigStep
 			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
 			throw new Exception (stepName+" - Failed in Step: "+stepID);
 		}
+	}
+
+	public static void fillRequestInstallationDateField(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName, String date) throws Exception 
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+	
+		String stepName="Product Configuration: Fill Request Installation Date Field";
+	
+		String stepNameMin="fillRequestInstallationDateField";
+	
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+	
+	
+		boolean validation;
+	
+	
+	
+		try
+		{
+			EProdConfigAction.fillRequestedInstallationDateField(logStream, driver, stepID, date);
+	
+			validation = EProdConfigAction.fillRequestedInstallationDateFieldValidation(logStream, driver, stepID, date);
+	
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+	
+	
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+	
+	
+	}
+
+	public static void clearFieldValue(List<TestStepReportStructure> testExecStructure,
+			List<TestLog> logStream, WebDriver driver, String testName, String fieldName) throws Exception 
+	{
+		int stepID=TestExecutionReport.stepOfTestStep(testExecStructure);
+	
+		String stepName="Product Configuration: Clear Value From Field: " + fieldName;
+	
+		String stepNameMin="clearFieldValue";
+	
+		String evidenceName=ReportStructure.evidenceName(stepID, stepNameMin);		
+	
+		boolean validation;
+	
+		try
+		{
+			 WebElement field = EProdConfigAction.fillFieldValueAction(logStream, driver, stepID, fieldName);
+	
+			validation = EProdConfigAction.fillFieldValueActionValidation(logStream, driver, stepID, field);
+	
+			if(validation==true)
+			{
+				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);
+				TestReporter.stepPassed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			}
+			else
+			{
+				throw new Exception (stepName+" - Failed in Step: "+stepID);
+			}
+	
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, stepNameMin, TestLogger.logError, e.toString());
+			TestReporter.stepFailed(testExecStructure, driver, testName, stepID, stepName, evidenceName);
+			throw new Exception (stepName+" - Failed in Step: "+stepID);
+		}
+	
+	
 	}
 
 

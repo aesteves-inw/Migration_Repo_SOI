@@ -15,7 +15,7 @@ public class ProductConfigurationD03 {
 		String categoryMapped;
 
 		switch (product) {
-		// D02 StandAlone Mapping of products' category
+		// D03 StandAlone Mapping of products' category
 		// Section Adv Telco Sol Workplace of PB
 		case "M2M KORE":
 			categoryMapped = "M2M KORE (FO)";

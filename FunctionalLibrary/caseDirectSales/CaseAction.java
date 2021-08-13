@@ -219,4 +219,54 @@ public class CaseAction {
 			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
 		}
 	}
+
+	public static boolean validateServiceRequestDateFromOrderToCaseAction(List<TestLog> logStream, WebDriver driver,
+				int stepID, String SRD) throws Exception
+		{
+			String actionName="validateServiceRequestDateFromOrderToCaseAction";
+	
+			try
+			{
+				
+				// Validation on Details Tab
+	
+				new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(DirSalesCase.caseMainTableDetailsTab)));
+				
+				BrowserActions.jsClick(driver,(By.xpath(DirSalesCase.caseMainTableDetailsTab)));
+				
+				WebElement serviceRequestDate = new WebDriverWait(driver, 15).until(ExpectedConditions.presenceOfElementLocated(By.xpath(DirSalesCase.serviceRequestDate)));
+				
+				BrowserActions.ScrollByElement(driver, "xpath", DirSalesCase.sectionCaseCategorizationDetailsTab);
+				
+				Thread.sleep(2000);
+				
+				String 	serviceRequestDateValue = serviceRequestDate.getText();
+				
+				Boolean presenceOfSRDflag = driver.findElement(By.xpath(DirSalesCase.iconSRDflag)).isDisplayed();
+
+				
+				System.out.println("Debug of serviceRequestDateValue value: "+ serviceRequestDateValue);
+				
+				System.out.println("Debug of presenceOfSRDflag presence: "+ presenceOfSRDflag);
+
+				TestLogger.logDebug(logStream, "Case", "Service Resquest Date value: " + serviceRequestDateValue);
+				
+				if(serviceRequestDateValue.contains(SRD)==true && presenceOfSRDflag==true)
+				{
+					TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+	
+			}
+			catch(Exception e)
+			{
+				System.out.println(e);
+				TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+				throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+			}
+		}
 }

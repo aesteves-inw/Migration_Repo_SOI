@@ -43,6 +43,7 @@ public class AddOfferToBasketStep {
 
 			validation = ProductBasketAction.productOnProductBasketValidation(logStream, driver, stepID, productName);
 
+			
 			if(validation==true)
 			{
 				TestLogger.logInfo(logStream, stepNameMin, TestLogger.logInfo);

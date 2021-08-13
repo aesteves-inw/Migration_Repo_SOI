@@ -520,7 +520,7 @@ public class ECS_FullFiberExtended {
 
 			driver.findElement(By.xpath("//button[contains(text(),'New NumberRanges')]")).click();
 
-			WebElement productSelectionField = new WebDriverWait(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(By.id("NumberRanges_0:productSelection_0")));
+			WebElement productSelectionField = new WebDriverWait(driver, 60).until(ExpectedConditions.visibilityOfElementLocated(By.id("NumberRanges_0:productSelection_0")));
 
 			productSelectionField.click();
 			
@@ -543,7 +543,9 @@ public class ECS_FullFiberExtended {
 				break;
 			}
 
-			driver.findElement(By.id("NumberRanges_0:Quantity_0")).click();
+			new WebDriverWait(driver, 60).until(ExpectedConditions.visibilityOfElementLocated(By.id("NumberRanges_0:Quantity_0"))).click();
+
+//			driver.findElement(By.id("NumberRanges_0:Quantity_0")).click();
 
 			driver.findElement(By.id("NumberRanges_0:Quantity_0")).sendKeys(numberRanges);
 

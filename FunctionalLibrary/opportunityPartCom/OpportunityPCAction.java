@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import executionTools.BrowserActions;
 import executionTools.ExecStructure;
 import objectMap.sfDirectSales.DirSalesOpportunity;
+import objectMap.sfDirectSales.DirSalesOrderEnrichment;
 import objectMap.sfPartnersCommunity.PartComOpportunity;
 import testExecutionData.TestCasesData;
 import testLogBuilder.TestLog;
@@ -441,7 +442,8 @@ public class OpportunityPCAction {
 
 		try
 		{
-			WebElement stageToValidate=driver.findElement(By.xpath("//article/div[2]/div/div[1]/div/div/div[2]/div[2]/div/div[2]/span/span"));
+//			Thread.sleep(5000);
+			WebElement stageToValidate=new WebDriverWait(driver, 60).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//article/div[2]/div/div[1]/div/div/div[2]/div[2]/div/div[2]/span/span")));
 
 			if(stageToValidate.getText().toString().contains("Closed Won"))
 			{

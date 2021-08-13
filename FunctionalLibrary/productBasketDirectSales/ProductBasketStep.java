@@ -716,7 +716,7 @@ public class ProductBasketStep
 		{
 			ProductBasketAction.goToOrderEnrichmentConsole(logStream, driver, stepID);
 
-			Thread.sleep(5000);
+			Thread.sleep(6000);
 
 			String OE_URL = driver.getCurrentUrl();
 

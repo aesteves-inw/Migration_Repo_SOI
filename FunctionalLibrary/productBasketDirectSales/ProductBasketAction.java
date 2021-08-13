@@ -15,6 +15,7 @@ import editProductConfigurationScreenDirectSales.EProdConfigAction;
 import executionTools.BrowserActions;
 import objectMap.sfDirectSales.DirSalesEditProductConfiguration;
 import objectMap.sfDirectSales.DirSalesProductBasket;
+import objectMap.sfDirectSales.DirSalesService;
 import objectMap.sfPartnersCommunity.PartComProductBasket;
 import testLogBuilder.TestLog;
 import testLogger.TestLogger;
@@ -224,7 +225,8 @@ public class ProductBasketAction {
 
 		try {
 
-			WebElement productBasketTable = driver.findElement(By.xpath(DirSalesProductBasket.productBasketTable));
+			WebElement productBasketTable = new WebDriverWait(driver, 120).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesProductBasket.productBasketTable)));
+//			WebElement productBasketTable = driver.findElement(By.xpath(DirSalesProductBasket.productBasketTable));
 
 			List<WebElement> productBasketLineItem = productBasketTable.findElements(By.tagName("li"));
 
@@ -370,8 +372,8 @@ public class ProductBasketAction {
 			 */
 
 			// 28-01-2020 - New approach in how to access the Edit Product Configuration
-
-			WebElement productBasketTable = driver.findElement(By.xpath(DirSalesProductBasket.productBasketTable));
+		
+	/*		WebElement productBasketTable = driver.findElement(By.xpath(DirSalesProductBasket.productBasketTable));
 
 			List<WebElement> productBasketLines = productBasketTable.findElements(By.tagName("li"));
 
@@ -379,13 +381,31 @@ public class ProductBasketAction {
 					.findElements(By.xpath(DirSalesProductBasket.editProductConfigurationButton));
 
 			for (int i = 0; i < productBasketLines.size(); i++) {
+				
+				System.out.println(productBasketLines.get(i).getText());
 
-				if (productBasketLines.get(i).getText().contains(productName)) {
+				if (productBasketLines.get(i).getText().endsWith(productName)) {
 					// productBasketLinesBts.get(i).click();
 
 					BrowserActions.jsClick(driver, productBasketLinesBts.get(i));
 					break;
 				}
+			}
+
+*/
+			// 12-08-2021 - New approach in how to access the Edit Product Configuration. It supports both ECS Packs and Standalone products in the basket.
+			List<WebElement> productBasketLines = driver.findElements(By.xpath("//div[@ng-switch-default=\"plainText'\"][contains(text(),'"+productName+"')]/parent::div"));
+			
+			for (int i = 0; i < productBasketLines.size(); i++) {
+				
+				System.out.println(productBasketLines.get(i).getText());
+
+				if (productBasketLines.get(i).getText().endsWith(productName)) {
+					WebElement buttonEditProdConfig = productBasketLines.get(i).findElement(By.xpath("following-sibling::div//button[@aria-label='Edit configuration']"));
+					BrowserActions.jsClick(driver, buttonEditProdConfig);
+					break;	
+				}
+			
 			}
 
 			new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(
@@ -709,15 +729,17 @@ public class ProductBasketAction {
 
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 
-		wait.until(ExpectedConditions.elementToBeClickable(
-				By.xpath("//*[@id=\"brandBand_2\"]/div/div/div[2]/div/force-aloha-page/div/iframe")));
-
-		// wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesProductBasket.iframeProductBasket)));
-
-		WebElement iframeProductBasket = driver
-				.findElement(By.xpath("//*[@id=\"brandBand_2\"]/div/div/div[2]/div/force-aloha-page/div/iframe"));
-
-		driver.switchTo().frame(iframeProductBasket);
+//		wait.until(ExpectedConditions.elementToBeClickable(
+//				By.xpath("//*[@id=\"brandBand_2\"]/div/div/div[2]/div/force-aloha-page/div/iframe")));
+//
+//		// wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesProductBasket.iframeProductBasket)));
+//
+//		WebElement iframeProductBasket = driver
+//				.findElement(By.xpath("//*[@id=\"brandBand_2\"]/div/div/div[2]/div/force-aloha-page/div/iframe"));
+//
+//		driver.switchTo().frame(iframeProductBasket);
+		
+		changeToProductBasketiFrame(logStream, driver, stepID);
 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesProductBasket.productBasketLabel)));
 
@@ -752,9 +774,14 @@ public class ProductBasketAction {
 		String actionName = "productOnProductBasketValidation";
 
 		try {
-			WebElement productBasketTable = driver.findElement(By.xpath(DirSalesProductBasket.productBasketTable));
+//			Thread.sleep(30000); 
+			
+//			WebElement productBasketTable = driver.findElement(By.xpath(DirSalesProductBasket.productBasketTable));
+			
+			WebElement productBasketTable =  new WebDriverWait(driver, 120).until(ExpectedConditions.presenceOfElementLocated(By.xpath(DirSalesProductBasket.productBasketTable)));
+//			Thread.sleep(60000); 
 
-			new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfAllElements(productBasketTable
+			new WebDriverWait(driver, 120).until(ExpectedConditions.visibilityOfAllElements(productBasketTable
 					.findElements(By.xpath("li/div/div/div/div/div[2][contains(.,'" + productName + "')]"))));
 
 			String productBasketLineItemValidation = productBasketTable.getText().toString();

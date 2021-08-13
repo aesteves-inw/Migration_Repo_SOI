@@ -43,7 +43,7 @@ public class CasePCNavigation {
 		{
 			Thread.sleep(1000);
 			
-			new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(By.xpath(DirSalesOrder.viewAllServices)));
+			new WebDriverWait(driver, 60).until(ExpectedConditions.elementToBeClickable(By.xpath(DirSalesOrder.viewAllServices)));
 			
 			if(BrowserActions.isElementPresent(driver, DirSalesOrder.viewAllServices)==true) {
 				BrowserActions.jsClick(driver, By.xpath(DirSalesOrder.viewAllServices));

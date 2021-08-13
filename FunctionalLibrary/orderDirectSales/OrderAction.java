@@ -108,6 +108,8 @@ public class OrderAction
 		String actionName="orderScreenValidation";
 		try
 		{
+			new WebDriverWait(driver, 60).until(ExpectedConditions.presenceOfElementLocated(By.xpath(DirSalesOrder.orderDetails)));
+
 			if(BrowserActions.isElementPresent(driver, DirSalesOrder.orderDetails))
 			{
 				//new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(DirSalesOrder.orderDetails)));

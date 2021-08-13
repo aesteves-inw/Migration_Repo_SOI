@@ -31,7 +31,8 @@ public class ServiceAction {
 
 		try
 		{
-			driver.findElement(By.xpath("//span[contains(text(),'"+product+"')]")).click();
+//			driver.findElement(By.xpath("//span[contains(text(),'"+product+"')]")).click();
+			BrowserActions.jsClick(driver, driver.findElement(By.xpath("//span[contains(text(),'"+product+"')]")));
 
 			TestLogger.logTrace(logStream, actionName, "Succeeded in Step "+stepID);
 
@@ -790,7 +791,7 @@ public class ServiceAction {
 			
 			String fieldServiceRequestDate=driver.findElement(By.xpath(DirSalesService.fieldfilledServiceRequestDate)).getAttribute("value");
 			
-			System.out.println("Debug of fieldServiceRequestDate: "+fieldServiceRequestDate);
+			System.out.println("Debug of fieldServiceRequestDate value: "+fieldServiceRequestDate);
 			
 			Boolean validation = BrowserActions.isElementPresent(driver, DirSalesService.fieldRequestInstallationDateValue);
 			
@@ -909,7 +910,44 @@ public class ServiceAction {
 	}
 
 
+	public static boolean serviceRequestDateNegativeValidation(List<TestLog> logStream, WebDriver driver,
+			int stepID) throws Exception 
+	{
+		String actionName="serviceRequestDateNegativeValidation";
+	
+		try
+		{
 
+			Boolean fieldServiceRequestDate =driver.findElement(By.xpath(DirSalesService.fieldfilledServiceRequestDate)).getAttribute("value").isEmpty();
+			
+			System.out.println("Debug of fieldServiceRequestDate.isEmpty: "+ fieldServiceRequestDate);
+						
+			Boolean fieldRequestInstallationDate = BrowserActions.isElementPresent(driver, "xpath", DirSalesService.fieldRequestInstallationDateValue);
 
+			
+			System.out.println("Debug of fieldRequestInstallationDate presence: "+ fieldRequestInstallationDate);
+
+			
+			if(fieldServiceRequestDate==true && fieldRequestInstallationDate == false)
+			{
+				TestLogger.logTrace(logStream, actionName, "Succeeded in Step: "+stepID);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+	
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+			TestLogger.logError(logStream, actionName, "Failed in Step "+stepID, e.toString());
+			throw new Exception (actionName+" - Failed in Step: "+stepID,e);
+		}
+	}
+	
+	
 
 }
